@@ -1,1 +1,14 @@
+.svn
 .idea
+*.xcuserdatad
+*.pyc
+xcshareddata
+simple_test_bindings
+userconf.ini
+
+
+Debug.win32
+*.sdf
+*.suo
+*.vcxproj.user
+*.opensdf

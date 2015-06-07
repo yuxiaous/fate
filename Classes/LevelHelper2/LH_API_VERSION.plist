@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<string>0.0.941</string>
+	<key>MinimumUpdateableVersion</key>
+	<string>0.0.1</string>
+	<key>Name</key>
+	<string>LevelHelper2-API</string>
+	<key>RelativePath</key>
+	<string>LevelHelper2-API</string>
+</dict>
+</plist>

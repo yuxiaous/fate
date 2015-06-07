@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9DE9F9D1-E0BF-478B-8075-ABEE7D1A2FDC}</ProjectGuid>
+    <RootNamespace>LevelHelper2API</RootNamespace>
+    <ProjectName>liblevelhelper2</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\frameworks\js-bindings\cocos2d-x\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\frameworks\js-bindings\cocos2d-x\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\LevelHelper2-API;$(EngineRoot);$(EngineRoot)cocos;$(EngineRoot)cocos\base;$(EngineRoot)cocos\2d;$(EngineRoot)cocos\ui;$(EngineRoot)cocos\storage;$(EngineRoot)cocos\editor-support\spine;$(EngineRoot)cocos\editor-support\cocosbuilder;$(EngineRoot)cocos\editor-support\cocostudio;$(EngineRoot)cocos\audio\include;$(EngineRoot)extensions;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_LIB;COCOS2D_DEBUG=1;XP_WIN;JS_HAVE___INTN;JS_INTPTR_TYPE=int;COCOS2D_JAVASCRIPT=1;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;LH_USE_BOX2D;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\LevelHelper2-API\LevelHelper2API.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHAnimation.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHAnimationProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHArray.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHAsset.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHBackUINode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHBezier.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHBodyShape.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHBone.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHBoneFrame.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHBoneNodes.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHBox2dCollisionHandling.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHBox2dDebugDrawNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHCamera.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHCameraActivateProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHChildrenOpacitiesProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHChildrenPositionsProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHChildrenRotationsProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHChildrenScalesProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHConfig.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHContactInfo.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHDevice.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHDictionary.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHDistanceJointNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHDrawNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHFrame.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHGameWorldNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHGearJointNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHGravityArea.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHJointsProtocol.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHNodeAnimationProtocol.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHNodeProtocol.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHOpacityFrame.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHOpacityProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHParallax.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHParallaxLayer.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHPhysicsProtocol.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHPositionFrame.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHPositionProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHPrismaticJointNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHPulleyJointNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHRevoluteJointNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHRootBoneProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHRopeJointNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHRotationFrame.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHRotationProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHScaleFrame.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHScaleProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHScene.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHShape.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHSprite.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHSpriteFrame.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHSpriteFrameProperty.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHUINode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHUserProperties.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHUserPropertyProtocol.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHUtils.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHValue.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHWater.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHWeldJointNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\LHWheelJointNode.h" />
+    <ClInclude Include="..\LevelHelper2-API\NodeTransform.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\LevelHelper2-API\LHAnimation.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHAnimationProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHAsset.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHBackUINode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHBezier.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHBodyShape.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHBone.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHBoneFrame.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHBoneNodes.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHBox2dCollisionHandling.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHBox2dDebugDrawNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHCamera.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHCameraActivateProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHChildrenOpacitiesProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHChildrenPositionsProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHChildrenRotationsProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHChildrenScalesProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHContactInfo.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHDevice.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHDictionary.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHDistanceJointNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHDrawNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHFrame.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHGameWorldNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHGearJointNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHGravityArea.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHJointsProtocol.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHNodeAnimationProtocol.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHNodeProtocol.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHOpacityFrame.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHOpacityProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHParallax.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHParallaxLayer.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHPhysicsProtocol.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHPositionFrame.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHPositionProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHPrismaticJointNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHPulleyJointNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHRevoluteJointNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHRootBoneProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHRopeJointNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHRotationFrame.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHRotationProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHScaleFrame.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHScaleProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHScene.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHShape.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHSprite.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHSpriteFrame.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHSpriteFrameProperty.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHUINode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHUserProperties.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHUtils.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHWater.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHWeldJointNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\LHWheelJointNode.cpp" />
+    <ClCompile Include="..\LevelHelper2-API\NodeTransform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\frameworks\js-bindings\cocos2d-x\cocos\2d\libcocos2d.vcxproj">
+      <Project>{98a51ba8-fc3a-415b-ac8f-8c7bd464e93e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
