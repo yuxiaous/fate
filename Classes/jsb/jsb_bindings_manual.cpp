@@ -10,7 +10,7 @@
 #include "jsb_levelhelper_auto.hpp"
 #include "LevelHelper2API.h"
 #include "jsb_bindings_auto.hpp"
-#include "RoleBaseNode.h"
+//#include "RoleBaseNode.h"
 
 // LevelHelper
 static bool js_levelhelper_LHScene_ctor(JSContext *cx, uint32_t argc, jsval *vp)
