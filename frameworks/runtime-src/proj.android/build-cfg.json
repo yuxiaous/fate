@@ -3,7 +3,8 @@
         "../../js-bindings",
         "../../js-bindings/cocos2d-x",
         "../../js-bindings/cocos2d-x/cocos",
-        "../../js-bindings/cocos2d-x/external"
+        "../../js-bindings/cocos2d-x/external",
+        "../../../Classes"
     ],
     "copy_resources": [
         {
