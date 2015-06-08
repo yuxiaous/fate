@@ -883,11 +883,11 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/2d\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/ui\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/external\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/2d\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/ui\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/external\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
@@ -924,11 +924,11 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/2d\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/ui\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/external\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/2d\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/ui\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/external\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
@@ -951,8 +951,8 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios/Simulation\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios/Simulation\"",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
@@ -976,8 +976,8 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios/Simulation\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios/Simulation\"",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
@@ -1005,8 +1005,8 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios/Simulation\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios/Simulation\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
@@ -1032,8 +1032,8 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios/Simulation\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/ios/Simulation\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
@@ -1057,8 +1057,8 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/mac\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/external/glfw3/include/mac\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/mac\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/external/glfw3/include/mac\"",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				New_Setting = "";
@@ -1083,8 +1083,8 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/cocos/platform/mac\"",
-					"\"$(SRCROOT)/../../../frameworks/js-bindings/cocos2d-x/external/glfw3/include/mac\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/cocos/platform/mac\"",
+					"\"$(SRCROOT)/../../frameworks/js-bindings/cocos2d-x/external/glfw3/include/mac\"",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				New_Setting = "";

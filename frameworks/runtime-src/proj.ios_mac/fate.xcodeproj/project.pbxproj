@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A67682A180E9C060076BC67 /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2dx Mac.a */; };
-		1A676839180E9C1E0076BC67 /* libcocos2dx iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2dx iOS.a */; };
+		1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */; };
+		1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */; };
 		1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A82F5FA169AC92500C4B13A /* libsqlite3.dylib */; };
 		1AC22EDE18CA0E11007112B9 /* project.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A081B18C9DF05005C6854 /* project.json */; };
 		1AD7E0A818C9DB93004817A6 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A6BF21418C9DB5900FB0E1C /* main.js */; };
@@ -124,6 +124,75 @@
 		D454520C156E22BD00887EB5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D454520B156E22BD00887EB5 /* libz.dylib */; };
 		D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4545215156E28EF00887EB5 /* AppDelegate.cpp */; };
 		D6B061241803AB9F0077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B061231803AB9F0077942B /* CoreMotion.framework */; };
+		DE36EDF71B258A63005B744E /* libLevelHelper2-API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF01B258A0F005B744E /* libLevelHelper2-API.a */; };
+		DE36EF001B25955E005B744E /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFB1B25955C005B744E /* Animation.cpp */; };
+		DE36EF011B25955E005B744E /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFB1B25955C005B744E /* Animation.cpp */; };
+		DE36EF021B25955E005B744E /* AnimationState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFD1B25955C005B744E /* AnimationState.cpp */; };
+		DE36EF031B25955E005B744E /* AnimationState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFD1B25955C005B744E /* AnimationState.cpp */; };
+		DE36EF041B25955E005B744E /* TimelineState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE001B25955C005B744E /* TimelineState.cpp */; };
+		DE36EF051B25955E005B744E /* TimelineState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE001B25955C005B744E /* TimelineState.cpp */; };
+		DE36EF061B25955E005B744E /* WorldClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE021B25955C005B744E /* WorldClock.cpp */; };
+		DE36EF071B25955E005B744E /* WorldClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE021B25955C005B744E /* WorldClock.cpp */; };
+		DE36EF081B25955E005B744E /* Armature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE051B25955C005B744E /* Armature.cpp */; };
+		DE36EF091B25955E005B744E /* Armature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE051B25955C005B744E /* Armature.cpp */; };
+		DE36EF0A1B25955E005B744E /* Bone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE071B25955C005B744E /* Bone.cpp */; };
+		DE36EF0B1B25955E005B744E /* Bone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE071B25955C005B744E /* Bone.cpp */; };
+		DE36EF0C1B25955E005B744E /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE091B25955C005B744E /* Object.cpp */; };
+		DE36EF0D1B25955E005B744E /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE091B25955C005B744E /* Object.cpp */; };
+		DE36EF0E1B25955E005B744E /* Slot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE0B1B25955C005B744E /* Slot.cpp */; };
+		DE36EF0F1B25955E005B744E /* Slot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE0B1B25955C005B744E /* Slot.cpp */; };
+		DE36EF101B25955E005B744E /* EventData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE101B25955C005B744E /* EventData.cpp */; };
+		DE36EF111B25955E005B744E /* EventData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE101B25955C005B744E /* EventData.cpp */; };
+		DE36EF121B25955E005B744E /* BaseFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE141B25955C005B744E /* BaseFactory.cpp */; };
+		DE36EF131B25955E005B744E /* BaseFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE141B25955C005B744E /* BaseFactory.cpp */; };
+		DE36EF141B25955E005B744E /* BaseDataParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE2D1B25955D005B744E /* BaseDataParser.cpp */; };
+		DE36EF151B25955E005B744E /* BaseDataParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE2D1B25955D005B744E /* BaseDataParser.cpp */; };
+		DE36EF161B25955E005B744E /* ConstValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE2F1B25955D005B744E /* ConstValues.cpp */; };
+		DE36EF171B25955E005B744E /* ConstValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE2F1B25955D005B744E /* ConstValues.cpp */; };
+		DE36EF181B25955E005B744E /* dbtinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE311B25955D005B744E /* dbtinyxml2.cpp */; };
+		DE36EF191B25955E005B744E /* dbtinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE311B25955D005B744E /* dbtinyxml2.cpp */; };
+		DE36EF1A1B25955E005B744E /* XMLDataParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE331B25955D005B744E /* XMLDataParser.cpp */; };
+		DE36EF1B1B25955E005B744E /* XMLDataParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE331B25955D005B744E /* XMLDataParser.cpp */; };
+		DE36EF1E1B25955E005B744E /* DBCCArmature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE391B25955D005B744E /* DBCCArmature.cpp */; };
+		DE36EF1F1B25955E005B744E /* DBCCArmature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE391B25955D005B744E /* DBCCArmature.cpp */; };
+		DE36EF201B25955E005B744E /* DBCCArmatureNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE3B1B25955D005B744E /* DBCCArmatureNode.cpp */; };
+		DE36EF211B25955E005B744E /* DBCCArmatureNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE3B1B25955D005B744E /* DBCCArmatureNode.cpp */; };
+		DE36EF221B25955E005B744E /* DBCCFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE3E1B25955D005B744E /* DBCCFactory.cpp */; };
+		DE36EF231B25955E005B744E /* DBCCFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE3E1B25955D005B744E /* DBCCFactory.cpp */; };
+		DE36EF241B25955E005B744E /* DBCCSlot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE421B25955D005B744E /* DBCCSlot.cpp */; };
+		DE36EF251B25955E005B744E /* DBCCSlot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE421B25955D005B744E /* DBCCSlot.cpp */; };
+		DE36EF281B25955E005B744E /* DragonBonesHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE471B25955D005B744E /* DragonBonesHelper.cpp */; };
+		DE36EF291B25955E005B744E /* DragonBonesHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE471B25955D005B744E /* DragonBonesHelper.cpp */; };
+		DE36EF3A1B25955E005B744E /* jsb_bindings_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE581B25955D005B744E /* jsb_bindings_auto.cpp */; };
+		DE36EF3B1B25955E005B744E /* jsb_bindings_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE581B25955D005B744E /* jsb_bindings_auto.cpp */; };
+		DE36EF3C1B25955E005B744E /* jsb_bindings_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE5A1B25955D005B744E /* jsb_bindings_manual.cpp */; };
+		DE36EF3D1B25955E005B744E /* jsb_bindings_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE5A1B25955D005B744E /* jsb_bindings_manual.cpp */; };
+		DE36EF3E1B25955E005B744E /* jsb_dragonbones_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE5C1B25955D005B744E /* jsb_dragonbones_auto.cpp */; };
+		DE36EF3F1B25955E005B744E /* jsb_dragonbones_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE5C1B25955D005B744E /* jsb_dragonbones_auto.cpp */; };
+		DE36EF401B25955E005B744E /* jsb_levelhelper_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE5E1B25955D005B744E /* jsb_levelhelper_auto.cpp */; };
+		DE36EF411B25955E005B744E /* jsb_levelhelper_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE5E1B25955D005B744E /* jsb_levelhelper_auto.cpp */; };
+		DE36EF421B25955E005B744E /* JsonStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE611B25955D005B744E /* JsonStorage.cpp */; };
+		DE36EF431B25955E005B744E /* JsonStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE611B25955D005B744E /* JsonStorage.cpp */; };
+		DE36EFC01B25955E005B744E /* PlayCG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEE61B25955E005B744E /* PlayCG.cpp */; };
+		DE36EFC11B25955E005B744E /* PlayCG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEE61B25955E005B744E /* PlayCG.cpp */; };
+		DE36EFC21B25955E005B744E /* LHVideoOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEA1B25955E005B744E /* LHVideoOverlayView.m */; };
+		DE36EFC31B25955E005B744E /* LHVideoOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEA1B25955E005B744E /* LHVideoOverlayView.m */; };
+		DE36EFC41B25955E005B744E /* LHVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEC1B25955E005B744E /* LHVideoPlayer.m */; };
+		DE36EFC51B25955E005B744E /* LHVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEC1B25955E005B744E /* LHVideoPlayer.m */; };
+		DE36EFC61B25955E005B744E /* LHVideoPlayerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEE1B25955E005B744E /* LHVideoPlayerImpl.m */; };
+		DE36EFC71B25955E005B744E /* LHVideoPlayerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEE1B25955E005B744E /* LHVideoPlayerImpl.m */; };
+		DE36EFC81B25955E005B744E /* LHVideoPlayerImplCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF01B25955E005B744E /* LHVideoPlayerImplCpp.mm */; };
+		DE36EFC91B25955E005B744E /* LHVideoPlayerImplCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF01B25955E005B744E /* LHVideoPlayerImplCpp.mm */; };
+		DE36EFCC1B25955E005B744E /* ShakeAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF41B25955E005B744E /* ShakeAction.cpp */; };
+		DE36EFCD1B25955E005B744E /* ShakeAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF41B25955E005B744E /* ShakeAction.cpp */; };
+		DE36EFCE1B25955E005B744E /* SneakyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF81B25955E005B744E /* SneakyButton.cpp */; };
+		DE36EFCF1B25955E005B744E /* SneakyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF81B25955E005B744E /* SneakyButton.cpp */; };
+		DE36EFD01B25955E005B744E /* SneakyButtonSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFA1B25955E005B744E /* SneakyButtonSkinnedBase.cpp */; };
+		DE36EFD11B25955E005B744E /* SneakyButtonSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFA1B25955E005B744E /* SneakyButtonSkinnedBase.cpp */; };
+		DE36EFD21B25955E005B744E /* SneakyJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFC1B25955E005B744E /* SneakyJoystick.cpp */; };
+		DE36EFD31B25955E005B744E /* SneakyJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFC1B25955E005B744E /* SneakyJoystick.cpp */; };
+		DE36EFD41B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
+		DE36EFD51B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,54 +203,12 @@
 			remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
 			remoteInfo = "cocos2dx Mac";
 		};
-		1A676821180E9BF70076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A03F2FC117814595006731B9;
-			remoteInfo = "cocos2dx-extensions Mac";
-		};
-		1A676823180E9BF70076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A03F2B781780BD04006731B9;
-			remoteInfo = "chipmunk Mac";
-		};
-		1A676825180E9BF70076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A03F2E9817814268006731B9;
-			remoteInfo = "CocosDenshion Mac";
-		};
 		1A67682E180E9C110076BC67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = A07A4C241783777C0073F6A7;
 			remoteInfo = "cocos2dx iOS";
-		};
-		1A676830180E9C110076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A07A4E111783867C0073F6A7;
-			remoteInfo = "cocos2dx-extensions iOS";
-		};
-		1A676832180E9C110076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A07A4EFD178387670073F6A7;
-			remoteInfo = "chipmunk iOS";
-		};
-		1A676834180E9C110076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A07A4F9F178387730073F6A7;
-			remoteInfo = "CocosDenshion iOS";
 		};
 		1AC6FB47180E9ACB004C840B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -190,68 +217,12 @@
 			remoteGlobalIDString = 1551A33F158F2AB200E66CFE;
 			remoteInfo = "cocos2dx Mac";
 		};
-		1AC6FB49180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03F2FD617814595006731B9;
-			remoteInfo = "cocos2dx-extensions Mac";
-		};
-		1AC6FB4B180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03F2CB81780BD04006731B9;
-			remoteInfo = "chipmunk Mac";
-		};
-		1AC6FB4D180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03F2D9B1780BDF7006731B9;
-			remoteInfo = "box2d Mac";
-		};
-		1AC6FB4F180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03F2ED617814268006731B9;
-			remoteInfo = "CocosDenshion Mac";
-		};
 		1AC6FB55180E9ACB004C840B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A07A4D641783777C0073F6A7;
 			remoteInfo = "cocos2dx iOS";
-		};
-		1AC6FB57180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A07A4EFC1783867C0073F6A7;
-			remoteInfo = "cocos2dx-extensions iOS";
-		};
-		1AC6FB59180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A07A4F3B178387670073F6A7;
-			remoteInfo = "chipmunk iOS";
-		};
-		1AC6FB5B180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A07A4F9E1783876B0073F6A7;
-			remoteInfo = "box2d iOS";
-		};
-		1AC6FB5D180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A07A4FB4178387730073F6A7;
-			remoteInfo = "CocosDenshion iOS";
 		};
 		C037820618BF76AF00FE4F13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -280,6 +251,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = A03F31E81781479B006731B9;
 			remoteInfo = "jsbindings Mac";
+		};
+		DE36EDEF1B258A0F005B744E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6EDE843919A483A200599C48;
+			remoteInfo = "LevelHelper2-API";
+		};
+		DE36EDF11B258A0F005B744E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6EDE871519A4898100599C48;
+			remoteInfo = "LevelHelper2-API+Box2d";
+		};
+		DE36EDF31B258A0F005B744E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6EDE8B7C19A4986C00599C48;
+			remoteInfo = "LevelHelper2-API+Box2d-OSX";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -404,6 +396,110 @@
 		D4545215156E28EF00887EB5 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		D4545216156E28EF00887EB5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6B061231803AB9F0077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "LevelHelper2-API.xcodeproj"; path = "../../../Classes/LevelHelper2/LevelHelper2-API.xcodeproj"; sourceTree = "<group>"; };
+		DE36EDFB1B25955C005B744E /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
+		DE36EDFC1B25955C005B744E /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		DE36EDFD1B25955C005B744E /* AnimationState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationState.cpp; sourceTree = "<group>"; };
+		DE36EDFE1B25955C005B744E /* AnimationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationState.h; sourceTree = "<group>"; };
+		DE36EDFF1B25955C005B744E /* IAnimatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAnimatable.h; sourceTree = "<group>"; };
+		DE36EE001B25955C005B744E /* TimelineState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimelineState.cpp; sourceTree = "<group>"; };
+		DE36EE011B25955C005B744E /* TimelineState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineState.h; sourceTree = "<group>"; };
+		DE36EE021B25955C005B744E /* WorldClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldClock.cpp; sourceTree = "<group>"; };
+		DE36EE031B25955C005B744E /* WorldClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldClock.h; sourceTree = "<group>"; };
+		DE36EE051B25955C005B744E /* Armature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Armature.cpp; sourceTree = "<group>"; };
+		DE36EE061B25955C005B744E /* Armature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armature.h; sourceTree = "<group>"; };
+		DE36EE071B25955C005B744E /* Bone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bone.cpp; sourceTree = "<group>"; };
+		DE36EE081B25955C005B744E /* Bone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bone.h; sourceTree = "<group>"; };
+		DE36EE091B25955C005B744E /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		DE36EE0A1B25955C005B744E /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		DE36EE0B1B25955C005B744E /* Slot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Slot.cpp; sourceTree = "<group>"; };
+		DE36EE0C1B25955C005B744E /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
+		DE36EE0D1B25955C005B744E /* DragonBones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragonBones.h; sourceTree = "<group>"; };
+		DE36EE0E1B25955C005B744E /* DragonBonesHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragonBonesHeaders.h; sourceTree = "<group>"; };
+		DE36EE101B25955C005B744E /* EventData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventData.cpp; sourceTree = "<group>"; };
+		DE36EE111B25955C005B744E /* EventData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventData.h; sourceTree = "<group>"; };
+		DE36EE121B25955C005B744E /* IEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEventDispatcher.h; sourceTree = "<group>"; };
+		DE36EE141B25955C005B744E /* BaseFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseFactory.cpp; sourceTree = "<group>"; };
+		DE36EE151B25955C005B744E /* BaseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFactory.h; sourceTree = "<group>"; };
+		DE36EE171B25955C005B744E /* ColorTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTransform.h; sourceTree = "<group>"; };
+		DE36EE181B25955C005B744E /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		DE36EE191B25955C005B744E /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
+		DE36EE1A1B25955C005B744E /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		DE36EE1B1B25955C005B744E /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
+		DE36EE1D1B25955C005B744E /* AnimationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationData.h; sourceTree = "<group>"; };
+		DE36EE1E1B25955C005B744E /* ArmatureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArmatureData.h; sourceTree = "<group>"; };
+		DE36EE1F1B25955C005B744E /* BoneData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoneData.h; sourceTree = "<group>"; };
+		DE36EE201B25955C005B744E /* DisplayData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayData.h; sourceTree = "<group>"; };
+		DE36EE211B25955C005B744E /* DragonBonesData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragonBonesData.h; sourceTree = "<group>"; };
+		DE36EE221B25955C005B744E /* EllipseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllipseData.h; sourceTree = "<group>"; };
+		DE36EE231B25955C005B744E /* Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Frame.h; sourceTree = "<group>"; };
+		DE36EE241B25955C005B744E /* IAreaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAreaData.h; sourceTree = "<group>"; };
+		DE36EE251B25955C005B744E /* RectangleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleData.h; sourceTree = "<group>"; };
+		DE36EE261B25955C005B744E /* SkinData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinData.h; sourceTree = "<group>"; };
+		DE36EE271B25955C005B744E /* SlotData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlotData.h; sourceTree = "<group>"; };
+		DE36EE281B25955C005B744E /* TextData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextData.h; sourceTree = "<group>"; };
+		DE36EE291B25955C005B744E /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
+		DE36EE2A1B25955D005B744E /* TransformFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformFrame.h; sourceTree = "<group>"; };
+		DE36EE2B1B25955D005B744E /* TransformTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformTimeline.h; sourceTree = "<group>"; };
+		DE36EE2D1B25955D005B744E /* BaseDataParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseDataParser.cpp; sourceTree = "<group>"; };
+		DE36EE2E1B25955D005B744E /* BaseDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataParser.h; sourceTree = "<group>"; };
+		DE36EE2F1B25955D005B744E /* ConstValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstValues.cpp; sourceTree = "<group>"; };
+		DE36EE301B25955D005B744E /* ConstValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstValues.h; sourceTree = "<group>"; };
+		DE36EE311B25955D005B744E /* dbtinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dbtinyxml2.cpp; sourceTree = "<group>"; };
+		DE36EE321B25955D005B744E /* dbtinyxml2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbtinyxml2.h; sourceTree = "<group>"; };
+		DE36EE331B25955D005B744E /* XMLDataParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XMLDataParser.cpp; sourceTree = "<group>"; };
+		DE36EE341B25955D005B744E /* XMLDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDataParser.h; sourceTree = "<group>"; };
+		DE36EE391B25955D005B744E /* DBCCArmature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DBCCArmature.cpp; sourceTree = "<group>"; };
+		DE36EE3A1B25955D005B744E /* DBCCArmature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCCArmature.h; sourceTree = "<group>"; };
+		DE36EE3B1B25955D005B744E /* DBCCArmatureNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DBCCArmatureNode.cpp; sourceTree = "<group>"; };
+		DE36EE3C1B25955D005B744E /* DBCCArmatureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCCArmatureNode.h; sourceTree = "<group>"; };
+		DE36EE3D1B25955D005B744E /* DBCCEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCCEventDispatcher.h; sourceTree = "<group>"; };
+		DE36EE3E1B25955D005B744E /* DBCCFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DBCCFactory.cpp; sourceTree = "<group>"; };
+		DE36EE3F1B25955D005B744E /* DBCCFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCCFactory.h; sourceTree = "<group>"; };
+		DE36EE401B25955D005B744E /* dbccMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbccMacro.h; sourceTree = "<group>"; };
+		DE36EE411B25955D005B744E /* DBCCRenderHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCCRenderHeaders.h; sourceTree = "<group>"; };
+		DE36EE421B25955D005B744E /* DBCCSlot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DBCCSlot.cpp; sourceTree = "<group>"; };
+		DE36EE431B25955D005B744E /* DBCCSlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCCSlot.h; sourceTree = "<group>"; };
+		DE36EE441B25955D005B744E /* DBCCTextureAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCCTextureAtlas.h; sourceTree = "<group>"; };
+		DE36EE471B25955D005B744E /* DragonBonesHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DragonBonesHelper.cpp; sourceTree = "<group>"; };
+		DE36EE481B25955D005B744E /* DragonBonesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragonBonesHelper.h; sourceTree = "<group>"; };
+		DE36EE4F1B25955D005B744E /* ITextureAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITextureAtlas.h; sourceTree = "<group>"; };
+		DE36EE501B25955D005B744E /* TextureAtlasData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureAtlasData.h; sourceTree = "<group>"; };
+		DE36EE511B25955D005B744E /* TextureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureData.h; sourceTree = "<group>"; };
+		DE36EE581B25955D005B744E /* jsb_bindings_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_bindings_auto.cpp; sourceTree = "<group>"; };
+		DE36EE591B25955D005B744E /* jsb_bindings_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_bindings_auto.hpp; sourceTree = "<group>"; };
+		DE36EE5A1B25955D005B744E /* jsb_bindings_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_bindings_manual.cpp; sourceTree = "<group>"; };
+		DE36EE5B1B25955D005B744E /* jsb_bindings_manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsb_bindings_manual.h; sourceTree = "<group>"; };
+		DE36EE5C1B25955D005B744E /* jsb_dragonbones_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_dragonbones_auto.cpp; sourceTree = "<group>"; };
+		DE36EE5D1B25955D005B744E /* jsb_dragonbones_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_dragonbones_auto.hpp; sourceTree = "<group>"; };
+		DE36EE5E1B25955D005B744E /* jsb_levelhelper_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_levelhelper_auto.cpp; sourceTree = "<group>"; };
+		DE36EE5F1B25955D005B744E /* jsb_levelhelper_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_levelhelper_auto.hpp; sourceTree = "<group>"; };
+		DE36EE601B25955D005B744E /* jsb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsb.h; path = ../../../Classes/jsb.h; sourceTree = "<group>"; };
+		DE36EE611B25955D005B744E /* JsonStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JsonStorage.cpp; path = ../../../Classes/JsonStorage.cpp; sourceTree = "<group>"; };
+		DE36EE621B25955D005B744E /* JsonStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonStorage.h; path = ../../../Classes/JsonStorage.h; sourceTree = "<group>"; };
+		DE36EEE61B25955E005B744E /* PlayCG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayCG.cpp; path = ../../../Classes/PlayCG.cpp; sourceTree = "<group>"; };
+		DE36EEE71B25955E005B744E /* PlayCG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayCG.h; path = ../../../Classes/PlayCG.h; sourceTree = "<group>"; };
+		DE36EEE91B25955E005B744E /* LHVideoOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHVideoOverlayView.h; sourceTree = "<group>"; };
+		DE36EEEA1B25955E005B744E /* LHVideoOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHVideoOverlayView.m; sourceTree = "<group>"; };
+		DE36EEEB1B25955E005B744E /* LHVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHVideoPlayer.h; sourceTree = "<group>"; };
+		DE36EEEC1B25955E005B744E /* LHVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHVideoPlayer.m; sourceTree = "<group>"; };
+		DE36EEED1B25955E005B744E /* LHVideoPlayerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHVideoPlayerImpl.h; sourceTree = "<group>"; };
+		DE36EEEE1B25955E005B744E /* LHVideoPlayerImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHVideoPlayerImpl.m; sourceTree = "<group>"; };
+		DE36EEEF1B25955E005B744E /* LHVideoPlayerImplCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHVideoPlayerImplCpp.h; sourceTree = "<group>"; };
+		DE36EEF01B25955E005B744E /* LHVideoPlayerImplCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LHVideoPlayerImplCpp.mm; sourceTree = "<group>"; };
+		DE36EEF21B25955E005B744E /* SdkManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SdkManager.cpp; sourceTree = "<group>"; };
+		DE36EEF31B25955E005B744E /* SdkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SdkManager.h; sourceTree = "<group>"; };
+		DE36EEF41B25955E005B744E /* ShakeAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShakeAction.cpp; path = ../../../Classes/ShakeAction.cpp; sourceTree = "<group>"; };
+		DE36EEF51B25955E005B744E /* ShakeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShakeAction.h; path = ../../../Classes/ShakeAction.h; sourceTree = "<group>"; };
+		DE36EEF71B25955E005B744E /* SneakInputHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakInputHeaders.h; sourceTree = "<group>"; };
+		DE36EEF81B25955E005B744E /* SneakyButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyButton.cpp; sourceTree = "<group>"; };
+		DE36EEF91B25955E005B744E /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
+		DE36EEFA1B25955E005B744E /* SneakyButtonSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyButtonSkinnedBase.cpp; sourceTree = "<group>"; };
+		DE36EEFB1B25955E005B744E /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		DE36EEFC1B25955E005B744E /* SneakyJoystick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystick.cpp; sourceTree = "<group>"; };
+		DE36EEFD1B25955E005B744E /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
+		DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystickSkinnedBase.cpp; sourceTree = "<group>"; };
+		DE36EEFF1B25955E005B744E /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,7 +509,7 @@
 			files = (
 				BAEE4D8C1AC40CA8003BEB0F /* Security.framework in Frameworks */,
 				C037820F18BF77DE00FE4F13 /* libjsbindings Mac.a in Frameworks */,
-				1A67682A180E9C060076BC67 /* libcocos2dx Mac.a in Frameworks */,
+				1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */,
 				502380DC17EBB88200990C9B /* libcurl.dylib in Frameworks */,
 				509D4A8817EBB24E00697056 /* libsqlite3.dylib in Frameworks */,
 				509D4A8917EBB24E00697056 /* libz.dylib in Frameworks */,
@@ -433,10 +529,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE36EDF71B258A63005B744E /* libLevelHelper2-API.a in Frameworks */,
 				BA3D062F1A72540100739335 /* Security.framework in Frameworks */,
 				BA4E718719EB6E7900932425 /* MediaPlayer.framework in Frameworks */,
 				C037820C18BF77C500FE4F13 /* libjsbindings iOS.a in Frameworks */,
-				1A676839180E9C1E0076BC67 /* libcocos2dx iOS.a in Frameworks */,
+				1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */,
 				D6B061241803AB9F0077942B /* CoreMotion.framework in Frameworks */,
 				1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */,
 				D454520C156E22BD00887EB5 /* libz.dylib in Frameworks */,
@@ -469,16 +566,8 @@
 		1AC6FB35180E9ACB004C840B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AC6FB48180E9ACB004C840B /* libcocos2dx Mac.a */,
-				1AC6FB4A180E9ACB004C840B /* libcocos2dx-extensions Mac.a */,
-				1AC6FB4C180E9ACB004C840B /* libchipmunk Mac.a */,
-				1AC6FB4E180E9ACB004C840B /* libbox2d Mac.a */,
-				1AC6FB50180E9ACB004C840B /* libCocosDenshion Mac.a */,
-				1AC6FB56180E9ACB004C840B /* libcocos2dx iOS.a */,
-				1AC6FB58180E9ACB004C840B /* libcocos2dx-extensions iOS.a */,
-				1AC6FB5A180E9ACB004C840B /* libchipmunk iOS.a */,
-				1AC6FB5C180E9ACB004C840B /* libbox2d iOS.a */,
-				1AC6FB5E180E9ACB004C840B /* libCocosDenshion iOS.a */,
+				1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */,
+				1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -597,10 +686,12 @@
 		A92275321517C094001B78AA = {
 			isa = PBXGroup;
 			children = (
+				DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */,
 				C037820118BF76AF00FE4F13 /* cocos2d_js_bindings.xcodeproj */,
 				1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */,
 				C06D18B718C02D4A003D1A65 /* JS Common */,
 				D4545214156E28EF00887EB5 /* Classes */,
+				DE36EDF81B25947C005B744E /* game */,
 				A92275401517C094001B78AA /* Frameworks */,
 				D45446CC156DE73F00887EB5 /* ios */,
 				509D4ACA17EBB2BE00697056 /* mac */,
@@ -719,6 +810,251 @@
 			path = ../Classes;
 			sourceTree = "<group>";
 		};
+		DE36EDEA1B258A0E005B744E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EDF01B258A0F005B744E /* libLevelHelper2-API.a */,
+				DE36EDF21B258A0F005B744E /* libLevelHelper2-API+Box2d.a */,
+				DE36EDF41B258A0F005B744E /* libLevelHelper2-API+Box2d-OSX.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE36EDF81B25947C005B744E /* game */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EDF91B25955C005B744E /* dragonbones */,
+				DE36EE521B25955D005B744E /* jsb */,
+				DE36EE601B25955D005B744E /* jsb.h */,
+				DE36EE611B25955D005B744E /* JsonStorage.cpp */,
+				DE36EE621B25955D005B744E /* JsonStorage.h */,
+				DE36EEE61B25955E005B744E /* PlayCG.cpp */,
+				DE36EEE71B25955E005B744E /* PlayCG.h */,
+				DE36EEE81B25955E005B744E /* playMP4 */,
+				DE36EEF11B25955E005B744E /* sdk */,
+				DE36EEF41B25955E005B744E /* ShakeAction.cpp */,
+				DE36EEF51B25955E005B744E /* ShakeAction.h */,
+				DE36EEF61B25955E005B744E /* SneakyInput */,
+			);
+			name = game;
+			sourceTree = "<group>";
+		};
+		DE36EDF91B25955C005B744E /* dragonbones */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EDFA1B25955C005B744E /* animation */,
+				DE36EE041B25955C005B744E /* core */,
+				DE36EE0D1B25955C005B744E /* DragonBones.h */,
+				DE36EE0E1B25955C005B744E /* DragonBonesHeaders.h */,
+				DE36EE0F1B25955C005B744E /* events */,
+				DE36EE131B25955C005B744E /* factories */,
+				DE36EE161B25955C005B744E /* geoms */,
+				DE36EE1C1B25955C005B744E /* objects */,
+				DE36EE2C1B25955D005B744E /* parsers */,
+				DE36EE351B25955D005B744E /* renderer */,
+				DE36EE4E1B25955D005B744E /* textures */,
+			);
+			name = dragonbones;
+			path = ../../../Classes/dragonbones;
+			sourceTree = "<group>";
+		};
+		DE36EDFA1B25955C005B744E /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EDFB1B25955C005B744E /* Animation.cpp */,
+				DE36EDFC1B25955C005B744E /* Animation.h */,
+				DE36EDFD1B25955C005B744E /* AnimationState.cpp */,
+				DE36EDFE1B25955C005B744E /* AnimationState.h */,
+				DE36EDFF1B25955C005B744E /* IAnimatable.h */,
+				DE36EE001B25955C005B744E /* TimelineState.cpp */,
+				DE36EE011B25955C005B744E /* TimelineState.h */,
+				DE36EE021B25955C005B744E /* WorldClock.cpp */,
+				DE36EE031B25955C005B744E /* WorldClock.h */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
+		DE36EE041B25955C005B744E /* core */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE051B25955C005B744E /* Armature.cpp */,
+				DE36EE061B25955C005B744E /* Armature.h */,
+				DE36EE071B25955C005B744E /* Bone.cpp */,
+				DE36EE081B25955C005B744E /* Bone.h */,
+				DE36EE091B25955C005B744E /* Object.cpp */,
+				DE36EE0A1B25955C005B744E /* Object.h */,
+				DE36EE0B1B25955C005B744E /* Slot.cpp */,
+				DE36EE0C1B25955C005B744E /* Slot.h */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		DE36EE0F1B25955C005B744E /* events */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE101B25955C005B744E /* EventData.cpp */,
+				DE36EE111B25955C005B744E /* EventData.h */,
+				DE36EE121B25955C005B744E /* IEventDispatcher.h */,
+			);
+			path = events;
+			sourceTree = "<group>";
+		};
+		DE36EE131B25955C005B744E /* factories */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE141B25955C005B744E /* BaseFactory.cpp */,
+				DE36EE151B25955C005B744E /* BaseFactory.h */,
+			);
+			path = factories;
+			sourceTree = "<group>";
+		};
+		DE36EE161B25955C005B744E /* geoms */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE171B25955C005B744E /* ColorTransform.h */,
+				DE36EE181B25955C005B744E /* Matrix.h */,
+				DE36EE191B25955C005B744E /* Point.h */,
+				DE36EE1A1B25955C005B744E /* Rectangle.h */,
+				DE36EE1B1B25955C005B744E /* Transform.h */,
+			);
+			path = geoms;
+			sourceTree = "<group>";
+		};
+		DE36EE1C1B25955C005B744E /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE1D1B25955C005B744E /* AnimationData.h */,
+				DE36EE1E1B25955C005B744E /* ArmatureData.h */,
+				DE36EE1F1B25955C005B744E /* BoneData.h */,
+				DE36EE201B25955C005B744E /* DisplayData.h */,
+				DE36EE211B25955C005B744E /* DragonBonesData.h */,
+				DE36EE221B25955C005B744E /* EllipseData.h */,
+				DE36EE231B25955C005B744E /* Frame.h */,
+				DE36EE241B25955C005B744E /* IAreaData.h */,
+				DE36EE251B25955C005B744E /* RectangleData.h */,
+				DE36EE261B25955C005B744E /* SkinData.h */,
+				DE36EE271B25955C005B744E /* SlotData.h */,
+				DE36EE281B25955C005B744E /* TextData.h */,
+				DE36EE291B25955C005B744E /* Timeline.h */,
+				DE36EE2A1B25955D005B744E /* TransformFrame.h */,
+				DE36EE2B1B25955D005B744E /* TransformTimeline.h */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		DE36EE2C1B25955D005B744E /* parsers */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE2D1B25955D005B744E /* BaseDataParser.cpp */,
+				DE36EE2E1B25955D005B744E /* BaseDataParser.h */,
+				DE36EE2F1B25955D005B744E /* ConstValues.cpp */,
+				DE36EE301B25955D005B744E /* ConstValues.h */,
+				DE36EE311B25955D005B744E /* dbtinyxml2.cpp */,
+				DE36EE321B25955D005B744E /* dbtinyxml2.h */,
+				DE36EE331B25955D005B744E /* XMLDataParser.cpp */,
+				DE36EE341B25955D005B744E /* XMLDataParser.h */,
+			);
+			path = parsers;
+			sourceTree = "<group>";
+		};
+		DE36EE351B25955D005B744E /* renderer */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE361B25955D005B744E /* cocos2d-x-3.x */,
+			);
+			path = renderer;
+			sourceTree = "<group>";
+		};
+		DE36EE361B25955D005B744E /* cocos2d-x-3.x */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE391B25955D005B744E /* DBCCArmature.cpp */,
+				DE36EE3A1B25955D005B744E /* DBCCArmature.h */,
+				DE36EE3B1B25955D005B744E /* DBCCArmatureNode.cpp */,
+				DE36EE3C1B25955D005B744E /* DBCCArmatureNode.h */,
+				DE36EE3D1B25955D005B744E /* DBCCEventDispatcher.h */,
+				DE36EE3E1B25955D005B744E /* DBCCFactory.cpp */,
+				DE36EE3F1B25955D005B744E /* DBCCFactory.h */,
+				DE36EE401B25955D005B744E /* dbccMacro.h */,
+				DE36EE411B25955D005B744E /* DBCCRenderHeaders.h */,
+				DE36EE421B25955D005B744E /* DBCCSlot.cpp */,
+				DE36EE431B25955D005B744E /* DBCCSlot.h */,
+				DE36EE441B25955D005B744E /* DBCCTextureAtlas.h */,
+				DE36EE471B25955D005B744E /* DragonBonesHelper.cpp */,
+				DE36EE481B25955D005B744E /* DragonBonesHelper.h */,
+			);
+			path = "cocos2d-x-3.x";
+			sourceTree = "<group>";
+		};
+		DE36EE4E1B25955D005B744E /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE4F1B25955D005B744E /* ITextureAtlas.h */,
+				DE36EE501B25955D005B744E /* TextureAtlasData.h */,
+				DE36EE511B25955D005B744E /* TextureData.h */,
+			);
+			path = textures;
+			sourceTree = "<group>";
+		};
+		DE36EE521B25955D005B744E /* jsb */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EE581B25955D005B744E /* jsb_bindings_auto.cpp */,
+				DE36EE591B25955D005B744E /* jsb_bindings_auto.hpp */,
+				DE36EE5A1B25955D005B744E /* jsb_bindings_manual.cpp */,
+				DE36EE5B1B25955D005B744E /* jsb_bindings_manual.h */,
+				DE36EE5C1B25955D005B744E /* jsb_dragonbones_auto.cpp */,
+				DE36EE5D1B25955D005B744E /* jsb_dragonbones_auto.hpp */,
+				DE36EE5E1B25955D005B744E /* jsb_levelhelper_auto.cpp */,
+				DE36EE5F1B25955D005B744E /* jsb_levelhelper_auto.hpp */,
+			);
+			name = jsb;
+			path = ../../../Classes/jsb;
+			sourceTree = "<group>";
+		};
+		DE36EEE81B25955E005B744E /* playMP4 */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EEE91B25955E005B744E /* LHVideoOverlayView.h */,
+				DE36EEEA1B25955E005B744E /* LHVideoOverlayView.m */,
+				DE36EEEB1B25955E005B744E /* LHVideoPlayer.h */,
+				DE36EEEC1B25955E005B744E /* LHVideoPlayer.m */,
+				DE36EEED1B25955E005B744E /* LHVideoPlayerImpl.h */,
+				DE36EEEE1B25955E005B744E /* LHVideoPlayerImpl.m */,
+				DE36EEEF1B25955E005B744E /* LHVideoPlayerImplCpp.h */,
+				DE36EEF01B25955E005B744E /* LHVideoPlayerImplCpp.mm */,
+			);
+			name = playMP4;
+			path = ../../../Classes/playMP4;
+			sourceTree = "<group>";
+		};
+		DE36EEF11B25955E005B744E /* sdk */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EEF21B25955E005B744E /* SdkManager.cpp */,
+				DE36EEF31B25955E005B744E /* SdkManager.h */,
+			);
+			name = sdk;
+			path = ../../../Classes/sdk;
+			sourceTree = "<group>";
+		};
+		DE36EEF61B25955E005B744E /* SneakyInput */ = {
+			isa = PBXGroup;
+			children = (
+				DE36EEF71B25955E005B744E /* SneakInputHeaders.h */,
+				DE36EEF81B25955E005B744E /* SneakyButton.cpp */,
+				DE36EEF91B25955E005B744E /* SneakyButton.h */,
+				DE36EEFA1B25955E005B744E /* SneakyButtonSkinnedBase.cpp */,
+				DE36EEFB1B25955E005B744E /* SneakyButtonSkinnedBase.h */,
+				DE36EEFC1B25955E005B744E /* SneakyJoystick.cpp */,
+				DE36EEFD1B25955E005B744E /* SneakyJoystick.h */,
+				DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */,
+				DE36EEFF1B25955E005B744E /* SneakyJoystickSkinnedBase.h */,
+			);
+			name = SneakyInput;
+			path = ../../../Classes/SneakyInput;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -735,9 +1071,6 @@
 			dependencies = (
 				C037820E18BF77D100FE4F13 /* PBXTargetDependency */,
 				1A676820180E9BF70076BC67 /* PBXTargetDependency */,
-				1A676822180E9BF70076BC67 /* PBXTargetDependency */,
-				1A676824180E9BF70076BC67 /* PBXTargetDependency */,
-				1A676826180E9BF70076BC67 /* PBXTargetDependency */,
 			);
 			name = "fate Mac";
 			productName = fate;
@@ -758,9 +1091,6 @@
 			dependencies = (
 				C037820B18BF77BC00FE4F13 /* PBXTargetDependency */,
 				1A67682F180E9C110076BC67 /* PBXTargetDependency */,
-				1A676831180E9C110076BC67 /* PBXTargetDependency */,
-				1A676833180E9C110076BC67 /* PBXTargetDependency */,
-				1A676835180E9C110076BC67 /* PBXTargetDependency */,
 			);
 			name = "fate iOS";
 			productName = fate;
@@ -799,6 +1129,10 @@
 					ProductGroup = 1AC6FB35180E9ACB004C840B /* Products */;
 					ProjectRef = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
 				},
+				{
+					ProductGroup = DE36EDEA1B258A0E005B744E /* Products */;
+					ProjectRef = DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -809,74 +1143,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1AC6FB48180E9ACB004C840B /* libcocos2dx Mac.a */ = {
+		1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libcocos2dx Mac.a";
+			path = "libcocos2d Mac.a";
 			remoteRef = 1AC6FB47180E9ACB004C840B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1AC6FB4A180E9ACB004C840B /* libcocos2dx-extensions Mac.a */ = {
+		1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libcocos2dx-extensions Mac.a";
-			remoteRef = 1AC6FB49180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB4C180E9ACB004C840B /* libchipmunk Mac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libchipmunk Mac.a";
-			remoteRef = 1AC6FB4B180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB4E180E9ACB004C840B /* libbox2d Mac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libbox2d Mac.a";
-			remoteRef = 1AC6FB4D180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB50180E9ACB004C840B /* libCocosDenshion Mac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libCocosDenshion Mac.a";
-			remoteRef = 1AC6FB4F180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB56180E9ACB004C840B /* libcocos2dx iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libcocos2dx iOS.a";
+			path = "libcocos2d iOS.a";
 			remoteRef = 1AC6FB55180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB58180E9ACB004C840B /* libcocos2dx-extensions iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libcocos2dx-extensions iOS.a";
-			remoteRef = 1AC6FB57180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB5A180E9ACB004C840B /* libchipmunk iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libchipmunk iOS.a";
-			remoteRef = 1AC6FB59180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB5C180E9ACB004C840B /* libbox2d iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libbox2d iOS.a";
-			remoteRef = 1AC6FB5B180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB5E180E9ACB004C840B /* libCocosDenshion iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libCocosDenshion iOS.a";
-			remoteRef = 1AC6FB5D180E9ACB004C840B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C037820718BF76AF00FE4F13 /* libjsbindings Mac.a */ = {
@@ -891,6 +1169,27 @@
 			fileType = archive.ar;
 			path = "libjsbindings iOS.a";
 			remoteRef = C037820818BF76AF00FE4F13 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DE36EDF01B258A0F005B744E /* libLevelHelper2-API.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libLevelHelper2-API.a";
+			remoteRef = DE36EDEF1B258A0F005B744E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DE36EDF21B258A0F005B744E /* libLevelHelper2-API+Box2d.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libLevelHelper2-API+Box2d.a";
+			remoteRef = DE36EDF11B258A0F005B744E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DE36EDF41B258A0F005B744E /* libLevelHelper2-API+Box2d-OSX.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libLevelHelper2-API+Box2d-OSX.a";
+			remoteRef = DE36EDF31B258A0F005B744E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -965,32 +1264,66 @@
 			files = (
 				3E12D1E61957FB18002FF0FD /* common.cc in Sources */,
 				3E12D1E81957FB18002FF0FD /* once.cc in Sources */,
+				DE36EFC71B25955E005B744E /* LHVideoPlayerImpl.m in Sources */,
 				3E12D1E01957FB18002FF0FD /* message_lite.cc in Sources */,
+				DE36EFCD1B25955E005B744E /* ShakeAction.cpp in Sources */,
+				DE36EFD51B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */,
 				3E12D1D61957FB18002FF0FD /* extension_set.cc in Sources */,
+				DE36EF231B25955E005B744E /* DBCCFactory.cpp in Sources */,
+				DE36EF031B25955E005B744E /* AnimationState.cpp in Sources */,
+				DE36EF3D1B25955E005B744E /* jsb_bindings_manual.cpp in Sources */,
 				C00FD4B51938628E00C6382D /* PlayDisable_png.cpp in Sources */,
 				AB9079D519E931D80033128B /* ConsoleCommand.cpp in Sources */,
+				DE36EFC31B25955E005B744E /* LHVideoOverlayView.m in Sources */,
 				3E12D1EA1957FB18002FF0FD /* stringprintf.cc in Sources */,
+				DE36EF251B25955E005B744E /* DBCCSlot.cpp in Sources */,
+				DE36EF431B25955E005B744E /* JsonStorage.cpp in Sources */,
+				DE36EF211B25955E005B744E /* DBCCArmatureNode.cpp in Sources */,
 				C06C37891918E81100617BED /* ConfigParser.cpp in Sources */,
 				509D4A8117EBB24E00697056 /* AppDelegate.cpp in Sources */,
 				C00FD4B71938628E00C6382D /* PlayEnable_png.cpp in Sources */,
 				C00FD4B91938628E00C6382D /* Portrait_png.cpp in Sources */,
+				DE36EF151B25955E005B744E /* BaseDataParser.cpp in Sources */,
 				C00FD4BD1938628E00C6382D /* Shine_png.cpp in Sources */,
 				C0C2F37418AA0C66003976DA /* SimulatorApp.mm in Sources */,
 				C026DCCA18928A2400B3EDE8 /* Runtime_ios-mac.mm in Sources */,
+				DE36EF0B1B25955E005B744E /* Bone.cpp in Sources */,
 				3E12D1DC1957FB18002FF0FD /* zero_copy_stream.cc in Sources */,
+				DE36EF1B1B25955E005B744E /* XMLDataParser.cpp in Sources */,
 				ABCA93C819E65B1C007FB844 /* FileServer.cpp in Sources */,
+				DE36EF0D1B25955E005B744E /* Object.cpp in Sources */,
+				DE36EF3F1B25955E005B744E /* jsb_dragonbones_auto.cpp in Sources */,
 				3E12D1E41957FB18002FF0FD /* atomicops_internals_x86_msvc.cc in Sources */,
+				DE36EFC11B25955E005B744E /* PlayCG.cpp in Sources */,
+				DE36EF411B25955E005B744E /* jsb_levelhelper_auto.cpp in Sources */,
 				3E12D1DE1957FB18002FF0FD /* zero_copy_stream_impl_lite.cc in Sources */,
+				DE36EFC51B25955E005B744E /* LHVideoPlayer.m in Sources */,
+				DE36EF3B1B25955E005B744E /* jsb_bindings_auto.cpp in Sources */,
+				DE36EF071B25955E005B744E /* WorldClock.cpp in Sources */,
+				DE36EFCF1B25955E005B744E /* SneakyButton.cpp in Sources */,
 				3E12D1AA1957FB0E002FF0FD /* Protos.pb.cc in Sources */,
 				C033B525191B36AE00D06937 /* VisibleRect.cpp in Sources */,
+				DE36EFD31B25955E005B744E /* SneakyJoystick.cpp in Sources */,
+				DE36EF051B25955E005B744E /* TimelineState.cpp in Sources */,
+				DE36EFC91B25955E005B744E /* LHVideoPlayerImplCpp.mm in Sources */,
+				DE36EF1F1B25955E005B744E /* DBCCArmature.cpp in Sources */,
+				DE36EF131B25955E005B744E /* BaseFactory.cpp in Sources */,
 				ABCA93D019E6712A007FB844 /* ConnectWaitLayer.cpp in Sources */,
 				3E12D1E21957FB18002FF0FD /* repeated_field.cc in Sources */,
+				DE36EF291B25955E005B744E /* DragonBonesHelper.cpp in Sources */,
+				DE36EF111B25955E005B744E /* EventData.cpp in Sources */,
+				DE36EF191B25955E005B744E /* dbtinyxml2.cpp in Sources */,
+				DE36EF0F1B25955E005B744E /* Slot.cpp in Sources */,
 				3E12D1D81957FB18002FF0FD /* generated_message_util.cc in Sources */,
 				C00FD4BB1938628E00C6382D /* Runtime.cpp in Sources */,
 				3E12D1DA1957FB18002FF0FD /* coded_stream.cc in Sources */,
 				C03C8B4B18A770DD00723415 /* main.m in Sources */,
+				DE36EF011B25955E005B744E /* Animation.cpp in Sources */,
 				C00FD4B31938628E00C6382D /* Landscape_png.cpp in Sources */,
+				DE36EFD11B25955E005B744E /* SneakyButtonSkinnedBase.cpp in Sources */,
 				3E12D1EC1957FB18002FF0FD /* wire_format_lite.cc in Sources */,
+				DE36EF091B25955E005B744E /* Armature.cpp in Sources */,
+				DE36EF171B25955E005B744E /* ConstValues.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,31 +1333,65 @@
 			files = (
 				3E12D1E71957FB18002FF0FD /* once.cc in Sources */,
 				C00FD4B81938628E00C6382D /* Portrait_png.cpp in Sources */,
+				DE36EFC01B25955E005B744E /* PlayCG.cpp in Sources */,
 				509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */,
+				DE36EF061B25955E005B744E /* WorldClock.cpp in Sources */,
+				DE36EF0A1B25955E005B744E /* Bone.cpp in Sources */,
+				DE36EFD01B25955E005B744E /* SneakyButtonSkinnedBase.cpp in Sources */,
+				DE36EF141B25955E005B744E /* BaseDataParser.cpp in Sources */,
 				C00FD4B21938628E00C6382D /* Landscape_png.cpp in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
+				DE36EF281B25955E005B744E /* DragonBonesHelper.cpp in Sources */,
+				DE36EF081B25955E005B744E /* Armature.cpp in Sources */,
 				C00FD4BA1938628E00C6382D /* Runtime.cpp in Sources */,
+				DE36EFCE1B25955E005B744E /* SneakyButton.cpp in Sources */,
 				ABCA93C719E65B1C007FB844 /* FileServer.cpp in Sources */,
 				3E12D1DF1957FB18002FF0FD /* message_lite.cc in Sources */,
 				C06C37881918E81100617BED /* ConfigParser.cpp in Sources */,
+				DE36EFD21B25955E005B744E /* SneakyJoystick.cpp in Sources */,
+				DE36EF121B25955E005B744E /* BaseFactory.cpp in Sources */,
 				3E12D1DD1957FB18002FF0FD /* zero_copy_stream_impl_lite.cc in Sources */,
 				C00FD4B61938628E00C6382D /* PlayEnable_png.cpp in Sources */,
 				3E12D1A91957FB0E002FF0FD /* Protos.pb.cc in Sources */,
+				DE36EFD41B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */,
+				DE36EF201B25955E005B744E /* DBCCArmatureNode.cpp in Sources */,
+				DE36EF421B25955E005B744E /* JsonStorage.cpp in Sources */,
 				3E12D1E31957FB18002FF0FD /* atomicops_internals_x86_msvc.cc in Sources */,
 				3E12D1E11957FB18002FF0FD /* repeated_field.cc in Sources */,
+				DE36EF001B25955E005B744E /* Animation.cpp in Sources */,
+				DE36EF3A1B25955E005B744E /* jsb_bindings_auto.cpp in Sources */,
+				DE36EFCC1B25955E005B744E /* ShakeAction.cpp in Sources */,
 				C00FD4B41938628E00C6382D /* PlayDisable_png.cpp in Sources */,
 				ABCA93CF19E6712A007FB844 /* ConnectWaitLayer.cpp in Sources */,
 				C00FD4BC1938628E00C6382D /* Shine_png.cpp in Sources */,
 				3E12D1EB1957FB18002FF0FD /* wire_format_lite.cc in Sources */,
+				DE36EF1A1B25955E005B744E /* XMLDataParser.cpp in Sources */,
+				DE36EF021B25955E005B744E /* AnimationState.cpp in Sources */,
+				DE36EF0E1B25955E005B744E /* Slot.cpp in Sources */,
+				DE36EF161B25955E005B744E /* ConstValues.cpp in Sources */,
+				DE36EF401B25955E005B744E /* jsb_levelhelper_auto.cpp in Sources */,
 				3E12D1D51957FB18002FF0FD /* extension_set.cc in Sources */,
+				DE36EF181B25955E005B744E /* dbtinyxml2.cpp in Sources */,
+				DE36EFC61B25955E005B744E /* LHVideoPlayerImpl.m in Sources */,
+				DE36EFC21B25955E005B744E /* LHVideoOverlayView.m in Sources */,
+				DE36EF1E1B25955E005B744E /* DBCCArmature.cpp in Sources */,
+				DE36EF221B25955E005B744E /* DBCCFactory.cpp in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
 				3E12D1E91957FB18002FF0FD /* stringprintf.cc in Sources */,
+				DE36EF0C1B25955E005B744E /* Object.cpp in Sources */,
 				3E12D1E51957FB18002FF0FD /* common.cc in Sources */,
 				C033B524191B36AE00D06937 /* VisibleRect.cpp in Sources */,
+				DE36EFC81B25955E005B744E /* LHVideoPlayerImplCpp.mm in Sources */,
 				3E12D1D71957FB18002FF0FD /* generated_message_util.cc in Sources */,
+				DE36EF041B25955E005B744E /* TimelineState.cpp in Sources */,
+				DE36EF101B25955E005B744E /* EventData.cpp in Sources */,
+				DE36EF3C1B25955E005B744E /* jsb_bindings_manual.cpp in Sources */,
+				DE36EF241B25955E005B744E /* DBCCSlot.cpp in Sources */,
+				DE36EF3E1B25955E005B744E /* jsb_dragonbones_auto.cpp in Sources */,
 				3E12D1DB1957FB18002FF0FD /* zero_copy_stream.cc in Sources */,
 				3E12D1D91957FB18002FF0FD /* coded_stream.cc in Sources */,
 				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,
+				DE36EFC41B25955E005B744E /* LHVideoPlayer.m in Sources */,
 				C026DCC918928A2400B3EDE8 /* Runtime_ios-mac.mm in Sources */,
 				AB9079D419E931D80033128B /* ConsoleCommand.cpp in Sources */,
 			);
@@ -1038,40 +1405,10 @@
 			name = "cocos2dx Mac";
 			targetProxy = 1A67681F180E9BF70076BC67 /* PBXContainerItemProxy */;
 		};
-		1A676822180E9BF70076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "cocos2dx-extensions Mac";
-			targetProxy = 1A676821180E9BF70076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676824180E9BF70076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "chipmunk Mac";
-			targetProxy = 1A676823180E9BF70076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676826180E9BF70076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "CocosDenshion Mac";
-			targetProxy = 1A676825180E9BF70076BC67 /* PBXContainerItemProxy */;
-		};
 		1A67682F180E9C110076BC67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "cocos2dx iOS";
 			targetProxy = 1A67682E180E9C110076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676831180E9C110076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "cocos2dx-extensions iOS";
-			targetProxy = 1A676830180E9C110076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676833180E9C110076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "chipmunk iOS";
-			targetProxy = 1A676832180E9C110076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676835180E9C110076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "CocosDenshion iOS";
-			targetProxy = 1A676834180E9C110076BC67 /* PBXContainerItemProxy */;
 		};
 		C037820B18BF77BC00FE4F13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1160,7 +1497,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../js-bindings/cocos2d-x $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/base $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/physics $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/math/kazmath $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/2d $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/gui $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/network $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/audio/include $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/editor-support $(SRCROOT)/../../js-bindings/cocos2d-x/extensions $(SRCROOT)/../../js-bindings/cocos2d-x/external $(SRCROOT)/../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk $(SRCROOT)/../../js-bindings/bindings/auto $(SRCROOT)/../../js-bindings/bindings/manual";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../js-bindings/cocos2d-x $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/base $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/physics $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/math/kazmath $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/2d $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/gui $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/network $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/audio/include $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/editor-support $(SRCROOT)/../../js-bindings/cocos2d-x/extensions $(SRCROOT)/../../js-bindings/cocos2d-x/external $(SRCROOT)/../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk $(SRCROOT)/../../js-bindings/bindings/auto $(SRCROOT)/../../js-bindings/bindings/manual $(SRCROOT)/../../../Classes $(SRCROOT)/../../../Classes/LevelHelper2/LevelHelper2-API $(SRCROOT)/../../../Classes/dragonbones";
 			};
 			name = Debug;
 		};
@@ -1182,7 +1519,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../js-bindings/cocos2d-x $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/base $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/physics $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/math/kazmath $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/2d $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/gui $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/network $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/audio/include $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/editor-support $(SRCROOT)/../../js-bindings/cocos2d-x/extensions $(SRCROOT)/../../js-bindings/cocos2d-x/external $(SRCROOT)/../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk $(SRCROOT)/../../js-bindings/bindings/auto $(SRCROOT)/../../js-bindings/bindings/manual";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../js-bindings/cocos2d-x $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/base $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/physics $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/math/kazmath $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/2d $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/gui $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/network $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/audio/include $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/editor-support $(SRCROOT)/../../js-bindings/cocos2d-x/extensions $(SRCROOT)/../../js-bindings/cocos2d-x/external $(SRCROOT)/../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk $(SRCROOT)/../../js-bindings/bindings/auto $(SRCROOT)/../../js-bindings/bindings/manual $(SRCROOT)/../../../Classes $(SRCROOT)/../../../Classes/LevelHelper2/LevelHelper2-API $(SRCROOT)/../../../Classes/dragonbones";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1191,7 +1528,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiao yu (HSQ55LGA2U)";
 				COMPRESS_PNG_FILES = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1206,6 +1543,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
+				PROVISIONING_PROFILE = "d41aab12-ac52-4689-acd7-3c28ebe74df5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
@@ -1217,7 +1555,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: xiao yu (MUAKLX4S2T)";
 				COMPRESS_PNG_FILES = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1232,6 +1570,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
+				PROVISIONING_PROFILE = "e447c56d-5d00-4ddc-8fb3-829f1d9a7929";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
