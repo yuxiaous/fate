@@ -1,0 +1,317 @@
+{
+  "ID": "3b993eb8-959e-4174-90f5-59e7c1c58258",
+  "Version": "2.2.9.0",
+  "Name": "qianghua_zhuangbei",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 254,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_15.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 20,
+            "Scale9OriginY": 20,
+            "Scale9Width": 10,
+            "Scale9Height": 10,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0169,
+              "Y": 1.1563
+            },
+            "Tag": 128,
+            "ActionTag": 675891852,
+            "Size": {
+              "X": 300.0,
+              "Y": 74.0
+            },
+            "Name": "img_selected",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": -20,
+            "Scale9OriginY": -20,
+            "Scale9Width": 40,
+            "Scale9Height": 40,
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 310,
+            "ActionTag": 364050813,
+            "Size": {
+              "X": 300.0,
+              "Y": 74.0
+            },
+            "Name": "btn_enter",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/beibao_gezi.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": -4.0,
+              "Y": -4.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": -0.0133,
+              "Y": -0.0541
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -4.0,
+            "RightMargin": 222.0,
+            "TopMargin": -4.0,
+            "BottomMargin": -4.0,
+            "Tag": 154,
+            "ActionTag": -1458327910,
+            "Size": {
+              "X": 82.0,
+              "Y": 82.0
+            },
+            "Name": "ProjectNode_icon",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_26.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 20,
+            "Scale9Width": 10,
+            "Scale9Height": 64,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 74.0,
+              "Y": 37.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2467,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.74,
+              "Y": 0.8649
+            },
+            "LeftMargin": 74.0,
+            "RightMargin": 4.0,
+            "TopMargin": 5.0,
+            "BottomMargin": 5.0,
+            "Tag": 258,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 22,
+                "LabelText": "这是装备",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0,
+                "ShadowOffsetY": 0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 111.0,
+                  "Y": 50.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 20,
+                  "G": 230,
+                  "B": 23
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.7813
+                },
+                "PreSize": {
+                  "X": 0.6757,
+                  "Y": 0.4063
+                },
+                "LeftMargin": 36.0,
+                "RightMargin": 36.0,
+                "TopMargin": 1.0,
+                "BottomMargin": 37.0,
+                "Tag": 259,
+                "ActionTag": 1819094011,
+                "Size": {
+                  "X": 150.0,
+                  "Y": 26.0
+                },
+                "Name": "lbl_zhuangbei",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 18,
+                "LabelText": "等级：{0}",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0,
+                "ShadowOffsetY": 0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 111.0,
+                  "Y": 20.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.3125
+                },
+                "PreSize": {
+                  "X": 0.7658,
+                  "Y": 0.4063
+                },
+                "LeftMargin": 26.0,
+                "RightMargin": 26.0,
+                "TopMargin": 31.0,
+                "BottomMargin": 7.0,
+                "Tag": 260,
+                "ActionTag": 998464936,
+                "Size": {
+                  "X": 170.0,
+                  "Y": 26.0
+                },
+                "Name": "lbl_level",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -1329837317,
+            "Size": {
+              "X": 222.0,
+              "Y": 64.0
+            },
+            "Name": "img_dise",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 300.0,
+          "Y": 74.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

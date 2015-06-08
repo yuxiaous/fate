@@ -1,0 +1,268 @@
+{
+  "ID": "c56596ea-4b80-4598-94a6-89b9cf0b9bc5",
+  "Version": "2.2.9.0",
+  "Name": "begin",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 94,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/begin/back.png",
+              "Plist": ""
+            },
+            "Scale9Width": 1136,
+            "Scale9Height": 640,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Tag": 95,
+            "ActionTag": -372549078,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "Name": "img_back",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/defaultParticle.plist",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 775,
+              "Dst": 1
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 438.4662,
+              "Y": 556.2737
+            },
+            "Scale": {
+              "ScaleX": 1.5132,
+              "ScaleY": 1.3421
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.386,
+              "Y": 0.8692
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 438.4662,
+            "RightMargin": 697.5338,
+            "TopMargin": 83.7263,
+            "BottomMargin": 556.2737,
+            "Tag": 98,
+            "ActionTag": 833691520,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "Particle_1",
+            "ctype": "ParticleObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/begin/logo.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.2802
+            },
+            "Position": {
+              "X": 802.5,
+              "Y": 412.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7064,
+              "Y": 0.6438
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 675.009,
+            "RightMargin": 5.991,
+            "TopMargin": 15.0,
+            "BottomMargin": 412.0,
+            "Tag": 125,
+            "ActionTag": 810824774,
+            "Size": {
+              "X": 455.0,
+              "Y": 213.0
+            },
+            "Name": "Sprite_logo",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_41.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 83.4267
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.1304
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 390.5,
+            "RightMargin": 390.5,
+            "TopMargin": 521.5733,
+            "BottomMargin": 48.4267,
+            "Tag": 126,
+            "ActionTag": 899594061,
+            "Size": {
+              "X": 355.0,
+              "Y": 70.0
+            },
+            "Name": "Sprite_diwen",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 22,
+            "ButtonText": "",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_51.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_50.png",
+              "Plist": ""
+            },
+            "Scale9Width": 243,
+            "Scale9Height": 48,
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 85.596
+            },
+            "Scale": {
+              "ScaleX": 1.7071,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.1337
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 494.5,
+            "RightMargin": 494.5,
+            "TopMargin": 526.404,
+            "BottomMargin": 57.596,
+            "Tag": 96,
+            "ActionTag": 722048707,
+            "Size": {
+              "X": 147.0,
+              "Y": 56.0
+            },
+            "Name": "btn_juqing",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

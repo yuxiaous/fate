@@ -1,0 +1,323 @@
+{
+  "ID": "c775a735-9220-4664-aa1e-a7f70f4deec1",
+  "Version": "2.2.1.0",
+  "Name": "map_widget2",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 237,
+        "PrePosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "PreSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "RightMargin": -1800.0,
+        "TopMargin": -400.0,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/maps/battle4.hero.jpg"
+            },
+            "Scale9Width": 960,
+            "Scale9Height": 640,
+            "Tag": 242,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "ActionTag": 1279666599,
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 1800.0,
+              "Y": 400.0
+            },
+            "FrameEvent": "",
+            "Name": "img_bg",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/map_stage.json"
+            },
+            "InnerActionSpeed": 1.0,
+            "Tag": 311,
+            "PrePosition": {
+              "X": 0.0801,
+              "Y": 0.3764
+            },
+            "PreSize": {
+              "X": 0.1111,
+              "Y": 0.25
+            },
+            "LeftMargin": 144.1102,
+            "RightMargin": 1455.88977,
+            "TopMargin": 149.4455,
+            "BottomMargin": 150.5545,
+            "ActionTag": 178636586,
+            "Position": {
+              "X": 144.1102,
+              "Y": 150.5545
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 200.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "ProjectNode_1",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/map_stage.json"
+            },
+            "InnerActionSpeed": 1.0,
+            "Tag": 317,
+            "PrePosition": {
+              "X": 0.2238,
+              "Y": 0.4128
+            },
+            "PreSize": {
+              "X": 0.1111,
+              "Y": 0.25
+            },
+            "LeftMargin": 402.8772,
+            "RightMargin": 1197.1228,
+            "TopMargin": 134.8868,
+            "BottomMargin": 165.1132,
+            "ActionTag": -593483839,
+            "Position": {
+              "X": 402.8772,
+              "Y": 165.1132
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 200.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "ProjectNode_2",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/map_stage.json"
+            },
+            "InnerActionSpeed": 1.0,
+            "Tag": 323,
+            "PrePosition": {
+              "X": 0.377,
+              "Y": 0.4146
+            },
+            "PreSize": {
+              "X": 0.1111,
+              "Y": 0.25
+            },
+            "LeftMargin": 678.5226,
+            "RightMargin": 921.4774,
+            "TopMargin": 134.1751,
+            "BottomMargin": 165.8249,
+            "ActionTag": 1230025995,
+            "Position": {
+              "X": 678.5226,
+              "Y": 165.8249
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 200.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "ProjectNode_3",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/map_stage.json"
+            },
+            "InnerActionSpeed": 1.0,
+            "Tag": 329,
+            "PrePosition": {
+              "X": 0.5213,
+              "Y": 0.4328
+            },
+            "PreSize": {
+              "X": 0.1111,
+              "Y": 0.25
+            },
+            "LeftMargin": 938.2588,
+            "RightMargin": 661.7412,
+            "TopMargin": 126.864,
+            "BottomMargin": 173.136,
+            "ActionTag": -2131636061,
+            "Position": {
+              "X": 938.2588,
+              "Y": 173.136
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 200.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "ProjectNode_4",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/map_stage.json"
+            },
+            "InnerActionSpeed": 1.0,
+            "Tag": 335,
+            "PrePosition": {
+              "X": 0.6755,
+              "Y": 0.3716
+            },
+            "PreSize": {
+              "X": 0.1111,
+              "Y": 0.25
+            },
+            "LeftMargin": 1215.94312,
+            "RightMargin": 384.0569,
+            "TopMargin": 151.3543,
+            "BottomMargin": 148.6457,
+            "ActionTag": -1075722307,
+            "Position": {
+              "X": 1215.94312,
+              "Y": 148.6457
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 200.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "ProjectNode_5",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/map_stage.json"
+            },
+            "InnerActionSpeed": 1.0,
+            "Tag": 341,
+            "PrePosition": {
+              "X": 0.8235,
+              "Y": 0.3532
+            },
+            "PreSize": {
+              "X": 0.1111,
+              "Y": 0.25
+            },
+            "LeftMargin": 1482.36108,
+            "RightMargin": 117.6389,
+            "TopMargin": 158.7146,
+            "BottomMargin": 141.2854,
+            "ActionTag": -389194535,
+            "Position": {
+              "X": 1482.36108,
+              "Y": 141.2854
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 200.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "ProjectNode_6",
+            "ctype": "ProjectNodeObjectData"
+          }
+        ],
+        "Position": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Scale": {
+          "ScaleX": 1.0,
+          "ScaleY": 1.0
+        },
+        "AnchorPoint": {},
+        "CColor": {},
+        "Size": {
+          "X": 1800.0,
+          "Y": 400.0
+        },
+        "FrameEvent": "",
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    },
+    "CameraPosition": {
+      "ValueX": 0.0,
+      "ValueY": 5.0,
+      "ValueZ": -1.0
+    },
+    "CameraRotation": {
+      "ValueX": 0.0,
+      "ValueY": 0.0,
+      "ValueZ": 0.0
+    }
+  },
+  "Type": "Layer"
+}

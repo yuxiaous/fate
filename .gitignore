@@ -6,7 +6,10 @@ xcshareddata
 simple_test_bindings
 userconf.ini
 
+Simulator
+jsb.sqlite
 
+# Win32
 Debug.win32
 *.sdf
 *.suo

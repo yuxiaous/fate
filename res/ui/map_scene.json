@@ -1,0 +1,1316 @@
+{
+  "ID": "e1cd0f4f-f2b0-4c39-988e-53a9356f5e99",
+  "Version": "2.2.9.0",
+  "Name": "map_scene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 294,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/beijing01.png",
+              "Plist": ""
+            },
+            "Scale9Width": 641,
+            "Scale9Height": 408,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 152,
+            "ActionTag": -1243510340,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "Name": "img_back",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "InnerNodeSize": {
+              "Width": 1136,
+              "Height": 400
+            },
+            "ScrollDirectionType": "Horizontal",
+            "ClipAble": true,
+            "BackColorAlpha": 102,
+            "SingleColor": {
+              "G": 150,
+              "B": 100
+            },
+            "FirstColor": {
+              "G": 150,
+              "B": 100
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 120.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.1875
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 0.625
+            },
+            "TopMargin": 120.0,
+            "BottomMargin": 120.0,
+            "Tag": 296,
+            "ActionTag": -1090597575,
+            "Size": {
+              "X": 1136.0,
+              "Y": 400.0
+            },
+            "Name": "scroll_map",
+            "ctype": "ScrollViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_03.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 25,
+            "Scale9Width": 2,
+            "Scale9Height": 51,
+            "AnchorPoint": {
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 12.0,
+              "Y": 520.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0106,
+              "Y": 0.8125
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 12.0,
+            "RightMargin": 754.0,
+            "TopMargin": 120.0,
+            "BottomMargin": 469.0,
+            "Tag": 99,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 28,
+                "LabelText": "第一章：英雄远征",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0,
+                "ShadowOffsetY": 0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 185.0,
+                  "Y": 25.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.4902
+                },
+                "PreSize": {
+                  "X": 0.6216,
+                  "Y": 0.7843
+                },
+                "LeftMargin": 70.0,
+                "RightMargin": 70.0,
+                "TopMargin": 6.0,
+                "BottomMargin": 5.0,
+                "Tag": 336,
+                "ActionTag": -1255571349,
+                "Size": {
+                  "X": 230.0,
+                  "Y": 40.0
+                },
+                "Name": "lbl_chapter",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_11.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_10.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_09.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9Width": 64,
+                "Scale9Height": 44,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0,
+                "ShadowOffsetY": 0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 35.0,
+                  "Y": 25.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0946,
+                  "Y": 0.4902
+                },
+                "PreSize": {
+                  "X": 0.0563,
+                  "Y": 0.0688
+                },
+                "LeftMargin": 3.0,
+                "RightMargin": 303.0,
+                "TopMargin": 4.0,
+                "BottomMargin": 3.0,
+                "Tag": 437,
+                "ActionTag": -1123491059,
+                "Size": {
+                  "X": 64.0,
+                  "Y": 44.0
+                },
+                "Name": "btn_pre",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FlipX": true,
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_11.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_10.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_09.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9Width": 64,
+                "Scale9Height": 44,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0,
+                "ShadowOffsetY": 0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 335.0,
+                  "Y": 25.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9054,
+                  "Y": 0.4902
+                },
+                "PreSize": {
+                  "X": 0.0563,
+                  "Y": 0.0688
+                },
+                "LeftMargin": 303.0,
+                "RightMargin": 3.0,
+                "TopMargin": 4.0,
+                "BottomMargin": 3.0,
+                "Tag": 438,
+                "ActionTag": -593385837,
+                "Size": {
+                  "X": 64.0,
+                  "Y": 44.0
+                },
+                "Name": "btn_next",
+                "ctype": "ButtonObjectData"
+              }
+            ],
+            "ActionTag": -1598176158,
+            "Size": {
+              "X": 370.0,
+              "Y": 51.0
+            },
+            "Name": "img_chapter",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "BackColorAlpha": 102,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 337,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_06.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_06.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_05.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 57,
+                "Scale9Height": 57,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0,
+                "ShadowOffsetY": 0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 970.0004,
+                  "Y": 600.0002
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8539,
+                  "Y": 0.9375
+                },
+                "PreSize": {
+                  "X": 0.0502,
+                  "Y": 0.0891
+                },
+                "LeftMargin": 941.5004,
+                "RightMargin": 137.4996,
+                "TopMargin": 11.4998,
+                "BottomMargin": 571.5002,
+                "Tag": 50,
+                "ActionTag": -1884976820,
+                "Size": {
+                  "X": 57.0,
+                  "Y": 57.0
+                },
+                "Name": "btn_setting",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 48,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_08.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_08.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_07.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 93,
+                "Scale9Height": 95,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0,
+                "ShadowOffsetY": 0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1076.0,
+                  "Y": 580.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9472,
+                  "Y": 0.9063
+                },
+                "PreSize": {
+                  "X": 0.0819,
+                  "Y": 0.1484
+                },
+                "LeftMargin": 1029.5,
+                "RightMargin": 13.5,
+                "TopMargin": 12.5,
+                "BottomMargin": 532.5,
+                "Tag": 338,
+                "ActionTag": -1800181894,
+                "Size": {
+                  "X": 93.0,
+                  "Y": 95.0
+                },
+                "Name": "btn_back",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_17.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_16.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_15.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9Width": 135,
+                "Scale9Height": 63,
+                "OutlineSize": 0,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 0,
+                "ShadowOffsetY": 0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 1047.5461,
+                  "Y": 487.1371
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9221,
+                  "Y": 0.7612
+                },
+                "PreSize": {
+                  "X": 0.1188,
+                  "Y": 0.0984
+                },
+                "LeftMargin": 980.0461,
+                "RightMargin": 20.9539,
+                "TopMargin": 121.3629,
+                "BottomMargin": 455.6371,
+                "Tag": 49,
+                "ActionTag": -426224424,
+                "Size": {
+                  "X": 135.0,
+                  "Y": 63.0
+                },
+                "Name": "btn_first_charge",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "ui/panel_header.json",
+                  "Plist": ""
+                },
+                "InnerActionSpeed": 1.0,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 12.0,
+                  "Y": 620.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0106,
+                  "Y": 0.9688
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 12.0,
+                "RightMargin": 1124.0,
+                "TopMargin": 20.0,
+                "BottomMargin": 620.0,
+                "Tag": 1147,
+                "ActionTag": 475686498,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ProjectNode_header",
+                "ctype": "ProjectNodeObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "ui/panel_resource.json",
+                  "Plist": ""
+                },
+                "InnerActionSpeed": 1.0,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 290.0,
+                  "Y": 620.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.2553,
+                  "Y": 0.9688
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 290.0,
+                "RightMargin": 846.0,
+                "TopMargin": 20.0,
+                "BottomMargin": 620.0,
+                "Tag": 977,
+                "ActionTag": 1631786056,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ProjectNode_action",
+                "ctype": "ProjectNodeObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "ui/panel_resource.json",
+                  "Plist": ""
+                },
+                "InnerActionSpeed": 1.0,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 505.0,
+                  "Y": 620.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.4445,
+                  "Y": 0.9688
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 505.0,
+                "RightMargin": 631.0,
+                "TopMargin": 20.0,
+                "BottomMargin": 620.0,
+                "Tag": 984,
+                "ActionTag": 1098250797,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ProjectNode_gold",
+                "ctype": "ProjectNodeObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "ui/panel_resource.json",
+                  "Plist": ""
+                },
+                "InnerActionSpeed": 1.0,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 720.0,
+                  "Y": 620.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.6338,
+                  "Y": 0.9688
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 720.0,
+                "RightMargin": 416.0,
+                "TopMargin": 20.0,
+                "BottomMargin": 620.0,
+                "Tag": 991,
+                "ActionTag": 311574184,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ProjectNode_diamond",
+                "ctype": "ProjectNodeObjectData"
+              },
+              {
+                "BackColorAlpha": 127,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 0,
+                  "G": 0,
+                  "B": 0
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 0.1406
+                },
+                "TopMargin": 550.0,
+                "Tag": 100,
+                "Children": [
+                  {
+                    "FontSize": 48,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_19.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_19.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_18.png",
+                      "Plist": ""
+                    },
+                    "Scale9Width": 95,
+                    "Scale9Height": 95,
+                    "OutlineSize": 0,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 0,
+                    "ShadowOffsetY": 0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 710.0,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.625,
+                      "Y": 0.7222
+                    },
+                    "PreSize": {
+                      "X": 0.0836,
+                      "Y": 1.0556
+                    },
+                    "LeftMargin": 662.5,
+                    "RightMargin": 378.5,
+                    "TopMargin": -22.5,
+                    "BottomMargin": 17.5,
+                    "Tag": 361,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "images/ui/ui_79.png",
+                          "Plist": ""
+                        },
+                        "BlendFunc": {
+                          "Src": 1,
+                          "Dst": 771
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 80.0,
+                          "Y": 80.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.8421,
+                          "Y": 0.8421
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": 69.0,
+                        "RightMargin": 4.0,
+                        "TopMargin": 4.0,
+                        "BottomMargin": 69.0,
+                        "Tag": 143,
+                        "ActionTag": 256102634,
+                        "Size": {
+                          "X": 22.0,
+                          "Y": 22.0
+                        },
+                        "Name": "Sprite_red_role",
+                        "ctype": "SpriteObjectData"
+                      }
+                    ],
+                    "ActionTag": -1821710209,
+                    "Size": {
+                      "X": 95.0,
+                      "Y": 95.0
+                    },
+                    "Name": "btn_func_role",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 48,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_21.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_21.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_20.png",
+                      "Plist": ""
+                    },
+                    "Scale9Width": 95,
+                    "Scale9Height": 95,
+                    "OutlineSize": 0,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 0,
+                    "ShadowOffsetY": 0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 821.1661,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.7229,
+                      "Y": 0.7222
+                    },
+                    "PreSize": {
+                      "X": 0.0836,
+                      "Y": 1.0556
+                    },
+                    "LeftMargin": 773.6661,
+                    "RightMargin": 267.3339,
+                    "TopMargin": -22.5,
+                    "BottomMargin": 17.5,
+                    "Tag": 362,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "images/ui/ui_79.png",
+                          "Plist": ""
+                        },
+                        "BlendFunc": {
+                          "Src": 1,
+                          "Dst": 771
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 80.0,
+                          "Y": 80.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.8421,
+                          "Y": 0.8421
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": 69.0,
+                        "RightMargin": 4.0,
+                        "TopMargin": 4.0,
+                        "BottomMargin": 69.0,
+                        "Tag": 144,
+                        "ActionTag": -2091495189,
+                        "Size": {
+                          "X": 22.0,
+                          "Y": 22.0
+                        },
+                        "Name": "Sprite_red_streng",
+                        "ctype": "SpriteObjectData"
+                      }
+                    ],
+                    "ActionTag": -918723908,
+                    "Size": {
+                      "X": 95.0,
+                      "Y": 95.0
+                    },
+                    "Name": "btn_func_strengthen",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 48,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_23.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_23.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_22.png",
+                      "Plist": ""
+                    },
+                    "Scale9Width": 95,
+                    "Scale9Height": 95,
+                    "OutlineSize": 0,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 0,
+                    "ShadowOffsetY": 0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 932.3331,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.8207,
+                      "Y": 0.7222
+                    },
+                    "PreSize": {
+                      "X": 0.0836,
+                      "Y": 1.0556
+                    },
+                    "LeftMargin": 884.8331,
+                    "RightMargin": 156.1669,
+                    "TopMargin": -22.5,
+                    "BottomMargin": 17.5,
+                    "Tag": 363,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "images/ui/ui_79.png",
+                          "Plist": ""
+                        },
+                        "BlendFunc": {
+                          "Src": 1,
+                          "Dst": 771
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 80.0,
+                          "Y": 80.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.8421,
+                          "Y": 0.8421
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": 69.0,
+                        "RightMargin": 4.0,
+                        "TopMargin": 4.0,
+                        "BottomMargin": 69.0,
+                        "Tag": 145,
+                        "ActionTag": -718879881,
+                        "Size": {
+                          "X": 22.0,
+                          "Y": 22.0
+                        },
+                        "Name": "Sprite_red_skill",
+                        "ctype": "SpriteObjectData"
+                      }
+                    ],
+                    "ActionTag": -1979528035,
+                    "Size": {
+                      "X": 95.0,
+                      "Y": 95.0
+                    },
+                    "Name": "btn_func_skill",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "FontSize": 48,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_25.png",
+                      "Plist": ""
+                    },
+                    "PressedFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_25.png",
+                      "Plist": ""
+                    },
+                    "NormalFileData": {
+                      "Type": "Normal",
+                      "Path": "images/button/button_24.png",
+                      "Plist": ""
+                    },
+                    "Scale9Width": 95,
+                    "Scale9Height": 95,
+                    "OutlineSize": 0,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 0,
+                    "ShadowOffsetY": 0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 1044.9999,
+                      "Y": 65.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.9199,
+                      "Y": 0.7222
+                    },
+                    "PreSize": {
+                      "X": 0.0836,
+                      "Y": 1.0556
+                    },
+                    "LeftMargin": 997.4999,
+                    "RightMargin": 43.5001,
+                    "TopMargin": -22.5,
+                    "BottomMargin": 17.5,
+                    "Tag": 365,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "images/ui/ui_79.png",
+                          "Plist": ""
+                        },
+                        "BlendFunc": {
+                          "Src": 1,
+                          "Dst": 771
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 80.0,
+                          "Y": 80.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.8421,
+                          "Y": 0.8421
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "LeftMargin": 69.0,
+                        "RightMargin": 4.0,
+                        "TopMargin": 4.0,
+                        "BottomMargin": 69.0,
+                        "Tag": 146,
+                        "ActionTag": 1640999258,
+                        "Size": {
+                          "X": 22.0,
+                          "Y": 22.0
+                        },
+                        "Name": "Sprite_red_shop",
+                        "ctype": "SpriteObjectData"
+                      }
+                    ],
+                    "ActionTag": -1655718914,
+                    "Size": {
+                      "X": 95.0,
+                      "Y": 95.0
+                    },
+                    "Name": "btn_func_shop",
+                    "ctype": "ButtonObjectData"
+                  }
+                ],
+                "ActionTag": -354794303,
+                "Size": {
+                  "X": 1136.0,
+                  "Y": 90.0
+                },
+                "Name": "Panel_2",
+                "ctype": "PanelObjectData"
+              }
+            ],
+            "ActionTag": -661839077,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "Name": "Panel_ui",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

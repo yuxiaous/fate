@@ -1,0 +1,401 @@
+{
+  "ID": "78fddd8e-7482-4ef5-b627-bacb781f5176",
+  "Version": "2.2.9.0",
+  "Name": "TopLeft",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 3,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/zuoshangjiao/touxiangdi.png",
+              "Plist": ""
+            },
+            "Scale9Width": 264,
+            "Scale9Height": 34,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 233.5,
+              "Y": -60.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 101.5,
+            "RightMargin": -365.5,
+            "TopMargin": 43.5,
+            "BottomMargin": -77.5,
+            "Tag": 66,
+            "ActionTag": 963302492,
+            "Size": {
+              "X": 264.0,
+              "Y": 34.0
+            },
+            "Name": "img_heidi",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "ProgressInfo": 100,
+            "ImageFileData": {
+              "Type": "Normal",
+              "Path": "images/zuoshangjiao/hptiao.png",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 230.5,
+              "Y": -51.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 101.0,
+            "RightMargin": -360.0,
+            "TopMargin": 43.0,
+            "BottomMargin": -60.0,
+            "Tag": 69,
+            "ActionTag": 1343569972,
+            "Size": {
+              "X": 259.0,
+              "Y": 17.0
+            },
+            "Name": "loading_hp",
+            "ctype": "LoadingBarObjectData"
+          },
+          {
+            "ProgressInfo": 100,
+            "ImageFileData": {
+              "Type": "Normal",
+              "Path": "images/zuoshangjiao/mptiao.png",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 230.5,
+              "Y": -66.5
+            },
+            "Scale": {
+              "ScaleX": 0.9767,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 101.5,
+            "RightMargin": -359.5,
+            "TopMargin": 56.5,
+            "BottomMargin": -76.5,
+            "Tag": 70,
+            "ActionTag": -1592740237,
+            "Size": {
+              "X": 258.0,
+              "Y": 20.0
+            },
+            "Name": "loading_mp",
+            "ctype": "LoadingBarObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/zuoshangjiao/touxiang.png",
+              "Plist": ""
+            },
+            "Scale9Width": 369,
+            "Scale9Height": 125,
+            "AnchorPoint": {
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 5.0,
+              "Y": -5.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 5.0,
+            "RightMargin": -374.0,
+            "TopMargin": 5.0,
+            "BottomMargin": -130.0,
+            "Tag": 32,
+            "ActionTag": -1447385539,
+            "Size": {
+              "X": 369.0,
+              "Y": 125.0
+            },
+            "Name": "img_touxiang",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/zuoshangjiao/level.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 86.5053,
+              "Y": -91.2283
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 86.5053,
+            "RightMargin": -121.5053,
+            "TopMargin": 91.2283,
+            "BottomMargin": -126.2283,
+            "Tag": 29,
+            "ActionTag": -709618946,
+            "Size": {
+              "X": 35.0,
+              "Y": 35.0
+            },
+            "Name": "img_level",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "99",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 104.0,
+              "Y": -109.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 91.5,
+            "RightMargin": -116.5,
+            "TopMargin": 96.5,
+            "BottomMargin": -121.5,
+            "Tag": 30,
+            "ActionTag": -637348145,
+            "Size": {
+              "X": 25.0,
+              "Y": 25.0
+            },
+            "Name": "lbl_level",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 14,
+            "LabelText": "{0}/{1}",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 221.5,
+              "Y": -51.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 146.5,
+            "RightMargin": -296.5,
+            "TopMargin": 41.0,
+            "BottomMargin": -61.0,
+            "Tag": 71,
+            "ActionTag": -1454303330,
+            "Size": {
+              "X": 150.0,
+              "Y": 20.0
+            },
+            "Name": "lbl_hp",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 14,
+            "LabelText": "{0}/{1}",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 221.5,
+              "Y": -69.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 146.5,
+            "RightMargin": -296.5,
+            "TopMargin": 59.0,
+            "BottomMargin": -79.0,
+            "Tag": 72,
+            "ActionTag": -1983043878,
+            "Size": {
+              "X": 150.0,
+              "Y": 20.0
+            },
+            "Name": "lbl_mp",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "root",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Node"
+}

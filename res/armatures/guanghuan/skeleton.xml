@@ -1,0 +1,30 @@
+<dragonBones name="guanghuan" frameRate="24" version="2.3">
+ <armature name="guanghuan">
+  <bone name="图层 1">
+   <transform x="0.1" y="0" skX="0" skY="0" scX="2" scY="2"/>
+  </bone>
+  <skin name="default">
+   <slot name="图层 1" parent="图层 1" z="0">
+    <display name="1" type="image">
+     <transform x="0" y="28.5" skX="0" skY="0" scX="1" scY="1" pX="63.5" pY="57"/>
+    </display>
+   </slot>
+  </skin>
+  <animation name="guanghuan" fadeInTime="0" duration="40" scale="1" loop="0" autoTween="1" tweenEasing="NaN">
+   <timeline name="图层 1" scale="1" offset="0">
+    <frame z="0" tweenEasing="0" duration="19">
+     <transform x="0.1" y="0" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+     <colorTransform aO="0" rO="0" gO="0" bO="0" aM="80" rM="100" gM="100" bM="100"/>
+    </frame>
+    <frame z="0" tweenEasing="0" duration="20">
+     <transform x="0.1" y="0.05" skX="0" skY="0" scX="2.63" scY="2.63" pX="0" pY="0"/>
+     <colorTransform aO="0" rO="0" gO="0" bO="0" aM="30" rM="100" gM="100" bM="100"/>
+    </frame>
+    <frame z="0" tweenEasing="0" duration="1">
+     <transform x="0.1" y="0" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+     <colorTransform aO="0" rO="0" gO="0" bO="0" aM="80" rM="100" gM="100" bM="100"/>
+    </frame>
+   </timeline>
+  </animation>
+ </armature>
+</dragonBones>

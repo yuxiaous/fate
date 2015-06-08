@@ -1,0 +1,14 @@
+info face="Arial" size=32 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
+common lineHeight=32 base=26 scaleW=490 scaleH=80 pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="fnt3.png"
+chars count=10
+char id=48   x=151   y=0     width=47    height=69    xoffset=0     yoffset=0     xadvance=47    page=0  chnl=15
+char id=49   x=348   y=0     width=32    height=68    xoffset=0     yoffset=0     xadvance=32    page=0  chnl=15
+char id=50   x=246   y=0     width=51    height=68    xoffset=0     yoffset=0     xadvance=51    page=0  chnl=15
+char id=51   x=0     y=0     width=50    height=69    xoffset=0     yoffset=0     xadvance=50    page=0  chnl=15
+char id=52   x=432   y=0     width=47    height=66    xoffset=0     yoffset=0     xadvance=47    page=0  chnl=15
+char id=53   x=51    y=0     width=49    height=69    xoffset=0     yoffset=0     xadvance=49    page=0  chnl=15
+char id=54   x=199   y=0     width=46    height=69    xoffset=0     yoffset=0     xadvance=46    page=0  chnl=15
+char id=55   x=381   y=0     width=50    height=67    xoffset=0     yoffset=0     xadvance=50    page=0  chnl=15
+char id=56   x=101   y=0     width=49    height=69    xoffset=0     yoffset=0     xadvance=49    page=0  chnl=15
+char id=57   x=298   y=0     width=49    height=68    xoffset=0     yoffset=0     xadvance=49    page=0  chnl=15
