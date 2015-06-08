@@ -1,5 +1,0 @@
-<TextureAtlas name="guai_effect" imagePath="texture.png">
- <SubTexture name="0.png" x="64" y="90" width="60" height="75"/>
- <SubTexture name="1.png" x="64" y="0" width="61" height="88"/>
- <SubTexture name="2.png" x="0" y="0" width="62" height="91"/>
-</TextureAtlas>

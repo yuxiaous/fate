@@ -1,3 +1,0 @@
-<TextureAtlas name="guanghuan" imagePath="texture.png">
- <SubTexture name="1" x="0" y="0" width="127" height="57"/>
-</TextureAtlas>
