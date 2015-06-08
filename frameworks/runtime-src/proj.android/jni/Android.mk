@@ -38,8 +38,10 @@ hellojavascript/main.cpp
 LOCAL_C_INCLUDES := \
 $(LOCAL_PATH)/../../Classes/protobuf-lite \
 $(LOCAL_PATH)/../../Classes/runtime \
-$(LOCAL_PATH)/../../Classes
-                    
+$(LOCAL_PATH)/../../Classes \
+$(LOCAL_PATH)/../../../../Classes \
+$(LOCAL_PATH)/../../../../Classes/jsb
+
 
 LOCAL_STATIC_LIBRARIES := cocos_jsb_static
 LOCAL_STATIC_LIBRARIES += game_jsb_static

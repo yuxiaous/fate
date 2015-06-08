@@ -22,7 +22,8 @@ LOCAL_SRC_FILES := ../../../animation/Animation.cpp \
                    ../DBCCArmature.cpp \
                    ../DBCCArmatureNode.cpp \
                    ../DBCCFactory.cpp \
-                   ../DBCCSlot.cpp
+                   ../DBCCSlot.cpp \
+                   ../DragonBonesHelper.cpp
 
 
 LOCAL_C_INCLUDES := \

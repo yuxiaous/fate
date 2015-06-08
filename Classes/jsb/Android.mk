@@ -11,8 +11,14 @@ LOCAL_ARM_MODE := arm
 LOCAL_SRC_FILES := jsb_bindings_auto.cpp \
                    jsb_bindings_manual.cpp \
                    jsb_levelhelper_auto.cpp \
-                   jsb_dragonbones_auto.cpp
-                   
+                   jsb_dragonbones_auto.cpp \
+                   ../JsonStorage.cpp \
+                   ../ShakeAction.cpp \
+                   ../SneakyInput/SneakyButton.cpp \
+                   ../SneakyInput/SneakyButtonSkinnedBase.cpp \
+                   ../SneakyInput/SneakyJoystick.cpp \
+                   ../SneakyInput/SneakyJoystickSkinnedBase.cpp \
+
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT
 

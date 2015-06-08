@@ -21,6 +21,10 @@
 #include "network/XMLHTTPRequest.h"
 #include "network/jsb_websocket.h"
 #include "network/jsb_socketio.h"
+#include "jsb_levelhelper_auto.hpp"
+#include "jsb_dragonbones_auto.hpp"
+#include "jsb_bindings_auto.hpp"
+#include "jsb_bindings_manual.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "platform/android/CCJavascriptJavaBridge.h"
@@ -125,6 +129,15 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     // 3d extension can be commented out to reduce the package
     sc->addRegisterCallback(register_all_cocos2dx_3d_extension);
+
+    // level helper
+    sc->addRegisterCallback(register_all_jsb_levelhelper_auto);
+    sc->addRegisterCallback(register_all_jsb_levelhelper_manual);
+    // dragonbones
+    sc->addRegisterCallback(register_all_jsb_dragonbones_auto);
+    // custom jsb
+    sc->addRegisterCallback(register_all_jsb_bindings_auto);
+    sc->addRegisterCallback(register_all_jsb_bindings_manual);
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     sc->addRegisterCallback(JavascriptJavaBridge::_js_register);

@@ -77,18 +77,15 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos/2
                     $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos/ui \
                     $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos/audio/include \
                     $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos/storage \
-                    $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/extensions
+                    $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/extensions \
+                    $(LOCAL_PATH)/LevelHelper2-API
 
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../../frameworks/js-bindings/bindings/manual \
                            $(LOCAL_PATH)/../../frameworks/js-bindings/bindings/auto
 
 LOCAL_STATIC_LIBRARIES := cocos2dx_static
-LOCAL_STATIC_LIBRARIES += spidermonkey_static
-LOCAL_STATIC_LIBRARIES += cocos_localstorage_static
 
 include $(BUILD_STATIC_LIBRARY)
 
 $(call import-module,.)
-$(call import-module,external/spidermonkey/prebuilt/android)
-$(call import-module,storage/local-storage)
