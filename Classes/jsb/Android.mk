@@ -40,6 +40,7 @@ LOCAL_STATIC_LIBRARIES := cocos2dx_static
 LOCAL_STATIC_LIBRARIES += spidermonkey_static
 LOCAL_STATIC_LIBRARIES += cocos_localstorage_static
 LOCAL_STATIC_LIBRARIES += levelhelper_static
+LOCAL_STATIC_LIBRARIES += dragonbones_static
 
 include $(BUILD_STATIC_LIBRARY)
 
@@ -47,3 +48,4 @@ $(call import-module,.)
 $(call import-module,external/spidermonkey/prebuilt/android)
 $(call import-module,storage/local-storage)
 $(call import-module,LevelHelper2)
+$(call import-module,dragonbones/renderer/cocos2d-x-3.x/android)
