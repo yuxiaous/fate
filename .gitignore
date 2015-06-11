@@ -7,6 +7,7 @@ simple_test_bindings
 userconf.ini
 res
 config
+build
 
 Simulator
 jsb.sqlite
