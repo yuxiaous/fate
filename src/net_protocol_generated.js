@@ -29,6 +29,14 @@ net_protocol_handlers.SEND_CMD_CS_AUTH = function(obj) {
 	_SendFunc(500, obj);
 };
 
+// @protocol 战斗结束返回的详细信息
+// @param {uint32} result, 战斗结果，0成功
+net_protocol_handlers.CMD_SC_BATTLE_FINISH_RESULT = 1504;
+_BindFunc(1504, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_BATTLE_FINISH_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT(obj);
+});
+
 // @protocol 装备物品
 // @param {uint32} uid, 物品uid
 net_protocol_handlers.CMD_CS_EQUIP_ITEM = 1304;
@@ -75,6 +83,14 @@ _BindFunc(1301, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_EQUIP_SLOT_INFO(obj);
 });
 
+// @protocol 地图战斗
+// @param {uint32} map_id, 地图点id
+net_protocol_handlers.CMD_CS_BATTLE_MAP = 1501;
+net_protocol_handlers.SEND_CMD_CS_BATTLE_MAP = function(obj) {
+	cc.assert(obj.map_id != undefined, "CMD_CS_BATTLE_MAP.map_id is undefined.");
+	_SendFunc(1501, obj);
+};
+
 // @protocol 初始化进度
 // @param {uint32} percent, 初始化百分比
 net_protocol_handlers.CMD_SC_INIT_PROGRESS = 503;
@@ -107,23 +123,25 @@ _BindFunc(1401, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_ITEM_INFO(obj);
 });
 
-// @protocol 发送战斗结果
-// @param {uint32} result, 1:胜利，2:失败
-// @param {uint32} map_id, 战斗地图id
+// @protocol 战斗结束
+// @param {uint32} result, 战斗结果, 1胜利，2失败
 // @param {uint32} time, 战斗消耗时间，单位秒
-net_protocol_handlers.CMD_CS_SEND_BATTLE_RESULT = 1002;
-net_protocol_handlers.SEND_CMD_CS_SEND_BATTLE_RESULT = function(obj) {
-	cc.assert(obj.result != undefined, "CMD_CS_SEND_BATTLE_RESULT.result is undefined.");
-	cc.assert(obj.map_id != undefined, "CMD_CS_SEND_BATTLE_RESULT.map_id is undefined.");
-	cc.assert(obj.time != undefined, "CMD_CS_SEND_BATTLE_RESULT.time is undefined.");
-	_SendFunc(1002, obj);
+net_protocol_handlers.CMD_CS_BATTLE_FINISH = 1503;
+net_protocol_handlers.SEND_CMD_CS_BATTLE_FINISH = function(obj) {
+	cc.assert(obj.result != undefined, "CMD_CS_BATTLE_FINISH.result is undefined.");
+	cc.assert(obj.time != undefined, "CMD_CS_BATTLE_FINISH.time is undefined.");
+	_SendFunc(1503, obj);
 };
 
-// @protocol 获取章节信息
-net_protocol_handlers.CMD_CS_GET_MAP_INFO = 1000;
-net_protocol_handlers.SEND_CMD_CS_GET_MAP_INFO = function(obj) {
-	_SendFunc(1000, obj);
-};
+// @protocol 地图战斗结果
+// @param {uint32} result, 结果 0成功
+// @param {uint32} map_id, 地图点id
+net_protocol_handlers.CMD_SC_BATTLE_MAP_RESULT = 1502;
+_BindFunc(1502, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_BATTLE_MAP_RESULT.result is undefined.");
+	cc.assert(obj.map_id != undefined, "CMD_SC_BATTLE_MAP_RESULT.map_id is undefined.");
+	net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT(obj);
+});
 
 // @protocol 购买商品结果
 // @param {uint32} result, 结果 0成功

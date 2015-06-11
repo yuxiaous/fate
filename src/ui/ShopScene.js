@@ -13,6 +13,7 @@ var ShopScene = ui.GuiSceneBase.extend({
 
     onEnter: function() {
         this._super();
+        MusicManager.getInstance().playBackgroundMusic("sounds/shop.mp3");
         this._ui = {
             tab_equip: this.seekWidgetByName("btn_tab_1"),
             tab_item: this.seekWidgetByName("btn_tab_2"),
@@ -225,9 +226,9 @@ ShopScene.Good.Icon = ui.GuiController.extend({
     onEnter: function() {
         this._super();
         this._ui = {
-            img_sel: this.seekWidgetByName("img_enter"),
+            sp_icon: this.seekWidgetByName("sp_icon"),
             lbl_num: this.seekWidgetByName("lbl_num"),
-            img_icon: this.seekWidgetByName("img_icon")
+            img_sel: this.seekWidgetByName("img_sel")
         };
 
         this._ui.img_sel.setVisible(false);
@@ -256,7 +257,11 @@ ShopScene.Good.Icon = ui.GuiController.extend({
             return;
         }
 
-        this._ui.img_icon.loadTexture(config.icon);
+        this._ui.sp_icon.setTexture(config.icon);
+    },
+
+    _on_btn_bg: function() {
+
     }
 });
 

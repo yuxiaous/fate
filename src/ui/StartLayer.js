@@ -12,11 +12,22 @@ var StartLayerScene = ui.GuiSceneBase.extend({
 
     onEnter: function() {
         this._super();
+        this.playAnimation("background", true);
         MusicManager.getInstance().playBackgroundMusic("sounds/background.mp3");
+
+        this._ui = {
+            sp_touch: this.seekWidgetByName("Sprite_1")
+        };
 
         this._bindings = [
             notification.createBinding(notification.event.INIT_END, this.onEnterGame, this)
         ];
+
+        this._ui.sp_touch.runAction(cc.repeatForever(cc.sequence(
+            cc.fadeOut(1),
+            cc.fadeIn(1)
+        )));
+
     },
 
     onExit: function() {
@@ -25,10 +36,10 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     },
 
     onEnterGame: function() {
-       this.pushScene(MapScene);
+        this.pushScene(MainScene);
     },
 
-    _on_btn_juqing: function() {
+    _on_btn_enter: function() {
         LoginSystem.instance.authorize("Saber");
     }
 });

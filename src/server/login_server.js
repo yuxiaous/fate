@@ -23,6 +23,11 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
         player: player_server.player_info
     });
 
+    // map info
+    server.send(net_protocol_handlers.CMD_SC_MAP_INFO, {
+        maps: map_server.map_info
+    });
+
     // skill info
     server.send(net_protocol_handlers.CMD_SC_SKILL_INFO, {
         skills: skill_server.skill_info

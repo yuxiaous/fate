@@ -111,20 +111,16 @@ var ThrowBase = PhysicalNode.extend({
     },
 
     removeThrowNode : function(){
-
-
         //if(this._isDone && this._completeEvent){
         //    this._hostRole.physicalWorld.removePhysicalNode(this);
         //    delete  this;
         //    return;
         //}
-
         if(this._completeEvent){
             this._hostRole.physicalWorld.removePhysicalNode(this);
             delete  this;
             return;
         }
-
         if(this._hostRole.physicalWorld){
             var size = this._hostRole.physicalWorld.getContentSize();
             if(this.getSpacePosition().x >= size.width || this.getSpacePosition().x <= 0){
@@ -144,20 +140,15 @@ ThrowBase.ThrowType ={
 var ThrowArrow = ThrowBase.extend({
     ctor : function (hostRole_,throwModelId_) {
         this._super(hostRole_,throwModelId_);
-
         this.drag = - 200;
         this.gravity = 0;
-
         this.velocity = {x: 0, y: 0, z: 0};
-
         this._throwModelId = throwModelId_;
         this._hostRole = hostRole_;
     },
 
     onEnter : function () {
         this._super();
-
-
     },
 
     onExit : function () {
@@ -175,41 +166,14 @@ var ThrowArrow = ThrowBase.extend({
             var targetRole = this._hostRole.roleAiManager.ai.target;
             targetRole.onAttackJudgement(notification.event.ROLE_ATTACK,this._hostRole,area_1,this);
         }
-
-        //var isAtkSome = false;
-        //var tmpAllNode = this._hostRole.physicalWorld.physicalNodes;
-        //tmpAllNode.forEach(function (physicalNode_) {
-        //    if(physicalNode_ == this || physicalNode_ == this._hostR){
-        //
-        //    }
-        //    else{
-        //        if(this._hostR.JudgeIsEnemy(physicalNode_.roleType)){
-        //            var isHitSomeBody = this.judgeNodeIsOverlaping(this,physicalNode_);
-        //            if(isHitSomeBody){
-        //                physicalNode_.injure(this);
-        //                this._hostRole.physicalWorld.removePhysicalNode(this);
-        //                isAtkSome = true;
-        //                return;
-        //            }
-        //        }
-        //    }
-        //},this);
-        //
-        //if(!isAtkSome){
-
-        //}
     },
-
-
 
     throwStart : function () {
         var throwConf = configdb.model[this._throwModelId]
         if(!throwConf){
             return;
         }
-
         this.addThrowWeapon();
-
         var bestThrowP = this._hostRole.getBestThrowPos();
         var pos = {
             x:this._hostRole.getSpacePosition().x + bestThrowP.x,
@@ -223,14 +187,11 @@ var ThrowArrow = ThrowBase.extend({
 
     addThrowWeapon : function () {
         var throwConf = configdb.model[this._throwModelId];
-
         this._throwNode = dragonBones.DragonBonesHelper.buildArmatureNode(throwConf.armature);
         this._throwNode.gotoAndPlay(throwConf.stand);
         this._throwNode.setScaleX(-this._hostRole.direction);
         this.addChild(this._throwNode);
-
         this.judgeThrowEvent(this._throwNode);
-
         //this._hostRole.addThrowWeaponItem(this);
     },
 
@@ -245,33 +206,26 @@ var ThrowArrow = ThrowBase.extend({
 var ThrowRaiden = ThrowBase.extend({
     ctor : function (hostRole_,throwModelId_) {
         this._super(hostRole_,throwModelId_)
-
         this._throwModelId = throwModelId_;
         this._hostRole = hostRole_;
-
         if(this._hostRole.roleAiManager.ai.target){
             this._targetRole = this._hostRole.roleAiManager.ai.target;
         }
-
         this.isActive = false;
     },
     
     onEnter : function(){
         this._super();
-
     },
     
     onExit : function () {
       this._super();
-        
     },
     
     advanceTime : function () {
         this._super();
-
         //throw weapon 超出物理世界范围
         this.removeThrowNode();
-
         if(this._atkEvent){
             this._atkEvent = false;
             var area_1 = this.getBodyAttackRange(this);
@@ -286,13 +240,11 @@ var ThrowRaiden = ThrowBase.extend({
             return;
         }
         this.addThrowWeapon(this._hostRole, this._throwModelId);
-
         var pos = {
             x : this._targetRole.getSpacePosition().x,
             y : this._targetRole.getSpacePosition().y,
             z : this._targetRole.getSpacePosition().z
         }
-
         this.setSpacePosition(pos);
         this._hostRole.physicalWorld.addPhysicalNode(this);
     },
@@ -301,20 +253,16 @@ var ThrowRaiden = ThrowBase.extend({
         var alertNode = dragonBones.DragonBonesHelper.buildArmatureNode("yujing1");
         alertNode.gotoAndPlay("yujing1");
         this.addChild(alertNode,-1);
-
         this.runAction(cc.Sequence.create(
                             cc.DelayTime.create(1.0),
                             cc.CallFunc.create(function () {
                                 alertNode.removeFromParent();
-
                                 var throwConf = configdb.model[this._throwModelId];
                                 this._throwNode = dragonBones.DragonBonesHelper.buildArmatureNode(throwConf.armature);
                                 this._throwNode.gotoAndPlay(throwConf.stand);
                                 this._throwNode.setScaleX(-this._hostRole.direction);
                                 this.addChild(this._throwNode);
-
                                 this.isActive = true;
-
                                 this.judgeThrowEvent(this._throwNode);
                             },this)
                         ));
@@ -326,13 +274,11 @@ var ThrowRaiden = ThrowBase.extend({
     }
 });
 
-var ThrowFireBall = ThrowBase.extend({
+var SingleFireBall = ThrowBase.extend({
     ctor : function (hostRole_,throwModelId_) {
         this._super(hostRole_,throwModelId_);
-
         this._throwModelId = throwModelId_;
         this._hostRole = hostRole_;
-
         if(this._hostRole.roleAiManager.ai.target){
             this._targetRole = this._hostRole.roleAiManager.ai.target;
         }
@@ -340,92 +286,76 @@ var ThrowFireBall = ThrowBase.extend({
 
     onEnter : function () {
         this._super();
-        
     },
     
     onExit : function () {
         this._super();
-        
     },
 
     advanceTime : function () {
         this._super();
-        //if(this.isActive){
-        //    if(this._atkEvent){
-        //        this._atkEvent = false;
-        //        var tmpAllNode = this._hostRole.physicalWorld.physicalNodes;
-        //        tmpAllNode.forEach(function (physicalNode_) {
-        //            if(physicalNode_ == this || physicalNode_ == this._hostRole){
-        //
-        //            }
-        //            else{
-        //                if(this._hostR.JudgeIsEnemy(physicalNode_.roleType)){
-        //                    var isHitSomeBody = this.judgeNodeIsOverlaping(this,physicalNode_);
-        //                    if(isHitSomeBody){
-        //                        physicalNode_.injure(this);
-        //                        return;
-        //                    }
-        //                }
-        //            }
-        //        },this);
-        //    }
-        //}
+        //throw weapon 超出物理世界范围
+        this.removeThrowNode();
+        if(this._atkEvent){
+            this._atkEvent = false;
+            var area_1 = this.getBodyAttackRange(this);
+            var targetRole = this._hostRole.roleAiManager.ai.target;
+            targetRole.onAttackJudgement(notification.event.ROLE_ATTACK,this._hostRole,area_1,this);
+        }
     },
     
-    throwStart : function(){
+    throwStart : function(pos_,weaponIndex_,throwDir_){
         var throwConf = configdb.model[this._throwModelId]
         if(!throwConf){
             return;
         }
-        this.addThrowWeapon();
+        //this.addThrowWeapon(weaponIndex_);
+        var that = this;
+        this.runAction(cc.Sequence.create(
+            cc.DelayTime.create(cc.random0To1() ),
+            cc.CallFunc.create(function () {
+                that.addThrowWeapon(throwDir_);
+            })
+        ));
 
         var mapPos = MapSystem.instance.getGameMapPos();
         var pos = {
-            x : - mapPos.x,
-            y : 0,
+            x : - mapPos.x + pos_.x,
+            y : pos_.y,
             z : 0
         }
-
         this.setSpacePosition(pos);
         this._hostRole.physicalWorld.addPhysicalNode(this);
     },
 
-    addThrowWeapon : function () {
-        var screenSize = cc.director.getVisibleSize();
-        var minX = 0 + 100;
-        var maxX = screenSize.width - 100;
-        var maxY = MapSystem.instance.getGameMapRect().height;
-
-        var fireBCount = 8;
-        var tmpValue = (maxX - minX) / (fireBCount -1);
-
-        var that = this;
-        var tmpIndex = 0;
-        function addFireBox(){
-            tmpIndex += 1;
-            that.runAction(cc.Sequence.create(
-                cc.DelayTime.create(cc.random0To1()),
-                cc.CallFunc.create(
-                    function () {
-                        var throwConf = configdb.model[that._throwModelId];
-                        var _tmpNode = dragonBones.DragonBonesHelper.buildArmatureNode(throwConf.armature);
-                        _tmpNode.setScaleX(-that._hostRole.direction);
-
-                        var tmpPos = cc.p(minX + tmpIndex * tmpValue, cc.random0To1() * maxY);
-                        _tmpNode.setPosition(tmpPos);
-                        _tmpNode.gotoAndPlay(throwConf.stand);
-                        that.addChild(_tmpNode);
-                        that.judgeThrowEvent(_tmpNode);
-                        if(tmpIndex <= 8){
-                            addFireBox();
-                        }
-
-                    }
-                )
-            ));
-        }
-        addFireBox();
+    addThrowWeapon : function (throwDirection_) {
+        var throwConf = configdb.model[this._throwModelId];
+        this._throwNode = dragonBones.DragonBonesHelper.buildArmatureNode(throwConf.armature);
+        this._throwNode .setScaleX(-throwDirection_);
+        this._throwNode .gotoAndPlay(throwConf.stand);
+        this.addChild(this._throwNode );
+        this.judgeThrowEvent(this._throwNode );
         this.isActive = true;
     }
 });
 
+var ThrowFireBall = cc.Node.extend({
+    ctor: function(hostR_,throwMlId_) {
+        this._super();
+        this._hostR = hostR_;
+        this._throwMID = throwMlId_;
+
+    },
+    throwStart : function() {
+        var screenSize = cc.director.getVisibleSize();
+        var minX = 0 + 100;
+        var maxX = screenSize.width - 100;
+        var maxY = MapSystem.instance.getGameMapRect().height;
+        var fireBCount = 15;
+        var tmpValue = (maxX - minX) / (fireBCount - 1);
+        for(var tmpIndex = 0; tmpIndex < fireBCount; tmpIndex++){
+            var ranPos = cc.p(minX + tmpIndex * tmpValue, cc.random0To1() * maxY);
+            (new SingleFireBall(this._hostR,this._throwMID)).throwStart(ranPos,tmpIndex,this._hostR.direction);
+        }
+    }
+});

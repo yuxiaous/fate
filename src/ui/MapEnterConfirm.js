@@ -84,12 +84,12 @@ var MapStageInfo = ui.GuiWindowBase.extend({
 
     _on_btn_enter: function() {
         var costValue = 2;
-        if(PlayerSystem.instance.actionPoint < costValue){
+        if(PlayerSystem.instance.action < costValue){
             MessageBoxOk.show("体力不足");
             return;
         }
 
-        PlayerSystem.instance.actionPoint -= costValue;
+        PlayerSystem.instance.action -= costValue;
 
         var loadingPanel = new LoadingBattleLayer(this.mapId);
         loadingPanel.pop();
@@ -101,9 +101,25 @@ var MapStageInfo = ui.GuiWindowBase.extend({
     },
 
     loadResourceDone : function () {
-        ui.pushScene(new BattleScene(this.mapId));
-        MapSystem.instance.cur_battle_map = this.mapId;
-        this.close();
+
+        var mapConfig = configdb.map[this.mapId];
+        if(mapConfig ){
+            if(mapConfig.map_type == BattleSystem.BattleType.normalType){
+                ui.pushScene(new BattleScene(this.mapId));
+                //ui.pushScene(new BattleDefScene(this.mapId) );
+            }
+            else if(mapConfig.map_type == BattleSystem.BattleType.defendType){
+                ui.pushScene(new BattleDefScene(this.mapId) );
+            }
+            else if(mapConfig.map_type == BattleSystem.BattleType.endlessType){
+
+            }
+            BattleSystem.instance.battleMap(this.mapId);
+            this.close();
+        }
+        else{
+            LOG("MAP ID NOT FIND!");
+        }
     }
 
 

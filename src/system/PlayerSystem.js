@@ -45,6 +45,7 @@ var PlayerSystem = SystemBase.extend({
             ret.def = config.def || 0;
             ret.crit = config.crit || 0;
             ret.sunder = config.sunder || 0;
+            ret.critPro = config.crit_pro || 0;
             ret.score = Formula.calculateBattleScore(ret.hp, ret.mp, ret.atk, ret.def, ret.crit, ret.sunder);
         }
 

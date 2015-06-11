@@ -24,12 +24,12 @@ var OperationLayer = cc.Layer.extend({
             },
             right : {
                 joystick   : cc.p(190,130),
-                atkBtn     : cc.p(winSize.width - 100, 95),
-                skillBtn_1 : cc.p(winSize.width - 250, 95),
-                skillBtn_2 : cc.p(winSize.width - 200, 200),
-                skillBtn_3 : cc.p(winSize.width - 100, 250),
-                skillBtn_4 : cc.p(winSize.width - 320, 195),
-                skillBtn_5 : cc.p(winSize.width - 360, 95)
+                atkBtn     : cc.p(winSize.width - 130, 100),
+                skillBtn_1 : cc.p(winSize.width - 185, 241),
+                skillBtn_2 : cc.p(winSize.width - 262, 177),
+                skillBtn_3 : cc.p(winSize.width - 89, 246),
+                skillBtn_4 : cc.p(winSize.width - 380, 81),
+                skillBtn_5 : cc.p(winSize.width - 282, 81)
             }
         }
         var curStylePos = allBtnPos.right;
@@ -42,10 +42,10 @@ var OperationLayer = cc.Layer.extend({
 
         // joystick
         this._joystick = this.addJoystick(
-            new cc.Sprite("images/joystick/joystick2.png"),
-            new cc.Sprite("images/joystick/joystick1.png"),
-            new cc.Sprite("images/joystick/joystick4.png"),
-            new cc.Sprite("images/joystick/joystick3.png"),
+            new cc.Sprite(this.getFP("joystick2.png")),
+            new cc.Sprite(this.getFP("joystick1.png")),
+            new cc.Sprite(this.getFP("joystick4.png")),
+            new cc.Sprite(this.getFP("joystick3.png")),
             curStylePos.joystick,
             cc.rect(-190, -120, 500, 350)
         );
@@ -71,52 +71,56 @@ var OperationLayer = cc.Layer.extend({
         //var sprite = new cc.Sprite("res/joybutton2.png");
         //sprite.setScale(1.2);
         this._attackButton = this.addButton(
-            new cc.Sprite("images/joystick/joybutton1.png"),
-            sprite = new cc.Sprite("images/joystick/joybutton2.png"),
-            new cc.Sprite("images/joystick/joybutton3.png"),
+            new cc.Sprite(this.getFP("joybutton1.png")),
+            sprite = new cc.Sprite(this.getFP("joybutton2.png")),
+            new cc.Sprite(this.getFP("joybutton1.png")),
             curStylePos.atkBtn
         );
         sprite.setScale(1.2);
 
         // skill button 1
         this._skillButton1 = this.addButton(
-            new cc.Sprite("images/joystick/joyskill1.png"),
-            new cc.Sprite("images/joystick/joyskill1.png"),
-            compoundDisableBtnSprite("images/joystick/joyskill1.png","images/joystick/diableskill.png"),
+            new cc.Sprite(this.getFP("skill1.png")),
+            new cc.Sprite(this.getFP("skill1.png")),
+            compoundDisableBtnSprite(this.getFP("skill1.png"),this.getFP("diableskill.png")),
             curStylePos.skillBtn_1
         );
 
         // skill button 2
         this._skillButton2 = this.addButton(
-            new cc.Sprite("images/joystick/joyskill4.png"),
-            new cc.Sprite("images/joystick/joyskill4.png"),
-            compoundDisableBtnSprite("images/joystick/joyskill4.png","images/joystick/diableskill.png"),
+            new cc.Sprite(this.getFP("skill4.png")),
+            new cc.Sprite(this.getFP("skill4.png")),
+            compoundDisableBtnSprite(this.getFP("skill4.png"),this.getFP("diableskill.png")),
             curStylePos.skillBtn_2
         );
 
         // skill button 3
         this._skillButton3 = this.addButton(
-            new cc.Sprite("images/joystick/joyskill2.png"),
-            new cc.Sprite("images/joystick/joyskill2.png"),
-            compoundDisableBtnSprite("images/joystick/joyskill2.png","images/joystick/diableskill.png"),
+            new cc.Sprite(this.getFP("skill2.png")),
+            new cc.Sprite(this.getFP("skill2.png")),
+            compoundDisableBtnSprite(this.getFP("skill2.png"),this.getFP("diableskill.png")),
             curStylePos.skillBtn_3
         );
 
         //skill button 4
         this._skillButton4 = this.addButton(
-            new cc.Sprite("images/joystick/joyskill3.png"),
-            new cc.Sprite("images/joystick/joyskill3.png"),
-            compoundDisableBtnSprite("images/joystick/joyskill3.png","images/joystick/diableskill.png"),
+            new cc.Sprite(this.getFP("skill3.png")),
+            new cc.Sprite(this.getFP("skill3.png")),
+            compoundDisableBtnSprite(this.getFP("skill3.png"),this.getFP("diableskill.png")),
             curStylePos.skillBtn_4
         );
 
         //skill button 5
         this._skillButton5 = this.addButton(
-            new cc.Sprite("images/joystick/joyskill3.png"),
-            new cc.Sprite("images/joystick/joyskill3.png"),
-            compoundDisableBtnSprite("images/joystick/joyskill3.png","images/joystick/diableskill.png"),
+            new cc.Sprite(this.getFP("skill5.png")),
+            new cc.Sprite(this.getFP("skill5.png")),
+            compoundDisableBtnSprite(this.getFP("skill5.png"),this.getFP("diableskill.png")),
             curStylePos.skillBtn_5
         );
+    },
+
+    getFP: function(name_){
+        return "images/icon/skill/"+name_;
     },
 
     setEnable: function(enable) {

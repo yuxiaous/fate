@@ -174,15 +174,10 @@
 		DE36EF421B25955E005B744E /* JsonStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE611B25955D005B744E /* JsonStorage.cpp */; };
 		DE36EF431B25955E005B744E /* JsonStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE611B25955D005B744E /* JsonStorage.cpp */; };
 		DE36EFC01B25955E005B744E /* PlayCG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEE61B25955E005B744E /* PlayCG.cpp */; };
-		DE36EFC11B25955E005B744E /* PlayCG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEE61B25955E005B744E /* PlayCG.cpp */; };
 		DE36EFC21B25955E005B744E /* LHVideoOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEA1B25955E005B744E /* LHVideoOverlayView.m */; };
-		DE36EFC31B25955E005B744E /* LHVideoOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEA1B25955E005B744E /* LHVideoOverlayView.m */; };
 		DE36EFC41B25955E005B744E /* LHVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEC1B25955E005B744E /* LHVideoPlayer.m */; };
-		DE36EFC51B25955E005B744E /* LHVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEC1B25955E005B744E /* LHVideoPlayer.m */; };
 		DE36EFC61B25955E005B744E /* LHVideoPlayerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEE1B25955E005B744E /* LHVideoPlayerImpl.m */; };
-		DE36EFC71B25955E005B744E /* LHVideoPlayerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEE1B25955E005B744E /* LHVideoPlayerImpl.m */; };
 		DE36EFC81B25955E005B744E /* LHVideoPlayerImplCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF01B25955E005B744E /* LHVideoPlayerImplCpp.mm */; };
-		DE36EFC91B25955E005B744E /* LHVideoPlayerImplCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF01B25955E005B744E /* LHVideoPlayerImplCpp.mm */; };
 		DE36EFCC1B25955E005B744E /* ShakeAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF41B25955E005B744E /* ShakeAction.cpp */; };
 		DE36EFCD1B25955E005B744E /* ShakeAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF41B25955E005B744E /* ShakeAction.cpp */; };
 		DE36EFCE1B25955E005B744E /* SneakyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF81B25955E005B744E /* SneakyButton.cpp */; };
@@ -193,6 +188,9 @@
 		DE36EFD31B25955E005B744E /* SneakyJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFC1B25955E005B744E /* SneakyJoystick.cpp */; };
 		DE36EFD41B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
 		DE36EFD51B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
+		DEA0AB7F1B29924900079B42 /* libLevelHelper2-API+Box2d-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF41B258A0F005B744E /* libLevelHelper2-API+Box2d-OSX.a */; };
+		DEA0AB861B29948800079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB851B29948800079B42 /* config */; };
+		DEA0AB871B29948800079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB851B29948800079B42 /* config */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,6 +270,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 6EDE8B7C19A4986C00599C48;
 			remoteInfo = "LevelHelper2-API+Box2d-OSX";
+		};
+		DEA0AB7D1B29924100079B42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EDE8B1019A4986C00599C48;
+			remoteInfo = "LevelHelper2-API+Box2d-OSX";
+		};
+		DEA0AB801B2993AE00079B42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EDE843819A483A200599C48;
+			remoteInfo = "LevelHelper2-API";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -500,6 +512,7 @@
 		DE36EEFD1B25955E005B744E /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
 		DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystickSkinnedBase.cpp; sourceTree = "<group>"; };
 		DE36EEFF1B25955E005B744E /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
+		DEA0AB851B29948800079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../config; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +520,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA0AB7F1B29924900079B42 /* libLevelHelper2-API+Box2d-OSX.a in Frameworks */,
 				BAEE4D8C1AC40CA8003BEB0F /* Security.framework in Frameworks */,
 				C037820F18BF77DE00FE4F13 /* libjsbindings Mac.a in Frameworks */,
 				1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */,
@@ -559,6 +573,7 @@
 				1A6BF21418C9DB5900FB0E1C /* main.js */,
 				C0799CB518BAE62000E9C828 /* res */,
 				C03780EA18BEE0E400FE4F13 /* src */,
+				DEA0AB851B29948800079B42 /* config */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1069,6 +1084,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DEA0AB7E1B29924100079B42 /* PBXTargetDependency */,
 				C037820E18BF77D100FE4F13 /* PBXTargetDependency */,
 				1A676820180E9BF70076BC67 /* PBXTargetDependency */,
 			);
@@ -1089,6 +1105,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DEA0AB811B2993AE00079B42 /* PBXTargetDependency */,
 				C037820B18BF77BC00FE4F13 /* PBXTargetDependency */,
 				1A67682F180E9C110076BC67 /* PBXTargetDependency */,
 			);
@@ -1203,6 +1220,7 @@
 				1AD7E0A918C9DBE3004817A6 /* main.js in Resources */,
 				C05D1C181923467600B808A4 /* config.json in Resources */,
 				3E12D1A61957FA03002FF0FD /* script in Resources */,
+				DEA0AB871B29948800079B42 /* config in Resources */,
 				C0799CBA18BAE62000E9C828 /* res in Resources */,
 				C03C8B4C18A770DD00723415 /* MainMenu.xib in Resources */,
 				509D4ACF17EBB2BE00697056 /* Icon.icns in Resources */,
@@ -1228,6 +1246,7 @@
 				3E12D1A51957FA03002FF0FD /* script in Resources */,
 				C0799CB918BAE62000E9C828 /* res in Resources */,
 				509D4AC517EBB2AB00697056 /* Icon-144.png in Resources */,
+				DEA0AB861B29948800079B42 /* config in Resources */,
 				509D4AC317EBB2AB00697056 /* Icon-114.png in Resources */,
 				509D4ABD17EBB2AB00697056 /* Default-568h@2x.png in Resources */,
 				509D4ABF17EBB2AB00697056 /* Default@2x.png in Resources */,
@@ -1264,7 +1283,6 @@
 			files = (
 				3E12D1E61957FB18002FF0FD /* common.cc in Sources */,
 				3E12D1E81957FB18002FF0FD /* once.cc in Sources */,
-				DE36EFC71B25955E005B744E /* LHVideoPlayerImpl.m in Sources */,
 				3E12D1E01957FB18002FF0FD /* message_lite.cc in Sources */,
 				DE36EFCD1B25955E005B744E /* ShakeAction.cpp in Sources */,
 				DE36EFD51B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */,
@@ -1274,7 +1292,6 @@
 				DE36EF3D1B25955E005B744E /* jsb_bindings_manual.cpp in Sources */,
 				C00FD4B51938628E00C6382D /* PlayDisable_png.cpp in Sources */,
 				AB9079D519E931D80033128B /* ConsoleCommand.cpp in Sources */,
-				DE36EFC31B25955E005B744E /* LHVideoOverlayView.m in Sources */,
 				3E12D1EA1957FB18002FF0FD /* stringprintf.cc in Sources */,
 				DE36EF251B25955E005B744E /* DBCCSlot.cpp in Sources */,
 				DE36EF431B25955E005B744E /* JsonStorage.cpp in Sources */,
@@ -1294,10 +1311,8 @@
 				DE36EF0D1B25955E005B744E /* Object.cpp in Sources */,
 				DE36EF3F1B25955E005B744E /* jsb_dragonbones_auto.cpp in Sources */,
 				3E12D1E41957FB18002FF0FD /* atomicops_internals_x86_msvc.cc in Sources */,
-				DE36EFC11B25955E005B744E /* PlayCG.cpp in Sources */,
 				DE36EF411B25955E005B744E /* jsb_levelhelper_auto.cpp in Sources */,
 				3E12D1DE1957FB18002FF0FD /* zero_copy_stream_impl_lite.cc in Sources */,
-				DE36EFC51B25955E005B744E /* LHVideoPlayer.m in Sources */,
 				DE36EF3B1B25955E005B744E /* jsb_bindings_auto.cpp in Sources */,
 				DE36EF071B25955E005B744E /* WorldClock.cpp in Sources */,
 				DE36EFCF1B25955E005B744E /* SneakyButton.cpp in Sources */,
@@ -1305,7 +1320,6 @@
 				C033B525191B36AE00D06937 /* VisibleRect.cpp in Sources */,
 				DE36EFD31B25955E005B744E /* SneakyJoystick.cpp in Sources */,
 				DE36EF051B25955E005B744E /* TimelineState.cpp in Sources */,
-				DE36EFC91B25955E005B744E /* LHVideoPlayerImplCpp.mm in Sources */,
 				DE36EF1F1B25955E005B744E /* DBCCArmature.cpp in Sources */,
 				DE36EF131B25955E005B744E /* BaseFactory.cpp in Sources */,
 				ABCA93D019E6712A007FB844 /* ConnectWaitLayer.cpp in Sources */,
@@ -1419,6 +1433,16 @@
 			isa = PBXTargetDependency;
 			name = "jsbindings Mac";
 			targetProxy = C037820D18BF77D100FE4F13 /* PBXContainerItemProxy */;
+		};
+		DEA0AB7E1B29924100079B42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LevelHelper2-API+Box2d-OSX";
+			targetProxy = DEA0AB7D1B29924100079B42 /* PBXContainerItemProxy */;
+		};
+		DEA0AB811B2993AE00079B42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LevelHelper2-API";
+			targetProxy = DEA0AB801B2993AE00079B42 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

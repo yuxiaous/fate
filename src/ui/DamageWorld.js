@@ -11,8 +11,7 @@ var DamageWorld = ccui.Layout.extend({
 
     onEnter : function () {
         this._super();
-        this.tmpLabel = ccui.TextBMFont.create(this._damageValue,"res/fonts/fnt2.fnt");
-        this.tmpLabel.setScale(0.5);
+        this.tmpLabel = ccui.TextBMFont.create(this._damageValue,"res/fonts/fnt7.fnt");
         this.addChild(this.tmpLabel);
     },
 
@@ -22,26 +21,41 @@ var DamageWorld = ccui.Layout.extend({
     },
 
     playDamageWorld : function (type_) {
-        if(type_ == 1){
-            var jumpAct = cc.jumpBy(0.8, cc.p(40, 100), 60, 1);
+        //if(cc.random0To1() > 0.5){
+        //    type_ = true;
+        //}
+        if(type_){
+            this.tmpLabel.setFntFile("res/fonts/fnt6.fnt");
+
+            var moveUp = cc.moveBy(0.2,cc.p(0,110));
+            var moveScale = cc.scaleTo(0.2,2.5);
+            var jumpAncScale = cc.spawn(moveUp,moveScale);
+
+            var moveUp_1 = cc.moveBy(0.2,cc.p(0,50));
+            var fadeOut_1 = cc.fadeOut(0.2);
+            var moveAndFade = cc.spawn(moveUp_1,fadeOut_1);
+
+            var moveScale_1 = cc.scaleTo(0.3,1.7);
+
+            var moveEnd = cc.callFunc(function () {
+                this.tmpLabel.removeFromParent();
+                this.removeFromParent();
+            },this);
+
+            this.tmpLabel.runAction(cc.sequence(jumpAncScale,moveScale_1,moveAndFade,moveEnd));
+        }
+        else{
+            var jumpAct = cc.jumpBy(0.8, cc.p(30, 100), 80, 1);
             var moveEnd = cc.callFunc(function () {
                 this.tmpLabel.removeFromParent();
                 this.removeFromParent();
             },this);
             this.tmpLabel.runAction(cc.sequence(jumpAct,moveEnd));
         }
-        else{
-            var moveAct = cc.moveBy(1.5,cc.p(0,150));
-            var moveEnd = cc.callFunc(function () {
-                this.tmpLabel.removeFromParent();
-                this.removeFromParent();
-            },this);
-            this.tmpLabel.runAction(cc.sequence(moveAct,moveEnd));
-        }
     }
 });
 
-DamageWorld.createDamage = function (value_,target_,targetSize_,CritTimes_) {
+DamageWorld.createDamage = function (value_,target_,targetSize_,isCrit_) {
     var self = target_.getParent();
     if(self){
         var tmpDamageW = new DamageWorld(value_);
@@ -49,6 +63,6 @@ DamageWorld.createDamage = function (value_,target_,targetSize_,CritTimes_) {
         tmpDamageW.setLocalZOrder(self.getLocalZOrder()+1);
         self.addChild(tmpDamageW);
 
-        tmpDamageW.playDamageWorld(1);
+        tmpDamageW.playDamageWorld(isCrit_);
     }
 }

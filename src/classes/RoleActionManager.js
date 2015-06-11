@@ -628,11 +628,11 @@ var RoleActionDie = RoleAction.extend({
     onActionEnd: function() {
         this._super();
         if(this.manager.role.roleType == RoleBase.RoleType.Boss){
-            var battleScene = cc.director.getRunningScene();
-            battleScene._camera.zoomToValueInSeconds(1.0,2000);
-            //battleScene._camera.resetLookAtInSeconds(2000);
-            battleScene._camera.resetLookAt();
-            battleScene._camera.lookAtNodeInSeconds(battleScene._hero,2000);
+            //var battleScene = cc.director.getRunningScene();
+            //battleScene._camera.zoomToValueInSeconds(1.0,2000);
+            ////battleScene._camera.resetLookAtInSeconds(2000);
+            //battleScene._camera.resetLookAt();
+            //battleScene._camera.lookAtNodeInSeconds(battleScene._hero,2000);
             this.manager.role.physicalWorld.setSlowPlay(1);
         }
         this.manager.role.onDie();

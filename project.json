@@ -2,7 +2,7 @@
   "project_type": "javascript",
 
   "debugMode" : 1,
-  "showFPS" : true,
+  "showFPS" : false,
   "frameRate" : 60,
   "id" : "gameCanvas",
   "renderMode" : 0,
@@ -114,6 +114,8 @@
     "src/ui/MapWidget.js",
     "src/ui/MapTitle.js",
     "src/ui/BattleScene.js",
+    "src/ui/SceneDefBase.js",
+    "src/ui/BattleDefScene.js",
     "src/ui/MapEnterConfirm.js",
     "src/ui/RoleBloodBar.js",
     "src/ui/BagScene.js",
@@ -122,6 +124,7 @@
     "src/ui/MessageBox.js",
     "src/ui/EquipScene.js",
     "src/ui/GmScene.js",
+    "src/ui/MainScene.js",
 
     "src/server/server.js",
     "src/server/database.js",
@@ -134,6 +137,7 @@
     "src/server/skill_server.js",
     "src/server/equip_server.js",
     "src/server/bag_server.js",
-    "src/server/item_server.js"
+    "src/server/item_server.js",
+    "src/server/battle_server.js"
   ]
 }

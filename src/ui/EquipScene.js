@@ -3,8 +3,8 @@
  */
 
 
-var EquipScene = ui.GuiSceneBase.extend({
-    _guiFile: "ui/qianghua.json",
+var EquipScene = ui.GuiWindowBase.extend({
+    _guiFile: "ui/equip_scene.json",
 
     ctor: function() {
         this._super();
@@ -13,74 +13,99 @@ var EquipScene = ui.GuiSceneBase.extend({
 
     onEnter: function() {
         this._super();
-        this._list_slots = this.seekWidgetByName("list_slots");
-        this._info_cur = {
-            lbl_type: this.seekWidgetByName("lbl_yuan_buwei"),
-            lbl_level: this.seekWidgetByName("lbl_yuan_level"),
-            lbl_score: this.seekWidgetByName("lbl_yuan_zhanli")
-        };
-        this._info_next = {
-            lbl_type: this.seekWidgetByName("lbl_hou_buwei"),
-            lbl_level: this.seekWidgetByName("lbl_hou_level"),
-            lbl_score: this.seekWidgetByName("lbl_hou_zhanli")
-        };
-        this._lbl_cost = this.seekWidgetByName("lbl_xiaohao");
-        this._lbl_gold = this.seekWidgetByName("lbl_dangqian_jinbi");
+        this._ui = {
+            ctrl_gold: (function() {
+                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Gold);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_gold"));
+                return ctrl;
+            }.bind(this) ()),
+            ctrl_diamond: (function() {
+                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Diamond);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_diamond"));
+                return ctrl;
+            }.bind(this) ()),
+            ctrl_equip_1: (function() {
+                var ctrl = new EquipScene.EquipIcon(0);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_pre"));
+                return ctrl;
+            }.bind(this) ()),
+            ctrl_equip_2: (function() {
+                var ctrl = new EquipScene.EquipIcon(0);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_next"));
+                return ctrl;
+            }.bind(this) ()),
 
-        this._ctrl_icon = new EquipScene.EquipIcon();
-        this._ctrl_icon.setWidget(this.seekWidgetByName("ProjectNode_1"));
+            list_equips: this.seekWidgetByName("list_equips"),
+            cell_equips: [],
 
+            lbl_name_1: this.seekWidgetByName("lbl_equip_name_1"),
+            lbl_name_2: this.seekWidgetByName("lbl_equip_name_2"),
+            lbl_part_1: this.seekWidgetByName("lbl_equip_part_1"),
+            lbl_part_2: this.seekWidgetByName("lbl_equip_part_2"),
+            lbl_level_1: this.seekWidgetByName("lbl_equip_level_1"),
+            lbl_level_2: this.seekWidgetByName("lbl_equip_level_2"),
+            lbl_prop_1: this.seekWidgetByName("lbl_equip_prop_1"),
+            lbl_prop_2: this.seekWidgetByName("lbl_equip_prop_2"),
+            lbl_price: this.seekWidgetByName("lbl_equip_price"),
+            //sp_icon_1: this.seekWidgetByName("sp_skill_icon_1"),
+            //sp_icon_2: this.seekWidgetByName("sp_skill_icon_2"),
+            btn_leveup: this.seekWidgetByName("btn_duanzao")
+        };
         this._bindings = [
-            notification.createBinding(notification.event.PLAYER_INFO, this.refreshGoldInfo, this),
-            notification.createBinding(notification.event.EQUIP_SLOT_UPGRADE_RESULT, this.refreshSelectedSlotInfo, this)
+            notification.createBinding(notification.event.EQUIP_SLOT_INFO, this.refreshSelectedSlotInfo, this)
         ];
 
         this.createSlotList();
         this.refreshSelectedSlotInfo();
-        this.refreshGoldInfo();
     },
 
     onExit: function() {
         notification.removeBinding(this._bindings);
         this.clearSlotList();
-        this._ctrl_icon.setWidget(null);
-        this._ctrl_icon = null;
-        this._list_slots = null;
-        this._info_cur = null;
-        this._info_next = null;
-        this._lbl_cost = null;
-        this._lbl_gold = null;
+        this._ui.ctrl_gold.setWidget(null);
+        this._ui.ctrl_diamond.setWidget(null);
+        this._ui.ctrl_equip_1.setWidget(null);
+        this._ui.ctrl_equip_2.setWidget(null);
+        this._ui = null;
         this._super();
     },
 
     clearSlotList: function() {
-        _.each(this._slots, function(slot) {
-            slot.setSelectCallback(null);
+        _.each(this._ui.cell_equips, function(cell) {
+            cell.setSelectCallback(null);
         }, this);
-        this._slots = null;
-        this._list_slots.removeAllItems();
+        this._ui.cell_equips.length = 0;
+        this._ui.list_equips.removeAllItems();
     },
 
     createSlotList: function() {
         this.clearSlotList();
 
-        this._slots = [];
         _.each(EquipSystem.instance.slots, function(info) {
-            var slot = new EquipScene.EquipSlot(info.slot, info.level);
-            slot.setSelectCallback(this.onSelectSlot, this);
-            this._list_slots.pushBackCustomItem(slot);
-            this._slots.push(slot);
+            var id = EquipSystem.getEquipSlotUpgradeId(info.slot, info.level);
+            var config = configdb.duanzao[id];
+            if(config) {
+                var cell = new EquipScene.EquipCell(info.slot);
+                this._ui.list_equips.pushBackCustomItem(cell);
+                this._ui.cell_equips.push(cell);
+                cell.setSelectCallback(this.onSelectSlot, this);
+            }
         }, this);
     },
 
+    onSelectSlot: function(cell) {
+        this._sel_type = cell.type;
+        this.refreshSelectedSlotInfo();
+    },
+
     refreshSelectedSlotInfo: function() {
-        // set selected status
-        _.each(this._slots, function(slot) {
-            slot.setSelected(this._sel_type == slot.type);
+        _.each(this._ui.cell_equips, function(cell) {
+            cell.setSelected(cell.type == this._sel_type);
         }, this);
 
         // selected slot icon
-        this._ctrl_icon.setSlotType(this._sel_type);
+        this._ui.ctrl_equip_1.setSlotType(this._sel_type);
+        this._ui.ctrl_equip_2.setSlotType(this._sel_type);
 
         var info = EquipSystem.instance.slots[this._sel_type];
         if(info == undefined) {
@@ -88,51 +113,62 @@ var EquipScene = ui.GuiSceneBase.extend({
         }
 
         // slot info
-        var upgrade_id = EquipSystem.getEquipSlotUpgradeId(this._sel_type, info.level);
-        var config = configdb.duanzao[upgrade_id];
+        var config = configdb.duanzao[EquipSystem.getEquipSlotUpgradeId(this._sel_type, info.level)];
         if(config == undefined) {
             return;
         }
 
+        // name
+        var name = EquipSystem.getEquipSlotName(config.slot_type);
+        this._ui.lbl_name_1.setString(name);
+        this._ui.lbl_name_2.setString(name);
+
+        // part
+        var part = EquipSystem.getEquipSlotName(config.slot_type);
+        this._ui.lbl_part_1.setString(this._ui.lbl_part_1._str_original.format(part));
+        this._ui.lbl_part_2.setString(this._ui.lbl_part_2._str_original.format(part));
+
+        // level
+        this._ui.lbl_level_1.setString(this._ui.lbl_level_1._str_original.format(config.level));
+
+        // prop
         var prop = EquipSystem.getEquipProperty(config.prop_type);
-        this._info_cur.lbl_type.setString(EquipSystem.getEquipSlotName(config.slot_type));
-        this._info_cur.lbl_level.setString(this._info_cur.lbl_level._str_original.format(String(config.level)));
-        this._info_cur.lbl_score.setString(this._info_cur.lbl_score._str_original.format(prop, String(config.prop_value)));
-        this._lbl_cost.setString(this._lbl_cost._str_original.format(String(config.cost)));
+        this._ui.lbl_prop_1.setString(this._ui.lbl_prop_1._str_original.format({prop: prop, val:config.prop_value}));
+
+        // price
+        this._ui.lbl_price.setString(this._ui.lbl_price._str_original.format(config.cost));
 
         // top level
-        if(config.next == undefined) {
-            this._info_next.lbl_type.setString(EquipSystem.getEquipSlotName(config.slot_type));
-            this._info_next.lbl_level.setString("已到最高级");
-            this._info_next.lbl_score.setString(this._info_next.lbl_score._str_original.format(prop, String(config.prop_value)));
-            return;
+        if(config.next) {
+            config = configdb.duanzao[config.next];
+            if(config == undefined) {
+                return;
+            }
+
+            // level
+            this._ui.lbl_level_2.setString(this._ui.lbl_level_2._str_original.format(config.level));
+
+            // prop
+            this._ui.lbl_prop_2.setString(this._ui.lbl_prop_2._str_original.format({prop: prop, val:config.prop_value}));
+
+            this._ui.btn_leveup.setEnabled(true);
+            this._ui.btn_leveup.setBright(true);
         }
-
-        config = configdb.duanzao[config.next];
-        if(config == undefined) {
-            return;
+        else {
+            this._ui.lbl_price.setString("");
+            this._ui.lbl_part_2.setString("");
+            this._ui.lbl_level_2.setString("已到最高等级");
+            this._ui.lbl_prop_2.setString("");
+            this._ui.btn_leveup.setEnabled(false);
+            this._ui.btn_leveup.setBright(false);
         }
-
-        prop = EquipSystem.getEquipProperty(config.prop_type);
-        this._info_next.lbl_type.setString(EquipSystem.getEquipSlotName(config.slot_type));
-        this._info_next.lbl_level.setString(this._info_next.lbl_level._str_original.format(String(config.level)));
-        this._info_next.lbl_score.setString(this._info_next.lbl_score._str_original.format(prop, String(config.prop_value)));
     },
 
-    onSelectSlot: function(slot) {
-        this._sel_type = slot.type;
-        this.refreshSelectedSlotInfo();
+    _on_btn_close: function() {
+        this.close();
     },
 
-    refreshGoldInfo: function() {
-        this._lbl_gold.setString(String(PlayerSystem.instance.gold));
-    },
-
-    _on_btn_biaoqian_guanbi: function() {
-        this.popScene();
-    },
-
-    _on_btn_qianghua: function() {
+    _on_btn_duanzao: function() {
         //var win = MessageBoxOkCancel.show("确认升级？");
         //win.setOkCallback(function() {
         //    EquipSystem.instance.upgradeEquipSlot(this._sel_type);
@@ -143,8 +179,8 @@ var EquipScene = ui.GuiSceneBase.extend({
 });
 
 
-EquipScene.EquipSlot = ui.GuiWidgetBase.extend({
-    _guiFile: "ui/qianghua_zhuangbei.json",
+EquipScene.EquipCell = ui.GuiWidgetBase.extend({
+    _guiFile: "ui/equip_cell.json",
 
     ctor: function(type) {
         this._super();
@@ -154,34 +190,36 @@ EquipScene.EquipSlot = ui.GuiWidgetBase.extend({
     onEnter: function() {
         this._super();
         this._ui = {
-            img_sel: this.seekWidgetByName("img_selected"),
-            lbl_name: this.seekWidgetByName("lbl_zhuangbei"),
+            icon: (function() {
+                var ctrl = new EquipScene.EquipIcon(this.type);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_icon"));
+                return ctrl;
+            }.bind(this) ()),
+
+            btn_select: this.seekWidgetByName("btn_touch"),
+            lbl_name: this.seekWidgetByName("lbl_name"),
             lbl_level: this.seekWidgetByName("lbl_level"),
-            btn_select: this.seekWidgetByName("btn_enter")
+            img_sel: this.seekWidgetByName("img_sel")
         };
         this._bindings = [
-            notification.createBinding(notification.event.EQUIP_SLOT_UPGRADE_RESULT, this.refreshSlotLevel, this)
+            notification.createBinding(notification.event.EQUIP_SLOT_INFO, this.refreshEquipInfo, this)
         ];
 
-        this._ui.icon = new EquipScene.EquipIcon(this.type);
-        this._ui.icon.setWidget(this.seekWidgetByName("ProjectNode_icon"));
-
-        this._ui.lbl_name.setString(EquipSystem.getEquipSlotName(this.type));
-
-        this.refreshSlotLevel();
+        this.refreshEquipInfo();
     },
 
     onExit: function() {
         notification.removeBinding(this._bindings);
-        this._ui.icon.setWidget(null);
+        //this._ui.icon.setWidget(null);
         this._ui = null;
         this._super();
-        this._selectCallback = null;
     },
 
-    refreshSlotLevel: function() {
+    refreshEquipInfo: function() {
         var info = EquipSystem.instance.slots[this.type];
         if(info) {
+            this._ui.lbl_name.setString(EquipSystem.getEquipSlotName(this.type));
+
             this._ui.lbl_level.setString(this._ui.lbl_level._str_original.format(String(info.level)));
         }
     },
@@ -198,7 +236,7 @@ EquipScene.EquipSlot = ui.GuiWidgetBase.extend({
             this._selectCallback = selector.bind(target);
     },
 
-    _on_btn_enter: function() {
+    _on_btn_touch: function() {
         if (this._selectCallback) {
             this._selectCallback(this);
         }
@@ -213,43 +251,44 @@ EquipScene.EquipIcon = ui.GuiController.extend({
 
     onEnter: function() {
         this._super();
-        this._img_sel = this.seekWidgetByName("img_enter");
-        this._btn_sel = this.seekWidgetByName("btn_sel");
-        this._lbl_num = this.seekWidgetByName("lbl_num");
-        this._img_icon = this.seekWidgetByName("img_icon");
+        this._ui = {
+            sp_icon: this.seekWidgetByName("sp_icon"),
+            lbl_num: this.seekWidgetByName("lbl_num"),
+            img_sel: this.seekWidgetByName("img_sel")
+        };
 
-        this._img_sel.setVisible(false);
-        this._lbl_num.setVisible(false);
-        this._btn_sel.setEnabled(false);
+        this._ui.lbl_num.setVisible(false);
+        this._ui.img_sel.setVisible(false);
 
-        this.refreshEquipSlot();
+        this.refreshEquipIcon();
     },
 
     onExit: function() {
-        this._img_icon = null;
-        this._img_sel = null;
-        this._btn_sel = null;
-        this._lbl_num = null;
+        this._ui = null;
         this._super();
     },
 
     setSlotType: function(slot) {
         this.slot = slot;
-        this.refreshEquipSlot();
+        this.refreshEquipIcon();
     },
 
-    refreshEquipSlot: function() {
+    refreshEquipIcon: function() {
+        this._ui.sp_icon.setVisible(false);
+
         var info = EquipSystem.instance.slots[this.slot];
         if(info == undefined) {
             return;
         }
 
         var config = configdb.equip[info.id];
-        if(config && config.icon) {
-            this._img_icon.loadTexture(config.icon);
+        if(config == undefined) {
+            return;
         }
-        else {
-            this._img_icon.loadTexture("images/ui/ui_14.png");
+
+        if(config.icon) {
+            this._ui.sp_icon.setVisible(true);
+            this._ui.sp_icon.setTexture(config.icon);
         }
     }
 });

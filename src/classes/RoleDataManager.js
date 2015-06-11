@@ -18,9 +18,8 @@ var RoleDataManager = cc.Class.extend({
         this.maxMp = 0;
         this.atk = 0;
         this.def = 0;
-        this.critMin = 1;
-        this.critMax = 1;
-        this.critProbability = 0;
+        this.crit = 1;
+        this.critPro = 0;
         this.sunder = 0;
     },
 
@@ -43,17 +42,10 @@ var RoleDataManager = cc.Class.extend({
             this.def = data.def;
         }
         if(data.crit != undefined) {
-            var crit = data.crit;
-            if(crit.min != undefined) {
-                this.critMin = crit.min;
-                this.critMax = crit.min;
-            }
-            if(crit.max != undefined) {
-                this.critMax = crit.max;
-            }
-            if(crit.probability != undefined) {
-                this.critProbability = crit.probability;
-            }
+            this.crit = data.crit;
+        }
+        if(data.crit_probability != undefined){
+            this.critPro = data.crit_probability;
         }
         if(data.sunder != undefined) {
             this.sunder = data.sunder;

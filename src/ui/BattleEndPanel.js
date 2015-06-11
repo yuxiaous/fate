@@ -75,8 +75,8 @@ var BattleEndPanel = ui.GuiWindowBase.extend({
     
     _on_btn_again: function () {
         ui.popScene();
-        ui.pushScene(new BattleScene(MapSystem.instance.cur_battle_map));
-        ui.replaceScene(new BattleScene(MapSystem.instance.cur_battle_map))
+        ui.pushScene(new BattleScene(BattleSystem.instance.cur_battle_map));
+        ui.replaceScene(new BattleScene(BattleSystem.instance.cur_battle_map))
     }
 });
 

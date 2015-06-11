@@ -51,7 +51,9 @@ var RoleBase = PhysicalNode.extend({
     },
 
     init: function() {
+        LOG("THIS.ARMATURE NAME = " + this.armatureName);
         var armatureNode = dragonBones.DragonBonesHelper.buildArmatureNode(this.armatureName);
+        LOG("THIS.ARMATURE NAME = " + armatureNode);
         this.addChild(armatureNode);
 
 
@@ -251,17 +253,18 @@ var RoleBase = PhysicalNode.extend({
 
     injure: function(attacker) {
         this.injureValue = true;
+
         //damage
-        var damage = BattleSystem.getAtkActualValue(attacker,this);
+        var damageData = BattleSystem.getAtkActualValue(attacker,this);
 
         //if(this.roleType == RoleBase.RoleType.Boss){
         //    damage = 1000;
         //}
 
-        var hp = this.roleDataManager.hp - damage;
+        var hp = this.roleDataManager.hp - damageData.damageValue;
         this.roleDataManager.hp = hp < 0 ? 0 : hp;
 
-        DamageWorld.createDamage(damage,this,this.roleSize, false);
+        DamageWorld.createDamage(damageData.damageValue,this,this.roleSize, damageData.isCrit);
 
         this.updateBloodBar();
 

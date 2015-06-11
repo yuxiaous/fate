@@ -73,7 +73,7 @@ var Formula = {
         return 0;
      },
 
-    //爆伤公式
+    //爆伤倍数公式
     calculateCritFormula : function (crit) {
         if(crit == undefined) crit = 0;
 

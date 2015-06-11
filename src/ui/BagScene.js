@@ -3,10 +3,9 @@
  */
 
 
-var BagScene = ui.GuiSceneBase.extend({
+var BagScene = ui.GuiWindowBase.extend({
     _guiFile: "ui/beibao.json",
-
-    PAGE_NUMBER: 3,
+    LINE_NUMBER: 10,
 
     ctor: function() {
         this._super();
@@ -16,101 +15,91 @@ var BagScene = ui.GuiSceneBase.extend({
 
     onEnter: function() {
         this._super();
-        this._page_view = this.seekWidgetByName("page_items");
-        this._lbl_page_num = this.seekWidgetByName("lbl_fanye");
-        this._lbl_item_name = this.seekWidgetByName("lbl_item_name");
-        this._lbl_item_desc = this.seekWidgetByName("lbl_item_desc");
-        this._lbl_item_price = this.seekWidgetByName("lbl_item_price");
-        this._btn_use = this.seekWidgetByName("btn_use");
-        this._btn_sell = this.seekWidgetByName("btn_chushou");
-        this._slot_equips = [];
-        _.each([
-            [EquipSystem.EquipSlotType.Weapon, "ProjectNode_1"],
-            [EquipSystem.EquipSlotType.Coat, "ProjectNode_2"],
-            [EquipSystem.EquipSlotType.Head, "ProjectNode_3"],
-            [EquipSystem.EquipSlotType.Leg, "ProjectNode_4"],
-            [EquipSystem.EquipSlotType.Shoe, "ProjectNode_5"],
-            [EquipSystem.EquipSlotType.Amulet, "ProjectNode_6"]
-        ], function(data) {
-            var slot = data[0];
-            var widget = this.seekWidgetByName(data[1]);
-            var ctrl = new BagScene.EquipSlot(slot);
-            ctrl.setWidget(widget);
-            this._slot_equips.push(ctrl);
-        }, this);
-        this._role = {
-            lbl_score: this.seekWidgetByName("lbl_zhanli"),
-            lbl_hp: this.seekWidgetByName("lbl_hp"),
-            lbl_mp: this.seekWidgetByName("lbl_mp"),
-            lbl_atk: this.seekWidgetByName("lbl_atk"),
-            lbl_def: this.seekWidgetByName("lbl_fang"),
-            lbl_crit: this.seekWidgetByName("lbl_bao"),
-            lbl_sunder: this.seekWidgetByName("lbl_po"),
-            lbl_level: this.seekWidgetByName("lbl_level"),
-            loading_exp: this.seekWidgetByName("loading_exp"),
-            lbl_exp: this.seekWidgetByName("lbl_exp"),
-            avatar: this.seekWidgetByName("Node_avatar"),
-            lbl_name: this.seekWidgetByName("lbl_player_name")
+        this._ui = {
+            lbl_player_name: this.seekWidgetByName("lbl_player_name"),
+            node_avatar: this.seekWidgetByName("Node_avatar"),
+            ctrl_slots: _.reduce([
+                [EquipSystem.EquipSlotType.Weapon, "ProjectNode_1"],
+                [EquipSystem.EquipSlotType.Coat, "ProjectNode_2"],
+                [EquipSystem.EquipSlotType.Head, "ProjectNode_3"],
+                [EquipSystem.EquipSlotType.Leg, "ProjectNode_4"],
+                [EquipSystem.EquipSlotType.Shoe, "ProjectNode_5"],
+                [EquipSystem.EquipSlotType.Amulet, "ProjectNode_6"]
+            ], function(slots, data){
+                var ctrl = new BagScene.EquipSlot(data[0]);
+                ctrl.setWidget(this.seekWidgetByName(data[1]));
+                slots.push(ctrl);
+                return slots;
+            }, [], this),
+
+            list_view: this.seekWidgetByName("list_items"),
+            ctrl_items: [],
+            ctrl_gold: (function() {
+                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Gold);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_7"));
+                return ctrl;
+            }.bind(this) ()),
+            ctrl_diamond: (function() {
+                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Diamond);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_8"));
+                return ctrl;
+            }.bind(this) ()),
+            lbl_item_name: this.seekWidgetByName("lbl_item_name"),
+            lbl_item_price: this.seekWidgetByName("lbl_item_price"),
+            lbl_item_score: this.seekWidgetByName("lbl_item_score"),
+            lbl_item_desc: this.seekWidgetByName("lbl_item_desc"),
+            btn_use: this.seekWidgetByName("btn_use"),
+            btn_sell: this.seekWidgetByName("btn_chushou")
         };
 
         this._bindings = [
-            notification.createBinding(notification.event.ITEM_INFO, this.refreshItemPage, this),
-            notification.createBinding(notification.event.EQUIP_EQUIP_ITEM, this.refreshRoleInfo, this),
-            notification.createBinding(notification.event.EQUIP_UNEQUIP_ITEM, this.refreshRoleInfo, this)
+            notification.createBinding(notification.event.ITEM_INFO, this.refreshItemPage, this)
         ];
 
-        this._page_view.addEventListener(this.refreshPageIndex, this);
-
-        this.createItemPage();
+        this.createItemList();
         this.createRoleAvatar();
         this.refreshItemPage();
-        this.refreshPageIndex();
-        this.refreshRoleInfo();
     },
 
     onExit: function() {
         notification.removeBinding(this._bindings);
-        this.clearItemPage();
+        this.clearItemList();
         this.clearRoleAvatar();
-        _.each(this._slot_equips, function(ctrl) {
+
+        _.each(this._ui.crtl_slots, function(ctrl) {
             ctrl.setWidget(null);
         }, this);
-        this._slot_equips = null;
-        this._page_view = null;
-        this._lbl_page_num = null;
-        this._lbl_item_name = null;
-        this._lbl_item_desc = null;
-        this._lbl_item_price = null;
-        this._btn_use = null;
-        this._btn_sell = null;
-        this._role = null;
+        this._ui.ctrl_gold.setWidget(null);
+        this._ui.ctrl_diamond.setWidget(null);
+        this._ui = null;
+
         this._super();
     },
 
-    clearItemPage: function() {
-        _.each(this.items, function(item) {
-            item.setSelectCallback(null);
+    clearItemList: function() {
+        _.each(this._ui.ctrl_items, function(ctrl) {
+            ctrl.setSelectCallback(null);
         }, this);
-        this.items = null;
-        this._page_view.removeAllPages();
+        this._ui.ctrl_items.length = 0;
+        this._ui.list_view.removeAllItems();
     },
 
-    createItemPage: function() {
-        this.clearItemPage();
+    createItemList: function() {
+        this.clearItemList();
 
-        this.items = [];
-        for(var i = this.PAGE_NUMBER; i--;) {
-            var page = new BagScene.ItemPage();
-            this._page_view.addPage(page);
-
-            _.each(page.items, function(item) {
-                item.setSelectCallback(this.onSelectItem, this);
-                this.items.push(item);
-            }, this);
+        for(var i = this.LINE_NUMBER; i--;) {
+            var line = new BagScene.ItemLine();
+            this._ui.list_view.pushBackCustomItem(line);
+            this._ui.ctrl_items = this._ui.ctrl_items.concat(line.getItemSlots());
         }
+
+        _.each(this._ui.ctrl_items, function(ctrl) {
+            ctrl.setSelectCallback(this.onSelectItem, this);
+        }, this);
     },
 
     refreshItemPage: function() {
+        // sort items
         var infos = _.toArray(BagSystem.instance.items).sort(function(info1, info2){
             var type1 = Math.floor(info1.id/100000);
             var type2 = Math.floor(info2.id/100000);
@@ -126,154 +115,139 @@ var BagScene = ui.GuiSceneBase.extend({
             return 0;
         });
 
-        _.each(this.items, function(item, i) {
+        _.each(this._ui.ctrl_items, function(ctrl, i) {
             var info = infos[i];
             if(info == undefined) {
-                item.setUid(0);
+                ctrl.setUid(0);
                 return;
             }
-            item.setUid(info.uid);
+            ctrl.setUid(info.uid);
         }, this);
 
         this.refreshSelectedItemInfo();
     },
 
-    refreshPageIndex: function() {
-        var idx = this._page_view.getCurPageIndex();
-        var max = this.PAGE_NUMBER;
-        this._lbl_page_num.setString(this._lbl_page_num._str_original.format(idx+1, max));
-    },
-
-    _on_btn_zuo: function() {
-        var idx = this._page_view.getCurPageIndex();
-        if(idx > 0) {
-            this._page_view.scrollToPage(idx-1);
-        }
-    },
-
-    _on_btn_you: function() {
-        var idx = this._page_view.getCurPageIndex();
-        var max = this.PAGE_NUMBER;
-        if(idx < max-1) {
-            this._page_view.scrollToPage(idx+1);
-        }
-    },
-
     onSelectItem: function(item) {
-        this._sel_index = _.indexOf(this.items, item);
+        this._sel_index = _.indexOf(this._ui.ctrl_items, item);
         this.refreshSelectedItemInfo();
     },
 
     refreshSelectedItemInfo: function() {
-        _.each(this.items, function(item, i) {
+        _.each(this._ui.ctrl_items, function(item, i) {
             item.setSelected(i == this._sel_index);
         }, this);
 
-        var item = this.items[this._sel_index];
+        var item = this._ui.ctrl_items[this._sel_index];
         var info = BagSystem.instance.items[item.uid];
         if(info) {
             var config = BagSystem.getConfig(info.id);
             if(config) {
-                this._lbl_item_name.setString(config.name || "");
-                this._lbl_item_desc.setString(config.desc || "");
+                // name
+                this._ui.lbl_item_name.setString(config.name || "");
+
+                // price
+                this._ui.lbl_item_price.setString(this._ui.lbl_item_price._str_original.format(config.price || ""));
+
+                // score
+                this._ui.lbl_item_score.setString(this._ui.lbl_item_score._str_original.format(config.sort));
+
+                // desc
+                this._ui.lbl_item_desc.setString(config.desc || "");
 
                 // use
-                this._btn_use.setVisible(true);
-                this._btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
+                this._ui.btn_use.setVisible(true);
+                this._ui.btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
 
                 // sell
-                if(config.price != undefined && config.price > 0) {
-                    this._btn_sell.setVisible(true);
-                    this._lbl_item_price.setString(String(config.price));
-                }
-                else {
-                    this._btn_sell.setVisible(false);
-                    this._lbl_item_price.setVisible(false);
-                }
+                var enable = config.price && config.price > 0;
+                this._ui.btn_sell.setEnabled(enable);
+                this._ui.btn_sell.setBright(enable);
                 return;
             }
         }
 
-        this._lbl_item_name.setString("空");
-        this._lbl_item_desc.setString("");
-        this._lbl_item_price.setVisible(false);
-        this._btn_use.setVisible(false);
-        this._btn_sell.setVisible(false);
+        this._ui.lbl_item_name.setString("");
+        this._ui.lbl_item_price.setString("");
+        this._ui.lbl_item_score.setString("");
+        this._ui.lbl_item_desc.setString("");
+        this._ui.btn_use.setVisible(false);
+        this._ui.btn_sell.setEnabled(false);
+        this._ui.btn_sell.setBright(false);
     },
 
-    refreshRoleInfo: function(event_,attr_) {
-        var system = PlayerSystem.instance;
-
-        var score = system.getPlayerBattleScore();
-        this._role.lbl_hp.setString(this._role.lbl_hp._str_original.format(String(score.hp)));
-        this._role.lbl_mp.setString(this._role.lbl_mp._str_original.format(String(score.mp)));
-        this._role.lbl_atk.setString(this._role.lbl_atk._str_original.format(String(score.atk)));
-        this._role.lbl_def.setString(this._role.lbl_def._str_original.format(String(score.def)));
-        this._role.lbl_crit.setString(this._role.lbl_crit._str_original.format(String(score.crit)));
-        this._role.lbl_sunder.setString(this._role.lbl_sunder._str_original.format(String(score.sunder)));
-        this._role.lbl_score.setString(this._role.lbl_score._str_original.format(String(score.score)));
-        if(attr_ && attr_.isRefresh){
-            var tmpValue = score.score - this._role.lbl_score.lastValue;
-
-            if(tmpValue == 0){
-                return;
-            }
-
-            var tmpLblScore = this._role.lbl_score.getParent();
-            var tmpLabel = cc.LabelTTF.create("");
-
-            var newString = String(tmpValue)
-            var moveV = 30
-            if(tmpValue > 0){
-                tmpLabel.setColor(cc.color(10,200,10));
-                newString = "+" + newString
-            }
-            else{
-                tmpLabel.setColor(cc.color(200,10,10));
-                moveV *= -1;
-            }
-            tmpLabel.setString(newString);
-            tmpLabel.setFontSize(25);
-            var tmpPos = cc.p(this._role.lbl_score.getPosition().x + this._role.lbl_score.getContentSize().width,this._role.lbl_score.getPosition().y);
-            tmpLabel.setPosition(tmpPos);
-
-
-            tmpLblScore.addChild(tmpLabel);
-
-            tmpLabel.runAction(cc.Sequence.create(
-                cc.MoveBy.create(0.6,cc.p(0,moveV)),
-                cc.CallFunc.create(function () {
-                    tmpLabel.removeFromParent();
-                })
-            ));
-        }
-        this._role.lbl_score.lastValue = score.score;
-
-        var exp = system.getPlayerExperience();
-        this._role.lbl_level.setString(this._role.lbl_level._str_original.format(system.level));
-        this._role.lbl_exp.setString(this._role.lbl_exp._str_original.format(exp.exp, exp.need));
-        this._role.loading_exp.setPercent(100 * exp.exp / exp.need);
-    },
+    //refreshRoleInfo: function(event_,attr_) {
+    //    var system = PlayerSystem.instance;
+    //
+    //    var score = system.getPlayerBattleScore();
+    //    this._role.lbl_hp.setString(this._role.lbl_hp._str_original.format(String(score.hp)));
+    //    this._role.lbl_mp.setString(this._role.lbl_mp._str_original.format(String(score.mp)));
+    //    this._role.lbl_atk.setString(this._role.lbl_atk._str_original.format(String(score.atk)));
+    //    this._role.lbl_def.setString(this._role.lbl_def._str_original.format(String(score.def)));
+    //    this._role.lbl_crit.setString(this._role.lbl_crit._str_original.format(String(score.crit)));
+    //    this._role.lbl_sunder.setString(this._role.lbl_sunder._str_original.format(String(score.sunder)));
+    //    this._role.lbl_score.setString(this._role.lbl_score._str_original.format(String(score.score)));
+    //    if(attr_ && attr_.isRefresh){
+    //        var tmpValue = score.score - this._role.lbl_score.lastValue;
+    //
+    //        if(tmpValue == 0){
+    //            return;
+    //        }
+    //
+    //        var tmpLblScore = this._role.lbl_score.getParent();
+    //        var tmpLabel = cc.LabelTTF.create("");
+    //
+    //        var newString = String(tmpValue)
+    //        var moveV = 30
+    //        if(tmpValue > 0){
+    //            tmpLabel.setColor(cc.color(10,200,10));
+    //            newString = "+" + newString
+    //        }
+    //        else{
+    //            tmpLabel.setColor(cc.color(200,10,10));
+    //            moveV *= -1;
+    //        }
+    //        tmpLabel.setString(newString);
+    //        tmpLabel.setFontSize(25);
+    //        var tmpPos = cc.p(this._role.lbl_score.getPosition().x + this._role.lbl_score.getContentSize().width,this._role.lbl_score.getPosition().y);
+    //        tmpLabel.setPosition(tmpPos);
+    //
+    //
+    //        tmpLblScore.addChild(tmpLabel);
+    //
+    //        tmpLabel.runAction(cc.Sequence.create(
+    //            cc.MoveBy.create(0.6,cc.p(0,moveV)),
+    //            cc.CallFunc.create(function () {
+    //                tmpLabel.removeFromParent();
+    //            })
+    //        ));
+    //    }
+    //    this._role.lbl_score.lastValue = score.score;
+    //
+    //    var exp = system.getPlayerExperience();
+    //    this._role.lbl_level.setString(this._role.lbl_level._str_original.format(system.level));
+    //    this._role.lbl_exp.setString(this._role.lbl_exp._str_original.format(exp.exp, exp.need));
+    //    this._role.loading_exp.setPercent(100 * exp.exp / exp.need);
+    //},
 
     clearRoleAvatar: function() {
-        this._role.avatar.removeAllChildren();
+        this._ui.node_avatar.removeAllChildren();
     },
 
     createRoleAvatar: function() {
         this.clearRoleAvatar();
 
         var avatar = new ShowRole(this._avatar_id);
-        this._role.avatar.addChild(avatar);
+        this._ui.node_avatar.addChild(avatar);
 
         if(this._avatar_id == 1001) {
-            this._role.lbl_name.setString("Saber");
+            this._ui.lbl_player_name.setString("Saber");
         }
         else if(this._avatar_id == 1101) {
-            this._role.lbl_name.setString("Nero");
+            this._ui.lbl_player_name.setString("Nero");
         }
     },
 
-    _on_btn_huanyi: function() {
+    _on_btn_change: function() {
         if(this._avatar_id == 1001) {
             this._avatar_id = 1101;
         }
@@ -284,19 +258,13 @@ var BagScene = ui.GuiSceneBase.extend({
         this.createRoleAvatar();
     },
 
-    _on_btn_biaoqian_guanbi: function() {
-        this.popScene();
-    },
-
-    _on_btn_chushou: function() {
-        var item = this.items[this._sel_index];
-        if(item && item.uid) {
-            BagSystem.instance.sell(item.uid, 1);
-        }
+    _on_btn_close: function() {
+        //this.popScene();
+        this.close();
     },
 
     _on_btn_use: function() {
-        var item = this.items[this._sel_index];
+        var item = this._ui.ctrl_items[this._sel_index];
         if(item == undefined || item.uid == 0) {
             return;
         }
@@ -313,11 +281,18 @@ var BagScene = ui.GuiSceneBase.extend({
         else {
             ItemSystem.instance.useItem(item.uid, 1);
         }
+    },
+
+    _on_btn_chushou: function() {
+        var item = this._ui.ctrl_items[this._sel_index];
+        if(item && item.uid) {
+            BagSystem.instance.sell(item.uid, 1);
+        }
     }
 });
 
 
-BagScene.ItemPage = ui.GuiWidgetBase.extend({
+BagScene.ItemLine = ui.GuiWidgetBase.extend({
     _guiFile: "ui/beibao_ye.json",
 
     ctor: function() {
@@ -327,30 +302,36 @@ BagScene.ItemPage = ui.GuiWidgetBase.extend({
     onEnter: function() {
         this._super();
 
-        this.items = [];
-        _.each([
-            "ProjectNode_0_0", "ProjectNode_0_1", "ProjectNode_0_2", "ProjectNode_0_3",
-            "ProjectNode_1_0", "ProjectNode_1_1", "ProjectNode_1_2", "ProjectNode_1_3",
-            "ProjectNode_2_0", "ProjectNode_2_1", "ProjectNode_2_2", "ProjectNode_2_3"
-        ], function(name) {
-            var widget = this.seekWidgetByName(name);
-            var item = new BagScene.Item();
-            item.setWidget(widget);
-            this.items.push(item);
-        }, this);
+        this._ui = {
+            ctrl_items: _.reduce([
+                "ProjectNode_0_0",
+                "ProjectNode_0_1",
+                "ProjectNode_0_2",
+                "ProjectNode_0_3"
+            ], function(items, name){
+                var ctrl = new BagScene.ItemSlot();
+                ctrl.setWidget(this.seekWidgetByName(name));
+                items.push(ctrl);
+                return items;
+            }, [], this)
+        };
     },
 
     onExit: function() {
-        _.each(this.items, function(item) {
-            item.setWidget(null);
+        _.each(this._ui.ctrl_items, function(ctrl) {
+            ctrl.setWidget(null);
         }, this);
-        this.items = null;
+        this._ui = null;
         this._super();
+    },
+
+    getItemSlots: function() {
+        return this._ui.ctrl_items;
     }
 });
 
 
-BagScene.Item = ui.GuiController.extend({
+BagScene.ItemSlot = ui.GuiController.extend({
     ctor: function() {
         this._super();
         this.uid = 0;
@@ -358,27 +339,25 @@ BagScene.Item = ui.GuiController.extend({
 
     onEnter: function() {
         this._super();
-        this._img_sel = this.seekWidgetByName("img_enter");
-        this._btn_sel = this.seekWidgetByName("btn_sel");
-        this._img_icon = this.seekWidgetByName("img_icon");
-        this._lbl_num = this.seekWidgetByName("lbl_num");
-
-        this.setUid(0);
+        this._ui = {
+            sp_icon: this.seekWidgetByName("sp_icon"),
+            lbl_num: this.seekWidgetByName("lbl_num"),
+            img_sel: this.seekWidgetByName("img_sel"),
+            btn_touch: this.seekWidgetByName("btn_bg")
+        };
+        this.setUid(this.uid);
+        this.setSelected(false);
     },
 
     onExit: function() {
-        this._img_icon = null;
-        this._img_sel = null;
-        this._btn_sel = null;
-        this._lbl_num = null;
+        this._ui = null;
         this._super();
-        this._selectCallback = null;
     },
 
     setUid: function(uid) {
         this.uid = uid;
-        this._lbl_num.setVisible(false);
-        this._img_icon.loadTexture("images/ui/ui_14.png");
+        this._ui.lbl_num.setVisible(false);
+        this._ui.sp_icon.setVisible(false);
 
         var info = BagSystem.instance.items[uid];
         if(info == undefined) {
@@ -386,19 +365,26 @@ BagScene.Item = ui.GuiController.extend({
         }
 
         var config = BagSystem.getConfig(info.id);
-        if(config && config.icon) {
-            this._img_icon.loadTexture(config.icon);
+        if(config == undefined) {
+            return;
         }
 
+        // icon
+        if(config.icon) {
+            this._ui.sp_icon.setVisible(true);
+            this._ui.sp_icon.setTexture(config.icon);
+        }
+
+        // number
         if(info.num > 1) {
-            this._lbl_num.setVisible(true);
-            this._lbl_num.setString(String(info.num));
+            this._ui.lbl_num.setVisible(true);
+            this._ui.lbl_num.setString(String(info.num));
         }
     },
 
     setSelected: function(val) {
-        this._img_sel.setVisible(val);
-        this._btn_sel.setEnabled(!val);
+        this._ui.img_sel.setVisible(val);
+        this._ui.btn_touch.setEnabled(!val);
     },
 
     setSelectCallback: function (selector, target) {
@@ -408,7 +394,7 @@ BagScene.Item = ui.GuiController.extend({
             this._selectCallback = selector.bind(target);
     },
 
-    _on_btn_sel: function() {
+    _on_btn_bg: function() {
         if (this._selectCallback) {
             this._selectCallback(this);
         }
@@ -423,45 +409,119 @@ BagScene.EquipSlot = ui.GuiController.extend({
 
     onEnter: function() {
         this._super();
-        this._img_sel = this.seekWidgetByName("img_enter");
-        this._btn_sel = this.seekWidgetByName("btn_sel");
-        this._img_icon = this.seekWidgetByName("img_icon");
-        this._lbl_num = this.seekWidgetByName("lbl_num");
-
+        this._ui = {
+            sp_icon: this.seekWidgetByName("sp_icon"),
+            lbl_num: this.seekWidgetByName("lbl_num"),
+            img_sel: this.seekWidgetByName("img_sel")
+        };
         this._bindings = [
             notification.createBinding(notification.event.EQUIP_EQUIP_ITEM, this.refreshEquipSlot, this),
             notification.createBinding(notification.event.EQUIP_UNEQUIP_ITEM, this.refreshEquipSlot, this)
         ];
 
-        this._lbl_num.setVisible(false);
-        this._img_sel.setVisible(false);
-        this._btn_sel.setEnabled(false);
+        this._ui.lbl_num.setVisible(false);
+        this._ui.img_sel.setVisible(false);
 
         this.refreshEquipSlot();
     },
 
     onExit: function() {
         notification.removeBinding(this._bindings);
-        this._img_icon = null;
-        this._img_sel = null;
-        this._btn_sel = null;
-        this._lbl_num = null;
+        this._ui = null;
         this._super();
     },
 
     refreshEquipSlot: function() {
+        this._ui.sp_icon.setVisible(false);
+
         var info = EquipSystem.instance.slots[this.slot];
         if(info == undefined) {
             return;
         }
 
         var config = BagSystem.getConfig(info.id);
-        if(config && config.icon) {
-            this._img_icon.loadTexture(config.icon);
+        if(config == undefined) {
+            return;
         }
-        else {
-            this._img_icon.loadTexture("images/ui/ui_14.png");
+
+        if(config.icon) {
+            this._ui.sp_icon.setVisible(true);
+            this._ui.sp_icon.setTexture(config.icon);
+        }
+    },
+
+    _on_btn_bg: function() {
+        LOG("touch equip slot " + this.slot);
+    }
+});
+
+BagScene.Resource = ui.GuiController.extend({
+    ctor: function(type) {
+        this._super();
+        this.type = type;
+    },
+
+    onEnter: function() {
+        this._super();
+        this._ui = {
+            sp_icon: this.seekWidgetByName("sp_icon"),
+            btn_add: this.seekWidgetByName("btn_add"),
+            lbl_value: this.seekWidgetByName("lbl_value")
+        };
+        this._bindings = [
+            notification.createBinding(notification.event.PLAYER_INFO, this.refreshValue, this)
+        ];
+
+        this._ui.sp_icon.setVisible(false);
+        this._ui.btn_add.setVisible(false);
+
+        this.refreshValue();
+    },
+
+    onExit: function() {
+        notification.removeBinding(this._bindings);
+        this._ui = null;
+        this._super();
+    },
+
+    refreshValue: function() {
+        var system = PlayerSystem.instance;
+
+        var value = 0;
+        switch (this.type) {
+            case BagScene.Resource.Type.Action:
+                value = system.action;
+                break;
+            case BagScene.Resource.Type.Gold:
+                value = system.gold;
+                break;
+            case BagScene.Resource.Type.Diamond:
+                value = system.diamond;
+                break;
+        }
+        this._ui.lbl_value.setString(String(value));
+    },
+
+    _on_btn_add: function() {
+        switch (this.type) {
+            case BagScene.Resource.Type.Action:
+                LOG("add action");
+                GmSystem.instance.sendCommand("ar 3 10");
+                break;
+            case BagScene.Resource.Type.Gold:
+                LOG("add gold");
+                GmSystem.instance.sendCommand("ar 1 100");
+                break;
+            case BagScene.Resource.Type.Diamond:
+                LOG("add diamond");
+                GmSystem.instance.sendCommand("ar 2 100");
+                break;
         }
     }
 });
+BagScene.Resource.Type = {
+    Action: 1,
+    Gold: 2,
+    Diamond: 3
+};
 

@@ -108,6 +108,10 @@ notification.event = {
     ITEM: 500,
     ITEM_INFO: 501,
 
+    BATTLE: 600,
+    BATTLE_MAP_RESULT: 601,
+    BATTLE_FINISH_RESULT: 602,
+
     ROLE_ATTACK: 10001,
     ROLE_HIT: 10002,
     ROLE_DIE: 10003,

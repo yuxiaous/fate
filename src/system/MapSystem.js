@@ -7,10 +7,9 @@ var MapSystem = SystemBase.extend({
     ctor: function () {
         this._super();
 
+        this.max_map_id = 0;
         this.max_chapter_id = 0;
         this.maps_info = {};
-
-        this.cur_battle_map = 0;
 
         this.cur_map_pos = cc.p(0,0);
     },
@@ -25,13 +24,17 @@ var MapSystem = SystemBase.extend({
         net_protocol_handlers.ON_CMD_SC_MAP_INFO = null;
     },
 
-    requestMapInfo: function() {
-        net_protocol_handlers.SEND_CMD_CS_GET_MAP_INFO();
-    },
+    //requestMapInfo: function() {
+    //    net_protocol_handlers.SEND_CMD_CS_GET_MAP_INFO();
+    //},
 
     onMapInfo: function(obj) {
         _.each(obj.maps, function(info) {
             this.maps_info[info.map_id] = info;
+
+            if(info.map_id > this.max_map_id) {
+                this.max_map_id = info.map_id;
+            }
 
             var config = configdb.map[info.map_id];
             if(config && config.chapter > this.max_chapter_id) {
@@ -40,14 +43,6 @@ var MapSystem = SystemBase.extend({
         }, this);
 
         notification.emit(notification.event.MAP_MAP_INFO);
-    },
-
-    sendBattleResult: function(isWin) {
-        net_protocol_handlers.SEND_CMD_CS_SEND_BATTLE_RESULT({
-            result: isWin ? 1: 2,
-            map_id: this.cur_battle_map,
-            time: 0
-        });
     },
 
     setGameMapPos : function (pos_) {

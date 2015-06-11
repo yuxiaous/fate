@@ -10,8 +10,8 @@ var RoleBloodBar = ui.GuiWidgetBase.extend({
         this._super();
         this._maxValue = maxValue_;
         this._curValue = curValue_;
-        cc.log("max = " + this._maxValue);
-        cc.log("cur = " + this._curValue);
+        //cc.log("max = " + this._maxValue);
+        //cc.log("cur = " + this._curValue);
     },
 
     onEnter: function() {

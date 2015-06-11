@@ -38,20 +38,3 @@ var map_server = {
     }
 };
 
-
-server.registerCallback(net_protocol_handlers.CMD_CS_GET_MAP_INFO, function(obj) {
-    LOG("CMD_CS_GET_MAP_INFO")
-    server.send(net_protocol_handlers.CMD_SC_MAP_INFO, {
-        maps: map_server.map_info
-    });
-});
-
-server.registerCallback(net_protocol_handlers.CMD_CS_SEND_BATTLE_RESULT, function(obj) {
-    LOG("CMD_CS_SEND_BATTLE_RESULT")
-    if(obj.result == 1) {
-        var config = configdb.map[obj.map_id];
-        if(config && config.next_map) {
-            map_server.openMap([config.next_map]);
-        }
-    }
-});

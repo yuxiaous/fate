@@ -6,7 +6,7 @@
 var SkillSystem = SystemBase.extend({
     ctor: function () {
         this._super();
-        this.skills = [];
+        this.skills = {};
     },
 
     onInit: function () {
@@ -23,15 +23,17 @@ var SkillSystem = SystemBase.extend({
 
     onSkillInfo: function(obj) {
         _.each(obj.skills, function(skill) {
-            var idx = _.findIndex(this.skills, function(skl) {
-                return skl.skill_id == skill.skill_id;
-            });
-            if(idx >= 0) {
-                this.skills[idx] = skill;
-            }
-            else {
-                this.skills.push(skill);
-            }
+            //var idx = _.findIndex(this.skills, function(skl) {
+            //    return skl.skill_id == skill.skill_id;
+            //});
+            //if(idx >= 0) {
+            //    this.skills[idx] = skill;
+            //}
+            //else {
+            //    this.skills.push(skill);
+            //}
+
+            this.skills[skill.skill_id] = skill;
         }, this);
 
         notification.emit(notification.event.SKILL_INFO);
@@ -44,7 +46,7 @@ var SkillSystem = SystemBase.extend({
     },
 
     onSkillLevelUp: function() {
-        MessageBoxOk.show("技能升级成功");
+
     },
 
     canUpgradeSkill: function() {

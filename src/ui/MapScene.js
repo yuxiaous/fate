@@ -9,106 +9,99 @@ var MapScene = ui.GuiSceneBase.extend({
     ctor: function() {
         this._super();
 
-        this._cur_chapter_id = 1;
+        this._cur_chapter_id = MapSystem.instance.max_chapter_id;
+        this._sel_map_id = 0;
     },
 
     onEnter: function() {
         this._super();
+        MusicManager.getInstance().playBackgroundMusic("sounds/background.mp3");
+
         this._ui = {
-            scroll: this.seekWidgetByName("scroll_map"),
+            ctrl_action: (function() {
+                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Action);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_action"));
+                return ctrl;
+            }.bind(this) ()),
+            ctrl_gold: (function() {
+                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Gold);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_gold"));
+                return ctrl;
+            }.bind(this) ()),
+            ctrl_diamond: (function() {
+                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Diamond);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_diamond"));
+                return ctrl;
+            }.bind(this) ()),
+
+
+            list_maps: this.seekWidgetByName("list_maps"),
+            cell_maps: [],
             lbl_chapter: this.seekWidgetByName("lbl_chapter"),
             btn_pre: this.seekWidgetByName("btn_pre"),
-            btn_next: this.seekWidgetByName("btn_next"),
-            red_point_bag: this.seekWidgetByName("Sprite_red_role"),
-            red_point_forge: this.seekWidgetByName("Sprite_red_streng"),
-            red_point_skill: this.seekWidgetByName("Sprite_red_skill"),
-            red_point_shop: this.seekWidgetByName("Sprite_red_shop")
+            btn_next: this.seekWidgetByName("btn_next")
         };
-
-        this._ui.header = new MapScene.Header();
-        this._ui.header.setWidget(this.seekWidgetByName("ProjectNode_header"));
-
-        this._ui.action = new MapScene.Resource(MapScene.Resource.Type.Action);
-        this._ui.action.setWidget(this.seekWidgetByName("ProjectNode_action"));
-        this._ui.action.setAddCallback(function() {
-            LOG("add action")
-            GmSystem.instance.sendCommand("ar 3 10");
-        });
-
-        this._ui.gold = new MapScene.Resource(MapScene.Resource.Type.Gold);
-        this._ui.gold.setWidget(this.seekWidgetByName("ProjectNode_gold"));
-        this._ui.gold.setAddCallback(function() {
-            LOG("add gold")
-            GmSystem.instance.sendCommand("ar 1 100");
-        });
-
-        this._ui.diamond = new MapScene.Resource(MapScene.Resource.Type.Diamond);
-        this._ui.diamond.setWidget(this.seekWidgetByName("ProjectNode_diamond"));
-        this._ui.diamond.setAddCallback(function() {
-            LOG("add diamond")
-            GmSystem.instance.sendCommand("ar 2 100");
-        });
-
         this._bindings = [
-            notification.createBinding(notification.event.MAP_MAP_INFO, this.createChapterPages, this)
+            notification.createBinding(notification.event.MAP_MAP_INFO, this.createChapterPages, this),
+            notification.createBinding(notification.event.BATTLE_MAP_RESULT, this.onBattleMapResult, this)
         ];
 
         this.createChapterPages();
-        this.refreshRedPoint();
-
-        MapSystem.instance.requestMapInfo();
-        this.setChapterSwitchButton(false, false);
-
-        MusicManager.getInstance().playBackgroundMusic("sounds/background.mp3");
     },
 
     onExit: function() {
-        notification.removeBinding(this._bindings);
         this.clearChapterPages();
-        this._ui.header.setWidget(null);
-        this._ui.action.setWidget(null);
-        this._ui.action.setAddCallback(null);
-        this._ui.gold.setWidget(null);
-        this._ui.gold.setAddCallback(null);
-        this._ui.diamond.setWidget(null);
-        this._ui.diamond.setAddCallback(null);
+        notification.removeBinding(this._bindings);
+        this._ui.ctrl_action.setWidget(null);
+        this._ui.ctrl_gold.setWidget(null);
+        this._ui.ctrl_diamond.setWidget(null);
         this._ui = null;
         this._super();
     },
 
     clearChapterPages: function() {
-        this._ui.scroll.removeAllChildren();
+        _.each(this._ui.cell_maps, function(cell) {
+            cell.setSelectCallback(null);
+        }, this);
+        this._ui.cell_maps.length = 0;
+        this._ui.list_maps.removeAllItems();
     },
 
     createChapterPages: function() {
         this.clearChapterPages();
 
-        // button status
-        var system = MapSystem.instance;
         var config = configdb.chapter[this._cur_chapter_id];
-        if(config) {
-            var has_pre = config.pre && config.pre > 0;
-            var has_next = config.next && config.next <= system.max_chapter_id;
-            this.setChapterSwitchButton(has_pre, has_next);
+        if(config == undefined) {
+            return;
         }
 
-        if(this._cur_chapter_id > 0) {
-            // scroll
-            var chapter_page = new MapChapter(this._cur_chapter_id);
-            this._ui.scroll.addChild(chapter_page);
-            this._ui.scroll.setInnerContainerSize(chapter_page.getContentSize());
+        // chapter
+        var system = MapSystem.instance;
+        var has_pre = config.pre && config.pre > 0;
+        var has_next = config.next && config.next <= system.max_chapter_id;
+        this.setChapterSwitchButton(has_pre, has_next);
+        this._ui.lbl_chapter.setString(config.name);
 
-            if(chapter_page.getCurMapStagePosX() > cc.director.getVisibleSize().width/2){
-                var tmpCount = this._ui.scroll.getInnerContainerSize().width;
-                var tmpPer = chapter_page.getCurMapStagePosX() / tmpCount;
-                this._ui.scroll.jumpToPercentHorizontal(tmpPer * 100);
+        // maps
+        _.each([
+            config.map1_id, config.map2_id, config.map3_id,
+            config.map4_id, config.map5_id, config.map6_id,
+            config.map7_id, config.map8_id, config.map9_id
+        ], function(map_id) {
+            if(map_id) {
+                var cell = new MapScene.MapCell(map_id);
+                this._ui.list_maps.pushBackCustomItem(cell);
+                this._ui.cell_maps.push(cell);
+                cell.setSelectCallback(this.onSelectMap, this);
             }
+        }, this);
 
-            //this._ui.scroll.jumpToLeft();
+        // auto selected map
+        this._sel_map_id = (this._cur_chapter_id == system.max_chapter_id) ? system.max_map_id : this._ui.cell_maps[0].id;
+        this.refreshSelectedMapInfo();
 
-            // name
-            this._ui.lbl_chapter.setString(chapter_page.chapterName);
-        }
+        // center selected map
+        //TODO
     },
 
     setChapterSwitchButton: function(has_pre, has_next) {
@@ -118,8 +111,18 @@ var MapScene = ui.GuiSceneBase.extend({
         this._ui.btn_next.setEnabled(has_next);
     },
 
+    onSelectMap: function(cell) {
+        this._sel_map_id = cell.id;
+        this.refreshSelectedMapInfo();
+    },
+
+    refreshSelectedMapInfo: function() {
+        _.each(this._ui.cell_maps, function(cell) {
+            cell.setSelected(cell.id == this._sel_map_id);
+        }, this);
+    },
+
     _on_btn_back: function() {
-        LoginSystem.instance.logout();
         this.popScene();
     },
 
@@ -129,7 +132,6 @@ var MapScene = ui.GuiSceneBase.extend({
             if(config.pre) {
                 this._cur_chapter_id = config.pre;
                 this.createChapterPages();
-                this._ui.scroll.jumpToLeft();
             }
         }
     },
@@ -139,91 +141,82 @@ var MapScene = ui.GuiSceneBase.extend({
         if(config && config.next) {
             this._cur_chapter_id = config.next;
             this.createChapterPages();
-            this._ui.scroll.jumpToLeft();
         }
     },
 
-    _on_btn_func_role: function() {
-        this.pushScene(BagScene);
+    _on_btn_battle: function() {
+        BattleSystem.instance.battleMap(this._sel_map_id);
     },
 
-    _on_btn_func_strengthen: function() {
-        this.pushScene(EquipScene);
+    _on_btn_raid: function() {
+
     },
 
-    _on_btn_func_skill: function() {
-        this.pushScene(SkillScene);
-    },
+    onBattleMapResult: function() {
+        LOG("onBattleMapResult");
+        var costValue = 2;
+        if(PlayerSystem.instance.action < costValue){
+            MessageBoxOk.show("体力不足");
+            return;
+        }
 
-    _on_btn_func_shop: function() {
-        this.pushScene(ShopScene);
-    },
+        PlayerSystem.instance.action -= costValue;
 
-    _on_btn_setting: function() {
-        this.pushScene(GmScene);
-    },
 
-    refreshRedPoint: function() {
-        this._ui.red_point_bag.setVisible(EquipSystem.instance.hasBetterEquip());
-        this._ui.red_point_forge.setVisible(EquipSystem.instance.canUpgradeEquipSlot());
-        this._ui.red_point_skill.setVisible(SkillSystem.instance.canUpgradeSkill());
-        this._ui.red_point_shop.setVisible(false);
+        var sel_map_id = BattleSystem.instance.cur_battle_map;
+        var loadingPanel = new LoadingBattleLayer(sel_map_id);
+        loadingPanel.pop();
+
+        loadingPanel.setLoadDoneFunc(function() {
+            (function () {
+                var mapConfig = configdb.map[sel_map_id];
+                if(mapConfig ){
+                    if(mapConfig.map_type == BattleSystem.BattleType.normalType){
+                        ui.pushScene(new BattleScene(sel_map_id));
+                        //ui.pushScene(new BattleDefScene(this.mapId) );
+                    }
+                    else if(mapConfig.map_type == BattleSystem.BattleType.defendType){
+                        ui.pushScene(new BattleDefScene(sel_map_id) );
+                    }
+                    else if(mapConfig.map_type == BattleSystem.BattleType.endlessType){
+
+                    }
+                }
+                else{
+                    LOG("MAP ID NOT FIND!");
+                }
+            } ());
+            loadingPanel.close();
+        }, this)
     }
 });
 
+MapScene.MapCell = ui.GuiWidgetBase.extend({
+    _guiFile: "ui/map_cell.json",
 
-MapScene.Header = ui.GuiController.extend({
-    ctor: function() {
+    ctor: function(id) {
         this._super();
-    },
-
-    onEnter: function() {
-        this._super();
-        this._ui = {
-            lbl_level: this.seekWidgetByName("lbl_level"),
-            lbl_score: this.seekWidgetByName("lbl_score"),
-            loading_exp: this.seekWidgetByName("loading_exp")
-        };
-
-        this.refreshHeaderInfo();
-    },
-
-    onExit: function() {
-        this._ui = null;
-        this._super();
-    },
-
-    refreshHeaderInfo: function() {
-        var system = PlayerSystem.instance;
-
-        this._ui.lbl_level.setString(String(system.level));
-
-        var score = system.getPlayerBattleScore();
-        this._ui.lbl_score.setString(String(score.score));
-
-        var exp = system.getPlayerExperience();
-        this._ui.loading_exp.setPercent(100 * exp.exp / exp.need);
-    }
-});
-
-MapScene.Resource = ui.GuiController.extend({
-    ctor: function(type) {
-        this._super();
-        this.type = type;
+        this.id = id;
+        this.open = false;
     },
 
     onEnter: function() {
         this._super();
         this._ui = {
             sp_icon: this.seekWidgetByName("sp_icon"),
-            lbl_value: this.seekWidgetByName("lbl_value")
+            lbl_name: this.seekWidgetByName("lbl_name"),
+            lbl_level: this.seekWidgetByName("lbl_level"),
+            lbl_score: this.seekWidgetByName("lbl_score"),
+
+            img_sel: this.seekWidgetByName("img_sel"),
+            btn_touch: this.seekWidgetByName("btn_touch"),
+            sp_indicator: this.seekWidgetByName("sp_indicator")
         };
         this._bindings = [
-            notification.createBinding(notification.event.PLAYER_INFO, this.refreshValue, this)
+            notification.createBinding(notification.event.CMD_SC_MAP_INFO, this.refreshMapInfo, this)
         ];
 
-        this.setType(this.type);
-        this.refreshValue();
+        this.refreshMapInfo();
     },
 
     onExit: function() {
@@ -232,60 +225,61 @@ MapScene.Resource = ui.GuiController.extend({
         this._super();
     },
 
-    setType: function(type) {
-        this.type = type;
+    refreshMapInfo: function() {
+        var config = configdb.map[this.id];
+        if(config == undefined) {
+            return;
+        }
 
-        var file;
-        switch (this.type) {
-            case MapScene.Resource.Type.Action:
-                file = "images/icon/icon_01.png";
-                break;
-            case MapScene.Resource.Type.Gold:
-                file = "images/icon/icon_02.png";
-                break;
-            case MapScene.Resource.Type.Diamond:
-                file = "images/icon/icon_03.png";
-                break;
+        // name
+        this._ui.lbl_name.setString(config.name);
+
+        // level
+        this._ui.lbl_level.setString(this._ui.lbl_level._str_original.format(config.req_lv));
+
+        // score
+        this._ui.lbl_score.setString(this._ui.lbl_score._str_original.format(config.score));
+
+        // indicator
+        if(this.id == MapSystem.instance.max_map_id) {
+            this._ui.sp_indicator.setVisible(true);
+            this.playAnimation("indicator", true);
         }
-        if(file) {
-            this._ui.sp_icon.setTexture(file);
+        else {
+            this._ui.sp_indicator.setVisible(false);
+            this.stopAnimation();
         }
+
+        // open
+        this.setOpened(this.id <= MapSystem.instance.max_map_id);
     },
 
-    refreshValue: function() {
-        var system = PlayerSystem.instance;
+    setOpened: function(val) {
+        this.open = val;
 
-        var value = 0;
-        switch (this.type) {
-            case MapScene.Resource.Type.Action:
-                value = system.action;
-                break;
-            case MapScene.Resource.Type.Gold:
-                value = system.gold;
-                break;
-            case MapScene.Resource.Type.Diamond:
-                value = system.diamond;
-                break;
+        var config = configdb.map[this.id];
+        if(config == undefined) {
+            return;
         }
-        this._ui.lbl_value.setString(String(value));
+
+        this._ui.sp_icon.setTexture(val ? config.icon : config.icon_gray);
     },
 
-    _on_btn_add: function() {
-        if (this._addCallback) {
-            this._addCallback();
-        }
+    setSelected: function(val) {
+        this._ui.img_sel.setVisible(val);
+        this._ui.btn_touch.setEnabled(!val);
     },
 
-    setAddCallback: function (selector, target) {
+    setSelectCallback: function (selector, target) {
         if(target === undefined)
-            this._addCallback = selector;
+            this._selectCallback = selector;
         else
-            this._addCallback = selector.bind(target);
+            this._selectCallback = selector.bind(target);
+    },
+
+    _on_btn_touch: function() {
+        if (this._selectCallback) {
+            this._selectCallback(this);
+        }
     }
 });
-MapScene.Resource.Type = {
-    Action: 1,
-    Gold: 2,
-    Diamond: 3
-};
-

@@ -18,6 +18,10 @@
         {
             "from": "../../../main.js",
             "to": ""
+        },
+        {
+            "from": "../../../config",
+            "to": ""
         }
     ],
     "must_copy_resources": [

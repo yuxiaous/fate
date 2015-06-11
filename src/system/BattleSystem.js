@@ -6,16 +6,50 @@
 var BattleSystem = SystemBase.extend({
     ctor: function () {
         this._super();
+
+        this.cur_battle_map = 0;
     },
 
     onInit: function () {
         this._super();
+        net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT = this.battleMapResult.bind(this);
+        net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT = this.battleFinishResult.bind(this);
     },
 
     onFinalize: function () {
         this._super();
+        net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT = null;
+        net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT = null;
+    },
+
+    battleMap: function(map_id) {
+        if(map_id) {
+            net_protocol_handlers.SEND_CMD_CS_BATTLE_MAP({
+                map_id: map_id
+            });
+        }
+    },
+    battleMapResult: function(obj) {
+        this.cur_battle_map = obj.map_id;
+        notification.emit(notification.event.BATTLE_MAP_RESULT);
+    },
+
+    battleFinish: function(isWin) {
+        net_protocol_handlers.SEND_CMD_CS_BATTLE_FINISH({
+            result: isWin ? 1: 2,
+            time: 0
+        });
+    },
+    battleFinishResult: function(obj) {
+
     }
 });
+
+BattleSystem.BattleType = {
+    normalType  : 1,
+    defendType  : 2,
+    endlessType : 3
+};
 
 
 BattleSystem.getAttackDamage = function(atk, crit_value_min, crit_value_max, crit_probability) {
@@ -31,22 +65,12 @@ BattleSystem.getAtkActualValue = function (atk_role_,def_role_) {
     if(atk_role_ == undefined || def_role_ == undefined){
         return 1;
     }
-
     var ATK_atkV    = atk_role_.roleDataManager.atk;
     var ATK_sunderV = atk_role_.roleDataManager.sunder;
     var ATK_crit    = atk_role_.roleDataManager.crit;
-    //var ATK_defV    = atk_role_.roleDataManager.def;
-    //var ATK_critMin   = atk_role_.roleDataManager.critMin;
-    //var ATK_critMax   = atk_role_.roleDataManager.critMax;
-    //var ATK_critPro   = atk_role_.roleDataManager.critProbability;
-    //var DEF_atkV    = def_role_.roleDataManager.atk;
-    //var DEF_sunderV = def_role_.roleDataManager.sunder;
-    var DEF_defV    = def_role_.roleDataManager.def;
+    var ATK_critPro = atk_role_.roleDataManager.critPro;
 
-    //LOG("ATK ATK   = " + ATK_atkV);
-    //LOG("ATK SUNDER= " + ATK_sunderV);
-    //LOG("ATK CRIT  = " + ATK_crit);
-    //LOG("DEF defV  = " + DEF_defV);
+    var DEF_defV    = def_role_.roleDataManager.def;
 
     var  damageValue = Formula.calculateNormalAttack(ATK_atkV,ATK_sunderV,DEF_defV);
 
@@ -61,19 +85,34 @@ BattleSystem.getAtkActualValue = function (atk_role_,def_role_) {
         )){
 
         damageValue = Formula.calculateSkillAttack(ATK_atkV,1.1,ATK_sunderV,DEF_defV);
-        //var powerValue = runningACT.hit.power || 1;
-        //damageValue = Math.floor( damageValue * powerValue);
     }
+
 
     //暴击
-    if(cc.random0To1() > 0.2){
+    var isCrit = false;
+    //LOG("atk_critpro = " + ATK_critPro);
+    if(cc.random0To1() < 0.3){
+        LOG("CRIT TRUE");
         var critV = Formula.calculateCritFormula(ATK_crit);
-        //LOG("CRIT CRIT = " + tmpC);
         damageValue *= critV;
+        isCrit = true;
+
     }
 
-    return Math.floor(damageValue) ;
+    //防御大于攻击数值
+    if(damageValue <= 0){
+        damageValue = 0;
+    }
+
+    var damageData = {
+        damageValue : Math.floor(damageValue),
+        isCrit : isCrit
+    }
+
+    return  damageData;
 }
+
+
 
 
 

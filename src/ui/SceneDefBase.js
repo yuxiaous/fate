@@ -1,9 +1,10 @@
-/**
- * Created by yuxiao on 15/4/8.
- */
+/*
+* 守塔 模式
+* */
 
 
-var SceneBase = lh.LHScene.extend({
+
+ var SceneDefBase = lh.LHScene.extend({
     ctor: function(sceneName) {
         if(!sceneName.startsWith("scenes")) {
             sceneName = "scenes/" + sceneName + ".lhplist";
@@ -16,8 +17,11 @@ var SceneBase = lh.LHScene.extend({
         this._friends = [];
         this._items = [];
 
-        this.scheduleUpdate();
 
+        this._roundNum = 0;
+        this._roundAmount = 0;
+
+        this.scheduleUpdate();
     },
 
     onEnter: function() {
@@ -31,7 +35,6 @@ var SceneBase = lh.LHScene.extend({
         // street
         var street = this.getChildNodeWithName("street");
         var physicalWorld = new PhysicalWorld();
-        //world.setContentSize(street.getContentSize());
         physicalWorld.shakingNode = gameWorld;
         gameWorld.addChild(physicalWorld, street.getLocalZOrder());
 
@@ -43,26 +46,20 @@ var SceneBase = lh.LHScene.extend({
         var operator = new OperationLayer();
         operator.setVisible(false);
         operator.setEnable(false);
-        frontUi.addChild(operator);
+        frontUi.addChild(operator,SceneDefBase.FrontUITag.operatorTag);
 
-        //// role info panel
-        //var rolePanel = new RoleBattlePanel();
-        //rolePanel.setPosition(0, winSize.height);
-        //rolePanel.setVisible(false);
-        //rolePanel.setRole(this._hero);
-        //frontUi.addChild(rolePanel);
+        // role info panel
+        var rolePanel = new RoleBattlePanel();
+        rolePanel.setPosition(0, winSize.height);
+        rolePanel.setVisible(false);
+        rolePanel.setRole(this._hero);
+        frontUi.addChild(rolePanel);
 
-        ////boss info panel
-        //var bossPanel = new BossBattlePanel();
-        //bossPanel.setPosition(winSize.width,winSize.height);
-        //bossPanel.setVisible(false);
-        //frontUi.addChild(bossPanel);
-
-        //battle ui layer
-        var battleUiLayer = new BattleUILayer();
-        battleUiLayer.setPosition(cc.p(0,0));
-        battleUiLayer.setAnchorPoint(cc.p(0,0));
-        frontUi.addChild(battleUiLayer);
+        //boss info panel
+        var bossPanel = new BossBattlePanel();
+        bossPanel.setPosition(winSize.width,winSize.height);
+        bossPanel.setVisible(false);
+        frontUi.addChild(bossPanel);
 
         // combo panel
         var comboPanel = new ComboPanel();
@@ -70,21 +67,31 @@ var SceneBase = lh.LHScene.extend({
         comboPanel.setVisible(false);
         frontUi.addChild(comboPanel);
 
-        var coverLayer = cc.LayerColor.create(cc.color(0, 0, 0, 255),winSize.width,winSize.height);
-        coverLayer.setPosition(cc.p(-winSize.width,0));
-        coverLayer.setAnchorPoint(cc.p(0,0));
-        frontUi.addChild(coverLayer,100);
-        coverLayer.state = 0;
+        //var coverLayer = cc.LayerColor.create(cc.color(0, 0, 0, 255),winSize.width,winSize.height);
+        //coverLayer.setPosition(cc.p(-winSize.width,0));
+        //coverLayer.setAnchorPoint(cc.p(0,0));
+        //frontUi.addChild(coverLayer,100);
+        //coverLayer.state = 0;
 
-        ////pause battle
-        //var pauseItem = new cc.MenuItemFont("PAUSE", function(){
-        //    cc.director.pause();
-        //    var pausePanel = new PauseLayer();
-        //    frontUi.addChild(pausePanel);
-        //}, this);
-        //var menu = new cc.Menu(pauseItem);
-        //menu.setPosition(cc.p(50,winSize.height/2));
-        //frontUi.addChild(menu);
+        //pause battle
+        var pauseItem = new cc.MenuItemFont("PAUSE", function(){
+            cc.director.pause();
+            var pausePanel = new PauseLayer();
+            frontUi.addChild(pausePanel);
+        }, this);
+        var menu = new cc.Menu(pauseItem);
+        menu.setPosition(cc.p(50,winSize.height/2));
+        frontUi.addChild(menu);
+
+        //round label
+
+        var roundLabel = cc.LabelTTF.create("");
+        roundLabel.setPosition(cc.p(winSize.width/2,winSize.height - 50));
+        roundLabel.setAnchorPoint(cc.p(0.5,1.0));
+        roundLabel.setFontSize(30);
+        frontUi.addChild(roundLabel);
+        roundLabel.setString("第" + this._roundNum + "轮");
+
 
         this._camera = camera;
         this._gameWorld = gameWorld;
@@ -92,11 +99,10 @@ var SceneBase = lh.LHScene.extend({
         this._frontUi = frontUi;
         this._physicalWorld = physicalWorld;
         this._operator = operator;
-        this._battleUiLayer = battleUiLayer;
-        this._rolePanel = this._battleUiLayer._rolePanel;
-        this._bossPanel = this._battleUiLayer._bossPanel;
-
-        this._coverView = coverLayer;
+        this._rolePanel = rolePanel;
+        this._bossPanel = bossPanel;
+        //this._coverView = coverLayer;
+        this._roundLabel= roundLabel;
 
         if(this._bgmFile) {
             cc.audioEngine.playMusic(this._bgmFile, true);
@@ -110,16 +116,15 @@ var SceneBase = lh.LHScene.extend({
     },
 
     onExit: function() {
-        //LOG("SceneBase.onExit")
-
         this._camera = null;
         this._gameWorld = null;
         this._backUi = null;
         this._frontUi = null;
         this._physicalWorld = null;
         this._operator = null;
-        this._battleUiLayer = null;
-        this._coverView = null;
+        this._rolePanel = null;
+        //this._coverView = null;
+        this._roundLabel = null;
 
         cc.audioEngine.stopMusic();
         notification.removeBinding(this._bindings);
@@ -143,6 +148,12 @@ var SceneBase = lh.LHScene.extend({
             }, this);
         }
 
+        //set map pos
+        var tmpNode_ = this.getGameWorldNode();
+        MapSystem.instance.setGameMapPos(tmpNode_.getPosition());
+    },
+
+    setBossAndMonsterTarget : function () {
         // set target
         var that = this
         function setMonsterTarget(monster, target) {
@@ -164,10 +175,6 @@ var SceneBase = lh.LHScene.extend({
         _.each(this._monsters, function(monster) {
             setMonsterTarget(monster, this._hero);
         }, this);
-
-        //set map pos
-        var tmpNode_ = this.getGameWorldNode();
-        MapSystem.instance.setGameMapPos(tmpNode_.getPosition());
     },
 
     setBackgroundMusic: function(musicFile) {
@@ -231,10 +238,10 @@ var SceneBase = lh.LHScene.extend({
     },
 
     clearStreet: function() {
-        if(this._hero) {
-            this._hero.roleActionManager.decideStopAllAction();
-            this._hero.setSpaceVelocity(0,0,0);
-        }
+        //if(this._hero) {
+        //    this._hero.roleActionManager.decideStopAllAction();
+        //    this._hero.setSpaceVelocity(0,0,0);
+        //}
 
         if(this._boss) {
             this._physicalWorld.removePhysicalNode(this._boss);
@@ -267,71 +274,67 @@ var SceneBase = lh.LHScene.extend({
             this._gameWorld.addChild(this._weather);
         }
 
-        this._sectionIndex = 0;
+        this._roundNum = 0;
+        this._roundAmount = this._sceneStatus.BSection.length;
         this.playNextSection();
     },
 
     playNextSection : function () {
-        cc.audioEngine.stopAllEffects();
+        //cc.audioEngine.stopAllEffects();
         this.clearStreet();
-        this._sectionIndex++;
-        var tmpSections = this._sceneStatus.BSection;
-        if(this._sectionIndex <= tmpSections.length) {
-            if (this._sectionIndex == tmpSections.length) {
-                this._isLastSection = true;
+        this._roundNum += 1;
+        var tmpRounds = this._sceneStatus.BSection;
+        if(this._roundNum <= this._roundAmount) {
+            if (this._roundNum == this._roundAmount) {
+                this._isLastRound = true;
+            }
+            //battle round label
+            this._roundLabel.setString("第" + this._roundNum + "轮");
+
+            if(this._roundNum == 1){
+                //area
+                var sec = tmpRounds[this._roundNum -1];
+                this.setGameWorldRect(sec.area);
+
+                //street
+                var streetRect = sec.street;
+                this._physicalWorld.setPosition(cc.p(streetRect.x, streetRect.y));
+                this._physicalWorld.setContentSize(streetRect.width, streetRect.height);
+                MapSystem.instance.setGameMapRect(cc.size(streetRect.width,streetRect.height));
+
+                //hero
+                if (this._hero == null) {
+                    var hero_id = this._sceneStatus.hero;
+                    var hero = hero_id instanceof Object ? new hero_id() : new Role(hero_id);
+                    hero.roleType = RoleBase.RoleType.Hero;
+                    hero.turn(RoleBase.Direction.Right);
+                    hero.setRoleAi(RoleAi.Type.Manual, {
+                        joystick: this._operator._joystick,
+                        attackButton: this._operator._attackButton,
+                        skillButton1: this._operator._skillButton1,
+                        skillButton2: this._operator._skillButton2,
+                        skillButton3: this._operator._skillButton3,
+                        skillButton4: this._operator._skillButton4,
+                        skillButton5: this._operator._skillButton5,
+                        btnCDTime1: 3,
+                        btnCDTime2: 4,
+                        btnCDTime3: 5,
+                        btnCDTime4: 8,
+                        btnCDTime5: 10
+                    });
+                    this._rolePanel.setRole(hero);
+                    this._physicalWorld.addPhysicalNode(hero);
+                    this._hero = hero;
+                }
+
+                this._hero.setSpacePosition(_.defaults(sec.heroPos, {x: 0., y: 0, z: 0}));
+                this._camera.followNode(this._hero);
             }
 
-            if(this._isLastSection){
-                this._battleUiLayer.setBossRound(true);
-            }
-            else{
-                this._battleUiLayer.setBossRound(false);
-            }
-
-            //area
-            var sec = tmpSections[this._sectionIndex -1];
-            this.setGameWorldRect(sec.area);
-
-            //street
-            var streetRect = sec.street;
-            this._physicalWorld.setPosition(cc.p(streetRect.x, streetRect.y));
-            this._physicalWorld.setContentSize(streetRect.width, streetRect.height);
-            MapSystem.instance.setGameMapRect(cc.size(streetRect.width,streetRect.height));
-
-            //hero
-            if (this._hero == null) {
-                var hero_id = this._sceneStatus.hero;
-                var hero = hero_id instanceof Object ? new hero_id() : new Role(hero_id);
-                hero.roleType = RoleBase.RoleType.Hero;
-                hero.turn(RoleBase.Direction.Right);
-                hero.setRoleAi(RoleAi.Type.Manual, {
-                    joystick: this._operator._joystick,
-                    attackButton: this._operator._attackButton,
-                    skillButton1: this._operator._skillButton1,
-                    skillButton2: this._operator._skillButton2,
-                    skillButton3: this._operator._skillButton3,
-                    skillButton4: this._operator._skillButton4,
-                    skillButton5: this._operator._skillButton5,
-                    btnCDTime1: 3,
-                    btnCDTime2: 4,
-                    btnCDTime3: 5,
-                    btnCDTime4: 8,
-                    btnCDTime5: 10
-                });
-                this._rolePanel.setRole(hero);
-                this._physicalWorld.addPhysicalNode(hero);
-                this._hero = hero;
-            }
-
-
-            this._hero.setSpacePosition(_.defaults(sec.heroPos, {x: 0., y: 0, z: 0}));
-            this._camera.followNode(this._hero);
-            //var actionData = this.actions[RoleAction.Type.SKILL5];
-            //this._operator.setBtnTimingEnable(5,actionData.cdTime);
 
 
             //monster
-            var monsterData = this._sceneStatus.BSection[this._sectionIndex-1].monsters;
+            var monsterData = this._sceneStatus.BSection[this._roundNum-1].monsters;
 
             _.each(monsterData, function (data) {
 
@@ -375,34 +378,23 @@ var SceneBase = lh.LHScene.extend({
             }, this);
         }
 
-        //this.onBeforeFightChatStart();
-        if(this._coverView.state == 1){
-            var size = cc.director.getWinSize();
-            this._coverView.runAction(cc.Sequence.create(
-                cc.MoveBy.create(0.5,cc.p(size.width,0)),
-                cc.CallFunc.create(function () {
-                    this._coverView.state = 0;
-                    this.onBeforeFightChatStart();
-                },this)
-            ));
-        }
-        else{
-            this.onBeforeFightChatStart();
-        }
+        this.onBeforeFightChatStart();
     },
 
     onBeforeFightChatStart : function () {
         var tmpChatData = [];
-        if(this._sectionIndex == 1){
+        if(this._roundNum == 1){
             tmpChatData = this._sceneStatus.chatData.beforeFight;
         }
-        else if(this._sectionIndex == this._sceneStatus.BSection.length){
+        else if(this._roundNum == this._sceneStatus.BSection.length){
             tmpChatData = this._sceneStatus.chatData.beforeBossFight;
         }
 
         if(tmpChatData && tmpChatData.length > 0){
             var dialog = new DialogPanel(tmpChatData);
-            this._frontUi.addChild(dialog);
+
+            this._frontUi.addChild(dialog,SceneDefBase.FrontUITag.dialogPanelTag);
+
 
             dialog.setEndingCallback(function() {
                 dialog.removeFromParent();
@@ -415,21 +407,61 @@ var SceneBase = lh.LHScene.extend({
     },
 
     onBeforeFightChatEnd: function() {
-        this.onBattleStart();
+        var countDownTime = 4;
+        var that = this;
+        function changeCountDownLabel(){
+            countDownTime -= 1;
+            var countDownLayer = that._frontUi.getChildByTag(1000);
+            if(countDownLayer) {
+                var countDownLabel = countDownLayer.getChildByTag(1000);
+            }
+
+            if(countDownTime == -1){
+                cc.director.getScheduler().unschedule("downTime",this);
+                that.onBattleStart();
+                countDownLayer.removeAllChildren();
+                countDownLayer.removeFromParent();
+            }
+            else{
+                if(!countDownLayer){
+                    var countDownLayer = ccui.Layout.create();
+                    countDownLayer.setTag(1000);
+                    countDownLayer.setTouchEnabled(true);
+                    countDownLayer.addTouchEventListener(function(){
+                        LOG("TOUCH COUNT DOWN LAYER");
+                    },this);
+                    that._frontUi.addChild(countDownLayer,SceneDefBase.FrontUITag.countDownLayerTag);
+
+                    countDownLabel = cc.LabelTTF.create(String(countDownTime));
+                    var size = cc.director.getWinSize();
+                    countDownLabel.setFontSize(200);
+                    countDownLabel.setTag(1000);
+                    countDownLabel.setPosition(cc.p(size.width/2,size.height/2));
+
+                    countDownLayer.addChild(countDownLabel);
+                }
+                else{
+                    countDownLabel.setString(String(countDownTime));
+                }
+            }
+        }
+        changeCountDownLabel();
+        cc.director.getScheduler().schedule(changeCountDownLabel,this,1.0,cc.REPEAT_FOREVER,0,false,"downTime");
     },
 
     onAfterFightChatStart : function () {
-        if(this._isLastSection) {
+        if(this._isLastRound) {
+            this._bossPanel.setVisible(false);
             if(this._sceneStatus.chatData.afterFight.length > 0){
                 var dialog = new DialogPanel(this._sceneStatus.chatData.afterFight);
-                this._frontUi.addChild(dialog);
+                this._frontUi.addChild(dialog,SceneDefBase.FrontUITag.dialogPanelTag);
 
                 dialog.setEndingCallback(function() {
                     dialog.removeFromParent();
                     this.showFinishPanel();
                 }.bind(this));
 
-                this._battleUiLayer.setVisible(false);
+                this._rolePanel.setVisible(false);
                 this._operator.setHide(false);
             }
             else{
@@ -442,26 +474,40 @@ var SceneBase = lh.LHScene.extend({
     },
 
     onAfterFightChatEnd : function () {
-        this.onGoForwardStart();
+        //this.onGoForwardStart();
+        this._rolePanel.setVisible(false);
+        this._operator.setHide(false);
+        this.playNextSection();
     },
 
     onBattleStart: function() {
-        this._battleUiLayer.setVisible(true);
+        this._rolePanel.setVisible(true);
         this._operator.setHide(true);
-        if(this._sectionIndex == 1){
+        if(this._isLastRound){
+            this._bossPanel.setVisible(true);
+        }
+        if(this._roundNum == 1){
             var actionData = this._hero.roleActionManager.actions[RoleAction.Type.SKILL4];
             this._operator.setBtnTimingEnable(4,actionData.cdTime);
         }
-
+        this.setBossAndMonsterTarget();
         this.schedule(this.battleObserver);
     },
     onBattleEnd: function() {
         this.unschedule(this.battleObserver);
+        LOG("BATTLE END = " + this._isLostBattle);
         if(this._isLostBattle){
-           this.showFinishPanel();
+            LOG("SHOW FINISH PANEL");
+            this.showFinishPanel();
         }
         else{
-            this.onAfterFightChatStart();
+            this.runAction(cc.Sequence.create(
+                cc.DelayTime.create(2.0),
+                cc.CallFunc.create(function () {
+                    this.onAfterFightChatStart();
+                },this)
+            ));
+
         }
     },
     battleObserver: function() {
@@ -512,7 +558,7 @@ var SceneBase = lh.LHScene.extend({
                 that._goForwardPanel.removeFromParent();
                 that._goForwardPanel = null;
             }
-            //that._rolePanel.setVisible(false);
+            that._rolePanel.setVisible(false);
             that._operator.setHide(false);
             that.playNextSection();
         }
@@ -553,7 +599,7 @@ var SceneBase = lh.LHScene.extend({
         panel.setCloseCallback(this.onSceneFinished, this);
         panel.pop();
 
-        BattleSystem.instance.battleFinish(win);
+        MapSystem.instance.sendBattleResult(win);
     },
 
     onSceneFinished: function() {
@@ -562,6 +608,13 @@ var SceneBase = lh.LHScene.extend({
     }
 });
 
+SceneDefBase.FrontUITag = {
+    roleInfoPanel : 80,
+    bossInfoPanel : 81,
+    operatorTag : 100,
+    countDownLayerTag : 110,
+    dialogPanelTag : 120
+}
 
 var PauseLayer = ui.GuiWindowBase.extend({
     _guiFile: "ui/pauseBattleLayer.json",
@@ -582,7 +635,7 @@ var PauseLayer = ui.GuiWindowBase.extend({
         cc.director.resume();
         this.removeFromParent();
     },
-    
+
     _on_btn_back : function () {
         cc.director.resume();
         ui.popScene();

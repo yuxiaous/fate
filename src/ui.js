@@ -233,6 +233,12 @@ ui.guiExtend = {
         if(this.__action__) {
             this.__action__.play(name, loop);
         }
+    },
+
+    stopAnimation: function() {
+        if(this.__action__) {
+            this.__action__.pause();
+        }
     }
 };
 

@@ -2,12 +2,61 @@
  * Created by yuxiao on 15/1/30.
  */
 
+var BattleUILayer = ui.GuiWidgetBase.extend({
+    _guiFile : "res/ui/BattleUiLayer.json",
 
-var RoleBattlePanel = ui.GuiWidgetBase.extend({
+    ctor : function () {
+        this._super();
+
+    },
+
+    onEnter : function () {
+        this._super();
+
+
+
+        this.bossP = this.seekWidgetByName("bossPanel");
+        this._bossPanel = new BattleUILayer.BossPanel();
+        this._bossPanel.setWidget(this.bossP);
+
+        this.roleP = this.seekWidgetByName("rolePanel")
+        this._rolePanel = new BattleUILayer.RolePanel();
+        this._rolePanel.setWidget(this.roleP);
+
+        this.addBloodBtn = this.seekWidgetByName("btn_bloodBottle");
+        this.addMagicBtn = this.seekWidgetByName("btn_magicBottle");
+
+        this.addBloodBtn.setVisible(false);
+        this.addMagicBtn.setVisible(false);
+    },
+
+    onExit : function () {
+        this._super();
+
+        this._bossPanel = null;
+        this._rolePanel = null;
+        this.bossP = null;
+        this.roleP = null;
+    },
+
+    setBossRound : function (isBossRound_) {
+        this.bossP.setVisible(isBossRound_);
+    },
+
+    _on_btn_stopBattle : function () {
+        cc.director.pause();
+        var pausePanel = new PauseLayer();
+        this.addChild(pausePanel);
+    }
+});
+
+
+BattleUILayer.RolePanel = ui.GuiController.extend({
     _guiFile: "res/ui/TopLeft.json",
 
     ctor: function() {
         this._super();
+        LOG("ROLE BATTLE PANEL");
     },
 
     onEnter: function() {
@@ -94,11 +143,12 @@ var RoleBattlePanel = ui.GuiWidgetBase.extend({
     }
 });
 
-var BossBattlePanel = ui.GuiWidgetBase.extend({
+BattleUILayer.BossPanel = ui.GuiController.extend({
     _guiFile : "res/ui/TopRight.json",
 
     ctor : function () {
         this._super();
+        LOG("BOSS BATTLE PANEL CTOR");
     },
 
     onEnter : function () {

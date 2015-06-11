@@ -5,8 +5,8 @@
 
 var Role = RoleBase.extend({
     ctor: function(id) {
-        LOG("ROLE CTOR");
-        LOG("ROLE BASE ID = "+ id);
+        //LOG("ROLE CTOR");
+        //LOG("ROLE BASE ID = "+ id);
         var roleConfig = configdb.role[id];
         if(roleConfig == undefined) {
             LOG("Error: role id {0} is not exist!!!".format(id));
@@ -69,11 +69,8 @@ var Role = RoleBase.extend({
             mp: roleConfig.mp_value,
             atk: roleConfig.atk_value,
             def: roleConfig.def_value,
-            crit: {
-                min: roleConfig.crit_value_min,
-                max: roleConfig.crit_value_max,
-                probability: roleConfig.crit_probability
-            },
+            crit : roleConfig.crit,
+            crit_probability : roleConfig.crit_probability,
             sunder: roleConfig.sunder_value
         });
 

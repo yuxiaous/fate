@@ -1,11 +1,6 @@
-/**
- * Created by yuxiao on 15/4/27.
- */
-
-
-var BattleScene = SceneBase.extend({
+var BattleDefScene = SceneDefBase.extend({
     status: {
-        hero: Nero,
+        hero: Saber,
         BSection : []
     },
 
@@ -29,9 +24,9 @@ var BattleScene = SceneBase.extend({
     },
 
     initBattleData : function (map_id_) {
-        this.status.stage = BattleScene.initStageInfo(map_id_);
-        this.status.BSection = BattleScene.initBattleSection(map_id_);
-        this.status.chatData = BattleScene.initChatInfo(map_id_);
+        this.status.stage = BattleDefScene.initStageInfo(map_id_);
+        this.status.BSection = BattleDefScene.initBattleSection(map_id_);
+        this.status.chatData = BattleDefScene.initChatInfo(map_id_);
     },
 
     onExit: function() {
@@ -40,7 +35,7 @@ var BattleScene = SceneBase.extend({
     }
 });
 
-BattleScene.initChatInfo = function (map_id_) {
+BattleDefScene.initChatInfo = function (map_id_) {
     var chatData = {}
     var mapConfig = configdb.map[map_id_];
     chatData.beforeFight =[];
@@ -97,7 +92,7 @@ BattleScene.initChatInfo = function (map_id_) {
     return chatData;
 };
 
-BattleScene.initBattleSection = function (map_id_) {
+BattleDefScene.initBattleSection = function (map_id_) {
     var BSection = [];
     var mapConfig = configdb.map[map_id_];
     var prePZ_id ="peizhi_id_";
@@ -106,7 +101,7 @@ BattleScene.initBattleSection = function (map_id_) {
     for(var i = 1; i<=4; i++){
         var peizhi_id = mapConfig[prePZ_id+i];
         ////test role
-        //if(1 && i == 1){
+        //if(0 && i == 1){
         //    peizhi_id = 1001;
         //}
         if(peizhi_id){
@@ -140,7 +135,7 @@ BattleScene.initBattleSection = function (map_id_) {
             BSection.push({
                 area : cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],640),
                 street: cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],220),
-                heroPos : cc.p(300,110),
+                heroPos : cc.p(568,100),
                 warningLine : 400,
                 monsters :tmpMonster
             });
@@ -150,7 +145,7 @@ BattleScene.initBattleSection = function (map_id_) {
     return BSection;
 };
 
-BattleScene.initStageInfo = function (map_id_) {
+BattleDefScene.initStageInfo = function (map_id_) {
     var mapConfig = configdb.map[map_id_];
     var stageConfig = configdb.stage[mapConfig.stage_id];
 

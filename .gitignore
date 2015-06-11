@@ -5,6 +5,8 @@
 xcshareddata
 simple_test_bindings
 userconf.ini
+res
+config
 
 Simulator
 jsb.sqlite
