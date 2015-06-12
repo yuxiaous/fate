@@ -17,25 +17,51 @@ var battle_server = {
 battle_server.cur_battle_map = 0;
 server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_MAP, function(obj) {
     LOG("CMD_CS_BATTLE_MAP");
-    var map_id = obj.map_id;
+    // TODO
 
-    battle_server.cur_battle_map = map_id;
+
+    battle_server.cur_battle_map = obj.map_id;
     server.send(net_protocol_handlers.CMD_SC_BATTLE_MAP_RESULT, {
         result: 0,
-        map_id: map_id
+        map_id: battle_server.cur_battle_map
     });
 });
 
 server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj) {
-    LOG("CMD_CS_BATTLE_FINISH");
+    var curIsWin = 0;
+    var gainItem = {
+        items : []
+    };
+
     if(obj.result == 1) {
         var config = configdb.map[battle_server.cur_battle_map];
         if(config && config.next_map) {
             map_server.openMap([config.next_map]);
+
+            gainItem.gold = config.gain_gold || 0 ;
+            gainItem.exp  = config.gain_exp || 0 ;
+            _.each(
+                ["gainItemId_1",
+                 "gainItemId_2"], function (itemTitle_) {
+                    if(config[itemTitle_]){
+                        gainItem.items.push(
+                            {
+                                itemId : config[itemTitle_],
+                                itemNum: 1
+                            }
+                        )
+                    }
+                }
+            );
         }
+        curIsWin = 0;
+    }
+    else if(obj.result == 2){
+        curIsWin = -1;
     }
 
     server.send(net_protocol_handlers.CMD_SC_BATTLE_FINISH_RESULT, {
-        result: 0
+        result : curIsWin,
+        reward : gainItem
     });
 });

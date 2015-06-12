@@ -39,10 +39,12 @@ var MapScene = ui.GuiSceneBase.extend({
             cell_maps: [],
             lbl_chapter: this.seekWidgetByName("lbl_chapter"),
             btn_pre: this.seekWidgetByName("btn_pre"),
-            btn_next: this.seekWidgetByName("btn_next")
+            btn_next: this.seekWidgetByName("btn_next"),
+            btn_battle: this.seekWidgetByName("btn_battle"),
+            btn_raid: this.seekWidgetByName("btn_raid")
         };
         this._bindings = [
-            notification.createBinding(notification.event.MAP_MAP_INFO, this.createChapterPages, this),
+            //notification.createBinding(notification.event.MAP_MAP_INFO, this.createChapterPages, this),
             notification.createBinding(notification.event.BATTLE_MAP_RESULT, this.onBattleMapResult, this)
         ];
 
@@ -119,6 +121,14 @@ var MapScene = ui.GuiSceneBase.extend({
     refreshSelectedMapInfo: function() {
         _.each(this._ui.cell_maps, function(cell) {
             cell.setSelected(cell.id == this._sel_map_id);
+
+            if(cell.id == this._sel_map_id) {
+                var is_open = cell.open;
+                this._ui.btn_battle.setBright(is_open);
+                this._ui.btn_battle.setEnabled(is_open);
+                this._ui.btn_raid.setBright(is_open);
+                this._ui.btn_raid.setEnabled(is_open);
+            }
         }, this);
     },
 
@@ -147,19 +157,12 @@ var MapScene = ui.GuiSceneBase.extend({
     _on_btn_battle: function() {
         BattleSystem.instance.battleMap(this._sel_map_id);
     },
-
-    _on_btn_raid: function() {
+    __on_btn_raid: function() {
 
     },
-
     onBattleMapResult: function() {
         LOG("onBattleMapResult");
         var costValue = 2;
-        if(PlayerSystem.instance.action < costValue){
-            MessageBoxOk.show("体力不足");
-            return;
-        }
-
         PlayerSystem.instance.action -= costValue;
 
 

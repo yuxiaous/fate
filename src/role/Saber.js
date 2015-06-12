@@ -17,6 +17,7 @@ var Saber = RoleBase.extend({
 
         var score = PlayerSystem.instance.getPlayerBattleScore();
 
+        LOG("SCORE PRO = " + score.critPro);
         this.setRoleData({
             hp: score.hp,
             mp: score.mp,
@@ -160,7 +161,7 @@ var Saber = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL1, "jineng1", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/skill_sound_1.wav",
                 movement: 300
             },
             hit: {
@@ -185,7 +186,7 @@ var Saber = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL2, "jineng2", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/skill_sound_2.wav",
                 movement: 600
             },
             hit: {
@@ -210,7 +211,7 @@ var Saber = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL3, "jineng3", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/skill_sound_3.wav",
                 movement: 300
             },
             hit: {
@@ -235,7 +236,7 @@ var Saber = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL4, "jineng4", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/skill_sound_4.wav",
                 movement: 300
             },
             hit: {
@@ -260,7 +261,7 @@ var Saber = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL5, "jineng5", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/skill_sound_1.wav",
                 movement: 500,
                 drag : -18000
             },
@@ -307,7 +308,7 @@ var Nero = RoleBase.extend({
             atk: score.atk,
             def: score.def,
             crit : score.crit,
-            critPro: score.critPro,
+            crit_probability: score.critPro,
             sunder: score.sunder
         });
 
@@ -444,8 +445,8 @@ var Nero = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL1, "jineng1", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
-                movement: 300
+                skill_sound: "sounds/saber/atk5.mp3",
+                movement: 311
             },
             hit: {
                 animation: "sabar_effect/jineng6",
@@ -469,7 +470,7 @@ var Nero = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL2, "jineng2", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/atk1.mp3",
                 movement: 600
             },
             hit: {
@@ -494,7 +495,7 @@ var Nero = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL3, "jineng3", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/atk5.mp3",
                 movement: 300
             },
             hit: {
@@ -519,7 +520,7 @@ var Nero = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL4, "jineng4", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/atk5.mp3",
                 movement: 300
             },
             hit: {
@@ -544,7 +545,7 @@ var Nero = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL5, "jineng5", {
             attack: {
                 //animation: undefined,
-                //sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/atk5.mp3",
                 movement: 500,
                 drag : -18000
             },

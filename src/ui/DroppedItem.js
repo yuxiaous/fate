@@ -21,7 +21,9 @@ var DroppedItem = ui.GuiWidgetBase.extend({
         }
 
         // icon
-        this._img_icon.loadTexture(config.image);
+        if(config.image){
+            this._img_icon.loadTexture(config.image);
+        }
 
         this._iconShakeAction = this._img_icon.runAction(cc.repeatForever(cc.sequence(
             cc.moveBy(0.5, cc.p(0, 10)),

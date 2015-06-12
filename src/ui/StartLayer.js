@@ -12,10 +12,11 @@ var StartLayerScene = ui.GuiSceneBase.extend({
 
     onEnter: function() {
         this._super();
-        this.playAnimation("background", true);
+        this.playAnimation("blink", true);
         MusicManager.getInstance().playBackgroundMusic("sounds/background.mp3");
 
         this._ui = {
+            sp_bg: this.seekWidgetByName("sp_background"),
             sp_touch: this.seekWidgetByName("Sprite_1")
         };
 
@@ -27,7 +28,10 @@ var StartLayerScene = ui.GuiSceneBase.extend({
             cc.fadeOut(1),
             cc.fadeIn(1)
         )));
-
+        this._ui.sp_bg.runAction(cc.repeatForever(cc.sequence(
+            cc.moveBy(40, -119, 0),
+            cc.moveBy(40, 119, 0)
+        )));
     },
 
     onExit: function() {

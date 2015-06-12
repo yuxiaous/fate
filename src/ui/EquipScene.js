@@ -99,6 +99,7 @@ var EquipScene = ui.GuiWindowBase.extend({
     },
 
     refreshSelectedSlotInfo: function() {
+        LOG("SELECT SLOT INFO");
         _.each(this._ui.cell_equips, function(cell) {
             cell.setSelected(cell.type == this._sel_type);
         }, this);

@@ -528,6 +528,10 @@ var RoleActionSkill = RoleAction.extend({
         if(this.attack && this.attack.drag){
             this.manager.role.drag = this.attack.drag;
         }
+        if(this.attack.skill_sound) {
+             //LOG("SKILL SOUND = " + this.attack.skill_sound);
+             MusicManager.getInstance().playEffectMusic(this.attack.skill_sound);
+        }
     },
 
     onActionEnd: function() {

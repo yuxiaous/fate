@@ -23,6 +23,10 @@ var BattleSystem = SystemBase.extend({
     },
 
     battleMap: function(map_id) {
+        if(PlayerSystem.instance.action < 2){
+            MessageBoxOk.show("体力不足");
+            return;
+        }
         if(map_id) {
             net_protocol_handlers.SEND_CMD_CS_BATTLE_MAP({
                 map_id: map_id
@@ -41,7 +45,16 @@ var BattleSystem = SystemBase.extend({
         });
     },
     battleFinishResult: function(obj) {
+        //if(obj.result == 0){
+        //    notification.emit(notification.event.BATTLE_FINISH_RESULT,obj.result);
+        //}
+        //else if(obj.result == -1){
+        //
+        //}
+        notification.emit(notification.event.BATTLE_FINISH_RESULT,obj);
 
+        LOG("BATTLE FINISH RESULT");
+        LOGOBJ(obj);
     }
 });
 
@@ -69,9 +82,7 @@ BattleSystem.getAtkActualValue = function (atk_role_,def_role_) {
     var ATK_sunderV = atk_role_.roleDataManager.sunder;
     var ATK_crit    = atk_role_.roleDataManager.crit;
     var ATK_critPro = atk_role_.roleDataManager.critPro;
-
     var DEF_defV    = def_role_.roleDataManager.def;
-
     var  damageValue = Formula.calculateNormalAttack(ATK_atkV,ATK_sunderV,DEF_defV);
 
     //技能加成
@@ -83,16 +94,12 @@ BattleSystem.getAtkActualValue = function (atk_role_,def_role_) {
         runningACT.type == RoleAction.Type.SKILL4 ||
         runningACT.type == RoleAction.Type.SKILL5
         )){
-
         damageValue = Formula.calculateSkillAttack(ATK_atkV,1.1,ATK_sunderV,DEF_defV);
     }
 
-
     //暴击
     var isCrit = false;
-    //LOG("atk_critpro = " + ATK_critPro);
-    if(cc.random0To1() < 0.3){
-        LOG("CRIT TRUE");
+    if(cc.random0To1() <= ATK_critPro){
         var critV = Formula.calculateCritFormula(ATK_crit);
         damageValue *= critV;
         isCrit = true;
