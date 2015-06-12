@@ -8,6 +8,7 @@ userconf.ini
 res
 config
 build
+publish
 
 Simulator
 jsb.sqlite

@@ -1,0 +1,7 @@
+
+rm -rf ./publish
+cocos jscompile -s ./src -d ./publish/src
+cocos jscompile -s ./config -d ./publish/config
+cocos jscompile -s ./frameworks/js-bindings/bindings/script/ -d ./publish/script
+
+cocos compile -p android
