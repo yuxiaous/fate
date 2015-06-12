@@ -17,6 +17,15 @@
     <Filter Include="Classes\runtime\protobuf-lite">
       <UniqueIdentifier>{ed8064b7-5a41-45ea-b836-1d26386322de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{3d6f9700-7b90-4341-a962-8dc3eeb6049c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\jsb">
+      <UniqueIdentifier>{75a495bf-1492-4351-92c8-b59ba73e7669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\SneakyInput">
+      <UniqueIdentifier>{dd3e5097-8804-46a9-aefe-83e984030d59}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -102,6 +111,36 @@
     </ClCompile>
     <ClCompile Include="..\Classes\runtime\FileServer.cpp">
       <Filter>Classes\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\JsonStorage.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\ShakeAction.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\jsb\jsb_bindings_auto.cpp">
+      <Filter>game\jsb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\jsb\jsb_bindings_manual.cpp">
+      <Filter>game\jsb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\jsb\jsb_dragonbones_auto.cpp">
+      <Filter>game\jsb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\jsb\jsb_levelhelper_auto.cpp">
+      <Filter>game\jsb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\SneakyInput\SneakyButton.cpp">
+      <Filter>game\SneakyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\SneakyInput\SneakyButtonSkinnedBase.cpp">
+      <Filter>game\SneakyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\SneakyInput\SneakyJoystick.cpp">
+      <Filter>game\SneakyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\SneakyInput\SneakyJoystickSkinnedBase.cpp">
+      <Filter>game\SneakyInput</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +246,42 @@
     </ClInclude>
     <ClInclude Include="..\Classes\runtime\FileServer.h">
       <Filter>Classes\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\jsb.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\JsonStorage.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\ShakeAction.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\jsb\jsb_bindings_auto.hpp">
+      <Filter>game\jsb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\jsb\jsb_bindings_manual.h">
+      <Filter>game\jsb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\jsb\jsb_dragonbones_auto.hpp">
+      <Filter>game\jsb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\jsb\jsb_levelhelper_auto.hpp">
+      <Filter>game\jsb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\SneakyInput\SneakInputHeaders.h">
+      <Filter>game\SneakyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\SneakyInput\SneakyButton.h">
+      <Filter>game\SneakyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\SneakyInput\SneakyButtonSkinnedBase.h">
+      <Filter>game\SneakyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\SneakyInput\SneakyJoystick.h">
+      <Filter>game\SneakyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\SneakyInput\SneakyJoystickSkinnedBase.h">
+      <Filter>game\SneakyInput</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

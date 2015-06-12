@@ -156,7 +156,8 @@
      * @returns {cc.Node}
      */
     parser.initSingleNode = function(json){
-        var node = new cc.Node();
+        // Fix touch move in ScrollView, by yuxiao, 20150430,
+        var node = new ccui.Widget();
 
         this.generalAttributes(node, json);
 

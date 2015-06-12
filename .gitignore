@@ -1,8 +1,6 @@
 .svn
 .idea
-*.xcuserdatad
 *.pyc
-xcshareddata
 simple_test_bindings
 userconf.ini
 res
@@ -12,9 +10,21 @@ build
 Simulator
 jsb.sqlite
 
+# iOS
+*.xcuserdatad
+xcshareddata
+
 # Win32
 Debug.win32
 *.sdf
 *.suo
 *.vcxproj.user
 *.opensdf
+
+# Android
+frameworks/runtime-src/proj.android/assets
+frameworks/runtime-src/proj.android/bin
+frameworks/runtime-src/proj.android/gen
+frameworks/runtime-src/proj.android/libs
+frameworks/runtime-src/proj.android/obj
+frameworks/runtime-src/proj.android/local.properties

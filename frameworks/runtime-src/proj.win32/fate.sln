@@ -1,10 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fate", "fate.vcxproj", "{3B0B58B1-2734-488E-A542-ECEC11EB2455}"
 	ProjectSection(ProjectDependencies) = postProject
 		{39379840-825A-45A0-B363-C09FFEF864BD} = {39379840-825A-45A0-B363-C09FFEF864BD}
 		{98A51BA8-FC3A-415B-AC8F-8C7BD464E93E} = {98A51BA8-FC3A-415B-AC8F-8C7BD464E93E}
+		{2633E5D1-C31E-466B-844C-67E6B82D9682} = {2633E5D1-C31E-466B-844C-67E6B82D9682}
+		{9DE9F9D1-E0BF-478B-8075-ABEE7D1A2FDC} = {9DE9F9D1-E0BF-478B-8075-ABEE7D1A2FDC}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{8C6B0381-B325-4D7F-B1BB-474ABACE46AC}"
@@ -16,6 +20,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcocos2d", "..\..\js-bindings\cocos2d-x\cocos\2d\libcocos2d.vcxproj", "{98A51BA8-FC3A-415B-AC8F-8C7BD464E93E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libjsbindings", "..\..\js-bindings\bindings\proj.win32\libJSBinding.vcxproj", "{39379840-825A-45A0-B363-C09FFEF864BD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libdragonbones", "..\..\..\Classes\dragonbones\renderer\cocos2d-x-3.x\proj.win32\libDragonbones.vcxproj", "{2633E5D1-C31E-466B-844C-67E6B82D9682}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblevelhelper2", "..\..\..\Classes\LevelHelper2\LevelHelper2-API.win32\LevelHelper2-API.vcxproj", "{9DE9F9D1-E0BF-478B-8075-ABEE7D1A2FDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +51,14 @@ Global
 		{39379840-825A-45A0-B363-C09FFEF864BD}.Debug|Win32.Build.0 = Debug|Win32
 		{39379840-825A-45A0-B363-C09FFEF864BD}.Release|Win32.ActiveCfg = Release|Win32
 		{39379840-825A-45A0-B363-C09FFEF864BD}.Release|Win32.Build.0 = Release|Win32
+		{2633E5D1-C31E-466B-844C-67E6B82D9682}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2633E5D1-C31E-466B-844C-67E6B82D9682}.Debug|Win32.Build.0 = Debug|Win32
+		{2633E5D1-C31E-466B-844C-67E6B82D9682}.Release|Win32.ActiveCfg = Release|Win32
+		{2633E5D1-C31E-466B-844C-67E6B82D9682}.Release|Win32.Build.0 = Release|Win32
+		{9DE9F9D1-E0BF-478B-8075-ABEE7D1A2FDC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9DE9F9D1-E0BF-478B-8075-ABEE7D1A2FDC}.Debug|Win32.Build.0 = Debug|Win32
+		{9DE9F9D1-E0BF-478B-8075-ABEE7D1A2FDC}.Release|Win32.ActiveCfg = Release|Win32
+		{9DE9F9D1-E0BF-478B-8075-ABEE7D1A2FDC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
