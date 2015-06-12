@@ -14,8 +14,6 @@
 		1AD7E0A818C9DB93004817A6 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A6BF21418C9DB5900FB0E1C /* main.js */; };
 		1AD7E0A918C9DBE3004817A6 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A6BF21418C9DB5900FB0E1C /* main.js */; };
 		1AE159EC18C9DF3600FCA372 /* project.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A081B18C9DF05005C6854 /* project.json */; };
-		3E12D1A51957FA03002FF0FD /* script in Resources */ = {isa = PBXBuildFile; fileRef = 3E12D1A41957FA03002FF0FD /* script */; };
-		3E12D1A61957FA03002FF0FD /* script in Resources */ = {isa = PBXBuildFile; fileRef = 3E12D1A41957FA03002FF0FD /* script */; };
 		3E12D1A91957FB0E002FF0FD /* Protos.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3E12D1A71957FB0E002FF0FD /* Protos.pb.cc */; };
 		3E12D1AA1957FB0E002FF0FD /* Protos.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3E12D1A71957FB0E002FF0FD /* Protos.pb.cc */; };
 		3E12D1D51957FB18002FF0FD /* extension_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3E12D1AF1957FB18002FF0FD /* extension_set.cc */; };
@@ -108,8 +106,6 @@
 		C026DCCA18928A2400B3EDE8 /* Runtime_ios-mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = C026DCC818928A2400B3EDE8 /* Runtime_ios-mac.mm */; };
 		C033B524191B36AE00D06937 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C033B522191B36AE00D06937 /* VisibleRect.cpp */; };
 		C033B525191B36AE00D06937 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C033B522191B36AE00D06937 /* VisibleRect.cpp */; };
-		C03780EB18BEE0E400FE4F13 /* src in Resources */ = {isa = PBXBuildFile; fileRef = C03780EA18BEE0E400FE4F13 /* src */; };
-		C03780EC18BEE0E400FE4F13 /* src in Resources */ = {isa = PBXBuildFile; fileRef = C03780EA18BEE0E400FE4F13 /* src */; };
 		C037820C18BF77C500FE4F13 /* libjsbindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C037820918BF76AF00FE4F13 /* libjsbindings iOS.a */; };
 		C037820F18BF77DE00FE4F13 /* libjsbindings Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C037820718BF76AF00FE4F13 /* libjsbindings Mac.a */; };
 		C03C8B4B18A770DD00723415 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C03C8B4818A770DD00723415 /* main.m */; };
@@ -189,8 +185,12 @@
 		DE36EFD41B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
 		DE36EFD51B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
 		DEA0AB7F1B29924900079B42 /* libLevelHelper2-API+Box2d-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF41B258A0F005B744E /* libLevelHelper2-API+Box2d-OSX.a */; };
-		DEA0AB861B29948800079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB851B29948800079B42 /* config */; };
-		DEA0AB871B29948800079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB851B29948800079B42 /* config */; };
+		DEA0AB941B2B0ADB00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
+		DEA0AB961B2B0ADB00079B42 /* script in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB911B2B0ADB00079B42 /* script */; };
+		DEA0AB9A1B2B0B0D00079B42 /* script in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB911B2B0ADB00079B42 /* script */; };
+		DEA0AB9B1B2B0B1700079B42 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
+		DEA0AB9C1B2B0B1800079B42 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
+		DEA0AB9D1B2B0B1C00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -513,6 +513,9 @@
 		DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystickSkinnedBase.cpp; sourceTree = "<group>"; };
 		DE36EEFF1B25955E005B744E /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		DEA0AB851B29948800079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../config; sourceTree = "<group>"; };
+		DEA0AB901B2B0ADB00079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../publish/config; sourceTree = "<group>"; };
+		DEA0AB911B2B0ADB00079B42 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../../../publish/script; sourceTree = "<group>"; };
+		DEA0AB921B2B0ADB00079B42 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../publish/src; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -712,6 +715,7 @@
 				509D4ACA17EBB2BE00697056 /* mac */,
 				A922753E1517C094001B78AA /* Products */,
 				15628F5B15F0F5C2000CF24B /* Resources */,
+				DEA0AB8F1B2B0A9300079B42 /* publish */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1070,6 +1074,16 @@
 			path = ../../../Classes/SneakyInput;
 			sourceTree = "<group>";
 		};
+		DEA0AB8F1B2B0A9300079B42 /* publish */ = {
+			isa = PBXGroup;
+			children = (
+				DEA0AB901B2B0ADB00079B42 /* config */,
+				DEA0AB911B2B0ADB00079B42 /* script */,
+				DEA0AB921B2B0ADB00079B42 /* src */,
+			);
+			name = publish;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1080,6 +1094,7 @@
 				509D4A8017EBB24E00697056 /* Sources */,
 				509D4A9317EBB24E00697056 /* Resources */,
 				509D4A8217EBB24E00697056 /* Frameworks */,
+				DEA0AB8E1B2B04E000079B42 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1100,6 +1115,7 @@
 				A92275391517C094001B78AA /* Sources */,
 				A922753A1517C094001B78AA /* Frameworks */,
 				A922753B1517C094001B78AA /* Resources */,
+				DEA0AB8C1B2AF50400079B42 /* ShellScript */,
 				3EC03834196541CD00D72B70 /* ShellScript */,
 			);
 			buildRules = (
@@ -1216,15 +1232,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA0AB9C1B2B0B1800079B42 /* src in Resources */,
+				DEA0AB961B2B0ADB00079B42 /* script in Resources */,
+				DEA0AB941B2B0ADB00079B42 /* config in Resources */,
 				1AC22EDE18CA0E11007112B9 /* project.json in Resources */,
 				1AD7E0A918C9DBE3004817A6 /* main.js in Resources */,
 				C05D1C181923467600B808A4 /* config.json in Resources */,
-				3E12D1A61957FA03002FF0FD /* script in Resources */,
-				DEA0AB871B29948800079B42 /* config in Resources */,
 				C0799CBA18BAE62000E9C828 /* res in Resources */,
 				C03C8B4C18A770DD00723415 /* MainMenu.xib in Resources */,
 				509D4ACF17EBB2BE00697056 /* Icon.icns in Resources */,
-				C03780EC18BEE0E400FE4F13 /* src in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,21 +1248,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA0AB9A1B2B0B0D00079B42 /* script in Resources */,
 				1AE159EC18C9DF3600FCA372 /* project.json in Resources */,
 				1AD7E0A818C9DB93004817A6 /* main.js in Resources */,
 				509D4ABE17EBB2AB00697056 /* Default.png in Resources */,
 				C05D1C171923467600B808A4 /* config.json in Resources */,
 				5091731E17ECDF7A00D62437 /* Icon-80.png in Resources */,
 				5091731F17ECDF7A00D62437 /* Icon-100.png in Resources */,
+				DEA0AB9B1B2B0B1700079B42 /* src in Resources */,
 				509D4AC117EBB2AB00697056 /* Icon-72.png in Resources */,
 				509D4AC017EBB2AB00697056 /* Icon-57.png in Resources */,
 				5091731A17ECDF7A00D62437 /* Icon-29.png in Resources */,
-				C03780EB18BEE0E400FE4F13 /* src in Resources */,
 				509D4AC617EBB2AB00697056 /* Icon-152.png in Resources */,
-				3E12D1A51957FA03002FF0FD /* script in Resources */,
 				C0799CB918BAE62000E9C828 /* res in Resources */,
 				509D4AC517EBB2AB00697056 /* Icon-144.png in Resources */,
-				DEA0AB861B29948800079B42 /* config in Resources */,
+				DEA0AB9D1B2B0B1C00079B42 /* config in Resources */,
 				509D4AC317EBB2AB00697056 /* Icon-114.png in Resources */,
 				509D4ABD17EBB2AB00697056 /* Default-568h@2x.png in Resources */,
 				509D4ABF17EBB2AB00697056 /* Default@2x.png in Resources */,
@@ -1273,6 +1289,32 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "find ${SRCROOT}/../../../src/ -name \"*\" -exec touch -cm {} \\;\nfind ${SRCROOT}/../../../res/ -name \"*\" -exec touch -cm {} \\;";
+		};
+		DEA0AB8C1B2AF50400079B42 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ../../../\nrm -rf publish\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
+		};
+		DEA0AB8E1B2B04E000079B42 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ../../../\nrm -rf publish\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
 		};
 /* End PBXShellScriptBuildPhase section */
 
