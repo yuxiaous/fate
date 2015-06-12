@@ -1108,9 +1108,9 @@
 			productReference = 509D4AAA17EBB24E00697056 /* fate Mac.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A922753C1517C094001B78AA /* fate iOS */ = {
+		A922753C1517C094001B78AA /* fate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A92277001517C097001B78AA /* Build configuration list for PBXNativeTarget "fate iOS" */;
+			buildConfigurationList = A92277001517C097001B78AA /* Build configuration list for PBXNativeTarget "fate" */;
 			buildPhases = (
 				A92275391517C094001B78AA /* Sources */,
 				A922753A1517C094001B78AA /* Frameworks */,
@@ -1125,7 +1125,7 @@
 				C037820B18BF77BC00FE4F13 /* PBXTargetDependency */,
 				1A67682F180E9C110076BC67 /* PBXTargetDependency */,
 			);
-			name = "fate iOS";
+			name = fate;
 			productName = fate;
 			productReference = A922753D1517C094001B78AA /* fate iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -1169,7 +1169,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				A922753C1517C094001B78AA /* fate iOS */,
+				A922753C1517C094001B78AA /* fate */,
 				509D4A7517EBB24E00697056 /* fate Mac */,
 			);
 		};
@@ -1665,7 +1665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A92277001517C097001B78AA /* Build configuration list for PBXNativeTarget "fate iOS" */ = {
+		A92277001517C097001B78AA /* Build configuration list for PBXNativeTarget "fate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A92277011517C097001B78AA /* Debug */,
