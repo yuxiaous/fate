@@ -8,7 +8,7 @@
     ],
     "copy_resources": [
         {
-            "from": "../../../src",
+            "from": "../../../publish/src",
             "to": "src"
         },
         {
@@ -20,13 +20,13 @@
             "to": ""
         },
         {
-            "from": "../../../config",
-            "to": ""
+            "from": "../../../publish/config",
+            "to": "config"
         }
     ],
     "must_copy_resources": [
         {
-            "from": "../../js-bindings/bindings/script",
+            "from": "../../../publish/script",
             "to": "script"
         },
         {
