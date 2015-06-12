@@ -3,6 +3,8 @@
 *.pyc
 simple_test_bindings
 userconf.ini
+
+# game
 res
 config
 build
