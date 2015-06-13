@@ -30,10 +30,14 @@ net_protocol_handlers.SEND_CMD_CS_AUTH = function(obj) {
 };
 
 // @protocol 战斗结束返回的详细信息
-// @param {uint32} result, 战斗结果，0成功
+// @param {uint32} result, 战斗结果，1胜利 2失败
+// @param {uint32} map_id, 地图id
+// @param {switch} reward, 奖励列表
 net_protocol_handlers.CMD_SC_BATTLE_FINISH_RESULT = 1504;
 _BindFunc(1504, function(obj) {
 	cc.assert(obj.result != undefined, "CMD_SC_BATTLE_FINISH_RESULT.result is undefined.");
+	cc.assert(obj.map_id != undefined, "CMD_SC_BATTLE_FINISH_RESULT.map_id is undefined.");
+	cc.assert(obj.reward != undefined, "CMD_SC_BATTLE_FINISH_RESULT.reward is undefined.");
 	net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT(obj);
 });
 

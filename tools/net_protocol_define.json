@@ -1,0 +1,348 @@
+{
+	"CMD_SC_ERROR_CODE":
+	{
+		"code": 88,
+		"type": "SC",
+		"desc": "错误码",
+		"schemes":
+		[
+			["uint32", "code", "错误码"]
+		]
+	},
+	"CMD_CS_GM_CMD":
+	{
+		"code": 89,
+		"type": "CS",
+		"desc": "GM命令",
+		"schemes":
+		[
+			["string", "cmd", "GM命令"]
+		]	
+	},
+
+	"CMD_CS_AUTH":
+	{
+		"code": 500,
+		"type": "CS",
+		"desc": "获取授权",
+		"schemes":
+		[
+			["uint32", "token", "Token"]
+		]
+	},
+	"CMD_SC_INIT_BEGIN":
+	{
+		"code": 501,
+		"type": "SC",
+		"desc": "开始初始化",
+		"schemes": 
+		[
+		]	
+	},
+	"CMD_SC_INIT_END":
+	{
+		"code": 502,
+		"type": "SC",
+		"desc": "初始化结束",
+		"schemes": 
+		[
+		]	
+	},
+	"CMD_SC_INIT_PROGRESS":
+	{
+		"code": 503,
+		"type": "SC",
+		"desc": "初始化进度",
+		"schemes": 
+		[
+			["uint32", "percent", "初始化百分比"]
+		]	
+	},
+
+	"CMD_CS_PLAYER_INFO":
+	{
+		"code": 900,
+		"type": "SC",
+		"desc": "角色信息",
+		"schemes":
+		[
+			["switch", "player", "角色信息",
+				[
+					["uint32", "level", "等级"],
+					["uint64", "exp", "经验"],
+					["uint64", "gold", "金币"],
+					["uint32", "diamond", "钻石"],
+					["uint32", "action", "行动力"]
+				]
+			]
+		]
+	},
+
+	"CMD_SC_MAP_INFO":
+	{
+		"code": 1001,
+		"type": "SC",
+		"desc": "地图信息",
+		"schemes":
+		[
+			["list", "maps", "地图信息列表",
+				[
+					["uint32", "map_id", "地图点id"]
+				]
+			]
+		]
+	},
+
+	"CMD_CS_SHOP_BUY_GOODS":
+	{
+		"code": 1101,
+		"type": "CS",
+		"desc": "购买商品",
+		"schemes":
+		[
+			["uint32", "good_id", "商品id"],
+			["uint32", "count", "商品数量"]
+		]
+	},
+	"CMD_SC_SHOP_BUY_RESULT":
+	{
+		"code": 1102,
+		"type": "SC",
+		"desc": "购买商品结果",
+		"schemes":
+		[
+			["uint32", "result", "结果 0成功"],
+			["uint32", "good_id", "商品id"],
+			["uint32", "remaining", "剩余数量"]
+		]
+	},
+
+	"CMD_SC_SKILL_INFO":
+	{
+		"code": 1201,
+		"type": "SC",
+		"desc": "技能信息",
+		"schemes":
+		[
+			["list", "skills", "技能信息",
+				[
+					["uint32", "skill_id", "技能id"],
+					["uint32", "skill_lv", "技能等级"]
+				]
+			]
+		]
+	},
+	"CMD_CS_SKILL_UP":
+	{
+		"code": 1202,
+		"type": "CS",
+		"desc": "升级技能",
+		"schemes":
+		[
+			["uint32", "skill_id", "技能id"]
+		]
+	},
+	"CMD_SC_SKILL_UP_RESULT":
+	{
+		"code": 1203,
+		"type": "SC",
+		"desc": "技能升级结果",
+		"schemes":
+		[
+			["uint32", "result", "技能升级结果 0成功"]
+		]
+	},
+
+	"CMD_SC_EQUIP_SLOT_INFO":
+	{
+		"code": 1301,
+		"type": "SC",
+		"desc": "装备槽信息",
+		"schemes":
+		[
+			["list", "slots", "技能信息",
+				[
+					["uint32", "slot_type", "槽类型"],
+					["uint32", "level", "槽等级"]
+				]
+			]
+		]
+	},
+	"CMD_CS_EQUIP_SLOT_UPGRADE":
+	{
+		"code": 1302,
+		"type": "CS",
+		"desc": "装备槽升级",
+		"schemes":
+		[
+			["uint32", "slot_type", "槽类型"]
+		]
+	},
+	"CMD_SC_EQUIP_SLOT_UPGRADE_RESULT":
+	{
+		"code": 1303,
+		"type": "SC",
+		"desc": "装备槽升级结果",
+		"schemes":
+		[
+			["uint32", "result", "结果 0成功"]
+		]
+	},
+	"CMD_CS_EQUIP_ITEM":
+	{
+		"code": 1304,
+		"type": "CS",
+		"desc": "装备物品",
+		"schemes":
+		[
+			["uint32", "uid", "物品uid"]
+		]
+	},
+	"CMD_CS_EQUIP_ITEM_RESULT":
+	{
+		"code": 1305,
+		"type": "SC",
+		"desc": "物品装备结果",
+		"schemes":
+		[
+			["uint32", "result", "结果 0成功"]
+		]
+	},
+	"CMD_CS_UNEQUIP_ITEM":
+	{
+		"code": 1306,
+		"type": "CS",
+		"desc": "卸下装备",
+		"schemes":
+		[
+			["uint32", "slot", "槽类型"]
+		]
+	},
+	"CMD_CS_UNEQUIP_ITEM_RESULT":
+	{
+		"code": 1307,
+		"type": "SC",
+		"desc": "卸下装备结果",
+		"schemes":
+		[
+			["uint32", "result", "结果 0成功"]
+		]
+	},
+
+	"CMD_SC_ITEM_INFO":
+	{
+		"code": 1401,
+		"type": "SC",
+		"desc": "更新物品信息",
+		"schemes":
+		[
+			["list", "items", "物品信息列表",
+				[
+					["uint32", "uid", "物品UID"],
+					["uint32", "id", "物品ID"],
+					["uint32", "num", "物品数量"]
+				]
+			]
+		]
+	},
+	"CMD_CS_ITEM_SELL":
+	{
+		"code": 1402,
+		"type": "CS",
+		"desc": "卖出物品",
+		"schemes":
+		[
+			["uint32", "uid", "物品uid"],
+			["uint32", "num", "物品数量"]
+		]
+	},
+	"CMD_SC_ITEM_SELL_RESULT":
+	{
+		"code": 1403,
+		"type": "SC",
+		"desc": "卖出物品结果",
+		"schemes":
+		[
+			["uint32", "result", "结果 0成功"]
+		]
+	},
+	"CMD_CS_ITEM_USE":
+	{
+		"code": 1404,
+		"type": "CS",
+		"desc": "使用物品",
+		"schemes":
+		[
+			["uint32", "uid", "物品uid"],
+			["uint32", "num", "物品数量"]
+		]
+	},
+	"CMD_SC_ITEM_USE_RESULT":
+	{
+		"code": 1405,
+		"type": "SC",
+		"desc": "物品使用结果",
+		"schemes":
+		[
+			["uint32", "result", "结果 0成功"]
+		]
+	},
+
+	"CMD_CS_BATTLE_MAP":
+	{
+		"code": 1501,
+		"type": "CS",
+		"desc": "地图战斗",
+		"schemes":
+		[
+			["uint32", "map_id", "地图点id"]
+		]
+	},
+	"CMD_SC_BATTLE_MAP_RESULT":
+	{
+		"code": 1502,
+		"type": "SC",
+		"desc": "地图战斗结果",
+		"schemes":
+		[
+			["uint32", "result", "结果 0成功"],
+			["uint32", "map_id", "地图点id"]
+		]
+	},
+	"CMD_CS_BATTLE_FINISH":
+	{
+		"code": 1503,
+		"type": "CS",
+		"desc": "战斗结束",
+		"schemes":
+		[
+			["uint32", "result", "战斗结果, 1胜利，2失败"],
+			["uint32", "time", "战斗消耗时间，单位秒"]
+		]
+	},
+	"CMD_SC_BATTLE_FINISH_RESULT":
+	{
+		"code": 1504,
+		"type": "SC",
+		"desc": "战斗结束返回的详细信息",
+		"schemes":
+		[
+			["uint32", "result", "战斗结果，1胜利 2失败"],
+			["uint32", "map_id", "地图id"],
+			["switch", "reward", "奖励列表", 
+				[
+					["uint64", "exp", "经验"],
+					["uint64", "gold", "金币"],
+					["uint32", "diamond", "钻石"],
+					["list", "items", "物品",
+						[
+							["uint32", "item_id", "物品id"],
+							["uint32", "item_num", "物品数量"]
+						]
+					]
+				]
+			]
+		]
+	}
+}
+

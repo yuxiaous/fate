@@ -9,7 +9,7 @@ var MapScene = ui.GuiSceneBase.extend({
     ctor: function() {
         this._super();
 
-        this._cur_chapter_id = MapSystem.instance.max_chapter_id;
+        this._cur_chapter_id = 0;
         this._sel_map_id = 0;
     },
 
@@ -48,6 +48,7 @@ var MapScene = ui.GuiSceneBase.extend({
             notification.createBinding(notification.event.BATTLE_MAP_RESULT, this.onBattleMapResult, this)
         ];
 
+        this._cur_chapter_id = MapSystem.instance.max_chapter_id;
         this.createChapterPages();
     },
 

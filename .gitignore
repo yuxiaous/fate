@@ -9,6 +9,7 @@ res
 config
 build
 publish
+protocol
 
 Simulator
 jsb.sqlite

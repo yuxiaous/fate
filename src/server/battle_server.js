@@ -54,14 +54,29 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
                 }
             );
         }
-        curIsWin = 0;
+        curIsWin = 1;
     }
     else if(obj.result == 2){
-        curIsWin = -1;
+        curIsWin = 2;
     }
 
     server.send(net_protocol_handlers.CMD_SC_BATTLE_FINISH_RESULT, {
         result : curIsWin,
-        reward : gainItem
+        map_id: battle_server.cur_battle_map,
+        reward : {
+            exp: 0,
+            gold: 0,
+            diamond: 0,
+            items: [
+                {
+                    item_id: 0,
+                    item_num: 0
+                },
+                {
+                    item_id: 0,
+                    item_num: 0
+                }
+            ]
+        }
     });
 });
