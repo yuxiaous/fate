@@ -40,9 +40,10 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
 
             gainItem.gold = config.gain_gold || 0 ;
             gainItem.exp  = config.gain_exp || 0 ;
+            gainItem.diamond = config.gain_diamond || 0;
             _.each(
-                ["gainItemId_1",
-                 "gainItemId_2"], function (itemTitle_) {
+                ["gain_item_id_1",
+                 "gain_item_id_2"], function (itemTitle_) {
                     if(config[itemTitle_]){
                         gainItem.items.push(
                             {

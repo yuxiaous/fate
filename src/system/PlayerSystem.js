@@ -56,7 +56,6 @@ var PlayerSystem = SystemBase.extend({
             ret.hp += score.hp;
             ret.mp += score.mp;
             ret.atk += score.atk;
-            LOG("SCORE.ATK = " + score.atk);
             ret.def += score.def;
             ret.crit += score.crit;
             ret.sunder += score.sunder;
