@@ -28,15 +28,3 @@ String.prototype.format = function(args) {
     return result;
 };
 
-//ccui.Widget.prototype.seekWidgetByName = function(sName) {
-//    return ccui.helper.seekWidgetByName(this, sName);
-//};
-
-cc.Node.prototype.seekWidgetByName = function(name) {
-    var control = null;
-    this.enumerateChildren('//' + name, function(node) {
-        control = node;
-        return true;
-    });
-    return control;
-};

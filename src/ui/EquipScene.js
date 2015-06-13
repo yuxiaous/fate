@@ -47,8 +47,6 @@ var EquipScene = ui.GuiWindowBase.extend({
             lbl_prop_1: this.seekWidgetByName("lbl_equip_prop_1"),
             lbl_prop_2: this.seekWidgetByName("lbl_equip_prop_2"),
             lbl_price: this.seekWidgetByName("lbl_equip_price"),
-            //sp_icon_1: this.seekWidgetByName("sp_skill_icon_1"),
-            //sp_icon_2: this.seekWidgetByName("sp_skill_icon_2"),
             btn_leveup: this.seekWidgetByName("btn_duanzao")
         };
         this._bindings = [
