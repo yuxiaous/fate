@@ -300,7 +300,7 @@
                 var streetRect = sec.street;
                 this._physicalWorld.setPosition(cc.p(streetRect.x, streetRect.y));
                 this._physicalWorld.setContentSize(streetRect.width, streetRect.height);
-                MapSystem.instance.setGameMapRect(cc.size(streetRect.width,streetRect.height));
+                MapSystem.instance.setGameMapRect(cc.rect(streetRect.x,streetRect.y,streetRect.width,streetRect.height));
 
                 //hero
                 if (this._hero == null) {

@@ -25,8 +25,8 @@ var OperationLayer = cc.Layer.extend({
             right : {
                 joystick   : cc.p(190,130),
                 atkBtn     : cc.p(winSize.width - 130, 100),
-                skillBtn_1 : cc.p(winSize.width - 185, 241),
-                skillBtn_2 : cc.p(winSize.width - 262, 177),
+                skillBtn_1 : cc.p(winSize.width - 262, 177),
+                skillBtn_2 : cc.p(winSize.width - 185, 241),
                 skillBtn_3 : cc.p(winSize.width - 89, 246),
                 skillBtn_4 : cc.p(winSize.width - 380, 81),
                 skillBtn_5 : cc.p(winSize.width - 282, 81)
