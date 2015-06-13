@@ -183,8 +183,8 @@ EquipSystem.EquipSlotType = {
     Weapon: 1,
     Coat: 2,
     Head: 3,
-    Leg: 4,
-    Shoe: 5,
+    Glove: 4, //护手
+    Shield: 5, //盾牌
     Amulet: 6
 };
 
@@ -202,8 +202,8 @@ EquipSystem.getEquipSlotName = function(type) {
         case EquipSystem.EquipSlotType.Weapon: return "武器";
         case EquipSystem.EquipSlotType.Coat: return "衣服";
         case EquipSystem.EquipSlotType.Head: return "头部";
-        case EquipSystem.EquipSlotType.Leg: return "盾牌";
-        case EquipSystem.EquipSlotType.Shoe: return "护手";
+        case EquipSystem.EquipSlotType.Glove: return "护手";
+        case EquipSystem.EquipSlotType.Shield: return "盾牌";
         case EquipSystem.EquipSlotType.Amulet: return "戒指";
     }
     return "位置部位";
@@ -229,8 +229,8 @@ EquipSystem.getEquipSlotUpgradeId = function(type, level) {
         case EquipSystem.EquipSlotType.Weapon: start_id = 1001; break;
         case EquipSystem.EquipSlotType.Coat: start_id = 2001; break;
         case EquipSystem.EquipSlotType.Head: start_id = 3001; break;
-        case EquipSystem.EquipSlotType.Leg: start_id = 4001; break;
-        case EquipSystem.EquipSlotType.Shoe: start_id = 5001; break;
+        case EquipSystem.EquipSlotType.Glove: start_id = 4001; break;
+        case EquipSystem.EquipSlotType.Shield: start_id = 5001; break;
         case EquipSystem.EquipSlotType.Amulet: start_id = 6001; break;
     }
     if(start_id > 0) {

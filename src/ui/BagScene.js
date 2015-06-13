@@ -22,8 +22,8 @@ var BagScene = ui.GuiWindowBase.extend({
                 [EquipSystem.EquipSlotType.Weapon, "ProjectNode_1"],
                 [EquipSystem.EquipSlotType.Coat, "ProjectNode_2"],
                 [EquipSystem.EquipSlotType.Head, "ProjectNode_3"],
-                [EquipSystem.EquipSlotType.Leg, "ProjectNode_4"],
-                [EquipSystem.EquipSlotType.Shoe, "ProjectNode_5"],
+                [EquipSystem.EquipSlotType.Glove, "ProjectNode_4"],
+                [EquipSystem.EquipSlotType.Shield, "ProjectNode_5"],
                 [EquipSystem.EquipSlotType.Amulet, "ProjectNode_6"]
             ], function(slots, data){
                 var ctrl = new BagScene.EquipSlot(data[0]);
