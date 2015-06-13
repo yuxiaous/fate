@@ -85,8 +85,10 @@ var BattleEndPanel = ui.GuiWindowBase.extend({
         this._goldLabel = null;
         this._expLabel = null;
 
-        this._item_1.setWidget(null);
-        this._item_2.setWidget(null);
+        _.each(this._rewardItems, function (item_) {
+            item_.setWidget(null);
+        });
+                                             
 
         this._super();
     },
@@ -107,6 +109,10 @@ var BattleEndPanel = ui.GuiWindowBase.extend({
     
     _on_btn_use : function () {
         LOG("USE SERVIVE");
+    },
+                                             
+    _on_btn_enter : function(){
+        this.close();
     }
 });
 

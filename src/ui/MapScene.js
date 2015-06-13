@@ -187,14 +187,14 @@ var MapScene = ui.GuiSceneBase.extend({
             (function () {
                 var mapConfig = configdb.map[sel_map_id];
                 if(mapConfig ){
-                    if(mapConfig.map_type == BattleSystem.BattleType.normalType){
+                    if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
                         ui.pushScene(new BattleScene(sel_map_id));
                         //ui.pushScene(new BattleDefScene(this.mapId) );
                     }
-                    else if(mapConfig.map_type == BattleSystem.BattleType.defendType){
+                    else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
                         ui.pushScene(new BattleDefScene(sel_map_id) );
                     }
-                    else if(mapConfig.map_type == BattleSystem.BattleType.endlessType){
+                    else if(mapConfig.map_type == BattleSystem.BattleType.EndlessType){
 
                     }
                 }

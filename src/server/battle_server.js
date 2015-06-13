@@ -46,37 +46,55 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
                     if(config[itemTitle_]){
                         gainItem.items.push(
                             {
-                                itemId : config[itemTitle_],
-                                itemNum: 1
+                                item_id : config[itemTitle_],
+                                item_num: 1
                             }
                         )
                     }
                 }
             );
+                        
         }
         curIsWin = 1;
     }
     else if(obj.result == 2){
         curIsWin = 2;
     }
+                        
+                        
+    if(curIsWin == 1){
+        _.each(gainItem.items,function(item_){
+           if(item_ && item_.item_id != 0){
+               bag_server.addItem(item_.item_id,1);
+           }
+        },this);
+
+        server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO,{
+            player:{
+                gold: player_server.player_info.gold += gainItem.gold,
+                exp : player_server.player_info.exp += gainItem.exp
+            }
+        });
+    }
 
     server.send(net_protocol_handlers.CMD_SC_BATTLE_FINISH_RESULT, {
         result : curIsWin,
         map_id: battle_server.cur_battle_map,
-        reward : {
-            exp: 0,
-            gold: 0,
-            diamond: 0,
-            items: [
-                {
-                    item_id: 0,
-                    item_num: 0
-                },
-                {
-                    item_id: 0,
-                    item_num: 0
-                }
-            ]
-        }
+        reward : gainItem
+        //reward : {
+        //    exp: 0,
+        //    gold: 0,
+        //    diamond: 0,
+        //    items: [
+        //        {
+        //            item_id: 0,
+        //            item_num: 0
+        //        },
+        //        {
+        //            item_id: 0,
+        //            item_num: 0
+        //        }
+        //    ]
+        //}
     });
 });

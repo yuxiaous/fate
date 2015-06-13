@@ -107,7 +107,7 @@ var SceneBase = lh.LHScene.extend({
             notification.createBinding(notification.event.ROLE_DISAPPEAR, this.onRoleDisappear, this),
             notification.createBinding(notification.event.ITEM_DISAPPEAR, this.onItemDisappear, this),
             notification.createBinding(notification.event.BATTLE_FINISH_RESULT, function (event_,obj_) {
-                var isWin = (obj_.result == 0 ? BattleEndPanel.Type.Win : BattleEndPanel.Type.Lose);
+                var isWin = (obj_.result == 1 ? BattleEndPanel.Type.Win : BattleEndPanel.Type.Lose);
                 var panel = new BattleEndPanel(isWin,obj_.reward);
                 panel.setCloseCallback(this.onSceneFinished, this);
                 panel.pop();

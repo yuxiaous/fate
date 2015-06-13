@@ -53,15 +53,15 @@ var BattleSystem = SystemBase.extend({
         //}
         notification.emit(notification.event.BATTLE_FINISH_RESULT,obj);
 
-        LOG("BATTLE FINISH RESULT");
-        LOGOBJ(obj);
+        //LOG("BATTLE FINISH RESULT");
+        //LOGOBJ(obj);
     }
 });
 
 BattleSystem.BattleType = {
-    normalType  : 1,
-    defendType  : 2,
-    endlessType : 3
+    NormalType  : 1,
+    DefendType  : 2,
+    EndlessType : 3
 };
 
 

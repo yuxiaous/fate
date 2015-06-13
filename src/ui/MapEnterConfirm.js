@@ -104,14 +104,14 @@ var MapStageInfo = ui.GuiWindowBase.extend({
 
         var mapConfig = configdb.map[this.mapId];
         if(mapConfig ){
-            if(mapConfig.map_type == BattleSystem.BattleType.normalType){
+            if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
                 ui.pushScene(new BattleScene(this.mapId));
                 //ui.pushScene(new BattleDefScene(this.mapId) );
             }
-            else if(mapConfig.map_type == BattleSystem.BattleType.defendType){
+            else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
                 ui.pushScene(new BattleDefScene(this.mapId) );
             }
-            else if(mapConfig.map_type == BattleSystem.BattleType.endlessType){
+            else if(mapConfig.map_type == BattleSystem.BattleType.EndlessType){
 
             }
             BattleSystem.instance.battleMap(this.mapId);
