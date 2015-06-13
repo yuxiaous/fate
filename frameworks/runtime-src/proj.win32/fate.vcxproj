@@ -117,14 +117,27 @@ xcopy /Y /Q "$(ProjectDir)..\..\js-bindings\cocos2d-x\external\websockets\prebui
       <ProgramDatabaseFile>$(ProjectDir)../../../runtime/win32/$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
     <PreBuildEvent>
-      <Command>if not exist "$(ProjectDir)..\..\..\runtime\win32\script" mkdir "$(ProjectDir)..\..\..\runtime\win32\script"
-xcopy /s "$(ProjectDir)..\..\js-bindings\bindings\script" "$(ProjectDir)..\..\..\runtime\win32\script" /e /Y</Command>
+      <Command>rd /s/q "$(ProjectDir)..\..\..\publish"
+$(ProjectDir)..\..\..\tools\cocos2d-console\bin\cocos jscompile -s "$(ProjectDir)..\..\..\src" -d "$(ProjectDir)..\..\..\publish\src"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
-      <Message>Copy js and resource files.</Message>
+      <Message>
+      </Message>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>xcopy /Y /Q "$(OutDir)*.dll" "$(ProjectDir)..\..\..\runtime\win32\"</Command>
+      <Command>rd /s/q "$(ProjectDir)..\..\..\runtime\win32\src"
+rd /s/q "$(ProjectDir)..\..\..\runtime\win32\res"
+rd /s/q "$(ProjectDir)..\..\..\runtime\win32\config"
+
+xcopy "$(OutDir)*.dll" "$(ProjectDir)..\..\..\runtime\win32" /Y /Q
+
+xcopy "$(ProjectDir)..\..\js-bindings\bindings\script" "$(ProjectDir)..\..\..\runtime\win32\script" /E /I /F /Y
+xcopy "$(ProjectDir)..\..\..\publish\src" "$(ProjectDir)..\..\..\runtime\win32\src" /E /I /F /Y
+xcopy "$(ProjectDir)..\..\..\res" "$(ProjectDir)..\..\..\runtime\win32\res" /E /I /F /Y
+xcopy "$(ProjectDir)..\..\..\config" "$(ProjectDir)..\..\..\runtime\win32\config" /D /E /I /F /Y
+copy "$(ProjectDir)..\..\..\main.js" "$(ProjectDir)..\..\..\runtime\win32" /Y
+copy "$(ProjectDir)..\..\..\project.json" "$(ProjectDir)..\..\..\runtime\win32" /Y
+copy "$(ProjectDir)..\..\..\config.json" "$(ProjectDir)..\..\..\runtime\win32" /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
