@@ -1139,7 +1139,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					A922753C1517C094001B78AA = {
-						DevelopmentTeam = MDDB52YB8L;
+						DevelopmentTeam = MUAKLX4S2T;
 					};
 				};
 			};
@@ -1613,7 +1613,7 @@
 				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "2a61ce5b-703c-4b9d-91cf-be2922ad3c71";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
 				VALID_ARCHS = "arm64 armv7";
 			};
@@ -1623,7 +1623,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: xiao yu (MUAKLX4S2T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiao yu (HSQ55LGA2U)";
 				COMPRESS_PNG_FILES = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1640,7 +1640,7 @@
 				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "4bc951d2-2dfb-4eb5-b705-d52f34a3c944";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
 				VALID_ARCHS = "arm64 armv7";
 			};
