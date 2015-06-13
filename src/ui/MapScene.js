@@ -103,7 +103,7 @@ var MapScene = ui.GuiSceneBase.extend({
         this.refreshSelectedMapInfo();
 
         // center selected map
-        //TODO
+        this.centerSelectedMap();
     },
 
     setChapterSwitchButton: function(has_pre, has_next) {
@@ -132,6 +132,18 @@ var MapScene = ui.GuiSceneBase.extend({
         }, this);
     },
 
+    centerSelectedMap: function() {
+        this._ui.list_maps.forceDoLayout();
+        var cell = _.find(this._ui.cell_maps, function(cell) {
+            return cell.id == this._sel_map_id;
+        }, this);
+
+        var list_size = this._ui.list_maps.getInnerContainerSize();
+        var cell_size = cell.getContentSize();
+        var cell_pos = cell.getPosition();
+        this._ui.list_maps.jumpToPercentHorizontal(cell_pos.x / (list_size.width - cell_size.width) * 100);
+    },
+
     _on_btn_back: function() {
         this.popScene();
     },
@@ -157,7 +169,7 @@ var MapScene = ui.GuiSceneBase.extend({
     _on_btn_battle: function() {
         BattleSystem.instance.battleMap(this._sel_map_id);
     },
-    __on_btn_raid: function() {
+    _on_btn_raid: function() {
 
     },
     onBattleMapResult: function() {
