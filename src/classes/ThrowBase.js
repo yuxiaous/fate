@@ -286,6 +286,7 @@ var SingleFireBall = ThrowBase.extend({
 
     onEnter : function () {
         this._super();
+
     },
     
     onExit : function () {
@@ -309,32 +310,34 @@ var SingleFireBall = ThrowBase.extend({
         if(!throwConf){
             return;
         }
-        //this.addThrowWeapon(weaponIndex_);
-        var that = this;
-        this.runAction(cc.Sequence.create(
-            cc.DelayTime.create(cc.random0To1() ),
-            cc.CallFunc.create(function () {
-                that.addThrowWeapon(throwDir_);
-            })
-        ));
-
         var mapPos = MapSystem.instance.getGameMapPos();
+
         var pos = {
-            x : - mapPos.x + pos_.x,
+            x : -mapPos.x + pos_.x,
             y : pos_.y,
             z : 0
         }
         this.setSpacePosition(pos);
         this._hostRole.physicalWorld.addPhysicalNode(this);
+
+        var that = this;
+        var delayTime = 0.1 + cc.random0To1();
+        var dir = throwDir_;
+        this.runAction(cc.Sequence.create(
+            cc.DelayTime.create(delayTime),
+            cc.CallFunc.create(function (){
+                that.addThrowWeapon(dir);
+            })
+        ));
     },
 
     addThrowWeapon : function (throwDirection_) {
         var throwConf = configdb.model[this._throwModelId];
         this._throwNode = dragonBones.DragonBonesHelper.buildArmatureNode(throwConf.armature);
-        this._throwNode .setScaleX(-throwDirection_);
-        this._throwNode .gotoAndPlay(throwConf.stand);
-        this.addChild(this._throwNode );
-        this.judgeThrowEvent(this._throwNode );
+        this._throwNode.setScaleX(-throwDirection_);
+        this._throwNode.gotoAndPlay(throwConf.stand);
+        this.addChild(this._throwNode);
+        this.judgeThrowEvent(this._throwNode);
         this.isActive = true;
     }
 });

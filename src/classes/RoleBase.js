@@ -324,6 +324,7 @@ var RoleBase = PhysicalNode.extend({
             }.bind(this));
             if(effectNode.gotoAndPlay(effectName[1])) {
                 this.addChild(effectNode, 999);
+                MusicManager.getInstance().playEffectMusic("res/sounds/roleSound/guai_xiaoshi.mp3");
             }
         }
     },

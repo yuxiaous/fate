@@ -35,8 +35,6 @@ var BattleEndPanel = ui.GuiWindowBase.extend({
         _item.setWidget(this.seekWidgetByName("ProjectNode_1_0"));
         this._rewardItems.push(_item);
 
-        this._gainItemLV = this.seekWidgetByName("ItemlistView");
-
         if(this._battleResult == BattleEndPanel.Type.Lose){
             this._failurePanel.setVisible(true);
             this._victoryPanel.setVisible(false);
@@ -63,7 +61,7 @@ var BattleEndPanel = ui.GuiWindowBase.extend({
 
         if(this._battleReward.items.length > 0){
             _.each(this._battleReward.items, function (itemsData_, i) {
-                this._rewardItems[i].setItemId(itemsData_.itemId);
+                this._rewardItems[i].setItemId(itemsData_.item_id);
             },this);
         }
     },
@@ -85,8 +83,10 @@ var BattleEndPanel = ui.GuiWindowBase.extend({
         this._goldLabel = null;
         this._expLabel = null;
 
-        this._item_1.setWidget(null);
-        this._item_2.setWidget(null);
+        _.each(this._rewardItems, function (item_) {
+            item_.setWidget(null);
+        });
+                                             
 
         this._super();
     },
@@ -107,6 +107,10 @@ var BattleEndPanel = ui.GuiWindowBase.extend({
     
     _on_btn_use : function () {
         LOG("USE SERVIVE");
+    },
+                                             
+    _on_btn_enter : function(){
+        this.close();
     }
 });
 

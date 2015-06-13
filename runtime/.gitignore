@@ -1,2 +1,9 @@
 fate-debug.apk
 fate Mac.app
+win32/config
+win32/res
+win32/src
+win32/config.json
+win32/main.js
+win32/project.json
+win32/fate.exe
