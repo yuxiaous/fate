@@ -142,7 +142,7 @@ MainScene.Resource = ui.GuiController.extend({
                 break;
             case MainScene.Resource.Type.Gold:
                 LOG("add gold");
-                GmSystem.instance.sendCommand("ar 1 100");
+                GmSystem.instance.sendCommand("ar 1 10000");
                 break;
             case MainScene.Resource.Type.Diamond:
                 LOG("add diamond");
