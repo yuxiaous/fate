@@ -32,9 +32,11 @@ var map_server = {
             }
         }, this);
 
-        server.send(net_protocol_handlers.CMD_SC_MAP_INFO, {
-            maps: update
-        });
+        if(update.length > 0) {
+            server.send(net_protocol_handlers.CMD_SC_MAP_INFO, {
+                maps: update
+            });
+        }
     }
 };
 

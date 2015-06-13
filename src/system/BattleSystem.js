@@ -51,6 +51,7 @@ var BattleSystem = SystemBase.extend({
         //else if(obj.result == -1){
         //
         //}
+        this.battle_reward = obj.reward;
         notification.emit(notification.event.BATTLE_FINISH_RESULT,obj);
 
         //LOG("BATTLE FINISH RESULT");

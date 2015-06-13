@@ -48,18 +48,24 @@
         operator.setEnable(false);
         frontUi.addChild(operator,SceneDefBase.FrontUITag.operatorTag);
 
-        // role info panel
-        var rolePanel = new RoleBattlePanel();
-        rolePanel.setPosition(0, winSize.height);
-        rolePanel.setVisible(false);
-        rolePanel.setRole(this._hero);
-        frontUi.addChild(rolePanel);
+        //// role info panel
+        //var rolePanel = new RoleBattlePanel();
+        //rolePanel.setPosition(0, winSize.height);
+        //rolePanel.setVisible(false);
+        //rolePanel.setRole(this._hero);
+        //frontUi.addChild(rolePanel);
 
-        //boss info panel
-        var bossPanel = new BossBattlePanel();
-        bossPanel.setPosition(winSize.width,winSize.height);
-        bossPanel.setVisible(false);
-        frontUi.addChild(bossPanel);
+        ////boss info panel
+        //var bossPanel = new BossBattlePanel();
+        //bossPanel.setPosition(winSize.width,winSize.height);
+        //bossPanel.setVisible(false);
+        //frontUi.addChild(bossPanel);
+
+        //battle ui layer
+        var battleUiLayer = new BattleUILayer();
+        battleUiLayer.setPosition(cc.p(0,0));
+        battleUiLayer.setAnchorPoint(cc.p(0,0));
+        frontUi.addChild(battleUiLayer);
 
         // combo panel
         var comboPanel = new ComboPanel();
@@ -99,8 +105,9 @@
         this._frontUi = frontUi;
         this._physicalWorld = physicalWorld;
         this._operator = operator;
-        this._rolePanel = rolePanel;
-        this._bossPanel = bossPanel;
+        this._battleUiLayer = battleUiLayer;
+        this._rolePanel = this._battleUiLayer._rolePanel;
+        this._bossPanel = this._battleUiLayer._bossPanel;
         //this._coverView = coverLayer;
         this._roundLabel= roundLabel;
 
@@ -111,7 +118,8 @@
         this._bindings = [
             notification.createBinding(notification.event.ROLE_DIE, this.onRoleDie, this),
             notification.createBinding(notification.event.ROLE_DISAPPEAR, this.onRoleDisappear, this),
-            notification.createBinding(notification.event.ITEM_DISAPPEAR, this.onItemDisappear, this)
+            notification.createBinding(notification.event.ITEM_DISAPPEAR, this.onItemDisappear, this),
+            notification.createBinding(notification.event.BATTLE_FINISH_RESULT, this.showFinishPanel, this)
         ];
     },
 
@@ -449,37 +457,6 @@
         cc.director.getScheduler().schedule(changeCountDownLabel,this,1.0,cc.REPEAT_FOREVER,0,false,"downTime");
     },
 
-    onAfterFightChatStart : function () {
-        if(this._isLastRound) {
-            this._bossPanel.setVisible(false);
-            if(this._sceneStatus.chatData.afterFight.length > 0){
-                var dialog = new DialogPanel(this._sceneStatus.chatData.afterFight);
-                this._frontUi.addChild(dialog,SceneDefBase.FrontUITag.dialogPanelTag);
-
-                dialog.setEndingCallback(function() {
-                    dialog.removeFromParent();
-                    this.showFinishPanel();
-                }.bind(this));
-
-                this._rolePanel.setVisible(false);
-                this._operator.setHide(false);
-            }
-            else{
-                this.showFinishPanel();
-            }
-        }
-        else {
-            this.onAfterFightChatEnd();
-        }
-    },
-
-    onAfterFightChatEnd : function () {
-        //this.onGoForwardStart();
-        this._rolePanel.setVisible(false);
-        this._operator.setHide(false);
-        this.playNextSection();
-    },
-
     onBattleStart: function() {
         this._rolePanel.setVisible(true);
         this._operator.setHide(true);
@@ -498,7 +475,14 @@
         LOG("BATTLE END = " + this._isLostBattle);
         if(this._isLostBattle){
             LOG("SHOW FINISH PANEL");
-            this.showFinishPanel();
+            // show lose window
+            var win = new BattleLosePanel();
+            win.setCloseCallback(function(w) {
+                if(w.exit) {
+                    cc.director.popScene();
+                }
+            }, this);
+            win.pop();
         }
         else{
             this.runAction(cc.Sequence.create(
@@ -591,15 +575,52 @@
         }
     },
 
-    showFinishPanel: function() {
-        var win = !this._isLostBattle;
-        this._operator.setHide(false);
-        var type = win ? BattleEndPanel.Type.Win : BattleEndPanel.Type.Lose;
-        var panel = new BattleEndPanel(type);
-        panel.setCloseCallback(this.onSceneFinished, this);
-        panel.pop();
+     onAfterFightChatStart : function () {
+         if(this._isLastRound) {
+             this._bossPanel.setVisible(false);
+             if(this._sceneStatus.chatData.afterFight.length > 0){
+                 var dialog = new DialogPanel(this._sceneStatus.chatData.afterFight);
+                 this._frontUi.addChild(dialog,SceneDefBase.FrontUITag.dialogPanelTag);
 
-        MapSystem.instance.sendBattleResult(win);
+                 dialog.setEndingCallback(function() {
+                     dialog.removeFromParent();
+                     this.battleFinish();
+                 }.bind(this));
+
+                 this._rolePanel.setVisible(false);
+                 this._operator.setHide(false);
+             }
+             else{
+                 this.battleFinish();
+             }
+         }
+         else {
+             this.onAfterFightChatEnd();
+         }
+     },
+     onAfterFightChatEnd : function () {
+         //this.onGoForwardStart();
+         this._rolePanel.setVisible(false);
+         this._operator.setHide(false);
+         this.playNextSection();
+     },
+
+     battleFinish: function() {
+         BattleSystem.instance.battleFinish(true);
+     },
+    showFinishPanel: function() {
+        //var win = !this._isLostBattle;
+        //this._operator.setHide(false);
+        //var type = win ? BattleEndPanel.Type.Win : BattleEndPanel.Type.Lose;
+        //var panel = new BattleEndPanel(type);
+        //panel.setCloseCallback(this.onSceneFinished, this);
+        //panel.pop();
+
+        this._operator.setHide(false);
+
+        var win = new BattleWinPanel();
+        win.setCloseCallback(this.onSceneFinished, this);
+        win.pop();
     },
 
     onSceneFinished: function() {

@@ -106,12 +106,7 @@ var SceneBase = lh.LHScene.extend({
             notification.createBinding(notification.event.ROLE_DIE, this.onRoleDie, this),
             notification.createBinding(notification.event.ROLE_DISAPPEAR, this.onRoleDisappear, this),
             notification.createBinding(notification.event.ITEM_DISAPPEAR, this.onItemDisappear, this),
-            notification.createBinding(notification.event.BATTLE_FINISH_RESULT, function (event_,obj_) {
-                var isWin = (obj_.result == 1 ? BattleEndPanel.Type.Win : BattleEndPanel.Type.Lose);
-                var panel = new BattleEndPanel(isWin,obj_.reward);
-                panel.setCloseCallback(this.onSceneFinished, this);
-                panel.pop();
-            },this)
+            notification.createBinding(notification.event.BATTLE_FINISH_RESULT, this.showFinishPanel, this)
         ];
     },
 
@@ -150,7 +145,7 @@ var SceneBase = lh.LHScene.extend({
         }
 
         // set target
-        var that = this
+        var that = this;
         function setMonsterTarget(monster, target) {
             var ai = monster.getRoleAi();
             if(ai.target == null){
@@ -430,33 +425,6 @@ var SceneBase = lh.LHScene.extend({
         this.onBattleStart();
     },
 
-    onAfterFightChatStart : function () {
-        if(this._isLastSection) {
-            if(this._sceneStatus.chatData.afterFight.length > 0){
-                var dialog = new DialogPanel(this._sceneStatus.chatData.afterFight);
-                this._frontUi.addChild(dialog);
-
-                dialog.setEndingCallback(function() {
-                    dialog.removeFromParent();
-                    this.showFinishPanel();
-                }.bind(this));
-
-                this._battleUiLayer.setVisible(false);
-                this._operator.setHide(false);
-            }
-            else{
-                this.showFinishPanel();
-            }
-        }
-        else {
-            this.onAfterFightChatEnd();
-        }
-    },
-
-    onAfterFightChatEnd : function () {
-        this.onGoForwardStart();
-    },
-
     onBattleStart: function() {
         this._battleUiLayer.setVisible(true);
         this._operator.setHide(true);
@@ -470,7 +438,14 @@ var SceneBase = lh.LHScene.extend({
     onBattleEnd: function() {
         this.unschedule(this.battleObserver);
         if(this._isLostBattle){
-           this.showFinishPanel();
+            // show lose window
+            var win = new BattleLosePanel();
+            win.setCloseCallback(function(w) {
+                if(w.exit) {
+                    cc.director.popScene();
+                }
+            }, this);
+            win.pop();
         }
         else{
             this.onAfterFightChatStart();
@@ -557,15 +532,41 @@ var SceneBase = lh.LHScene.extend({
         }
     },
 
-    showFinishPanel: function() {
-        var win = !this._isLostBattle;
-        this._operator.setHide(false);
-        //var type = win ? BattleEndPanel.Type.Win : BattleEndPanel.Type.Lose;
-        //var panel = new BattleEndPanel(type);
-        //panel.setCloseCallback(this.onSceneFinished, this);
-        //panel.pop();
+    onAfterFightChatStart : function () {
+        if(this._isLastSection) {
+            if(this._sceneStatus.chatData.afterFight.length > 0){
+                var dialog = new DialogPanel(this._sceneStatus.chatData.afterFight);
+                this._frontUi.addChild(dialog);
 
-        BattleSystem.instance.battleFinish(win);
+                dialog.setEndingCallback(function() {
+                    dialog.removeFromParent();
+                    this.battleFinish();
+                }.bind(this));
+
+                this._battleUiLayer.setVisible(false);
+                this._operator.setHide(false);
+            }
+            else{
+                this.battleFinish();
+            }
+        }
+        else {
+            this.onAfterFightChatEnd();
+        }
+    },
+    onAfterFightChatEnd : function () {
+        this.onGoForwardStart();
+    },
+
+    battleFinish: function() {
+        BattleSystem.instance.battleFinish(true);
+    },
+    showFinishPanel: function() {
+        this._operator.setHide(false);
+
+        var win = new BattleWinPanel();
+        win.setCloseCallback(this.onSceneFinished, this);
+        win.pop();
     },
 
     onSceneFinished: function() {

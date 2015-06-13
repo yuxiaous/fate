@@ -48,6 +48,12 @@ ui.GuiController = cc.Class.extend(ui.guiExtend).extend({
 
     getWidget: function() {
         return this.__gui__;
+    },
+
+    setVisible: function(val) {
+        if(this.__gui__) {
+            this.__gui__.setVisible(val);
+        }
     }
 });
 

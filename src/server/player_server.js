@@ -24,9 +24,32 @@ var player_server = {
         database.commit("player_info", this.player_info);
     },
 
+    checkLevelUp: function() {
+        var is_level_up = false;
+        while(true) {
+            var config = configdb.levelup[this.player_info.level];
+            if(config) {
+                if(this.player_info.exp >= config.exp) {
+                    this.player_info.level += 1;
+                    is_level_up = true;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+        if(is_level_up) {
+            server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO,{
+                player:{
+                    level: this.player_info.level
+                }
+            });
+        }
+    },
+
     changeGold: function(val) {
         if(this.player_info.gold + val < 0) {
-            LOG("changeGold error 1")
+            LOG("changeGold error 1");
             server.sendError(net_error_code.ERR_LESS_GOLD);
             return false;
         }
@@ -39,7 +62,7 @@ var player_server = {
     },
     changeDiamond: function(val) {
         if(this.player_info.diamond + val < 0) {
-            LOG("changeDiamond error 1")
+            LOG("changeDiamond error 1");
             server.sendError(net_error_code.ERR_LESS_DIAMOND);
             return false;
         }
