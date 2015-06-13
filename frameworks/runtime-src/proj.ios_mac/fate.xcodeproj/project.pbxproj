@@ -364,7 +364,7 @@
 		509D4AE617EBB81800697056 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		509D4AE817EBB82000697056 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		509D4AEA17EBB82600697056 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		A922753D1517C094001B78AA /* fate iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fate iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A922753D1517C094001B78AA /* fate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92275411517C094001B78AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A92275431517C094001B78AA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A92275451517C094001B78AA /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -722,7 +722,7 @@
 		A922753E1517C094001B78AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A922753D1517C094001B78AA /* fate iOS.app */,
+				A922753D1517C094001B78AA /* fate.app */,
 				509D4AAA17EBB24E00697056 /* fate Mac.app */,
 			);
 			name = Products;
@@ -1092,9 +1092,9 @@
 			buildConfigurationList = 509D4AA717EBB24E00697056 /* Build configuration list for PBXNativeTarget "fate Mac" */;
 			buildPhases = (
 				509D4A8017EBB24E00697056 /* Sources */,
+				DEA0AB8E1B2B04E000079B42 /* Js Compile */,
 				509D4A9317EBB24E00697056 /* Resources */,
 				509D4A8217EBB24E00697056 /* Frameworks */,
-				DEA0AB8E1B2B04E000079B42 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1113,9 +1113,9 @@
 			buildConfigurationList = A92277001517C097001B78AA /* Build configuration list for PBXNativeTarget "fate" */;
 			buildPhases = (
 				A92275391517C094001B78AA /* Sources */,
+				DEA0AB8C1B2AF50400079B42 /* Js Compile */,
 				A922753A1517C094001B78AA /* Frameworks */,
 				A922753B1517C094001B78AA /* Resources */,
-				DEA0AB8C1B2AF50400079B42 /* ShellScript */,
 				3EC03834196541CD00D72B70 /* ShellScript */,
 			);
 			buildRules = (
@@ -1127,7 +1127,7 @@
 			);
 			name = fate;
 			productName = fate;
-			productReference = A922753D1517C094001B78AA /* fate iOS.app */;
+			productReference = A922753D1517C094001B78AA /* fate.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1290,26 +1290,28 @@
 			shellPath = /bin/sh;
 			shellScript = "find ${SRCROOT}/../../../src/ -name \"*\" -exec touch -cm {} \\;\nfind ${SRCROOT}/../../../res/ -name \"*\" -exec touch -cm {} \\;";
 		};
-		DEA0AB8C1B2AF50400079B42 /* ShellScript */ = {
+		DEA0AB8C1B2AF50400079B42 /* Js Compile */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Js Compile";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd ../../../\nrm -rf publish\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
 		};
-		DEA0AB8E1B2B04E000079B42 /* ShellScript */ = {
+		DEA0AB8E1B2B04E000079B42 /* Js Compile */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Js Compile";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
