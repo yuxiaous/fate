@@ -167,13 +167,10 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
         }
 
         if(config.buy_type == ShopSystem.GoodType.Equip) {
-            this._ui.icon.setItemId(config.buy_id, IconWidget.Type.Equip);
+            this._ui.icon.setIcon(config.buy_id, IconWidget.Type.Equip, config.buy_count);
         }
         else if(config.buy_id) {
-            this._ui.icon.setItemId(config.buy_id, IconWidget.Type.Item);
-        }
-        else if(config.link_id) {
-            this._ui.icon.setItemId(config.link_id, IconWidget.Type.Item);
+            this._ui.icon.setIcon(config.buy_id, IconWidget.Type.Item, config.buy_count);
         }
 
         if(config.name) {

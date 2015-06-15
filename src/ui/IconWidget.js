@@ -4,10 +4,11 @@
 
 
 var IconWidget = ui.GuiController.extend({
-    ctor: function(id, type) {
+    ctor: function(id, type, num) {
         this._super();
         this.id = id || 0;
         this.type = type || 0;
+        this.num = num || 0;
     },
 
     onEnter: function() {
@@ -19,7 +20,6 @@ var IconWidget = ui.GuiController.extend({
         };
 
         this._ui.img_sel.setVisible(false);
-        this._ui.lbl_num.setVisible(false);
 
         this.refreshIcon();
     },
@@ -29,9 +29,10 @@ var IconWidget = ui.GuiController.extend({
         this._super();
     },
 
-    setItemId: function(id, type) {
+    setIcon: function(id, type, num) {
         this.id = id;
-        this.type = type;
+        this.type = type || IconWidget.Type.Item;
+        this.num = num || 0;
         this.refreshIcon();
     },
 
@@ -52,6 +53,9 @@ var IconWidget = ui.GuiController.extend({
         }
 
         this._ui.sp_icon.setTexture(config.icon);
+
+        this._ui.lbl_num.setVisible(this.num > 1);
+        this._ui.lbl_num.setString(this.num);
     },
 
     _on_btn_bg: function() {
