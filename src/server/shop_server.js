@@ -52,18 +52,18 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
     }
 
     var count = config.buy_count * obj.count;
-    if(config.type == shop_server.GoodsType.Equip ||
-        config.type == shop_server.GoodsType.Item) {
+    if(config.buy_type == shop_server.GoodsType.Equip ||
+        config.buy_type == shop_server.GoodsType.Item) {
         if(bag_server.addItem(config.buy_id, count) == false) {
             LOG("CMD_CS_SHOP_BUY_GOODS error 3");
             server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
             return;
         }
     }
-    else if(config.type == shop_server.GoodsType.Diamond) {
+    else if(config.buy_type == shop_server.GoodsType.Diamond) {
         player_server.changeDiamond(count)
     }
-    else if(config.type == shop_server.GoodsType.Gold) {
+    else if(config.buy_type == shop_server.GoodsType.Gold) {
         player_server.changeGold(count);
     }
 

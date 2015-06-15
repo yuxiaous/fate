@@ -182,8 +182,8 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
             this._ui.lbl_cost.setString(String(config.pay_cost));
         }
 
-        if(config.value) {
-            this._ui.lbl_quality.setString(this._ui.lbl_quality._str_original.format(config.value));
+        if(config.score) {
+            this._ui.lbl_quality.setString(this._ui.lbl_quality._str_original.format(config.score));
         }
 
         switch (config.pay_type) {
