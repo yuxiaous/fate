@@ -35,7 +35,11 @@ var ItemSystem = SystemBase.extend({
 ItemSystem.ItemType = {
     Item: 1,
     Equip: 2,
-    Gift: 3
+    Gift: 3,
+    BattleItem: 4,
+    Exp: 5,
+    GameCoin: 6,
+    Skin: 7
 };
 
 ItemSystem.getItemTypeName = function(type) {

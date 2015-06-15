@@ -160,17 +160,30 @@ var BagScene = ui.GuiWindowBase.extend({
                 this._ui.lbl_item_price.setString(this._ui.lbl_item_price._str_original.format(config.price || ""));
 
                 // score
-                this._ui.lbl_item_score.setString(this._ui.lbl_item_score._str_original.format(config.sort));
+                if(config.sort) {
+                    this._ui.lbl_item_score.setString(this._ui.lbl_item_score._str_original.format(config.sort));
+                }
 
                 // desc
                 this._ui.lbl_item_desc.setString(config.desc || "");
 
                 // use
-                this._ui.btn_use.setVisible(true);
-                this._ui.btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
+                if(config.type) {
+                    if(config.type == ItemSystem.ItemType.Item) {
+                        this._ui.btn_use.setVisible(true);
+                        this._ui.btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
+                    }
+                    else {
+                        this._ui.btn_use.setVisible(false);
+                    }
+                }
+                else {
+                    this._ui.btn_use.setVisible(true);
+                    this._ui.btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
+                }
 
                 // sell
-                var enable = config.price && config.price > 0;
+                var enable = config.can_sale && config.price && config.price > 0;
                 this._ui.btn_sell.setEnabled(enable);
                 this._ui.btn_sell.setBright(enable);
                 return;
