@@ -92,17 +92,17 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(jsb_register_system);
 
     // extension can be commented out to reduce the package
-    sc->addRegisterCallback(register_all_cocos2dx_extension);
-    sc->addRegisterCallback(register_all_cocos2dx_extension_manual);
+//    sc->addRegisterCallback(register_all_cocos2dx_extension);
+//    sc->addRegisterCallback(register_all_cocos2dx_extension_manual);
 
     // chipmunk can be commented out to reduce the package
-    sc->addRegisterCallback(jsb_register_chipmunk);
+//    sc->addRegisterCallback(jsb_register_chipmunk);
     // opengl can be commented out to reduce the package
-    sc->addRegisterCallback(JSB_register_opengl);
+//    sc->addRegisterCallback(JSB_register_opengl);
     
     // builder can be commented out to reduce the package
-    sc->addRegisterCallback(register_all_cocos2dx_builder);
-    sc->addRegisterCallback(register_CCBuilderReader);
+//    sc->addRegisterCallback(register_all_cocos2dx_builder);
+//    sc->addRegisterCallback(register_CCBuilderReader);
     
     // ui can be commented out to reduce the package, attension studio need ui module
     sc->addRegisterCallback(register_all_cocos2dx_ui);
@@ -113,22 +113,22 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(register_all_cocos2dx_studio_manual);
     
     // spine can be commented out to reduce the package
-    sc->addRegisterCallback(register_all_cocos2dx_spine);
-    sc->addRegisterCallback(register_all_cocos2dx_spine_manual);
+//    sc->addRegisterCallback(register_all_cocos2dx_spine);
+//    sc->addRegisterCallback(register_all_cocos2dx_spine_manual);
     
     // XmlHttpRequest can be commented out to reduce the package
-    sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
+//    sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
     // websocket can be commented out to reduce the package
-    sc->addRegisterCallback(register_jsb_websocket);
+//    sc->addRegisterCallback(register_jsb_websocket);
     // sokcet io can be commented out to reduce the package
-    sc->addRegisterCallback(register_jsb_socketio);
+//    sc->addRegisterCallback(register_jsb_socketio);
     
     // 3d can be commented out to reduce the package
-    sc->addRegisterCallback(register_all_cocos2dx_3d);
-    sc->addRegisterCallback(register_all_cocos2dx_3d_manual);
+//    sc->addRegisterCallback(register_all_cocos2dx_3d);
+//    sc->addRegisterCallback(register_all_cocos2dx_3d_manual);
     
     // 3d extension can be commented out to reduce the package
-    sc->addRegisterCallback(register_all_cocos2dx_3d_extension);
+//    sc->addRegisterCallback(register_all_cocos2dx_3d_extension);
 
     // level helper
     sc->addRegisterCallback(register_all_jsb_levelhelper_auto);
