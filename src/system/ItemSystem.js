@@ -27,6 +27,7 @@ var ItemSystem = SystemBase.extend({
 
     onUseResult: function(obj) {
 
+
     }
 });
 

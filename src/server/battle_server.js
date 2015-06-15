@@ -90,3 +90,40 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
         reward : reward
     });
 });
+
+server.registerCallback(net_protocol_handlers.CMD_CS_USE_BATTLE_ITEM, function (obj) {
+    var info = _.findWhere(bag_server.bag_info, { uid: obj.uid });
+    if(info == undefined) {
+        LOG("CMD_CS_ITEM_USE error 1");
+        server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+        return;
+    }
+
+    var config = configdb.item[info.id];
+    if(config == undefined) {
+        LOG("CMD_CS_ITEM_USE error 2");
+        server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+        return;
+    }
+
+    if(bag_server.reduceItem(obj.uid, obj.num) == false) {
+        return;
+    }
+
+    var itemResultType = 1;
+    switch (config.result) {
+        case 5:
+            itemResultType = 1;
+            break;
+        case 6:
+            itemResultType = 2;
+            break;
+        case 7:
+            itemResultType = 3;
+            break;
+    }
+    server.send(net_protocol_handlers.CMD_SC_USE_BATTLE_ITEM_RESULT, {
+        result: 0,
+        item_type :itemResultType
+    });
+})

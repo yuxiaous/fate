@@ -5,6 +5,16 @@ var net_protocol_handlers = {};
 var _SendFunc = net.send.bind(net);
 var _BindFunc = net.registerCallback.bind(net);
 
+// @protocol 战斗过程中使用道具结果
+// @param {uint32} result, 使用结果，1成功，2失败
+// @param {uint32} item_type, 1加血，2加蓝，3加血加蓝
+net_protocol_handlers.CMD_SC_USE_BATTLE_ITEM_RESULT = 1506;
+_BindFunc(1506, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_USE_BATTLE_ITEM_RESULT.result is undefined.");
+	cc.assert(obj.item_type != undefined, "CMD_SC_USE_BATTLE_ITEM_RESULT.item_type is undefined.");
+	net_protocol_handlers.ON_CMD_SC_USE_BATTLE_ITEM_RESULT(obj);
+});
+
 // @protocol 错误码
 // @param {uint32} code, 错误码
 net_protocol_handlers.CMD_SC_ERROR_CODE = 88;
@@ -146,6 +156,16 @@ _BindFunc(1502, function(obj) {
 	cc.assert(obj.map_id != undefined, "CMD_SC_BATTLE_MAP_RESULT.map_id is undefined.");
 	net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT(obj);
 });
+
+// @protocol 战斗过程中使用道具
+// @param {uint32} uid, item uid
+// @param {uing32} num, 使用数量
+net_protocol_handlers.CMD_CS_USE_BATTLE_ITEM = 1505;
+net_protocol_handlers.SEND_CMD_CS_USE_BATTLE_ITEM = function(obj) {
+	cc.assert(obj.uid != undefined, "CMD_CS_USE_BATTLE_ITEM.uid is undefined.");
+	cc.assert(obj.num != undefined, "CMD_CS_USE_BATTLE_ITEM.num is undefined.");
+	_SendFunc(1505, obj);
+};
 
 // @protocol 购买商品结果
 // @param {uint32} result, 结果 0成功

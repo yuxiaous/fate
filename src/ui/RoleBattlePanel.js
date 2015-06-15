@@ -24,22 +24,37 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
 
         this._magicBottleLable = this.seekWidgetByName("lbl_bottle_num");
 
-        //this.addBloodBtn = this.seekWidgetByName("btn_bloodBottle");
-        //this.addMagicBtn = this.seekWidgetByName("btn_magicBottle");
-        //
-        //this.addBloodBtn.setVisible(false);
-        //this.addMagicBtn.setVisible(false);
+
+        this.refreshBattleData();
+
+        this._bindings = [
+            notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function () {
+                this.refreshBattleData();
+            },this)
+        ];
     },
 
     onExit : function () {
-        this._super();
-
         this._bossPanel = null;
         this._rolePanel = null;
         this.bossP = null;
         this.roleP = null;
 
         this._magicBottleLable = null;
+
+        notification.removeBinding(this._bindings);
+        this._super();
+    },
+
+    refreshBattleData : function () {
+        var magicBottleNum = 0;
+        _.reduce(BagSystem.instance.items, function(sum, item) {
+            if(item.id == 100007) {
+                magicBottleNum += item.num || 1;
+            }
+        }, 0, this)
+
+        this._magicBottleLable.setString(String(magicBottleNum));
     },
 
     setBossRound : function (isBossRound_) {
@@ -54,8 +69,21 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
 
     _on_btn_bloodBottle : function () {
         var target = cc.director.getRunningScene()._hero;
-        target.roleDataManager.hp = target.roleDataManager.maxHp;
-        target.roleDataManager.mp = target.roleDataManager.maxMp;
+        if(target.roleDataManager.hp == target.roleDataManager.maxHp &&
+            target.roleDataManager.mp == target.roleDataManager.maxMp){     //单加满血
+            MessageBoxOk.show("血和蓝都是满的，无需补充 !");
+            return;
+        }
+
+        if(Number(this._magicBottleLable.getString()) > 0){
+            BattleSystem.instance.useBattleItem({
+                itemId : 100007,
+                num : 1
+            });
+        }
+        else{
+            MessageBoxOk.show("瓶子都没有了，还点什么点，快滚去去商城买 !");
+        }
     }
 });
 

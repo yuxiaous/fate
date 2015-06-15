@@ -343,6 +343,30 @@
 				]
 			]
 		]
-	}
+	},
+    "CMD_CS_USE_BATTLE_ITEM":
+    {
+      "code": 1505,
+      "type": "CS",
+      "desc": "战斗过程中使用道具",
+      "schemes":
+      [
+        ["uint32","uid","item uid"],
+        ["uing32","num","使用数量"]
+      ]
+    },
+    "CMD_SC_USE_BATTLE_ITEM_RESULT":
+    {
+      "code": 1506,
+      "type": "SC",
+      "desc": "战斗过程中使用道具结果",
+      "schemes":
+      [
+        ["uint32","result","使用结果，1成功，2失败"],
+        ["uint32","item_type","1加血，2加蓝，3加血加蓝"]
+      ]
+    }
+
+
 }
 

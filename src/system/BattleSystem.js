@@ -14,6 +14,7 @@ var BattleSystem = SystemBase.extend({
         this._super();
         net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT = this.battleMapResult.bind(this);
         net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT = this.battleFinishResult.bind(this);
+        net_protocol_handlers.ON_CMD_SC_USE_BATTLE_ITEM_RESULT = this.batttleUseItemResult.bind(this);
     },
 
     onFinalize: function () {
@@ -56,6 +57,37 @@ var BattleSystem = SystemBase.extend({
 
         //LOG("BATTLE FINISH RESULT");
         //LOGOBJ(obj);
+    },
+
+    useBattleItem: function (obj) {
+        var uid = 0;
+        _.each(BagSystem.instance.items, function(info) {
+            if(info.id == obj.itemId) {
+                uid = info.uid;
+            }
+        }, this);
+
+        net_protocol_handlers.SEND_CMD_CS_USE_BATTLE_ITEM({
+            uid : uid,
+            num : obj.num
+        })
+    },
+
+    batttleUseItemResult: function (obj) {
+        if(obj.result == 0){
+            var target = cc.director.getRunningScene()._hero;
+            if(obj.item_type == 1){     //单加满血
+                target.roleDataManager.hp = target.roleDataManager.maxHp;
+            }
+            else if(obj.item_type == 2){    //单加满蓝
+                target.roleDataManager.mp = target.roleDataManager.maxMp;
+            }
+            else if(obj.item_type == 3){    //加满血和蓝
+                target.roleDataManager.hp = target.roleDataManager.maxHp;
+                target.roleDataManager.mp = target.roleDataManager.maxMp;
+            }
+            notification.emit(notification.event.BATTLE_USE_ITEM_RESULT);
+        }
     }
 });
 
