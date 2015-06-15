@@ -9,6 +9,7 @@ var EquipScene = ui.GuiWindowBase.extend({
     ctor: function() {
         this._super();
         this._sel_type = EquipSystem.EquipSlotType.Weapon;
+        this._last_score = PlayerSystem.instance.getPlayerBattleScore().score;
     },
 
     onEnter: function() {
@@ -50,7 +51,19 @@ var EquipScene = ui.GuiWindowBase.extend({
             btn_leveup: this.seekWidgetByName("btn_duanzao")
         };
         this._bindings = [
-            notification.createBinding(notification.event.EQUIP_SLOT_INFO, this.refreshSelectedSlotInfo, this)
+            notification.createBinding(notification.event.EQUIP_SLOT_INFO, this.refreshSelectedSlotInfo, this),
+            notification.createBinding(notification.event.EQUIP_PROPERTY_CHANGE, function () {
+                var curScore = PlayerSystem.instance.getPlayerBattleScore().score;
+                CombatForcesEffect.createForcesEffect(curScore - this._last_score,this)
+                this._last_score = PlayerSystem.instance.getPlayerBattleScore().score;
+                _.each(this._ui.cell_equips, function(cell) {
+                    if(cell.type == this._sel_type){
+                        cell.setRaiseEffect();
+                    }
+                }, this);
+
+
+            }, this),
         ];
 
         this.createSlotList();
@@ -226,6 +239,25 @@ EquipScene.EquipCell = ui.GuiWidgetBase.extend({
     setSelected: function(val) {
         this._ui.img_sel.setVisible(val);
         this._ui.btn_select.setEnabled(!val);
+    },
+
+    setRaiseEffect : function () {
+        var tmpStr = "res/images/ui/ui_";
+        var vin_ani = new cc.Sprite(tmpStr + "199.png");
+        var iconNode = this.seekWidgetByName("ProjectNode_icon")
+        var pos = cc.p(iconNode.getPosition().x + iconNode.getContentSize().width/2,iconNode.getPosition().y + iconNode.getContentSize().height/2);
+        vin_ani.setPosition(pos);
+        this.addChild(vin_ani);
+        var animFrames = []
+        for(var i = 1; i <= 8; i++){
+            var strName = tmpStr + (199+i) + ".png";
+            var size = cc.Sprite(strName).getContentSize();
+            var frame = cc.SpriteFrame.create(strName,cc.rect(0,0,size.width,size.height));
+            animFrames.push(frame);
+        }
+        var animation = new cc.Animation(animFrames,0.1,2);
+        var animationAction = new cc.Animate(animation);
+        vin_ani.runAction(animationAction);
     },
 
     setSelectCallback: function (selector, target) {

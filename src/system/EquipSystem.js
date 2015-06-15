@@ -32,6 +32,7 @@ var EquipSystem = SystemBase.extend({
         }, this);
 
         notification.emit(notification.event.EQUIP_SLOT_INFO);
+        notification.emit(notification.event.EQUIP_PROPERTY_CHANGE);
     },
 
     upgradeEquipSlot: function(type) {

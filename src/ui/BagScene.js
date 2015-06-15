@@ -11,6 +11,7 @@ var BagScene = ui.GuiWindowBase.extend({
         this._super();
         this._sel_index = 0;
         this._avatar_id = 1001;
+        this._last_score = PlayerSystem.instance.getPlayerBattleScore().score;
     },
 
     onEnter: function() {
@@ -53,7 +54,17 @@ var BagScene = ui.GuiWindowBase.extend({
         };
 
         this._bindings = [
-            notification.createBinding(notification.event.ITEM_INFO, this.refreshItemPage, this)
+            notification.createBinding(notification.event.ITEM_INFO, this.refreshItemPage, this),
+            notification.createBinding(notification.event.EQUIP_PROPERTY_CHANGE, function () {
+                var curScore = PlayerSystem.instance.getPlayerBattleScore().score;
+                CombatForcesEffect.createForcesEffect(curScore - this._last_score,this)
+                this._last_score = PlayerSystem.instance.getPlayerBattleScore().score;
+                //_.each(this._ui.ctrl_items, function(item, i) {
+                //    if(i == this._sel_index){
+                //        item.setRaiseEffect();
+                //    }
+                //}, this);
+            }, this),
         ];
 
         this.createItemList();
@@ -385,6 +396,27 @@ BagScene.ItemSlot = ui.GuiController.extend({
     setSelected: function(val) {
         this._ui.img_sel.setVisible(val);
         this._ui.btn_touch.setEnabled(!val);
+    },
+
+    setRaiseEffect : function () {
+        var tmpStr = "res/images/ui/ui_";
+        var vin_ani = new cc.Sprite(tmpStr + "199.png");
+        //var iconNode = this.seekWidgetByName("ProjectNode_icon")
+        //var iconNode = this._ui.sp_icon;
+        //var pos = cc.p(iconNode.getPosition().x + iconNode.getContentSize().width/2,iconNode.getPosition().y + iconNode.getContentSize().height/2);
+        //vin_ani.setPosition(pos);
+        this._ui.sp_icon.addChild(vin_ani);
+
+        var animFrames = []
+        for(var i = 1; i <= 8; i++){
+            var strName = tmpStr + (199+i) + ".png";
+            var size = cc.Sprite(strName).getContentSize();
+            var frame = cc.SpriteFrame.create(strName,cc.rect(0,0,size.width,size.height));
+            animFrames.push(frame);
+        }
+        var animation = new cc.Animation(animFrames,0.1,2);
+        var animationAction = new cc.Animate(animation);
+        vin_ani.runAction(animationAction);
     },
 
     setSelectCallback: function (selector, target) {

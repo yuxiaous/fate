@@ -65,4 +65,63 @@ DamageWorld.createDamage = function (value_,target_,targetSize_,isCrit_) {
 
         tmpDamageW.playDamageWorld(isCrit_);
     }
-}
+};
+
+var CombatForcesEffect = ccui.Layout.extend({
+    ctor : function (forcesValue_) {
+        this._super();
+        this._isUp = forcesValue_ > 0 ? true : false;
+        this._forcesValue = forcesValue_;
+    },
+
+    onEnter : function () {
+        this._super();
+
+        var imageStr = "res/images/ui/ui_177.png";
+        var labelStr = "res/fonts/fnt8.fnt";
+        if(!this._isUp){
+            imageStr = "res/images/ui/ui_178.png";
+            labelStr = "res/fonts/fnt9.fnt";
+
+            this._forcesValue *= -1;
+        }
+
+        this._imageTitle = ccui.ImageView.create(imageStr);
+        var size = cc.director.getWinSize();
+        this._imageTitle.setPosition(cc.p(size.width/2,size.height/2));
+        this._imageTitle.setAnchorPoint(cc.p(0.5,0.5));
+        this.addChild(this._imageTitle);
+        var titleSize = this._imageTitle.getContentSize();
+
+        this.tmpLabel = ccui.TextBMFont.create(this._forcesValue,labelStr);
+        this.tmpLabel.setPosition(cc.p(titleSize.width -120,titleSize.height/2));
+        this.tmpLabel.setAnchorPoint(cc.p(0,0.5));
+        this._imageTitle.addChild(this.tmpLabel);
+    },
+
+    onExit : function () {
+        this._super();
+
+    },
+
+    playCombatForcesEffect : function () {
+        var moveUp = cc.MoveBy.create(0.5,cc.p(0,100));
+        var actionEnd = cc.CallFunc.create(function () {
+            this._imageTitle.removeFromParent();
+            this.removeFromParent();
+        },this);
+        this._imageTitle.runAction(cc.Sequence.create(
+            moveUp,actionEnd
+        ));
+    }
+
+});
+
+CombatForcesEffect.createForcesEffect = function (value_,target_) {
+    var self = target_;
+    if(self){
+        var tmpCombatF = new CombatForcesEffect(value_);
+        self.addChild(tmpCombatF);
+        tmpCombatF.playCombatForcesEffect();
+    }
+};
