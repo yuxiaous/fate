@@ -158,7 +158,7 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
             lbl_cost: this.seekWidgetByName("lbl_cost"),
             sp_curr: this.seekWidgetByName("Sprite_1")
         };
-        this._ui.icon = new ShopScene.Good.Icon();
+        this._ui.icon = new IconWidget();
         this._ui.icon.setWidget(this.seekWidgetByName("ProjectNode_1"));
 
         var config = configdb.shop[this._good_id];
@@ -166,8 +166,14 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
             return;
         }
 
-        if(config.buy_id) {
-            this._ui.icon.setItemId(config.buy_id);
+        if(config.buy_type == ShopSystem.GoodType.Equip) {
+            this._ui.icon.setItemId(config.buy_id, IconWidget.Type.Equip);
+        }
+        else if(config.buy_id) {
+            this._ui.icon.setItemId(config.buy_id, IconWidget.Type.Item);
+        }
+        else if(config.link_id) {
+            this._ui.icon.setItemId(config.link_id, IconWidget.Type.Item);
         }
 
         if(config.name) {

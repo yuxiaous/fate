@@ -125,6 +125,7 @@
     "src/ui/EquipScene.js",
     "src/ui/GmScene.js",
     "src/ui/MainScene.js",
+    "src/ui/IconWidget.js",
 
     "src/server/server.js",
     "src/server/database.js",
