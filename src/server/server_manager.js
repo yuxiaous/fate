@@ -48,6 +48,14 @@ var server_manager = {
                 server.flush();
             }
         });
+    },
+
+    sync: function() {
+        _.each(this.servers, function(server) {
+            if(server.sync) {
+                server.sync();
+            }
+        });
     }
 };
 

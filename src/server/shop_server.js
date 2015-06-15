@@ -7,6 +7,19 @@ var shop_server = {
 
 };
 
+shop_server.GoodsType = {
+    Equip: 1,
+    Item: 2,
+    Skin: 3,
+    Diamond: 5,
+    Gold: 6
+};
+shop_server.PayType = {
+    Gold: 1,
+    Diamond: 2,
+    RMB: 101
+};
+
 server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(obj) {
     LOG("CMD_CS_SHOP_BUY_GOODS");
 
@@ -25,24 +38,33 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
 
     var cost = config.pay_cost * obj.count;
     switch (config.pay_type) {
-        case 1: // gold
+        case shop_server.PayType.Gold: // gold
             if(player_server.changeGold(-cost) == false) {
                 return;
             }
             break;
 
-        case 2: // diamond
+        case shop_server.PayType.Diamond: // diamond
             if(player_server.changeDiamond(-cost) == false) {
                 return;
             }
             break;
     }
 
-    var count = obj.count * config.buy_count;
-    if(bag_server.addItem(config.buy_id, count) == false) {
-        LOG("CMD_CS_SHOP_BUY_GOODS error 3");
-        server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
-        return;
+    var count = config.buy_count * obj.count;
+    if(config.type == shop_server.GoodsType.Equip ||
+        config.type == shop_server.GoodsType.Item) {
+        if(bag_server.addItem(config.buy_id, count) == false) {
+            LOG("CMD_CS_SHOP_BUY_GOODS error 3");
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+            return;
+        }
+    }
+    else if(config.type == shop_server.GoodsType.Diamond) {
+        player_server.changeDiamond(count)
+    }
+    else if(config.type == shop_server.GoodsType.Gold) {
+        player_server.changeGold(count);
     }
 
     server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {

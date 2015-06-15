@@ -23,6 +23,10 @@ var bag_server = {
         database.commit("bag_info", this.bag_info);
     },
 
+    sync: function() {
+
+    },
+
     addItem: function(id, num) {
         var config = BagSystem.getConfig(id);
         if(config == undefined) {
