@@ -13,8 +13,6 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
     onEnter : function () {
         this._super();
 
-
-
         this.bossP = this.seekWidgetByName("bossPanel");
         this._bossPanel = new BattleUILayer.BossPanel();
         this._bossPanel.setWidget(this.bossP);
@@ -23,11 +21,14 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         this._rolePanel = new BattleUILayer.RolePanel();
         this._rolePanel.setWidget(this.roleP);
 
-        this.addBloodBtn = this.seekWidgetByName("btn_bloodBottle");
-        this.addMagicBtn = this.seekWidgetByName("btn_magicBottle");
 
-        this.addBloodBtn.setVisible(false);
-        this.addMagicBtn.setVisible(false);
+        this._magicBottleLable = this.seekWidgetByName("lbl_bottle_num");
+
+        //this.addBloodBtn = this.seekWidgetByName("btn_bloodBottle");
+        //this.addMagicBtn = this.seekWidgetByName("btn_magicBottle");
+        //
+        //this.addBloodBtn.setVisible(false);
+        //this.addMagicBtn.setVisible(false);
     },
 
     onExit : function () {
@@ -37,6 +38,8 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         this._rolePanel = null;
         this.bossP = null;
         this.roleP = null;
+
+        this._magicBottleLable = null;
     },
 
     setBossRound : function (isBossRound_) {
@@ -47,6 +50,12 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         cc.director.pause();
         var pausePanel = new PauseLayer();
         this.addChild(pausePanel);
+    },
+
+    _on_btn_bloodBottle : function () {
+        var target = cc.director.getRunningScene()._hero;
+        target.roleDataManager.hp = target.roleDataManager.maxHp;
+        target.roleDataManager.mp = target.roleDataManager.maxMp;
     }
 });
 
@@ -56,7 +65,7 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
 
     ctor: function() {
         this._super();
-        LOG("ROLE BATTLE PANEL");
+        //LOG("ROLE BATTLE PANEL");
     },
 
     onEnter: function() {
@@ -148,7 +157,7 @@ BattleUILayer.BossPanel = ui.GuiController.extend({
 
     ctor : function () {
         this._super();
-        LOG("BOSS BATTLE PANEL CTOR");
+       // LOG("BOSS BATTLE PANEL CTOR");
     },
 
     onEnter : function () {

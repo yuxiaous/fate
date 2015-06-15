@@ -218,8 +218,15 @@ var SceneBase = lh.LHScene.extend({
         if(type == RoleBase.RoleType.Monster ||
             type == RoleBase.RoleType.Boss) {
 
-            if(cc.random0To1() * 100 > 80){
-                var item = new DroppedItem(101);
+            if(cc.random0To1() * 100 > 40){
+
+                var itemId = 100005;
+                var dropType = DroppedItem.ItemType.BloodType;
+                if(cc.random0To1() * 100 > 50){
+                    itemId = 100006;
+                    dropType = DroppedItem.ItemType.MagicType;
+                }
+                var item = new DroppedItem(itemId,dropType);
                 var pos = role.getSpacePosition();
                 item.setPosition(pos.x, pos.y);
                 this.addItem(item);

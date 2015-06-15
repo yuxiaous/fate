@@ -6,9 +6,10 @@
 var DroppedItem = ui.GuiWidgetBase.extend({
     _guiFile: "ui/DroppedItem.json",
 
-    ctor: function(id) {
+    ctor: function(id,ItemType_) {
         this._super();
         this._id = id;
+        this._dropItemType = ItemType_;
     },
 
     onEnter: function() {
@@ -21,8 +22,8 @@ var DroppedItem = ui.GuiWidgetBase.extend({
         }
 
         // icon
-        if(config.image){
-            this._img_icon.loadTexture(config.image);
+        if(config.icon){
+            this._img_icon.loadTexture(config.icon);
         }
 
         this._iconShakeAction = this._img_icon.runAction(cc.repeatForever(cc.sequence(
@@ -34,7 +35,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
        // itemShadow.setLocalZOrder(-1);
         itemShadow.setPosition(cc.p(this._img_icon.getPosition().x,this._img_icon.getPosition().y - this._img_icon.getContentSize().height/2 - 15));
         var scaleYV = itemShadow.getContentSize().width / this._img_icon.getContentSize().width;
-        cc.log("scale yv = " + scaleYV);
+        //cc.log("scale yv = " + scaleYV);
         itemShadow.setScaleX(scaleYV);
         this.addChild(itemShadow);
 
@@ -55,15 +56,23 @@ var DroppedItem = ui.GuiWidgetBase.extend({
             this._itemFlyAction = this.runAction(cc.sequence(
                 cc.moveTo(0.1, cc.p(target.getPositionX(), target.getPositionY() + 100)),
                 cc.callFunc(function() {
-
-                    if(target.roleDataManager.hp + 30 <= target.roleDataManager.maxHp){
-                        target.roleDataManager.hp += 30;
+                    var config = configdb.item[this._id];
+                    if(config && config.result_value != undefined){
+                        if(this._dropItemType == DroppedItem.ItemType.BloodType){
+                            var addValue = target.roleDataManager.maxHp * config.result_value;
+                            target.roleDataManager.hp += addValue
+                            if(target.roleDataManager.hp > target.roleDataManager.maxHp){
+                                target.roleDataManager.hp = target.roleDataManager.maxHp;
+                            }
+                        }
+                        else if(this._dropItemType == DroppedItem.ItemType.MagicType){
+                            var addValue = target.roleDataManager.maxMp * config.result_value;
+                            target.roleDataManager.mp += addValue
+                            if(target.roleDataManager.mp > target.roleDataManager.maxMp){
+                                target.roleDataManager.mp = target.roleDataManager.maxMp;
+                            }
+                        }
                     }
-                    else{
-                        target.roleDataManager.hp = target.roleDataManager.maxHp;
-                    }
-
-
                     notification.emit(notification.event.ITEM_DISAPPEAR, this);
                 }, this)
             ));
@@ -91,4 +100,9 @@ var DroppedItem = ui.GuiWidgetBase.extend({
         }
     }
 });
+
+DroppedItem.ItemType = {
+    BloodType : 1,
+    MagicType : 2
+}
 
