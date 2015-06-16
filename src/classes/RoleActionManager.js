@@ -532,10 +532,19 @@ var RoleActionSkill = RoleAction.extend({
              //LOG("SKILL SOUND = " + this.attack.skill_sound);
              MusicManager.getInstance().playEffectMusic(this.attack.skill_sound);
         }
+        this.haddSkillEffect = false;
+        if(this.type == RoleAction.Type.SKILL4){
+            this.haddSkillEffect = true;
+            notification.emit(notification.event.BATTLE_ADD_SKILL_EFFECT);
+        }
     },
 
     onActionEnd: function() {
         this._super();
+        if(this.type == RoleAction.Type.SKILL4 && this.haddSkillEffect){
+            notification.emit(notification.event.BATTLE_DEL_SKILL_EFFECT);
+        }
+
         this.manager.skillStatus = false;
         this.manager.role.onSkillEnd();
 

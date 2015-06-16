@@ -126,6 +126,7 @@
     "src/ui/GmScene.js",
     "src/ui/MainScene.js",
     "src/ui/IconWidget.js",
+    "src/ui/SkillEffectLayer.js",
 
     "src/server/server.js",
     "src/server/database.js",
