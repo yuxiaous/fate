@@ -115,8 +115,13 @@ var MapScene = ui.GuiSceneBase.extend({
     },
 
     onSelectMap: function(cell) {
-        this._sel_map_id = cell.id;
-        this.refreshSelectedMapInfo();
+        if(this._sel_map_id != cell.id) {
+            this._sel_map_id = cell.id;
+            this.refreshSelectedMapInfo();
+        }
+        else if(cell.open) {
+            BattleSystem.instance.battleMap(this._sel_map_id);
+        }
     },
 
     refreshSelectedMapInfo: function() {
@@ -283,7 +288,7 @@ MapScene.MapCell = ui.GuiWidgetBase.extend({
 
     setSelected: function(val) {
         this._ui.img_sel.setVisible(val);
-        this._ui.btn_touch.setEnabled(!val);
+        //this._ui.btn_touch.setEnabled(!val);
     },
 
     setSelectCallback: function (selector, target) {
