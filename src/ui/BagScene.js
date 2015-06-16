@@ -312,6 +312,11 @@ var BagScene = ui.GuiWindowBase.extend({
         if(item && item.uid) {
             BagSystem.instance.sell(item.uid, 1);
         }
+    },
+
+    _on_btn_prop: function() {
+        var win = new RoleProperty();
+        win.pop();
     }
 });
 

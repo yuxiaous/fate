@@ -62,6 +62,7 @@ var PlayerSystem = SystemBase.extend({
             ret.score += score.score;
         });
 
+        ret.score = Math.floor(ret.score);
         return ret;
     },
 
