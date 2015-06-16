@@ -44,7 +44,7 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_enter: function() {
-        LoginSystem.instance.authorize("Saber");
+        LoginSystem.instance.authorize(101);
     }
 });
 

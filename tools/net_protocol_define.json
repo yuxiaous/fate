@@ -68,6 +68,7 @@
 		[
 			["switch", "player", "角色信息",
 				[
+					["uint32", "player_id", "角色id"],
 					["uint32", "level", "等级"],
 					["uint64", "exp", "经验"],
 					["uint64", "gold", "金币"],
@@ -365,8 +366,42 @@
         ["uint32","result","使用结果，1成功，2失败"],
         ["uint32","item_type","1加血，2加蓝，3加血加蓝"]
       ]
+    },
+
+    "CMD_SC_SKIN_INFO":
+    {
+    	"code": 1601,
+    	"type": "SC",
+    	"desc": "换装信息",
+    	"schemes":
+    	[
+    		["list", "skins", "拥有的皮肤", 
+    			[
+    				["uint32", "skin_id", "套装id"]
+    			]
+    		]
+    	]
+    },
+    "CMD_CS_SKIN_CHANGE":
+    {
+    	"code": 1602,
+    	"type": "CS",
+    	"desc": "换装",
+    	"schemes":
+    	[
+    		["uint32", "skin_id", "套装id"]
+    	]
+    },
+    "CMD_SC_SKIN_CHANGE_RESULT":
+    {
+    	"code": 1603,
+    	"type": "SC",
+    	"desc": "换装结果",
+    	"schemes":
+    	[
+    		["uint32", "result", "结果 0成功"],
+    		["uint32", "skin_id", "套装id"]
+    	]
     }
-
-
 }
 

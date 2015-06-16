@@ -10,7 +10,7 @@ var shop_server = {
 shop_server.GoodsType = {
     Equip: 1,
     Item: 2,
-    Skin: 3,
+    Skin: 4,
     Diamond: 5,
     Gold: 6
 };
@@ -27,12 +27,6 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
     if(config == undefined) {
         LOG("CMD_CS_SHOP_BUY_GOODS error 1");
         server.sendError(net_error_code.ERR_SHOP_GOODS_NOT_EXIST);
-        return;
-    }
-
-    if(BagSystem.getConfig(config.buy_id) == undefined) {
-        LOG("CMD_CS_SHOP_BUY_GOODS error 2");
-        server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
         return;
     }
 
@@ -55,7 +49,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
     if(config.buy_type == shop_server.GoodsType.Equip ||
         config.buy_type == shop_server.GoodsType.Item) {
         if(bag_server.addItem(config.buy_id, count) == false) {
-            LOG("CMD_CS_SHOP_BUY_GOODS error 3");
+            LOG("CMD_CS_SHOP_BUY_GOODS error 2");
             server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
             return;
         }
@@ -65,6 +59,9 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
     }
     else if(config.buy_type == shop_server.GoodsType.Gold) {
         player_server.changeGold(count);
+    }
+    else if(config.buy_type == shop_server.GoodsType.Skin) {
+        skin_server.addSkin(config.buy_id);
     }
 
     server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {

@@ -48,6 +48,13 @@ var IconWidget = ui.GuiController.extend({
         else if(this.type == IconWidget.Type.Item) {
             config = configdb.item[this.id];
         }
+        else if(this.type == IconWidget.Type.Skin) {
+            config = configdb.skin[this.id];
+            if(config == undefined) {
+                return;
+            }
+            config = configdb.item[config.item_id]
+        }
         if(config == undefined) {
             return;
         }
@@ -65,6 +72,7 @@ var IconWidget = ui.GuiController.extend({
 
 IconWidget.Type = {
     Equip: 1,
-    Item: 2
+    Item: 2,
+    Skin: 3
 };
 

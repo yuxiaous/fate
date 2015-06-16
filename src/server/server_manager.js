@@ -27,6 +27,7 @@ var server_manager = {
         addSubServer(bag_server);
         addSubServer(item_server);
         addSubServer(battle_server);
+        addSubServer(skin_server);
 
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.flush, 60);
     },

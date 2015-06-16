@@ -40,6 +40,8 @@
     "config/duanzaodb.js",
     "config/propertydb.js",
     "config/formuladb.js",
+    "config/playerdb.js",
+    "config/skindb.js",
 
 
     "src/crows.js",
@@ -66,6 +68,7 @@
     "src/system/Formula.js",
     "src/system/ItemSystem.js",
     "src/system/BattleSystem.js",
+    "src/system/SkinSystem.js",
 
     "src/classes/BattleSceneManager.js",
     "src/classes/PhysicalWorld.js",
@@ -127,6 +130,7 @@
     "src/ui/MainScene.js",
     "src/ui/IconWidget.js",
     "src/ui/SkillEffectLayer.js",
+    "src/ui/RoleProperty.js",
 
     "src/server/server.js",
     "src/server/database.js",
@@ -140,6 +144,7 @@
     "src/server/equip_server.js",
     "src/server/bag_server.js",
     "src/server/item_server.js",
-    "src/server/battle_server.js"
+    "src/server/battle_server.js",
+    "src/server/skin_server.js"
   ]
 }
