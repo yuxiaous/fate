@@ -438,7 +438,7 @@ BagScene.ItemSlot = ui.GuiController.extend({
     },
 
     setRaiseEffect : function () {
-        var tmpStr = "res/images/ui/ui_";
+        var tmpStr = "res/images/code_ui/ui_";
         var vin_ani = new cc.Sprite(tmpStr + "199.png");
         //var iconNode = this.seekWidgetByName("ProjectNode_icon")
         //var iconNode = this._ui.sp_icon;
