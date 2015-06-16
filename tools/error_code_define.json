@@ -6,5 +6,6 @@
     [201, "ERR_CONFIG_NOT_EXIST", "配置无法找到"],
     [202, "ERR_TOP_LEVEL", "已到最高等级"],
 
-    [1001, "ERR_SHOP_GOODS_NOT_EXIST", "商品不存在"]
+    [1001, "ERR_SHOP_GOODS_NOT_EXIST", "商品不存在"],
+    [1002, "ERR_SKIN_NOT_EXIT", "套装不存在"]
 ]

@@ -8,6 +8,7 @@ var player_server = {
 
     start: function() {
         this.player_info = database.checkout("player_info", {
+            player_id: 0,
             level: 1,
             exp: 0,
             diamond: 0,

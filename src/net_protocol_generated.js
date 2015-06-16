@@ -147,6 +147,26 @@ net_protocol_handlers.SEND_CMD_CS_BATTLE_FINISH = function(obj) {
 	_SendFunc(1503, obj);
 };
 
+// @protocol 换装结果
+// @param {uint32} result, 结果 0成功
+// @param {uint32} skin_id, 套装id
+net_protocol_handlers.CMD_CS_SKIN_CHANGE_RESULT = 1603;
+net_protocol_handlers.SEND_CMD_CS_SKIN_CHANGE_RESULT = function(obj) {
+	cc.assert(obj.result != undefined, "CMD_CS_SKIN_CHANGE_RESULT.result is undefined.");
+	cc.assert(obj.skin_id != undefined, "CMD_CS_SKIN_CHANGE_RESULT.skin_id is undefined.");
+	_SendFunc(1603, obj);
+};
+
+// @protocol 换装信息
+// @param {uint32} use_skin, 使用中的皮肤
+// @param {list} skins, 拥有的皮肤
+net_protocol_handlers.CMD_SC_SKIN_INFO = 1601;
+_BindFunc(1601, function(obj) {
+	cc.assert(obj.use_skin != undefined, "CMD_SC_SKIN_INFO.use_skin is undefined.");
+	cc.assert(obj.skins != undefined, "CMD_SC_SKIN_INFO.skins is undefined.");
+	net_protocol_handlers.ON_CMD_SC_SKIN_INFO(obj);
+});
+
 // @protocol 地图战斗结果
 // @param {uint32} result, 结果 0成功
 // @param {uint32} map_id, 地图点id
@@ -235,6 +255,14 @@ net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS = function(obj) {
 	cc.assert(obj.good_id != undefined, "CMD_CS_SHOP_BUY_GOODS.good_id is undefined.");
 	cc.assert(obj.count != undefined, "CMD_CS_SHOP_BUY_GOODS.count is undefined.");
 	_SendFunc(1101, obj);
+};
+
+// @protocol 换装
+// @param {uint32} skin_id, 套装id
+net_protocol_handlers.CMD_CS_SKIN_CHANGE = 1602;
+net_protocol_handlers.SEND_CMD_CS_SKIN_CHANGE = function(obj) {
+	cc.assert(obj.skin_id != undefined, "CMD_CS_SKIN_CHANGE.skin_id is undefined.");
+	_SendFunc(1602, obj);
 };
 
 // @protocol 使用物品

@@ -10,7 +10,7 @@ var shop_server = {
 shop_server.GoodsType = {
     Equip: 1,
     Item: 2,
-    Skin: 3,
+    Skin: 4,
     Diamond: 5,
     Gold: 6
 };
@@ -65,6 +65,9 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
     }
     else if(config.buy_type == shop_server.GoodsType.Gold) {
         player_server.changeGold(count);
+    }
+    else if(config.buy_type == shop_server.GoodsType.Skin) {
+
     }
 
     server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {

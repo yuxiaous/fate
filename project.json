@@ -66,6 +66,7 @@
     "src/system/Formula.js",
     "src/system/ItemSystem.js",
     "src/system/BattleSystem.js",
+    "src/system/SkinSystem.js",
 
     "src/classes/BattleSceneManager.js",
     "src/classes/PhysicalWorld.js",
@@ -140,6 +141,7 @@
     "src/server/equip_server.js",
     "src/server/bag_server.js",
     "src/server/item_server.js",
-    "src/server/battle_server.js"
+    "src/server/battle_server.js",
+    "src/server/skin_server.js"
   ]
 }

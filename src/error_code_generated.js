@@ -38,3 +38,9 @@ net_error_code[1001] = {
 	desc: "商品不存在"
 };
 
+net_error_code.ERR_SKIN_NOT_EXIT = 1002;
+net_error_code[1002] = {
+	code: 1002,
+	desc: "套装不存在"
+};
+

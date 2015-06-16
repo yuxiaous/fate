@@ -27,6 +27,7 @@ var SystemManager = {
         addSubSystem(BagSystem);
         addSubSystem(ItemSystem);
         addSubSystem(BattleSystem);
+        addSubSystem(SkinSystem);
     },
 
     end: function() {
