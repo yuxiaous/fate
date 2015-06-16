@@ -180,7 +180,7 @@ var Saber = RoleBase.extend({
                 },
                 power : 1.2
             },
-            cdTime : 4,
+            cdTime : 6,
             mpCost : 8
         });
         this.addRoleAction(RoleAction.Type.SKILL2, "jineng2", {
@@ -205,7 +205,7 @@ var Saber = RoleBase.extend({
                 },
                 power : 1.3
             },
-            cdTime: 6,
+            cdTime: 8,
             mpCost : 10
         });
         this.addRoleAction(RoleAction.Type.SKILL3, "jineng3", {
@@ -230,7 +230,7 @@ var Saber = RoleBase.extend({
                 },
                 power : 1.4
             },
-            cdTime: 8,
+            cdTime: 10,
             mpCost : 12
         });
         this.addRoleAction(RoleAction.Type.SKILL4, "jineng4", {
@@ -255,7 +255,7 @@ var Saber = RoleBase.extend({
                 },
                 power : 1.5
             },
-            cdTime: 30,
+            cdTime: 15,
             mpCost : 15
         });
         this.addRoleAction(RoleAction.Type.SKILL5, "jineng5", {
@@ -464,7 +464,7 @@ var Nero = RoleBase.extend({
                 },
                 power : 1.2
             },
-            cdTime : 4,
+            cdTime : 6,
             mpCost : 8
         });
         this.addRoleAction(RoleAction.Type.SKILL2, "jineng2", {
@@ -489,7 +489,7 @@ var Nero = RoleBase.extend({
                 },
                 power : 1.3
             },
-            cdTime: 6,
+            cdTime: 8,
             mpCost : 10
         });
         this.addRoleAction(RoleAction.Type.SKILL3, "jineng3", {
@@ -514,7 +514,7 @@ var Nero = RoleBase.extend({
                 },
                 power : 1.4
             },
-            cdTime: 8,
+            cdTime: 10,
             mpCost : 12
         });
         this.addRoleAction(RoleAction.Type.SKILL4, "jineng4", {
@@ -539,7 +539,7 @@ var Nero = RoleBase.extend({
                 },
                 power : 1.5
             },
-            cdTime: 30,
+            cdTime: 15,
             mpCost : 15
         });
         this.addRoleAction(RoleAction.Type.SKILL5, "jineng5", {
