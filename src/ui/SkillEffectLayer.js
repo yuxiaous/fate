@@ -1,11 +1,9 @@
 var SkillEffectLayer = ui.GuiWindowBase.extend({
-    _guiFile: "ui/skillEffectLayer.json",
+    _guiFile: "ui/skill_effect_layer.json",
 
     ctor: function (curBattleScene_) {
         this._super();
         this._curBattleScene = curBattleScene_;
-
-
     },
 
     onEnter: function () {
@@ -42,7 +40,11 @@ var SkillEffectLayer = ui.GuiWindowBase.extend({
         },this);
 
         var rolePicName = "res/images/ui/ui_139.png";
-        if(1){
+        var skin = SkinSystem.instance.use_skin;
+        if(skin == 101){
+            rolePicName = "res/images/ui/ui_139.png";
+        }
+        else if(skin == 102){
             rolePicName = "res/images/ui/ui_256.png";
         }
         var rolePic = cc.Sprite.create(rolePicName);
@@ -172,9 +174,9 @@ var SkillEffectLayer = ui.GuiWindowBase.extend({
 
     addRefreshLine: function () {
         var lineNameCon = [
-            "res/images/ui/ui_259.png",
-            "res/images/ui/ui_260.png",
-            "res/images/ui/ui_261.png"
+            "res/images/code_ui/ui_259.png",
+            "res/images/code_ui/ui_260.png",
+            "res/images/code_ui/ui_261.png"
         ]
         var winSize = cc.director.getWinSize();
         var minY = 100;

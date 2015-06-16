@@ -77,10 +77,10 @@ var CombatForcesEffect = ccui.Layout.extend({
     onEnter : function () {
         this._super();
 
-        var imageStr = "res/images/ui/ui_177.png";
+        var imageStr = "res/images/code_ui/ui_177.png";
         var labelStr = "res/fonts/fnt8.fnt";
         if(!this._isUp){
-            imageStr = "res/images/ui/ui_178.png";
+            imageStr = "res/images/code_ui/ui_178.png";
             labelStr = "res/fonts/fnt9.fnt";
 
             this._forcesValue *= -1;
