@@ -255,7 +255,7 @@ var Saber = RoleBase.extend({
                 },
                 power : 1.5
             },
-            cdTime: 30,
+            cdTime: 1,
             mpCost : 15
         });
         this.addRoleAction(RoleAction.Type.SKILL5, "jineng5", {

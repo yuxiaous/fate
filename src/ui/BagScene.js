@@ -291,8 +291,8 @@ var BagScene = ui.GuiWindowBase.extend({
             var box = MessageBoxOkCancel.show("未购买该套装，是否购买？");
             box.setOkCallback(function() {
                 this.close();
-                var win = new ShopScene(ShopSystem.ShopType.Role);
-                win.pop();
+                //new ShopScene(ShopSystem.ShopType.Role)
+                ui.pushScene(new ShopScene(ShopSystem.ShopType.Role))
             }, this);
         }
         else {

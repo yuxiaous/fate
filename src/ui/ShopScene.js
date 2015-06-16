@@ -3,7 +3,7 @@
  */
 
 
-var ShopScene = ui.GuiWindowBase.extend({
+var ShopScene = ui.GuiSceneBase.extend({
     _guiFile: "ui/shop_scene.json",
 
     ctor: function(shop_type) {
@@ -15,21 +15,29 @@ var ShopScene = ui.GuiWindowBase.extend({
         this._super();
         MusicManager.getInstance().playBackgroundMusic("sounds/shop.mp3");
         this._ui = {
+            ctrl_gold: (function() {
+                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Gold);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_1"));
+                return ctrl;
+            }.bind(this) ()),
+            ctrl_diamond: (function() {
+                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Diamond);
+                ctrl.setWidget(this.seekWidgetByName("ProjectNode_2"));
+                return ctrl;
+            }.bind(this) ()),
+
             tab_equip: this.seekWidgetByName("btn_tab_1"),
             tab_item: this.seekWidgetByName("btn_tab_2"),
             tab_role: this.seekWidgetByName("btn_tab_3"),
             tab_charge: this.seekWidgetByName("btn_tab_4"),
             list_goods: this.seekWidgetByName("list_items"),
-            lbl_gold: this.seekWidgetByName("lbl_gold_value"),
-            lbl_diamond: this.seekWidgetByName("lbl_diamond_value"),
             lbl_girl_say: this.seekWidgetByName("lbl_girl_say")
         };
 
         this._bindings = [
-            notification.createBinding(notification.event.PLAYER_INFO, this.updateCurrencyInfo, this)
+
         ];
 
-        this.updateCurrencyInfo();
         this.refreshShopTabStatus();
         this.createGoodsList();
         this._on_btn_girl();
@@ -40,12 +48,6 @@ var ShopScene = ui.GuiWindowBase.extend({
         this.clearGoodsList();
         this._ui = null;
         this._super();
-    },
-
-    updateCurrencyInfo: function() {
-        var system = PlayerSystem.instance;
-        this._ui.lbl_gold.setString(String(system.gold));
-        this._ui.lbl_diamond.setString(String(system.diamond));
     },
 
     clearGoodsList: function() {
@@ -65,7 +67,7 @@ var ShopScene = ui.GuiWindowBase.extend({
     },
 
     _on_btn_back: function() {
-        this.close();
+        this.popScene();
     },
 
     refreshShopTabStatus: function() {
