@@ -13,13 +13,13 @@ var SkinSystem = SystemBase.extend({
     onInit: function () {
         this._super();
         net_protocol_handlers.ON_CMD_SC_SKIN_INFO = this.onSkinInfo.bind(this);
-        net_protocol_handlers.ON_CMD_CS_SKIN_CHANGE_RESULT = this.onChangeSkinResult.bind(this);
+        net_protocol_handlers.ON_CMD_SC_SKIN_CHANGE_RESULT = this.onChangeSkinResult.bind(this);
     },
 
     onFinalize: function () {
         this._super();
         net_protocol_handlers.ON_CMD_SC_SKIN_INFO = null;
-        net_protocol_handlers.ON_CMD_CS_SKIN_CHANGE_RESULT = null;
+        net_protocol_handlers.ON_CMD_SC_SKIN_CHANGE_RESULT = null;
     },
 
     onSkinInfo: function(obj) {

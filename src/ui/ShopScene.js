@@ -3,12 +3,12 @@
  */
 
 
-var ShopScene = ui.GuiSceneBase.extend({
+var ShopScene = ui.GuiWindowBase.extend({
     _guiFile: "ui/shop_scene.json",
 
-    ctor: function() {
+    ctor: function(shop_type) {
         this._super();
-        this.shopType = ShopSystem.ShopType.Equip;
+        this.shopType = shop_type || ShopSystem.ShopType.Equip;
     },
 
     onEnter: function() {
@@ -65,7 +65,7 @@ var ShopScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_back: function() {
-        this.popScene();
+        this.close();
     },
 
     refreshShopTabStatus: function() {
@@ -168,6 +168,9 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
 
         if(config.buy_type == ShopSystem.GoodType.Equip) {
             this._ui.icon.setIcon(config.buy_id, IconWidget.Type.Equip, config.buy_count);
+        }
+        else if(config.buy_type == ShopSystem.GoodType.Skin) {
+            this._ui.icon.setIcon(config.buy_id, IconWidget.Type.Skin, config.buy_count);
         }
         else if(config.buy_id) {
             this._ui.icon.setIcon(config.buy_id, IconWidget.Type.Item, config.buy_count);

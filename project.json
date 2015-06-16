@@ -40,6 +40,8 @@
     "config/duanzaodb.js",
     "config/propertydb.js",
     "config/formuladb.js",
+    "config/playerdb.js",
+    "config/skindb.js",
 
 
     "src/crows.js",

@@ -68,6 +68,7 @@
 		[
 			["switch", "player", "角色信息",
 				[
+					["uint32", "player_id", "角色id"],
 					["uint32", "level", "等级"],
 					["uint64", "exp", "经验"],
 					["uint64", "gold", "金币"],
@@ -391,10 +392,10 @@
     		["uint32", "skin_id", "套装id"]
     	]
     },
-    "CMD_CS_SKIN_CHANGE_RESULT":
+    "CMD_SC_SKIN_CHANGE_RESULT":
     {
     	"code": 1603,
-    	"type": "CS",
+    	"type": "SC",
     	"desc": "换装结果",
     	"schemes":
     	[

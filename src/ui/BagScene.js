@@ -10,7 +10,6 @@ var BagScene = ui.GuiWindowBase.extend({
     ctor: function() {
         this._super();
         this._sel_index = 0;
-        this._avatar_id = 1001;
         this._last_score = PlayerSystem.instance.getPlayerBattleScore().score;
     },
 
@@ -65,6 +64,7 @@ var BagScene = ui.GuiWindowBase.extend({
                 //    }
                 //}, this);
             }, this),
+            notification.createBinding(notification.event.SKIN_CHANGE_RESULT, this.createRoleAvatar, this)
         ];
 
         this.createItemList();
@@ -260,26 +260,47 @@ var BagScene = ui.GuiWindowBase.extend({
     createRoleAvatar: function() {
         this.clearRoleAvatar();
 
-        var avatar = new ShowRole(this._avatar_id);
+        var config = configdb.skin[SkinSystem.instance.use_skin];
+        if(config == undefined) {
+            return;
+        }
+
+        var avatar = new ShowRole(config.role_id);
         this._ui.node_avatar.addChild(avatar);
 
-        if(this._avatar_id == 1001) {
-            this._ui.lbl_player_name.setString("Saber");
-        }
-        else if(this._avatar_id == 1101) {
-            this._ui.lbl_player_name.setString("Nero");
-        }
+        this._ui.lbl_player_name.setString(config.name);
     },
 
     _on_btn_change: function() {
-        if(this._avatar_id == 1001) {
-            this._avatar_id = 1101;
-        }
-        else {
-            this._avatar_id = 1001;
+        var player_config = configdb.player[PlayerSystem.instance.playerId];
+        if(player_config == undefined) {
+            return;
         }
 
-        this.createRoleAvatar();
+        var change_id;
+        var system = SkinSystem.instance;
+        if(system.use_skin == player_config.skin_id_1) {
+            change_id = player_config.skin_id_2 || 0;
+        }
+        else {
+            change_id = player_config.skin_id_1 || 0;
+        }
+
+        var info = system.skins[change_id];
+        if(info == undefined) {
+            var box = MessageBoxOkCancel.show("未购买该套装，是否购买？");
+            box.setOkCallback(function() {
+                this.close();
+                var win = new ShopScene(ShopSystem.ShopType.Role);
+                win.pop();
+            }, this);
+        }
+        else {
+            var skins = _.reject(system.skins, function(skin) {
+                return skin.skin_id == system.use_skin;
+            });
+            SkinSystem.instance.changeSkin(skins[0].skin_id);
+        }
     },
 
     _on_btn_close: function() {

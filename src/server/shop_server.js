@@ -30,12 +30,6 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
         return;
     }
 
-    if(BagSystem.getConfig(config.buy_id) == undefined) {
-        LOG("CMD_CS_SHOP_BUY_GOODS error 2");
-        server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
-        return;
-    }
-
     var cost = config.pay_cost * obj.count;
     switch (config.pay_type) {
         case shop_server.PayType.Gold: // gold
@@ -55,7 +49,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
     if(config.buy_type == shop_server.GoodsType.Equip ||
         config.buy_type == shop_server.GoodsType.Item) {
         if(bag_server.addItem(config.buy_id, count) == false) {
-            LOG("CMD_CS_SHOP_BUY_GOODS error 3");
+            LOG("CMD_CS_SHOP_BUY_GOODS error 2");
             server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
             return;
         }
@@ -67,7 +61,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
         player_server.changeGold(count);
     }
     else if(config.buy_type == shop_server.GoodsType.Skin) {
-
+        skin_server.addSkin(config.buy_id);
     }
 
     server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {

@@ -6,6 +6,7 @@
 var PlayerSystem = SystemBase.extend({
     ctor: function() {
         this._super();
+        this.playerId = 0;
         this.level = 0;
         this.exp = 0;
         this.diamond = 0;
@@ -25,6 +26,7 @@ var PlayerSystem = SystemBase.extend({
 
     onPlayerInfo: function(obj) {
         var player = obj.player;
+        if(player.player_id != undefined) this.playerId = player.player_id;
         if(player.level != undefined) this.level = player.level;
         if(player.exp != undefined) this.exp = player.exp;
         if(player.gold != undefined) this.gold = player.gold;

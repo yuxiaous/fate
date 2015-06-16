@@ -87,7 +87,9 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_shop: function() {
-        this.pushScene(ShopScene);
+        //this.pushScene(ShopScene);
+        var win = new ShopScene();
+        win.pop();
     }
 });
 
