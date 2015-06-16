@@ -128,6 +128,7 @@
     "src/ui/GmScene.js",
     "src/ui/MainScene.js",
     "src/ui/IconWidget.js",
+    "src/ui/SkillEffectLayer.js",
     "src/ui/RoleProperty.js",
 
     "src/server/server.js",

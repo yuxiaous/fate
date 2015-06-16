@@ -5,7 +5,7 @@
 
 var BattleScene = SceneBase.extend({
     status: {
-        hero: Nero,
+        hero: Saber,
         BSection : []
     },
 
@@ -29,6 +29,14 @@ var BattleScene = SceneBase.extend({
     },
 
     initBattleData : function (map_id_) {
+        var skin = SkinSystem.instance.use_skin;
+        if(skin == 101){
+            this.status.hero = Saber;
+        }
+        else if(skin == 102){
+            this.status.hero = Nero;
+        }
+
         this.status.stage = BattleScene.initStageInfo(map_id_);
         this.status.BSection = BattleScene.initBattleSection(map_id_);
         this.status.chatData = BattleScene.initChatInfo(map_id_);
@@ -66,32 +74,38 @@ BattleScene.initChatInfo = function (map_id_) {
 
     _.each(beforeF, function (idx) {
         var talkConfig = configdb.talks[idx];
-        chatData.beforeFight.push({
-            name : talkConfig.name,
-            text : talkConfig.content,
-            side : talkConfig.pos,
-            image: talkConfig.head
-        });
+        if(talkConfig) {
+            chatData.beforeFight.push({
+                name: talkConfig.name,
+                text: talkConfig.content,
+                side: talkConfig.pos,
+                image: talkConfig.head
+            });
+        }
     },this);
 
     _.each(beforeBF, function (idx) {
         var talkConfig = configdb.talks[idx];
-        chatData.beforeBossFight.push({
-            name : talkConfig.name,
-            text : talkConfig.content,
-            side : talkConfig.pos,
-            image: talkConfig.head
-        });
+        if(talkConfig) {
+            chatData.beforeBossFight.push({
+                name: talkConfig.name,
+                text: talkConfig.content,
+                side: talkConfig.pos,
+                image: talkConfig.head
+            });
+        }
     },this);
 
     _.each(afterF, function (idx) {
         var talkConfig = configdb.talks[idx];
-        chatData.afterFight.push({
-            name : talkConfig.name,
-            text : talkConfig.content,
-            side : talkConfig.pos,
-            image: talkConfig.head
-        });
+        if(talkConfig){
+            chatData.afterFight.push({
+                name : talkConfig.name,
+                text : talkConfig.content,
+                side : talkConfig.pos,
+                image: talkConfig.head
+            });
+        }
     },this);
 
     return chatData;

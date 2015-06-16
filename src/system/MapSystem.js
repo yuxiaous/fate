@@ -55,7 +55,7 @@ var MapSystem = SystemBase.extend({
     },
 
     getGameMapPos : function () {
-        return cc.p(this.cur_map_pos.x + this.cur_map_rect.x,this.cur_map_pos.y + + this.cur_map_rect.y);
+        return cc.p(this.cur_map_pos.x + this.cur_map_rect.x,this.cur_map_pos.y + this.cur_map_rect.y);
     },
     
     setGameMapRect : function (rect_) {

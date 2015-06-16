@@ -236,7 +236,7 @@ var Saber = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL4, "jineng4", {
             attack: {
                 //animation: undefined,
-                //skill_sound: "sounds/saber/skill_sound_4.wav",
+                skill_sound: "sounds/saber/skill_4.mp3",
                 movement: 300
             },
             hit: {
@@ -520,7 +520,7 @@ var Nero = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL4, "jineng4", {
             attack: {
                 //animation: undefined,
-                //skill_sound: "sounds/saber/atk5.mp3",
+                skill_sound: "sounds/saber/skill_4.mp3",
                 movement: 300
             },
             hit: {

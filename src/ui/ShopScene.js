@@ -203,6 +203,10 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
                 this._ui.sp_curr.setTexture("images/icon/icon_03.png");
                 break;
 
+            case ShopSystem.PayType.RMB:
+                this._ui.sp_curr.setTexture("images/icon/icon_04.png");
+                break;
+
             default:
                 this._ui.sp_curr.setVisible(false);
                 break;

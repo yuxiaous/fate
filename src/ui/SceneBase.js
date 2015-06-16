@@ -35,6 +35,11 @@ var SceneBase = lh.LHScene.extend({
         physicalWorld.shakingNode = gameWorld;
         gameWorld.addChild(physicalWorld, street.getLocalZOrder());
 
+        var foreUI = this.getChildNodeWithName("qian");
+        if(foreUI){
+
+        }
+
         // camera
         var camera = this.getChildNodeWithName("UntitledCamera");
         camera.setImportantAreaUnit(cc.size(0, 0));
@@ -95,8 +100,9 @@ var SceneBase = lh.LHScene.extend({
         this._battleUiLayer = battleUiLayer;
         this._rolePanel = this._battleUiLayer._rolePanel;
         this._bossPanel = this._battleUiLayer._bossPanel;
-
         this._coverView = coverLayer;
+        this._street = street;
+        this._foreUI = foreUI;
 
         if(this._bgmFile) {
             cc.audioEngine.playMusic(this._bgmFile, true);
@@ -106,7 +112,26 @@ var SceneBase = lh.LHScene.extend({
             notification.createBinding(notification.event.ROLE_DIE, this.onRoleDie, this),
             notification.createBinding(notification.event.ROLE_DISAPPEAR, this.onRoleDisappear, this),
             notification.createBinding(notification.event.ITEM_DISAPPEAR, this.onItemDisappear, this),
-            notification.createBinding(notification.event.BATTLE_FINISH_RESULT, this.showFinishPanel, this)
+            notification.createBinding(notification.event.BATTLE_FINISH_RESULT, this.showFinishPanel, this),
+            notification.createBinding(notification.event.BATTLE_ADD_SKILL_EFFECT, function () {
+                   if(!this._street.skillEL){
+                       var skillEL = new SkillEffectLayer(this)
+                       var mapPos = MapSystem.instance.getGameMapPos();
+                       var maprect = MapSystem.instance.getGameMapRect();
+                       var pos = cc.p(- mapPos.x + maprect.x,0);
+                       skillEL.setPosition(pos);
+                       this._street.addChild(skillEL);
+                       this._street.skillEL = skillEL;
+                   }
+            },this),
+
+            notification.createBinding(notification.event.BATTLE_DEL_SKILL_EFFECT, function () {
+                if(this._street.skillEL){
+                    this._street.skillEL.delSkillEffect();
+                    this._street.skillEL.removeFromParent();
+                    this._street.skillEL = null;
+                }
+            },this)
         ];
     },
 
@@ -121,6 +146,7 @@ var SceneBase = lh.LHScene.extend({
         this._operator = null;
         this._battleUiLayer = null;
         this._coverView = null;
+        this._street = null;
 
         cc.audioEngine.stopMusic();
         notification.removeBinding(this._bindings);
@@ -302,10 +328,10 @@ var SceneBase = lh.LHScene.extend({
 
             //street
             var streetRect = sec.street;
-            LOG("STREET RECT x= " + streetRect.x);
-            LOG("STREET RECT y= " + streetRect.y);
-            LOG("STREET RECT w= " + streetRect.width);
-            LOG("STREET RECT h= " + streetRect.height);
+            //LOG("STREET RECT x= " + streetRect.x);
+            //LOG("STREET RECT y= " + streetRect.y);
+            //LOG("STREET RECT w= " + streetRect.width);
+            //LOG("STREET RECT h= " + streetRect.height);
 
             this._physicalWorld.setPosition(cc.p(streetRect.x, streetRect.y));
             this._physicalWorld.setContentSize(streetRect.width, streetRect.height);
@@ -371,6 +397,7 @@ var SceneBase = lh.LHScene.extend({
                     isRemote  : data.ai.isRemote
                 });
                 role.turn(data.dir);
+                role.aiData = data;
                 role.setBloodBar(isBoss,roleConfig.name);
 
                 switch (role.roleType) {
@@ -607,5 +634,7 @@ var PauseLayer = ui.GuiWindowBase.extend({
         cc.director.resume();
         ui.popScene();
     }
-})
+});
+
+
 
