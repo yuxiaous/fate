@@ -54,6 +54,13 @@ void SdkManager::setWindow(void *win)
     Sdk::_window = win;
 }
 
+void SdkManager::applicationDidFinishLaunching()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->applicationDidFinishLaunching();
+    }
+}
+
 void SdkManager::applicationWillResignActive(void *iosUIApplication)
 {
     for(Sdk *sdk : _sdks) {

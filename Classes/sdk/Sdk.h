@@ -24,6 +24,7 @@ public:
     
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 public:
+    virtual void applicationDidFinishLaunching() {}
     virtual void applicationWillResignActive(void *iosUIApplication) {}
     virtual void applicationDidBecomeActive(void *iosUIApplication) {}
     virtual void applicationDidEnterBackground(void *iosUIApplication) {}

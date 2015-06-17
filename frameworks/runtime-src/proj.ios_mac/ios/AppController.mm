@@ -87,6 +87,7 @@ static AppDelegate s_sharedApplication;
     SdkManager::setAppController(self);
     SdkManager::setViewController(viewController);
     SdkManager::setWindow(window);
+    SdkManager::applicationDidFinishLaunching();
 
     cocos2d::Application::getInstance()->run();
     return YES;

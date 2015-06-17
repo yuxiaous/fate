@@ -18,6 +18,8 @@ public:
 //    static YMTXSdk *getInstance();
     
     virtual void init();
+    
+    virtual void applicationDidFinishLaunching();
 };
 
 #endif /* defined(__crows__YMTXSdk__) */

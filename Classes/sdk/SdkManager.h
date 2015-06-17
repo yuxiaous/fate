@@ -27,6 +27,7 @@ public:
     static void setViewController(void *vc);
     static void setWindow(void *win);
     
+    static void applicationDidFinishLaunching();
     static void applicationWillResignActive(void *iosUIApplication);
     static void applicationDidBecomeActive(void *iosUIApplication);
     static void applicationDidEnterBackground(void *iosUIApplication);
