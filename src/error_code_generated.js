@@ -38,9 +38,21 @@ net_error_code[1001] = {
 	desc: "商品不存在"
 };
 
-net_error_code.ERR_SKIN_NOT_EXIT = 1002;
-net_error_code[1002] = {
-	code: 1002,
+net_error_code.ERR_SKIN_NOT_EXIT = 1101;
+net_error_code[1101] = {
+	code: 1101,
 	desc: "套装不存在"
+};
+
+net_error_code.ERR_SKILL_LEVEL_LIMIT = 1201;
+net_error_code[1201] = {
+	code: 1201,
+	desc: "技能等级不能超过当前人物等级"
+};
+
+net_error_code.ERR_EQUiP_SLOT_LEVEL_LIMIT = 1301;
+net_error_code[1301] = {
+	code: 1301,
+	desc: "锻造等级不能超过当前人物等级"
 };
 

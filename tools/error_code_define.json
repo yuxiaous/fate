@@ -7,5 +7,10 @@
     [202, "ERR_TOP_LEVEL", "已到最高等级"],
 
     [1001, "ERR_SHOP_GOODS_NOT_EXIST", "商品不存在"],
-    [1002, "ERR_SKIN_NOT_EXIT", "套装不存在"]
+
+    [1101, "ERR_SKIN_NOT_EXIT", "套装不存在"],
+
+    [1201, "ERR_SKILL_LEVEL_LIMIT", "技能等级不能超过当前人物等级"],
+
+    [1301, "ERR_EQUiP_SLOT_LEVEL_LIMIT", "锻造等级不能超过当前人物等级"]
 ]

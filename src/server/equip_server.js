@@ -34,6 +34,11 @@ server.registerCallback(net_protocol_handlers.CMD_CS_EQUIP_SLOT_UPGRADE, functio
         return;
     }
 
+    if(info.level >= player_server.player_info.level) {
+        server.sendError(net_error_code.ERR_EQUiP_SLOT_LEVEL_LIMIT);
+        return;
+    }
+
     var upgrade_id = EquipSystem.getEquipSlotUpgradeId(type, info.level);
     var config = configdb.duanzao[upgrade_id];
     if(config == undefined) {

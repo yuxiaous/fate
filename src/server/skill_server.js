@@ -31,6 +31,11 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SKILL_UP, function(obj) {
         return;
     }
 
+    if(info.level >= player_server.player_info.level) {
+        server.sendError(net_error_code.ERR_SKILL_LEVEL_LIMIT);
+        return;
+    }
+
     // skill config
     var config = configdb.skill[info.skill_id];
     if(config == undefined) {
