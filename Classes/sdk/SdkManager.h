@@ -19,10 +19,14 @@ public:
     static void addSdk(Sdk *sdk);
     static void removeSdk(Sdk *sdk);
     
-    static void setAppController(void *ac);
-    static void setViewController(void *vc);
+    static void init();
+    
     
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+    static void setAppController(void *ac);
+    static void setViewController(void *vc);
+    static void setWindow(void *win);
+    
     static void applicationWillResignActive(void *iosUIApplication);
     static void applicationDidBecomeActive(void *iosUIApplication);
     static void applicationDidEnterBackground(void *iosUIApplication);

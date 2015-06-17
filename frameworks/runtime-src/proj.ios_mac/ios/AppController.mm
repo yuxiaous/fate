@@ -31,6 +31,8 @@
 #import "RootViewController.h"
 #import "platform/ios/CCEAGLView-ios.h"
 
+#include "SdkManager.h"
+
 @implementation AppController
 
 #pragma mark -
@@ -80,6 +82,11 @@ static AppDelegate s_sharedApplication;
     // IMPORTANT: Setting the GLView should be done after creating the RootViewController
     cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView(eaglView);
     cocos2d::Director::getInstance()->setOpenGLView(glview);
+    
+    // sdk manager
+    SdkManager::setAppController(self);
+    SdkManager::setViewController(viewController);
+    SdkManager::setWindow(window);
 
     cocos2d::Application::getInstance()->run();
     return YES;
@@ -87,6 +94,9 @@ static AppDelegate s_sharedApplication;
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    
+    SdkManager::applicationWillResignActive(application);
+    
     /*
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -95,6 +105,9 @@ static AppDelegate s_sharedApplication;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    
+    SdkManager::applicationDidBecomeActive(application);
+    
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
@@ -102,6 +115,9 @@ static AppDelegate s_sharedApplication;
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+    SdkManager::applicationDidEnterBackground(application);
+    
     /*
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
@@ -110,6 +126,9 @@ static AppDelegate s_sharedApplication;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    
+    SdkManager::applicationWillEnterForeground(application);
+    
     /*
      Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
      */
@@ -117,10 +136,17 @@ static AppDelegate s_sharedApplication;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    
+    SdkManager::applicationWillTerminate(application);
+    
     /*
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return SdkManager::applicationOpenURL(application, url, sourceApplication);
 }
 
 

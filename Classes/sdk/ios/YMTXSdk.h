@@ -1,0 +1,23 @@
+//
+//  YMTXSdk.h
+//  crows
+//
+//  Created by yuxiao on 15/4/7.
+//
+//
+
+#ifndef __crows__YMTXSdk__
+#define __crows__YMTXSdk__
+
+#include <stdio.h>
+#include "Sdk.h"
+
+class YMTXSdk : public Sdk
+{
+public:
+//    static YMTXSdk *getInstance();
+    
+    virtual void init();
+};
+
+#endif /* defined(__crows__YMTXSdk__) */

@@ -36,6 +36,8 @@
 #include "Runtime.h"
 #include "ConfigParser.h"
 
+#include "SdkManager.h"
+
 USING_NS_CC;
 using namespace CocosDenshion;
 
@@ -144,6 +146,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS|| CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
     sc->addRegisterCallback(JavaScriptObjCBridge::_js_register);
 #endif
+    
+    SdkManager::init();
     
 #if (COCOS2D_DEBUG > 0 && CC_CODE_IDE_DEBUG_SUPPORT > 0)
     // NOTE:Please don't remove this call if you want to debug with Cocos Code IDE
