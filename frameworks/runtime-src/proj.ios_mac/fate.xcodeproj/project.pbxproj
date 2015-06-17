@@ -240,6 +240,10 @@
 		DE25C4091B3199B000A9AEC0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE25C4081B3199B000A9AEC0 /* CoreTelephony.framework */; };
 		DE25C40B1B319A3D00A9AEC0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE25C40A1B319A3D00A9AEC0 /* MediaPlayer.framework */; };
 		DE25C40D1B319A4800A9AEC0 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE25C40C1B319A4800A9AEC0 /* GameController.framework */; };
+		DE25C40E1B31D03D00A9AEC0 /* SdkManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE25C3DB1B318F3D00A9AEC0 /* SdkManager.cpp */; };
+		DE25C40F1B31D04200A9AEC0 /* Sdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE25C3DA1B318F3D00A9AEC0 /* Sdk.cpp */; };
+		DE25C4101B31D0CA00A9AEC0 /* SdkManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE25C3DB1B318F3D00A9AEC0 /* SdkManager.cpp */; };
+		DE25C4111B31D0FF00A9AEC0 /* Sdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE25C3DA1B318F3D00A9AEC0 /* Sdk.cpp */; };
 		DE36EDF71B258A63005B744E /* libLevelHelper2-API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF01B258A0F005B744E /* libLevelHelper2-API.a */; };
 		DE36EF001B25955E005B744E /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFB1B25955C005B744E /* Animation.cpp */; };
 		DE36EF011B25955E005B744E /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFB1B25955C005B744E /* Animation.cpp */; };
@@ -1039,13 +1043,13 @@
 		DE25C3D51B318E7D00A9AEC0 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
+				DE25C3DA1B318F3D00A9AEC0 /* Sdk.cpp */,
+				DE25C3D91B318F3D00A9AEC0 /* Sdk.h */,
+				DE25C3DB1B318F3D00A9AEC0 /* SdkManager.cpp */,
+				DE25C3DC1B318F3D00A9AEC0 /* SdkManager.h */,
 				DE25C3E41B318F9600A9AEC0 /* YMTX-SDK-IOS-1-0-8 */,
 				DE25C3DF1B318F7700A9AEC0 /* YMTXSdk.h */,
 				DE25C3E01B318F7700A9AEC0 /* YMTXSdk.mm */,
-				DE25C3D91B318F3D00A9AEC0 /* Sdk.h */,
-				DE25C3DA1B318F3D00A9AEC0 /* Sdk.cpp */,
-				DE25C3DB1B318F3D00A9AEC0 /* SdkManager.cpp */,
-				DE25C3DC1B318F3D00A9AEC0 /* SdkManager.h */,
 			);
 			name = sdk;
 			path = ../../../Classes/sdk;
@@ -1722,11 +1726,13 @@
 				3E12D1E21957FB18002FF0FD /* repeated_field.cc in Sources */,
 				DE36EF291B25955E005B744E /* DragonBonesHelper.cpp in Sources */,
 				DE36EF111B25955E005B744E /* EventData.cpp in Sources */,
+				DE25C4111B31D0FF00A9AEC0 /* Sdk.cpp in Sources */,
 				DE36EF191B25955E005B744E /* dbtinyxml2.cpp in Sources */,
 				DE36EF0F1B25955E005B744E /* Slot.cpp in Sources */,
 				3E12D1D81957FB18002FF0FD /* generated_message_util.cc in Sources */,
 				C00FD4BB1938628E00C6382D /* Runtime.cpp in Sources */,
 				3E12D1DA1957FB18002FF0FD /* coded_stream.cc in Sources */,
+				DE25C4101B31D0CA00A9AEC0 /* SdkManager.cpp in Sources */,
 				C03C8B4B18A770DD00723415 /* main.m in Sources */,
 				DE36EF011B25955E005B744E /* Animation.cpp in Sources */,
 				C00FD4B31938628E00C6382D /* Landscape_png.cpp in Sources */,
@@ -1769,6 +1775,7 @@
 				3E12D1E31957FB18002FF0FD /* atomicops_internals_x86_msvc.cc in Sources */,
 				3E12D1E11957FB18002FF0FD /* repeated_field.cc in Sources */,
 				DE36EF001B25955E005B744E /* Animation.cpp in Sources */,
+				DE25C40E1B31D03D00A9AEC0 /* SdkManager.cpp in Sources */,
 				DE36EF3A1B25955E005B744E /* jsb_bindings_auto.cpp in Sources */,
 				DE36EFCC1B25955E005B744E /* ShakeAction.cpp in Sources */,
 				C00FD4B41938628E00C6382D /* PlayDisable_png.cpp in Sources */,
@@ -1781,6 +1788,7 @@
 				DE36EF161B25955E005B744E /* ConstValues.cpp in Sources */,
 				DE36EF401B25955E005B744E /* jsb_levelhelper_auto.cpp in Sources */,
 				3E12D1D51957FB18002FF0FD /* extension_set.cc in Sources */,
+				DE25C40F1B31D04200A9AEC0 /* Sdk.cpp in Sources */,
 				DE36EF181B25955E005B744E /* dbtinyxml2.cpp in Sources */,
 				DE36EFC61B25955E005B744E /* LHVideoPlayerImpl.m in Sources */,
 				DE36EFC21B25955E005B744E /* LHVideoOverlayView.m in Sources */,
