@@ -3,7 +3,7 @@
  */
 
 
-var BattleScene = SceneBase.extend({
+var BattleScene = SceneNormalBase.extend({
     status: {
         hero: Saber,
         BSection : []

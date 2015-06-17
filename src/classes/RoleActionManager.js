@@ -612,7 +612,7 @@ var RoleActionDie = RoleAction.extend({
         if(this.manager.role.roleType == RoleBase.RoleType.Boss){
             var battleScene = cc.director.getRunningScene();
             battleScene._camera.zoomToValueInSeconds(1.3,2000);
-            battleScene._camera.lookAtNodeInSeconds(battleScene._boss,2000);
+            //battleScene._camera.lookAtNodeInSeconds(battleScene._boss,2000);
             this.manager.role.physicalWorld.setSlowPlay(3);
         }
 
