@@ -15,6 +15,7 @@ var Saber = RoleBase.extend({
         this.comboNumber = 5;
         this.speed = config.speed;
         this.injureTime = config.injure_time;
+        this.invincibleTime = config.invincible_time;
 
         var score = PlayerSystem.instance.getPlayerBattleScore();
 
@@ -300,6 +301,7 @@ var Nero = RoleBase.extend({
         this.comboNumber = 5;
         this.speed = config.speed;
         this.injureTime = config.injure_time;
+        this.invincibleTime = config.invincible_time;
 
         var score = PlayerSystem.instance.getPlayerBattleScore();
 
