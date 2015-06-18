@@ -52,9 +52,9 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
     // add resource
     server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO,{
         player:{
-            exp : player_server.player_info.exp += config.gain_exp,
-            gold: player_server.player_info.gold += config.gain_gold,
-            diamond: is_first_battle ? player_server.player_info.diamond += config.gain_diamond : undefined
+            exp : player_server.player_info.exp += config.gain_exp || 0,
+            gold: player_server.player_info.gold += config.gain_gold || 0,
+            diamond: is_first_battle ? player_server.player_info.diamond += config.gain_diamond || 0 : undefined
         }
     });
     player_server.checkLevelUp();
@@ -75,11 +75,11 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
         reward.diamond = config.gain_diamond;
         reward.items = [
             {
-                item_id : config.gain_item_id_1,
+                item_id : config.gain_item_id_1 || 0,
                 item_num: 1
             },
             {
-                item_id : config.gain_item_id_2,
+                item_id : config.gain_item_id_2 || 0,
                 item_num: 1
             }
         ];

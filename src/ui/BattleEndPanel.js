@@ -177,8 +177,10 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         this._rewardItems[1].setVisible(false);
         if(reward.items) {
             _.each(reward.items, function (item, i) {
-                this._rewardItems[i].setItemId(item.item_id);
-                this._rewardItems[i].setVisible(true);
+                if(item.item_id) {
+                    this._rewardItems[i].setItemId(item.item_id);
+                    this._rewardItems[i].setVisible(true);
+                }
             },this);
         }
     },
