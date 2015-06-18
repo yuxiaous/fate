@@ -1,164 +1,39 @@
 /*
 * 守塔 模式
 * */
-
-
-
- var SceneDefBase = lh.LHScene.extend({
+ var SceneDefBase = SceneBase.extend({
     ctor: function(sceneName) {
-        if(!sceneName.startsWith("scenes")) {
-            sceneName = "scenes/" + sceneName + ".lhplist";
-        }
         this._super(sceneName);
 
-        this._hero = null;
-        this._boss = null;
-        this._monsters = [];
-        this._friends = [];
-        this._items = [];
-
-
-        this._roundNum = 0;
-        this._roundAmount = 0;
-
-        this.scheduleUpdate();
+        this._sectionIndex = 0;
+        this._sectionAmount = 0;
     },
 
     onEnter: function() {
         this._super();
-
         var winSize = cc.director.getWinSize();
-        var gameWorld = this.getGameWorldNode();
-        var backUi = this.getBackUINode();
-        var frontUi = this.getUINode();
-
-        // street
-        var street = this.getChildNodeWithName("street");
-        var physicalWorld = new PhysicalWorld();
-        physicalWorld.shakingNode = gameWorld;
-        gameWorld.addChild(physicalWorld, street.getLocalZOrder());
-
-        // camera
-        var camera = this.getChildNodeWithName("UntitledCamera");
-        camera.setImportantAreaUnit(cc.size(0, 0));
-
-        // operator panel
-        var operator = new OperationLayer();
-        operator.setVisible(false);
-        operator.setEnable(false);
-        frontUi.addChild(operator,SceneDefBase.FrontUITag.operatorTag);
-
-        //// role info panel
-        //var rolePanel = new RoleBattlePanel();
-        //rolePanel.setPosition(0, winSize.height);
-        //rolePanel.setVisible(false);
-        //rolePanel.setRole(this._hero);
-        //frontUi.addChild(rolePanel);
-
-        ////boss info panel
-        //var bossPanel = new BossBattlePanel();
-        //bossPanel.setPosition(winSize.width,winSize.height);
-        //bossPanel.setVisible(false);
-        //frontUi.addChild(bossPanel);
-
-        //battle ui layer
-        var battleUiLayer = new BattleUILayer();
-        battleUiLayer.setPosition(cc.p(0,0));
-        battleUiLayer.setAnchorPoint(cc.p(0,0));
-        frontUi.addChild(battleUiLayer);
-
-        // combo panel
-        var comboPanel = new ComboPanel();
-        comboPanel.setPosition(winSize.width, winSize.height);
-        comboPanel.setVisible(false);
-        frontUi.addChild(comboPanel);
-
-        //var coverLayer = cc.LayerColor.create(cc.color(0, 0, 0, 255),winSize.width,winSize.height);
-        //coverLayer.setPosition(cc.p(-winSize.width,0));
-        //coverLayer.setAnchorPoint(cc.p(0,0));
-        //frontUi.addChild(coverLayer,100);
-        //coverLayer.state = 0;
-
-        //pause battle
-        var pauseItem = new cc.MenuItemFont("PAUSE", function(){
-            cc.director.pause();
-            var pausePanel = new PauseLayer();
-            frontUi.addChild(pausePanel);
-        }, this);
-        var menu = new cc.Menu(pauseItem);
-        menu.setPosition(cc.p(50,winSize.height/2));
-        frontUi.addChild(menu);
 
         //round label
-
         var roundLabel = cc.LabelTTF.create("");
         roundLabel.setPosition(cc.p(winSize.width/2,winSize.height - 50));
         roundLabel.setAnchorPoint(cc.p(0.5,1.0));
         roundLabel.setFontSize(30);
-        frontUi.addChild(roundLabel);
-        roundLabel.setString("第" + this._roundNum + "轮");
+        this._frontUi.addChild(roundLabel);
+        roundLabel.setString("第" + this._sectionIndex + "轮");
 
-
-        this._camera = camera;
-        this._gameWorld = gameWorld;
-        this._backUi = backUi;
-        this._frontUi = frontUi;
-        this._physicalWorld = physicalWorld;
-        this._operator = operator;
-        this._battleUiLayer = battleUiLayer;
-        this._rolePanel = this._battleUiLayer._rolePanel;
-        this._bossPanel = this._battleUiLayer._bossPanel;
-        //this._coverView = coverLayer;
         this._roundLabel= roundLabel;
 
-        if(this._bgmFile) {
-            cc.audioEngine.playMusic(this._bgmFile, true);
-        }
-
-        this._bindings = [
-            notification.createBinding(notification.event.ROLE_DIE, this.onRoleDie, this),
-            notification.createBinding(notification.event.ROLE_DISAPPEAR, this.onRoleDisappear, this),
-            notification.createBinding(notification.event.ITEM_DISAPPEAR, this.onItemDisappear, this),
-            notification.createBinding(notification.event.BATTLE_FINISH_RESULT, this.showFinishPanel, this)
-        ];
+        this._defBindings = [
+            notification.createBinding(notification.event.BATTLE_DEL_SKILL_EFFECT, function () {
+                this.setBossAndMonsterTarget();
+            },this)
+        ]
     },
 
     onExit: function() {
-        this._camera = null;
-        this._gameWorld = null;
-        this._backUi = null;
-        this._frontUi = null;
-        this._physicalWorld = null;
-        this._operator = null;
-        this._rolePanel = null;
-        //this._coverView = null;
         this._roundLabel = null;
-
-        cc.audioEngine.stopMusic();
-        notification.removeBinding(this._bindings);
-
+        notification.removeBinding(this._defBindings);
         this._super();
-    },
-
-    update: function(dt) {
-        // hero pickup
-        if(this._hero != null) {
-            var hero = this._hero;
-            _.each(this._items, function(item) {
-                var heroPos = hero.getSpacePosition();
-                var itemPos = item.getPosition();
-                var pickRadius = cc.p(150, 150);
-
-                if (Math.abs(heroPos.x - itemPos.x) <= pickRadius.x &&
-                    Math.abs(heroPos.y - itemPos.y) <= pickRadius.y) {
-                    item.flyToTarget(hero);
-                }
-            }, this);
-        }
-
-        //set map pos
-        var tmpNode_ = this.getGameWorldNode();
-        MapSystem.instance.setGameMapPos(tmpNode_.getPosition());
     },
 
     setBossAndMonsterTarget : function () {
@@ -168,13 +43,7 @@
             var ai = monster.getRoleAi();
             if(ai.target == null){
                 var targetPos = target.getSpacePosition();
-                //var section = that._sceneStatus.sections[that._sectionIndex-1];
-                //if(section && targetPos.x > section.warningLine){
-                //    ai.target = target;
-                //}
-                if(targetPos.x > 400){
-                    ai.target = target;
-                }
+                ai.target = target;
             }
         }
         if(this._boss) {
@@ -183,66 +52,6 @@
         _.each(this._monsters, function(monster) {
             setMonsterTarget(monster, this._hero);
         }, this);
-    },
-
-    setBackgroundMusic: function(musicFile) {
-        this._bgmFile = musicFile;
-        if(this._bgmFile) {
-            cc.audioEngine.preloadMusic(this._bgmFile);
-        }
-    },
-
-    addItem: function(item) {
-        item.setLocalZOrder(-item.getPosition().y);
-        this._items.push(item);
-        this._physicalWorld.addChild(item);
-    },
-
-    removeItem: function(item) {
-        this._items = _.without(this._items, item);
-        this._physicalWorld.removeChild(item);
-    },
-
-    removeAllItems: function() {
-        _.each(this._items, function(item) {
-            this._physicalWorld.removeChild(item);
-        }, this);
-        this._items = [];
-    },
-
-    onRoleDie: function(event, role) {
-        switch (role.roleType) {
-            case RoleBase.RoleType.Hero:
-                break;
-
-            case RoleBase.RoleType.Friend:
-                break;
-
-            case RoleBase.RoleType.Monster:
-                role.disappear();
-                break;
-
-            case RoleBase.RoleType.Boss:
-                break;
-        }
-    },
-
-    onRoleDisappear: function(event, role) {
-        var type = role.roleType;
-        if(type == RoleBase.RoleType.Monster ||
-            type == RoleBase.RoleType.Boss) {
-
-            if(cc.random0To1() * 100 > 80){
-                var item = new DroppedItem(101);
-                var pos = role.getSpacePosition();
-                item.setPosition(pos.x, pos.y);
-                this.addItem(item);
-            }
-        }
-    },
-
-    onItemDisappear: function(event, item) {
-        this.removeItem(item);
     },
 
     clearStreet: function() {
@@ -272,36 +81,30 @@
         this._items = [];
     },
 
-    play: function(status) {
-        this._sceneStatus = status;
-        // weather
-        var tmpWeather = this._sceneStatus.stage.weather_file;
-        if(tmpWeather) {
-            this._weather = cc.ParticleSystem.create(tmpWeather);
-            this._weather.setPositionType(cc.ParticleSystem.TYPE_RELATIVE);
-            this._gameWorld.addChild(this._weather);
-        }
-
-        this._roundNum = 0;
-        this._roundAmount = this._sceneStatus.BSection.length;
-        this.playNextSection();
-    },
-
     playNextSection : function () {
-        //cc.audioEngine.stopAllEffects();
+        cc.audioEngine.stopAllEffects();
         this.clearStreet();
-        this._roundNum += 1;
-        var tmpRounds = this._sceneStatus.BSection;
-        if(this._roundNum <= this._roundAmount) {
-            if (this._roundNum == this._roundAmount) {
-                this._isLastRound = true;
-            }
-            //battle round label
-            this._roundLabel.setString("第" + this._roundNum + "轮");
+        this._sectionIndex += 1;
+        var tmpSections = this._sceneStatus.BSection;
 
-            if(this._roundNum == 1){
+        if(this._sectionIndex <= this._sectionAmount) {
+            if (this._sectionIndex == this._sectionAmount) {
+                this._isLastSection = true;
+            }
+
+            if(this._isLastSection){
+                this._battleUiLayer.setBossRound(true);
+            }
+            else{
+                this._battleUiLayer.setBossRound(false);
+            }
+
+            //battle round label
+            this._roundLabel.setString("第" + this._sectionIndex + "轮");
+
+            if(this._sectionIndex == 1){
                 //area
-                var sec = tmpRounds[this._roundNum -1];
+                var sec = tmpSections[this._sectionIndex -1];
                 this.setGameWorldRect(sec.area);
 
                 //street
@@ -339,10 +142,8 @@
                 this._camera.followNode(this._hero);
             }
 
-
-
             //monster
-            var monsterData = this._sceneStatus.BSection[this._roundNum-1].monsters;
+            var monsterData = this._sceneStatus.BSection[this._sectionIndex-1].monsters;
 
             _.each(monsterData, function (data) {
 
@@ -369,6 +170,7 @@
                 });
                 role.turn(data.dir);
                 role.setBloodBar(isBoss,roleConfig.name);
+                role.aiData = data;
 
                 switch (role.roleType) {
                     case RoleBase.RoleType.Monster:
@@ -389,31 +191,6 @@
         this.onBeforeFightChatStart();
     },
 
-    onBeforeFightChatStart : function () {
-        var tmpChatData = [];
-        if(this._roundNum == 1){
-            tmpChatData = this._sceneStatus.chatData.beforeFight;
-        }
-        else if(this._roundNum == this._sceneStatus.BSection.length){
-            tmpChatData = this._sceneStatus.chatData.beforeBossFight;
-        }
-
-        if(tmpChatData && tmpChatData.length > 0){
-            var dialog = new DialogPanel(tmpChatData);
-
-            this._frontUi.addChild(dialog,SceneDefBase.FrontUITag.dialogPanelTag);
-
-
-            dialog.setEndingCallback(function() {
-                dialog.removeFromParent();
-                this.onBeforeFightChatEnd();
-            }.bind(this));
-        }
-        else{
-            this.onBeforeFightChatEnd();
-        }
-    },
-
     onBeforeFightChatEnd: function() {
         var countDownTime = 4;
         var that = this;
@@ -427,6 +204,7 @@
             if(countDownTime == -1){
                 cc.director.getScheduler().unschedule("downTime",this);
                 that.onBattleStart();
+                that.setBossAndMonsterTarget();
                 countDownLayer.removeAllChildren();
                 countDownLayer.removeFromParent();
             }
@@ -457,175 +235,10 @@
         cc.director.getScheduler().schedule(changeCountDownLabel,this,1.0,cc.REPEAT_FOREVER,0,false,"downTime");
     },
 
-    onBattleStart: function() {
-        this._rolePanel.setVisible(true);
-        this._operator.setHide(true);
-        if(this._isLastRound){
-            this._bossPanel.setVisible(true);
-        }
-        if(this._roundNum == 1){
-            var actionData = this._hero.roleActionManager.actions[RoleAction.Type.SKILL4];
-            this._operator.setBtnTimingEnable(4,actionData.cdTime);
-        }
-        this.setBossAndMonsterTarget();
-        this.schedule(this.battleObserver);
-    },
-    onBattleEnd: function() {
-        this.unschedule(this.battleObserver);
-        LOG("BATTLE END = " + this._isLostBattle);
-        if(this._isLostBattle){
-            LOG("SHOW FINISH PANEL");
-            // show lose window
-            var win = new BattleLosePanel();
-            win.setCloseCallback(function(w) {
-                if(w.exit) {
-                    cc.director.popScene();
-                }
-            }, this);
-            win.pop();
-        }
-        else{
-            this.runAction(cc.Sequence.create(
-                cc.DelayTime.create(2.0),
-                cc.CallFunc.create(function () {
-                    this.onAfterFightChatStart();
-                },this)
-            ));
-
-        }
-    },
-    battleObserver: function() {
-        var end = false;
-
-        if(this._hero && this._hero.deathValue == true) {
-            // lose
-            end = true;
-            this._isLostBattle = true;
-        }
-        else if(_.every(this._monsters, function(monster) {
-                return monster.deathValue == true;
-            }, this)) {
-
-            if(this._boss) {
-                if(this._boss.deathValue == true && this._boss.roleActionManager.runningAction == null) {
-                    end = true;
-                    this._isLostBattle = false;
-                }
-            }
-            else {
-                // win
-                end = true;
-            }
-        }
-
-        if(end) {
-            this.onBattleEnd();
-        }
-    },
-
-    onGoForwardStart: function() {
-        if(this._goForwardPanel == null) {
-            var winSize = cc.director.getWinSize();
-            this._goForwardPanel = new GoForwardPanel();
-            this._goForwardPanel.setPosition(winSize.width * 0.8, winSize.height);
-            this._frontUi.addChild(this._goForwardPanel);
-        }
-
-        this.schedule(this.goForwardObserver);
-    },
-    onGoForwardEnd: function() {
-        this.unschedule(this.goForwardObserver);
-
-        var that = this;
-        function goNextSection(){
-            if(that._goForwardPanel) {
-                that._goForwardPanel.removeFromParent();
-                that._goForwardPanel = null;
-            }
-            that._rolePanel.setVisible(false);
-            that._operator.setHide(false);
-            that.playNextSection();
-        }
-        if(this._coverView.state == 0){
-            var size = cc.director.getVisibleSize();
-            this._coverView.setPosition(cc.p(-size.width,0));
-            this._coverView.runAction(cc.Sequence.create(
-                cc.MoveBy.create(0.5,cc.p(size.width,0)),
-                cc.DelayTime.create(0.3),
-                cc.CallFunc.create(function () {
-                    this._coverView.state = 1;
-                    goNextSection();
-                },this)
-            ));
-        }
-        else{
-            goNextSection();
-        }
-    },
-    goForwardObserver: function() {
-        if(this._hero) {
-            var pos = this._hero.getSpacePosition();
-            var size = this._physicalWorld.getContentSize();
-            if(pos.x >= size.width - 10) {
-                this.onGoForwardEnd();
-            }
-        }
-        else {
-            this.onGoForwardEnd();
-        }
-    },
-
-     onAfterFightChatStart : function () {
-         if(this._isLastRound) {
-             this._bossPanel.setVisible(false);
-             if(this._sceneStatus.chatData.afterFight.length > 0){
-                 var dialog = new DialogPanel(this._sceneStatus.chatData.afterFight);
-                 this._frontUi.addChild(dialog,SceneDefBase.FrontUITag.dialogPanelTag);
-
-                 dialog.setEndingCallback(function() {
-                     dialog.removeFromParent();
-                     this.battleFinish();
-                 }.bind(this));
-
-                 this._rolePanel.setVisible(false);
-                 this._operator.setHide(false);
-             }
-             else{
-                 this.battleFinish();
-             }
-         }
-         else {
-             this.onAfterFightChatEnd();
-         }
-     },
-     onAfterFightChatEnd : function () {
-         //this.onGoForwardStart();
-         this._rolePanel.setVisible(false);
+    onAfterFightChatEnd : function () {
+         this._battleUiLayer.setVisible(false);
          this._operator.setHide(false);
          this.playNextSection();
-     },
-
-     battleFinish: function() {
-         BattleSystem.instance.battleFinish(true);
-     },
-    showFinishPanel: function() {
-        //var win = !this._isLostBattle;
-        //this._operator.setHide(false);
-        //var type = win ? BattleEndPanel.Type.Win : BattleEndPanel.Type.Lose;
-        //var panel = new BattleEndPanel(type);
-        //panel.setCloseCallback(this.onSceneFinished, this);
-        //panel.pop();
-
-        this._operator.setHide(false);
-
-        var win = new BattleWinPanel();
-        win.setCloseCallback(this.onSceneFinished, this);
-        win.pop();
-    },
-
-    onSceneFinished: function() {
-        cc.audioEngine.stopMusic();
-        ui.popScene();
     }
 });
 
@@ -636,30 +249,4 @@ SceneDefBase.FrontUITag = {
     countDownLayerTag : 110,
     dialogPanelTag : 120
 }
-
-var PauseLayer = ui.GuiWindowBase.extend({
-    _guiFile: "ui/pauseBattleLayer.json",
-
-    ctor: function () {
-        this._super();
-    },
-
-    onEnter: function () {
-        this._super();
-    },
-
-    onExit : function () {
-        this._super();
-    },
-
-    _on_btn_restart : function () {
-        cc.director.resume();
-        this.removeFromParent();
-    },
-
-    _on_btn_back : function () {
-        cc.director.resume();
-        ui.popScene();
-    }
-})
 
