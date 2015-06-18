@@ -71,7 +71,13 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         var target = cc.director.getRunningScene()._hero;
         if(target.roleDataManager.hp == target.roleDataManager.maxHp &&
             target.roleDataManager.mp == target.roleDataManager.maxMp){     //单加满血
-            MessageBoxOk.show("血和蓝都是满的，无需补充 !");
+            //MessageBoxOk.show("血和蓝都是满的，无需补充 !");
+            var label = cc.LabelTTF.create("血和蓝都是满的，无需补充 !")
+            var winSize = cc.director.getWinSize();
+            label.setFontSize(24);
+            label.setPosition(cc.p(winSize.width/2,winSize.height/2));
+            this.addChild(label);
+            UiEffect.labelMoveUp(label);
             return;
         }
 
