@@ -251,8 +251,9 @@ var ThrowRaiden = ThrowBase.extend({
 
     addThrowWeapon : function () {
         var alertNode = dragonBones.DragonBonesHelper.buildArmatureNode("yujing1");
-        alertNode.gotoAndPlay("yujing1");
+        alertNode.gotoAndPlay("daiji");
         this.addChild(alertNode,-1);
+
         this.runAction(cc.Sequence.create(
                             cc.DelayTime.create(1.0),
                             cc.CallFunc.create(function () {
