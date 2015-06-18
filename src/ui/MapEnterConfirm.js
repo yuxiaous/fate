@@ -105,7 +105,7 @@ var MapStageInfo = ui.GuiWindowBase.extend({
         var mapConfig = configdb.map[this.mapId];
         if(mapConfig ){
             if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
-                ui.pushScene(new BattleScene(this.mapId));
+                ui.pushScene(new BattleNorScene(this.mapId));
                 //ui.pushScene(new BattleDefScene(this.mapId) );
             }
             else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){

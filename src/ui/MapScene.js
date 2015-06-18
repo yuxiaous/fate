@@ -193,8 +193,8 @@ var MapScene = ui.GuiSceneBase.extend({
                 var mapConfig = configdb.map[sel_map_id];
                 if(mapConfig ){
                     if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
-                        ui.pushScene(new BattleScene(sel_map_id));
-                        //ui.pushScene(new BattleDefScene(this.mapId) );
+                        ui.pushScene(new BattleNorScene(sel_map_id));
+                        //ui.pushScene(new BattleDefScene(this.mapId));
                     }
                     else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
                         ui.pushScene(new BattleDefScene(sel_map_id) );

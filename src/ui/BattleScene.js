@@ -3,7 +3,7 @@
  */
 
 
-var BattleScene = SceneNormalBase.extend({
+var BattleNorScene = SceneNormalBase.extend({
     status: {
         hero: Saber,
         BSection : []
@@ -37,9 +37,9 @@ var BattleScene = SceneNormalBase.extend({
             this.status.hero = Nero;
         }
 
-        this.status.stage = BattleScene.initStageInfo(map_id_);
-        this.status.BSection = BattleScene.initBattleSection(map_id_);
-        this.status.chatData = BattleScene.initChatInfo(map_id_);
+        this.status.stage = BattleNorScene.initStageInfo(map_id_);
+        this.status.BSection = BattleNorScene.initBattleSection(map_id_);
+        this.status.chatData = BattleNorScene.initChatInfo(map_id_);
     },
 
     onExit: function() {
@@ -48,7 +48,7 @@ var BattleScene = SceneNormalBase.extend({
     }
 });
 
-BattleScene.initChatInfo = function (map_id_) {
+BattleNorScene.initChatInfo = function (map_id_) {
     var chatData = {}
     var mapConfig = configdb.map[map_id_];
     chatData.beforeFight =[];
@@ -111,7 +111,7 @@ BattleScene.initChatInfo = function (map_id_) {
     return chatData;
 };
 
-BattleScene.initBattleSection = function (map_id_) {
+BattleNorScene.initBattleSection = function (map_id_) {
     var BSection = [];
     var mapConfig = configdb.map[map_id_];
     var prePZ_id ="peizhi_id_";
@@ -164,7 +164,7 @@ BattleScene.initBattleSection = function (map_id_) {
     return BSection;
 };
 
-BattleScene.initStageInfo = function (map_id_) {
+BattleNorScene.initStageInfo = function (map_id_) {
     var mapConfig = configdb.map[map_id_];
     var stageConfig = configdb.stage[mapConfig.stage_id];
 

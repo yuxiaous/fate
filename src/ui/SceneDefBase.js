@@ -13,16 +13,6 @@
         this._super();
         var winSize = cc.director.getWinSize();
 
-        //round label
-        var roundLabel = cc.LabelTTF.create("");
-        roundLabel.setPosition(cc.p(winSize.width/2,winSize.height - 50));
-        roundLabel.setAnchorPoint(cc.p(0.5,1.0));
-        roundLabel.setFontSize(30);
-        this._frontUi.addChild(roundLabel);
-        roundLabel.setString("第" + this._sectionIndex + "轮");
-
-        this._roundLabel= roundLabel;
-
         this._defBindings = [
             notification.createBinding(notification.event.BATTLE_DEL_SKILL_EFFECT, function () {
                 this.setBossAndMonsterTarget();
@@ -31,7 +21,7 @@
     },
 
     onExit: function() {
-        this._roundLabel = null;
+
         notification.removeBinding(this._defBindings);
         this._super();
     },
@@ -99,9 +89,6 @@
                 this._battleUiLayer.setBossRound(false);
             }
 
-            //battle round label
-            this._roundLabel.setString("第" + this._sectionIndex + "轮");
-
             if(this._sectionIndex == 1){
                 //area
                 var sec = tmpSections[this._sectionIndex -1];
@@ -159,7 +146,9 @@
                     isBoss = true;
                 }
 
-                role.setSpacePosition(_.defaults(cc.p(data.posX, data.posY), {x: 0., y: 0, z: 0}));
+                var pos = this.getMonsterPosWithHero(this._hero,tmpSections[this._sectionIndex -1].street);
+
+                role.setSpacePosition(pos);
                 role.setRoleAi(RoleAi.Type.XiaoGuai,{
                     atkPer    : data.ai.atkPer,
                     restPer   : data.ai.restPer,
@@ -192,54 +181,85 @@
     },
 
     onBeforeFightChatEnd: function() {
-        var countDownTime = 4;
-        var that = this;
-        function changeCountDownLabel(){
-            countDownTime -= 1;
-            var countDownLayer = that._frontUi.getChildByTag(1000);
-            if(countDownLayer) {
-                var countDownLabel = countDownLayer.getChildByTag(1000);
-            }
 
-            if(countDownTime == -1){
-                cc.director.getScheduler().unschedule("downTime",this);
-                that.onBattleStart();
-                that.setBossAndMonsterTarget();
-                countDownLayer.removeAllChildren();
-                countDownLayer.removeFromParent();
-            }
-            else{
-                if(!countDownLayer){
-                    var countDownLayer = ccui.Layout.create();
-                    countDownLayer.setTag(1000);
-                    countDownLayer.setTouchEnabled(true);
-                    countDownLayer.addTouchEventListener(function(){
-                        LOG("TOUCH COUNT DOWN LAYER");
-                    },this);
-                    that._frontUi.addChild(countDownLayer,SceneDefBase.FrontUITag.countDownLayerTag);
+        this._battleUiLayer.setVisible(true);
+        this.refreshRoundTitle(this._sectionIndex,this._sectionAmount);
 
-                    countDownLabel = cc.LabelTTF.create(String(countDownTime));
-                    var size = cc.director.getWinSize();
-                    countDownLabel.setFontSize(200);
-                    countDownLabel.setTag(1000);
-                    countDownLabel.setPosition(cc.p(size.width/2,size.height/2));
-
-                    countDownLayer.addChild(countDownLabel);
-                }
-                else{
-                    countDownLabel.setString(String(countDownTime));
-                }
-            }
-        }
-        changeCountDownLabel();
-        cc.director.getScheduler().schedule(changeCountDownLabel,this,1.0,cc.REPEAT_FOREVER,0,false,"downTime");
+        //var countDownTime = 4;
+        //var that = this;
+        //function changeCountDownLabel(){
+        //    countDownTime -= 1;
+        //    var countDownLayer = that._frontUi.getChildByTag(1000);
+        //    if(countDownLayer) {
+        //        var countDownLabel = countDownLayer.getChildByTag(1000);
+        //    }
+        //
+        //    if(countDownTime == -1){
+        //        cc.director.getScheduler().unschedule("downTime",this);
+        //        that.onBattleStart();
+        //        that.setBossAndMonsterTarget();
+        //        countDownLayer.removeAllChildren();
+        //        countDownLayer.removeFromParent();
+        //    }
+        //    else{
+        //        if(!countDownLayer){
+        //            var countDownLayer = ccui.Layout.create();
+        //            countDownLayer.setTag(1000);
+        //            countDownLayer.setTouchEnabled(true);
+        //            countDownLayer.addTouchEventListener(function(){
+        //                LOG("TOUCH COUNT DOWN LAYER");
+        //            },this);
+        //            that._frontUi.addChild(countDownLayer,SceneDefBase.FrontUITag.countDownLayerTag);
+        //
+        //            countDownLabel = cc.LabelTTF.create(String(countDownTime));
+        //            var size = cc.director.getWinSize();
+        //            countDownLabel.setFontSize(200);
+        //            countDownLabel.setTag(1000);
+        //            countDownLabel.setPosition(cc.p(size.width/2,size.height/2));
+        //
+        //            countDownLayer.addChild(countDownLabel);
+        //        }
+        //        else{
+        //            countDownLabel.setString(String(countDownTime));
+        //        }
+        //    }
+        //}
+        //changeCountDownLabel();
+        //cc.director.getScheduler().schedule(changeCountDownLabel,this,1.0,cc.REPEAT_FOREVER,0,false,"downTime");
     },
 
     onAfterFightChatEnd : function () {
-         this._battleUiLayer.setVisible(false);
+         //this._battleUiLayer.setVisible(true);
          this._operator.setHide(false);
          this.playNextSection();
-    }
+    },
+
+     refreshRoundTitle : function (curRound_,maxRound_) {
+        this._battleUiLayer.startActionRoundLabel(curRound_, function () {
+            this.onBattleStart();
+            this.setBossAndMonsterTarget();
+        },this);
+     },
+     
+     getMonsterPosWithHero : function (hero_, worldRect_) {
+         var heroPos = hero_.getSpacePosition();
+         var retPos = {x:0,y:0,z:0};
+         var conValue = 300;
+         var hadRandPos = false;
+         if(heroPos.x > worldRect_.width/2){
+            retPos.x = _.random(0,conValue);
+             hadRandPos = true;
+         }
+
+         if(!hadRandPos || _.random(0,10) > 5){
+             if(heroPos.x < worldRect_.width/2){
+                 retPos.x = _.random(worldRect_.width - conValue , worldRect_.width);
+             }
+         }
+
+         retPos.y = _.random(0,worldRect_.height);
+         return retPos;
+     }
 });
 
 SceneDefBase.FrontUITag = {

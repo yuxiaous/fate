@@ -11,9 +11,9 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
     },
 
     _judgeResAmount : function (mapid_) {
-        this.stage = BattleScene.initStageInfo(mapid_);
-        this.BSection = BattleScene.initBattleSection(mapid_);
-        this.chatData = BattleScene.initChatInfo(mapid_);
+        this.stage = BattleNorScene.initStageInfo(mapid_);
+        this.BSection = BattleNorScene.initBattleSection(mapid_);
+        this.chatData = BattleNorScene.initChatInfo(mapid_);
 
         if(this.stage){
             var battleSceneFile = this.stage.scene_file;

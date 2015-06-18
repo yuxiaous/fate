@@ -101,8 +101,8 @@ var BattleEndPanel = ui.GuiWindowBase.extend({
     
     _on_btn_again: function () {
         ui.popScene();
-        ui.pushScene(new BattleScene(BattleSystem.instance.cur_battle_map));
-        ui.replaceScene(new BattleScene(BattleSystem.instance.cur_battle_map))
+        ui.pushScene(new BattleNorScene(BattleSystem.instance.cur_battle_map));
+        ui.replaceScene(new BattleNorScene(BattleSystem.instance.cur_battle_map))
     },
     
     _on_btn_use : function () {
@@ -191,8 +191,8 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
 
     _on_btn_again: function () {
         ui.popScene();
-        ui.pushScene(new BattleScene(BattleSystem.instance.cur_battle_map));
-        ui.replaceScene(new BattleScene(BattleSystem.instance.cur_battle_map))
+        ui.pushScene(new BattleNorScene(BattleSystem.instance.cur_battle_map));
+        ui.replaceScene(new BattleNorScene(BattleSystem.instance.cur_battle_map))
     },
 
     _on_btn_use : function () {

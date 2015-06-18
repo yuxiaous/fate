@@ -25,6 +25,15 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         this._magicBottleLable = this.seekWidgetByName("lbl_bottle_num");
 
 
+        //def Label
+        this._roundPanel =  this.seekWidgetByName("roundPanel");
+        this._roundLabelPanel = this.seekWidgetByName("roundLabelPanel");
+        this._roundBg =this.seekWidgetByName("labelBg");
+        this._roundLabel = this.seekWidgetByName("roundLabel");
+
+        this._roundLabelPanel.setVisible(false);
+        this._roundPanel.setVisible(false);
+
         this.refreshBattleData();
 
         this._bindings = [
@@ -39,6 +48,10 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         this._rolePanel = null;
         this.bossP = null;
         this.roleP = null;
+
+        this._roundBg = null;
+        this._roundLabelPanel = null;
+        this._roundPanel = null;
 
         this._magicBottleLable = null;
 
@@ -90,6 +103,48 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         else{
             MessageBoxOk.show("瓶子都没有了，还点什么点，快滚去去商城买 !");
         }
+    },
+    
+    startActionRoundLabel : function (roundIdx_, callFunc_, target_) {
+        this._roundPanel.setVisible(true);
+        this._roundLabelPanel.setVisible(true);
+        //this._roundBg.setVisible(true);
+        this._roundBg.setOpacity(0);
+        this._roundLabel.setString(String(roundIdx_));
+
+        var winSize = cc.director.getWinSize();
+        //this._roundPanel.setPosition(cc.p(winSize.width/2,460));
+        //this._roundLabelPanel.setPosition(cc.p(winSize.width/2,460));
+        //
+        //
+        //var oriPos = this._roundPanel.getPosition();
+        var oriPos = cc.p(winSize.width/2,460);
+        this._roundPanel.setPosition(cc.p(oriPos.x + winSize.width , oriPos.y));
+        this._roundLabelPanel.setPosition(cc.p(oriPos.x - winSize.width,oriPos.y))
+
+
+        var that = this;
+        this._roundPanel.runAction(cc.Sequence.create(
+            cc.MoveBy.create(1.0,cc.p(-winSize.width,0)),
+            cc.DelayTime.create(1.0),
+            cc.MoveBy.create(1.0,cc.p(-winSize.width,0))
+        ))
+
+        this._roundLabelPanel.runAction(cc.Sequence.create(
+            cc.MoveBy.create(1.0,cc.p(winSize.width,0)),
+            cc.CallFunc.create(function () {
+                that._roundBg.runAction(cc.FadeIn.create(0.5));
+            }),
+            cc.DelayTime.create(1.0),
+            cc.MoveBy.create(1.0,cc.p(winSize.width,0)),
+            cc.CallFunc.create(function () {
+                if(target_ && callFunc_){
+                    callFunc_.apply(target_);
+                }
+            })
+        ))
+
+
     }
 });
 

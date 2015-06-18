@@ -23,9 +23,9 @@ var BattleDefScene = SceneDefBase.extend({
     },
 
     initBattleData : function (map_id_) {
-        this.status.stage = BattleScene.initStageInfo(map_id_);
-        this.status.BSection = BattleScene.initBattleSection(map_id_);
-        this.status.chatData = BattleScene.initChatInfo(map_id_);
+        this.status.stage = BattleNorScene.initStageInfo(map_id_);
+        this.status.BSection = BattleNorScene.initBattleSection(map_id_);
+        this.status.chatData = BattleNorScene.initChatInfo(map_id_);
     },
 
     onExit: function() {
