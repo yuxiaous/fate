@@ -83,7 +83,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\Classes\runtime;$(ProjectDir)..\Classes\protobuf-lite;$(EngineRoot)external\win32-specific\zlib\include;$(EngineRoot);$(EngineRoot)cocos;$(EngineRoot)cocos\2d;$(EngineRoot)cocos\base;$(EngineRoot)cocos\storage;$(EngineRoot)cocos\editor-support;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\bindings\manual;$(EngineRoot)cocos\audio\include;$(EngineRoot)..\external\spidermonkey\include\win32;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot)external;$(ProjectDir)..\..\..\Classes;$(ProjectDir)..\..\..\Classes\SneakyInput;$(ProjectDir)..\..\..\Classes\dragonbones;$(ProjectDir)..\..\..\Classes\dragonbones\renderer\cocos2d-x-3.x;$(ProjectDir)..\..\..\Classes\LevelHelper2\LevelHelper2-API;$(ProjectDir)..\..\..\Classes\jsb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Classes;$(ProjectDir)..\Classes\runtime;$(ProjectDir)..\Classes\protobuf-lite;$(EngineRoot)external\win32-specific\zlib\include;$(EngineRoot);$(EngineRoot)cocos;$(EngineRoot)cocos\2d;$(EngineRoot)cocos\base;$(EngineRoot)cocos\storage;$(EngineRoot)cocos\editor-support;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\bindings\manual;$(EngineRoot)cocos\audio\include;$(EngineRoot)..\external\spidermonkey\include\win32;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot)external;$(ProjectDir)..\..\..\Classes;$(ProjectDir)..\..\..\Classes\SneakyInput;$(ProjectDir)..\..\..\Classes\dragonbones;$(ProjectDir)..\..\..\Classes\dragonbones\renderer\cocos2d-x-3.x;$(ProjectDir)..\..\..\Classes\LevelHelper2\LevelHelper2-API;$(ProjectDir)..\..\..\Classes\jsb;$(ProjectDir)..\..\..\Classes\sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;STRICT;_DEBUG;XP_WIN;JS_HAVE___INTN;JS_INTPTR_TYPE=int;COCOS2D_DEBUG=1;COCOS2D_JAVASCRIPT=1;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;GLFW_EXPOSE_NATIVE_WIN32;GLFW_EXPOSE_NATIVE_WGL;LH_USE_BOX2D;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -207,6 +207,8 @@ xcopy "$(ProjectDir)..\..\..\res" "$(OutDir)\Resource\res" /e /Y</Command>
     <ClCompile Include="..\..\..\Classes\jsb\jsb_dragonbones_auto.cpp" />
     <ClCompile Include="..\..\..\Classes\jsb\jsb_levelhelper_auto.cpp" />
     <ClCompile Include="..\..\..\Classes\JsonStorage.cpp" />
+    <ClCompile Include="..\..\..\Classes\sdk\Sdk.cpp" />
+    <ClCompile Include="..\..\..\Classes\sdk\SdkManager.cpp" />
     <ClCompile Include="..\..\..\Classes\ShakeAction.cpp" />
     <ClCompile Include="..\..\..\Classes\SneakyInput\SneakyButton.cpp" />
     <ClCompile Include="..\..\..\Classes\SneakyInput\SneakyButtonSkinnedBase.cpp" />
@@ -248,6 +250,8 @@ xcopy "$(ProjectDir)..\..\..\res" "$(OutDir)\Resource\res" /e /Y</Command>
     <ClInclude Include="..\..\..\Classes\jsb\jsb_dragonbones_auto.hpp" />
     <ClInclude Include="..\..\..\Classes\jsb\jsb_levelhelper_auto.hpp" />
     <ClInclude Include="..\..\..\Classes\JsonStorage.h" />
+    <ClInclude Include="..\..\..\Classes\sdk\Sdk.h" />
+    <ClInclude Include="..\..\..\Classes\sdk\SdkManager.h" />
     <ClInclude Include="..\..\..\Classes\ShakeAction.h" />
     <ClInclude Include="..\..\..\Classes\SneakyInput\SneakInputHeaders.h" />
     <ClInclude Include="..\..\..\Classes\SneakyInput\SneakyButton.h" />

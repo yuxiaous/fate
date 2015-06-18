@@ -26,6 +26,9 @@
     <Filter Include="game\SneakyInput">
       <UniqueIdentifier>{dd3e5097-8804-46a9-aefe-83e984030d59}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game\sdk">
+      <UniqueIdentifier>{91d5970b-e403-45a5-bf32-8fa00fe7e390}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -141,6 +144,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Classes\SneakyInput\SneakyJoystickSkinnedBase.cpp">
       <Filter>game\SneakyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\sdk\Sdk.cpp">
+      <Filter>game\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\sdk\SdkManager.cpp">
+      <Filter>game\sdk</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -282,6 +291,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Classes\SneakyInput\SneakyJoystickSkinnedBase.h">
       <Filter>game\SneakyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\sdk\Sdk.h">
+      <Filter>game\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\sdk\SdkManager.h">
+      <Filter>game\sdk</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
