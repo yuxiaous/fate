@@ -76,7 +76,7 @@ var RoleActionManager = cc.Class.extend({
             var type = action.type;
             return type == RoleAction.Type.STAND || type == RoleAction.Type.WALK;
         }
-        return !this.injureStatus && !this.attackStatus && !this.deathStatus;
+        return !this.injureStatus && !this.attackStatus && !this.deathStatus && !this.floatingStatus;
     },
 
     onActionComplete: function() {
@@ -491,6 +491,7 @@ var RoleActionAttack = RoleAction.extend({
             // velocity
             if(attr.velocity) {
                 var velocity = target.floatingValue ? attr.velocity.onFloating : attr.velocity.onGround;
+
                 target.setSpaceVelocity(velocity.x * direction, 0, velocity.y);
             }
 

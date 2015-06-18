@@ -51,11 +51,8 @@ var RoleBase = PhysicalNode.extend({
     },
 
     init: function() {
-        LOG("THIS.ARMATURE NAME = " + this.armatureName);
         var armatureNode = dragonBones.DragonBonesHelper.buildArmatureNode(this.armatureName);
-        LOG("THIS.ARMATURE NAME = " + armatureNode);
         this.addChild(armatureNode);
-
 
         //if(this.roleType == RoleBase.RoleType.Boss){
         //    var underFootE = dragonBones.DragonBonesHelper.buildArmatureNode("guanghuan");
