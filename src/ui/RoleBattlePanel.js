@@ -125,18 +125,18 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
 
         var that = this;
         this._roundPanel.runAction(cc.Sequence.create(
-            cc.MoveBy.create(1.0,cc.p(-winSize.width,0)),
+            cc.MoveBy.create(0.8,cc.p(-winSize.width,0)),
             cc.DelayTime.create(1.0),
-            cc.MoveBy.create(1.0,cc.p(-winSize.width,0))
+            cc.MoveBy.create(0.5,cc.p(-winSize.width,0))
         ))
 
         this._roundLabelPanel.runAction(cc.Sequence.create(
-            cc.MoveBy.create(1.0,cc.p(winSize.width,0)),
+            cc.MoveBy.create(0.8,cc.p(winSize.width,0)),
             cc.CallFunc.create(function () {
                 that._roundBg.runAction(cc.FadeIn.create(0.5));
             }),
             cc.DelayTime.create(1.0),
-            cc.MoveBy.create(1.0,cc.p(winSize.width,0)),
+            cc.MoveBy.create(0.5,cc.p(winSize.width,0)),
             cc.CallFunc.create(function () {
                 if(target_ && callFunc_){
                     callFunc_.apply(target_);
