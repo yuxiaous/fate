@@ -236,6 +236,19 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
             cc.scaleTo(0.3, 1.1),
             cc.scaleTo(0.2, 1.0)
         ));
+
+
+        this._reviveLabel = this.seekWidgetByName("lbl_reviveNum");
+        this._reviveLabel.setString(String("X " + this._getReviveItemNum()));
+
+        this._bindings = [
+            notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
+                if(itemType_ == BattleSystem.UseItemType.UseRevive){
+                    notification.emit(notification.event.BATTLE_HERO_REVIVE);
+                    this.close();
+                }
+            },this)
+        ];
     },
 
     onExit: function() {
@@ -246,7 +259,20 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
         this._failurePanel = null;
         this._goldLabel = null;
         this._expLabel = null;
+
+        notification.removeBinding(this._bindings);
+
         this._super();
+    },
+
+    _getReviveItemNum : function () {
+        var reviveNum = 0;
+        _.reduce(BagSystem.instance.items, function(sum, item) {
+            if(item.id == 100001) {
+                reviveNum += item.num || 1;
+            }
+        }, 0, this)
+        return reviveNum;
     },
 
     _on_btn_back: function() {
@@ -255,7 +281,13 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_use : function () {
-        LOG("USE SERVIVE");
+        var reviveNum = this._getReviveItemNum();
+        if(reviveNum > 0){
+            BattleSystem.instance.useBattleItem({
+                itemId : 100001,
+                num : 1
+            });
+        }
     },
 
     _on_btn_enter : function(){

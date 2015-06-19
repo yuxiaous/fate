@@ -76,17 +76,22 @@ var BattleSystem = SystemBase.extend({
     batttleUseItemResult: function (obj) {
         if(obj.result == 0){
             var target = cc.director.getRunningScene()._hero;
-            if(obj.item_type == 1){     //单加满血
+            if(obj.item_type == BattleSystem.UseItemType.UseHp){     //单加满血
                 target.roleDataManager.hp = target.roleDataManager.maxHp;
             }
-            else if(obj.item_type == 2){    //单加满蓝
+            else if(obj.item_type == BattleSystem.UseItemType.UseMp){    //单加满蓝
                 target.roleDataManager.mp = target.roleDataManager.maxMp;
             }
-            else if(obj.item_type == 3){    //加满血和蓝
+            else if(obj.item_type == BattleSystem.UseItemType.UseHpAndMp){    //加满血和蓝
                 target.roleDataManager.hp = target.roleDataManager.maxHp;
                 target.roleDataManager.mp = target.roleDataManager.maxMp;
             }
-            notification.emit(notification.event.BATTLE_USE_ITEM_RESULT);
+            else if(obj.item_type == BattleSystem.UseItemType.UseRevive){ //复活币
+                target.roleDataManager.hp = target.roleDataManager.maxHp;
+                target.roleDataManager.mp = target.roleDataManager.maxMp;
+            }
+
+            notification.emit(notification.event.BATTLE_USE_ITEM_RESULT,obj.item_type);
         }
     }
 });
@@ -96,6 +101,13 @@ BattleSystem.BattleType = {
     DefendType  : 2,
     EndlessType : 3
 };
+
+BattleSystem.UseItemType = {
+    UseHp : 1,
+    UseMp : 2,
+    UseHpAndMp : 3,
+    UseRevive : 4
+}
 
 
 BattleSystem.getAttackDamage = function(atk, crit_value_min, crit_value_max, crit_probability) {

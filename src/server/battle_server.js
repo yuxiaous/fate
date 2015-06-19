@@ -112,13 +112,16 @@ server.registerCallback(net_protocol_handlers.CMD_CS_USE_BATTLE_ITEM, function (
 
     var itemResultType = 1;
     switch (config.result) {
-        case 5:
+        case item_server.ItemUseType.AddLive:
+            itemResultType = 4;
+            break;
+        case item_server.ItemUseType.AddHpPer:
             itemResultType = 1;
             break;
-        case 6:
+        case item_server.ItemUseType.AddMpPer:
             itemResultType = 2;
             break;
-        case 7:
+        case item_server.ItemUseType.AddHpMp:
             itemResultType = 3;
             break;
     }
@@ -127,3 +130,6 @@ server.registerCallback(net_protocol_handlers.CMD_CS_USE_BATTLE_ITEM, function (
         item_type :itemResultType
     });
 })
+
+
+

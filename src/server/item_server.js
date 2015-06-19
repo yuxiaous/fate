@@ -17,6 +17,18 @@ var item_server = {
     }
 };
 
+item_server.ItemUseType = {
+    AddEXP :    1,  //增加经验
+    AddGold:    2,  //增加金币
+    AddDiamond: 3,  //增加钻石
+    AddAction : 4,  //增加行动力
+    AddHpPer :  5,  //增加HP
+    AddMpPer :  6,  //增加MP
+    AddHpMp :   7,  //增加HP 和 MP
+    AddSkin:    8,  //角色套装
+    AddLive :   9   //战斗复活
+}
+
 
 server.registerCallback(net_protocol_handlers.CMD_CS_ITEM_USE, function(obj) {
     LOG("CMD_CS_ITEM_USE");
@@ -39,12 +51,12 @@ server.registerCallback(net_protocol_handlers.CMD_CS_ITEM_USE, function(obj) {
     }
 
     switch (config.result) {
-        case 2:
+        case item_server.ItemUseType.AddGold:
             if(useResultAddGold(config.result_value) == false) {
                 return;
             }
             break;
-        case 3:
+        case item_server.ItemUseType.AddDiamond:
             if(useResultAddDiamond(config.result_value) == false) {
                 return;
             }

@@ -98,6 +98,14 @@ var SceneBase = lh.LHScene.extend({
                     that._street.skillEL.removeFromParent();
                     that._street.skillEL = null;
                 }
+            },this),
+            notification.createBinding(notification.event.BATTLE_HERO_REVIVE, function () {
+                this._hero.deathValue = false;
+                this._hero.roleActionManager.deathStatus = false;
+                this._hero.roleActionManager.playAction(RoleAction.Type.STAND_UP);
+                this._isLostBattle = true;
+                this.schedule(this.battleObserver);
+
             },this)
         ];
 
@@ -176,8 +184,8 @@ var SceneBase = lh.LHScene.extend({
     onRoleDie : function (event,role) {
         switch (role.roleType) {
             case RoleBase.RoleType.Hero:
+                //this.clearMonsterTarget();
                 break;
-
             case RoleBase.RoleType.Friend:
                 break;
 
@@ -240,6 +248,18 @@ var SceneBase = lh.LHScene.extend({
             this._physicalWorld.removeChild(item);
         }, this);
         this._items = [];
+    },
+
+    clearMonsterTarget : function () {
+        _.each(this._monsters, function(monster) {
+            if(monster){
+                monster.setRoleAi(RoleAi.Type.Stake);
+            }
+        }, this);
+
+        if(this._boss){
+            this._boss.setRoleAi(RoleAi.Type.Stake);
+        }
     },
 
     onBattleStart: function() {
