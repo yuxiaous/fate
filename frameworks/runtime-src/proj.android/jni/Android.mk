@@ -40,11 +40,13 @@ $(LOCAL_PATH)/../../Classes/protobuf-lite \
 $(LOCAL_PATH)/../../Classes/runtime \
 $(LOCAL_PATH)/../../Classes \
 $(LOCAL_PATH)/../../../../Classes \
-$(LOCAL_PATH)/../../../../Classes/jsb
+$(LOCAL_PATH)/../../../../Classes/jsb \
+$(LOCAL_PATH)/../../../../Classes/sdk
 
 
 LOCAL_STATIC_LIBRARIES := cocos_jsb_static
 LOCAL_STATIC_LIBRARIES += game_jsb_static
+LOCAL_STATIC_LIBRARIES += game_sdk_static
 
 LOCAL_EXPORT_CFLAGS := -DCOCOS2D_DEBUG=2 -DCOCOS2D_JAVASCRIPT
 
@@ -53,3 +55,4 @@ include $(BUILD_SHARED_LIBRARY)
 
 $(call import-module,bindings)
 $(call import-module,jsb)
+$(call import-module,sdk)
