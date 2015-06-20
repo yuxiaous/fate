@@ -12,13 +12,11 @@ using namespace cocos2d;
 extern "C" {
 	void Java_org_cocos2dx_javascript_AppActivity_startLevel(int nLevel)
 	{
-		char _szTxt[10] = {0};
+		char _szTxt[100] = {0};
     	sprintf(_szTxt, "level_%d", nLevel);
-    //#error "yuxiao"
-    //	log("crazy startLevel");
+
     	JniMethodInfo minfo;
-    	if(JniHelper::getStaticMethodInfo(minfo,AndroidClassName,"startLevel","(Ljava/lang/String;)V"))
-    	{
+    	if(JniHelper::getStaticMethodInfo(minfo,AndroidClassName,"startLevel","(Ljava/lang/String;)V")) {
     		jstring stringArg = minfo.env->NewStringUTF(_szTxt);
     		minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, stringArg);
     	}
@@ -27,15 +25,12 @@ extern "C" {
     //public static native void paymentCompleted(final int id);
     void Java_org_cocos2dx_javascript_AppActivity_paymentCompleted(JNIEnv *env, jobject thiz, jint id, jint nRes)
     {
-        log("crazy Java_com_crazy_sljs_sljs_paymentCompleted");
+        log("Java_org_cocos2dx_javascript_AppActivity_paymentCompleted");
         // 	CCNotificationCenter::sharedNotificationCenter()->postNotification(payment, CCInteger::create(id));
         int _nId = id;
         int _nRes = nRes;
-        log("crazy @@@@@@@@@@@@ %d %d", _nId, _nRes);
-
-    //	CrazyJni::instance()->payment(_nId, _nRes);
+        log("yuxiao @@@@@@@@@@@@ %d %d", _nId, _nRes);
     }
-
 }
 
 
