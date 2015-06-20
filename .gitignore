@@ -5,11 +5,11 @@ simple_test_bindings
 userconf.ini
 
 # game
-res
-config
-build
-publish
-protocol
+/res
+/config
+/build
+/publish
+tools/protocol
 
 Simulator
 jsb.sqlite
