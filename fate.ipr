@@ -77,7 +77,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/client.iml" filepath="$PROJECT_DIR$/client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/frameworks/runtime-src/proj.android/proj.android.iml" filepath="$PROJECT_DIR$/frameworks/runtime-src/proj.android/proj.android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/runtime-src/proj.android/game.iml" filepath="$PROJECT_DIR$/frameworks/runtime-src/proj.android/game.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="IntelliJ IDEA Community Edition IC-141.178.9" project-jdk-type="IDEA JDK">
