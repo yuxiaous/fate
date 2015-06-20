@@ -6,12 +6,17 @@
 //
 //
 
+#include <set>
 #include "SdkManager.h"
 #include "Sdk.h"
-#include <set>
+#include "cocos2d.h"
 
 #ifdef YMTXRECORDSDK
 #include "YMTXSdk.h"
+#endif
+
+#ifdef ANDGAMESDK
+#include "AndGameSdk.h"
 #endif
 
 
@@ -31,6 +36,10 @@ void SdkManager::init()
 {
 #ifdef YMTXRECORDSDK
     addSdk(new YMTXSdk());
+#endif
+
+#ifdef ANDGAMESDK
+    addSdk(new AndGameSdk());
 #endif
     
     for(Sdk *sdk : _sdks) {
