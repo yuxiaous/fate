@@ -9,7 +9,6 @@
 #include <set>
 #include "SdkManager.h"
 #include "Sdk.h"
-#include "cocos2d.h"
 
 #ifdef YMTXRECORDSDK
 #include "YMTXSdk.h"
@@ -131,3 +130,18 @@ bool SdkManager::applicationOpenURL(void *iosUIApplication, void *iosNSURL, void
 }
 #endif
 
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+extern "C" {
+void Java_org_cocos2dx_javascript_AppActivity_setActivity(JNIEnv *env, jobject thiz, jobject act)
+{
+    cocos2d::log("Java_org_cocos2dx_javascript_AppActivity_setActivity");
+    SdkManager::setActivity(act);
+}
+}
+
+void SdkManager::setActivity(jobject act)
+{
+    Sdk::_activity = act;
+}
+#endif

@@ -7,6 +7,9 @@ class AndGameSdk : public Sdk
 {
 public:
     virtual void init();
+
+
+    static bool isMusicEnabled();
 };
 
 #endif /* defined(__AndGameSdk__) */

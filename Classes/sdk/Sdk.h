@@ -10,6 +10,7 @@
 #define __crows__Sdk__
 
 #include <stdio.h>
+#include "cocos2d.h"
 #include "SdkManager.h"
 
 class Sdk
@@ -37,6 +38,11 @@ protected:
     static void *_appController;
     static void *_viewController;
     static void *_window;
+#endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+protected:
+    static jobject _activity;
 #endif
     
 };

@@ -89,4 +89,12 @@
     <!-- version-tag: 1 -->
     <import file="${sdk.dir}/tools/ant/build.xml" />
 
+    <!--<target name="-pre-compile">-->
+        <!--&lt;!&ndash; Redefine project.all.jars.path before -compile executes &ndash;&gt;-->
+        <!--<path id="project.all.jars.path">-->
+            <!--<fileset file="./CMBilling.jar" />-->
+            <!--<fileset file="../../js-bindings/cocos2d-x/cocos/platform/android/java/bin/classes.jar" />-->
+        <!--</path>-->
+    <!--</target>-->
+
 </project>

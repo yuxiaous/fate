@@ -14,6 +14,10 @@ void *Sdk::_viewController = nullptr;
 void *Sdk::_window = nullptr;
 #endif
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+jobject Sdk::_activity = nullptr;
+#endif
+
 Sdk::Sdk()
 {
 //    SdkManager::addSdk(this);
