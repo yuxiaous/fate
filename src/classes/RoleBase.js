@@ -250,18 +250,18 @@ var RoleBase = PhysicalNode.extend({
 
     injure: function(attacker) {
         this.injureValue = true;
-
         //damage
         var damageData = BattleSystem.getAtkActualValue(attacker,this);
 
-        //if(this.roleType == RoleBase.RoleType.Boss){
-        //    damage = 1000;
-        //}
+        var damageValue = damageData.damageValue;
+        if( damageValue <= 0){
+            damageValue = 1;
+        }
 
-        var hp = this.roleDataManager.hp - damageData.damageValue;
+        var hp = this.roleDataManager.hp - damageValue;
         this.roleDataManager.hp = hp < 0 ? 0 : hp;
 
-        DamageWorld.createDamage(damageData.damageValue,this,this.roleSize, damageData.isCrit);
+        DamageWorld.createDamage(damageValue,this,this.roleSize, damageData.isCrit);
 
         this.updateBloodBar();
 
