@@ -22,6 +22,7 @@ public:
     virtual ~Sdk();
     
     virtual void init() {}
+    virtual void buy(const std::string &param) {}
     
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 public:
@@ -40,10 +41,10 @@ protected:
     static void *_window;
 #endif
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-protected:
-    static jobject _activity;
-#endif
+//#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+//protected:
+//    static jobject _activity;
+//#endif
     
 };
 

@@ -10,13 +10,6 @@
 #define __crows__SdkManager__
 
 #include <stdio.h>
-#include "cocos2d.h"
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-#include "platform/android/jni/JniHelper.h"
-//#include "platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
-#include <jni.h>
-#endif
 
 class Sdk;
 
@@ -27,6 +20,7 @@ public:
     static void removeSdk(Sdk *sdk);
     
     static void init();
+    static void buy(const std::string &param);
     
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
@@ -43,10 +37,6 @@ public:
     static void applicationDidRegisterForRemoteNotificationsWithDeviceToken(void *iosNSData);
     static void applicationDidReceiveRemoteNotification(void *iosNSDictionary);
     static bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString);
-#endif
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    static void setActivity(jobject act);
 #endif
 };
 

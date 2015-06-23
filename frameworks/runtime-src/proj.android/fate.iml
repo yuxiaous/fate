@@ -14,5 +14,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="CMBilling" level="project" />
+    <orderEntry type="library" name="libcocos2dx" level="project" />
   </component>
 </module>

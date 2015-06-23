@@ -26,15 +26,16 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.javascript;
 
-import android.app.Activity;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
+
 import android.content.pm.ActivityInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.WindowManager;
-import cn.cmgame.billing.api.GameInterface;
+
+import com.fate.SdkManagerJni;
 
 
 // The name of .so is specified in AndroidMenifest.xml. NativityActivity will load it automatically for you.
@@ -57,10 +58,7 @@ public class AppActivity extends Cocos2dxActivity{
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
         hostIPAdress = getHostIpAddress();
-//        AppActivity.setActivity(this);
-        System.out.println("yuxiao GameInterface.initializeApp 1");
-        GameInterface.initializeApp((Activity)this);
-        System.out.println("yuxiao GameInterface.initializeApp 2");
+        SdkManagerJni.activity = this;
     }
     
     @Override
@@ -87,8 +85,6 @@ public class AppActivity extends Cocos2dxActivity{
     private static native boolean nativeIsDebug();
 
 
-    public static native void setActivity(Activity act);
-
 
     public static native void paymentCompleted(int id, int res);
     public static void startLevel(String aa)
@@ -98,12 +94,4 @@ public class AppActivity extends Cocos2dxActivity{
         paymentCompleted(1111, 2223);
     }
 
-    public static boolean isMusicPlay()
-    {
-//        boolean enable = GameInterface.isMusicEnabled();
-//        System.out.println("yuxiao isMusicEnabled "+enable);
-//        return enable;
-//        return GameInterface.isMusicEnabled();
-        return false;
-    }
 }

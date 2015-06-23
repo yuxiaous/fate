@@ -199,7 +199,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/client.iml" filepath="$PROJECT_DIR$/client.iml" />
       <module fileurl="file://$PROJECT_DIR$/frameworks/js-bindings/cocos2d-x/cocos/platform/android/java/cocos.iml" filepath="$PROJECT_DIR$/frameworks/js-bindings/cocos2d-x/cocos/platform/android/java/cocos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/frameworks/runtime-src/proj.android/game.iml" filepath="$PROJECT_DIR$/frameworks/runtime-src/proj.android/game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameworks/runtime-src/proj.android/fate.iml" filepath="$PROJECT_DIR$/frameworks/runtime-src/proj.android/fate.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="Android SDK" project-jdk-type="Android SDK">
@@ -212,6 +212,13 @@
     <library name="CMBilling">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/frameworks/runtime-src/proj.android/CMBilling.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="libcocos2dx">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/frameworks/js-bindings/cocos2d-x/cocos/platform/android/java/bin/libcocos2dx.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
