@@ -1035,3 +1035,28 @@ str
 },
 
 };
+
+/**
+ * @class SdkManager
+ */
+jsb.SdkManager = {
+
+/**
+ * @method init
+ */
+init : function (
+)
+{
+},
+
+/**
+ * @method buy
+ * @param {String} arg0
+ */
+buy : function (
+str 
+)
+{
+},
+
+};

@@ -2757,6 +2757,99 @@ void js_register_jsb_bindings_auto_JsonStorage(JSContext *cx, JS::HandleObject g
     }
 }
 
+JSClass  *jsb_SdkManager_class;
+JSObject *jsb_SdkManager_prototype;
+
+bool js_jsb_bindings_auto_SdkManager_init(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        SdkManager::init();
+        args.rval().setUndefined();
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_init : wrong number of arguments");
+    return false;
+}
+
+bool js_jsb_bindings_auto_SdkManager_buy(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_buy : Error processing arguments");
+        SdkManager::buy(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_buy : wrong number of arguments");
+    return false;
+}
+
+
+
+void js_SdkManager_finalize(JSFreeOp *fop, JSObject *obj) {
+    CCLOGINFO("jsbindings: finalizing JS object %p (SdkManager)", obj);
+}
+
+void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject global) {
+    jsb_SdkManager_class = (JSClass *)calloc(1, sizeof(JSClass));
+    jsb_SdkManager_class->name = "SdkManager";
+    jsb_SdkManager_class->addProperty = JS_PropertyStub;
+    jsb_SdkManager_class->delProperty = JS_DeletePropertyStub;
+    jsb_SdkManager_class->getProperty = JS_PropertyStub;
+    jsb_SdkManager_class->setProperty = JS_StrictPropertyStub;
+    jsb_SdkManager_class->enumerate = JS_EnumerateStub;
+    jsb_SdkManager_class->resolve = JS_ResolveStub;
+    jsb_SdkManager_class->convert = JS_ConvertStub;
+    jsb_SdkManager_class->finalize = js_SdkManager_finalize;
+    jsb_SdkManager_class->flags = JSCLASS_HAS_RESERVED_SLOTS(2);
+
+    static JSPropertySpec properties[] = {
+        JS_PSG("__nativeObj", js_is_native_obj, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_PS_END
+    };
+
+    static JSFunctionSpec funcs[] = {
+        JS_FS_END
+    };
+
+    static JSFunctionSpec st_funcs[] = {
+        JS_FN("init", js_jsb_bindings_auto_SdkManager_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("buy", js_jsb_bindings_auto_SdkManager_buy, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FS_END
+    };
+
+    jsb_SdkManager_prototype = JS_InitClass(
+        cx, global,
+        JS::NullPtr(), // parent proto
+        jsb_SdkManager_class,
+        dummy_constructor<SdkManager>, 0, // no constructor
+        properties,
+        funcs,
+        NULL, // no static properties
+        st_funcs);
+    // make the class enumerable in the registered namespace
+//  bool found;
+//FIXME: Removed in Firefox v27 
+//  JS_SetPropertyAttributes(cx, global, "SdkManager", JSPROP_ENUMERATE | JSPROP_READONLY, &found);
+
+    // add the proto and JSClass to the type->js info hash table
+    TypeTest<SdkManager> t;
+    js_type_class_t *p;
+    std::string typeName = t.s_name();
+    if (_js_global_type_map.find(typeName) == _js_global_type_map.end())
+    {
+        p = (js_type_class_t *)malloc(sizeof(js_type_class_t));
+        p->jsclass = jsb_SdkManager_class;
+        p->proto = jsb_SdkManager_prototype;
+        p->parentProto = NULL;
+        _js_global_type_map.insert(std::make_pair(typeName, p));
+    }
+}
+
 void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj) {
     // Get the ns
     JS::RootedObject ns(cx);
@@ -2768,6 +2861,7 @@ void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj) {
     js_register_jsb_bindings_auto_JsonStorage(cx, ns);
     js_register_jsb_bindings_auto_SneakyButtonSkinnedBase(cx, ns);
     js_register_jsb_bindings_auto_SneakyJoystick(cx, ns);
+    js_register_jsb_bindings_auto_SdkManager(cx, ns);
     js_register_jsb_bindings_auto_SneakyJoystickSkinnedBase(cx, ns);
 }
 
