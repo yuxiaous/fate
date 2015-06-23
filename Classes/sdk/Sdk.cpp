@@ -8,7 +8,6 @@
 
 #include "Sdk.h"
 
-
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 void *Sdk::_appController = nullptr;
 void *Sdk::_viewController = nullptr;

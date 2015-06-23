@@ -16,13 +16,16 @@ class Sdk;
 class SdkManager
 {
 public:
+#ifndef SKIP_BY_AUTO_BINDINGS
     static void addSdk(Sdk *sdk);
     static void removeSdk(Sdk *sdk);
+#endif
     
     static void init();
+    static void buy(const std::string &param);
     
     
-#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     static void setAppController(void *ac);
     static void setViewController(void *vc);
     static void setWindow(void *win);

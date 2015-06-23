@@ -19,10 +19,20 @@ var ShopSystem = SystemBase.extend({
     },
 
     buyGood: function(id, num) {
-        net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS({
-            good_id: id,
-            count: num
-        });
+        var config = configdb.shop[id];
+        if(config == undefined) {
+            return;
+        }
+
+        if(config.pay_type == ShopSystem.PayType.RMB) {
+            jsb.SdkManager.buy("001");
+        }
+        else {
+            net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS({
+                good_id: id,
+                count: num
+            });
+        }
     },
 
     onBuyGoodResult: function(obj) {

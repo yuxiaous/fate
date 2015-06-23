@@ -22,6 +22,10 @@
         {
             "from": "../../../publish/config",
             "to": "config"
+        },
+        {
+            "from": "../../../Classes/sdk/android/AndGame.Sdk_v20121/SDK/assets",
+            "to": ""
         }
     ],
     "must_copy_resources": [
