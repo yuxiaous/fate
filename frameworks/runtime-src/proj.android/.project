@@ -57,14 +57,14 @@
 			<locationURI>COCOS2DX/extensions</locationURI>
 		</link>
 		<link>
+			<name>jsjavabridge</name>
+			<type>2</type>
+			<locationURI>js-bindings/bindings/manual/platform/android/java/src</locationURI>
+		</link>
+		<link>
 			<name>scripting</name>
 			<type>2</type>
 			<locationURI>COCOS2DX/scripting</locationURI>
-		</link>
-		<link>
-			<name>jsjavabridge</name>
-			<type>2</type>
-			<location>../../js-bindings/bindings/manual/platform/android/java/src</location>
 		</link>
 	</linkedResources>
 </projectDescription>

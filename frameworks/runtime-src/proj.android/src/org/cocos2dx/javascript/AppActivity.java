@@ -57,7 +57,10 @@ public class AppActivity extends Cocos2dxActivity{
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
         hostIPAdress = getHostIpAddress();
-        AppActivity.setActivity(this);
+//        AppActivity.setActivity(this);
+        System.out.println("yuxiao GameInterface.initializeApp 1");
+        GameInterface.initializeApp((Activity)this);
+        System.out.println("yuxiao GameInterface.initializeApp 2");
     }
     
     @Override

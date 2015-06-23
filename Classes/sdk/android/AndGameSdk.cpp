@@ -52,10 +52,10 @@ void AndGameSdk::init()
 //    Java_org_cocos2dx_javascript_AppActivity_startLevel(112233);
     log("AndGameSdk::init");
 
-    JniMethodInfo minfo;
-    if(JniHelper::getStaticMethodInfo(minfo, "cn/cmgame/billing/api/GameInterface", "initializeApp", "(Ljava/lang/Object;)V")) {
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, Sdk::_activity);
-    }
+//    JniMethodInfo minfo;
+//    if(JniHelper::getStaticMethodInfo(minfo, "cn/cmgame/billing/api/GameInterface", "initializeApp", "(Ljava/lang/Object;)V")) {
+//        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, Sdk::_activity);
+//    }
 }
 
 bool AndGameSdk::isMusicEnabled()
