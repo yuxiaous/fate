@@ -21,26 +21,25 @@ public class CmgameSdkJni extends SdkJni {
 	public void buy(String param) {
         GameInterface.doBilling(SdkManagerJni.activity, true, true, "001", null, payCallback);  
     }
-	
-    final IPayCallback payCallback = new IPayCallback() {  
-    	@Override
-        public void onResult(int resultCode, String billingIndex, Object obj) {  
-          String result = "";  
-          switch (resultCode) {  
-            case BillingResult.SUCCESS:  
-                result = "购买道具：[" + billingIndex + "] 成功！";  
-                break;  
-              case BillingResult.FAILED:  
-                result = "购买道具：[" + billingIndex + "] 失败！";  
-                break;  
-              default:  
-                result = "购买道具：[" + billingIndex + "] 取消！"; 
-//              getPoint(10000);  
-              break;  
-          }  
-          Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();  
-        }  
-  }; 
+
+	final IPayCallback payCallback = new IPayCallback() {  
+		@Override
+	    public void onResult(int resultCode, String billingIndex, Object obj) {  
+	      String result = "";  
+		  switch (resultCode) {  
+		    case BillingResult.SUCCESS:  
+		        result = "购买道具：[" + billingIndex + "] 成功！";  
+		    break;  
+		  case BillingResult.FAILED:  
+		    result = "购买道具：[" + billingIndex + "] 失败！";  
+		    break;  
+		  default:  
+		    result = "购买道具：[" + billingIndex + "] 取消！"; 
+		          break;  
+	      }  
+	      Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();  
+	    }  
+	}; 
 	
 	public boolean isMusicOn() {
 		return GameInterface.isMusicEnabled();
