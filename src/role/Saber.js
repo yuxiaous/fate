@@ -17,6 +17,11 @@ var Saber = RoleBase.extend({
         this.injureTime = config.injure_time;
         this.invincibleTime = config.invincible_time;
 
+        // scale
+        if(config.scale != undefined) {
+            this.setScale(config.scale);
+        }
+
         var score = PlayerSystem.instance.getPlayerBattleScore();
 
         this.setRoleData({
@@ -302,6 +307,11 @@ var Nero = RoleBase.extend({
         this.speed = config.speed;
         this.injureTime = config.injure_time;
         this.invincibleTime = config.invincible_time;
+
+        // scale
+        if(config.scale != undefined) {
+            this.setScale(config.scale);
+        }
 
         var score = PlayerSystem.instance.getPlayerBattleScore();
 

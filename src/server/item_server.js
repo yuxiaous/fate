@@ -26,7 +26,8 @@ item_server.ItemUseType = {
     AddMpPer :  6,  //增加MP
     AddHpMp :   7,  //增加HP 和 MP
     AddSkin:    8,  //角色套装
-    AddLive :   9   //战斗复活
+    AddLive :   9,   //战斗复活
+    EntranceDaBaoJian : 10
 }
 
 

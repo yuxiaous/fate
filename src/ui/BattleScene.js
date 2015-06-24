@@ -131,14 +131,17 @@ BattleNorScene.initBattleSection = function (map_id_) {
             var preRolePosy = "posy_";
             var preRoleDir = "dir_";
             var preRoleAi = "aiType_";
+            var preRoleDrop = "drop_id_";
             for(var idx = 1; idx <= 6; idx++){
                 if(peizhiConf[preRoleId + idx]){
                     var aiConfi = configdb.ai[peizhiConf[preRoleAi+idx]];
+                    LOG("-----drop id = " + peizhiConf[preRoleDrop+idx]);
                     tmpMonster.push({
                         roleId : peizhiConf[preRoleId + idx],
                         posX   : peizhiConf[preRolePosx+idx],
                         posY   : peizhiConf[preRolePosy+idx],
                         dir    : peizhiConf[preRoleDir+idx],
+                        dropId : peizhiConf[preRoleDrop+idx],
                         ai : {
                             atkPer    : aiConfi.atk_probably,
                             restPer   : aiConfi.rest_probably,

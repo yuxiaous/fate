@@ -133,6 +133,9 @@ var SceneBase = lh.LHScene.extend({
         // hero pickup
         if(this._hero != null) {
             var hero = this._hero;
+            if(!this._isEntering){
+                this._isEntering = false;
+            }
             _.each(this._items, function(item) {
                 var heroPos = hero.getSpacePosition();
                 var itemPos = item.getPosition();
@@ -140,7 +143,26 @@ var SceneBase = lh.LHScene.extend({
 
                 if (Math.abs(heroPos.x - itemPos.x) <= pickRadius.x &&
                     Math.abs(heroPos.y - itemPos.y) <= pickRadius.y) {
-                    item.flyToTarget(hero);
+                   if(item._dropItemType == DroppedItem.ItemType.BloodType ||
+                        item._dropItemType == DroppedItem.ItemType.MagicType){
+                        item.flyToTarget(hero);
+                    }
+                }
+
+                if(item._dropItemType == DroppedItem.ItemType.ItemType && !this._isEntering) {
+                    var enterRadius = cc.p(60, 60);
+                    if (Math.abs(heroPos.x - itemPos.x) <= enterRadius.x &&
+                        Math.abs(heroPos.y - itemPos.y) <= enterRadius.y) {
+
+                        this._isEntering = true;
+                        item.entranceBuyEquipSuit(hero, this);
+
+                    }
+                    else {
+                        this._isEntering = false;
+                        //item.entranceBuyEquipSuit(false, hero, this);
+
+                    }
                 }
             }, this);
         }
@@ -202,9 +224,18 @@ var SceneBase = lh.LHScene.extend({
         var type = role.roleType;
         if(type == RoleBase.RoleType.Monster ||
             type == RoleBase.RoleType.Boss) {
+            LOG("drop id = " + role.dropId);
+            if( role.dropId != undefined){
+                var dropId = role.dropId || 100001;
+                var dropType = DroppedItem.ItemType.ItemType;
+                var dropItem = new DroppedItem(dropId,dropType);
+                var pos = role.getSpacePosition();
+                dropItem.setPosition(pos.x + 50,pos.y);
+                this.addItem(dropItem);
+                return;
+            }
 
             if(cc.random0To1() * 100 > 40){
-
                 var itemId = 100005;
                 var dropType = DroppedItem.ItemType.BloodType;
                 if(cc.random0To1() * 100 > 50){
@@ -437,6 +468,7 @@ var SceneBase = lh.LHScene.extend({
                 });
                 role.turn(data.dir);
                 role.aiData = data;
+                role.dropId = data.dropId;
                 role.setBloodBar(isBoss,roleConfig.name);
 
                 switch (role.roleType) {

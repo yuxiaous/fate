@@ -10,6 +10,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
         this._super();
         this._id = id;
         this._dropItemType = ItemType_;
+        LOG("drop item = " + this._id);
     },
 
     onEnter: function() {
@@ -43,7 +44,32 @@ var DroppedItem = ui.GuiWidgetBase.extend({
 
     onExit: function() {
         this._img_icon = null;
+        this._enteringAction = null;
+        this._itemFlyAction = null;
         this._super();
+    },
+
+    entranceBuyEquipSuit : function (target_,curScene_) {
+        if(this._enteringAction == null){
+            this._enteringAction=  this.runAction(cc.Sequence.create(
+                cc.DelayTime.create(1.0),
+                cc.CallFunc.create(function () {
+                    if(curScene_._isEntering){
+                        cc.director.pause();
+                        var dabaojianPanel = new DaBaoJianLayer(function () {
+                            curScene_._isEntering = false;
+                            this._enteringAction = null;
+                        },this);
+                        cc.director.getRunningScene().addChild(dabaojianPanel);
+                    }
+                    else{
+                        this.stopAllActions();
+                        curScene_._isEntering = false;
+                        this._enteringAction = null;
+                    }
+                },this)
+            ));
+        }
     },
 
     flyToTarget: function(target) {
@@ -103,6 +129,39 @@ var DroppedItem = ui.GuiWidgetBase.extend({
 
 DroppedItem.ItemType = {
     BloodType : 1,
-    MagicType : 2
-}
+    MagicType : 2,
+    EquipType : 3,
+    ItemType  : 4
+};
+
+var DaBaoJianLayer = ui.GuiWindowBase.extend({
+    _guiFile: "ui/DaBaoJianLayer.json",
+
+    ctor: function (closeCallFunc_,target_) {
+        this._super();
+        this._callFunc = closeCallFunc_;
+        this._target = target_;
+    },
+
+    onEnter: function () {
+        this._super();
+    },
+
+    onExit : function () {
+        this._super();
+    },
+
+    _on_btn_enter : function () {
+        cc.director.resume();
+        this.removeFromParent();
+
+        this._callFunc.apply(this._target);
+    },
+
+    _on_btn_back : function () {
+        cc.director.resume();
+        this.removeFromParent();
+        this._callFunc.apply(this._target);
+    }
+});
 
