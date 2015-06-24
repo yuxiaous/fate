@@ -15,8 +15,6 @@
 
 class Sdk
 {
-    friend SdkManager;
-    
 public:
     Sdk();
     virtual ~Sdk();
@@ -35,10 +33,6 @@ public:
     virtual void applicationDidRegisterForRemoteNotificationsWithDeviceToken(void *iosNSData) {}
     virtual void applicationDidReceiveRemoteNotification(void *iosNSDictionary) {}
     virtual bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString) { return false; }
-protected:
-    static void *_appController;
-    static void *_viewController;
-    static void *_window;
 #endif
 
 //#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)

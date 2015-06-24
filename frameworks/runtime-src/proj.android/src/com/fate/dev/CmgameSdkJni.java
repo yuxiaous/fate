@@ -22,24 +22,24 @@ public class CmgameSdkJni extends SdkJni {
         GameInterface.doBilling(SdkManagerJni.activity, true, true, "001", null, payCallback);  
     }
 
-	final IPayCallback payCallback = new IPayCallback() {  
+	final IPayCallback payCallback = new IPayCallback() {
 		@Override
-	    public void onResult(int resultCode, String billingIndex, Object obj) {  
-	      String result = "";  
-		  switch (resultCode) {  
-		    case BillingResult.SUCCESS:  
-		        result = "¹ºÂòµÀ¾ß£º[" + billingIndex + "] ³É¹¦£¡";  
-		    break;  
-		  case BillingResult.FAILED:  
-		    result = "¹ºÂòµÀ¾ß£º[" + billingIndex + "] Ê§°Ü£¡";  
-		    break;  
-		  default:  
-		    result = "¹ºÂòµÀ¾ß£º[" + billingIndex + "] È¡Ïû£¡"; 
-		          break;  
-	      }  
-	      Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();  
-	    }  
-	}; 
+		public void onResult(int resultCode, String billingIndex, Object obj) {
+			String result = "";
+			switch (resultCode) {
+				case BillingResult.SUCCESS:
+					result = "è´­ä¹°ç‰©å“ã€" + billingIndex + "ã€‘æˆåŠŸï¼";
+					break;
+				case BillingResult.FAILED:
+					result = "è´­ä¹°ç‰©å“ã€" + billingIndex + "ã€‘å¤±è´¥ï¼";
+					break;
+				default:
+					result = "è´­ä¹°ç‰©å“ã€" + billingIndex + "ã€‘å–æ¶ˆï¼";
+					break;
+			}
+			Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();
+		}
+	};
 	
 	public boolean isMusicOn() {
 		return GameInterface.isMusicEnabled();

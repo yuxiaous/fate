@@ -1059,4 +1059,24 @@ str
 {
 },
 
+/**
+ * @method event
+ * @param {String} arg0
+ */
+event : function (
+str 
+)
+{
+},
+
+/**
+ * @method setBuyCallback
+ * @param {function} arg0
+ */
+setBuyCallback : function (
+func 
+)
+{
+},
+
 };

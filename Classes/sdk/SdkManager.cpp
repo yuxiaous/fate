@@ -92,22 +92,22 @@ void SdkManager::buy(const std::string &param)
 #endif
 }
 
+void SdkManager::setBuyCallback(const std::function<void(char *param)> &callback)
+{
+    
+}
+
+void SdkManager::event(const std::string &param)
+{
+    
+}
+
+
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-void SdkManager::setAppController(void *ac)
-{
-    Sdk::_appController = ac;
-}
-
-void SdkManager::setViewController(void *vc)
-{
-    Sdk::_viewController = vc;
-}
-
-void SdkManager::setWindow(void *win)
-{
-    Sdk::_window = win;
-}
+void *SdkManager::appController = nullptr;
+void *SdkManager::viewController = nullptr;
+void *SdkManager::window = nullptr;
 
 void SdkManager::applicationDidFinishLaunching()
 {
