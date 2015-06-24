@@ -1,0 +1,33 @@
+dependencies: \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/TimelineState.cpp \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/TimelineState.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../DragonBones.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../geoms/ColorTransform.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../geoms/Point.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../geoms/Transform.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../geoms/Matrix.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/TransformTimeline.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/Timeline.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/Frame.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/TransformFrame.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/Bone.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/Object.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/Slot.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/../objects/SlotData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/DisplayData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/../objects/TextData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/../geoms/Rectangle.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/Armature.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/../objects/ArmatureData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/IAreaData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/BoneData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/EllipseData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/RectangleData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/SkinData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../objects/AnimationData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/../animation/IAnimatable.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/../animation/Animation.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../animation/AnimationState.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/../events/IEventDispatcher.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/../events/EventData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/animation/../core/../animation/TimelineState.h

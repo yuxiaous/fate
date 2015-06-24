@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/XMLDataParser.cpp \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/XMLDataParser.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../DragonBones.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/BaseDataParser.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../geoms/ColorTransform.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../geoms/Matrix.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../geoms/Point.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../geoms/Rectangle.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../geoms/Transform.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/IAreaData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/RectangleData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/EllipseData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/Frame.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/TransformFrame.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/Timeline.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/TransformTimeline.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/AnimationData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/TextData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/DisplayData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/SlotData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/SkinData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/BoneData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/ArmatureData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../objects/DragonBonesData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../textures/TextureData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/../textures/TextureAtlasData.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/dbtinyxml2.h \
+  /Users/shilei/crow/fate/Classes/dragonbones/parsers/ConstValues.h
