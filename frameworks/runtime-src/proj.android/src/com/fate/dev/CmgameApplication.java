@@ -1,6 +1,7 @@
 package com.fate.dev;
 
 import android.app.Application;
+
 import com.fate.SdkManagerJni;
 
 /**

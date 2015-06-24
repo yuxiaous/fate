@@ -2788,6 +2788,59 @@ bool js_jsb_bindings_auto_SdkManager_buy(JSContext *cx, uint32_t argc, jsval *vp
     return false;
 }
 
+bool js_jsb_bindings_auto_SdkManager_event(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    if (argc == 1) {
+        std::string arg0;
+        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_event : Error processing arguments");
+        SdkManager::event(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_event : wrong number of arguments");
+    return false;
+}
+
+bool js_jsb_bindings_auto_SdkManager_setBuyCallback(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    if (argc == 1) {
+        std::function<void (char *)> arg0;
+        do {
+		    if(JS_TypeOfValue(cx, args.get(0)) == JSTYPE_FUNCTION)
+		    {
+		        std::shared_ptr<JSFunctionWrapper> func(new JSFunctionWrapper(cx, args.thisv().toObjectOrNull(), args.get(0)));
+		        auto lambda = [=](char* larg0) -> void {
+		            JSB_AUTOCOMPARTMENT_WITH_GLOBAL_OBJCET
+		            jsval largv[1];
+		            largv[0] = c_string_to_jsval(cx, larg0);
+		            JS::RootedValue rval(cx);
+		            bool ok = func->invoke(1, &largv[0], &rval);
+		            if (!ok && JS_IsExceptionPending(cx)) {
+		                JS_ReportPendingException(cx);
+		            }
+		        };
+		        arg0 = lambda;
+		    }
+		    else
+		    {
+		        arg0 = nullptr;
+		    }
+		} while(0)
+		;
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_setBuyCallback : Error processing arguments");
+        SdkManager::setBuyCallback(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_setBuyCallback : wrong number of arguments");
+    return false;
+}
+
 
 
 void js_SdkManager_finalize(JSFreeOp *fop, JSObject *obj) {
@@ -2819,6 +2872,8 @@ void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject gl
     static JSFunctionSpec st_funcs[] = {
         JS_FN("init", js_jsb_bindings_auto_SdkManager_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("buy", js_jsb_bindings_auto_SdkManager_buy, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("event", js_jsb_bindings_auto_SdkManager_event, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setBuyCallback", js_jsb_bindings_auto_SdkManager_setBuyCallback, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 

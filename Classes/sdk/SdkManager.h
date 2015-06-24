@@ -16,19 +16,21 @@ class Sdk;
 class SdkManager
 {
 public:
-#ifndef SKIP_BY_AUTO_BINDINGS
-    static void addSdk(Sdk *sdk);
-    static void removeSdk(Sdk *sdk);
-#endif
-    
     static void init();
     static void buy(const std::string &param);
+    static void setBuyCallback(const std::function<void(char *param)> &callback);
+    static void event(const std::string &param);
+    
+private:
+    static void addSdk(Sdk *sdk);
+    static void removeSdk(Sdk *sdk);
     
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    static void setAppController(void *ac);
-    static void setViewController(void *vc);
-    static void setWindow(void *win);
+public:
+    static void *appController;
+    static void *viewController;
+    static void *window;
     
     static void applicationDidFinishLaunching();
     static void applicationWillResignActive(void *iosUIApplication);

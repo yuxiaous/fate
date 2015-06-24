@@ -84,9 +84,9 @@ static AppDelegate s_sharedApplication;
     cocos2d::Director::getInstance()->setOpenGLView(glview);
     
     // sdk manager
-    SdkManager::setAppController(self);
-    SdkManager::setViewController(viewController);
-    SdkManager::setWindow(window);
+    SdkManager::appController = self;
+    SdkManager::viewController = viewController;
+    SdkManager::window = window;
     SdkManager::applicationDidFinishLaunching();
 
     cocos2d::Application::getInstance()->run();

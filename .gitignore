@@ -11,6 +11,7 @@ userconf.ini
 /build
 /publish
 tools/protocol
+/out
 
 Simulator
 jsb.sqlite
