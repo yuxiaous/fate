@@ -77,7 +77,7 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_map_endless: function() {
-
+        ui.pushScene(new BattleEndlessScene() );
     },
 
     _on_btn_equip: function() {

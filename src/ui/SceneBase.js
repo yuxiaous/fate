@@ -224,7 +224,6 @@ var SceneBase = lh.LHScene.extend({
         var type = role.roleType;
         if(type == RoleBase.RoleType.Monster ||
             type == RoleBase.RoleType.Boss) {
-            LOG("drop id = " + role.dropId);
             if( role.dropId != undefined){
                 var dropId = role.dropId || 100001;
                 var dropType = DroppedItem.ItemType.ItemType;
@@ -505,11 +504,13 @@ var SceneBase = lh.LHScene.extend({
 
     onBeforeFightChatStart : function () {
         var tmpChatData = [];
-        if(this._sectionIndex == 1){
-            tmpChatData = this._sceneStatus.chatData.beforeFight;
-        }
-        else if(this._sectionIndex == this._sceneStatus.BSection.length){
-            tmpChatData = this._sceneStatus.chatData.beforeBossFight;
+        if(this._sceneStatus.chatData){
+            if(this._sectionIndex == 1){
+                tmpChatData = this._sceneStatus.chatData.beforeFight;
+            }
+            else if(this._sectionIndex == this._sceneStatus.BSection.length){
+                tmpChatData = this._sceneStatus.chatData.beforeBossFight;
+            }
         }
 
         if(tmpChatData && tmpChatData.length > 0){
