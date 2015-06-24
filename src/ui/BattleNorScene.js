@@ -1,8 +1,6 @@
 /**
  * Created by yuxiao on 15/4/27.
  */
-
-
 var BattleNorScene = SceneNormalBase.extend({
     status: {
         hero: Saber,

@@ -115,7 +115,7 @@
     "src/ui/StartLayer.js",
     "src/ui/MapScene.js",
     "src/ui/MapTitle.js",
-    "src/ui/BattleScene.js",
+    "src/ui/BattleNorScene.js",
     "src/ui/SceneDefBase.js",
     "src/ui/BattleDefScene.js",
     "src/ui/MapEnterConfirm.js",
