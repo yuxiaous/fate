@@ -42,7 +42,7 @@
     "config/formuladb.js",
     "config/playerdb.js",
     "config/skindb.js",
-
+    "config/endlessrounddb.js",
 
     "src/crows.js",
     "src/extend.js",
@@ -118,6 +118,8 @@
     "src/ui/BattleNorScene.js",
     "src/ui/SceneDefBase.js",
     "src/ui/BattleDefScene.js",
+    "src/ui/SceneEndlessBase.js",
+    "src/ui/BattleEndlessScene",
     "src/ui/MapEnterConfirm.js",
     "src/ui/RoleBloodBar.js",
     "src/ui/BagScene.js",
