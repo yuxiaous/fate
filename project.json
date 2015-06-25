@@ -43,6 +43,7 @@
     "config/playerdb.js",
     "config/skindb.js",
     "config/endlessrounddb.js",
+    "config/loginrewarddb.js",
 
     "src/crows.js",
     "src/extend.js",
@@ -132,6 +133,7 @@
     "src/ui/IconWidget.js",
     "src/ui/SkillEffectLayer.js",
     "src/ui/RoleProperty.js",
+    "src/ui/LoginLayer.js",
 
     "src/server/server.js",
     "src/server/database.js",

@@ -130,7 +130,9 @@ notification.event = {
     PHYSICAL_PAUSE: 11001,
     PHYSICAL_QUAKE: 11002,
 
-    THROW_UPDATE : 12001
+    THROW_UPDATE : 12001,
+
+    GET_LOGIN_REWARD : 13001
 };
 
 

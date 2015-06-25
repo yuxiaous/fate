@@ -12,5 +12,32 @@ var UiEffect = {
                 label_.removeFromParent();
             })
         ));
-    }
+    },
+
+    iconSealEffect : function (panel_) {
+        if(!panel_){
+            return;
+        }
+        panel_.setScale(5.0);
+        panel_.setOpacity(0);
+        panel_.runAction(cc.Spawn.create(
+            cc.ScaleTo.create(0.15,1.0),
+            cc.FadeIn.create(0.15)
+        ));
+    },
+
+    iconSealEffect_Rotate : function (panel_) {
+        if(!panel_){
+            return;
+        }
+        panel_.setScale(5.0);
+        panel_.setOpacity(0);
+        panel_.runAction(cc.Spawn.create(
+            cc.ScaleTo.create(0.3,1.0),
+            cc.FadeIn.create(0.3),
+            cc.RotateBy.create(0.3,360 * 4)
+        ));
+    },
+
+
 }

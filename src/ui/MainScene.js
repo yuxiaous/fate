@@ -36,6 +36,22 @@ var MainScene = ui.GuiSceneBase.extend({
 
         this.refreshPlayerInfo();
         GmSystem.instance.sendCommand("ar 3 1000");
+
+        // 进入游戏
+        var size = cc.director.getWinSize();
+        var enterGame = new cc.MenuItemFont("登陆奖励", function () {
+            var loginPanel = new LoginRewardLayer();
+            loginPanel.pop();
+        });
+        enterGame.attr({
+            x: size.width * 0.9,
+            y: size.height * 0.8,
+            fontSize: 30
+        });
+        var menu = new cc.Menu(enterGame);
+        menu.x = 0;
+        menu.y = 0;
+        this.addChild(menu, 1);
     },
 
 
