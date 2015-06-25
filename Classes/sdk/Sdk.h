@@ -20,7 +20,8 @@ public:
     virtual ~Sdk();
     
     virtual void init() {}
-    virtual void buy(const std::string &param) {}
+    virtual void buy(const std::string &param);
+    virtual void setBuyCallback(const std::function<void(char *param)> &callback);
     
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 public:

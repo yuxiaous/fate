@@ -19,3 +19,11 @@ Sdk::~Sdk()
 //    SdkManager::removeSdk(this);
 }
 
+void Sdk::buy(const std::string &param) {
+    
+}
+
+void Sdk::setBuyCallback(const std::function<void(char *param)> &callback)
+{
+    
+}

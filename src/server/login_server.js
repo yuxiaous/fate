@@ -45,11 +45,8 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
 
     // skin info
     server.send(net_protocol_handlers.CMD_SC_SKIN_INFO, {
-        skins: skin_server.skin_info.skins
-    });
-    server.send(net_protocol_handlers.CMD_SC_SKIN_CHANGE_RESULT, {
-        result: 0,
-        skin_id: skin_server.skin_info.use_skin
+        skins: skin_server.skin_info.skins,
+        use_skin: skin_server.skin_info.use_skin
     });
 
     server.send(net_protocol_handlers.CMD_SC_INIT_END);

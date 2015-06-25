@@ -379,7 +379,8 @@
     			[
     				["uint32", "skin_id", "套装id"]
     			]
-    		]
+    		],
+    		["uint32", "use_skin", "使用的套装"]
     	]
     },
     "CMD_CS_SKIN_CHANGE":
@@ -399,8 +400,7 @@
     	"desc": "换装结果",
     	"schemes":
     	[
-    		["uint32", "result", "结果 0成功"],
-    		["uint32", "skin_id", "套装id"]
+    		["uint32", "result", "结果 0成功"]
     	]
     }
 }

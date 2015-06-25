@@ -33,11 +33,9 @@ _BindFunc(1203, function(obj) {
 
 // @protocol 换装结果
 // @param {uint32} result, 结果 0成功
-// @param {uint32} skin_id, 套装id
 net_protocol_handlers.CMD_SC_SKIN_CHANGE_RESULT = 1603;
 _BindFunc(1603, function(obj) {
 	cc.assert(obj.result != undefined, "CMD_SC_SKIN_CHANGE_RESULT.result is undefined.");
-	cc.assert(obj.skin_id != undefined, "CMD_SC_SKIN_CHANGE_RESULT.skin_id is undefined.");
 	net_protocol_handlers.ON_CMD_SC_SKIN_CHANGE_RESULT(obj);
 });
 
@@ -159,9 +157,11 @@ net_protocol_handlers.SEND_CMD_CS_BATTLE_FINISH = function(obj) {
 
 // @protocol 换装信息
 // @param {list} skins, 拥有的皮肤
+// @param {uint32} use_skin, 使用的套装
 net_protocol_handlers.CMD_SC_SKIN_INFO = 1601;
 _BindFunc(1601, function(obj) {
 	cc.assert(obj.skins != undefined, "CMD_SC_SKIN_INFO.skins is undefined.");
+	cc.assert(obj.use_skin != undefined, "CMD_SC_SKIN_INFO.use_skin is undefined.");
 	net_protocol_handlers.ON_CMD_SC_SKIN_INFO(obj);
 });
 
