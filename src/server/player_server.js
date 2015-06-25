@@ -23,9 +23,6 @@ var player_server = {
 
     },
 
-    flush: function() {
-    },
-
     sync: function() {
         if(this.update != null) {
             LOG("player_server.sync");

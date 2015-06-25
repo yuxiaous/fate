@@ -21,9 +21,6 @@ var equip_server = {
 
     },
 
-    flush: function() {
-    },
-
     sync: function() {
         if(this.update.length > 0) {
             LOG("equip_server.sync");

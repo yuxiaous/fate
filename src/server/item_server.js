@@ -10,10 +10,6 @@ var item_server = {
 
     end: function () {
 
-    },
-
-    flush: function () {
-
     }
 };
 

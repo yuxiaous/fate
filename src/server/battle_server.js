@@ -4,9 +4,6 @@ var battle_server = {
 
     end: function() {
 
-    },
-
-    flush: function() {
     }
 };
 

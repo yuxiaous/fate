@@ -21,9 +21,6 @@ var bag_server = {
 
     },
 
-    flush: function() {
-    },
-
     sync: function() {
         if(this.update.length > 0) {
             LOG("bag_server.sync");
