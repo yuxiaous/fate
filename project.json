@@ -20,6 +20,7 @@
     "src/module/signals.js",
     "src/module/underscore.js",
     "src/module/GameSession.js",
+    "src/module/base64.js",
 
     "config/modeldb.js",
     "config/roledb.js",

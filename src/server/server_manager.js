@@ -30,10 +30,12 @@ var server_manager = {
         addSubServer(skin_server);
 
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.flush, 60);
+        cc.director.getScheduler().scheduleCallbackForTarget(this, this.sync);
     },
 
     end: function() {
         cc.director.getScheduler().unscheduleCallbackForTarget(this, this.flush);
+        cc.director.getScheduler().unscheduleCallbackForTarget(this, this.sync);
 
         _.each(this.servers, function(server) {
             if(server.end) {

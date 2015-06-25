@@ -68,12 +68,6 @@ void localStorageInit( const std::string& fullpath/* = "" */)
 		else
 			ret = sqlite3_open(fullpath.c_str(), &_db);
         
-        // 设置密码
-#if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
-        const char *key = "SELECT value FROM data WHERE key=?;";
-        sqlite3_key(_db, key ,(int)strlen(key));
-#endif
-        
 		localStorageCreateTable();
 
 		// SELECT
