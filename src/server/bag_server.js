@@ -13,6 +13,8 @@ var bag_server = {
             info.uid = i + 1;
         });
         this.max_uid = this.bag_info.length;
+
+        this.update = [];
     },
 
     end: function() {
@@ -20,11 +22,18 @@ var bag_server = {
     },
 
     flush: function() {
-        database.commit("bag_info", this.bag_info);
     },
 
     sync: function() {
+        if(this.update.length > 0) {
+            LOG("bag_server.sync");
 
+            database.commit("bag_info", this.bag_info);
+            server.send(net_protocol_handlers.CMD_SC_ITEM_INFO, {
+                items: this.update
+            });
+            this.update = [];
+        }
     },
 
     addItem: function(id, num) {
@@ -33,8 +42,6 @@ var bag_server = {
             return false;
         }
         var stack = config.stack || 1;
-
-        var update = [];
 
         // update exist item
         _.each(this.bag_info, function(info) {
@@ -56,7 +63,7 @@ var bag_server = {
                 num -= remain;
             }
 
-            update.push(info);
+            this.update.push(info);
         }, this);
 
         // add new item
@@ -76,14 +83,9 @@ var bag_server = {
                 num -= stack;
             }
 
-            update.push(info);
             this.bag_info.push(info);
-        }
 
-        if(update.length > 0) {
-            server.send(net_protocol_handlers.CMD_SC_ITEM_INFO, {
-                items: update
-            });
+            this.update.push(info);
         }
         return true;
     },
@@ -119,9 +121,7 @@ var bag_server = {
         //}
 
         info.num -= num;
-        server.send(net_protocol_handlers.CMD_SC_ITEM_INFO, {
-            items: [info]
-        });
+        this.update.push(info);
         if(info.num == 0) {
             bag_server.bag_info.splice(index, 1);
         }
