@@ -109,7 +109,10 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_map_endless: function() {
-        ui.pushScene(new BattleEndlessScene() );
+        //ui.pushScene(new BattleEndlessScene() );
+        var endless_select = new EndlessSelected();
+        endless_select.pop();
+        UiEffect.iconOpenEffect(endless_select.seekWidgetByName("gift_panel"));
     },
 
     _on_btn_equip: function() {

@@ -126,3 +126,41 @@ var Gift_Buy_Detail = ui.GuiWindowBase.extend({
     }
 
 });
+
+
+var EndlessSelected = ui.GuiWindowBase.extend({
+    _guiFile : "ui/endless_select_layer.json",
+
+    ctor : function () {
+        this._super();
+
+
+    },
+
+    onEnter : function () {
+        this._super();
+        
+
+    },
+
+    onExit : function () {
+        this._super();
+
+    },
+
+    _on_btn_buy : function(){
+        this.close();
+        ui.pushScene(new BattleEndlessScene() );
+    },
+
+    _on_btn_close : function () {
+
+        this.close();
+    },
+    
+    _on_btn_challenge : function () {
+        this.close();
+        ui.pushScene(new BattleEndlessScene() );
+    }
+
+});
