@@ -149,8 +149,8 @@ BattleEndlessScene.initBattleSection = function () {
         }
 
         BSection.push({
-            area : cc.rect(0,0,3000,640),
-            street: cc.rect(0,0,3000,220),
+            area : cc.rect(0,0,2000,640),
+            street: cc.rect(0,0,2000,220),
             heroPos : cc.p(300,110),
             monsters :tmpMonster
         });
