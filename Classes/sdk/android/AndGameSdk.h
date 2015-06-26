@@ -3,11 +3,13 @@
 
 #include "Sdk.h"
 
-class AndGameSdk : public Sdk
+class AndGameSdk : public Sdk, public BuyProtocol
 {
 public:
-    virtual void init();
+    static AndGameSdk *getInstance();
 
+    virtual void init();
+    virtual void buy(const std::string &param);
 
     static bool isMusicEnabled();
 };

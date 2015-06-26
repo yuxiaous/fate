@@ -20,7 +20,6 @@ public:
     static void init();
     static void buy(const std::string &param);
     static void setBuyCallback(const std::function<void(char *param)> &callback);
-    static void event(const std::string &param);
     
 private:
     static void addSdk(Sdk *sdk);

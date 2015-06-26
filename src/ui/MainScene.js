@@ -41,7 +41,6 @@ var MainScene = ui.GuiSceneBase.extend({
         this._ui.sp_gear.runAction(cc.repeatForever(cc.rotateBy(60, -360)));
 
         this.refreshPlayerInfo();
-        GmSystem.instance.sendCommand("ar 3 1000");
 
         //// 进入游戏
         //var size = cc.director.getWinSize();

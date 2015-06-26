@@ -13,7 +13,7 @@
 #include "Sdk.h"
 
 
-class DeveloperSdk : public Sdk, public BuyProtocal
+class DeveloperSdk : public Sdk, public BuyProtocol
 {
 public:
     virtual void buy(const std::string &param);

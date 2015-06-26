@@ -5,7 +5,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := megjb
-LOCAL_SRC_FILES := ../AndGame.Sdk_v20121/SDK/libs/armeabi/libmegjb.so
+LOCAL_SRC_FILES := ../sdk/AndGame.Sdk_v20121/SDK/libs/armeabi/libmegjb.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 #===== third os end =========================================================

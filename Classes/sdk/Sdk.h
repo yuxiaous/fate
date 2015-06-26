@@ -46,19 +46,23 @@ public:
 
 
 
-class BuyProtocal
+class BuyProtocol
 {
 public:
     virtual void buy(const std::string &param) {}
     
-    // code: [int] 0:success 1:fail
     virtual void setBuyCallback(const std::function<void(char *param)> &callback) {
         _buyCallback = callback;
     }
+    void onBuyCallback(const char *param) {
+        // result: [int] 0:success 1:fail
+        // order: [string]
+        _buyCallback((char*)param);
+    }
     
 protected:
-    BuyProtocal() : _buyCallback(nullptr) {};
-    virtual ~BuyProtocal() {}
+    BuyProtocol() : _buyCallback(nullptr) {};
+    virtual ~BuyProtocol() {}
     
     std::function<void(char*)> _buyCallback;
 };

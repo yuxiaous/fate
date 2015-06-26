@@ -52,7 +52,7 @@ var ShopSystem = SystemBase.extend({
 
         jsb.SdkManager.buy(JSON.stringify({
             order: obj.order,
-            platform_good_id: "101"
+            platform_good_id: "001"
         }));
     }
 });
