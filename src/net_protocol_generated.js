@@ -157,9 +157,11 @@ net_protocol_handlers.SEND_CMD_CS_BATTLE_FINISH = function(obj) {
 
 // @protocol 请求订单结果
 // @param {string} order, 订单号
+// @param {uint32} good_id, 商品id
 net_protocol_handlers.CMD_SC_SHOP_ORDER_RESULT = 1104;
 _BindFunc(1104, function(obj) {
 	cc.assert(obj.order != undefined, "CMD_SC_SHOP_ORDER_RESULT.order is undefined.");
+	cc.assert(obj.good_id != undefined, "CMD_SC_SHOP_ORDER_RESULT.good_id is undefined.");
 	net_protocol_handlers.ON_CMD_SC_SHOP_ORDER_RESULT(obj);
 });
 

@@ -45,6 +45,11 @@ var ShopSystem = SystemBase.extend({
     },
 
     onOrderResult: function(obj) {
+        var config = configdb.shop[obj.good_id];
+        if(config == undefined) {
+            return;
+        }
+
         jsb.SdkManager.buy(JSON.stringify({
             order: obj.order,
             platform_good_id: "101"

@@ -134,7 +134,8 @@
 		"desc": "请求订单结果",
 		"schemes":
 		[
-			["string", "order", "订单号"]
+			["string", "order", "订单号"],
+			["uint32", "good_id", "商品id"]
 		]
 	},
 
