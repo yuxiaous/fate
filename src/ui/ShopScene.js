@@ -16,13 +16,15 @@ var ShopScene = ui.GuiSceneBase.extend({
         MusicManager.getInstance().playBackgroundMusic("sounds/shop.mp3");
         this._ui = {
             ctrl_gold: (function() {
-                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Gold);
+                var ctrl = new ResourcePanel(ResourcePanel.Type.Gold);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_1"));
+                ctrl.showAddButton(false);
                 return ctrl;
             }.bind(this) ()),
             ctrl_diamond: (function() {
-                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Diamond);
+                var ctrl = new ResourcePanel(ResourcePanel.Type.Diamond);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_2"));
+                ctrl.showAddButton(false);
                 return ctrl;
             }.bind(this) ()),
 
@@ -118,28 +120,6 @@ var ShopScene = ui.GuiSceneBase.extend({
         ]);
         this._ui.lbl_girl_say.setString(say);
     }
-
-    //scrollItemList: function(distance) {
-    //    var list = this._ui.list_goods;
-    //    var width = list.getInnerContainerSize().width - list.getContentSize().width;
-    //    if(width > 0) {
-    //        var posx = list.getInnerContainer().getPositionX();
-    //        var percent = -(posx + -distance) * 100 / width;
-    //
-    //        if(percent < 0) percent = 0;
-    //        else if(percent > 100) percent = 100;
-    //
-    //        list.scrollToPercentHorizontal(percent, 0.1, false);
-    //    }
-    //},
-    //
-    //_on_btn_backward: function() {
-    //    this.scrollItemList(-150);
-    //},
-    //
-    //_on_btn_forward: function() {
-    //    this.scrollItemList(150);
-    //}
 });
 
 

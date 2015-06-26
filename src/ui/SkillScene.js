@@ -16,13 +16,15 @@ var SkillScene = ui.GuiWindowBase.extend({
         this._super();
         this._ui = {
             ctrl_gold: (function() {
-                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Gold);
+                var ctrl = new ResourcePanel(ResourcePanel.Type.Gold);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_1"));
+                ctrl.showAddButton(false);
                 return ctrl;
             }.bind(this) ()),
             ctrl_diamond: (function() {
-                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Diamond);
+                var ctrl = new ResourcePanel(ResourcePanel.Type.Diamond);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_2"));
+                ctrl.showAddButton(false);
                 return ctrl;
             }.bind(this) ()),
 

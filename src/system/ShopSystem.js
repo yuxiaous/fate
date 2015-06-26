@@ -74,6 +74,7 @@ ShopSystem.PayType = {
 ShopSystem.GoodType = {
     Equip: 1,
     Item: 2,
+    
     Skin: 4,
     Gold: 5,
     Diamond: 6

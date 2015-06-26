@@ -22,13 +22,13 @@ var MainScene = ui.GuiSceneBase.extend({
             sp_gear: this.seekWidgetByName("Node_gear")
         };
 
-        this._ui.action = new MainScene.Resource(MainScene.Resource.Type.Action);
+        this._ui.action = new ResourcePanel(ResourcePanel.Type.Action);
         this._ui.action.setWidget(this.seekWidgetByName("ProjectNode_1"));
 
-        this._ui.gold = new MainScene.Resource(MainScene.Resource.Type.Gold);
+        this._ui.gold = new ResourcePanel(ResourcePanel.Type.Gold);
         this._ui.gold.setWidget(this.seekWidgetByName("ProjectNode_2"));
 
-        this._ui.diamond = new MainScene.Resource(MainScene.Resource.Type.Diamond);
+        this._ui.diamond = new ResourcePanel(ResourcePanel.Type.Diamond);
         this._ui.diamond.setWidget(this.seekWidgetByName("ProjectNode_3"));
 
         this._ui.sp_circle.runAction(cc.repeatForever(cc.rotateBy(60, 360)));
@@ -58,7 +58,7 @@ var MainScene = ui.GuiSceneBase.extend({
                 var loginPanel = new LoginRewardLayer(obj.login_index);
                 loginPanel.pop();
             },this)
-        ]
+        ];
 
         RewardSystem.instance.getLoginRewardDaily();
     },
@@ -118,70 +118,4 @@ var MainScene = ui.GuiSceneBase.extend({
         //win.pop();
     }
 });
-
-MainScene.Resource = ui.GuiController.extend({
-    ctor: function(type) {
-        this._super();
-        this.type = type;
-    },
-
-    onEnter: function() {
-        this._super();
-        this._ui = {
-            sp_icon: this.seekWidgetByName("sp_icon"),
-            lbl_value: this.seekWidgetByName("lbl_value")
-        };
-        this._bindings = [
-            notification.createBinding(notification.event.PLAYER_INFO, this.refreshValue, this)
-        ];
-
-        this.refreshValue();
-    },
-
-    onExit: function() {
-        notification.removeBinding(this._bindings);
-        this._ui = null;
-        this._super();
-    },
-
-    refreshValue: function() {
-        var system = PlayerSystem.instance;
-
-        var value = 0;
-        switch (this.type) {
-            case MainScene.Resource.Type.Action:
-                value = system.action;
-                break;
-            case MainScene.Resource.Type.Gold:
-                value = system.gold;
-                break;
-            case MainScene.Resource.Type.Diamond:
-                value = system.diamond;
-                break;
-        }
-        this._ui.lbl_value.setString(String(value));
-    },
-
-    _on_btn_add: function() {
-        switch (this.type) {
-            case MainScene.Resource.Type.Action:
-                LOG("add action");
-                GmSystem.instance.sendCommand("ar 3 10");
-                break;
-            case MainScene.Resource.Type.Gold:
-                LOG("add gold");
-                GmSystem.instance.sendCommand("ar 1 10000");
-                break;
-            case MainScene.Resource.Type.Diamond:
-                LOG("add diamond");
-                GmSystem.instance.sendCommand("ar 2 100");
-                break;
-        }
-    }
-});
-MainScene.Resource.Type = {
-    Action: 1,
-    Gold: 2,
-    Diamond: 3
-};
 
