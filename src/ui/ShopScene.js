@@ -61,7 +61,7 @@ var ShopScene = ui.GuiSceneBase.extend({
 
         var shopType = this.shopType;
         _.each(configdb.shop, function(config) {
-            if(config.shop == shopType) {
+            if(config.shop == shopType && config.platform_id == 1) {
                 var good = new ShopScene.Good(config.key);
                 this._ui.list_goods.pushBackCustomItem(good);
             }
