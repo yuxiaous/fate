@@ -112,9 +112,10 @@ var shop_server = {
 shop_server.GoodsType = {
     Equip: 1,
     Item: 2,
+
     Skin: 4,
-    Diamond: 5,
-    Gold: 6
+    Gold: 5,
+    Diamond: 6
 };
 shop_server.PayType = {
     Gold: 1,

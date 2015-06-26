@@ -35,13 +35,15 @@ var BagScene = ui.GuiWindowBase.extend({
             list_view: this.seekWidgetByName("list_items"),
             ctrl_items: [],
             ctrl_gold: (function() {
-                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Gold);
+                var ctrl = new ResourcePanel(ResourcePanel.Type.Gold);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_7"));
+                ctrl.showAddButton(false);
                 return ctrl;
             }.bind(this) ()),
             ctrl_diamond: (function() {
-                var ctrl = new BagScene.Resource(BagScene.Resource.Type.Diamond);
+                var ctrl = new ResourcePanel(ResourcePanel.Type.Diamond);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_8"));
+                ctrl.showAddButton(false);
                 return ctrl;
             }.bind(this) ()),
             lbl_item_name: this.seekWidgetByName("lbl_item_name"),
@@ -471,74 +473,4 @@ BagScene.EquipSlot = ui.GuiController.extend({
         LOG("touch equip slot " + this.slot);
     }
 });
-
-BagScene.Resource = ui.GuiController.extend({
-    ctor: function(type) {
-        this._super();
-        this.type = type;
-    },
-
-    onEnter: function() {
-        this._super();
-        this._ui = {
-            sp_icon: this.seekWidgetByName("sp_icon"),
-            btn_add: this.seekWidgetByName("btn_add"),
-            lbl_value: this.seekWidgetByName("lbl_value")
-        };
-        this._bindings = [
-            notification.createBinding(notification.event.PLAYER_INFO, this.refreshValue, this)
-        ];
-
-        this._ui.sp_icon.setVisible(false);
-        this._ui.btn_add.setVisible(false);
-
-        this.refreshValue();
-    },
-
-    onExit: function() {
-        notification.removeBinding(this._bindings);
-        this._ui = null;
-        this._super();
-    },
-
-    refreshValue: function() {
-        var system = PlayerSystem.instance;
-
-        var value = 0;
-        switch (this.type) {
-            case BagScene.Resource.Type.Action:
-                value = system.action;
-                break;
-            case BagScene.Resource.Type.Gold:
-                value = system.gold;
-                break;
-            case BagScene.Resource.Type.Diamond:
-                value = system.diamond;
-                break;
-        }
-        this._ui.lbl_value.setString(String(value));
-    },
-
-    _on_btn_add: function() {
-        switch (this.type) {
-            case BagScene.Resource.Type.Action:
-                LOG("add action");
-                GmSystem.instance.sendCommand("ar 3 10");
-                break;
-            case BagScene.Resource.Type.Gold:
-                LOG("add gold");
-                GmSystem.instance.sendCommand("ar 1 100");
-                break;
-            case BagScene.Resource.Type.Diamond:
-                LOG("add diamond");
-                GmSystem.instance.sendCommand("ar 2 100");
-                break;
-        }
-    }
-});
-BagScene.Resource.Type = {
-    Action: 1,
-    Gold: 2,
-    Diamond: 3
-};
 
