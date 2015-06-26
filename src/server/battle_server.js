@@ -1,16 +1,9 @@
 var battle_server = {
     start: function() {
-        this.battle_info = database.checkout("battle_info", [
-
-        ]);
     },
 
     end: function() {
 
-    },
-
-    flush: function() {
-        database.commit("battle_info", this.battle_info);
     }
 };
 
@@ -50,14 +43,9 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
     }
 
     // add resource
-    server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO,{
-        player:{
-            exp : player_server.player_info.exp += config.gain_exp || 0,
-            gold: player_server.player_info.gold += config.gain_gold || 0,
-            diamond: is_first_battle ? player_server.player_info.diamond += config.gain_diamond || 0 : undefined
-        }
-    });
-    player_server.checkLevelUp();
+    player_server.changeExp(config.gain_exp);
+    player_server.changeGold(config.gain_gold);
+    player_server.changeDiamond(is_first_battle ? config.gain_diamond : 0);
 
     // add item
     if(config.gain_item_id_1) {
@@ -129,7 +117,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_USE_BATTLE_ITEM, function (
         result: 0,
         item_type :itemResultType
     });
-})
+});
 
 
 

@@ -64,7 +64,7 @@ var BagScene = ui.GuiWindowBase.extend({
                 //    }
                 //}, this);
             }, this),
-            notification.createBinding(notification.event.SKIN_CHANGE_RESULT, this.createRoleAvatar, this)
+            notification.createBinding(notification.event.SKIN_INFO, this.createRoleAvatar, this)
         ];
 
         this.createItemList();
@@ -198,60 +198,6 @@ var BagScene = ui.GuiWindowBase.extend({
         this._ui.btn_sell.setEnabled(false);
         this._ui.btn_sell.setBright(false);
     },
-
-    //refreshRoleInfo: function(event_,attr_) {
-    //    var system = PlayerSystem.instance;
-    //
-    //    var score = system.getPlayerBattleScore();
-    //    this._role.lbl_hp.setString(this._role.lbl_hp._str_original.format(String(score.hp)));
-    //    this._role.lbl_mp.setString(this._role.lbl_mp._str_original.format(String(score.mp)));
-    //    this._role.lbl_atk.setString(this._role.lbl_atk._str_original.format(String(score.atk)));
-    //    this._role.lbl_def.setString(this._role.lbl_def._str_original.format(String(score.def)));
-    //    this._role.lbl_crit.setString(this._role.lbl_crit._str_original.format(String(score.crit)));
-    //    this._role.lbl_sunder.setString(this._role.lbl_sunder._str_original.format(String(score.sunder)));
-    //    this._role.lbl_score.setString(this._role.lbl_score._str_original.format(String(score.score)));
-    //    if(attr_ && attr_.isRefresh){
-    //        var tmpValue = score.score - this._role.lbl_score.lastValue;
-    //
-    //        if(tmpValue == 0){
-    //            return;
-    //        }
-    //
-    //        var tmpLblScore = this._role.lbl_score.getParent();
-    //        var tmpLabel = cc.LabelTTF.create("");
-    //
-    //        var newString = String(tmpValue)
-    //        var moveV = 30
-    //        if(tmpValue > 0){
-    //            tmpLabel.setColor(cc.color(10,200,10));
-    //            newString = "+" + newString
-    //        }
-    //        else{
-    //            tmpLabel.setColor(cc.color(200,10,10));
-    //            moveV *= -1;
-    //        }
-    //        tmpLabel.setString(newString);
-    //        tmpLabel.setFontSize(25);
-    //        var tmpPos = cc.p(this._role.lbl_score.getPosition().x + this._role.lbl_score.getContentSize().width,this._role.lbl_score.getPosition().y);
-    //        tmpLabel.setPosition(tmpPos);
-    //
-    //
-    //        tmpLblScore.addChild(tmpLabel);
-    //
-    //        tmpLabel.runAction(cc.Sequence.create(
-    //            cc.MoveBy.create(0.6,cc.p(0,moveV)),
-    //            cc.CallFunc.create(function () {
-    //                tmpLabel.removeFromParent();
-    //            })
-    //        ));
-    //    }
-    //    this._role.lbl_score.lastValue = score.score;
-    //
-    //    var exp = system.getPlayerExperience();
-    //    this._role.lbl_level.setString(this._role.lbl_level._str_original.format(system.level));
-    //    this._role.lbl_exp.setString(this._role.lbl_exp._str_original.format(exp.exp, exp.need));
-    //    this._role.loading_exp.setPercent(100 * exp.exp / exp.need);
-    //},
 
     clearRoleAvatar: function() {
         this._ui.node_avatar.removeAllChildren();

@@ -2788,6 +2788,18 @@ bool js_jsb_bindings_auto_SdkManager_buy(JSContext *cx, uint32_t argc, jsval *vp
     return false;
 }
 
+bool js_jsb_bindings_auto_SdkManager_configureSdk(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        SdkManager::configureSdk();
+        args.rval().setUndefined();
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_configureSdk : wrong number of arguments");
+    return false;
+}
+
 bool js_jsb_bindings_auto_SdkManager_event(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -2872,6 +2884,7 @@ void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject gl
     static JSFunctionSpec st_funcs[] = {
         JS_FN("init", js_jsb_bindings_auto_SdkManager_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("buy", js_jsb_bindings_auto_SdkManager_buy, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("configureSdk", js_jsb_bindings_auto_SdkManager_configureSdk, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("event", js_jsb_bindings_auto_SdkManager_event, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setBuyCallback", js_jsb_bindings_auto_SdkManager_setBuyCallback, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END

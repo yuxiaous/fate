@@ -160,6 +160,7 @@ void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject gl
 void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj);
 bool js_jsb_bindings_auto_SdkManager_init(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_buy(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_jsb_bindings_auto_SdkManager_configureSdk(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_event(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_setBuyCallback(JSContext *cx, uint32_t argc, jsval *vp);
 #endif

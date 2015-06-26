@@ -20,7 +20,7 @@ public:
     virtual ~Sdk();
     
     virtual void init() {}
-    virtual void buy(const std::string &param) {}
+    
     
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 public:
@@ -34,12 +34,34 @@ public:
     virtual void applicationDidReceiveRemoteNotification(void *iosNSDictionary) {}
     virtual bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString) { return false; }
 #endif
+};
 
-//#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-//protected:
-//    static jobject _activity;
-//#endif
+
+
+class LoginProtocol
+{
+public:
+    virtual void login() = 0;
+};
+
+
+
+class BuyProtocal
+{
+public:
+    virtual void buy(const std::string &param) {}
     
+    // code: [int] 0:success 1:fail
+    virtual void setBuyCallback(const std::function<void(char *param)> &callback) {
+        _buyCallback = callback;
+    }
+    
+protected:
+    BuyProtocal() : _buyCallback(nullptr) {};
+    virtual ~BuyProtocal() {}
+    
+    std::function<void(char*)> _buyCallback;
 };
 
 #endif /* defined(__crows__Sdk__) */
+

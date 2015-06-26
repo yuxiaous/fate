@@ -21,9 +21,6 @@ var bag_server = {
 
     },
 
-    flush: function() {
-    },
-
     sync: function() {
         if(this.update.length > 0) {
             LOG("bag_server.sync");
@@ -84,7 +81,6 @@ var bag_server = {
             }
 
             this.bag_info.push(info);
-
             this.update.push(info);
         }
         return true;
@@ -112,13 +108,6 @@ var bag_server = {
             server.sendError(net_error_code.ERR_LESS_ITEM);
             return false;
         }
-
-        //var config = configdb.item[info.id];
-        //if(config == undefined) {
-        //    LOG("reduceItem error 4");
-        //    server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
-        //    return false;
-        //}
 
         info.num -= num;
         this.update.push(info);

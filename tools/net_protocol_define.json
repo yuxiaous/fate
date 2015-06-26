@@ -117,6 +117,27 @@
 			["uint32", "remaining", "剩余数量"]
 		]
 	},
+	"CMD_CS_SHOP_ORDER":
+	{
+		"code": 1103,
+		"type": "CS",
+		"desc": "请求订单号",
+		"schemes":
+		[
+			["uint32", "good_id", "商品id"]
+		]
+	},
+	"CMD_SC_SHOP_ORDER_RESULT":
+	{
+		"code": 1104,
+		"type": "SC",
+		"desc": "请求订单结果",
+		"schemes":
+		[
+			["string", "order", "订单号"],
+			["uint32", "good_id", "商品id"]
+		]
+	},
 
 	"CMD_SC_SKILL_INFO":
 	{
@@ -379,7 +400,8 @@
     			[
     				["uint32", "skin_id", "套装id"]
     			]
-    		]
+    		],
+    		["uint32", "use_skin", "使用的套装"]
     	]
     },
     "CMD_CS_SKIN_CHANGE":
@@ -399,8 +421,7 @@
     	"desc": "换装结果",
     	"schemes":
     	[
-    		["uint32", "result", "结果 0成功"],
-    		["uint32", "skin_id", "套装id"]
+    		["uint32", "result", "结果 0成功"]
     	]
     },
 

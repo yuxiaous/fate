@@ -15,64 +15,77 @@ var player_server = {
             gold: 0,
             action: 0 //行动力
         });
+
+        this.update = null;
     },
 
     end: function() {
 
     },
 
-    flush: function() {
-        database.commit("player_info", this.player_info);
-    },
+    sync: function() {
+        if(this.update != null) {
+            LOG("player_server.sync");
 
-    checkLevelUp: function() {
-        var is_level_up = false;
-        while(true) {
-            var config = configdb.levelup[this.player_info.level];
-            if(config) {
-                if(this.player_info.exp >= config.exp) {
-                    this.player_info.level += 1;
-                    is_level_up = true;
-                }
-                else {
-                    break;
-                }
-            }
-        }
-        if(is_level_up) {
-            server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO,{
-                player:{
-                    level: this.player_info.level
-                }
+            database.commit("player_info", this.player_info);
+            server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO, {
+                player: this.update
             });
+            this.update = null;
         }
     },
 
     changeGold: function(val) {
+        if(val == undefined || val == 0) {
+            return;
+        }
         if(this.player_info.gold + val < 0) {
             LOG("changeGold error 1");
             server.sendError(net_error_code.ERR_LESS_GOLD);
             return false;
         }
-        server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO, {
-            player: {
-                gold: this.player_info.gold += val
-            }
-        });
+        this.update = this.update || {};
+
+        this.player_info.gold += val;
+        this.update.gold = this.player_info.gold;
         return true;
     },
     changeDiamond: function(val) {
+        if(val == undefined || val == 0) {
+            return;
+        }
         if(this.player_info.diamond + val < 0) {
             LOG("changeDiamond error 1");
             server.sendError(net_error_code.ERR_LESS_DIAMOND);
             return false;
         }
-        server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO, {
-            player: {
-                diamond: this.player_info.diamond += val
-            }
-        });
+        this.update = this.update || {};
+
+        this.player_info.diamond += val;
+        this.update.diamond = this.player_info.diamond;
         return true;
+    },
+    changeExp: function(val) {
+        if(val == undefined || val <= 0) {
+            return;
+        }
+        this.update = this.update || {};
+
+        this.player_info.exp += val;
+        this.update.exp = this.player_info.exp;
+
+        // check level up
+        while(true) {
+            var config = configdb.levelup[this.player_info.level];
+            if(config) {
+                if(this.player_info.exp >= config.exp) {
+                    this.player_info.level += 1;
+                    this.update.level = this.player_info.level;
+                    continue;
+                }
+            }
+            break;
+        }
     }
 };
 

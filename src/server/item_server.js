@@ -10,10 +10,6 @@ var item_server = {
 
     end: function () {
 
-    },
-
-    flush: function () {
-
     }
 };
 
@@ -28,7 +24,7 @@ item_server.ItemUseType = {
     AddSkin:    8,  //角色套装
     AddLive :   9,   //战斗复活
     EntranceDaBaoJian : 10
-}
+};
 
 
 server.registerCallback(net_protocol_handlers.CMD_CS_ITEM_USE, function(obj) {

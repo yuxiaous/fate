@@ -26,6 +26,7 @@ var SkinSystem = SystemBase.extend({
         _.each(obj.skins, function(skin) {
             this.skins[skin.skin_id] = skin;
         }, this);
+        this.use_skin = obj.use_skin;
         notification.emit(notification.event.SKIN_INFO);
     },
 
@@ -36,7 +37,6 @@ var SkinSystem = SystemBase.extend({
     },
 
     onChangeSkinResult: function(obj) {
-        this.use_skin = obj.skin_id;
         notification.emit(notification.event.SKIN_CHANGE_RESULT);
     }
 });

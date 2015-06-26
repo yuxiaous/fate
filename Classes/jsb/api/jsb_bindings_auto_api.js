@@ -1060,6 +1060,14 @@ str
 },
 
 /**
+ * @method configureSdk
+ */
+configureSdk : function (
+)
+{
+},
+
+/**
  * @method event
  * @param {String} arg0
  */

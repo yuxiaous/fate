@@ -17,6 +17,10 @@
 #include <jni.h>
 #endif
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+#include "DeveloperSdk.h"
+#endif
+
 #ifdef YMTXRECORDSDK
 #include "YMTXSdk.h"
 #endif
@@ -50,6 +54,9 @@ void Java_com_fate_SdkManagerJni_buy(const std::string &param)
 #endif
 
 
+
+
+
 static std::set<Sdk*> _sdks;
 
 void SdkManager::addSdk(Sdk *sdk)
@@ -62,19 +69,26 @@ void SdkManager::removeSdk(Sdk *sdk)
     _sdks.erase(sdk);
 }
 
+void SdkManager::configureSdk()
+{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+    addSdk(new DeveloperSdk());
+#endif
+    
+#ifdef YMTXRECORDSDK
+    addSdk(new YMTXSdk());
+#endif
+    
+#ifdef ANDGAMESDK
+    addSdk(new AndGameSdk());
+#endif
+}
+
 void SdkManager::init()
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     Java_com_fate_SdkManagerJni_init();
 #else
-#ifdef YMTXRECORDSDK
-    addSdk(new YMTXSdk());
-#endif
-
-#ifdef ANDGAMESDK
-    addSdk(new AndGameSdk());
-#endif
-
     for(Sdk *sdk : _sdks) {
         sdk->init();
     }
@@ -87,14 +101,22 @@ void SdkManager::buy(const std::string &param)
     Java_com_fate_SdkManagerJni_buy(param);
 #else
     for(Sdk *sdk : _sdks) {
-        sdk->buy(param);
+        BuyProtocal *buy = dynamic_cast<BuyProtocal *>(sdk);
+        if(buy) {
+            buy->buy(param);
+        }
     }
 #endif
 }
 
 void SdkManager::setBuyCallback(const std::function<void(char *param)> &callback)
 {
-    
+    for(Sdk *sdk : _sdks) {
+        BuyProtocal *buy = dynamic_cast<BuyProtocal *>(sdk);
+        if(buy) {
+            buy->setBuyCallback(callback);
+        }
+    }
 }
 
 void SdkManager::event(const std::string &param)
