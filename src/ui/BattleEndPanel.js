@@ -121,7 +121,7 @@ BattleEndPanel.Type = {
 
 
 var BattleWinPanel = ui.GuiWindowBase.extend({
-    _guiFile: "ui/BattleEndPanel.json",
+    _guiFile: "ui/battle_victory_panel.json",
 
     ctor: function() {
         this._super();
@@ -132,8 +132,8 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         this._victoryPanel = this.seekWidgetByName("victory_panel");
         this._victoryPanel.setVisible(true);
 
-        this._failurePanel = this.seekWidgetByName("fail_panel");
-        this._failurePanel.setVisible(false);
+        //this._failurePanel = this.seekWidgetByName("fail_panel");
+        //this._failurePanel.setVisible(false);
 
         this._goldLabel = this.seekWidgetByName("lbl_gold");
         this._expLabel = this.seekWidgetByName("lbl_exp");
@@ -161,7 +161,7 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
             item_.setWidget(null);
         });
         this._victoryPanel = null;
-        this._failurePanel = null;
+        //this._failurePanel = null;
         this._goldLabel = null;
         this._expLabel = null;
         this._super();
@@ -205,7 +205,7 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
 });
 
 var BattleLosePanel = ui.GuiWindowBase.extend({
-    _guiFile: "ui/BattleEndPanel.json",
+    _guiFile: "ui/battle_fail_layer.json",
 
     ctor: function() {
         this._super();
@@ -213,11 +213,11 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
 
     onEnter: function() {
         this._super();
-        this._victoryPanel = this.seekWidgetByName("victory_panel");
-        this._victoryPanel.setVisible(false);
+        //this._victoryPanel = this.seekWidgetByName("victory_panel");
+        //this._victoryPanel.setVisible(false);
 
-        this._failurePanel = this.seekWidgetByName("fail_panel");
-        this._failurePanel.setVisible(true);
+        //this._failurePanel = this.seekWidgetByName("fail_panel");
+        //this._failurePanel.setVisible(true);
 
         this._goldLabel = this.seekWidgetByName("lbl_gold");
         this._expLabel = this.seekWidgetByName("lbl_exp");
@@ -231,15 +231,15 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
         _item.setWidget(this.seekWidgetByName("ProjectNode_1_0"));
         this._rewardItems.push(_item);
 
-        this._victoryPanel.scale = 0.1;
-        this._victoryPanel.runAction(cc.Sequence.create(
+        this.scale = 0.1;
+        this.runAction(cc.Sequence.create(
             cc.scaleTo(0.3, 1.1),
             cc.scaleTo(0.2, 1.0)
         ));
 
 
-        this._reviveLabel = this.seekWidgetByName("lbl_reviveNum");
-        this._reviveLabel.setString(String("X " + this._getReviveItemNum()));
+        //this._reviveLabel = this.seekWidgetByName("lbl_reviveNum");
+        //this._reviveLabel.setString(String("X " + this._getReviveItemNum()));
 
         this._bindings = [
             notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
@@ -255,8 +255,8 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
         _.each(this._rewardItems, function (item_) {
             item_.setWidget(null);
         });
-        this._victoryPanel = null;
-        this._failurePanel = null;
+       // this._victoryPanel = null;
+       // this._failurePanel = null;
         this._goldLabel = null;
         this._expLabel = null;
 
@@ -293,4 +293,40 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
     _on_btn_enter : function(){
         this.close();
     }
+});
+
+var BattleRevivePanel = ui.GuiWindowBase.extend({
+    _guiFile : "ui/battle_revive_layer.json",
+
+    ctor : function () {
+        this._super();
+    },
+
+    onEnter : function () {
+        this._super();
+
+    },
+
+    onExit : function () {
+        this._super();
+
+    },
+
+    _on_btn_buy : function(){
+        
+    },
+    
+    _on_btn_close : function () {
+
+        this.close();
+        // show lose window
+        var lose = new BattleLosePanel();
+        lose.setCloseCallback(function(w) {
+            if(w.exit) {
+                cc.director.popScene();
+            }
+        }, this);
+        lose.pop();
+    }
+
 });

@@ -27,19 +27,26 @@ var DroppedItem = ui.GuiWidgetBase.extend({
             this._img_icon.loadTexture(config.icon);
         }
 
-        this._iconShakeAction = this._img_icon.runAction(cc.repeatForever(cc.sequence(
-            cc.moveBy(0.5, cc.p(0, 10)),
-            cc.moveBy(0.5, cc.p(0, -10))
-        )));
+        if(this._dropItemType == DroppedItem.ItemType.ItemType){
+            this._img_icon.setVisible(false);
+            var dabaojian = dragonBones.DragonBonesHelper.buildArmatureNode("dabaojian");
+            dabaojian.gotoAndPlay("daiji");
+            this.addChild(dabaojian);
+        }
+        else{
+            this._iconShakeAction = this._img_icon.runAction(cc.repeatForever(cc.sequence(
+                cc.moveBy(0.5, cc.p(0, 10)),
+                cc.moveBy(0.5, cc.p(0, -10))
+            )));
 
-        var itemShadow = cc.Sprite.create("images/shadow1.png");
-       // itemShadow.setLocalZOrder(-1);
-        itemShadow.setPosition(cc.p(this._img_icon.getPosition().x,this._img_icon.getPosition().y - this._img_icon.getContentSize().height/2 - 15));
-        var scaleYV = itemShadow.getContentSize().width / this._img_icon.getContentSize().width;
-        //cc.log("scale yv = " + scaleYV);
-        itemShadow.setScaleX(scaleYV);
-        this.addChild(itemShadow);
-
+            var itemShadow = cc.Sprite.create("images/shadow1.png");
+            // itemShadow.setLocalZOrder(-1);
+            itemShadow.setPosition(cc.p(this._img_icon.getPosition().x,this._img_icon.getPosition().y - this._img_icon.getContentSize().height/2 - 15));
+            var scaleYV = itemShadow.getContentSize().width / this._img_icon.getContentSize().width;
+            //cc.log("scale yv = " + scaleYV);
+            itemShadow.setScaleX(scaleYV);
+            this.addChild(itemShadow);
+        }
     },
 
     onExit: function() {
@@ -52,7 +59,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
     entranceBuyEquipSuit : function (target_,curScene_) {
         if(this._enteringAction == null){
             this._enteringAction=  this.runAction(cc.Sequence.create(
-                cc.DelayTime.create(1.0),
+                cc.DelayTime.create(0.9),
                 cc.CallFunc.create(function () {
                     if(curScene_._isEntering){
                         cc.director.pause();
@@ -131,7 +138,8 @@ DroppedItem.ItemType = {
     BloodType : 1,
     MagicType : 2,
     EquipType : 3,
-    ItemType  : 4
+    ItemType  : 4,
+    DaBaoJianType : 5
 };
 
 var DaBaoJianLayer = ui.GuiWindowBase.extend({

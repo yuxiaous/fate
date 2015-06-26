@@ -150,7 +150,7 @@ var SceneBase = lh.LHScene.extend({
                 }
 
                 if(item._dropItemType == DroppedItem.ItemType.ItemType && !this._isEntering) {
-                    var enterRadius = cc.p(60, 60);
+                    var enterRadius = cc.p(70, 100);
                     if (Math.abs(heroPos.x - itemPos.x) <= enterRadius.x &&
                         Math.abs(heroPos.y - itemPos.y) <= enterRadius.y) {
 
@@ -306,14 +306,20 @@ var SceneBase = lh.LHScene.extend({
     onBattleEnd: function() {
         this.unschedule(this.battleObserver);
         if(this._isLostBattle){
-            // show lose window
-            var win = new BattleLosePanel();
-            win.setCloseCallback(function(w) {
-                if(w.exit) {
-                    cc.director.popScene();
-                }
-            }, this);
-            win.pop();
+            // show revive window
+            var revive = new BattleRevivePanel();
+            //revive.setCloseCallback(function(w) {
+            //    if(w.exit) {
+            //        var lose = new BattleLosePanel();
+            //        lose.setCloseCallback(function(w) {
+            //            if(w.exit) {
+            //                cc.director.popScene();
+            //            }
+            //        }, this);
+            //        lose.pop();
+            //    }
+            //}, this);
+            revive.pop();
         }
         else{
             this.onAfterFightChatStart();
@@ -554,6 +560,8 @@ var SceneBase = lh.LHScene.extend({
             that._operator.setHide(false);
             that.playNextSection();
         }
+
+        this._isEntering = false;
         if(this._coverView.state == 0){
             var size = cc.director.getVisibleSize();
             this._coverView.setPosition(cc.p(-size.width,0));
