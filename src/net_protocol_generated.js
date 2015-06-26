@@ -155,6 +155,14 @@ net_protocol_handlers.SEND_CMD_CS_BATTLE_FINISH = function(obj) {
 	_SendFunc(1503, obj);
 };
 
+// @protocol 请求订单结果
+// @param {string} order, 订单号
+net_protocol_handlers.CMD_SC_SHOP_ORDER_RESULT = 1104;
+_BindFunc(1104, function(obj) {
+	cc.assert(obj.order != undefined, "CMD_SC_SHOP_ORDER_RESULT.order is undefined.");
+	net_protocol_handlers.ON_CMD_SC_SHOP_ORDER_RESULT(obj);
+});
+
 // @protocol 换装信息
 // @param {list} skins, 拥有的皮肤
 // @param {uint32} use_skin, 使用的套装
@@ -295,5 +303,13 @@ net_protocol_handlers.CMD_CS_UNEQUIP_ITEM = 1306;
 net_protocol_handlers.SEND_CMD_CS_UNEQUIP_ITEM = function(obj) {
 	cc.assert(obj.slot != undefined, "CMD_CS_UNEQUIP_ITEM.slot is undefined.");
 	_SendFunc(1306, obj);
+};
+
+// @protocol 请求订单号
+// @param {uint32} good_id, 商品id
+net_protocol_handlers.CMD_CS_SHOP_ORDER = 1103;
+net_protocol_handlers.SEND_CMD_CS_SHOP_ORDER = function(obj) {
+	cc.assert(obj.good_id != undefined, "CMD_CS_SHOP_ORDER.good_id is undefined.");
+	_SendFunc(1103, obj);
 };
 

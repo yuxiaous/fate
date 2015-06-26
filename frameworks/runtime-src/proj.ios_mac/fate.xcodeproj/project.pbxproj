@@ -244,6 +244,7 @@
 		DE25C40F1B31D04200A9AEC0 /* Sdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE25C3DA1B318F3D00A9AEC0 /* Sdk.cpp */; };
 		DE25C4101B31D0CA00A9AEC0 /* SdkManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE25C3DB1B318F3D00A9AEC0 /* SdkManager.cpp */; };
 		DE25C4111B31D0FF00A9AEC0 /* Sdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE25C3DA1B318F3D00A9AEC0 /* Sdk.cpp */; };
+		DE29E12C1B3CF98F000656CA /* DeveloperSdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */; };
 		DE36EDF71B258A63005B744E /* libLevelHelper2-API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF01B258A0F005B744E /* libLevelHelper2-API.a */; };
 		DE36EF001B25955E005B744E /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFB1B25955C005B744E /* Animation.cpp */; };
 		DE36EF011B25955E005B744E /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFB1B25955C005B744E /* Animation.cpp */; };
@@ -582,6 +583,8 @@
 		DE25C4081B3199B000A9AEC0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		DE25C40A1B319A3D00A9AEC0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		DE25C40C1B319A4800A9AEC0 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DeveloperSdk.cpp; sourceTree = "<group>"; };
+		DE29E12B1B3CF98F000656CA /* DeveloperSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeveloperSdk.h; sourceTree = "<group>"; };
 		DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "LevelHelper2-API.xcodeproj"; path = "../../../Classes/LevelHelper2/LevelHelper2-API.xcodeproj"; sourceTree = "<group>"; };
 		DE36EDFB1B25955C005B744E /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		DE36EDFC1B25955C005B744E /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
@@ -1050,6 +1053,8 @@
 				DE25C3E41B318F9600A9AEC0 /* YMTX-SDK-IOS-1-0-8 */,
 				DE25C3DF1B318F7700A9AEC0 /* YMTXSdk.h */,
 				DE25C3E01B318F7700A9AEC0 /* YMTXSdk.mm */,
+				DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */,
+				DE29E12B1B3CF98F000656CA /* DeveloperSdk.h */,
 			);
 			name = sdk;
 			path = ../../../Classes/sdk;
@@ -1718,6 +1723,7 @@
 				DE36EFCF1B25955E005B744E /* SneakyButton.cpp in Sources */,
 				3E12D1AA1957FB0E002FF0FD /* Protos.pb.cc in Sources */,
 				C033B525191B36AE00D06937 /* VisibleRect.cpp in Sources */,
+				DE29E12C1B3CF98F000656CA /* DeveloperSdk.cpp in Sources */,
 				DE36EFD31B25955E005B744E /* SneakyJoystick.cpp in Sources */,
 				DE36EF051B25955E005B744E /* TimelineState.cpp in Sources */,
 				DE36EF1F1B25955E005B744E /* DBCCArmature.cpp in Sources */,

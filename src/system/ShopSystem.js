@@ -11,11 +11,13 @@ var ShopSystem = SystemBase.extend({
     onInit: function () {
         this._super();
         net_protocol_handlers.ON_CMD_SC_SHOP_BUY_RESULT = this.onBuyGoodResult.bind(this);
+        net_protocol_handlers.ON_CMD_SC_SHOP_ORDER_RESULT = this.onOrderResult.bind(this);
     },
 
     onFinalize: function () {
         this._super();
         net_protocol_handlers.ON_CMD_SC_SHOP_BUY_RESULT = null;
+        net_protocol_handlers.ON_CMD_SC_SHOP_ORDER_RESULT = null;
     },
 
     buyGood: function(id, num) {
@@ -25,7 +27,9 @@ var ShopSystem = SystemBase.extend({
         }
 
         if(config.pay_type == ShopSystem.PayType.RMB) {
-            jsb.SdkManager.buy("001");
+            net_protocol_handlers.SEND_CMD_CS_SHOP_ORDER({
+                good_id: id
+            });
         }
         else {
             net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS({
@@ -36,11 +40,15 @@ var ShopSystem = SystemBase.extend({
     },
 
     onBuyGoodResult: function(obj) {
-        //["uint32", "good_id", "商品id"],
-        //["uint32", "remaining", "剩余数量"]
-        MessageBoxOk.show("购买成功"+obj.good_id);
-
+        MessageBoxOk.show("购买成功");
         notification.emit(notification.event.SHOP_BUY_RESULT);
+    },
+
+    onOrderResult: function(obj) {
+        jsb.SdkManager.buy(JSON.stringify({
+            order: obj.order,
+            platform_good_id: "101"
+        }));
     }
 });
 

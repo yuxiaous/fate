@@ -4,6 +4,33 @@
 
 
 var shop_server = {
+    start: function() {
+        jsb.SdkManager.setBuyCallback(this.onBuyCallback.bind(this));
+
+        this.orders = {};
+    },
+
+    end: function() {
+
+    },
+
+    onBuyCallback: function(json) {
+        LOG("shop_server.onBuyCallback");
+        var obj = JSON.parse(json);
+        //LOG(obj);
+
+
+
+    },
+
+    pay: function() {
+
+    },
+
+    gain: function() {
+
+    }
+
 
 };
 
@@ -43,6 +70,9 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
                 return;
             }
             break;
+
+        case shop_server.PayType.RMB:
+            return;
     }
 
     var count = config.buy_count * obj.count;
@@ -71,3 +101,12 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
     });
 });
 
+server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_ORDER, function(obj) {
+    LOG("CMD_CS_SHOP_ORDER");
+
+    var good_id = obj.good_id;
+
+    server.send(net_protocol_handlers.CMD_SC_SHOP_ORDER_RESULT, {
+        order: "0123456789-" + good_id
+    });
+});

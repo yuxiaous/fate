@@ -16,6 +16,7 @@ class Sdk;
 class SdkManager
 {
 public:
+    static void configureSdk();
     static void init();
     static void buy(const std::string &param);
     static void setBuyCallback(const std::function<void(char *param)> &callback);

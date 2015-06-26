@@ -117,6 +117,26 @@
 			["uint32", "remaining", "剩余数量"]
 		]
 	},
+	"CMD_CS_SHOP_ORDER":
+	{
+		"code": 1103,
+		"type": "CS",
+		"desc": "请求订单号",
+		"schemes":
+		[
+			["uint32", "good_id", "商品id"]
+		]
+	},
+	"CMD_SC_SHOP_ORDER_RESULT":
+	{
+		"code": 1104,
+		"type": "SC",
+		"desc": "请求订单结果",
+		"schemes":
+		[
+			["string", "order", "订单号"]
+		]
+	},
 
 	"CMD_SC_SKILL_INFO":
 	{
