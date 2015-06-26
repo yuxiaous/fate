@@ -402,6 +402,29 @@
     		["uint32", "result", "结果 0成功"],
     		["uint32", "skin_id", "套装id"]
     	]
-    }
+    },
+
+    "CMD_CS_LOGIN_REWARD_INFO" :
+    {
+      "code" : 1604,
+      "type" : "CS",
+      "desc" : "请求每日登录奖励",
+      "schemes":
+      [
+        ["uint32","player_id","角色id"]
+      ]
+    },
+
+   "CMD_SC_LOGIN_REWARD_INFO" :
+   {
+     "code": 1605,
+     "type": "SC",
+     "desc": "五天连续登陆奖励",
+     "schemes":
+     [
+           ["uint32","player_id","player ID"],
+           ["uint32","login_index","当前连续登陆的天数"]
+     ]
+   }
 }
 

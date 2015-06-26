@@ -5,7 +5,7 @@ var BattleEndlessScene = SceneEndlessBase.extend({
     },
 
     ctor: function() {
-        this.tmpStageInfo = configdb.stage[1];
+        this.tmpStageInfo = configdb.stage[10];
         this._super(this.tmpStageInfo.scene_file);
 
         this.initBattleData();

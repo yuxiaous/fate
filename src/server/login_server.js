@@ -4,7 +4,20 @@
 
 
 var login_server = {
+    start: function() {
 
+    },
+
+    end: function() {
+
+    },
+
+    flush: function() {
+    },
+
+    sync: function() {
+
+    }
 };
 
 server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {

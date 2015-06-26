@@ -72,6 +72,7 @@
     "src/system/ItemSystem.js",
     "src/system/BattleSystem.js",
     "src/system/SkinSystem.js",
+    "src/system/RewardSystem.js",
 
     "src/classes/BattleSceneManager.js",
     "src/classes/PhysicalWorld.js",
@@ -139,6 +140,7 @@
     "src/server/server.js",
     "src/server/database.js",
     "src/server/server_manager.js",
+    "src/server/login_reward_server.js",
     "src/server/player_server.js",
     "src/server/gm_server.js",
     "src/server/login_server.js",
@@ -150,5 +152,7 @@
     "src/server/item_server.js",
     "src/server/battle_server.js",
     "src/server/skin_server.js"
+
+
   ]
 }

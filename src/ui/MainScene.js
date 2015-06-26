@@ -37,25 +37,36 @@ var MainScene = ui.GuiSceneBase.extend({
         this.refreshPlayerInfo();
         GmSystem.instance.sendCommand("ar 3 1000");
 
-        // 进入游戏
-        var size = cc.director.getWinSize();
-        var enterGame = new cc.MenuItemFont("登陆奖励", function () {
-            var loginPanel = new LoginRewardLayer();
-            loginPanel.pop();
-        });
-        enterGame.attr({
-            x: size.width * 0.9,
-            y: size.height * 0.8,
-            fontSize: 30
-        });
-        var menu = new cc.Menu(enterGame);
-        menu.x = 0;
-        menu.y = 0;
-        this.addChild(menu, 1);
+        //// 进入游戏
+        //var size = cc.director.getWinSize();
+        //var enterGame = new cc.MenuItemFont("登陆奖励", function () {
+        //    //var loginPanel = new LoginRewardLayer();
+        //    //loginPanel.pop();
+        //    RewardSystem.instance.getLoginRewardDaily();
+        //});
+        //enterGame.attr({
+        //    x: size.width * 0.9,
+        //    y: size.height * 0.8,
+        //    fontSize: 30
+        //});
+        //var menu = new cc.Menu(enterGame);
+        //menu.x = 0;
+        //menu.y = 0;
+        //this.addChild(menu, 1);
+
+        this._bindings = [
+            notification.createBinding(notification.event.OPEN_LOGIN_REWARD, function (event,obj) {
+                var loginPanel = new LoginRewardLayer(obj.login_index);
+                loginPanel.pop();
+            },this)
+        ]
+
+        RewardSystem.instance.getLoginRewardDaily();
     },
 
 
     onExit: function() {
+        notification.removeBinding(this._bindings);
         this._super();
     },
 
