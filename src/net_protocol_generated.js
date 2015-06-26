@@ -31,6 +31,14 @@ _BindFunc(1203, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_SKILL_UP_RESULT(obj);
 });
 
+// @protocol 请求每日登录奖励
+// @param {uint32} player_id, 角色id
+net_protocol_handlers.CMD_CS_LOGIN_REWARD_INFO = 1604;
+net_protocol_handlers.SEND_CMD_CS_LOGIN_REWARD_INFO = function(obj) {
+	cc.assert(obj.player_id != undefined, "CMD_CS_LOGIN_REWARD_INFO.player_id is undefined.");
+	_SendFunc(1604, obj);
+};
+
 // @protocol 换装结果
 // @param {uint32} result, 结果 0成功
 net_protocol_handlers.CMD_SC_SKIN_CHANGE_RESULT = 1603;
@@ -46,6 +54,16 @@ net_protocol_handlers.SEND_CMD_CS_AUTH = function(obj) {
 	cc.assert(obj.token != undefined, "CMD_CS_AUTH.token is undefined.");
 	_SendFunc(500, obj);
 };
+
+// @protocol 五天连续登陆奖励
+// @param {uint32} player_id, player ID
+// @param {uint32} login_index, 当前连续登陆的天数
+net_protocol_handlers.CMD_SC_LOGIN_REWARD_INFO = 1605;
+_BindFunc(1605, function(obj) {
+	cc.assert(obj.player_id != undefined, "CMD_SC_LOGIN_REWARD_INFO.player_id is undefined.");
+	cc.assert(obj.login_index != undefined, "CMD_SC_LOGIN_REWARD_INFO.login_index is undefined.");
+	net_protocol_handlers.ON_CMD_SC_LOGIN_REWARD_INFO(obj);
+});
 
 // @protocol 战斗结束返回的详细信息
 // @param {uint32} result, 战斗结果，1胜利 2失败

@@ -28,6 +28,7 @@ var server_manager = {
         addSubServer(item_server);
         addSubServer(battle_server);
         addSubServer(skin_server);
+        addSubServer(login_reward_server);
 
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.flush, 60);
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.sync);

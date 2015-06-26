@@ -132,7 +132,8 @@ notification.event = {
 
     THROW_UPDATE : 12001,
 
-    GET_LOGIN_REWARD : 13001
+    GET_LOGIN_REWARD : 13001,
+    OPEN_LOGIN_REWARD : 13002
 };
 
 

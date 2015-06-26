@@ -3,10 +3,10 @@
 var LoginRewardLayer = ui.GuiWindowBase.extend({
     _guiFile: "ui/LoginRewardLayer.json",
 
-    ctor: function () {
+    ctor: function (login_index_) {
         this._super();
 
-        this._curIdx = 3;
+        this._curIdx = login_index_;
     },
 
     onEnter : function () {
@@ -18,7 +18,7 @@ var LoginRewardLayer = ui.GuiWindowBase.extend({
                 "ProjectNode_3",
                 "ProjectNode_4",
                 "ProjectNode_5"], function (str_,idx_) {
-            var _rewardPanel = new LoginRewardLayer.RewardPanel(idx_+1,this._curIdx);
+            var _rewardPanel = new LoginRewardLayer.RewardPanel(idx_+1,this._curIdx,this);
             _rewardPanel.setWidget(this.seekWidgetByName(str_));
             this._allRewardItems.push(_rewardPanel);
         },this);
@@ -46,9 +46,10 @@ var LoginRewardLayer = ui.GuiWindowBase.extend({
 });
 
 LoginRewardLayer.RewardPanel = ui.GuiController.extend({
-    ctor: function (idx_,curRewardIdx_) {
+    ctor: function (idx_,curRewardIdx_,target_) {
         this._super();
 
+        this._target = target_;
         this._loginIdx = idx_;
         this._curRewardIdx = curRewardIdx_;
 
@@ -110,7 +111,9 @@ LoginRewardLayer.RewardPanel = ui.GuiController.extend({
         if(this._curRewardIdx == this._loginIdx && !this._getRewardAction){
             this._getRewardAction = true;
             this._ui.getRewardCover.setVisible(true);
-            UiEffect.iconSealEffect_Rotate(this._ui.getRewardCover);
+            UiEffect.iconSealEffect_Rotate(this._ui.getRewardCover, function () {
+                this._target.close();
+            },this);
         }
     }
 });

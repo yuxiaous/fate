@@ -11,6 +11,7 @@ var LoginSystem = SystemBase.extend({
     onInit: function () {
         net_protocol_handlers.ON_CMD_SC_INIT_BEGIN = this.onPlayerInitBegin.bind(this);
         net_protocol_handlers.ON_CMD_SC_INIT_END = this.onPlayerInitEnd.bind(this);
+
     },
 
     onFinalize: function () {
