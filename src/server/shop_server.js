@@ -85,7 +85,7 @@ var shop_server = {
 
     genOrder: function(good_id) {
         var ret = {
-            order: Math.uuid(),
+            order: Math.uuid(15),
             good_id: good_id,
             status: 0
         };

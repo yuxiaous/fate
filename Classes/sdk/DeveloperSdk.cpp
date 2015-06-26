@@ -56,6 +56,6 @@ void DeveloperSdk::buy(const std::string &param)
         rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
         jsonResult.Accept(writer);
         
-        _buyCallback((char*)buffer.GetString());
+        onBuyCallback(buffer.GetString());
     }
 }
