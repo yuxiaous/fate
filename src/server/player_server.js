@@ -11,9 +11,9 @@ var player_server = {
             player_id: 101,
             level: 1,
             exp: 0,
-            diamond: 0,
-            gold: 0,
-            action: 0 //行动力
+            diamond: 1000,
+            gold: 900000,
+            action: 60 //行动力
         });
 
         this.update = null;

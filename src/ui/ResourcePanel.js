@@ -71,20 +71,20 @@ var ResourcePanel = ui.GuiController.extend({
     },
 
     _on_btn_add: function() {
-        switch (this.type) {
-            case ResourcePanel.Type.Action:
-                LOG("add action");
-                GmSystem.instance.sendCommand("ar 3 10");
-                break;
-            case ResourcePanel.Type.Gold:
-                LOG("add gold");
-                GmSystem.instance.sendCommand("ar 1 10000");
-                break;
-            case ResourcePanel.Type.Diamond:
-                LOG("add diamond");
-                GmSystem.instance.sendCommand("ar 2 100");
-                break;
-        }
+        //switch (this.type) {
+        //    case ResourcePanel.Type.Action:
+        //        LOG("add action");
+        //        GmSystem.instance.sendCommand("ar 3 10");
+        //        break;
+        //    case ResourcePanel.Type.Gold:
+        //        LOG("add gold");
+        //        GmSystem.instance.sendCommand("ar 1 10000");
+        //        break;
+        //    case ResourcePanel.Type.Diamond:
+        //        LOG("add diamond");
+        //        GmSystem.instance.sendCommand("ar 2 100");
+        //        break;
+        //}
     }
 });
 
