@@ -19,8 +19,14 @@ var MainScene = ui.GuiSceneBase.extend({
             lbl_level: this.seekWidgetByName("lbl_level"),
             lbl_score: this.seekWidgetByName("lbl_score"),
             sp_circle: this.seekWidgetByName("sp_circle"),
-            sp_gear: this.seekWidgetByName("Node_gear")
+            sp_gear: this.seekWidgetByName("Node_gear"),
+            gift_node: this.seekWidgetByName("gift_node")
         };
+
+        //this._ui.gift_node.setScale(0.5);
+
+        this._ui.gift_panel = new Gift_Panel();
+        this._ui.gift_panel.setWidget(this.seekWidgetByName("gift_node"));
 
         this._ui.action = new MainScene.Resource(MainScene.Resource.Type.Action);
         this._ui.action.setWidget(this.seekWidgetByName("ProjectNode_1"));
@@ -180,6 +186,7 @@ MainScene.Resource = ui.GuiController.extend({
         }
     }
 });
+
 MainScene.Resource.Type = {
     Action: 1,
     Gold: 2,
