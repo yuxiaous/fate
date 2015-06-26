@@ -229,6 +229,7 @@ var SceneBase = lh.LHScene.extend({
                 var dropType = DroppedItem.ItemType.ItemType;
                 var dropItem = new DroppedItem(dropId,dropType);
                 var pos = role.getSpacePosition();
+                LOG("dabaojian x = " + pos.x);
                 dropItem.setPosition(pos.x + 50,pos.y);
                 this.addItem(dropItem);
                 return;

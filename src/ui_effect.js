@@ -46,4 +46,11 @@ var UiEffect = {
         ));
     },
 
+    iconOpenEffect : function (panel_) {
+        panel_.scale = 0.1;
+        panel_.runAction(cc.Sequence.create(
+            cc.scaleTo(0.2, 1.1),
+            cc.scaleTo(0.1, 1.0)
+        ));
+    }
 }
