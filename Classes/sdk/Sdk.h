@@ -38,10 +38,34 @@ public:
 
 
 
-class LoginProtocol
+class AccountProtocol
 {
 public:
-    virtual void login() = 0;
+    enum class AccountType {
+        Anonymous = 0,
+        Registered,
+        SianWeibo,
+        QQ,
+        TencentWeibo,
+        ND91,
+    };
+    
+    enum class Gender {
+        Unknown = 0,
+        Male = 1,
+        Female = 2
+    };
+    
+public:
+    virtual void login() {}
+    
+    virtual void setAccount(const char* accountId) {}
+    virtual void setAccountName(const char* accountName) {}
+    virtual void setAccountType(AccountProtocol::AccountType accountType) {}
+    virtual void setLevel(int level) {}
+    virtual void setGender(AccountProtocol::Gender gender) {}
+    virtual void setAge(int age) {}
+    virtual void setGameServer(const char* gameServer) {}
 };
 
 

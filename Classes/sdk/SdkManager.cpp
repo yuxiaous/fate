@@ -11,6 +11,10 @@
 #include "SdkManager.h"
 #include "Sdk.h"
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#include "TalkingDataGameAnalyticsSdk.h"
+#endif
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
 #include "DeveloperSdk.h"
 #endif
@@ -40,8 +44,12 @@ void SdkManager::removeSdk(Sdk *sdk)
 
 void SdkManager::configureSdk()
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    addSdk(TalkingDataGameAnalyticsSdk::getInstance());
+#endif
+    
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
-    addSdk(new DeveloperSdk());
+    addSdk(DeveloperSdk::getInstance());
 #endif
     
 #ifdef YMTXRECORDSDK
@@ -79,6 +87,49 @@ void SdkManager::setBuyCallback(const std::function<void(char *param)> &callback
         }
     }
 }
+
+
+void SdkManager::login()
+{
+    
+}
+
+void SdkManager::setAccount(const char* accountId)
+{
+    
+}
+
+void SdkManager::setAccountName(const char* accountName)
+{
+    
+}
+
+void SdkManager::setAccountType(int accountType)
+{
+    
+}
+
+void SdkManager::setLevel(int level)
+{
+    
+}
+
+void SdkManager::setGender(int gender)
+{
+    
+}
+
+void SdkManager::setAge(int age)
+{
+    
+}
+
+void SdkManager::setGameServer(const char* gameServer)
+{
+    
+}
+
+
 
 
 

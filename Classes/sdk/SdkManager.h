@@ -18,8 +18,20 @@ class SdkManager
 public:
     static void configureSdk();
     static void init();
+    
+    // BuyProtocol
     static void buy(const std::string &param);
     static void setBuyCallback(const std::function<void(char *param)> &callback);
+    
+    // AccountProtocol
+    static void login();
+    static void setAccount(const char* accountId);
+    static void setAccountName(const char* accountName);
+    static void setAccountType(int accountType);
+    static void setLevel(int level);
+    static void setGender(int gender);
+    static void setAge(int age);
+    static void setGameServer(const char* gameServer);
     
 private:
     static void addSdk(Sdk *sdk);

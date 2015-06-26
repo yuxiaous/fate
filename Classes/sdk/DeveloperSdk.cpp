@@ -14,6 +14,15 @@
 #include "json/stringbuffer.h"
 
 
+static DeveloperSdk *instance = nullptr;
+DeveloperSdk *DeveloperSdk::getInstance()
+{
+    if(instance == nullptr) {
+        instance = new DeveloperSdk();
+    }
+    return instance;
+}
+
 void DeveloperSdk::buy(const std::string &param)
 {
     if(_buyCallback) {

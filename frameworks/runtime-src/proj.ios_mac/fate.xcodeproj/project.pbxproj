@@ -245,6 +245,19 @@
 		DE25C4101B31D0CA00A9AEC0 /* SdkManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE25C3DB1B318F3D00A9AEC0 /* SdkManager.cpp */; };
 		DE25C4111B31D0FF00A9AEC0 /* Sdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE25C3DA1B318F3D00A9AEC0 /* Sdk.cpp */; };
 		DE29E12C1B3CF98F000656CA /* DeveloperSdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */; };
+		DE29E1501B3D75BE000656CA /* libTalkingDataGA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE29E1411B3D75BE000656CA /* libTalkingDataGA.a */; };
+		DE29E1511B3D75BE000656CA /* TDCCAccount.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE29E1431B3D75BE000656CA /* TDCCAccount.mm */; };
+		DE29E1521B3D75BE000656CA /* TDCCItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE29E1441B3D75BE000656CA /* TDCCItem.mm */; };
+		DE29E1531B3D75BE000656CA /* TDCCMission.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE29E1451B3D75BE000656CA /* TDCCMission.mm */; };
+		DE29E1541B3D75BE000656CA /* TDCCTalkingDataGA.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE29E1461B3D75BE000656CA /* TDCCTalkingDataGA.mm */; };
+		DE29E1551B3D75BE000656CA /* TDCCVirtualCurrency.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE29E1471B3D75BE000656CA /* TDCCVirtualCurrency.mm */; };
+		DE29E1581B3D75F7000656CA /* TalkingDataGameAnalyticsSdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE29E1561B3D75F7000656CA /* TalkingDataGameAnalyticsSdk.cpp */; };
+		DE29E15A1B3D7A74000656CA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE29E1591B3D7A74000656CA /* Security.framework */; };
+		DE29E15B1B3D7A9F000656CA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE25C4081B3199B000A9AEC0 /* CoreTelephony.framework */; };
+		DE29E15D1B3D7AB2000656CA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE29E15C1B3D7AB2000656CA /* AdSupport.framework */; };
+		DE29E15F1B3D7AC4000656CA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE29E15E1B3D7AC4000656CA /* libz.dylib */; };
+		DE29E1601B3D7C09000656CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE25C4041B31990700A9AEC0 /* SystemConfiguration.framework */; };
+		DE29E1611B3D7C6A000656CA /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE25C40C1B319A4800A9AEC0 /* GameController.framework */; };
 		DE36EDF71B258A63005B744E /* libLevelHelper2-API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF01B258A0F005B744E /* libLevelHelper2-API.a */; };
 		DE36EF001B25955E005B744E /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFB1B25955C005B744E /* Animation.cpp */; };
 		DE36EF011B25955E005B744E /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFB1B25955C005B744E /* Animation.cpp */; };
@@ -585,6 +598,24 @@
 		DE25C40C1B319A4800A9AEC0 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DeveloperSdk.cpp; sourceTree = "<group>"; };
 		DE29E12B1B3CF98F000656CA /* DeveloperSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeveloperSdk.h; sourceTree = "<group>"; };
+		DE29E13A1B3D75BE000656CA /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
+		DE29E13B1B3D75BE000656CA /* TDCCAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCCAccount.h; sourceTree = "<group>"; };
+		DE29E13C1B3D75BE000656CA /* TDCCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCCItem.h; sourceTree = "<group>"; };
+		DE29E13D1B3D75BE000656CA /* TDCCMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCCMission.h; sourceTree = "<group>"; };
+		DE29E13E1B3D75BE000656CA /* TDCCTalkingDataGA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCCTalkingDataGA.h; sourceTree = "<group>"; };
+		DE29E13F1B3D75BE000656CA /* TDCCVirtualCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCCVirtualCurrency.h; sourceTree = "<group>"; };
+		DE29E1411B3D75BE000656CA /* libTalkingDataGA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingDataGA.a; sourceTree = "<group>"; };
+		DE29E1421B3D75BE000656CA /* TalkingDataGA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingDataGA.h; sourceTree = "<group>"; };
+		DE29E1431B3D75BE000656CA /* TDCCAccount.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TDCCAccount.mm; sourceTree = "<group>"; };
+		DE29E1441B3D75BE000656CA /* TDCCItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TDCCItem.mm; sourceTree = "<group>"; };
+		DE29E1451B3D75BE000656CA /* TDCCMission.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TDCCMission.mm; sourceTree = "<group>"; };
+		DE29E1461B3D75BE000656CA /* TDCCTalkingDataGA.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TDCCTalkingDataGA.mm; sourceTree = "<group>"; };
+		DE29E1471B3D75BE000656CA /* TDCCVirtualCurrency.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TDCCVirtualCurrency.mm; sourceTree = "<group>"; };
+		DE29E1561B3D75F7000656CA /* TalkingDataGameAnalyticsSdk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TalkingDataGameAnalyticsSdk.cpp; sourceTree = "<group>"; };
+		DE29E1571B3D75F7000656CA /* TalkingDataGameAnalyticsSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingDataGameAnalyticsSdk.h; sourceTree = "<group>"; };
+		DE29E1591B3D7A74000656CA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		DE29E15C1B3D7AB2000656CA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		DE29E15E1B3D7AC4000656CA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
 		DE36EDE91B258A0E005B744E /* LevelHelper2-API.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "LevelHelper2-API.xcodeproj"; path = "../../../Classes/LevelHelper2/LevelHelper2-API.xcodeproj"; sourceTree = "<group>"; };
 		DE36EDFB1B25955C005B744E /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		DE36EDFC1B25955C005B744E /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
@@ -721,6 +752,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE29E1611B3D7C6A000656CA /* GameController.framework in Frameworks */,
+				DE29E1601B3D7C09000656CA /* SystemConfiguration.framework in Frameworks */,
+				DE29E15F1B3D7AC4000656CA /* libz.dylib in Frameworks */,
+				DE29E15D1B3D7AB2000656CA /* AdSupport.framework in Frameworks */,
+				DE29E15B1B3D7A9F000656CA /* CoreTelephony.framework in Frameworks */,
+				DE29E15A1B3D7A74000656CA /* Security.framework in Frameworks */,
 				DE36EDF71B258A63005B744E /* libLevelHelper2-API.a in Frameworks */,
 				BA3D062F1A72540100739335 /* Security.framework in Frameworks */,
 				BA4E718719EB6E7900932425 /* MediaPlayer.framework in Frameworks */,
@@ -730,6 +767,7 @@
 				1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */,
 				D454520C156E22BD00887EB5 /* libz.dylib in Frameworks */,
 				A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */,
+				DE29E1501B3D75BE000656CA /* libTalkingDataGA.a in Frameworks */,
 				A92275441517C094001B78AA /* OpenGLES.framework in Frameworks */,
 				A92275461517C094001B78AA /* OpenAL.framework in Frameworks */,
 				A92275481517C094001B78AA /* AudioToolbox.framework in Frameworks */,
@@ -940,6 +978,9 @@
 		A92275401517C094001B78AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE29E15E1B3D7AC4000656CA /* libz.dylib */,
+				DE29E15C1B3D7AB2000656CA /* AdSupport.framework */,
+				DE29E1591B3D7A74000656CA /* Security.framework */,
 				DE25C40C1B319A4800A9AEC0 /* GameController.framework */,
 				DE25C40A1B319A3D00A9AEC0 /* MediaPlayer.framework */,
 				DE25C4081B3199B000A9AEC0 /* CoreTelephony.framework */,
@@ -1046,15 +1087,16 @@
 		DE25C3D51B318E7D00A9AEC0 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
+				DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */,
+				DE29E12B1B3CF98F000656CA /* DeveloperSdk.h */,
 				DE25C3DA1B318F3D00A9AEC0 /* Sdk.cpp */,
 				DE25C3D91B318F3D00A9AEC0 /* Sdk.h */,
 				DE25C3DB1B318F3D00A9AEC0 /* SdkManager.cpp */,
 				DE25C3DC1B318F3D00A9AEC0 /* SdkManager.h */,
+				DE29E12D1B3D75BE000656CA /* TalkingDataGameAnalytics */,
 				DE25C3E41B318F9600A9AEC0 /* YMTX-SDK-IOS-1-0-8 */,
 				DE25C3DF1B318F7700A9AEC0 /* YMTXSdk.h */,
 				DE25C3E01B318F7700A9AEC0 /* YMTXSdk.mm */,
-				DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */,
-				DE29E12B1B3CF98F000656CA /* DeveloperSdk.h */,
 			);
 			name = sdk;
 			path = ../../../Classes/sdk;
@@ -1115,6 +1157,44 @@
 				DE25C3F11B318F9600A9AEC0 /* WeiboSDK.h */,
 			);
 			path = XLLibWeibo;
+			sourceTree = "<group>";
+		};
+		DE29E12D1B3D75BE000656CA /* TalkingDataGameAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				DE29E1391B3D75BE000656CA /* include */,
+				DE29E1401B3D75BE000656CA /* ios */,
+				DE29E1561B3D75F7000656CA /* TalkingDataGameAnalyticsSdk.cpp */,
+				DE29E1571B3D75F7000656CA /* TalkingDataGameAnalyticsSdk.h */,
+			);
+			path = TalkingDataGameAnalytics;
+			sourceTree = "<group>";
+		};
+		DE29E1391B3D75BE000656CA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DE29E13A1B3D75BE000656CA /* TalkingData.h */,
+				DE29E13B1B3D75BE000656CA /* TDCCAccount.h */,
+				DE29E13C1B3D75BE000656CA /* TDCCItem.h */,
+				DE29E13D1B3D75BE000656CA /* TDCCMission.h */,
+				DE29E13E1B3D75BE000656CA /* TDCCTalkingDataGA.h */,
+				DE29E13F1B3D75BE000656CA /* TDCCVirtualCurrency.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DE29E1401B3D75BE000656CA /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				DE29E1411B3D75BE000656CA /* libTalkingDataGA.a */,
+				DE29E1421B3D75BE000656CA /* TalkingDataGA.h */,
+				DE29E1431B3D75BE000656CA /* TDCCAccount.mm */,
+				DE29E1441B3D75BE000656CA /* TDCCItem.mm */,
+				DE29E1451B3D75BE000656CA /* TDCCMission.mm */,
+				DE29E1461B3D75BE000656CA /* TDCCTalkingDataGA.mm */,
+				DE29E1471B3D75BE000656CA /* TDCCVirtualCurrency.mm */,
+			);
+			path = ios;
 			sourceTree = "<group>";
 		};
 		DE36EDEA1B258A0E005B744E /* Products */ = {
@@ -1760,6 +1840,7 @@
 				DE36EF061B25955E005B744E /* WorldClock.cpp in Sources */,
 				DE36EF0A1B25955E005B744E /* Bone.cpp in Sources */,
 				DE36EFD01B25955E005B744E /* SneakyButtonSkinnedBase.cpp in Sources */,
+				DE29E1581B3D75F7000656CA /* TalkingDataGameAnalyticsSdk.cpp in Sources */,
 				DE36EF141B25955E005B744E /* BaseDataParser.cpp in Sources */,
 				C00FD4B21938628E00C6382D /* Landscape_png.cpp in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
@@ -1770,11 +1851,13 @@
 				ABCA93C719E65B1C007FB844 /* FileServer.cpp in Sources */,
 				3E12D1DF1957FB18002FF0FD /* message_lite.cc in Sources */,
 				C06C37881918E81100617BED /* ConfigParser.cpp in Sources */,
+				DE29E1521B3D75BE000656CA /* TDCCItem.mm in Sources */,
 				DE36EFD21B25955E005B744E /* SneakyJoystick.cpp in Sources */,
 				DE36EF121B25955E005B744E /* BaseFactory.cpp in Sources */,
 				3E12D1DD1957FB18002FF0FD /* zero_copy_stream_impl_lite.cc in Sources */,
 				C00FD4B61938628E00C6382D /* PlayEnable_png.cpp in Sources */,
 				3E12D1A91957FB0E002FF0FD /* Protos.pb.cc in Sources */,
+				DE29E1551B3D75BE000656CA /* TDCCVirtualCurrency.mm in Sources */,
 				DE36EFD41B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */,
 				DE36EF201B25955E005B744E /* DBCCArmatureNode.cpp in Sources */,
 				DE36EF421B25955E005B744E /* JsonStorage.cpp in Sources */,
@@ -1782,6 +1865,7 @@
 				3E12D1E11957FB18002FF0FD /* repeated_field.cc in Sources */,
 				DE36EF001B25955E005B744E /* Animation.cpp in Sources */,
 				DE25C40E1B31D03D00A9AEC0 /* SdkManager.cpp in Sources */,
+				DE29E1511B3D75BE000656CA /* TDCCAccount.mm in Sources */,
 				DE36EF3A1B25955E005B744E /* jsb_bindings_auto.cpp in Sources */,
 				DE36EFCC1B25955E005B744E /* ShakeAction.cpp in Sources */,
 				C00FD4B41938628E00C6382D /* PlayDisable_png.cpp in Sources */,
@@ -1791,6 +1875,7 @@
 				DE36EF1A1B25955E005B744E /* XMLDataParser.cpp in Sources */,
 				DE36EF021B25955E005B744E /* AnimationState.cpp in Sources */,
 				DE36EF0E1B25955E005B744E /* Slot.cpp in Sources */,
+				DE29E1541B3D75BE000656CA /* TDCCTalkingDataGA.mm in Sources */,
 				DE36EF161B25955E005B744E /* ConstValues.cpp in Sources */,
 				DE36EF401B25955E005B744E /* jsb_levelhelper_auto.cpp in Sources */,
 				3E12D1D51957FB18002FF0FD /* extension_set.cc in Sources */,
@@ -1801,6 +1886,7 @@
 				DE36EF1E1B25955E005B744E /* DBCCArmature.cpp in Sources */,
 				DE36EF221B25955E005B744E /* DBCCFactory.cpp in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
+				DE29E1531B3D75BE000656CA /* TDCCMission.mm in Sources */,
 				3E12D1E91957FB18002FF0FD /* stringprintf.cc in Sources */,
 				DE36EF0C1B25955E005B744E /* Object.cpp in Sources */,
 				3E12D1E51957FB18002FF0FD /* common.cc in Sources */,
@@ -2065,8 +2151,8 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = "";
+				LIBRARY_SEARCH_PATHS = /Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/TalkingDataGameAnalytics/ios;
+				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "2a61ce5b-703c-4b9d-91cf-be2922ad3c71";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2092,8 +2178,8 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = "";
+				LIBRARY_SEARCH_PATHS = /Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/TalkingDataGameAnalytics/ios;
+				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "4bc951d2-2dfb-4eb5-b705-d52f34a3c944";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

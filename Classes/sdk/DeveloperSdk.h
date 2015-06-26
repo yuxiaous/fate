@@ -16,6 +16,8 @@
 class DeveloperSdk : public Sdk, public BuyProtocol
 {
 public:
+    static DeveloperSdk *getInstance();
+    
     virtual void buy(const std::string &param);
 };
 
