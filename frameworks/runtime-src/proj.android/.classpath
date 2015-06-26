@@ -6,15 +6,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/classes"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="lib" path="CMBilling.jar"/>
 	<classpathentry kind="src" path="/libcocos2dx"/>
-	<classpathentry kind="lib" path="/Users/yuxiao/android-sdk-macosx/platforms/android-17/android.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="http://developer.android.com/reference/"/>
-		</attributes>
-		<accessrules>
-			<accessrule kind="nonaccessible" pattern="com/android/internal/**"/>
-		</accessrules>
-	</classpathentry>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="lib" path="sdk/AndGame.Sdk_v20121/SDK/runtime/CMBilling.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

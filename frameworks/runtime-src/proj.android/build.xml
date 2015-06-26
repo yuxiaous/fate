@@ -92,7 +92,7 @@
     <target name="-pre-compile">
         <path id="project.all.jars.path">
             <fileset file="../../js-bindings/cocos2d-x/cocos/platform/android/java/bin/classes.jar" />
-            <fileset file="./CMBilling.jar" />
+            <fileset file="sdk/AndGame.Sdk_v20121/SDK/runtime/CMBilling.jar" />
         </path>
     </target>
 
