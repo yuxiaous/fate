@@ -106,7 +106,11 @@ var SceneBase = lh.LHScene.extend({
                 this._isLostBattle = true;
                 this.schedule(this.battleObserver);
 
-            },this)
+            },this),
+            notification.createBinding(notification.event.PLAYER_INFO, function () {
+                var system = PlayerSystem.instance;
+                this._operator.setBtnReleaseCount(4,system.superSkillCount);
+            }, this)
         ];
 
         this.scheduleUpdate();
@@ -297,10 +301,12 @@ var SceneBase = lh.LHScene.extend({
         this._battleUiLayer.setVisible(true);
         this._operator.setHide(true);
         if(this._sectionIndex == 1){
-            var actionData = this._hero.roleActionManager.actions[RoleAction.Type.SKILL4];
-            this._operator.setBtnTimingEnable(4,actionData.cdTime);
+            //var actionData = this._hero.roleActionManager.actions[RoleAction.Type.SKILL4];
+            //this._operator.setBtnTimingEnable(4,actionData.cdTime);
+            var playersys = PlayerSystem.instance;
+            playersys.superSkillCount += 1;
+            this._operator.setBtnReleaseCount(4,playersys.superSkillCount);
         }
-
         this.schedule(this.battleObserver);
     },
 

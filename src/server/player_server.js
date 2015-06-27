@@ -13,7 +13,8 @@ var player_server = {
             exp: 0,
             diamond: 1000,
             gold: 900000,
-            action: 60 //行动力
+            action: 60 ,//行动力,
+            superSkillCount : 0     //大技能可以释放的次数
         });
 
         this.update = null;
@@ -86,6 +87,22 @@ var player_server = {
             }
             break;
         }
+    },
+    changeSuperSkillCount : function (val) {
+        if(val == undefined || val == 0){
+            return;
+        }
+        if(this.player_info.superSkillCount + val < 0){
+
+            return false;
+        }
+
+        this.update = this.update || {};
+
+        LOG("----- = " + this.player_info.superSkillCount);
+        this.player_info.superSkillCount += val;
+        this.update.superSkillCount = this.player_info.superSkillCount;
+        return true;
     }
 };
 

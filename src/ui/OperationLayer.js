@@ -107,7 +107,8 @@ var OperationLayer = cc.Layer.extend({
             new cc.Sprite(this.getFP("skill3.png")),
             new cc.Sprite(this.getFP("skill3.png")),
             compoundDisableBtnSprite(this.getFP("skill3.png"),this.getFP("diableskill.png")),
-            curStylePos.skillBtn_4
+            curStylePos.skillBtn_4,
+            true
         );
 
         //skill button 5
@@ -145,6 +146,36 @@ var OperationLayer = cc.Layer.extend({
         if(!this._skillButton3.isCounting) this._skillButton3.setIsEnable(isHide_);
         if(!this._skillButton4.isCounting) this._skillButton4.setIsEnable(isHide_);
         if(!this._skillButton5.isCounting) this._skillButton5.setIsEnable(isHide_);
+    },
+
+    setBtnReleaseCount : function (btnIdx_,count_) {
+        switch (btnIdx_){
+            case 1 :
+                btnReleaseCount(this._skillButton1,count_);
+                break;
+            case 2 :
+                btnReleaseCount(this._skillButton2,count_);
+                break;
+            case  3 :
+                btnReleaseCount(this._skillButton3,count_);
+                break;
+            case  4 :
+                btnReleaseCount(this._skillButton4,count_);
+                break;
+            case  5 :
+                btnReleaseCount(this._skillButton5,count_);
+                break;
+            default :
+                break;
+        }
+
+        function btnReleaseCount(btn_,counts_) {
+            if(!btn_.needUseCount){
+                return;
+            }
+            btn_.releaseCount = counts_;
+            btn_.releaseCountLabel.setString(btn_.releaseCount);
+        }
     },
 
     setBtnTimingEnable : function (btnIdx_,times_) {
@@ -255,7 +286,7 @@ var OperationLayer = cc.Layer.extend({
         return joystick;
     },
 
-    addButton: function(sp1, sp2, sp3, pos) {
+    addButton: function(sp1, sp2, sp3, pos,needUseCount_) {
         if(sp1 == null)
             return null;
 
@@ -271,6 +302,20 @@ var OperationLayer = cc.Layer.extend({
         buttonBase.setButton(button);
         button.btnSkinned = buttonBase;
         button.isCounting = false;
+
+
+        var releaseCount = cc.LabelTTF.create("0");
+        releaseCount.setFontSize(25);
+        var buttonSize = sp1.getContentSize();
+        releaseCount.setPosition(cc.p(- buttonSize.width * 0.44,buttonSize.height * 0.44));
+        button.addChild(releaseCount);
+        button.releaseCount = 0;
+        button.releaseCountLabel = releaseCount;
+
+        needUseCount_ = false || needUseCount_;
+        button.needUseCount = needUseCount_;
+        button.releaseCountLabel.setVisible(button.needUseCount);
+
         return button;
     }
 });

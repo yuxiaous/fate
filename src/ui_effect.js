@@ -46,11 +46,16 @@ var UiEffect = {
         ));
     },
 
-    iconOpenEffect : function (panel_) {
+    iconOpenEffect : function (panel_,callfunc_,target_) {
         panel_.scale = 0.1;
         panel_.runAction(cc.Sequence.create(
             cc.scaleTo(0.2, 1.1),
-            cc.scaleTo(0.1, 1.0)
+            cc.scaleTo(0.1, 1.0),
+            cc.CallFunc.create(function () {
+                if(callfunc_ && target_){
+                    callfunc_.apply(target_);
+                }
+            })
         ));
     }
 }

@@ -25,7 +25,7 @@ var MainScene = ui.GuiSceneBase.extend({
 
         //this._ui.gift_node.setScale(0.5);
 
-        this._ui.gift_panel = new Gift_Panel();
+        this._ui.gift_panel = new GiftPanel();
         this._ui.gift_panel.setWidget(this.seekWidgetByName("gift_node"));
 
         this._ui.action = new ResourcePanel(ResourcePanel.Type.Action);
