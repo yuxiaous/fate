@@ -11,8 +11,8 @@
 #include "SdkManager.h"
 #include "Sdk.h"
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-#include "TalkingDataGameAnalyticsSdk.h"
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.h"
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(FATE_DEV)
@@ -44,7 +44,7 @@ void SdkManager::removeSdk(Sdk *sdk)
 
 void SdkManager::configureSdk()
 {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     addSdk(TalkingDataGameAnalyticsSdk::getInstance());
 #endif
     

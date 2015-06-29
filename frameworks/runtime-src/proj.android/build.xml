@@ -93,6 +93,7 @@
         <path id="project.all.jars.path">
             <fileset file="../../js-bindings/cocos2d-x/cocos/platform/android/java/bin/classes.jar" />
             <fileset file="sdk/AndGame.Sdk_v20121/SDK/runtime/CMBilling.jar" />
+            <fileset file="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
         </path>
     </target>
 
