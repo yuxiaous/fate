@@ -8,7 +8,7 @@ var ShopScene = ui.GuiSceneBase.extend({
 
     ctor: function(shop_type) {
         this._super();
-        this.shopType = shop_type || ShopSystem.ShopType.Equip;
+        this.shopType = shop_type || ShopSystem.ShopType.Item;
     },
 
     onEnter: function() {
@@ -28,8 +28,9 @@ var ShopScene = ui.GuiSceneBase.extend({
                 return ctrl;
             }.bind(this) ()),
 
-            tab_equip: this.seekWidgetByName("btn_tab_1"),
-            tab_item: this.seekWidgetByName("btn_tab_2"),
+
+            tab_item: this.seekWidgetByName("btn_tab_1"),
+            tab_equip: this.seekWidgetByName("btn_tab_2"),
             tab_role: this.seekWidgetByName("btn_tab_3"),
             tab_charge: this.seekWidgetByName("btn_tab_4"),
             list_goods: this.seekWidgetByName("list_items"),
@@ -85,14 +86,14 @@ var ShopScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_tab_1: function() {
-        this.shopType = ShopSystem.ShopType.Equip;
+        this.shopType = ShopSystem.ShopType.Item;
         this.refreshShopTabStatus();
         this.createGoodsList();
         this._ui.list_goods.jumpToTop();
     },
 
     _on_btn_tab_2: function() {
-        this.shopType = ShopSystem.ShopType.Item;
+        this.shopType = ShopSystem.ShopType.Equip;
         this.refreshShopTabStatus();
         this.createGoodsList();
         this._ui.list_goods.jumpToTop();
