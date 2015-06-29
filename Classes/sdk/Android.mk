@@ -10,6 +10,7 @@ LOCAL_ARM_MODE := arm
 
 LOCAL_SRC_FILES := SdkManager.cpp \
                    Sdk.cpp \
+                   DeveloperSdk.cpp \
                    android/AndGameSdk.cpp
 
 
@@ -25,6 +26,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos \
                     $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos/audio/include \
                     $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos/storage \
                     $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/extensions \
+                    $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/external \
                     $(LOCAL_PATH)/../sdk \
                     $(LOCAL_PATH)/../sdk/android
 

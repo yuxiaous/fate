@@ -8,7 +8,7 @@
     ],
     "copy_resources": [
         {
-            "from": "../../../publish/src",
+            "from": "../../../src",
             "to": "src"
         },
         {
@@ -20,7 +20,7 @@
             "to": ""
         },
         {
-            "from": "../../../publish/config",
+            "from": "../../../config",
             "to": "config"
         },
         {
