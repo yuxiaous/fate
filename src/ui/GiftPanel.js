@@ -69,9 +69,6 @@ var GiftPanel = ui.GuiController.extend({
             this._ui.btn_3,
             this._ui.btn_4], function (btn_,idx_) {
             var giftData = GiftSystem.instance._giftData;
-            LOG("refresh gift info gift panel 111 = " + giftData[idx_].buy_num);
-            LOG("refresh gift info gift panel 111 = " + giftData[idx_].giftType);
-
             var giftType = 0;
             switch (idx_){
                 case 0 :
@@ -95,7 +92,7 @@ var GiftPanel = ui.GuiController.extend({
                 }
             })
 
-                if(tmpGiftData.buy_num >= 0 && tmpGiftData.giftType != GiftSystem.GiftType.ZhiZun){
+                if(tmpGiftData.buy_num > 0 && tmpGiftData.giftType != GiftSystem.GiftType.ZhiZun){
                     btn_.setVisible(false);
                 }
                 else{
