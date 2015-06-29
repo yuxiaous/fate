@@ -7,8 +7,12 @@
 //
 
 #include "TalkingDataGameAnalyticsSdk.h"
-#include "TalkingData.h"
 
+TalkingDataGameAnalyticsSdk::TalkingDataGameAnalyticsSdk()
+: _account(nullptr)
+{
+    
+}
 
 static TalkingDataGameAnalyticsSdk *instance = nullptr;
 TalkingDataGameAnalyticsSdk *TalkingDataGameAnalyticsSdk::getInstance()
@@ -22,4 +26,84 @@ TalkingDataGameAnalyticsSdk *TalkingDataGameAnalyticsSdk::getInstance()
 void TalkingDataGameAnalyticsSdk::init()
 {
     TDCCTalkingDataGA::onStart("59EC3DE05BB0234EA444193F4B9E0E4B", "Develop");
+}
+
+void TalkingDataGameAnalyticsSdk::setAccount(const char* accountId)
+{
+    if(_account == nullptr) {
+        _account = TDCCAccount::setAccount(accountId);
+    }
+}
+
+void TalkingDataGameAnalyticsSdk::setAccountName(const char* accountName)
+{
+    if(_account) {
+        _account->setAccountName(accountName);
+    }
+}
+
+void TalkingDataGameAnalyticsSdk::setAccountType(AccountProtocol::AccountType accountType)
+{
+    if(_account) {
+        TDCCAccount::TDCCAccountType type = TDCCAccount::kAccountAnonymous;
+        switch (accountType) {
+            case AccountType::Registered:
+                type = TDCCAccount::kAccountRegistered;
+                break;
+            case AccountType::SianWeibo:
+                type = TDCCAccount::kAccountSianWeibo;
+                break;
+            case AccountType::QQ:
+                type = TDCCAccount::kAccountQQ;
+                break;
+            case AccountType::TencentWeibo:
+                type = TDCCAccount::kAccountTencentWeibo;
+                break;
+            case AccountType::ND91:
+                type = TDCCAccount::kAccountND91;
+                break;
+            default:
+                type = TDCCAccount::kAccountAnonymous;
+                break;
+        }
+        _account->setAccountType(type);
+    }
+}
+
+void TalkingDataGameAnalyticsSdk::setLevel(int level)
+{
+    if(_account) {
+        _account->setLevel(level);
+    }
+}
+
+void TalkingDataGameAnalyticsSdk::setGender(AccountProtocol::Gender gender)
+{
+    if(_account) {
+        switch (gender) {
+            case Gender::Male:
+                _account->setGender(TDCCAccount::kGenderMale);
+                break;
+            case Gender::Female:
+                _account->setGender(TDCCAccount::kGenderFemale);
+                break;
+            default:
+                _account->setGender(TDCCAccount::kGenderUnknown);
+                break;
+        }
+    }
+}
+
+void TalkingDataGameAnalyticsSdk::setAge(int age)
+{
+    if(_account) {
+        _account->setAge(age);
+    }
+}
+
+void TalkingDataGameAnalyticsSdk::setGameServer(const char* gameServer)
+{
+    if(_account) {
+        AccountProtocol::setGameServer(gameServer);
+    }
 }

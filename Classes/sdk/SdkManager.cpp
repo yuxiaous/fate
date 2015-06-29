@@ -96,37 +96,72 @@ void SdkManager::login()
 
 void SdkManager::setAccount(const char* accountId)
 {
-    
+    for(Sdk *sdk : _sdks) {
+        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        if(account) {
+            account->setAccount(accountId);
+        }
+    }
 }
 
 void SdkManager::setAccountName(const char* accountName)
 {
-    
+    for(Sdk *sdk : _sdks) {
+        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        if(account) {
+            account->setAccountName(accountName);
+        }
+    }
 }
 
 void SdkManager::setAccountType(int accountType)
 {
-    
+    for(Sdk *sdk : _sdks) {
+        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        if(account) {
+            account->setAccountType((AccountProtocol::AccountType)accountType);
+        }
+    }
 }
 
 void SdkManager::setLevel(int level)
 {
-    
+    for(Sdk *sdk : _sdks) {
+        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        if(account) {
+            account->setLevel(level);
+        }
+    }
 }
 
 void SdkManager::setGender(int gender)
 {
-    
+    for(Sdk *sdk : _sdks) {
+        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        if(account) {
+            account->setGender((AccountProtocol::Gender)gender);
+        }
+    }
 }
 
 void SdkManager::setAge(int age)
 {
-    
+    for(Sdk *sdk : _sdks) {
+        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        if(account) {
+            account->setAge(age);
+        }
+    }
 }
 
 void SdkManager::setGameServer(const char* gameServer)
 {
-    
+    for(Sdk *sdk : _sdks) {
+        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        if(account) {
+            account->setGameServer(gameServer);
+        }
+    }
 }
 
 
