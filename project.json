@@ -139,6 +139,7 @@
     "src/ui/LoginLayer.js",
     "src/ui/ResourcePanel.js",
     "src/ui/GiftPanel.js",
+    "src/ui/AboutGameLayer.js",
 
     "src/server/server.js",
     "src/server/database.js",

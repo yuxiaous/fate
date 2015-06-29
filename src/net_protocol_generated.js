@@ -233,6 +233,14 @@ _BindFunc(1305, function(obj) {
 	net_protocol_handlers.ON_CMD_CS_EQUIP_ITEM_RESULT(obj);
 });
 
+// @protocol 装备槽一键升级结果
+// @param {uint32} result, 结果 0成功
+net_protocol_handlers.CMD_SC_EQUIP_SLOT_UPGRADE_TOP_RESULT = 1309;
+_BindFunc(1309, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_EQUIP_SLOT_UPGRADE_TOP_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_EQUIP_SLOT_UPGRADE_TOP_RESULT(obj);
+});
+
 // @protocol 卸下装备结果
 // @param {uint32} result, 结果 0成功
 net_protocol_handlers.CMD_CS_UNEQUIP_ITEM_RESULT = 1307;
@@ -297,6 +305,14 @@ net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS = function(obj) {
 	cc.assert(obj.good_id != undefined, "CMD_CS_SHOP_BUY_GOODS.good_id is undefined.");
 	cc.assert(obj.count != undefined, "CMD_CS_SHOP_BUY_GOODS.count is undefined.");
 	_SendFunc(1101, obj);
+};
+
+// @protocol 装备槽一键升级到最高等级(最高只能和人物角色同级)
+// @param {uint32} slot_type, 槽类型
+net_protocol_handlers.CMD_CS_EQUIP_SLOT_UPGRADE_TOP = 1308;
+net_protocol_handlers.SEND_CMD_CS_EQUIP_SLOT_UPGRADE_TOP = function(obj) {
+	cc.assert(obj.slot_type != undefined, "CMD_CS_EQUIP_SLOT_UPGRADE_TOP.slot_type is undefined.");
+	_SendFunc(1308, obj);
 };
 
 // @protocol 换装

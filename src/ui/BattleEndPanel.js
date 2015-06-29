@@ -119,7 +119,6 @@ BattleEndPanel.Type = {
     Lose: 2
 };
 
-
 var BattleWinPanel = ui.GuiWindowBase.extend({
     _guiFile: "ui/battle_victory_panel.json",
 
@@ -290,8 +289,42 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
         }
     },
 
-    _on_btn_enter : function(){
+    _on_btn_restart : function(){
         this.close();
+
+        var costValue = 2;
+        if(PlayerSystem.instance.action < costValue){
+            MessageBoxOk.show("体力不足");
+            return;
+        }
+        var mapId = BattleSystem.instance.cur_battle_map
+        PlayerSystem.instance.action -= costValue;
+        var loadingPanel = new LoadingBattleLayer(mapId);
+        loadingPanel.pop();
+
+        loadingPanel.setLoadDoneFunc(function() {
+            var mapConfig = configdb.map[mapId];
+            if(mapConfig ){
+
+                BattleSystem.instance.battleMap(mapId)
+
+                if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
+                    ui.pushScene(new BattleNorScene(mapId));
+                }
+                else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
+                    ui.pushScene(new BattleDefScene(mapId) );
+                }
+                else if(mapConfig.map_type == BattleSystem.BattleType.EndlessType){
+
+                }
+
+                this.close();
+            }
+            else{
+                LOG("MAP ID NOT FIND!");
+            }
+            loadingPanel.close();
+        }, this)
     }
 });
 
@@ -328,5 +361,41 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
         }, this);
         lose.pop();
     }
-
 });
+
+var BattleWinGiftPanel = ui.GuiWindowBase.extend({
+    _guiFile : "ui/battle_win_buy.json",
+
+    ctor : function () {
+        this._super();
+    },
+
+    onEnter : function () {
+        this._super();
+
+    },
+
+    onExit : function () {
+        this._super();
+
+    },
+
+    _on_btn_enter : function(){
+
+    },
+
+    _on_btn_close : function () {
+
+        this.close();
+        //// show lose window
+        //var lose = new BattleLosePanel();
+        //lose.setCloseCallback(function(w) {
+        //    if(w.exit) {
+        //        cc.director.popScene();
+        //    }
+        //}, this);
+        //lose.pop();
+    }
+});
+
+

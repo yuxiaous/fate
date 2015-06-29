@@ -17,8 +17,19 @@ var StartLayerScene = ui.GuiSceneBase.extend({
 
         this._ui = {
             sp_bg: this.seekWidgetByName("sp_background"),
-            sp_touch: this.seekWidgetByName("Sprite_1")
+            sp_touch: this.seekWidgetByName("Sprite_1"),
+            about_btn : this.seekWidgetByName("btn_about")
         };
+
+        this._ui.about_btn.setPressedActionEnabled(true);
+
+        //电信渠道显示
+        if(1){
+            this._ui.about_btn.setVisible(true);
+        }
+        else{
+            this._ui.about_btn.setVisible(false);
+        }
 
         this._bindings = [
             notification.createBinding(notification.event.INIT_END, this.onEnterGame, this)
@@ -47,6 +58,13 @@ var StartLayerScene = ui.GuiSceneBase.extend({
 
     _on_btn_enter: function() {
         LoginSystem.instance.authorize(101);
+    },
+    
+    _on_btn_about : function () {
+        var annLayer = new AnnouncementLayer();
+        annLayer.pop();
+
+        UiEffect.iconOpenEffect(annLayer);
     }
 });
 

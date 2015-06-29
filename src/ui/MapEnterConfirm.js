@@ -95,32 +95,54 @@ var MapStageInfo = ui.GuiWindowBase.extend({
         loadingPanel.pop();
 
         loadingPanel.setLoadDoneFunc(function() {
-            this.loadResourceDone();
+            var mapConfig = configdb.map[this.mapId];
+            if(mapConfig ){
+
+                BattleSystem.instance.battleMap(this.mapId)
+
+                if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
+                    ui.pushScene(new BattleNorScene(this.mapId));
+                    //ui.pushScene(new BattleDefScene(this.mapId) );
+                }
+                else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
+                    ui.pushScene(new BattleDefScene(this.mapId) );
+                }
+                else if(mapConfig.map_type == BattleSystem.BattleType.EndlessType){
+
+                }
+
+                this.close();
+            }
+            else{
+                LOG("MAP ID NOT FIND!");
+            }
             loadingPanel.close();
         }, this)
-    },
-
-    loadResourceDone : function () {
-
-        var mapConfig = configdb.map[this.mapId];
-        if(mapConfig ){
-            if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
-                ui.pushScene(new BattleNorScene(this.mapId));
-                //ui.pushScene(new BattleDefScene(this.mapId) );
-            }
-            else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
-                ui.pushScene(new BattleDefScene(this.mapId) );
-            }
-            else if(mapConfig.map_type == BattleSystem.BattleType.EndlessType){
-
-            }
-            BattleSystem.instance.battleMap(this.mapId);
-            this.close();
-        }
-        else{
-            LOG("MAP ID NOT FIND!");
-        }
     }
+
+    //loadResourceDone : function () {
+    //    var mapConfig = configdb.map[this.mapId];
+    //    if(mapConfig ){
+    //
+    //        BattleSystem.instance.battleMap(this.mapId)
+    //
+    //        if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
+    //            ui.pushScene(new BattleNorScene(this.mapId));
+    //            //ui.pushScene(new BattleDefScene(this.mapId) );
+    //        }
+    //        else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
+    //            ui.pushScene(new BattleDefScene(this.mapId) );
+    //        }
+    //        else if(mapConfig.map_type == BattleSystem.BattleType.EndlessType){
+    //
+    //        }
+    //
+    //        this.close();
+    //    }
+    //    else{
+    //        LOG("MAP ID NOT FIND!");
+    //    }
+    //}
 
 
 });
