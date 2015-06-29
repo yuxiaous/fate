@@ -24,15 +24,17 @@ var BattleSystem = SystemBase.extend({
     },
 
     battleMap: function(map_id) {
-        if(PlayerSystem.instance.action < 2){
-            MessageBoxOk.show("体力不足");
-            return;
-        }
+        //if(PlayerSystem.instance.action < 2){
+        //    MessageBoxOk.show("体力不足");
+        //    //return true;
+        //}
+
         if(map_id) {
             net_protocol_handlers.SEND_CMD_CS_BATTLE_MAP({
                 map_id: map_id
             });
         }
+        //return false;
     },
     battleMapResult: function(obj) {
         this.cur_battle_map = obj.map_id;
