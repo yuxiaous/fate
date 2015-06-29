@@ -21,15 +21,15 @@ var StartLayerScene = ui.GuiSceneBase.extend({
             about_btn : this.seekWidgetByName("btn_about")
         };
 
-        this._ui.about_btn.setPressedActionEnabled(true);
-
-        //电信渠道显示
-        if(1){
-            this._ui.about_btn.setVisible(true);
-        }
-        else{
-            this._ui.about_btn.setVisible(false);
-        }
+        //this._ui.about_btn.setPressedActionEnabled(true);
+        //
+        ////电信渠道显示
+        //if(1){
+        //    this._ui.about_btn.setVisible(true);
+        //}
+        //else{
+        //    this._ui.about_btn.setVisible(false);
+        //}
 
         this._bindings = [
             notification.createBinding(notification.event.INIT_END, this.onEnterGame, this)

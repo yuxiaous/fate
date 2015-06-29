@@ -9,7 +9,7 @@ using namespace cocos2d;
 
 extern "C" {
 
-#define  CLASS_NAME "com/fate/dev/AndGameSdkJni"
+#define  CLASS_NAME "com/fate/andgame/AndGameSdkJni"
 
 
 //#define AndroidClassName "org/cocos2dx/javascript/AppActivity"
@@ -71,7 +71,7 @@ static void AndGameSdkJni_charge(const char *order, const char *identifier)
     }
 }
 
-void Java_com_fate_dev_AndGameSdkJni_onChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+void Java_com_fate_andgame_AndGameSdkJni_onChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
 {
     cocos2d::log("Java_com_fate_dev_AndGameSdkJni_onChargeCallback");
     std::string order = JniHelper::jstring2string(jorder);

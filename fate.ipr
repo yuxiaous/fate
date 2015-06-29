@@ -173,7 +173,7 @@
   <component name="libraryTable">
     <library name="CMBilling">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/frameworks/runtime-src/proj.android/sdk/AndGame.Sdk_v20121/SDK/runtime/CMBilling.jar!/" />
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/AndGame/android/runtime/CMBilling.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />

@@ -1,4 +1,4 @@
-package com.fate.dev;
+package com.fate.andgame;
 
 import android.widget.Toast;
 
@@ -49,7 +49,7 @@ public class AndGameSdkJni {
 					result = "购买商品【" + billingIndex + "】失败！";
 					break;
 				default:
-					result = "购买商品【" + billingIndex + "】取消";
+					result = "购买商品【" + billingIndex + "】取消！";
 					break;
 			}
 			Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();

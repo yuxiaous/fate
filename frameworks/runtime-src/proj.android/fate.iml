@@ -25,7 +25,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="CMBilling" level="project" />
     <orderEntry type="library" name="Game_Analytics_SDK_Android_3.1.68" level="project" />
+    <orderEntry type="library" name="CMBilling" level="project" />
   </component>
 </module>
