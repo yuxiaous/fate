@@ -241,6 +241,22 @@ _BindFunc(1307, function(obj) {
 	net_protocol_handlers.ON_CMD_CS_UNEQUIP_ITEM_RESULT(obj);
 });
 
+// @protocol 使用角色大招次数
+// @param {uint32} player_id, player ID
+net_protocol_handlers.CMD_CS_USE_SUPER_SKILL = 1607;
+net_protocol_handlers.SEND_CMD_CS_USE_SUPER_SKILL = function(obj) {
+	cc.assert(obj.player_id != undefined, "CMD_CS_USE_SUPER_SKILL.player_id is undefined.");
+	_SendFunc(1607, obj);
+};
+
+// @protocol 购买角色大招释放数量
+// @param {uint32} player_id, player ID
+net_protocol_handlers.CMD_CS_BUY_SUPER_SKILL_COUNT = 1606;
+net_protocol_handlers.SEND_CMD_CS_BUY_SUPER_SKILL_COUNT = function(obj) {
+	cc.assert(obj.player_id != undefined, "CMD_CS_BUY_SUPER_SKILL_COUNT.player_id is undefined.");
+	_SendFunc(1606, obj);
+};
+
 // @protocol 技能信息
 // @param {list} skills, 技能信息
 net_protocol_handlers.CMD_SC_SKILL_INFO = 1201;

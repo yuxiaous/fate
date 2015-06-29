@@ -1,6 +1,6 @@
 
 
-var Gift_Panel = ui.GuiController.extend({
+var GiftPanel = ui.GuiController.extend({
     ctor: function() {
         this._super();
 
@@ -29,21 +29,21 @@ var Gift_Panel = ui.GuiController.extend({
                     var giftType = 0;
                     switch (idx_){
                         case 0 :
-                            giftType = Gift_Panel.GiftType.Vip;
+                            giftType = GiftPanel.GiftType.Vip;
                             break;
                         case 1 :
-                            giftType = Gift_Panel.GiftType.ZhiZun;
+                            giftType = GiftPanel.GiftType.ZhiZun;
                             break;
                         case 2 :
-                            giftType = Gift_Panel.GiftType.ZhuangBei;
+                            giftType = GiftPanel.GiftType.ZhuangBei;
                             break;
                         case 3 :
-                            giftType = Gift_Panel.GiftType.WuQi;
+                            giftType = GiftPanel.GiftType.WuQi;
                             break;
                     }
-                    var buy_panel = new Gift_Buy_Detail(giftType);
+                    var buy_panel = new GiftBuyDetail(giftType);
                     buy_panel.pop();
-                    UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"));
+                    UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("GiftPanel"));
                 }
             },this)
         },this);
@@ -56,14 +56,14 @@ var Gift_Panel = ui.GuiController.extend({
     }
 });
 
-Gift_Panel.GiftType = {
+GiftPanel.GiftType = {
     ZhuangBei : 1,
     WuQi : 2,
     ZhiZun : 3,
     Vip : 4
 }
 
-var Gift_Buy_Detail = ui.GuiWindowBase.extend({
+var GiftBuyDetail = ui.GuiWindowBase.extend({
     _guiFile : "ui/gift_detail_panel.json",
 
     ctor : function (type_) {
@@ -79,19 +79,19 @@ var Gift_Buy_Detail = ui.GuiWindowBase.extend({
         var gift_detail_img = "";
         var gift_title_img = "";
         switch (this._giftType){
-            case Gift_Panel.GiftType.ZhuangBei :
+            case GiftPanel.GiftType.ZhuangBei :
                 gift_title_img = "ui_295.png";
                 gift_detail_img = "ui_296.png";
                 break;
-            case  Gift_Panel.GiftType.WuQi :
+            case  GiftPanel.GiftType.WuQi :
                 gift_title_img = "ui_297.png";
                 gift_detail_img = "ui_298.png";
                 break;
-            case Gift_Panel.GiftType.ZhiZun :
+            case GiftPanel.GiftType.ZhiZun :
                 gift_title_img = "ui_293.png";
                 gift_detail_img = "ui_294.png";
                 break;
-            case Gift_Panel.GiftType.Vip:
+            case GiftPanel.GiftType.Vip:
                 gift_title_img = "ui_299.png";
                 gift_detail_img = "ui_300.png";
                 break;
@@ -163,4 +163,39 @@ var EndlessSelected = ui.GuiWindowBase.extend({
         ui.pushScene(new BattleEndlessScene() );
     }
 
+});
+
+var BuySkillDetail = ui.GuiWindowBase.extend({
+    _guiFile : "ui/buy_skill_layer.json",
+
+    ctor : function (func_,target_) {
+        this._super();
+
+
+        this._callfunc = func_;
+        this._target = target_;
+    },
+
+    onEnter : function () {
+        this._super();
+
+
+    },
+
+    onExit : function () {
+        this._super();
+
+    },
+
+    _on_btn_buy : function(){
+        BattleSystem.instance.buySuperSkill();
+
+        this._callfunc.apply(this._target);
+        this.close();
+    },
+
+    _on_btn_close : function () {
+        this._callfunc.apply(this._target);
+        this.close();
+    }
 });

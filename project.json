@@ -154,7 +154,8 @@
     "src/server/bag_server.js",
     "src/server/item_server.js",
     "src/server/battle_server.js",
-    "src/server/skin_server.js"
+    "src/server/skin_server.js",
+    "src/server/operator_server.js"
 
 
   ]

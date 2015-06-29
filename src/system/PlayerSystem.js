@@ -12,6 +12,8 @@ var PlayerSystem = SystemBase.extend({
         this.diamond = 0;
         this.gold = 0;
         this.action = 0;
+
+        this.superSkillCount = 0;
     },
 
     onInit: function() {
@@ -32,6 +34,7 @@ var PlayerSystem = SystemBase.extend({
         if(player.gold != undefined) this.gold = player.gold;
         if(player.diamond != undefined) this.diamond = player.diamond;
         if(player.action != undefined) this.action = player.action;
+        if(player.superSkillCount != undefined) this.superSkillCount = player.superSkillCount;
 
         notification.emit(notification.event.PLAYER_INFO);
     },

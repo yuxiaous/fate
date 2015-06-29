@@ -167,8 +167,23 @@ var RoleActionManager = cc.Class.extend({
                     this.playAction(RoleAction.Type.SKILL3);
                     break;
                 case 4:
-                    tmpSkillType = RoleAction.Type.SKILL4;
-                    this.playAction(RoleAction.Type.SKILL4);
+                    var system = PlayerSystem.instance;
+                    if(system.superSkillCount <= 0){
+                        this.skillStatus = true;
+                        var buy_panel = new BuySkillDetail(function () {
+                            cc.director.resume();
+                            this.skillStatus = false;
+                        },this);
+                        buy_panel.pop();
+                        UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"), function () {
+                            cc.director.pause();
+                        },this);
+                    }
+                    else{
+                        BattleSystem.instance.useSuperSkill();
+                        tmpSkillType = RoleAction.Type.SKILL4;
+                        this.playAction(RoleAction.Type.SKILL4);
+                    }
                     break;
                 case 5:
                     tmpSkillType = RoleAction.Type.SKILL5;
@@ -530,7 +545,6 @@ var RoleActionSkill = RoleAction.extend({
             this.manager.role.drag = this.attack.drag;
         }
         if(this.attack.skill_sound) {
-             //LOG("SKILL SOUND = " + this.attack.skill_sound);
              MusicManager.getInstance().playEffectMusic(this.attack.skill_sound);
         }
         this.haddSkillEffect = false;

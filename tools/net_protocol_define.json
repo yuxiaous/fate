@@ -446,6 +446,28 @@
            ["uint32","player_id","player ID"],
            ["uint32","login_index","当前连续登陆的天数"]
      ]
-   }
+   },
+
+  "CMD_CS_BUY_SUPER_SKILL_COUNT" :
+  {
+    "code" : 1606,
+    "type" : "CS",
+    "desc" : "购买角色大招释放数量",
+    "schemes":
+    [
+      ["uint32","player_id","player ID"]
+    ]
+  },
+
+  "CMD_CS_USE_SUPER_SKILL" :
+  {
+    "code" : 1607,
+    "type" : "CS",
+    "desc" : "使用角色大招次数",
+    "schemes" :
+    [
+      ["uint32","player_id","player ID"]
+    ]
+  }
 }
 

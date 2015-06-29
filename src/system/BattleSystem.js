@@ -93,6 +93,21 @@ var BattleSystem = SystemBase.extend({
 
             notification.emit(notification.event.BATTLE_USE_ITEM_RESULT,obj.item_type);
         }
+    },
+
+    buySuperSkill : function () {
+        net_protocol_handlers.SEND_CMD_CS_BUY_SUPER_SKILL_COUNT({
+            player_id : 101
+        });
+    },
+    
+    useSuperSkill : function () {
+        net_protocol_handlers.SEND_CMD_CS_USE_SUPER_SKILL({
+            player_id : 101
+        })
+
+        PlayerSystem.instance.superSkillCount -= 1;
+        notification.emit(notification.event.PLAYER_INFO);
     }
 });
 

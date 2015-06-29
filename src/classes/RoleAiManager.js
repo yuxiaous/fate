@@ -172,9 +172,6 @@ var ManualAi = RoleAi.extend({
             if(button) {
                 value = button.getValue();
                 if(value) {
-
-
-
                     //var tmpBtnCDv = "btnCDTime"+index;
                     //var scene = cc.director.getRunningScene();
                     //scene._operator.setBtnTimingEnable(index,this[tmpBtnCDv]);
