@@ -251,6 +251,27 @@
 		]
 	},
 
+    "CMD_CS_EQUIP_SLOT_UPGRADE_TOP":
+    {
+      "code": 1308,
+      "type": "CS",
+      "desc": "装备槽一键升级到最高等级(最高只能和人物角色同级)",
+      "schemes":
+      [
+        ["uint32", "slot_type", "槽类型"]
+      ]
+    },
+    "CMD_SC_EQUIP_SLOT_UPGRADE_TOP_RESULT":
+    {
+      "code": 1309,
+      "type": "SC",
+      "desc": "装备槽一键升级结果",
+      "schemes":
+      [
+        ["uint32", "result", "结果 0成功"]
+      ]
+    },
+
 	"CMD_SC_ITEM_INFO":
 	{
 		"code": 1401,

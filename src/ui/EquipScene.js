@@ -189,6 +189,10 @@ var EquipScene = ui.GuiWindowBase.extend({
         //}, this);
 
         EquipSystem.instance.upgradeEquipSlot(this._sel_type);
+    },
+
+    _on_btn_top_level: function () {
+        EquipSystem.instance.upgradeEquipSlotToMax(this._sel_type);
     }
 });
 

@@ -41,6 +41,12 @@ var EquipSystem = SystemBase.extend({
         });
     },
 
+    upgradeEquipSlotToMax : function (type) {
+        net_protocol_handlers.SEND_CMD_CS_EQUIP_SLOT_UPGRADE_TOP({
+            slot_type: type
+        })
+    },
+
     onEquipSlotUpgradeResult: function(obj) {
         notification.emit(notification.event.EQUIP_SLOT_UPGRADE_RESULT);
     },
