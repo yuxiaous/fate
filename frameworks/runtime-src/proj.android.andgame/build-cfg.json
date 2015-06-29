@@ -22,6 +22,10 @@
         {
             "from": "../../../config",
             "to": "config"
+        },
+        {
+            "from": "../../../Classes/sdk/AndGame/android/assets",
+            "to": ""
         }
     ],
     "must_copy_resources": [

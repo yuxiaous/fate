@@ -8,6 +8,40 @@
 
 #include "TalkingDataGameAnalyticsSdk.h"
 
+#if  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "platform/android/jni/JniHelper.h"
+#include "platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
+#include <jni.h>
+#include "TalkingDataGameAnalytics/android/TDGAJniHelper.h"
+#endif
+
+USING_NS_CC;
+
+
+#if  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+extern "C" {
+
+#define  CLASS_NAME "com/fate/TalkingDataGASdkJni"
+
+static void TalkingDataGASdkJni_init()
+{
+    JniMethodInfo minfo;
+
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "getInstance", "()Ljava/lang/Object;")) {
+        jobject jobj = minfo.env->CallStaticObjectMethod(minfo.classID, minfo.methodID);
+
+        if(jobj) {
+            if (JniHelper::getMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
+                minfo.env->CallVoidMethod(jobj, minfo.methodID);
+            }
+        }
+    }
+}
+
+}
+#endif
+
+
 TalkingDataGameAnalyticsSdk::TalkingDataGameAnalyticsSdk()
 : _account(nullptr)
 {
@@ -25,7 +59,12 @@ TalkingDataGameAnalyticsSdk *TalkingDataGameAnalyticsSdk::getInstance()
 
 void TalkingDataGameAnalyticsSdk::init()
 {
-    TDCCTalkingDataGA::onStart("59EC3DE05BB0234EA444193F4B9E0E4B", "Develop");
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    TDCCTalkingDataGA::onStart("59EC3DE05BB0234EA444193F4B9E0E4B", "IosDevelop");
+#elif  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    TDGAJniHelper::setJavaVM(JniHelper::getJavaVM());
+    TalkingDataGASdkJni_init();
+#endif
 }
 
 void TalkingDataGameAnalyticsSdk::setAccount(const char* accountId)

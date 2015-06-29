@@ -9,7 +9,7 @@ using namespace cocos2d;
 
 extern "C" {
 
-#define  CLASS_NAME "com/fate/dev/AndGameSdkJni"
+#define  CLASS_NAME "com/fate/andgame/AndGameSdkJni"
 
 
 //#define AndroidClassName "org/cocos2dx/javascript/AppActivity"
@@ -37,7 +37,7 @@ extern "C" {
 //}
 
 
-static void Java_com_fate_dev_AndGameSdkJni_init()
+static void AndGameSdkJni_init()
 {
     JniMethodInfo minfo;
 
@@ -52,7 +52,7 @@ static void Java_com_fate_dev_AndGameSdkJni_init()
     }
 }
 
-static void Java_com_fate_dev_AndGameSdkJni_charge(const char *order, const char *identifier)
+static void AndGameSdkJni_charge(const char *order, const char *identifier)
 {
     cocos2d::log("Java_com_fate_dev_AndGameSdkJni_buy");
     JniMethodInfo minfo;
@@ -71,14 +71,14 @@ static void Java_com_fate_dev_AndGameSdkJni_charge(const char *order, const char
     }
 }
 
-void Java_com_fate_dev_AndGameSdkJni_onChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+void Java_com_fate_andgame_AndGameSdkJni_onChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
 {
     cocos2d::log("Java_com_fate_dev_AndGameSdkJni_onChargeCallback");
     std::string order = JniHelper::jstring2string(jorder);
     AndGameSdk::getInstance()->onChargeCallback(result, order.c_str());
 }
 
-static bool Java_org_cocos2dx_javascript_AppActivity_isMusicEnabled()
+static bool AppActivity_isMusicEnabled()
 {
 //    JniMethodInfo t;
 //    if(JniHelper::getStaticMethodInfo(t, CLASS_NAME, "isMusicPlay","()Z")) {
@@ -102,15 +102,15 @@ AndGameSdk *AndGameSdk::getInstance()
 
 void AndGameSdk::init()
 {
-    Java_com_fate_dev_AndGameSdkJni_init();
+    AndGameSdkJni_init();
 }
 
 void AndGameSdk::charge(const std::string &order, const std::string &identifier)
 {
-    Java_com_fate_dev_AndGameSdkJni_charge(order.c_str(), identifier.c_str());
+    AndGameSdkJni_charge(order.c_str(), identifier.c_str());
 }
 
 bool AndGameSdk::isMusicEnabled()
 {
-    return Java_org_cocos2dx_javascript_AppActivity_isMusicEnabled();
+    return AppActivity_isMusicEnabled();
 }
