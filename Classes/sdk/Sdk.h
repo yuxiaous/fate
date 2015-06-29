@@ -38,7 +38,7 @@ public:
 
 
 
-class AccountProtocol
+class SdkAccountProtocol
 {
 public:
     enum class AccountType {
@@ -61,34 +61,31 @@ public:
     
     virtual void setAccount(const char* accountId) {}
     virtual void setAccountName(const char* accountName) {}
-    virtual void setAccountType(AccountProtocol::AccountType accountType) {}
+    virtual void setAccountType(SdkAccountProtocol::AccountType accountType) {}
     virtual void setLevel(int level) {}
-    virtual void setGender(AccountProtocol::Gender gender) {}
+    virtual void setGender(SdkAccountProtocol::Gender gender) {}
     virtual void setAge(int age) {}
     virtual void setGameServer(const char* gameServer) {}
 };
 
 
 
-class BuyProtocol
+class SdkChargeProtocol
 {
 public:
-    virtual void buy(const std::string &param) {}
+    virtual void charge(const std::string &order, const std::string &identifier) {}
+    virtual void onChargeResult(int result, const std::string &order) {}
+    virtual void onPurchase(const char* item, int number, double price) {}
+    virtual void onUse(const char* item, int number) {}
     
-    virtual void setBuyCallback(const std::function<void(char *param)> &callback) {
-        _buyCallback = callback;
-    }
-    void onBuyCallback(const char *param) {
-        // result: [int] 0:success 1:fail
-        // order: [string]
-        _buyCallback((char*)param);
-    }
+    void setChargeCallback(const std::function<void(char *param)> &cb) {_chargeCallback = cb;}
+    void onChargeCallback(int result, const std::string &order);
     
 protected:
-    BuyProtocol() : _buyCallback(nullptr) {};
-    virtual ~BuyProtocol() {}
+    SdkChargeProtocol() : _chargeCallback(nullptr) {};
+    virtual ~SdkChargeProtocol() {}
     
-    std::function<void(char*)> _buyCallback;
+    std::function<void(char*)> _chargeCallback;
 };
 
 #endif /* defined(__crows__Sdk__) */

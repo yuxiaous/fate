@@ -13,12 +13,13 @@
 #include "Sdk.h"
 
 
-class DeveloperSdk : public Sdk, public BuyProtocol
+class DeveloperSdk : public Sdk, public SdkChargeProtocol
 {
 public:
     static DeveloperSdk *getInstance();
     
-    virtual void buy(const std::string &param);
+    // SdkChargeProtocol
+    virtual void charge(const std::string &order, const std::string &identifier) override;
 };
 
 #endif /* defined(__fate__DeveloperSdk__) */

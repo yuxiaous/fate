@@ -1042,16 +1042,6 @@ str
 jsb.SdkManager = {
 
 /**
- * @method buy
- * @param {String} arg0
- */
-buy : function (
-str 
-)
-{
-},
-
-/**
  * @method configureSdk
  */
 configureSdk : function (
@@ -1070,11 +1060,49 @@ int
 },
 
 /**
+ * @method onChargeResult
+ * @param {int} arg0
+ * @param {String} arg1
+ */
+onChargeResult : function (
+int, 
+str 
+)
+{
+},
+
+/**
+ * @method onPurchase
+ * @param {char} arg0
+ * @param {int} arg1
+ * @param {double} arg2
+ */
+onPurchase : function (
+char, 
+int, 
+double 
+)
+{
+},
+
+/**
  * @method setAccountName
  * @param {char} arg0
  */
 setAccountName : function (
 char 
+)
+{
+},
+
+/**
+ * @method charge
+ * @param {String} arg0
+ * @param {String} arg1
+ */
+charge : function (
+str, 
+str 
 )
 {
 },
@@ -1108,21 +1136,23 @@ int
 },
 
 /**
- * @method setGameServer
+ * @method onUse
  * @param {char} arg0
+ * @param {int} arg1
  */
-setGameServer : function (
-char 
+onUse : function (
+char, 
+int 
 )
 {
 },
 
 /**
- * @method setBuyCallback
- * @param {function} arg0
+ * @method setGameServer
+ * @param {char} arg0
  */
-setBuyCallback : function (
-func 
+setGameServer : function (
+char 
 )
 {
 },
@@ -1141,6 +1171,16 @@ login : function (
  */
 setAge : function (
 int 
+)
+{
+},
+
+/**
+ * @method setChargeCallback
+ * @param {function} arg0
+ */
+setChargeCallback : function (
+func 
 )
 {
 },

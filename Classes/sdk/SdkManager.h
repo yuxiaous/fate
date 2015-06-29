@@ -19,9 +19,12 @@ public:
     static void configureSdk();
     static void init();
     
-    // BuyProtocol
-    static void buy(const std::string &param);
-    static void setBuyCallback(const std::function<void(char *param)> &callback);
+    // ChargeProtocol
+    static void charge(const std::string &order, const std::string &identifier);
+    static void setChargeCallback(const std::function<void(char *param)> &callback);
+    static void onChargeResult(int result, const std::string &order);
+    static void onPurchase(const char* item, int number, double price);
+    static void onUse(const char* item, int number);
     
     // AccountProtocol
     static void login();

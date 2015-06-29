@@ -36,6 +36,7 @@ var ShopSystem = SystemBase.extend({
                 good_id: id,
                 count: num
             });
+            jsb.SdkManager.onPurchase(config.name, num, config.pay_cost);
         }
     },
 
@@ -50,10 +51,7 @@ var ShopSystem = SystemBase.extend({
             return;
         }
 
-        jsb.SdkManager.buy(JSON.stringify({
-            order: obj.order,
-            platform_good_id: "001"
-        }));
+        jsb.SdkManager.charge(obj.order, "001");
     }
 });
 

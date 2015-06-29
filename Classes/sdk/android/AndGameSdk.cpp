@@ -52,7 +52,7 @@ static void Java_com_fate_dev_AndGameSdkJni_init()
     }
 }
 
-static void Java_com_fate_dev_AndGameSdkJni_buy(const char *param)
+static void Java_com_fate_dev_AndGameSdkJni_charge(const char *order, const char *identifier)
 {
     cocos2d::log("Java_com_fate_dev_AndGameSdkJni_buy");
     JniMethodInfo minfo;
@@ -61,20 +61,21 @@ static void Java_com_fate_dev_AndGameSdkJni_buy(const char *param)
         jobject jobj = minfo.env->CallStaticObjectMethod(minfo.classID, minfo.methodID);
 
         if(jobj) {
-            if (JniHelper::getMethodInfo(minfo, CLASS_NAME, "buy", "(Ljava/lang/String;)V")) {
-                jstring jparam = minfo.env->NewStringUTF(param);
+            if (JniHelper::getMethodInfo(minfo, CLASS_NAME, "charge", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+                jstring jorder = minfo.env->NewStringUTF(order);
+                jstring jidentifier = minfo.env->NewStringUTF(identifier);
 
-                minfo.env->CallVoidMethod(jobj, minfo.methodID, jparam);
+                minfo.env->CallVoidMethod(jobj, minfo.methodID, jorder, jidentifier);
             }
         }
     }
 }
 
-void Java_com_fate_dev_AndGameSdkJni_onBuyCallback(JNIEnv *env, jobject thiz, jstring jparam)
+void Java_com_fate_dev_AndGameSdkJni_onChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
 {
-    cocos2d::log("Java_com_fate_dev_AndGameSdkJni_onBuyCallback");
-    std::string param = JniHelper::jstring2string(jparam);
-    AndGameSdk::getInstance()->onBuyCallback(param.c_str());
+    cocos2d::log("Java_com_fate_dev_AndGameSdkJni_onChargeCallback");
+    std::string order = JniHelper::jstring2string(jorder);
+    AndGameSdk::getInstance()->onChargeCallback(result, order.c_str());
 }
 
 static bool Java_org_cocos2dx_javascript_AppActivity_isMusicEnabled()
@@ -104,9 +105,9 @@ void AndGameSdk::init()
     Java_com_fate_dev_AndGameSdkJni_init();
 }
 
-void AndGameSdk::buy(const std::string &param)
+void AndGameSdk::charge(const std::string &order, const std::string &identifier)
 {
-    Java_com_fate_dev_AndGameSdkJni_buy(param.c_str());
+    Java_com_fate_dev_AndGameSdkJni_charge(order.c_str(), identifier.c_str());
 }
 
 bool AndGameSdk::isMusicEnabled()
