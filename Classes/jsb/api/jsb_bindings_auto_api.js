@@ -1042,14 +1042,6 @@ str
 jsb.SdkManager = {
 
 /**
- * @method init
- */
-init : function (
-)
-{
-},
-
-/**
  * @method buy
  * @param {String} arg0
  */
@@ -1068,11 +1060,97 @@ configureSdk : function (
 },
 
 /**
+ * @method setGender
+ * @param {int} arg0
+ */
+setGender : function (
+int 
+)
+{
+},
+
+/**
+ * @method setAccountName
+ * @param {char} arg0
+ */
+setAccountName : function (
+char 
+)
+{
+},
+
+/**
+ * @method setAccount
+ * @param {char} arg0
+ */
+setAccount : function (
+char 
+)
+{
+},
+
+/**
+ * @method init
+ */
+init : function (
+)
+{
+},
+
+/**
+ * @method setAccountType
+ * @param {int} arg0
+ */
+setAccountType : function (
+int 
+)
+{
+},
+
+/**
+ * @method setGameServer
+ * @param {char} arg0
+ */
+setGameServer : function (
+char 
+)
+{
+},
+
+/**
  * @method setBuyCallback
  * @param {function} arg0
  */
 setBuyCallback : function (
 func 
+)
+{
+},
+
+/**
+ * @method login
+ */
+login : function (
+)
+{
+},
+
+/**
+ * @method setAge
+ * @param {int} arg0
+ */
+setAge : function (
+int 
+)
+{
+},
+
+/**
+ * @method setLevel
+ * @param {int} arg0
+ */
+setLevel : function (
+int 
 )
 {
 },
