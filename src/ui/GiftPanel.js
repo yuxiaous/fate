@@ -24,88 +24,136 @@ var GiftPanel = ui.GuiController.extend({
 
             btn_.addTouchEventListener(function (touch,event) {
                 if(event == ccui.Widget.TOUCH_ENDED){
-                    LOG("idx = " + idx_);
-
                     var giftType = 0;
+                    var giftId = 0;
+
                     switch (idx_){
                         case 0 :
-                            giftType = GiftPanel.GiftType.Vip;
+                            giftType = GiftSystem.GiftType.Vip;
+                            giftId = 101004;
                             break;
                         case 1 :
-                            giftType = GiftPanel.GiftType.ZhiZun;
+                            giftType = GiftSystem.GiftType.ZhiZun;
+                            giftId = 101003;
                             break;
                         case 2 :
-                            giftType = GiftPanel.GiftType.ZhuangBei;
+                            giftType = GiftSystem.GiftType.ZhuangBei;
+                            giftId = 101001;
                             break;
                         case 3 :
-                            giftType = GiftPanel.GiftType.WuQi;
+                            giftType = GiftSystem.GiftType.WuQi;
+                            giftId = 101002;
                             break;
                     }
-                    var buy_panel = new GiftBuyDetail(giftType);
+                    var buy_panel = new GiftBuyDetail(giftType,giftId);
                     buy_panel.pop();
-                    UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("GiftPanel"));
+                    UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"));
                 }
             },this)
+           var lbl_time =  btn_.getChildByName("lbl_time");
+            btn_.lbl_time = lbl_time;
+        },this);
+
+        this._bindings =[
+            notification.createBinding(notification.event.REFRESH_GIFT_INFO, function () {
+                this.refreshGiftNodeDisplay();
+            },this)
+        ]
+
+        this.refreshGiftNodeDisplay();
+    },
+
+    refreshGiftNodeDisplay : function () {
+        _.each([this._ui.btn_1,
+            this._ui.btn_2,
+            this._ui.btn_3,
+            this._ui.btn_4], function (btn_,idx_) {
+            var giftData = GiftSystem.instance._giftData;
+            LOG("refresh gift info gift panel 111 = " + giftData[idx_].buy_num);
+            LOG("refresh gift info gift panel 111 = " + giftData[idx_].giftType);
+
+            var giftType = 0;
+            switch (idx_){
+                case 0 :
+                    giftType = GiftSystem.GiftType.Vip;
+                    break;
+                case 1 :
+                    giftType = GiftSystem.GiftType.ZhiZun;
+                    break;
+                case 2 :
+                    giftType = GiftSystem.GiftType.ZhuangBei;
+                    break;
+                case 3 :
+                    giftType = GiftSystem.GiftType.WuQi;
+                    break;
+            }
+
+            var tmpGiftData = null;
+            _.each(giftData, function (GD_) {
+                if(GD_.giftType == giftType){
+                    tmpGiftData = GD_;
+                }
+            })
+
+                if(tmpGiftData.buy_num >= 0 && tmpGiftData.giftType != GiftSystem.GiftType.ZhiZun){
+                    btn_.setVisible(false);
+                }
+                else{
+                    btn_.setVisible(true);
+                }
+
+
         },this);
     },
 
     onExit: function() {
 
+        notification.removeBinding(this._bindings);
         this._ui = null;
         this._super();
     }
 });
 
-GiftPanel.GiftType = {
-    ZhuangBei : 1,
-    WuQi : 2,
-    ZhiZun : 3,
-    Vip : 4
-}
-
 var GiftBuyDetail = ui.GuiWindowBase.extend({
     _guiFile : "ui/gift_detail_panel.json",
 
-    ctor : function (type_) {
+    ctor : function (type_,giftId_) {
         this._super();
 
         this._giftType = type_;
+        this._giftId = giftId_;
     },
 
     onEnter : function () {
         this._super();
 
+        //this.setScale(0.8);
 
         var gift_detail_img = "";
-        var gift_title_img = "";
         switch (this._giftType){
-            case GiftPanel.GiftType.ZhuangBei :
-                gift_title_img = "ui_295.png";
-                gift_detail_img = "ui_296.png";
+            case GiftSystem.GiftType.ZhuangBei :
+                gift_detail_img = "ui_314.png";
                 break;
-            case  GiftPanel.GiftType.WuQi :
-                gift_title_img = "ui_297.png";
-                gift_detail_img = "ui_298.png";
+            case  GiftSystem.GiftType.WuQi :
+                gift_detail_img = "ui_313.png";
                 break;
-            case GiftPanel.GiftType.ZhiZun :
-                gift_title_img = "ui_293.png";
-                gift_detail_img = "ui_294.png";
+            case GiftSystem.GiftType.ZhiZun :
+                gift_detail_img = "ui_312.png";
                 break;
-            case GiftPanel.GiftType.Vip:
-                gift_title_img = "ui_299.png";
-                gift_detail_img = "ui_300.png";
+            case GiftSystem.GiftType.Vip:
+                gift_detail_img = "ui_315.png";
                 break;
         }
 
         var baseString = "images/code_ui/";
         gift_detail_img = String(baseString+gift_detail_img);
-        gift_title_img = String(baseString+gift_title_img);
+        //gift_title_img = String(baseString+gift_title_img);
 
-        this._title_img = this.seekWidgetByName("item_title");
-        this._detail_img = this.seekWidgetByName("item_detail_img");
+        //this._title_img = this.seekWidgetByName("item_title");
+        this._detail_img = this.seekWidgetByName("gift_panel");
 
 
-        this._title_img.loadTexture(gift_title_img);
+        //this._title_img.loadTexture(gift_title_img);
         this._detail_img.loadTexture(gift_detail_img);
 
     },
@@ -116,7 +164,9 @@ var GiftBuyDetail = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-
+        GiftSystem.instance.buyGiftItem(this._giftType);
+        ShopSystem.instance.buyGood(this._giftId,1);
+        this.close();
     },
 
     _on_btn_close : function () {

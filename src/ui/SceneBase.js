@@ -357,18 +357,40 @@ var SceneBase = lh.LHScene.extend({
 
     showFinishPanel : function () {
         this._operator.setHide(false);
-
         var mapId = BattleSystem.instance.cur_battle_map
         var mapConf = configdb.map[mapId];
-
         if(mapConf && mapConf.drop_gift){
-            var revive = new BattleWinGiftPanel();
+
+            var idx_ = _.random(0,3);
+            var giftType = 0;
+            var giftId = 0;
+            switch (idx_){
+                case 0 :
+                    giftType = GiftSystem.GiftType.Vip;
+                    giftId = 101004;
+                    break;
+                case 1 :
+                    giftType = GiftSystem.GiftType.ZhiZun;
+                    giftId = 101003;
+                    break;
+                case 2 :
+                    giftType = GiftSystem.GiftType.ZhuangBei;
+                    giftId = 101001;
+                    break;
+                case 3 :
+                    giftType = GiftSystem.GiftType.WuQi;
+                    giftId = 101002;
+                    break;
+            }
+
+            var revive = new GiftBuyDetail(giftType,giftId);
             revive.setCloseCallback(function () {
                 var win = new BattleWinPanel();
                 win.setCloseCallback(this.onSceneFinished, this);
                 win.pop();
             },this);
             revive.pop();
+            UiEffect.iconOpenEffect(revive.seekWidgetByName("gift_panel"));
         }
         else{
             var win = new BattleWinPanel();

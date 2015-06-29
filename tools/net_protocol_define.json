@@ -489,6 +489,34 @@
     [
       ["uint32","player_id","player ID"]
     ]
+  },
+
+  "CMD_CS_BUY_GIFT" :
+  {
+    "code" : 1608,
+    "type" : "CS",
+    "desc" : "购买礼包",
+    "schemes" :
+    [
+      ["uint32","gift_type","礼包类型"]
+    ]
+  },
+
+  "CMD_SC_BUY_GIFT_RESULT" :
+  {
+    "code" : 1609,
+    "type" : "SC",
+    "desc" : "购买礼包结果",
+    "schemes" :
+    [
+      ["uint32","result","0成功"],
+      ["list", "gift_type_data", "礼包各种类型对应的购买数量",
+        [
+          ["uint32", "giftType", "礼包类型"],
+          ["uint32", "buy_num", "礼包购买过的数量"]
+        ]
+      ]
+    ]
   }
 }
 

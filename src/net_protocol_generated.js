@@ -225,12 +225,30 @@ _BindFunc(1102, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_SHOP_BUY_RESULT(obj);
 });
 
+// @protocol 购买礼包
+// @param {uint32} gift_type, 礼包类型
+net_protocol_handlers.CMD_CS_BUY_GIFT = 1608;
+net_protocol_handlers.SEND_CMD_CS_BUY_GIFT = function(obj) {
+	cc.assert(obj.gift_type != undefined, "CMD_CS_BUY_GIFT.gift_type is undefined.");
+	_SendFunc(1608, obj);
+};
+
 // @protocol 物品装备结果
 // @param {uint32} result, 结果 0成功
 net_protocol_handlers.CMD_CS_EQUIP_ITEM_RESULT = 1305;
 _BindFunc(1305, function(obj) {
 	cc.assert(obj.result != undefined, "CMD_CS_EQUIP_ITEM_RESULT.result is undefined.");
 	net_protocol_handlers.ON_CMD_CS_EQUIP_ITEM_RESULT(obj);
+});
+
+// @protocol 购买礼包结果
+// @param {uint32} result, 0成功
+// @param {list} gift_type_data, 礼包各种类型对应的购买数量
+net_protocol_handlers.CMD_SC_BUY_GIFT_RESULT = 1609;
+_BindFunc(1609, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_BUY_GIFT_RESULT.result is undefined.");
+	cc.assert(obj.gift_type_data != undefined, "CMD_SC_BUY_GIFT_RESULT.gift_type_data is undefined.");
+	net_protocol_handlers.ON_CMD_SC_BUY_GIFT_RESULT(obj);
 });
 
 // @protocol 装备槽一键升级结果

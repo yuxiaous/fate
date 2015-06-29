@@ -79,6 +79,36 @@ var shop_server = {
                 return false;
             }
         }
+        else if(config.buy_type == shop_server.GoodsType.Gift){
+            var giftConf = configdb.item[config.buy_id];
+            if(giftConf){
+                _.each([["gift1","gift1_val"],
+                    ["gift2","gift2_val"],
+                    ["gift3","gift3_val"],
+                    ["gift4","gift4_val"],
+                    ["gift5","gift5_val"]
+                ], function (conf_) {
+                    if(conf_ && giftConf[conf_[0]]){
+                        var type = BagSystem.getConfigType(giftConf[conf_[0]]);
+                        if(type == BagSystem.ConfigType.Equip) {
+                            bag_server.addItem(giftConf[conf_[0]], giftConf[conf_[1]])
+                        }
+                        else {
+                            //TODO shilei
+                            if(giftConf[conf_[0]] == 100002){
+                                player_server.changeGold(giftConf[conf_[1]]);
+                            }
+                            else if(giftConf[conf_[0]] == 100003){
+                                player_server.changeDiamond(giftConf[conf_[1]]);
+                            }
+                            else if(giftConf[conf_[0]] == 100005){
+                                bag_server.addItem(giftConf[conf_[0]], giftConf[conf_[1]])
+                            }
+                        }
+                    }
+                });
+            }
+        }
 
         return true;
     },
@@ -115,7 +145,8 @@ shop_server.GoodsType = {
 
     Skin: 4,
     Gold: 5,
-    Diamond: 6
+    Diamond: 6,
+    Gift : 7
 };
 shop_server.PayType = {
     Gold: 1,

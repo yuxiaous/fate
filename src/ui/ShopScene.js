@@ -139,7 +139,9 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
             lbl_quality: this.seekWidgetByName("lbl_quality"),
             lbl_desc: this.seekWidgetByName("lbl_desc"),
             lbl_cost: this.seekWidgetByName("lbl_cost"),
-            sp_curr: this.seekWidgetByName("Sprite_1")
+            sp_curr: this.seekWidgetByName("Sprite_1"),
+            sale_panel : this.seekWidgetByName("sale_panel"),
+            lbl_sale : this.seekWidgetByName("lbl_sale_value")
         };
         this._ui.icon = new IconWidget();
         this._ui.icon.setWidget(this.seekWidgetByName("ProjectNode_1"));
@@ -147,6 +149,14 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
         var config = configdb.shop[this._good_id];
         if(config == undefined) {
             return;
+        }
+
+        if(config.on_sale <= 0){
+            this._ui.sale_panel.setVisible(false);
+        }
+        else{
+            this._ui.sale_panel.setVisible(true);
+            this._ui.lbl_sale.setString(String(config.on_sale));
         }
 
         if(config.buy_type == ShopSystem.GoodType.Equip) {
@@ -201,12 +211,14 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
     },
 
     _on_btn_buy: function() {
-        var win = new MessageBoxOkCancel("是否购买？");
-        win.setOkCallback(function() {
-            LOG("购买商品"+this._good_id);
-            ShopSystem.instance.buyGood(this._good_id, 1);
-        }, this);
-        win.pop();
+        //var win = new MessageBoxOkCancel("是否购买？");
+        //win.setOkCallback(function() {
+        //    LOG("购买商品"+this._good_id);
+        //    ShopSystem.instance.buyGood(this._good_id, 1);
+        //}, this);
+        //win.pop();
+
+        ShopSystem.instance.buyGood(this._good_id, 1);
     }
 });
 

@@ -63,7 +63,7 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
         //ramdon avatar
         if(this.avatarNode){
             var avatar = new ShowRole(1101);
-             avatar.setScale(0.7);
+             avatar.setScale(0.8);
             this.avatarNode.addChild(avatar);
         }
 

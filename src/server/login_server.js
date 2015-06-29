@@ -62,6 +62,12 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
         use_skin: skin_server.skin_info.use_skin
     });
 
+    //gift info
+    server.send(net_protocol_handlers.CMD_SC_BUY_GIFT_RESULT,{
+        result : 0,
+        gift_type_data : gift_server.gift_info
+    });
+
     server.send(net_protocol_handlers.CMD_SC_INIT_END);
 });
 

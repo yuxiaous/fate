@@ -85,6 +85,20 @@ var ResourcePanel = ui.GuiController.extend({
         //        GmSystem.instance.sendCommand("ar 2 100");
         //        break;
         //}
+
+        switch (this.type){
+            case  ResourcePanel.Type.Action:
+                var buyAction = new BuyFullAction();
+                buyAction.pop();
+                UiEffect.iconOpenEffect(buyAction);
+                break;
+            case ResourcePanel.Type.Gold:
+                ui.pushScene(new ShopScene(ShopSystem.ShopType.Charge));
+                break;
+            case ResourcePanel.Type.Diamond:
+
+                break;
+        }
     }
 });
 
@@ -93,3 +107,34 @@ ResourcePanel.Type = {
     Gold: 2,
     Diamond: 3
 };
+
+
+var BuyFullAction = ui.GuiWindowBase.extend({
+    _guiFile : "ui/buy_action.json",
+
+    ctor : function () {
+        this._super();
+
+    },
+
+    onEnter : function () {
+        this._super();
+
+    },
+
+    onExit : function () {
+        this._super();
+
+    },
+
+    _on_btn_buy : function(){
+
+        this.close();
+    },
+
+    _on_btn_close : function () {
+
+        this.close();
+    }
+
+});

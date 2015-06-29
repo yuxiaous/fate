@@ -29,6 +29,7 @@ var SystemManager = {
         addSubSystem(BattleSystem);
         addSubSystem(SkinSystem);
         addSubSystem(RewardSystem);
+        addSubSystem(GiftSystem);
     },
 
     end: function() {

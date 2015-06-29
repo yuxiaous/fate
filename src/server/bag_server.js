@@ -6,7 +6,12 @@
 var bag_server = {
     start: function() {
         this.bag_info = database.checkout("bag_info", [
-            //{ uid: 1, id: 20006, num: 1, type: 1 }
+            //{ uid: 1, id: 200101, num: 1, type: 1 },
+            //{ uid: 2, id: 200301, num: 1, type: 1 },
+            //{ uid: 3, id: 200201, num: 1, type: 1 },
+            //{ uid: 4, id: 200501, num: 1, type: 1 },
+            //{ uid: 5, id: 200401, num: 1, type: 1 },
+            //{ uid: 6, id: 200601, num: 1, type: 1 }
         ]);
 
         _.each(this.bag_info, function(info, i) {
