@@ -8,7 +8,7 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="/libcocos2dx"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="lib" path="sdk/AndGame.Sdk_v20121/SDK/runtime/CMBilling.jar"/>
 	<classpathentry exported="true" kind="lib" path="/client/Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar"/>
+	<classpathentry kind="lib" path="/client/Classes/sdk/AndGame/android/runtime/CMBilling.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -24,7 +24,7 @@
             "to": "config"
         },
         {
-            "from": "sdk/AndGame.Sdk_v20121/SDK/assets",
+            "from": "../../../Classes/sdk/AndGame/android/assets",
             "to": ""
         }
     ],

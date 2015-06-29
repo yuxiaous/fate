@@ -62,7 +62,7 @@ public class AndGameSdkJni {
 		if(_order.length() > 0) {
 			System.out.println("AndGameSdkJni.handleResult");
 
-			int result = (resultCode == BillingResult.SUCCESS) ? 0 : 0;
+			int result = (resultCode == BillingResult.SUCCESS) ? 0 : 1;
 			onChargeCallback(result, _order);
 			_order = "";
 		}

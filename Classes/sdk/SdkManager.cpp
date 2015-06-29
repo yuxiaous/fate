@@ -11,7 +11,7 @@
 #include "SdkManager.h"
 #include "Sdk.h"
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#ifdef TALKING_DATA_GA
 #include "TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.h"
 #endif
 
@@ -24,7 +24,7 @@
 #endif
 
 #ifdef ANDGAMESDK
-#include "AndGameSdk.h"
+#include "AndGame/AndGameSdk.h"
 #endif
 
 USING_NS_CC;
@@ -44,7 +44,7 @@ void SdkManager::removeSdk(Sdk *sdk)
 
 void SdkManager::configureSdk()
 {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#if TALKING_DATA_GA
     addSdk(TalkingDataGameAnalyticsSdk::getInstance());
 #endif
     
