@@ -358,7 +358,10 @@ var SceneBase = lh.LHScene.extend({
     showFinishPanel : function () {
         this._operator.setHide(false);
 
-        if(cc.random0To1() > 0.4){
+        var mapId = BattleSystem.instance.cur_battle_map
+        var mapConf = configdb.map[mapId];
+
+        if(mapConf && mapConf.drop_gift){
             var revive = new BattleWinGiftPanel();
             revive.setCloseCallback(function () {
                 var win = new BattleWinPanel();

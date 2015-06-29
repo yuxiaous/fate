@@ -66,6 +66,10 @@ var MainScene = ui.GuiSceneBase.extend({
             },this)
         ];
 
+
+        //var loginPanel = new LoginRewardLayer(3);
+        //loginPanel.pop();
+
         RewardSystem.instance.getLoginRewardDaily();
     },
 
