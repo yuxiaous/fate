@@ -19,7 +19,8 @@ public class TalkingDataGASdkJni {
 		System.out.println("TalkingDataGASdkJni.init");
 
 		if (SdkManagerJni.activity != null) {
-			TalkingDataGA.init(SdkManagerJni.application, "59EC3DE05BB0234EA444193F4B9E0E4B", "AndroidDevelop");
+			TalkingDataGA.init(SdkManagerJni.activity, "59EC3DE05BB0234EA444193F4B9E0E4B", "AndroidDevelop");
+			
 		}
 	}
 }

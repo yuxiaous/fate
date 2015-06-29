@@ -83,15 +83,5 @@ public class AppActivity extends Cocos2dxActivity{
     
     private static native boolean nativeIsLandScape();
     private static native boolean nativeIsDebug();
-
-
-
-    public static native void paymentCompleted(int id, int res);
-    public static void startLevel(String aa)
-    {
-        System.out.println("yuxiao startlevel "+aa);
-
-        paymentCompleted(1111, 2223);
-    }
-
+    
 }

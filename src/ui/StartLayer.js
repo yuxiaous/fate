@@ -52,7 +52,7 @@ var StartLayerScene = ui.GuiSceneBase.extend({
 
     onEnterGame: function() {
         jsb.SdkManager.setAccount("test");
-        jsb.SdkManager.setAccountName("Saber")
+        jsb.SdkManager.setAccountName("Saber");
         this.pushScene(MainScene);
     },
 

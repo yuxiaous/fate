@@ -1,16 +1,5 @@
 LOCAL_PATH := $(call my-dir)
 
-
-#===== third os start =========================================================
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := megjb
-LOCAL_SRC_FILES := ../../../../Classes/sdk/AndGame/android/libs/armeabi/libmegjb.so
-include $(PREBUILT_SHARED_LIBRARY)
-
-#===== third os end =========================================================
-
-
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := cocos2djs_shared

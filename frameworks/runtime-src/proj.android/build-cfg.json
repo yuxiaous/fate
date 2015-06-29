@@ -22,15 +22,11 @@
         {
             "from": "../../../config",
             "to": "config"
-        },
-        {
-            "from": "../../../Classes/sdk/AndGame/android/assets",
-            "to": ""
         }
     ],
     "must_copy_resources": [
         {
-            "from": "../../../publish/script",
+            "from": "../../js-bindings/bindings/script",
             "to": "script"
         },
         {

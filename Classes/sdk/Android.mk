@@ -11,13 +11,12 @@ LOCAL_ARM_MODE := arm
 LOCAL_SRC_FILES := SdkManager.cpp \
                    Sdk.cpp \
                    DeveloperSdk.cpp \
-                   AndGame/AndGameSdk.cpp \
                    TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT \
-                -DANDGAMESDK \
-                -DTALKING_DATA_GA
+                -DTALKING_DATA_GA \
+                -DFATE_DEV
 
 LOCAL_EXPORT_CFLAGS := -DCOCOS2D_JAVASCRIPT
 
