@@ -62,7 +62,12 @@ var IconWidget = ui.GuiController.extend({
         this._ui.sp_icon.setTexture(config.icon);
 
         this._ui.lbl_num.setVisible(this.num > 1);
-        this._ui.lbl_num.setString(this.num);
+        if(this.num >= 10000 && this.num % 10000 == 0) {
+            this._ui.lbl_num.setString(String(Math.floor(this.num/10000)) + "万");
+        }
+        else {
+            this._ui.lbl_num.setString(String(this.num));
+        }
     },
 
     _on_btn_bg: function() {
