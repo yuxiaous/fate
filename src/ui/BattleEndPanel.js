@@ -119,7 +119,6 @@ BattleEndPanel.Type = {
     Lose: 2
 };
 
-
 var BattleWinPanel = ui.GuiWindowBase.extend({
     _guiFile: "ui/battle_victory_panel.json",
 
@@ -362,5 +361,41 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
         }, this);
         lose.pop();
     }
-
 });
+
+var BattleWinGiftPanel = ui.GuiWindowBase.extend({
+    _guiFile : "ui/battle_win_buy.json",
+
+    ctor : function () {
+        this._super();
+    },
+
+    onEnter : function () {
+        this._super();
+
+    },
+
+    onExit : function () {
+        this._super();
+
+    },
+
+    _on_btn_enter : function(){
+
+    },
+
+    _on_btn_close : function () {
+
+        this.close();
+        //// show lose window
+        //var lose = new BattleLosePanel();
+        //lose.setCloseCallback(function(w) {
+        //    if(w.exit) {
+        //        cc.director.popScene();
+        //    }
+        //}, this);
+        //lose.pop();
+    }
+});
+
+

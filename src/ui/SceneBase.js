@@ -315,17 +315,6 @@ var SceneBase = lh.LHScene.extend({
         if(this._isLostBattle){
             // show revive window
             var revive = new BattleRevivePanel();
-            //revive.setCloseCallback(function(w) {
-            //    if(w.exit) {
-            //        var lose = new BattleLosePanel();
-            //        lose.setCloseCallback(function(w) {
-            //            if(w.exit) {
-            //                cc.director.popScene();
-            //            }
-            //        }, this);
-            //        lose.pop();
-            //    }
-            //}, this);
             revive.pop();
         }
         else{
@@ -369,9 +358,20 @@ var SceneBase = lh.LHScene.extend({
     showFinishPanel : function () {
         this._operator.setHide(false);
 
-        var win = new BattleWinPanel();
-        win.setCloseCallback(this.onSceneFinished, this);
-        win.pop();
+        if(cc.random0To1() > 0.4){
+            var revive = new BattleWinGiftPanel();
+            revive.setCloseCallback(function () {
+                var win = new BattleWinPanel();
+                win.setCloseCallback(this.onSceneFinished, this);
+                win.pop();
+            },this);
+            revive.pop();
+        }
+        else{
+            var win = new BattleWinPanel();
+            win.setCloseCallback(this.onSceneFinished, this);
+            win.pop();
+        }
     },
 
     onSceneFinished : function (){
