@@ -1042,16 +1042,6 @@ str
 jsb.SdkManager = {
 
 /**
- * @method buy
- * @param {String} arg0
- */
-buy : function (
-str 
-)
-{
-},
-
-/**
  * @method configureSdk
  */
 configureSdk : function (
@@ -1070,11 +1060,35 @@ int
 },
 
 /**
+ * @method onChargeResult
+ * @param {int} arg0
+ * @param {String} arg1
+ */
+onChargeResult : function (
+int, 
+str 
+)
+{
+},
+
+/**
  * @method setAccountName
  * @param {char} arg0
  */
 setAccountName : function (
 char 
+)
+{
+},
+
+/**
+ * @method charge
+ * @param {String} arg0
+ * @param {String} arg1
+ */
+charge : function (
+str, 
+str 
 )
 {
 },
@@ -1118,16 +1132,6 @@ char
 },
 
 /**
- * @method setBuyCallback
- * @param {function} arg0
- */
-setBuyCallback : function (
-func 
-)
-{
-},
-
-/**
  * @method login
  */
 login : function (
@@ -1141,6 +1145,16 @@ login : function (
  */
 setAge : function (
 int 
+)
+{
+},
+
+/**
+ * @method setChargeCallback
+ * @param {function} arg0
+ */
+setChargeCallback : function (
+func 
 )
 {
 },

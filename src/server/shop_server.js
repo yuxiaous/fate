@@ -5,7 +5,7 @@
 
 var shop_server = {
     start: function() {
-        jsb.SdkManager.setBuyCallback(this.onBuyCallback.bind(this));
+        jsb.SdkManager.setChargeCallback(this.onChargeCallback.bind(this));
 
         this.orders = {
             //order_id: {
@@ -20,8 +20,8 @@ var shop_server = {
 
     },
 
-    onBuyCallback: function(json) {
-        LOG("shop_server.onBuyCallback");
+    onChargeCallback: function(json) {
+        LOG("shop_server.onChargeCallback");
         var obj = JSON.parse(json);
         if(obj.result == 0) {
             this.handleOrder(obj.order);

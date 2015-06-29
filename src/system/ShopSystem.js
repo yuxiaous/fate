@@ -50,10 +50,7 @@ var ShopSystem = SystemBase.extend({
             return;
         }
 
-        jsb.SdkManager.buy(JSON.stringify({
-            order: obj.order,
-            platform_good_id: "001"
-        }));
+        jsb.SdkManager.charge(obj.order, "001");
     }
 });
 

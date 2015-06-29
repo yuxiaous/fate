@@ -15,7 +15,7 @@
 #include "TalkingDataGameAnalyticsSdk.h"
 #endif
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(FATE_DEV)
 #include "DeveloperSdk.h"
 #endif
 
@@ -48,7 +48,7 @@ void SdkManager::configureSdk()
     addSdk(TalkingDataGameAnalyticsSdk::getInstance());
 #endif
     
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(FATE_DEV)
     addSdk(DeveloperSdk::getInstance());
 #endif
     
@@ -68,26 +68,35 @@ void SdkManager::init()
     }
 }
 
-void SdkManager::buy(const std::string &param)
+void SdkManager::charge(const std::string &order, const std::string &identifier)
 {
     for(Sdk *sdk : _sdks) {
-        BuyProtocol *buy = dynamic_cast<BuyProtocol *>(sdk);
-        if(buy) {
-            buy->buy(param);
+        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
+        if(charge) {
+            charge->charge(order, identifier);
         }
     }
 }
 
-void SdkManager::setBuyCallback(const std::function<void(char *param)> &callback)
+void SdkManager::setChargeCallback(const std::function<void(char *param)> &callback)
 {
     for(Sdk *sdk : _sdks) {
-        BuyProtocol *buy = dynamic_cast<BuyProtocol *>(sdk);
-        if(buy) {
-            buy->setBuyCallback(callback);
+        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
+        if(charge) {
+            charge->setChargeCallback(callback);
         }
     }
 }
 
+void SdkManager::onChargeResult(int result, const std::string &order)
+{
+    for(Sdk *sdk : _sdks) {
+        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
+        if(charge) {
+            charge->onChargeResult(result, order);
+        }
+    }
+}
 
 void SdkManager::login()
 {
@@ -97,7 +106,7 @@ void SdkManager::login()
 void SdkManager::setAccount(const char* accountId)
 {
     for(Sdk *sdk : _sdks) {
-        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
         if(account) {
             account->setAccount(accountId);
         }
@@ -107,7 +116,7 @@ void SdkManager::setAccount(const char* accountId)
 void SdkManager::setAccountName(const char* accountName)
 {
     for(Sdk *sdk : _sdks) {
-        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
         if(account) {
             account->setAccountName(accountName);
         }
@@ -117,9 +126,9 @@ void SdkManager::setAccountName(const char* accountName)
 void SdkManager::setAccountType(int accountType)
 {
     for(Sdk *sdk : _sdks) {
-        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
         if(account) {
-            account->setAccountType((AccountProtocol::AccountType)accountType);
+            account->setAccountType((SdkAccountProtocol::AccountType)accountType);
         }
     }
 }
@@ -127,7 +136,7 @@ void SdkManager::setAccountType(int accountType)
 void SdkManager::setLevel(int level)
 {
     for(Sdk *sdk : _sdks) {
-        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
         if(account) {
             account->setLevel(level);
         }
@@ -137,9 +146,9 @@ void SdkManager::setLevel(int level)
 void SdkManager::setGender(int gender)
 {
     for(Sdk *sdk : _sdks) {
-        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
         if(account) {
-            account->setGender((AccountProtocol::Gender)gender);
+            account->setGender((SdkAccountProtocol::Gender)gender);
         }
     }
 }
@@ -147,7 +156,7 @@ void SdkManager::setGender(int gender)
 void SdkManager::setAge(int age)
 {
     for(Sdk *sdk : _sdks) {
-        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
         if(account) {
             account->setAge(age);
         }
@@ -157,7 +166,7 @@ void SdkManager::setAge(int age)
 void SdkManager::setGameServer(const char* gameServer)
 {
     for(Sdk *sdk : _sdks) {
-        AccountProtocol *account = dynamic_cast<AccountProtocol *>(sdk);
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
         if(account) {
             account->setGameServer(gameServer);
         }

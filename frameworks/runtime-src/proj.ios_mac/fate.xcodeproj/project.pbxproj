@@ -329,6 +329,7 @@
 		DEA0AB9B1B2B0B1700079B42 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
 		DEA0AB9C1B2B0B1800079B42 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
 		DEA0AB9D1B2B0B1C00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
+		DEF8F1611B412D5E00B1C30D /* DeveloperSdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1858,6 +1859,7 @@
 				C00FD4B61938628E00C6382D /* PlayEnable_png.cpp in Sources */,
 				3E12D1A91957FB0E002FF0FD /* Protos.pb.cc in Sources */,
 				DE29E1551B3D75BE000656CA /* TDCCVirtualCurrency.mm in Sources */,
+				DEF8F1611B412D5E00B1C30D /* DeveloperSdk.cpp in Sources */,
 				DE36EFD41B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */,
 				DE36EF201B25955E005B744E /* DBCCArmatureNode.cpp in Sources */,
 				DE36EF421B25955E005B744E /* JsonStorage.cpp in Sources */,
@@ -2146,6 +2148,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
+					FATE_DEV,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
@@ -2153,7 +2156,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = /Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/TalkingDataGameAnalytics/ios;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "2a61ce5b-703c-4b9d-91cf-be2922ad3c71";
+				PROVISIONING_PROFILE = "7ce4175d-cd93-4f2b-9556-7bc07061df2f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
@@ -2173,6 +2176,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
+					FATE_DEV,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
@@ -2180,7 +2184,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = /Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/TalkingDataGameAnalytics/ios;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "4bc951d2-2dfb-4eb5-b705-d52f34a3c944";
+				PROVISIONING_PROFILE = "cce7e205-e848-4007-99dd-d8c6af4c1c93";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";

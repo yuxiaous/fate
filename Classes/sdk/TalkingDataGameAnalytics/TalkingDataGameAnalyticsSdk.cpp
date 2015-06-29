@@ -42,7 +42,7 @@ void TalkingDataGameAnalyticsSdk::setAccountName(const char* accountName)
     }
 }
 
-void TalkingDataGameAnalyticsSdk::setAccountType(AccountProtocol::AccountType accountType)
+void TalkingDataGameAnalyticsSdk::setAccountType(SdkAccountProtocol::AccountType accountType)
 {
     if(_account) {
         TDCCAccount::TDCCAccountType type = TDCCAccount::kAccountAnonymous;
@@ -77,7 +77,7 @@ void TalkingDataGameAnalyticsSdk::setLevel(int level)
     }
 }
 
-void TalkingDataGameAnalyticsSdk::setGender(AccountProtocol::Gender gender)
+void TalkingDataGameAnalyticsSdk::setGender(SdkAccountProtocol::Gender gender)
 {
     if(_account) {
         switch (gender) {
@@ -104,6 +104,18 @@ void TalkingDataGameAnalyticsSdk::setAge(int age)
 void TalkingDataGameAnalyticsSdk::setGameServer(const char* gameServer)
 {
     if(_account) {
-        AccountProtocol::setGameServer(gameServer);
+        SdkAccountProtocol::setGameServer(gameServer);
+    }
+}
+
+void TalkingDataGameAnalyticsSdk::charge(const std::string &order, const std::string &identifier)
+{
+    TDCCVirtualCurrency::onChargeRequest(order.c_str(), "test", 100, "CNY", 100, "test pay");
+}
+
+void TalkingDataGameAnalyticsSdk::onChargeResult(int result, const std::string &order)
+{
+    if(result == 0) {
+        TDCCVirtualCurrency::onChargeSuccess(order.c_str());
     }
 }

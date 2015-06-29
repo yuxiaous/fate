@@ -13,7 +13,7 @@
 #include "Sdk.h"
 #include "TalkingData.h"
 
-class TalkingDataGameAnalyticsSdk : public Sdk, public AccountProtocol
+class TalkingDataGameAnalyticsSdk : public Sdk, public SdkAccountProtocol, public SdkChargeProtocol
 {
 public:
     TalkingDataGameAnalyticsSdk();
@@ -21,13 +21,18 @@ public:
     
     virtual void init();
     
-    virtual void setAccount(const char* accountId);
-    virtual void setAccountName(const char* accountName);
-    virtual void setAccountType(AccountProtocol::AccountType accountType);
-    virtual void setLevel(int level);
-    virtual void setGender(AccountProtocol::Gender gender);
-    virtual void setAge(int age);
-    virtual void setGameServer(const char* gameServer);
+    // SdkAccountProtocol
+    virtual void setAccount(const char* accountId) override;
+    virtual void setAccountName(const char* accountName) override;
+    virtual void setAccountType(SdkAccountProtocol::AccountType accountType) override;
+    virtual void setLevel(int level) override;
+    virtual void setGender(SdkAccountProtocol::Gender gender) override;
+    virtual void setAge(int age) override;
+    virtual void setGameServer(const char* gameServer) override;
+    
+    // SdkChargeProtocol
+    virtual void charge(const std::string &order, const std::string &identifier) override;
+    virtual void onChargeResult(int result, const std::string &order) override;
     
 private:
     TDCCAccount* _account;

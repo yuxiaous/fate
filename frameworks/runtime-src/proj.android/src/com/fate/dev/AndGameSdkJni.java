@@ -1,8 +1,5 @@
 package com.fate.dev;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.widget.Toast;
 
 import com.fate.SdkManagerJni;
@@ -29,17 +26,14 @@ public class AndGameSdkJni {
 	}
 
 	private String _order = "";
-	public void buy(String param) throws JSONException {
-		System.out.println("AndGameSdkJni.buy");
+	public void charge(String order, String identifier) {
+		System.out.println("AndGameSdkJni.charge");
 		
 		if(_order.length() == 0) {
-	        JSONObject jsonobj = new JSONObject(param);  
-	        String order = jsonobj.getString("order");  
-	        String good_id = jsonobj.getString("platform_good_id");  
-	        System.out.println(order+":"+good_id);  
+	        System.out.println(order+":"+identifier);
 
 	        _order = order;
-	        GameInterface.doBilling(SdkManagerJni.activity, true, true, good_id, null, payCallback);
+	        GameInterface.doBilling(SdkManagerJni.activity, true, true, identifier, null, payCallback);
 		}
     }
 
@@ -60,28 +54,21 @@ public class AndGameSdkJni {
 			}
 			Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();
 
-			try {
-				handleResult(resultCode, billingIndex);
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			handleResult(resultCode, billingIndex);
 		}
 	};
 	
-	private void handleResult(int resultCode, String billingIndex) throws JSONException {
+	private void handleResult(int resultCode, String billingIndex) {
 		if(_order.length() > 0) {
 			System.out.println("AndGameSdkJni.handleResult");
-			JSONObject jsonobj = new JSONObject();
-			jsonobj.put("result", (resultCode == BillingResult.SUCCESS) ? 0 : 1);
-			jsonobj.put("order", _order);
 
-			onBuyCallback(jsonobj.toString());
+			int result = (resultCode == BillingResult.SUCCESS) ? 0 : 0;
+			onChargeCallback(result, _order);
 			_order = "";
 		}
 	}
 
-	private static native void onBuyCallback(String param);
+	private static native void onChargeCallback(int result, String order);
 	
 	public boolean isMusicOn() {
 		return GameInterface.isMusicEnabled();
