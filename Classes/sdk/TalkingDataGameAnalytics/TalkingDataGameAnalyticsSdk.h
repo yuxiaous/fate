@@ -33,6 +33,8 @@ public:
     // SdkChargeProtocol
     virtual void charge(const std::string &order, const std::string &identifier) override;
     virtual void onChargeResult(int result, const std::string &order) override;
+    virtual void onPurchase(const char* item, int number, double price) override;
+    virtual void onUse(const char* item, int number) override;
     
 private:
     TDCCAccount* _account;

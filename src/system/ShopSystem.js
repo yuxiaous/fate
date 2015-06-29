@@ -36,6 +36,7 @@ var ShopSystem = SystemBase.extend({
                 good_id: id,
                 count: num
             });
+            jsb.SdkManager.onPurchase(config.name, num, config.pay_cost);
         }
     },
 

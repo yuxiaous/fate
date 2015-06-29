@@ -119,3 +119,14 @@ void TalkingDataGameAnalyticsSdk::onChargeResult(int result, const std::string &
         TDCCVirtualCurrency::onChargeSuccess(order.c_str());
     }
 }
+
+void TalkingDataGameAnalyticsSdk::onPurchase(const char* item, int number, double price)
+{
+    TDCCItem::onPurchase(item, number, price);
+}
+
+void TalkingDataGameAnalyticsSdk::onUse(const char* item, int number)
+{
+    TDCCItem::onUse(item, number);
+}
+

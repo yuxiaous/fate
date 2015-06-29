@@ -98,6 +98,26 @@ void SdkManager::onChargeResult(int result, const std::string &order)
     }
 }
 
+void SdkManager::onPurchase(const char* item, int number, double price)
+{
+    for(Sdk *sdk : _sdks) {
+        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
+        if(charge) {
+            charge->onPurchase(item, number, price);
+        }
+    }
+}
+
+void SdkManager::onUse(const char* item, int number)
+{
+    for(Sdk *sdk : _sdks) {
+        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
+        if(charge) {
+            charge->onUse(item, number);
+        }
+    }
+}
+
 void SdkManager::login()
 {
     

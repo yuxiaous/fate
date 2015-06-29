@@ -75,6 +75,8 @@ class SdkChargeProtocol
 public:
     virtual void charge(const std::string &order, const std::string &identifier) {}
     virtual void onChargeResult(int result, const std::string &order) {}
+    virtual void onPurchase(const char* item, int number, double price) {}
+    virtual void onUse(const char* item, int number) {}
     
     void setChargeCallback(const std::function<void(char *param)> &cb) {_chargeCallback = cb;}
     void onChargeCallback(int result, const std::string &order);

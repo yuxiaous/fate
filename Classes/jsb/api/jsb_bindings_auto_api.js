@@ -1072,6 +1072,20 @@ str
 },
 
 /**
+ * @method onPurchase
+ * @param {char} arg0
+ * @param {int} arg1
+ * @param {double} arg2
+ */
+onPurchase : function (
+char, 
+int, 
+double 
+)
+{
+},
+
+/**
  * @method setAccountName
  * @param {char} arg0
  */
@@ -1116,6 +1130,18 @@ init : function (
  * @param {int} arg0
  */
 setAccountType : function (
+int 
+)
+{
+},
+
+/**
+ * @method onUse
+ * @param {char} arg0
+ * @param {int} arg1
+ */
+onUse : function (
+char, 
 int 
 )
 {
