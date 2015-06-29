@@ -2149,6 +2149,7 @@
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
 					FATE_DEV,
+					TALKING_DATA_GA,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
@@ -2177,6 +2178,7 @@
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
 					FATE_DEV,
+					TALKING_DATA_GA,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
