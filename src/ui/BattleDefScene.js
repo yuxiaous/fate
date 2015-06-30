@@ -23,6 +23,13 @@ var BattleDefScene = SceneDefBase.extend({
     },
 
     initBattleData : function (map_id_) {
+        var skin = SkinSystem.instance.use_skin;
+        if(skin == 101){
+            this.status.hero = Saber;
+        }
+        else if(skin == 102){
+            this.status.hero = Nero;
+        }
         this.status.stage = BattleNorScene.initStageInfo(map_id_);
         this.status.BSection = BattleNorScene.initBattleSection(map_id_);
         this.status.chatData = BattleNorScene.initChatInfo(map_id_);
