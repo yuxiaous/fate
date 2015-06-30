@@ -21,7 +21,6 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BUY_SUPER_SKILL_COUNT, func
 
 server.registerCallback(net_protocol_handlers.CMD_CS_USE_SUPER_SKILL, function (obj) {
     if(obj.player_id  != 101){
-
         return;
     }
 

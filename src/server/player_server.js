@@ -14,7 +14,7 @@ var player_server = {
             diamond: 1000,
             gold: 900000,
             action: 60 ,//行动力,
-            superSkillCount : 0     //大技能可以释放的次数
+            superSkillCount : 1     //大技能可以释放的次数
         });
 
         this.update = null;
@@ -99,7 +99,6 @@ var player_server = {
 
         this.update = this.update || {};
 
-        LOG("----- = " + this.player_info.superSkillCount);
         this.player_info.superSkillCount += val;
         this.update.superSkillCount = this.player_info.superSkillCount;
         return true;
