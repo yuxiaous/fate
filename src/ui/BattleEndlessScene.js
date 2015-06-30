@@ -18,6 +18,15 @@ var BattleEndlessScene = SceneEndlessBase.extend({
     },
 
     initBattleData : function () {
+
+        var skin = SkinSystem.instance.use_skin;
+        if(skin == 101){
+            this.status.hero = Saber;
+        }
+        else if(skin == 102){
+            this.status.hero = Nero;
+        }
+        
         //this.status.stage = BattleEndlessScene.initStageInfo();
         this.status.stage = this.tmpStageInfo;
         this.status.BSection = BattleEndlessScene.initBattleSection();

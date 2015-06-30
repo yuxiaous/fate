@@ -300,13 +300,17 @@ var SceneBase = lh.LHScene.extend({
     onBattleStart: function() {
         this._battleUiLayer.setVisible(true);
         this._operator.setHide(true);
-        if(this._sectionIndex == 1){
-            //var actionData = this._hero.roleActionManager.actions[RoleAction.Type.SKILL4];
-            //this._operator.setBtnTimingEnable(4,actionData.cdTime);
+        //if(this._sectionIndex == 1){
+        //    //var actionData = this._hero.roleActionManager.actions[RoleAction.Type.SKILL4];
+        //    //this._operator.setBtnTimingEnable(4,actionData.cdTime);
+        //    var playersys = PlayerSystem.instance;
+        //    //playersys.superSkillCount += 1;
+        //    this._operator.setBtnReleaseCount(4,playersys.superSkillCount);
+        //}
+
             var playersys = PlayerSystem.instance;
-            playersys.superSkillCount += 1;
             this._operator.setBtnReleaseCount(4,playersys.superSkillCount);
-        }
+        
         this.schedule(this.battleObserver);
     },
 

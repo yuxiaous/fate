@@ -57,5 +57,16 @@ var UiEffect = {
                 }
             })
         ));
+    },
+
+    buttonBBB : function (btn_) {
+        if(btn_){
+            btn_.runAction(cc.RepeatForever.create(
+                cc.Sequence.create(
+                    cc.ScaleBy.create(0.5,1.1),
+                    cc.ScaleBy.create(0.5,0.9)
+                )
+            ));
+        }
     }
 }

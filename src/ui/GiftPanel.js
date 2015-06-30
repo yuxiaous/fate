@@ -153,6 +153,12 @@ var GiftBuyDetail = ui.GuiWindowBase.extend({
         //this._title_img.loadTexture(gift_title_img);
         this._detail_img.loadTexture(gift_detail_img);
 
+
+        this.buy_btn = this.seekWidgetByName("btn_buy");
+
+
+        UiEffect.buttonBBB(this.buy_btn);
+
     },
 
     onExit : function () {
