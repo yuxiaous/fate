@@ -8,15 +8,18 @@ LOCAL_MODULE_FILENAME := libgamesdk
 
 LOCAL_ARM_MODE := arm
 
-LOCAL_SRC_FILES := SdkManager.cpp \
-                   Sdk.cpp \
-                   DeveloperSdk.cpp \
-                   TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.cpp
+LOCAL_SRC_FILES := SdkManager.cpp
+LOCAL_SRC_FILES += Sdk.cpp
+LOCAL_SRC_FILES += TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.cpp
+#LOCAL_SRC_FILES += DeveloperSdk.cpp
+LOCAL_SRC_FILES += mmbilling/MMSdk.cpp
 
 
-LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT \
-                -DTALKING_DATA_GA \
-                -DFATE_DEV
+LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT
+LOCAL_CFLAGS += -DTALKING_DATA_GA
+#LOCAL_CFLAGS += -DFATE_DEV
+LOCAL_CFLAGS += -DFATE_MM_BILLING
+
 
 LOCAL_EXPORT_CFLAGS := -DCOCOS2D_JAVASCRIPT
 

@@ -1,5 +1,31 @@
 LOCAL_PATH := $(call my-dir)
 
+
+#===== third os start =========================================================
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := casdkjni
+LOCAL_SRC_FILES := ../../../../Classes/sdk/mmbilling/android/armeabi/libcasdkjni.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := cmcc_haze
+LOCAL_SRC_FILES := ../../../../Classes/sdk/mmbilling/android/armeabi/libcmcc_haze.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := cmcc_rusteze
+LOCAL_SRC_FILES := ../../../../Classes/sdk/mmbilling/android/armeabi/libcmcc_rusteze.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := identifyapp
+LOCAL_SRC_FILES := ../../../../Classes/sdk/mmbilling/android/armeabi/libidentifyapp.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+#===== third os end =========================================================
+
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := cocos2djs_shared

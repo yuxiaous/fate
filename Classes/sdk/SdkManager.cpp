@@ -27,6 +27,10 @@
 #include "AndGame/AndGameSdk.h"
 #endif
 
+#ifdef FATE_MM_BILLING
+#include "mmbilling/MMSdk.h"
+#endif
+
 USING_NS_CC;
 
 
@@ -58,6 +62,10 @@ void SdkManager::configureSdk()
     
 #ifdef ANDGAMESDK
     addSdk(AndGameSdk::getInstance());
+#endif
+
+#ifdef FATE_MM_BILLING
+    addSdk(MMSdk::getInstance());
 #endif
 }
 
