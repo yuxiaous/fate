@@ -13,6 +13,8 @@ var SceneBase = lh.LHScene.extend({
         this._items = [];
 
         this._curSceneType = curType_;
+
+        BattleSystem.instance.curBattleType = this._curSceneType;
     },
 
     onEnter : function () {
