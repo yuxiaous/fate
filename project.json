@@ -29,7 +29,6 @@
     "config/skilldb.js",
     "config/skillupdb.js",
     "config/actiondb.js",
-    "config/modeldb.js",
     "config/itemdb.js",
     "config/equipdb.js",
     "config/mapdb.js",
