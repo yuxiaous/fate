@@ -672,11 +672,15 @@ var PauseLayer = ui.GuiWindowBase.extend({
 
     _on_btn_restart : function () {
         cc.director.resume();
-        this.removeFromParent();
+        this.close();
     },
 
     _on_btn_back : function () {
         cc.director.resume();
         ui.popScene();
+    },
+
+    _on_keyboard_back: function() {
+        this._on_btn_restart();
     }
 });

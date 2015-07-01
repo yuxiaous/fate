@@ -70,9 +70,29 @@ var ui = {
      * ProjectNode
      *
      * */
-    preprocessGui: function(oWidget, oCaller) {
-        var name = oWidget.getName(),
-            fnName;
+    preprocessGui: function(oWidget, oCaller, isIterate) {
+        var name = oWidget.getName();
+        var fnName;
+
+        if(isIterate == undefined || isIterate == false) {
+            cc.eventManager.addListener({
+                event: cc.EventListener.KEYBOARD,
+                onKeyReleased: function(code, event){
+                    switch (code) {
+                        case cc.KEY.back:
+                            if(oCaller._on_keyboard_back) {
+                                oCaller._on_keyboard_back();
+                            }
+                            break;
+                        case cc.KEY.menu:
+                            if(oCaller._on_keyboard_menu) {
+                                oCaller._on_keyboard_menu();
+                            }
+                            break;
+                    }
+                }
+            }, oWidget);
+        }
 
         // root widget
         if (name == "root") {
@@ -141,7 +161,7 @@ var ui = {
         var children = oWidget.getChildren();
         for(var i = children.length; i--;) {
             var child = children[i];
-            this.preprocessGui(child, oCaller);
+            this.preprocessGui(child, oCaller, true);
         }
     },
 

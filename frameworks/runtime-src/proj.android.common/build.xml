@@ -89,12 +89,12 @@
     <!-- version-tag: 1 -->
     <import file="${sdk.dir}/tools/ant/build.xml" />
 
-    <!--<target name="-pre-compile">-->
-        <!--<path id="project.all.jars.path">-->
-            <!--<fileset file="../../js-bindings/cocos2d-x/cocos/platform/android/java/bin/classes.jar" />-->
-            <!--&lt;!&ndash;<fileset file="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />&ndash;&gt;-->
-            <!--<fileset file="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />-->
-        <!--</path>-->
-    <!--</target>-->
+    <target name="-pre-compile">
+        <path id="project.all.jars.path">
+            <fileset file="../../js-bindings/cocos2d-x/cocos/platform/android/java/bin/classes.jar" />
+            <!--<fileset file="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />-->
+            <fileset file="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
+        </path>
+    </target>
 
 </project>

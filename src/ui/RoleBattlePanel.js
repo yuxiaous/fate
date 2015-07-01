@@ -77,7 +77,7 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
     _on_btn_stopBattle : function () {
         cc.director.pause();
         var pausePanel = new PauseLayer();
-        this.addChild(pausePanel);
+        pausePanel.pop();
     },
 
     _on_btn_bloodBottle : function () {
