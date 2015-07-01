@@ -63,7 +63,7 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         var magicBottleNum = 0;
         _.reduce(BagSystem.instance.items, function(sum, item) {
             if(item.id == 100007) {
-                magicBottleNum += item.num || 1;
+                magicBottleNum += item.num || 0;
             }
         }, 0, this)
 

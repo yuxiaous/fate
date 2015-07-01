@@ -41,6 +41,22 @@ var GiftSystem = SystemBase.extend({
         net_protocol_handlers.SEND_CMD_CS_BUY_GIFT({
             gift_type : type_
         });
+    },
+
+    randomSellGiftPanel : function () {
+        var giftData = GiftSystem.instance._giftData;
+
+        var tmpGiftData = null;
+        do{
+            var idx = _.random(1,4);
+            _.each(giftData, function (GD_) {
+                if(GD_.giftType == idx){
+                    tmpGiftData = GD_;
+                }
+            },this)
+        }while(tmpGiftData.buy_num > 0 || tmpGiftData.giftType != GiftSystem.GiftType.ZhiZun);
+
+        return tmpGiftData.giftType;
     }
 });
 

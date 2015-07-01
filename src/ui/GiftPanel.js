@@ -92,13 +92,12 @@ var GiftPanel = ui.GuiController.extend({
                 }
             })
 
-                if(tmpGiftData.buy_num > 0 && tmpGiftData.giftType != GiftSystem.GiftType.ZhiZun){
-                    btn_.setVisible(false);
-                }
-                else{
-                    btn_.setVisible(true);
-                }
-
+            if(tmpGiftData.buy_num > 0 && tmpGiftData.giftType != GiftSystem.GiftType.ZhiZun){
+                btn_.setVisible(false);
+            }
+            else{
+                btn_.setVisible(true);
+            }
 
         },this);
     },
