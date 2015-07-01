@@ -51,7 +51,10 @@ var BagScene = ui.GuiWindowBase.extend({
             lbl_item_score: this.seekWidgetByName("lbl_item_score"),
             lbl_item_desc: this.seekWidgetByName("lbl_item_desc"),
             btn_use: this.seekWidgetByName("btn_use"),
-            btn_sell: this.seekWidgetByName("btn_chushou")
+            btn_sell: this.seekWidgetByName("btn_chushou"),
+            lbl_score_change: this.seekWidgetByName("lbl_score_change"),
+            sp_change_up: this.seekWidgetByName("sp_change_up"),
+            sp_change_down: this.seekWidgetByName("sp_change_down")
         };
 
         this._bindings = [
@@ -161,11 +164,6 @@ var BagScene = ui.GuiWindowBase.extend({
                 // price
                 this._ui.lbl_item_price.setString(this._ui.lbl_item_price._str_original.format(config.price || ""));
 
-                // score
-                if(config.sort) {
-                    this._ui.lbl_item_score.setString(this._ui.lbl_item_score._str_original.format(config.sort));
-                }
-
                 // desc
                 this._ui.lbl_item_desc.setString(config.desc || "");
 
@@ -188,6 +186,48 @@ var BagScene = ui.GuiWindowBase.extend({
                 var enable = config.can_sale && config.price && config.price > 0;
                 this._ui.btn_sell.setEnabled(enable);
                 this._ui.btn_sell.setBright(enable);
+
+                // score value
+                if(config.type == undefined) {
+                    var score = Formula.calculateBattleScore(config.hp, config.mp,
+                        config.atk, config.def,
+                        config.crit, config.sunder);
+
+                    // score
+                    this._ui.lbl_item_score.setString(this._ui.lbl_item_score._str_original.format(score));
+
+                    // change value
+                    var equip_info = EquipSystem.instance.slots[config.slot];
+                    if(equip_info != undefined) {
+                        var equip_config = configdb.equip[equip_info.id];
+                        if(equip_config != undefined) {
+                            score -= Formula.calculateBattleScore(equip_config.hp, equip_config.mp,
+                                equip_config.atk, equip_config.def,
+                                equip_config.crit, equip_config.sunder);
+                        }
+                    }
+                    if(score > 0) {
+                        this._ui.sp_change_up.setVisible(true);
+                        this._ui.sp_change_down.setVisible(false);
+                        this._ui.lbl_score_change.setColor(cc.color(12, 255, 0)); //0cff00
+                    }
+                    else if(score < 0) {
+                        score = -score;
+                        this._ui.sp_change_up.setVisible(false);
+                        this._ui.sp_change_down.setVisible(true);
+                        this._ui.lbl_score_change.setColor(cc.color(255, 0, 0)); //ff0000
+                    }
+                    else {
+                        this._ui.sp_change_up.setVisible(false);
+                        this._ui.sp_change_down.setVisible(false);
+                    }
+                    this._ui.lbl_score_change.setVisible(true);
+                    this._ui.lbl_score_change.setString(String(score));
+                }
+                else {
+                    this._ui.lbl_score_change.setVisible(false);
+                    this._ui.lbl_item_score.setString("");
+                }
                 return;
             }
         }
@@ -199,6 +239,7 @@ var BagScene = ui.GuiWindowBase.extend({
         this._ui.btn_use.setVisible(false);
         this._ui.btn_sell.setEnabled(false);
         this._ui.btn_sell.setBright(false);
+        this._ui.lbl_score_change.setVisible(false);
     },
 
     clearRoleAvatar: function() {
@@ -394,7 +435,7 @@ BagScene.ItemSlot = ui.GuiController.extend({
         //vin_ani.setPosition(pos);
         this._ui.sp_icon.addChild(vin_ani);
 
-        var animFrames = []
+        var animFrames = [];
         for(var i = 1; i <= 8; i++){
             var strName = tmpStr + (199+i) + ".png";
             var size = cc.Sprite(strName).getContentSize();
