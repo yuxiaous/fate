@@ -11,11 +11,15 @@
 int GameUtils::getChannelId()
 {
 #if defined(CHANNEL_APPSTORE)
-    return 1
+    return 1;
 #elif defined(CHANNEL_CMCC_AND)
-    return 2
+    return 2;
 #elif defined(CHANNEL_CMCC_MM)
-    return 3
+    return 3;
+#elif defined(CHANNEL_CT) //电信
+    return 4;
+#elif defined(CHANNEL_CUCC) //联通
+    return 5;
 #endif
     
     return 0;
