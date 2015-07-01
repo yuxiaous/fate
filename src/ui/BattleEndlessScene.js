@@ -19,6 +19,7 @@ var BattleEndlessScene = SceneEndlessBase.extend({
         var startRound = 1;
         if(this._isBuy){
             startRound = BattleSystem.instance.endlessRound;
+           // startRound = 10;
         }
         this.play(this.status,startRound,true);
     },

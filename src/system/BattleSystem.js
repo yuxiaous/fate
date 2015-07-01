@@ -9,6 +9,8 @@ var BattleSystem = SystemBase.extend({
 
         this.cur_battle_map = 0;
         this.endlessRound = 1;
+
+        this.curBattleType = SceneBase.Type.NormalType;
     },
 
     onInit: function () {

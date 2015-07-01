@@ -349,6 +349,13 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
     _on_btn_restart : function(){
         this.close();
 
+        if(BattleSystem.instance.curBattleType == SceneBase.Type.EndlessType){
+            ui.pushScene(new BattleEndlessScene() );
+
+            return;
+        }
+
+
         var costValue = 2;
         if(PlayerSystem.instance.action < costValue){
             MessageBoxOk.show("体力不足");
