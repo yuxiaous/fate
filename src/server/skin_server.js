@@ -36,15 +36,13 @@ var skin_server = {
 
     addSkin: function(skin_id) {
         var find = _.findWhere(this.skin_info.skins, {skin_id: skin_id});
-        if(find != undefined) {
-            return false;
+        if(find == undefined) {
+            var new_skin = {
+                skin_id: skin_id
+            };
+            this.skin_info.skins.push(new_skin);
+            this.update.push(new_skin);
         }
-
-        var new_skin = {
-            skin_id: skin_id
-        };
-        this.skin_info.skins.push(new_skin);
-        this.update.push(new_skin);
         return true;
     },
 

@@ -120,6 +120,10 @@ var ShopScene = ui.GuiSceneBase.extend({
             "买东西挑挑拣拣的话，是不可能变成优秀的Master的！"
         ]);
         this._ui.lbl_girl_say.setString(say);
+    },
+
+    _on_keyboard_back: function() {
+        this.popScene();
     }
 });
 

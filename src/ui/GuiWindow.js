@@ -55,5 +55,9 @@ ui.GuiWindowBase = ui.GuiViewBase.extend({
             this._closeCallback = selector;
         else
             this._closeCallback = selector.bind(target);
+    },
+
+    _on_keyboard_back: function() {
+        this.close();
     }
 });

@@ -78,6 +78,9 @@ var shop_server = {
             if(skin_server.addSkin(config.buy_id) == false) {
                 return false;
             }
+            if(skin_server.changeSkin(config.buy_id) == false) {
+                return false;
+            }
         }
         else if(config.buy_type == shop_server.GoodsType.Gift){
             var giftConf = configdb.item[config.buy_id];
@@ -109,6 +112,11 @@ var shop_server = {
                 });
             }
         }
+        else if(config.buy_type == shop_server.GoodsType.EquipSlotTopLevel) {
+            if(equip_server.upgradeSlotToMax(config.buy_id) == false) {
+                return false;
+            }
+        }
 
         return true;
     },
@@ -128,6 +136,12 @@ var shop_server = {
         if(order) {
             order.status = 1;
             this.buyGood(order.good_id, 1, order.order);
+
+            server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {
+                result: 0,
+                good_id: order.good_id,
+                remaining: 0
+            });
         }
     },
     checkOrder: function(o) {
@@ -146,7 +160,8 @@ shop_server.GoodsType = {
     Skin: 4,
     Gold: 5,
     Diamond: 6,
-    Gift : 7
+    Gift : 7,
+    EquipSlotTopLevel: 8
 };
 shop_server.PayType = {
     Gold: 1,

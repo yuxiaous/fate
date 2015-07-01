@@ -212,6 +212,10 @@ var MapScene = ui.GuiSceneBase.extend({
             } ());
             loadingPanel.close();
         }, this)
+    },
+
+    _on_keyboard_back: function() {
+        this.popScene();
     }
 });
 

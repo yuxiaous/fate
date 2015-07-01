@@ -41,11 +41,11 @@ var EquipSystem = SystemBase.extend({
         });
     },
 
-    upgradeEquipSlotToMax : function (type) {
-        net_protocol_handlers.SEND_CMD_CS_EQUIP_SLOT_UPGRADE_TOP({
-            slot_type: type
-        })
-    },
+    //upgradeEquipSlotToMax : function (type) {
+    //    net_protocol_handlers.SEND_CMD_CS_EQUIP_SLOT_UPGRADE_TOP({
+    //        slot_type: type
+    //    })
+    //},
 
     onEquipSlotUpgradeResult: function(obj) {
         notification.emit(notification.event.EQUIP_SLOT_UPGRADE_RESULT);
@@ -232,16 +232,39 @@ EquipSystem.getEquipSlotUpgradeId = function(type, level) {
     if(level == undefined) level = 1;
 
     var start_id = 0;
+    var end_id = 0;
     switch (type) {
-        case EquipSystem.EquipSlotType.Weapon: start_id = 1001; break;
-        case EquipSystem.EquipSlotType.Coat: start_id = 2001; break;
-        case EquipSystem.EquipSlotType.Head: start_id = 3001; break;
-        case EquipSystem.EquipSlotType.Glove: start_id = 4001; break;
-        case EquipSystem.EquipSlotType.Shield: start_id = 5001; break;
-        case EquipSystem.EquipSlotType.Amulet: start_id = 6001; break;
+        case EquipSystem.EquipSlotType.Weapon:
+            start_id = 1001;
+            end_id = 1060;
+            break;
+        case EquipSystem.EquipSlotType.Coat:
+            start_id = 2001;
+            end_id = 2060;
+            break;
+        case EquipSystem.EquipSlotType.Head:
+            start_id = 3001;
+            end_id = 3060;
+            break;
+        case EquipSystem.EquipSlotType.Glove:
+            start_id = 4001;
+            end_id = 4060;
+            break;
+        case EquipSystem.EquipSlotType.Shield:
+            start_id = 5001;
+            end_id = 5060;
+            break;
+        case EquipSystem.EquipSlotType.Amulet:
+            start_id = 6001;
+            end_id = 6060;
+            break;
     }
-    if(start_id > 0) {
-        return start_id + level - 1;
+    if(start_id > 0 && end_id > 0) {
+        var ret = start_id + level - 1;
+        if(ret > end_id) {
+            ret = end_id;
+        }
+        return ret;
     }
 
     return 0;
