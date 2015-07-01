@@ -74,7 +74,19 @@ var util = {
                 return;
             }
         }
+    },
+
+    getChannelId: function() {
+        jsb.GameUtils.getChannelId();
     }
+};
+
+var GameChannel = {
+    AppStore: 1,
+    CmccAnd: 2,
+    CmccMm: 3,
+    ChinaTelecom: 4,
+    ChinaUnicom: 5
 };
 
 var LOG = util.log;
