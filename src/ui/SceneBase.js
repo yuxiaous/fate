@@ -230,13 +230,22 @@ var SceneBase = lh.LHScene.extend({
         var type = role.roleType;
         if(type == RoleBase.RoleType.Monster ||
             type == RoleBase.RoleType.Boss) {
-            if(role.dropId != undefined){
+            if( role.dropId != undefined){
                 var dropId = role.dropId || 101002;
                 var dropType = DroppedItem.ItemType.ItemType;
                 var dropItem = new DroppedItem(dropId,dropType);
                 var pos = role.getSpacePosition();
-                LOG("dabaojian x = " + pos.x);
-                dropItem.setPosition(pos.x + 50,pos.y);
+                //LOG("dabaojian x = " + pos.x);
+                var size = this._physicalWorld.getContentSize();
+                //LOG("size = " + size.width);
+                var tmpValue = 0;
+                if(pos.x >= size.width - 200){
+                    tmpValue - 200;
+                }
+                else if(pos.x <= 100){
+                    tmpValue = 100;
+                }
+                dropItem.setPosition(pos.x + tmpValue,pos.y);
                 this.addItem(dropItem);
                 return;
             }
@@ -365,30 +374,23 @@ var SceneBase = lh.LHScene.extend({
         this._operator.setHide(false);
         var mapId = BattleSystem.instance.cur_battle_map
         var mapConf = configdb.map[mapId];
-        if(mapConf && mapConf.drop_gift){
-
-            var idx_ = _.random(0,3);
-            var giftType = 0;
+        if( mapConf && mapConf.drop_gift){
+            var  giftType = GiftSystem.instance.randomSellGiftPanel();
             var giftId = 0;
-            switch (idx_){
-                case 0 :
-                    giftType = GiftSystem.GiftType.Vip;
+            switch (giftType){
+                case  GiftSystem.GiftType.Vip :
                     giftId = 101004;
                     break;
-                case 1 :
-                    giftType = GiftSystem.GiftType.ZhiZun;
+                case GiftSystem.GiftType.ZhiZun :
                     giftId = 101003;
                     break;
-                case 2 :
-                    giftType = GiftSystem.GiftType.ZhuangBei;
+                case GiftSystem.GiftType.ZhuangBei :
                     giftId = 101001;
                     break;
-                case 3 :
-                    giftType = GiftSystem.GiftType.WuQi;
+                case GiftSystem.GiftType.WuQi :
                     giftId = 101002;
                     break;
             }
-
             var revive = new GiftBuyDetail(giftType,giftId);
             revive.setCloseCallback(function () {
                 var win = new BattleWinPanel();
