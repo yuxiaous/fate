@@ -109,7 +109,7 @@ var ui = {
                     oCaller[fnName](oTarget);
 
                     // play sound effect
-                    //SoundEffectControl.play(SoundEffectControl.Type.AN_JIAN)
+                    cc.audioEngine.playEffect("sounds/press_button.mp3");
                 }
             });
         }
