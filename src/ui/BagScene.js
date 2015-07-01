@@ -163,20 +163,23 @@ var BagScene = ui.GuiWindowBase.extend({
             equip.setSelected(equip.slot == -this._sel_index);
         }, this);
 
-
-        var info = null;
-        var config = null;
+        var info;
+        var config;
         if(this._sel_index >= 0) {
             var item = this._ui.ctrl_items[this._sel_index];
             info = BagSystem.instance.items[item.uid];
-            config = BagSystem.getConfig(info.id);
+            if(info) {
+                config = BagSystem.getConfig(info.id);
+            }
         }
         else {
             var equip = _.find(this._ui.ctrl_slots, function(equip) {
                 return equip.slot == -this._sel_index;
             }, this);
             info = EquipSystem.instance.slots[equip.slot];
-            config = BagSystem.getConfig(info.id);
+            if(info) {
+                config = BagSystem.getConfig(info.id);
+            }
         }
         if(config) {
             // name

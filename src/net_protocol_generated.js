@@ -109,6 +109,14 @@ net_protocol_handlers.SEND_CMD_CS_ITEM_SELL = function(obj) {
 	_SendFunc(1402, obj);
 };
 
+// @protocol 购买角色大招释放数量
+// @param {uint32} endless_round, 无尽模式战斗的最大回合数
+net_protocol_handlers.CMD_CS_ENDLESS_MAX_ROUND = 1611;
+net_protocol_handlers.SEND_CMD_CS_ENDLESS_MAX_ROUND = function(obj) {
+	cc.assert(obj.endless_round != undefined, "CMD_CS_ENDLESS_MAX_ROUND.endless_round is undefined.");
+	_SendFunc(1611, obj);
+};
+
 // @protocol 初始化结束
 net_protocol_handlers.CMD_SC_INIT_END = 502;
 _BindFunc(502, function(obj) {
@@ -201,6 +209,14 @@ _BindFunc(1502, function(obj) {
 	cc.assert(obj.result != undefined, "CMD_SC_BATTLE_MAP_RESULT.result is undefined.");
 	cc.assert(obj.map_id != undefined, "CMD_SC_BATTLE_MAP_RESULT.map_id is undefined.");
 	net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT(obj);
+});
+
+// @protocol 更新无尽模式战斗的最大回合数
+// @param {uint32} endless_round, 无尽模式战斗的最大回合数
+net_protocol_handlers.CMD_SC_ENDLESS_MAX_ROUND = 1610;
+_BindFunc(1610, function(obj) {
+	cc.assert(obj.endless_round != undefined, "CMD_SC_ENDLESS_MAX_ROUND.endless_round is undefined.");
+	net_protocol_handlers.ON_CMD_SC_ENDLESS_MAX_ROUND(obj);
 });
 
 // @protocol 战斗过程中使用道具

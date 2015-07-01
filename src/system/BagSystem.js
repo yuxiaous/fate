@@ -57,6 +57,7 @@ BagSystem.ConfigType = {
 };
 
 BagSystem.getConfigType = function(id) {
+    if(id == undefined) id = 0;
     return Math.floor(id/100000);
 };
 

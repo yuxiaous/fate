@@ -74,26 +74,6 @@ var ui = {
         var name = oWidget.getName();
         var fnName;
 
-        if(isIterate == undefined || isIterate == false) {
-            cc.eventManager.addListener({
-                event: cc.EventListener.KEYBOARD,
-                onKeyReleased: function(code, event){
-                    switch (code) {
-                        case cc.KEY.back:
-                            if(oCaller._on_keyboard_back) {
-                                oCaller._on_keyboard_back();
-                            }
-                            break;
-                        case cc.KEY.menu:
-                            if(oCaller._on_keyboard_menu) {
-                                oCaller._on_keyboard_menu();
-                            }
-                            break;
-                    }
-                }
-            }, oWidget);
-        }
-
         // root widget
         if (name == "root") {
             //oWidget._pos_original = oWidget.getPosition();
@@ -221,10 +201,28 @@ ui.guiExtend = {
 
                 this.__gui__ = gui.node;
                 this.__action__ = gui.action;
+                this.__keybroad__ = cc.eventManager.addListener({
+                    event: cc.EventListener.KEYBOARD,
+                    onKeyReleased: function(code, event){
+                        switch (code) {
+                            case cc.KEY.back:
+                                if(this._on_keyboard_back) {
+                                    this._on_keyboard_back();
+                                }
+                                break;
+                            case cc.KEY.menu:
+                                if(this._on_keyboard_menu) {
+                                    this._on_keyboard_menu();
+                                }
+                                break;
+                        }
+                    }.bind(this)
+                }, gui.node);
             }
             else {
                 this.__gui__ = null;
                 this.__action__ = null;
+                this.__keybroad_listener__ = null;
             }
         }
     },
@@ -237,6 +235,10 @@ ui.guiExtend = {
         if (this.__gui__) {
             this.__gui__.removeFromParent();
             this.__gui__ = null;
+        }
+        if(this.__keybroad__) {
+            cc.eventManager.removeListener(this.__keybroad__);
+            this.__keybroad__ = null;
         }
     },
 

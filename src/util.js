@@ -77,7 +77,7 @@ var util = {
     },
 
     getChannelId: function() {
-        jsb.GameUtils.getChannelId();
+        return jsb.GameUtils.getChannelId();
     }
 };
 

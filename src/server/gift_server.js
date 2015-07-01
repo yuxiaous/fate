@@ -1,12 +1,5 @@
 var gift_server = {
     start: function() {
-        //this.gift_info = database.checkout("gift_info", {
-        //    gift_1 : 0,
-        //    gift_2 : 0,
-        //    gift_3 : 0,
-        //    gift_4 : 0
-        //
-        //});
         this.gift_info = database.checkout("gift_info", [
             { giftType: 1, buy_num: 0 },
             { giftType: 2, buy_num: 0 },
@@ -20,10 +13,6 @@ var gift_server = {
     end: function() {
 
     },
-
-    //flush: function() {
-    //    database.commit("gift_info", this.gift_info);
-    //},
 
     sync: function() {
         if(this.update.length > 0) {

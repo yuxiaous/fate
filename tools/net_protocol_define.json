@@ -517,6 +517,28 @@
         ]
       ]
     ]
+  },
+
+  "CMD_SC_ENDLESS_MAX_ROUND" :
+  {
+    "code": 1610,
+    "type": "SC",
+    "desc": "更新无尽模式战斗的最大回合数",
+    "schemes":
+    [
+      ["uint32","endless_round","无尽模式战斗的最大回合数"]
+    ]
+  },
+
+  "CMD_CS_ENDLESS_MAX_ROUND" :
+  {
+    "code" : 1611,
+    "type" : "CS",
+    "desc" : "购买角色大招释放数量",
+    "schemes":
+    [
+      ["uint32","endless_round","无尽模式战斗的最大回合数"]
+    ]
   }
 }
 
