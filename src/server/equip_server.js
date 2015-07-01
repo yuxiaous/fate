@@ -68,50 +68,22 @@ var equip_server = {
         return true;
     },
 
-    upgradeTopSlot: function (slot) {
-        var info = _.findWhere(this.equip_info, {slot: slot});
-        if(info == undefined) {
-            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
-            return false;
-        }
-
-        if(info.level >= player_server.player_info.level) {
-            server.sendError(net_error_code.ERR_EQUiP_SLOT_LEVEL_LIMIT);
-            return false;
-        }
-
-        var upgrade_id = EquipSystem.getEquipSlotUpgradeId(slot, info.level);
-        var config = configdb.duanzao[upgrade_id];
+    upgradeSlotToMax: function (duanzao_id) {
+        var config = configdb.duanzao[duanzao_id];
         if(config == undefined) {
             server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
             return false;
         }
 
-        var topLevel = player_server.player_info.level  - info.level;
-        var endConf = configdb.duanzao[upgrade_id + topLevel];
-
-        if(endConf == undefined) {
-            server.sendError(net_error_code.ERR_TOP_LEVEL);
-            return false;
-        }
-
-        var allPrice = 0;
-        for(var idx = upgrade_id + 1 ; idx <= upgrade_id + topLevel ; idx++){
-            var tmpConf = configdb.duanzao[idx];
-            if(tmpConf){
-                allPrice += tmpConf.cost;
-            }
-        }
-
-        // pay out money
-        if(player_server.changeGold(-allPrice) == false) {
+        var info = _.findWhere(this.equip_info, {slot: config.slot_type});
+        if(info == undefined) {
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
             return false;
         }
 
         // update info
-        info.level += topLevel;
+        info.level = config.level;
         this.update.push(info);
-        LOG("update to top level");
         return true;
     },
 
@@ -170,14 +142,6 @@ server.registerCallback(net_protocol_handlers.CMD_CS_EQUIP_SLOT_UPGRADE, functio
 
 server.registerCallback(net_protocol_handlers.CMD_CS_EQUIP_SLOT_UPGRADE_TOP, function (obj) {
 
-    if(equip_server.upgradeTopSlot(obj.slot_type) == false){
-        return;
-    }
-
-    ////send result
-    //server.send(net_protocol_handlers.CMD_SC_EQUIP_SLOT_UPGRADE_TOP_RESULT,{
-    //    result : 0
-    //});
 });
 
 server.registerCallback(net_protocol_handlers.CMD_CS_EQUIP_ITEM, function(obj) {

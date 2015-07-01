@@ -112,6 +112,11 @@ var shop_server = {
                 });
             }
         }
+        else if(config.buy_type == shop_server.GoodsType.EquipSlotTopLevel) {
+            if(equip_server.upgradeSlotToMax(config.buy_id) == false) {
+                return false;
+            }
+        }
 
         return true;
     },
@@ -155,7 +160,8 @@ shop_server.GoodsType = {
     Skin: 4,
     Gold: 5,
     Diamond: 6,
-    Gift : 7
+    Gift : 7,
+    EquipSlotTopLevel: 8
 };
 shop_server.PayType = {
     Gold: 1,

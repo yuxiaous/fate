@@ -21,6 +21,8 @@ var ShopSystem = SystemBase.extend({
     },
 
     buyGood: function(id, num) {
+        if(num == undefined) num = 1;
+
         var config = configdb.shop[id];
         if(config == undefined) {
             return;
