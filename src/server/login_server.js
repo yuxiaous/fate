@@ -68,6 +68,12 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
         gift_type_data : gift_server.gift_info
     });
 
+    //battle endless info
+    server.send(net_protocol_handlers.CMD_SC_ENDLESS_MAX_ROUND,{
+        endless_round : battle_server.battle_info.endlessRound
+    });
+
+
     server.send(net_protocol_handlers.CMD_SC_INIT_END);
 });
 

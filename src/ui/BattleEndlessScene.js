@@ -4,9 +4,11 @@ var BattleEndlessScene = SceneEndlessBase.extend({
         BSection : []
     },
 
-    ctor: function() {
+    ctor: function(isBuy_) {
         this.tmpStageInfo = configdb.stage[10];
         this._super(this.tmpStageInfo.scene_file);
+
+        this._isBuy = isBuy_;
 
         this.initBattleData();
     },
@@ -14,7 +16,11 @@ var BattleEndlessScene = SceneEndlessBase.extend({
     onEnter: function() {
         this._super();
         MusicManager.getInstance().playBackgroundMusic(this.tmpStageInfo.bgm_file);
-        this.play(this.status);
+        var startRound = 1;
+        if(this._isBuy){
+            startRound = BattleSystem.instance.endlessRound;
+        }
+        this.play(this.status,startRound,true);
     },
 
     initBattleData : function () {

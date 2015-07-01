@@ -71,10 +71,16 @@ var SceneEndlessBase = SceneBase.extend({
         this._items = [];
     },
 
-    playNextSection : function () {
+    playNextSection : function (isFirst_) {
         cc.audioEngine.stopAllEffects();
         this.clearStreet();
-        this._sectionIndex += 1;
+
+           if(!isFirst_) {
+               this._sectionIndex += 1;
+               BattleSystem.instance.updateEndlessBattleRound(this._sectionIndex);
+           }
+
+
         var tmpSections = this._sceneStatus.BSection;
 
         if(this._sectionIndex <= this._sectionAmount) {
@@ -84,7 +90,7 @@ var SceneEndlessBase = SceneBase.extend({
 
             this._battleUiLayer.setBossRound(false);
 
-            if(this._sectionIndex == 1){
+            if(this._sectionIndex == 1 || isFirst_){
                 //area
                 var sec = tmpSections[this._sectionIndex -1];
                 this.setGameWorldRect(sec.area);
@@ -161,6 +167,8 @@ var SceneEndlessBase = SceneBase.extend({
                 this._physicalWorld.addPhysicalNode(role);
             }, this);
         }
+
+
         this.onBeforeFightChatStart();
     },
 

@@ -196,7 +196,10 @@ var EndlessSelected = ui.GuiWindowBase.extend({
     onEnter : function () {
         this._super();
         
-
+        this._lbl_round = this.seekWidgetByName("lbl_record_num");
+        var num = BattleSystem.instance.endlessRound;
+        LOG(" num = " + num);
+        this._lbl_round.setString(String(num));
     },
 
     onExit : function () {
@@ -206,7 +209,7 @@ var EndlessSelected = ui.GuiWindowBase.extend({
 
     _on_btn_buy : function(){
         this.close();
-        ui.pushScene(new BattleEndlessScene() );
+        ui.pushScene(new BattleEndlessScene(true) );
     },
 
     _on_btn_close : function () {

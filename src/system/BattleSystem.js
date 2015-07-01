@@ -8,6 +8,7 @@ var BattleSystem = SystemBase.extend({
         this._super();
 
         this.cur_battle_map = 0;
+        this.endlessRound = 1;
     },
 
     onInit: function () {
@@ -15,12 +16,20 @@ var BattleSystem = SystemBase.extend({
         net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT = this.battleMapResult.bind(this);
         net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT = this.battleFinishResult.bind(this);
         net_protocol_handlers.ON_CMD_SC_USE_BATTLE_ITEM_RESULT = this.batttleUseItemResult.bind(this);
+
+        net_protocol_handlers.ON_CMD_SC_ENDLESS_MAX_ROUND = this.refreshEndlessRound.bind(this);
     },
 
     onFinalize: function () {
         this._super();
         net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT = null;
         net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT = null;
+    },
+
+    refreshEndlessRound : function (obj) {
+        if(obj && obj.endless_round){
+            this.endlessRound = obj.endless_round;
+        }
     },
 
     battleMap: function(map_id) {
@@ -46,6 +55,12 @@ var BattleSystem = SystemBase.extend({
             result: isWin ? 1: 2,
             time: 0
         });
+    },
+
+    updateEndlessBattleRound : function (round_) {
+      net_protocol_handlers.SEND_CMD_CS_ENDLESS_MAX_ROUND({
+          endless_round : round_
+      })
     },
     battleFinishResult: function(obj) {
         //if(obj.result == 0){

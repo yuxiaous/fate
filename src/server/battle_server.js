@@ -1,9 +1,21 @@
 var battle_server = {
+
     start: function() {
+        this.battle_info = database.checkout("battle_info", {
+            endlessRound : 0
+        });
+        this.update = [];
     },
 
     end: function() {
 
+    },
+
+    sync: function() {
+        if(this.update.length > 0) {
+            database.commit("battle_info", this.battle_info);
+            this.update = [];
+        }
     }
 };
 
@@ -11,7 +23,6 @@ battle_server.cur_battle_map = 0;
 server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_MAP, function(obj) {
     LOG("CMD_CS_BATTLE_MAP");
     // TODO
-
 
     battle_server.cur_battle_map = obj.map_id;
     server.send(net_protocol_handlers.CMD_SC_BATTLE_MAP_RESULT, {
@@ -118,6 +129,18 @@ server.registerCallback(net_protocol_handlers.CMD_CS_USE_BATTLE_ITEM, function (
         item_type :itemResultType
     });
 });
+
+server.registerCallback(net_protocol_handlers.CMD_CS_ENDLESS_MAX_ROUND, function (obj) {
+    if(obj && obj.endless_round > battle_server.battle_info.endlessRound){
+
+        battle_server.battle_info.endlessRound = obj.endless_round
+        battle_server.update.push(obj);
+
+        server.send(net_protocol_handlers.CMD_SC_ENDLESS_MAX_ROUND,{
+            endless_round : battle_server.battle_info.endlessRound
+        });
+    }
+})
 
 
 

@@ -412,7 +412,7 @@ var SceneBase = lh.LHScene.extend({
         ui.popScene();
     },
 
-    play: function(status) {
+    play: function(status,startIndex_,isFirst_) {
         this._sceneStatus = status;
         // weather
         var tmpWeather = this._sceneStatus.stage.weather_file;
@@ -422,9 +422,9 @@ var SceneBase = lh.LHScene.extend({
             this._gameWorld.addChild(this._weather);
         }
 
-        this._sectionIndex = 0;
+        this._sectionIndex = startIndex_ || 0;
         this._sectionAmount = this._sceneStatus.BSection.length;
-        this.playNextSection();
+        this.playNextSection(isFirst_);
     },
 
     playNextSection : function () {
