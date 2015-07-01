@@ -7,10 +7,10 @@ var equip_server = {
     start: function() {
         this.equip_info = database.checkout("equip_info", [
             { slot: 1, level: 1, id: 200101 }, // 部位，等级，装备
-            { slot: 2, level: 1, id: 200301 },
-            { slot: 3, level: 1, id: 200201 },
-            { slot: 4, level: 1, id: 200501 },
-            { slot: 5, level: 1, id: 200401 },
+            { slot: 2, level: 1, id: 200201 },
+            { slot: 3, level: 1, id: 200301 },
+            { slot: 4, level: 1, id: 200401 },
+            { slot: 5, level: 1, id: 200501 },
             { slot: 6, level: 1, id: 200601 }
         ]);
 
