@@ -10,7 +10,6 @@ var DroppedItem = ui.GuiWidgetBase.extend({
         this._super();
         this._id = id;
         this._dropItemType = ItemType_;
-        LOG("drop item = " + this._id);
     },
 
     onEnter: function() {
@@ -62,12 +61,18 @@ var DroppedItem = ui.GuiWidgetBase.extend({
                 cc.DelayTime.create(0.9),
                 cc.CallFunc.create(function () {
                     if(curScene_._isEntering){
-                        cc.director.pause();
-                        var dabaojianPanel = new DaBaoJianLayer(function () {
+
+                        //var dabaojianPanel = new DaBaoJianLayer(function () {
+                        //    curScene_._isEntering = false;
+                        //    this._enteringAction = null;
+                        //},this);
+                        var dabaojianPanel = new GiftBuyDetail(GiftSystem.GiftType.WuQi,101002, function () {
                             curScene_._isEntering = false;
                             this._enteringAction = null;
                         },this);
+
                         cc.director.getRunningScene().addChild(dabaojianPanel);
+                        cc.director.pause();
                     }
                     else{
                         this.stopAllActions();

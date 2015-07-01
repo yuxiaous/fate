@@ -7,18 +7,13 @@ var gift_server = {
         //    gift_4 : 0
         //
         //});
-
-
         this.gift_info = database.checkout("gift_info", [
             { giftType: 1, buy_num: 0 },
             { giftType: 2, buy_num: 0 },
             { giftType: 3, buy_num: 0 },
-            { giftType: 4, buy_num: 0 }
+            { giftType: 4, buy_num: 0 },
+            { giftType: 5, buy_num: 0 }
         ]);
-
-        LOG("13241231234124");
-        LOGOBJ(this.gift_info);
-
         this.update = [];
     },
 
@@ -42,7 +37,8 @@ gift_server.GiftType = {
     ZhuangBei : 1,
     WuQi : 2,
     ZhiZun : 3,
-    Vip : 4
+    Vip : 4,
+    DaBaoJian : 5
 }
 
 server.registerCallback(net_protocol_handlers.CMD_CS_BUY_GIFT, function (obj) {

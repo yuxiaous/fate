@@ -1,6 +1,6 @@
 
 var SceneBase = lh.LHScene.extend({
-    ctor : function (sceneName) {
+    ctor : function (sceneName,curType_) {
         if(!sceneName.startsWith("scenes")){
             sceneName = "scenes/" + sceneName + ".lhplist";
         }
@@ -11,6 +11,8 @@ var SceneBase = lh.LHScene.extend({
         this._monsters = [];
         this._friends = [];
         this._items = [];
+
+        this._curSceneType = curType_;
     },
 
     onEnter : function () {
@@ -228,8 +230,8 @@ var SceneBase = lh.LHScene.extend({
         var type = role.roleType;
         if(type == RoleBase.RoleType.Monster ||
             type == RoleBase.RoleType.Boss) {
-            if( role.dropId != undefined){
-                var dropId = role.dropId || 100001;
+            if(role.dropId != undefined){
+                var dropId = role.dropId || 101002;
                 var dropType = DroppedItem.ItemType.ItemType;
                 var dropItem = new DroppedItem(dropId,dropType);
                 var pos = role.getSpacePosition();
@@ -239,7 +241,7 @@ var SceneBase = lh.LHScene.extend({
                 return;
             }
 
-            if(cc.random0To1() * 100 > 40){
+            if(this._curSceneType != SceneBase.Type.EndlessType &&cc.random0To1() * 100 > 40){
                 var itemId = 100005;
                 var dropType = DroppedItem.ItemType.BloodType;
                 if(cc.random0To1() * 100 > 50){
@@ -653,6 +655,12 @@ var SceneBase = lh.LHScene.extend({
         this.onGoForwardStart();
     }
 });
+
+SceneBase.Type = {
+    NormalType : 1,
+    DefendType : 2,
+    EndlessType : 3
+}
 
 
 var PauseLayer = ui.GuiWindowBase.extend({

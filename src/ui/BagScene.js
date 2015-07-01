@@ -339,10 +339,14 @@ var BagScene = ui.GuiWindowBase.extend({
     },
 
     _on_btn_chushou: function() {
-        var item = this._ui.ctrl_items[this._sel_index];
-        if(item && item.uid) {
-            BagSystem.instance.sell(item.uid, 1);
-        }
+        var secondConfirm = new MessageBoxOkCancel("是否出售？");
+        secondConfirm.setOkCallback(function() {
+            var item = this._ui.ctrl_items[this._sel_index];
+            if(item && item.uid) {
+                BagSystem.instance.sell(item.uid, 1);
+            }
+        }, this);
+        secondConfirm.pop();
     },
 
     _on_btn_prop: function() {

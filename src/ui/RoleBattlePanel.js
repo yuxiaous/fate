@@ -81,20 +81,19 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
     },
 
     _on_btn_bloodBottle : function () {
-        var target = cc.director.getRunningScene()._hero;
-        if(target.roleDataManager.hp == target.roleDataManager.maxHp &&
-            target.roleDataManager.mp == target.roleDataManager.maxMp){     //单加满血
-            //MessageBoxOk.show("血和蓝都是满的，无需补充 !");
-            var label = cc.LabelTTF.create("血和蓝都是满的，无需补充 !")
-            var winSize = cc.director.getWinSize();
-            label.setFontSize(24);
-            label.setPosition(cc.p(winSize.width/2,winSize.height/2));
-            this.addChild(label);
-            UiEffect.labelMoveUp(label);
-            return;
-        }
-
         if(Number(this._magicBottleLable.getString()) > 0){
+            var target = cc.director.getRunningScene()._hero;
+            if(target.roleDataManager.hp == target.roleDataManager.maxHp &&
+                target.roleDataManager.mp == target.roleDataManager.maxMp){     //单加满血
+                var label = cc.LabelTTF.create("血和蓝都是满的，无需补充 !")
+                var winSize = cc.director.getWinSize();
+                label.setFontSize(24);
+                label.setPosition(cc.p(winSize.width/2,winSize.height/2));
+                this.addChild(label);
+                UiEffect.labelMoveUp(label);
+                return;
+            }
+
             BattleSystem.instance.useBattleItem({
                 itemId : 100007,
                 num : 1
@@ -103,6 +102,8 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         else{
             MessageBoxOk.show("瓶子都没有了，还点什么点，快滚去去商城买 !");
         }
+
+
     },
     
     startActionRoundLabel : function (roundIdx_, callFunc_, target_) {

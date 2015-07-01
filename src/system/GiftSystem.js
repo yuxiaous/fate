@@ -23,12 +23,12 @@ var GiftSystem = SystemBase.extend({
     },
 
     refreshGiftInfo : function (obj) {
-        LOG("update gift result");
+       // LOG("update gift result");
         this._giftData = obj.gift_type_data;
-        LOG("gift info = 1 = " + this._giftData[0].buy_num);
-        LOG("gift info = 2 = " + this._giftData[1].buy_num);
-        LOG("gift info = 3 = " + this._giftData[2].buy_num);
-        LOG("gift info = 4 = " + this._giftData[3].buy_num);
+        //LOG("gift info = 1 = " + this._giftData[0].buy_num);
+        //LOG("gift info = 2 = " + this._giftData[1].buy_num);
+        //LOG("gift info = 3 = " + this._giftData[2].buy_num);
+        //LOG("gift info = 4 = " + this._giftData[3].buy_num);
         notification.emit(notification.event.REFRESH_GIFT_INFO);
     },
 
@@ -48,5 +48,7 @@ GiftSystem.GiftType = {
     ZhuangBei : 1,
     WuQi : 2,
     ZhiZun : 3,
-    Vip : 4
+    Vip : 4,
+
+    DaBaoJian : 5
 }
