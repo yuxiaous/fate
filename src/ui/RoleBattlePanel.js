@@ -39,7 +39,10 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         this._bindings = [
             notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function () {
                 this.refreshBattleData();
-            },this)
+            },this),
+            notification.createBinding(notification.event.ITEM_INFO, function () {
+                this.refreshBattleData();
+            }, this),
         ];
     },
 
@@ -100,7 +103,19 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
             });
         }
         else{
-            MessageBoxOk.show("瓶子都没有了，还点什么点，快滚去去商城买 !");
+            var bottleId = 18002;
+            var conf = configdb.shop[bottleId];
+            if(conf){
+                var str = "花费" + conf.pay_cost +  "元，购买" + conf.name;
+                var msg = new MessageBoxOkCancel(str,"购买","取消");
+                msg.setOkCallback(function () {
+                    LOG("goumai");
+                    ShopSystem.instance.buyGood(bottleId, 1);
+                },this);
+                msg.pop();
+            }
+
+
         }
 
 
