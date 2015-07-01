@@ -88,6 +88,7 @@ notification.event = {
     INIT_END: 91,
     INIT_PROGRESS: 92,
 
+    PLAYER_LEVEL_UP: 98,
     PLAYER_INFO: 99,
 
     MAP: 100,

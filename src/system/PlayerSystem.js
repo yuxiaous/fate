@@ -29,7 +29,15 @@ var PlayerSystem = SystemBase.extend({
     onPlayerInfo: function(obj) {
         var player = obj.player;
         if(player.player_id != undefined) this.playerId = player.player_id;
-        if(player.level != undefined) this.level = player.level;
+        if(player.level != undefined) {
+            var level = this.level;
+            this.level = player.level;
+
+            if(player.level > level && level != 0) {
+                MusicManager.getInstance().playBackgroundMusic("sounds/levelup.mp3");
+                notification.emit(notification.event.PLAYER_LEVEL_UP);
+            }
+        }
         if(player.exp != undefined) this.exp = player.exp;
         if(player.gold != undefined) this.gold = player.gold;
         if(player.diamond != undefined) this.diamond = player.diamond;
