@@ -3,7 +3,7 @@
  * */
 var SceneEndlessBase = SceneBase.extend({
     ctor: function(sceneName) {
-        this._super(sceneName);
+        this._super(sceneName,SceneBase.Type.EndlessType);
 
         this._sectionIndex = 0;
         this._sectionAmount = 0;

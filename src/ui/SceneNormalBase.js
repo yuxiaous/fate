@@ -5,7 +5,7 @@
 
 var SceneNormalBase = SceneBase.extend({
     ctor: function(sceneName) {
-        this._super(sceneName);
+        this._super(sceneName,SceneBase.Type.NormalType);
     },
 
     onEnter: function() {

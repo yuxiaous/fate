@@ -114,12 +114,15 @@ var GiftPanel = ui.GuiController.extend({
 var GiftBuyDetail = ui.GuiWindowBase.extend({
     _guiFile : "ui/gift_detail_panel.json",
 
-    ctor : function (type_,giftId_) {
+    ctor : function (type_,giftId_,target_,callfunc_) {
         this._super();
 
         this._giftType = type_;
         this._giftId = giftId_;
+        this._target = target_;
+        this._callfunc = callfunc_;
     },
+
 
     onEnter : function () {
         this._super();
@@ -169,15 +172,16 @@ var GiftBuyDetail = ui.GuiWindowBase.extend({
     _on_btn_buy : function(){
         GiftSystem.instance.buyGiftItem(this._giftType);
         ShopSystem.instance.buyGood(this._giftId,1);
-        this.close();
+        this._on_btn_close();
     },
 
     _on_btn_close : function () {
-
+        if(this._target && this._callfunc){
+            cc.director.resume();
+            this._callfunc(this._target);
+        }
         this.close();
-
     }
-
 });
 
 

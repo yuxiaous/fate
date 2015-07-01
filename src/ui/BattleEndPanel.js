@@ -128,31 +128,81 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
 
     onEnter: function() {
         this._super();
-        this._victoryPanel = this.seekWidgetByName("victory_panel");
-        this._victoryPanel.setVisible(true);
 
-        //this._failurePanel = this.seekWidgetByName("fail_panel");
-        //this._failurePanel.setVisible(false);
+        this._ui = {
+            vicTitlePanel : this.seekWidgetByName("victory_title_panel"),
+            contentPanel : this.seekWidgetByName("content_panel"),
 
-        this._goldLabel = this.seekWidgetByName("lbl_gold");
-        this._expLabel = this.seekWidgetByName("lbl_exp");
+            goldLabel : this.seekWidgetByName("lbl_gold"),
+            expLabel  : this.seekWidgetByName("lbl_exp")
+            //this._goldLabel = this.seekWidgetByName("lbl_gold");
+            //  this._expLabel = this.seekWidgetByName("lbl_exp");
+            //btn_zhizun    : this.seekWidgetByName("btn_1"),
+            //btn_jinbi     : this.seekWidgetByName("btn_2"),
+            //btn_jineng    : this.seekWidgetByName("btn_3"),
+            //btn_zhuangbei : this.seekWidgetByName("btn_4")
+        }
+
+        //_.each([this._ui.btn_zhizun,
+        //    this._ui.btn_jinbi,
+        //    this._ui.btn_jineng,
+        //    this._ui.btn_zhuangbei], function (btn_) {
+        //    btn_.setPressedActionEnabled(true);
+        //});
 
         this._rewardItems = [];
-        var _item = new ShopScene.Good.Icon(0);
-        _item.setWidget(this.seekWidgetByName("ProjectNode_1"));
-        this._rewardItems.push(_item);
+        //var _item = new ShopScene.Good.Icon(0);
+        //_item.setWidget(this.seekWidgetByName("ProjectNode_1"));
+        //this._rewardItems.push(_item);
+        //_item = new ShopScene.Good.Icon(0);
+        //_item.setWidget(this.seekWidgetByName("ProjectNode_2"));
+        //this._rewardItems.push(_item);
 
-        _item = new ShopScene.Good.Icon(0);
-        _item.setWidget(this.seekWidgetByName("ProjectNode_1_0"));
-        this._rewardItems.push(_item);
-
-        this._victoryPanel.scale = 0.1;
-        this._victoryPanel.runAction(cc.Sequence.create(
-            cc.scaleTo(0.3, 1.1),
-            cc.scaleTo(0.2, 1.0)
-        ));
+        _.each(["ProjectNode_1",
+                "ProjectNode_2",
+                "ProjectNode_3",
+                "ProjectNOde_4"], function (str_) {
+            var _item = new ShopScene.Good.Icon(0);
+            _item.setWidget(this.seekWidgetByName(str_));
+            this._rewardItems.push(_item);
+            _item.setVisible(false);
+        },this);
 
         this.refreshRewardItem();
+
+
+        this._bindings = [
+            notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
+                if(itemType_ == BattleSystem.UseItemType.UseRevive){
+                    notification.emit(notification.event.BATTLE_HERO_REVIVE);
+                    this.close();
+                }
+            },this)
+        ];
+
+        this._ui.vicTitlePanel.setVisible(false);
+        this._ui.contentPanel.setVisible(false);
+        UiEffect.iconOpenYEffect(this, function () {
+            UiEffect.iconSealEffect(this._ui.vicTitlePanel, function () {
+                this._ui.contentPanel.setVisible(true);
+            },this,true);
+        },this)
+
+        //this._victoryPanel = this.seekWidgetByName("victory_panel");
+        //this._victoryPanel.setVisible(true);
+
+        //this._goldLabel = this.seekWidgetByName("lbl_gold");
+        //this._expLabel = this.seekWidgetByName("lbl_exp");
+
+
+
+        //this._victoryPanel.scale = 0.1;
+        //this._victoryPanel.runAction(cc.Sequence.create(
+        //    cc.scaleTo(0.3, 1.1),
+        //    cc.scaleTo(0.2, 1.0)
+        //));
+
+
     },
 
     onExit: function() {
@@ -169,14 +219,28 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
     refreshRewardItem : function () {
         var reward = BattleSystem.instance.battle_reward;
 
-        this._goldLabel.setString(String(reward.gold || 0));
-        this._expLabel.setString(String(reward.exp || 0));
+        this._ui.goldLabel.setString(String(reward.gold || 0));
+        this._ui.expLabel.setString(String(reward.exp || 0));
 
-        this._rewardItems[0].setVisible(false);
-        this._rewardItems[1].setVisible(false);
-        if(reward.items) {
+        //this._rewardItems[0].setVisible(false);
+        //this._rewardItems[1].setVisible(false);
+
+        _.each(this._rewardItems, function (item_,i) {
+            LOG("iii = " + i);
+            if(item_){
+                LOG("iiiiiiii = "+ i);
+                item_.setVisible(false);
+            }
+        },this);
+
+        LOG("-------- = ");
+        LOGOBJ(reward.items);
+
+        if(reward.items && reward.items.length) {
             _.each(reward.items, function (item, i) {
+                LOG("item id ===== " + item.item_id);
                 if(item.item_id) {
+                    LOG("item id ==---=== " + item.item_id);
                     this._rewardItems[i].setItemId(item.item_id);
                     this._rewardItems[i].setVisible(true);
                 }
@@ -188,11 +252,11 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         this.close();
     },
 
-    _on_btn_again: function () {
-        ui.popScene();
-        ui.pushScene(new BattleNorScene(BattleSystem.instance.cur_battle_map));
-        ui.replaceScene(new BattleNorScene(BattleSystem.instance.cur_battle_map))
-    },
+    //_on_btn_again: function () {
+    //    ui.popScene();
+    //    ui.pushScene(new BattleNorScene(BattleSystem.instance.cur_battle_map));
+    //    ui.replaceScene(new BattleNorScene(BattleSystem.instance.cur_battle_map))
+    //},
 
     _on_btn_use : function () {
         LOG("USE SERVIVE");
@@ -212,33 +276,27 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
 
     onEnter: function() {
         this._super();
-        //this._victoryPanel = this.seekWidgetByName("victory_panel");
-        //this._victoryPanel.setVisible(false);
-
-        //this._failurePanel = this.seekWidgetByName("fail_panel");
-        //this._failurePanel.setVisible(true);
-
-        this._goldLabel = this.seekWidgetByName("lbl_gold");
-        this._expLabel = this.seekWidgetByName("lbl_exp");
-
-        this._rewardItems = [];
-        var _item = new ShopScene.Good.Icon(0);
-        _item.setWidget(this.seekWidgetByName("ProjectNode_1"));
-        this._rewardItems.push(_item);
-
-        _item = new ShopScene.Good.Icon(0);
-        _item.setWidget(this.seekWidgetByName("ProjectNode_1_0"));
-        this._rewardItems.push(_item);
-
-        this.scale = 0.1;
-        this.runAction(cc.Sequence.create(
-            cc.scaleTo(0.3, 1.1),
-            cc.scaleTo(0.2, 1.0)
-        ));
 
 
-        //this._reviveLabel = this.seekWidgetByName("lbl_reviveNum");
-        //this._reviveLabel.setString(String("X " + this._getReviveItemNum()));
+        this._ui = {
+                 _failTitlePanel : this.seekWidgetByName("fail_title_panel"),
+                _contentPanel : this.seekWidgetByName("content_panel"),
+
+                //this._goldLabel = this.seekWidgetByName("lbl_gold");
+                //  this._expLabel = this.seekWidgetByName("lbl_exp");
+                btn_zhizun    : this.seekWidgetByName("btn_1"),
+                btn_jinbi     : this.seekWidgetByName("btn_2"),
+                btn_jineng    : this.seekWidgetByName("btn_3"),
+                btn_zhuangbei : this.seekWidgetByName("btn_4")
+        }
+
+        _.each([this._ui.btn_zhizun,
+                this._ui.btn_jinbi,
+                this._ui.btn_jineng,
+                this._ui.btn_zhuangbei], function (btn_) {
+            btn_.setPressedActionEnabled(true);
+        });
+
 
         this._bindings = [
             notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
@@ -248,17 +306,23 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
                 }
             },this)
         ];
+
+        this._ui._failTitlePanel.setVisible(false);
+        this._ui._contentPanel.setVisible(false);
+        UiEffect.iconOpenYEffect(this, function () {
+            UiEffect.iconSealEffect(this._ui._failTitlePanel, function () {
+                this._ui._contentPanel.setVisible(true);
+            },this,true);
+        },this)
     },
 
     onExit: function() {
-        _.each(this._rewardItems, function (item_) {
-            item_.setWidget(null);
-        });
-       // this._victoryPanel = null;
-       // this._failurePanel = null;
-        this._goldLabel = null;
-        this._expLabel = null;
+        //_.each(this._rewardItems, function (item_) {
+        //    item_.setWidget(null);
+        //});
 
+
+        this._ui = null;
         notification.removeBinding(this._bindings);
 
         this._super();
@@ -360,6 +424,7 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
             }
         }, this);
         lose.pop();
+
     }
 });
 

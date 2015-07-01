@@ -3,6 +3,7 @@
 * shilei@hdngame.com
 * */
 var UiEffect = {
+    //文字向上飘,然后渐隐藏
     labelMoveUp : function (label_) {
         var moveUp = cc.MoveBy.create(0.8,cc.p(0,100));
 
@@ -14,18 +15,38 @@ var UiEffect = {
         ));
     },
 
-    iconSealEffect : function (panel_) {
+    //盖章效果
+    iconSealEffect : function (panel_,callfunc_,target_,sealSlow_) {
         if(!panel_){
             return;
         }
-        panel_.setScale(5.0);
+
+        var sealTime = 0.15;
+        var sealValue = 5.0;
+        if(sealSlow_ == true){
+            sealTime = 0.4;
+            sealValue = 10.0;
+        }
+        panel_.setVisible(true);
+        panel_.setScale(sealValue);
         panel_.setOpacity(0);
-        panel_.runAction(cc.Spawn.create(
-            cc.ScaleTo.create(0.15,1.0),
-            cc.FadeIn.create(0.15)
+        var act = cc.Spawn.create(
+            cc.ScaleTo.create(sealTime,1.0),
+            cc.FadeIn.create(sealTime)
+        );
+        panel_.runAction(cc.Sequence.create(
+            act,
+            cc.CallFunc.create(
+                function () {
+                    if(callfunc_ && target_){
+                        callfunc_.apply(target_);
+                    }
+                }
+            )
         ));
     },
 
+    //盖章效果，附加旋转
     iconSealEffect_Rotate : function (panel_,callfunc_,target_) {
         if(!panel_){
             return;
@@ -46,6 +67,7 @@ var UiEffect = {
         ));
     },
 
+    //放大显示
     iconOpenEffect : function (panel_,callfunc_,target_) {
         panel_.scale = 0.1;
         panel_.runAction(cc.Sequence.create(
@@ -59,14 +81,29 @@ var UiEffect = {
         ));
     },
 
+    //按钮BBBBBB
     buttonBBB : function (btn_) {
         if(btn_){
             btn_.runAction(cc.RepeatForever.create(
                 cc.Sequence.create(
-                    cc.ScaleBy.create(0.5,1.1),
-                    cc.ScaleBy.create(0.5,0.9)
+                    cc.ScaleTo.create(0.5,1.2),
+                    cc.ScaleTo.create(0.5,1.0)
                 )
             ));
         }
+    },
+
+    //Y轴放大打开
+    iconOpenYEffect : function (panel_,callfunc_,target_) {
+        panel_.setScaleY(0.1);
+        panel_.runAction(cc.Sequence.create(
+            cc.scaleTo(0.2, 1.1),
+            cc.scaleTo(0.1, 1.0),
+            cc.CallFunc.create(function () {
+                if(callfunc_ && target_){
+                    callfunc_.apply(target_);
+                }
+            })
+        ));
     }
 }
