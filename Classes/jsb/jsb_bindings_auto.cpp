@@ -3094,6 +3094,84 @@ void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject gl
     }
 }
 
+JSClass  *jsb_GameUtils_class;
+JSObject *jsb_GameUtils_prototype;
+
+bool js_jsb_bindings_auto_GameUtils_getChannelId(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        int ret = GameUtils::getChannelId();
+        jsval jsret = JSVAL_NULL;
+        jsret = int32_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_getChannelId : wrong number of arguments");
+    return false;
+}
+
+
+
+void js_GameUtils_finalize(JSFreeOp *fop, JSObject *obj) {
+    CCLOGINFO("jsbindings: finalizing JS object %p (GameUtils)", obj);
+}
+
+void js_register_jsb_bindings_auto_GameUtils(JSContext *cx, JS::HandleObject global) {
+    jsb_GameUtils_class = (JSClass *)calloc(1, sizeof(JSClass));
+    jsb_GameUtils_class->name = "GameUtils";
+    jsb_GameUtils_class->addProperty = JS_PropertyStub;
+    jsb_GameUtils_class->delProperty = JS_DeletePropertyStub;
+    jsb_GameUtils_class->getProperty = JS_PropertyStub;
+    jsb_GameUtils_class->setProperty = JS_StrictPropertyStub;
+    jsb_GameUtils_class->enumerate = JS_EnumerateStub;
+    jsb_GameUtils_class->resolve = JS_ResolveStub;
+    jsb_GameUtils_class->convert = JS_ConvertStub;
+    jsb_GameUtils_class->finalize = js_GameUtils_finalize;
+    jsb_GameUtils_class->flags = JSCLASS_HAS_RESERVED_SLOTS(2);
+
+    static JSPropertySpec properties[] = {
+        JS_PSG("__nativeObj", js_is_native_obj, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_PS_END
+    };
+
+    static JSFunctionSpec funcs[] = {
+        JS_FS_END
+    };
+
+    static JSFunctionSpec st_funcs[] = {
+        JS_FN("getChannelId", js_jsb_bindings_auto_GameUtils_getChannelId, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FS_END
+    };
+
+    jsb_GameUtils_prototype = JS_InitClass(
+        cx, global,
+        JS::NullPtr(), // parent proto
+        jsb_GameUtils_class,
+        dummy_constructor<GameUtils>, 0, // no constructor
+        properties,
+        funcs,
+        NULL, // no static properties
+        st_funcs);
+    // make the class enumerable in the registered namespace
+//  bool found;
+//FIXME: Removed in Firefox v27 
+//  JS_SetPropertyAttributes(cx, global, "GameUtils", JSPROP_ENUMERATE | JSPROP_READONLY, &found);
+
+    // add the proto and JSClass to the type->js info hash table
+    TypeTest<GameUtils> t;
+    js_type_class_t *p;
+    std::string typeName = t.s_name();
+    if (_js_global_type_map.find(typeName) == _js_global_type_map.end())
+    {
+        p = (js_type_class_t *)malloc(sizeof(js_type_class_t));
+        p->jsclass = jsb_GameUtils_class;
+        p->proto = jsb_GameUtils_prototype;
+        p->parentProto = NULL;
+        _js_global_type_map.insert(std::make_pair(typeName, p));
+    }
+}
+
 void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj) {
     // Get the ns
     JS::RootedObject ns(cx);
@@ -3103,6 +3181,7 @@ void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj) {
     js_register_jsb_bindings_auto_FallOffShake(cx, ns);
     js_register_jsb_bindings_auto_SneakyButton(cx, ns);
     js_register_jsb_bindings_auto_JsonStorage(cx, ns);
+    js_register_jsb_bindings_auto_GameUtils(cx, ns);
     js_register_jsb_bindings_auto_SneakyButtonSkinnedBase(cx, ns);
     js_register_jsb_bindings_auto_SneakyJoystick(cx, ns);
     js_register_jsb_bindings_auto_SdkManager(cx, ns);

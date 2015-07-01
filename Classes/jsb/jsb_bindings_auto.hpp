@@ -173,5 +173,14 @@ bool js_jsb_bindings_auto_SdkManager_login(JSContext *cx, uint32_t argc, jsval *
 bool js_jsb_bindings_auto_SdkManager_setAge(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_setChargeCallback(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_setLevel(JSContext *cx, uint32_t argc, jsval *vp);
+
+extern JSClass  *jsb_GameUtils_class;
+extern JSObject *jsb_GameUtils_prototype;
+
+bool js_jsb_bindings_auto_GameUtils_constructor(JSContext *cx, uint32_t argc, jsval *vp);
+void js_jsb_bindings_auto_GameUtils_finalize(JSContext *cx, JSObject *obj);
+void js_register_jsb_bindings_auto_GameUtils(JSContext *cx, JS::HandleObject global);
+void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj);
+bool js_jsb_bindings_auto_GameUtils_getChannelId(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
 

@@ -329,6 +329,9 @@
 		DEA0AB9B1B2B0B1700079B42 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
 		DEA0AB9C1B2B0B1800079B42 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
 		DEA0AB9D1B2B0B1C00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
+		DEE196641B443BC200359A46 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
+		DEE196651B443BC200359A46 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
+		DEE196661B443BC200359A46 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
 		DEF8F1611B412D5E00B1C30D /* DeveloperSdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */; };
 /* End PBXBuildFile section */
 
@@ -723,6 +726,8 @@
 		DEA0AB901B2B0ADB00079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../publish/config; sourceTree = "<group>"; };
 		DEA0AB911B2B0ADB00079B42 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../../../publish/script; sourceTree = "<group>"; };
 		DEA0AB921B2B0ADB00079B42 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../publish/src; sourceTree = "<group>"; };
+		DEE196621B443BC200359A46 /* GameUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameUtils.cpp; path = ../../../Classes/GameUtils.cpp; sourceTree = "<group>"; };
+		DEE196631B443BC200359A46 /* GameUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameUtils.h; path = ../../../Classes/GameUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1222,6 +1227,8 @@
 				DE36EEF41B25955E005B744E /* ShakeAction.cpp */,
 				DE36EEF51B25955E005B744E /* ShakeAction.h */,
 				DE36EEF61B25955E005B744E /* SneakyInput */,
+				DEE196621B443BC200359A46 /* GameUtils.cpp */,
+				DEE196631B443BC200359A46 /* GameUtils.h */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -1822,6 +1829,7 @@
 				DE25C4101B31D0CA00A9AEC0 /* SdkManager.cpp in Sources */,
 				C03C8B4B18A770DD00723415 /* main.m in Sources */,
 				DE36EF011B25955E005B744E /* Animation.cpp in Sources */,
+				DEE196651B443BC200359A46 /* GameUtils.cpp in Sources */,
 				C00FD4B31938628E00C6382D /* Landscape_png.cpp in Sources */,
 				DE36EFD11B25955E005B744E /* SneakyButtonSkinnedBase.cpp in Sources */,
 				3E12D1EC1957FB18002FF0FD /* wire_format_lite.cc in Sources */,
@@ -1885,6 +1893,7 @@
 				DE36EF181B25955E005B744E /* dbtinyxml2.cpp in Sources */,
 				DE36EFC61B25955E005B744E /* LHVideoPlayerImpl.m in Sources */,
 				DE36EFC21B25955E005B744E /* LHVideoOverlayView.m in Sources */,
+				DEE196641B443BC200359A46 /* GameUtils.cpp in Sources */,
 				DE36EF1E1B25955E005B744E /* DBCCArmature.cpp in Sources */,
 				DE36EF221B25955E005B744E /* DBCCFactory.cpp in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
@@ -1956,6 +1965,7 @@
 				DE25C3891B317BA800A9AEC0 /* extension_set.cc in Sources */,
 				DE25C38A1B317BA800A9AEC0 /* dbtinyxml2.cpp in Sources */,
 				DE25C38B1B317BA800A9AEC0 /* LHVideoPlayerImpl.m in Sources */,
+				DEE196661B443BC200359A46 /* GameUtils.cpp in Sources */,
 				DE25C38C1B317BA800A9AEC0 /* LHVideoOverlayView.m in Sources */,
 				DE25C4011B318F9700A9AEC0 /* YMTXExternalManager.mm in Sources */,
 				DE25C4031B318F9700A9AEC0 /* YMTXShareManager.m in Sources */,

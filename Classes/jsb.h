@@ -5,5 +5,6 @@
 #include "SneakyInput/SneakInputHeaders.h"
 #include "JsonStorage.h"
 #include "sdk/SdkManager.h"
+#include "GameUtils.h"
 #endif //__JSB_H__
 

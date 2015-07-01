@@ -1196,3 +1196,20 @@ int
 },
 
 };
+
+/**
+ * @class GameUtils
+ */
+jsb.GameUtils = {
+
+/**
+ * @method getChannelId
+ * @return {int}
+ */
+getChannelId : function (
+)
+{
+    return 0;
+},
+
+};
