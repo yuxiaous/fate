@@ -1,11 +1,11 @@
 var gift_server = {
     start: function() {
         this.gift_info = database.checkout("gift_info", [
-            { giftType: 1, buy_num: 0 },
-            { giftType: 2, buy_num: 0 },
-            { giftType: 3, buy_num: 0 },
-            { giftType: 4, buy_num: 0 },
-            { giftType: 5, buy_num: 0 }
+            { giftType: 1, buy_num: 0 ,count_down : 0},
+            { giftType: 2, buy_num: 0 ,count_down : 900},
+            { giftType: 3, buy_num: 0 ,count_down : 0},
+            { giftType: 4, buy_num: 0 ,count_down : 0},
+            { giftType: 5, buy_num: 0 ,count_down : 0}
         ]);
         this.update = [];
     },

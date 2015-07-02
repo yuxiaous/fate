@@ -513,7 +513,8 @@
       ["list", "gift_type_data", "礼包各种类型对应的购买数量",
         [
           ["uint32", "giftType", "礼包类型"],
-          ["uint32", "buy_num", "礼包购买过的数量"]
+          ["uint32", "buy_num", "礼包购买过的数量"],
+          ["uint32", "count_cown","礼包倒计时时间"]
         ]
       ]
     ]
