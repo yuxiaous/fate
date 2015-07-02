@@ -51,13 +51,25 @@ var GiftPanel = ui.GuiController.extend({
                 }
             },this);
 
-            if(idx_ == 1){
-                var lbl_time = this.seekWidgetByName("lbl_time");
+            var lbl_time = this.seekWidgetByName("lbl_time");
+            if(lbl_time){
                 btn_.lbl_time = lbl_time;
-                btn_.lbl_time.setString("01:90");
+
+                var tmpTime = GiftSystem.instance.getGiftCountTime(GiftSystem.GiftType.ZhiZun);
+                var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
+                btn_.lbl_time.setString(String(changeStr));
             }
 
+            //if(idx_ == 1){
+            //    var lbl_time = this.seekWidgetByName("lbl_time");
+            //    btn_.lbl_time = lbl_time;
+            //    var tmpTime = GiftSystem.instance.getGiftCountTime(GiftSystem.GiftType.ZhiZun);
+            //    var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
+            //    btn_.lbl_time.setString(String(changeStr));
+            //}
         },this);
+
+
 
         this._bindings =[
             notification.createBinding(notification.event.REFRESH_GIFT_INFO, function () {
@@ -66,6 +78,21 @@ var GiftPanel = ui.GuiController.extend({
         ]
 
         this.refreshGiftNodeDisplay();
+
+
+        cc.director.getScheduler().schedule(function () {
+            _.each([this._ui.btn_1,
+                this._ui.btn_2,
+                this._ui.btn_3,
+                this._ui.btn_4], function (btn_,idx_) {
+                if(idx_ == 1 && btn_.lbl_time){
+
+                    var tmpTime = GiftSystem.instance.getGiftCountTime(GiftSystem.GiftType.ZhiZun);
+                    var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
+                    btn_.lbl_time.setString(String(changeStr));
+                }
+            },this);
+        },this,1.0,cc.REPEAT_FOREVER,0,false,"refresh_label");
     },
 
     refreshGiftNodeDisplay : function () {
@@ -109,6 +136,7 @@ var GiftPanel = ui.GuiController.extend({
 
     onExit: function() {
 
+        cc.director.getScheduler().unschedule("refresh_label",this);
         notification.removeBinding(this._bindings);
         this._ui = null;
         this._super();

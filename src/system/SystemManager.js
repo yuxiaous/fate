@@ -34,7 +34,7 @@ var SystemManager = {
 
     end: function() {
         LOG("SystemManager.end");
-        _.each(this._systems, function(oClass) {
+        _.each(this.systems, function(oClass) {
             if(oClass.instance) {
                 oClass.instance.onFinalize();
                 oClass.instance = null;

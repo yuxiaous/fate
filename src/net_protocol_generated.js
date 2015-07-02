@@ -391,6 +391,14 @@ net_protocol_handlers.SEND_CMD_CS_UNEQUIP_ITEM = function(obj) {
 	_SendFunc(1306, obj);
 };
 
+// @protocol 更新倒计时
+// @param {list} gift_type_data, 礼包各种类型对应的倒计时时间
+net_protocol_handlers.CMD_CS_UPDATE_GIFT_TIME = 1612;
+net_protocol_handlers.SEND_CMD_CS_UPDATE_GIFT_TIME = function(obj) {
+	cc.assert(obj.gift_type_data != undefined, "CMD_CS_UPDATE_GIFT_TIME.gift_type_data is undefined.");
+	_SendFunc(1612, obj);
+};
+
 // @protocol 请求订单号
 // @param {uint32} good_id, 商品id
 net_protocol_handlers.CMD_CS_SHOP_ORDER = 1103;

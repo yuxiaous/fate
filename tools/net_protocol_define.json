@@ -540,6 +540,22 @@
     [
       ["uint32","endless_round","无尽模式战斗的最大回合数"]
     ]
+  },
+
+  "CMD_CS_UPDATE_GIFT_TIME" :
+  {
+    "code" : 1612,
+    "type" : "CS",
+    "desc" : "更新倒计时",
+    "schemes":
+    [
+      ["list", "gift_type_data", "礼包各种类型对应的倒计时时间",
+        [
+          ["uint32", "giftType", "礼包类型"],
+          ["uint32", "count_cown","礼包倒计时时间"]
+        ]
+      ]
+    ]
   }
 }
 

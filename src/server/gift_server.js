@@ -2,16 +2,30 @@ var gift_server = {
     start: function() {
         this.gift_info = database.checkout("gift_info", [
             { giftType: 1, buy_num: 0 ,count_down : 0},
-            { giftType: 2, buy_num: 0 ,count_down : 900},
-            { giftType: 3, buy_num: 0 ,count_down : 0},
+            { giftType: 2, buy_num: 0 ,count_down : 0},
+            { giftType: 3, buy_num: 0 ,count_down : 900},
             { giftType: 4, buy_num: 0 ,count_down : 0},
             { giftType: 5, buy_num: 0 ,count_down : 0}
         ]);
         this.update = [];
+
+        cc.director.getScheduler().schedule(this.updateTime,this,1.0,cc.REPEAT_FOREVER,0,false,"refresTime");
+    },
+
+    updateTime : function () {
+        _.each(this.gift_info, function (giftInfo_) {
+            if(giftInfo_ && giftInfo_.count_down > 0){
+                giftInfo_.count_down -= 1;
+            }
+
+            if(giftInfo_.giftType == 3 && giftInfo_.count_down <= 0){
+                giftInfo_.count_down = 900;
+            }
+        },this);
     },
 
     end: function() {
-
+        cc.director.getScheduler().unschedule("refresTime",this);
     },
 
     sync: function() {
@@ -56,3 +70,16 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BUY_GIFT, function (obj) {
         gift_type_data : gift_server.gift_info
     });
 });
+
+server.registerCallback(net_protocol_handlers.CMD_CS_UPDATE_GIFT_TIME, function (obj_) {
+    if(obj_ && obj_.gift_type_data){
+        _.each(obj_.gift_type_data, function (giftInfo_) {
+            _.each(gift_server.gift_info, function (info_) {
+                if(info_.giftType == giftInfo_.giftType){
+                    info_.count_down = giftInfo_.count_down;
+                }
+            },this);
+        },this);
+    }
+    gift_server.update.push(obj_);
+})
