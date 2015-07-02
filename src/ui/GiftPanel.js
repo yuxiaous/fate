@@ -52,6 +52,7 @@ var GiftPanel = ui.GuiController.extend({
             },this)
            var lbl_time =  btn_.getChildByName("lbl_time");
             btn_.lbl_time = lbl_time;
+            //btn_.lbl_time.setString("01:90");
         },this);
 
         this._bindings =[
