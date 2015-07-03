@@ -59,14 +59,6 @@ var GiftPanel = ui.GuiController.extend({
                 var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
                 btn_.lbl_time.setString(String(changeStr));
             }
-
-            //if(idx_ == 1){
-            //    var lbl_time = this.seekWidgetByName("lbl_time");
-            //    btn_.lbl_time = lbl_time;
-            //    var tmpTime = GiftSystem.instance.getGiftCountTime(GiftSystem.GiftType.ZhiZun);
-            //    var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
-            //    btn_.lbl_time.setString(String(changeStr));
-            //}
         },this);
 
 
@@ -80,13 +72,14 @@ var GiftPanel = ui.GuiController.extend({
         this.refreshGiftNodeDisplay();
 
 
+        GiftSystem.instance.getGiftItemTime();
+
         cc.director.getScheduler().schedule(function () {
             _.each([this._ui.btn_1,
                 this._ui.btn_2,
                 this._ui.btn_3,
                 this._ui.btn_4], function (btn_,idx_) {
                 if(idx_ == 1 && btn_.lbl_time){
-
                     var tmpTime = GiftSystem.instance.getGiftCountTime(GiftSystem.GiftType.ZhiZun);
                     var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
                     btn_.lbl_time.setString(String(changeStr));
@@ -146,13 +139,13 @@ var GiftPanel = ui.GuiController.extend({
 var GiftBuyDetail = ui.GuiWindowBase.extend({
     _guiFile : "ui/gift_detail_panel.json",
 
-    ctor : function (type_,giftId_,target_,callfunc_) {
+    ctor : function (type_,giftId_,gift_target_,gift_callfunc_) {
         this._super();
 
         this._giftType = type_;
         this._giftId = giftId_;
-        this._target = target_;
-        this._callfunc = callfunc_;
+        this._target = gift_target_;
+        this._callfunc = gift_callfunc_;
     },
 
 
@@ -202,6 +195,11 @@ var GiftBuyDetail = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
+
+        if(UiEffect.blockShopItemWithRMB()){
+            return
+        }
+
         GiftSystem.instance.buyGiftItem(this._giftType);
         ShopSystem.instance.buyGood(this._giftId,1);
         this._on_btn_close();
@@ -242,6 +240,10 @@ var EndlessSelected = ui.GuiWindowBase.extend({
 
     _on_btn_buy : function(){
         this.close();
+
+        if(UiEffect.blockShopItemWithRMB()){
+            return;
+        }
         ui.pushScene(new BattleEndlessScene(true) );
     },
 
@@ -280,10 +282,14 @@ var BuySkillDetail = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-        BattleSystem.instance.buySuperSkill();
 
         this._callfunc.apply(this._target);
         this.close();
+        if(UiEffect.blockShopItemWithRMB()){
+            return
+        }
+
+        BattleSystem.instance.buySuperSkill();
     },
 
     _on_btn_close : function () {

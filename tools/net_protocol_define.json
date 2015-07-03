@@ -502,6 +502,7 @@
     ]
   },
 
+
   "CMD_SC_BUY_GIFT_RESULT" :
   {
     "code" : 1609,
@@ -553,6 +554,44 @@
         [
           ["uint32", "giftType", "礼包类型"],
           ["uint32", "count_cown","礼包倒计时时间"]
+        ]
+      ]
+    ]
+  },
+
+  "CMD_CS_GET_GIFT_TIME" :
+  {
+    "code" : 1613,
+    "type" : "CS",
+    "desc" : "获取礼包倒计时时间",
+    "schemes" :
+    [
+      ["uint32","playid_id","礼包类型"]
+    ]
+  },
+
+  "CMD_CS_CURRENT_GUIDE_DONE" :
+  {
+    "code" : 1620,
+    "type" : "CS",
+    "desc" : "保存当前引导类型是否结束",
+    "schemes":
+    [
+      ["uint32","guideType","引导类型"]
+    ]
+  },
+
+  "CMD_SC_UPDATE_GUIDE_INFO" :
+  {
+    "code": 1621,
+    "type": "SC",
+    "desc": "更新引导数据",
+    "schemes":
+    [
+      ["list", "guide_info", "礼包各种类型对应的购买数量",
+        [
+          ["uint32", "guideType", "引导类型"],
+          ["uint32", "guideState", "引导是否通过"]
         ]
       ]
     ]

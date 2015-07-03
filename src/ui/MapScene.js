@@ -34,6 +34,8 @@ var MapScene = ui.GuiSceneBase.extend({
                 var ctrl = new ResourcePanel(ResourcePanel.Type.Diamond);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_diamond"));
                 ctrl.showAddButton(false);
+                //appstore 显示
+                ctrl.setVisible(util.getChannelId() == GameChannel.AppStore);
                 return ctrl;
             }.bind(this) ()),
 
@@ -43,16 +45,48 @@ var MapScene = ui.GuiSceneBase.extend({
             lbl_chapter: this.seekWidgetByName("lbl_chapter"),
             btn_pre: this.seekWidgetByName("btn_pre"),
             btn_next: this.seekWidgetByName("btn_next"),
-            btn_battle: this.seekWidgetByName("btn_battle"),
-            btn_raid: this.seekWidgetByName("btn_raid")
+            btn_battle: this.seekWidgetByName("btn_battle")
+            //btn_raid: this.seekWidgetByName("btn_raid")
         };
         this._bindings = [
-            //notification.createBinding(notification.event.MAP_MAP_INFO, this.createChapterPages, this),
             notification.createBinding(notification.event.BATTLE_MAP_RESULT, this.onBattleMapResult, this)
         ];
 
         this._cur_chapter_id = MapSystem.instance.max_chapter_id;
         this.createChapterPages();
+
+        LOG("CHAPTER ID = " + this._cur_chapter_id);
+        LOG("LEVEL ID = " + this._sel_map_id);
+
+        if(this._sel_map_id == 104){
+            GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),102);
+        }
+
+        if(this._sel_map_id == 105){
+            GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),105);
+        }
+
+        if(this._sel_map_id == 106){
+            GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),108);
+        }
+
+        if(this._sel_map_id == 201){
+            GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),111);
+        }
+
+
+        if(BattleSystem.instance.needRestart){
+            BattleSystem.instance.needRestart = false;
+            if(BattleSystem.instance.needRestartBattleType == BattleSystem.instance.curBattleType){
+                if(BattleSystem.instance.curBattleType == SceneBase.Type.EndlessType){
+                    ui.pushScene(new BattleEndlessScene() );
+                }
+            }
+            else{
+                this.onBattleMapResult();
+            }
+        }
+
     },
 
     onExit: function() {
@@ -108,6 +142,8 @@ var MapScene = ui.GuiSceneBase.extend({
 
         // center selected map
         this.centerSelectedMap();
+
+
     },
 
     setChapterSwitchButton: function(has_pre, has_next) {
@@ -135,8 +171,8 @@ var MapScene = ui.GuiSceneBase.extend({
                 var is_open = cell.open;
                 this._ui.btn_battle.setBright(is_open);
                 this._ui.btn_battle.setEnabled(is_open);
-                this._ui.btn_raid.setBright(is_open);
-                this._ui.btn_raid.setEnabled(is_open);
+                //this._ui.btn_raid.setBright(is_open);
+                //this._ui.btn_raid.setEnabled(is_open);
             }
         }, this);
     },
@@ -201,9 +237,6 @@ var MapScene = ui.GuiSceneBase.extend({
                     }
                     else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
                         ui.pushScene(new BattleDefScene(sel_map_id) );
-                    }
-                    else if(mapConfig.map_type == BattleSystem.BattleType.EndlessType){
-
                     }
                 }
                 else{

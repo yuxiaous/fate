@@ -25,6 +25,8 @@ var SkillScene = ui.GuiWindowBase.extend({
                 var ctrl = new ResourcePanel(ResourcePanel.Type.Diamond);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_2"));
                 ctrl.showAddButton(false);
+                //appstore 显示
+                ctrl.setVisible(util.getChannelId() == GameChannel.AppStore);
                 return ctrl;
             }.bind(this) ()),
 
@@ -49,6 +51,8 @@ var SkillScene = ui.GuiWindowBase.extend({
         this.createSkillList();
         this._sel_skill_id = this._ui.cell_skills[0].skillId;
         this.refreshSelectedSkillInfo();
+
+        GuideSystem.AddGuidePanel(this._ui.btn_leveup,107);
     },
 
     onExit: function() {

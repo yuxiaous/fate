@@ -280,16 +280,16 @@ var RoleBase = PhysicalNode.extend({
 
     die: function() {
 
-        if(this.roleType == RoleBase.RoleType.Boss){
-        var curScenePhyWorld = cc.director.getRunningScene()._physicalWorld;
-            _.each(curScenePhyWorld.physicalNodes, function (roleItem_) {
-                if(roleItem_.roleType != RoleBase.RoleType.Hero){
-                    roleItem_.roleDataManager.hp = 0;
-                    roleItem_.updateBloodBar();
-                    roleItem_.deathValue = true;
-                }
-            });
-        }
+        //if(this.roleType == RoleBase.RoleType.Boss){
+        //var curScenePhyWorld = cc.director.getRunningScene()._physicalWorld;
+        //    _.each(curScenePhyWorld.physicalNodes, function (roleItem_) {
+        //        if(roleItem_.roleType != RoleBase.RoleType.Hero){
+        //            roleItem_.roleDataManager.hp = 0;
+        //            roleItem_.updateBloodBar();
+        //            roleItem_.deathValue = true;
+        //        }
+        //    });
+        //}
 
         this.deathValue = true;
     },

@@ -29,6 +29,11 @@ var ShopSystem = SystemBase.extend({
         }
 
         if(config.pay_type == ShopSystem.PayType.RMB) {
+
+            if(UiEffect.blockShopItemWithRMB()){
+                return
+            }
+
             net_protocol_handlers.SEND_CMD_CS_SHOP_ORDER({
                 good_id: id
             });

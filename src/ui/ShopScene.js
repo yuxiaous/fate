@@ -25,6 +25,8 @@ var ShopScene = ui.GuiSceneBase.extend({
                 var ctrl = new ResourcePanel(ResourcePanel.Type.Diamond);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_2"));
                 ctrl.showAddButton(false);
+                //appstore 显示
+                ctrl.setVisible(util.getChannelId() == GameChannel.AppStore);
                 return ctrl;
             }.bind(this) ()),
 
@@ -44,6 +46,16 @@ var ShopScene = ui.GuiSceneBase.extend({
         this.refreshShopTabStatus();
         this.createGoodsList();
         this._on_btn_girl();
+
+
+
+        //LOG("CUR GUIDE TYPE = " + GuideSystem.instance._curGuideType);
+        if(GuideSystem.instance._curGuideType != 0){
+            this.shopType = ShopSystem.ShopType.Equip;
+            this.refreshShopTabStatus();
+            this.createGoodsList();
+            this._ui.list_goods.jumpToTop();
+        }
     },
 
     onExit: function() {
@@ -200,12 +212,28 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
 
             case ShopSystem.PayType.RMB:
                 this._ui.sp_curr.setTexture("images/icon/icon_04.png");
+                this._ui.sp_curr.setVisible(false);
+
+                var str = this._ui.lbl_cost.getString();
+                this._ui.lbl_cost.setString(str + " 元");
                 break;
 
             default:
                 this._ui.sp_curr.setVisible(false);
                 break;
         }
+
+
+
+        LOG("gooid = " + this._good_id);
+        if(GuideSystem.instance._curGuideType == GuideSystem.Type.shangdian && this._good_id ==12103){
+            LOG("CUR GUIDE TYPE = " + GuideSystem.instance._curGuideType);
+            GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_buy"),113);
+            //if(config.pay_cost) {
+            //    this._ui.lbl_cost.setString(String(0));
+            //}
+        }
+
     },
 
     onExit: function() {

@@ -73,6 +73,10 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
         endless_round : battle_server.battle_info.endlessRound
     });
 
+    //guide index init
+    server.send(net_protocol_handlers.CMD_SC_UPDATE_GUIDE_INFO,{
+        guide_info : guide_server.guide_info
+    })
 
     server.send(net_protocol_handlers.CMD_SC_INIT_END);
 });

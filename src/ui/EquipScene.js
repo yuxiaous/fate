@@ -25,6 +25,8 @@ var EquipScene = ui.GuiWindowBase.extend({
                 var ctrl = new ResourcePanel(ResourcePanel.Type.Diamond);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_diamond"));
                 ctrl.showAddButton(false);
+                //appstore 显示
+                ctrl.setVisible(util.getChannelId() == GameChannel.AppStore);
                 return ctrl;
             }.bind(this) ()),
             ctrl_equip_1: (function() {
@@ -53,6 +55,8 @@ var EquipScene = ui.GuiWindowBase.extend({
             btn_leveup: this.seekWidgetByName("btn_duanzao"),
             btn_top_level: this.seekWidgetByName("btn_top_level")
         };
+
+
         this._bindings = [
             notification.createBinding(notification.event.EQUIP_SLOT_INFO, this.refreshSelectedSlotInfo, this),
             notification.createBinding(notification.event.EQUIP_PROPERTY_CHANGE, function () {
@@ -71,6 +75,9 @@ var EquipScene = ui.GuiWindowBase.extend({
 
         this.createSlotList();
         this.refreshSelectedSlotInfo();
+
+        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_duanzao"),110);
+
     },
 
     onExit: function() {

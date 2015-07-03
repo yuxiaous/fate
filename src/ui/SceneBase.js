@@ -118,6 +118,12 @@ var SceneBase = lh.LHScene.extend({
         ];
 
         this.scheduleUpdate();
+
+        //if(MapSystem.instance.max_map_id == 101){
+        //    LOG("212352353463456");
+        //    var cover_tmp = new CaoZuoJiaoXue();
+        //    cover_tmp.pop();
+        //}
     },
 
     onExit : function () {
@@ -232,14 +238,13 @@ var SceneBase = lh.LHScene.extend({
         var type = role.roleType;
         if(type == RoleBase.RoleType.Monster ||
             type == RoleBase.RoleType.Boss) {
-            if( role.dropId != undefined){
+            if(role.dropId != undefined){
                 var dropId = role.dropId || 101002;
                 var dropType = DroppedItem.ItemType.ItemType;
                 var dropItem = new DroppedItem(dropId,dropType);
                 var pos = role.getSpacePosition();
-                //LOG("dabaojian x = " + pos.x);
+
                 var size = this._physicalWorld.getContentSize();
-                //LOG("size = " + size.width);
                 var tmpValue = 0;
                 if(pos.x >= size.width - 200){
                     tmpValue - 200;
@@ -325,6 +330,11 @@ var SceneBase = lh.LHScene.extend({
             this._operator.setBtnReleaseCount(4,playersys.superSkillCount);
         
         this.schedule(this.battleObserver);
+
+        if(MapSystem.instance.max_map_id == 101 && this._sectionIndex == 1){
+            var cover_tmp = new CaoZuoJiaoXue();
+            cover_tmp.pop();
+        }
     },
 
     onBattleEnd: function() {
@@ -373,6 +383,7 @@ var SceneBase = lh.LHScene.extend({
     },
 
     showFinishPanel : function () {
+        LOG("show finish panel ");
         this._operator.setHide(false);
         var mapId = BattleSystem.instance.cur_battle_map
         var mapConf = configdb.map[mapId];
@@ -392,7 +403,14 @@ var SceneBase = lh.LHScene.extend({
                 case GiftSystem.GiftType.WuQi :
                     giftId = 101002;
                     break;
+                default  :
+                    giftType = GiftSystem.GiftType.ZhiZun ;
+                    giftId = 101003;
+                    break;
             }
+            LOG("GIFT TYPE = " + giftType);
+            LOG("GIFTID = " + giftId);
+            
             var revive = new GiftBuyDetail(giftType,giftId);
             revive.setCloseCallback(function () {
                 var win = new BattleWinPanel();
@@ -427,6 +445,7 @@ var SceneBase = lh.LHScene.extend({
         this._sectionIndex = startIndex_ || 0;
         this._sectionAmount = this._sceneStatus.BSection.length;
         this.playNextSection(isFirst_);
+
     },
 
     playNextSection : function () {
@@ -461,6 +480,10 @@ var SceneBase = lh.LHScene.extend({
             //hero
             if (this._hero == null) {
                 var hero_id = this._sceneStatus.hero;
+
+                if(MapSystem.instance.max_map_id == 104){
+                    hero_id = Nero;
+                }
                 var hero = hero_id instanceof Object ? new hero_id() : new Role(hero_id);
                 hero.roleType = RoleBase.RoleType.Hero;
                 hero.turn(RoleBase.Direction.Right);

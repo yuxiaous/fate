@@ -30,6 +30,7 @@ var SystemManager = {
         addSubSystem(SkinSystem);
         addSubSystem(RewardSystem);
         addSubSystem(GiftSystem);
+        addSubSystem(GuideSystem);
     },
 
     end: function() {

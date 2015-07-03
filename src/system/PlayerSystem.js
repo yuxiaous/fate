@@ -34,7 +34,7 @@ var PlayerSystem = SystemBase.extend({
             this.level = player.level;
 
             if(player.level > level && level != 0) {
-                MusicManager.getInstance().playBackgroundMusic("sounds/levelup.mp3");
+                MusicManager.getInstance().playEffectMusic("sounds/levelup.mp3");
                 notification.emit(notification.event.PLAYER_LEVEL_UP);
             }
         }

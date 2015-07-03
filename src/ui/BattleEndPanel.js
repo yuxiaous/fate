@@ -135,33 +135,15 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
 
             goldLabel : this.seekWidgetByName("lbl_gold"),
             expLabel  : this.seekWidgetByName("lbl_exp")
-            //this._goldLabel = this.seekWidgetByName("lbl_gold");
-            //  this._expLabel = this.seekWidgetByName("lbl_exp");
-            //btn_zhizun    : this.seekWidgetByName("btn_1"),
-            //btn_jinbi     : this.seekWidgetByName("btn_2"),
-            //btn_jineng    : this.seekWidgetByName("btn_3"),
-            //btn_zhuangbei : this.seekWidgetByName("btn_4")
         }
 
-        //_.each([this._ui.btn_zhizun,
-        //    this._ui.btn_jinbi,
-        //    this._ui.btn_jineng,
-        //    this._ui.btn_zhuangbei], function (btn_) {
-        //    btn_.setPressedActionEnabled(true);
-        //});
 
         this._rewardItems = [];
-        //var _item = new ShopScene.Good.Icon(0);
-        //_item.setWidget(this.seekWidgetByName("ProjectNode_1"));
-        //this._rewardItems.push(_item);
-        //_item = new ShopScene.Good.Icon(0);
-        //_item.setWidget(this.seekWidgetByName("ProjectNode_2"));
-        //this._rewardItems.push(_item);
 
         _.each(["ProjectNode_1",
                 "ProjectNode_2",
                 "ProjectNode_3",
-                "ProjectNOde_4"], function (str_) {
+                "ProjectNode_4"], function (str_) {
             var _item = new ShopScene.Good.Icon(0);
             _item.setWidget(this.seekWidgetByName(str_));
             this._rewardItems.push(_item);
@@ -169,6 +151,14 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         },this);
 
         this.refreshRewardItem();
+
+        //_.each(["ProjectNode_1",
+        //    "ProjectNode_2",
+        //    "ProjectNode_3",
+        //    "ProjectNOde_4"], function (str_) {
+        //    var _item = this.seekWidgetByName(str_);
+        //    _item.setVisible(false);
+        //},this);
 
 
         this._bindings = [
@@ -187,32 +177,12 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
                 this._ui.contentPanel.setVisible(true);
             },this,true);
         },this)
-
-        //this._victoryPanel = this.seekWidgetByName("victory_panel");
-        //this._victoryPanel.setVisible(true);
-
-        //this._goldLabel = this.seekWidgetByName("lbl_gold");
-        //this._expLabel = this.seekWidgetByName("lbl_exp");
-
-
-
-        //this._victoryPanel.scale = 0.1;
-        //this._victoryPanel.runAction(cc.Sequence.create(
-        //    cc.scaleTo(0.3, 1.1),
-        //    cc.scaleTo(0.2, 1.0)
-        //));
-
-
     },
 
     onExit: function() {
         _.each(this._rewardItems, function (item_) {
             item_.setWidget(null);
         });
-        this._victoryPanel = null;
-        //this._failurePanel = null;
-        this._goldLabel = null;
-        this._expLabel = null;
         this._super();
     },
 
@@ -221,9 +191,6 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
 
         this._ui.goldLabel.setString(String(reward.gold || 0));
         this._ui.expLabel.setString(String(reward.exp || 0));
-
-        //this._rewardItems[0].setVisible(false);
-        //this._rewardItems[1].setVisible(false);
 
         _.each(this._rewardItems, function (item_,i) {
             if(item_){
@@ -239,20 +206,6 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
                 }
             },this);
         }
-    },
-
-    _on_btn_back: function() {
-        this.close();
-    },
-
-    //_on_btn_again: function () {
-    //    ui.popScene();
-    //    ui.pushScene(new BattleNorScene(BattleSystem.instance.cur_battle_map));
-    //    ui.replaceScene(new BattleNorScene(BattleSystem.instance.cur_battle_map))
-    //},
-
-    _on_btn_use : function () {
-        LOG("USE SERVIVE");
     },
 
     _on_btn_enter : function(){
@@ -347,48 +300,11 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_restart : function(){
+        BattleSystem.instance.needRestart = true;
+        BattleSystem.instance.needRestartBattleType = BattleSystem.instance.curBattleType;
+
         this.close();
-
-        if(BattleSystem.instance.curBattleType == SceneBase.Type.EndlessType){
-            ui.pushScene(new BattleEndlessScene() );
-
-            return;
-        }
-
-
-        var costValue = 2;
-        if(PlayerSystem.instance.action < costValue){
-            MessageBoxOk.show("体力不足");
-            return;
-        }
-        var mapId = BattleSystem.instance.cur_battle_map
-        PlayerSystem.instance.action -= costValue;
-        var loadingPanel = new LoadingBattleLayer(mapId);
-        loadingPanel.pop();
-
-        loadingPanel.setLoadDoneFunc(function() {
-            var mapConfig = configdb.map[mapId];
-            if(mapConfig ){
-
-                BattleSystem.instance.battleMap(mapId)
-
-                if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
-                    ui.pushScene(new BattleNorScene(mapId));
-                }
-                else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
-                    ui.pushScene(new BattleDefScene(mapId) );
-                }
-                else if(mapConfig.map_type == BattleSystem.BattleType.EndlessType){
-
-                }
-
-                this.close();
-            }
-            else{
-                LOG("MAP ID NOT FIND!");
-            }
-            loadingPanel.close();
-        }, this)
+        ui.popScene();
     }
 });
 
@@ -410,7 +326,10 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-        
+        //this.close();
+        if(UiEffect.blockShopItemWithRMB()){
+            return;
+        }
     },
     
     _on_btn_close : function () {

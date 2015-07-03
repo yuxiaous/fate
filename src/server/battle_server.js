@@ -32,7 +32,6 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_MAP, function(obj) {
 });
 
 server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj) {
-    LOG("CMD_CS_BATTLE_FINISH");
     if(obj.result != 1) {
         return;
     }

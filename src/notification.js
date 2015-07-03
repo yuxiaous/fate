@@ -136,7 +136,9 @@ notification.event = {
     GET_LOGIN_REWARD : 13001,
     OPEN_LOGIN_REWARD : 13002,
 
-    REFRESH_GIFT_INFO : 13010
+    REFRESH_GIFT_INFO : 13010,
+
+    RESTART_GAME : 13020
 };
 
 

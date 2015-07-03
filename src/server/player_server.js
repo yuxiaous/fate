@@ -11,8 +11,8 @@ var player_server = {
             player_id: 101,
             level: 1,
             exp: 0,
-            diamond: 1000,
-            gold: 900000,
+            diamond: 0,
+            gold: 100000,
             action: 60 ,//行动力,
             superSkillCount : 1     //大技能可以释放的次数
         });

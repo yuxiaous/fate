@@ -44,11 +44,18 @@ var MapStageInfo = ui.GuiWindowBase.extend({
         this._ui.btn_enter.setBright(this.isOpen);
         this._ui.btn_raid.setEnabled(this.isOpen);
         this._ui.btn_raid.setBright(this.isOpen);
+
+        this._bindings = [
+            notification.createBinding(notification.event.RESTART_GAME, function (event,obj) {
+               this._on_btn_enter();
+            },this)
+        ];
     },
 
     onExit: function() {
         this.clearMonsterAvatar();
         this._ui = null;
+        notification.removeBinding(this._bindings);
         this._super();
     },
 

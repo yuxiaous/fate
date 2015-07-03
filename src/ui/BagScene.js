@@ -45,6 +45,8 @@ var BagScene = ui.GuiWindowBase.extend({
                 var ctrl = new ResourcePanel(ResourcePanel.Type.Diamond);
                 ctrl.setWidget(this.seekWidgetByName("ProjectNode_8"));
                 ctrl.showAddButton(false);
+                //appstore 显示
+                ctrl.setVisible(util.getChannelId() == GameChannel.AppStore);
                 return ctrl;
             }.bind(this) ()),
             lbl_item_name: this.seekWidgetByName("lbl_item_name"),
@@ -76,6 +78,8 @@ var BagScene = ui.GuiWindowBase.extend({
         this.createItemList();
         this.createRoleAvatar();
         this.refreshItemPage();
+
+        GuideSystem.AddGuidePanel(this._ui.btn_use,104);
     },
 
     onExit: function() {
@@ -285,6 +289,12 @@ var BagScene = ui.GuiWindowBase.extend({
     },
 
     _on_btn_change: function() {
+
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
+            MessageBoxOk.show("通过第一章第六关开放");
+            return;
+        }
+
         var player_config = configdb.player[PlayerSystem.instance.playerId];
         if(player_config == undefined) {
             return;

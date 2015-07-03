@@ -93,6 +93,10 @@ var ResourcePanel = ui.GuiController.extend({
                 UiEffect.iconOpenEffect(buyAction);
                 break;
             case ResourcePanel.Type.Gold:
+                if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
+                    MessageBoxOk.show("通过第一章第六关开放");
+                    return;
+                }
                 ui.pushScene(new ShopScene(ShopSystem.ShopType.Charge));
                 break;
             case ResourcePanel.Type.Diamond:
@@ -130,6 +134,11 @@ var BuyFullAction = ui.GuiWindowBase.extend({
     _on_btn_buy : function(){
 
         this.close();
+
+        if(UiEffect.blockShopItemWithRMB()){
+            return;
+        }
+
     },
 
     _on_btn_close : function () {

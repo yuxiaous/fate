@@ -105,5 +105,17 @@ var UiEffect = {
                 }
             })
         ));
+    },
+
+    blockShopItemWithRMB : function () {
+        //所有RMB购买的先屏蔽
+        var label = cc.LabelTTF.create("功能暂未开启，敬请期待 !")
+        var winSize = cc.director.getWinSize();
+        label.setFontSize(30);
+        label.setPosition(cc.p(winSize.width/2,winSize.height/2));
+        cc.director.getRunningScene().addChild(label,100000);
+        UiEffect.labelMoveUp(label);
+        return true;
     }
+
 }

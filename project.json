@@ -45,17 +45,17 @@
     "config/skindb.js",
     "config/endlessrounddb.js",
     "config/loginrewarddb.js",
-
     "src/crows.js",
     "src/extend.js",
     "src/notification.js",
-    "src/ui.js",
+
     "src/ui_effect.js",
     "src/util.js",
     "src/net.js",
     "src/testJS.js",
     "src/net_protocol_generated.js",
     "src/error_code_generated.js",
+    "src/ui.js",
 
     "src/system/SystemManager.js",
     "src/system/SystemBase.js",
@@ -74,6 +74,7 @@
     "src/system/SkinSystem.js",
     "src/system/RewardSystem.js",
     "src/system/GiftSystem.js",
+    "src/system/GuideSystem.js",
 
     "src/classes/BattleSceneManager.js",
     "src/classes/PhysicalWorld.js",
@@ -140,6 +141,8 @@
     "src/ui/ResourcePanel.js",
     "src/ui/GiftPanel.js",
     "src/ui/AboutGameLayer.js",
+    "src/ui/GuidePanel.js",
+
 
     "src/server/server.js",
     "src/server/database.js",
@@ -157,8 +160,7 @@
     "src/server/battle_server.js",
     "src/server/skin_server.js",
     "src/server/operator_server.js",
-    "src/server/gift_server.js"
-
-
+    "src/server/gift_server.js",
+    "src/server/guide_server.js"
   ]
 }

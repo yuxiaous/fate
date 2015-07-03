@@ -42,7 +42,16 @@ gift_server.GiftType = {
     ZhiZun : 3,
     Vip : 4,
     DaBaoJian : 5
-}
+};
+
+server.registerCallback(net_protocol_handlers.CMD_CS_GET_GIFT_TIME, function (obj) {
+    gift_server.update.push(obj);
+
+    server.send(net_protocol_handlers.CMD_SC_BUY_GIFT_RESULT,{
+        result : 0,
+        gift_type_data : gift_server.gift_info
+    });
+});
 
 server.registerCallback(net_protocol_handlers.CMD_CS_BUY_GIFT, function (obj) {
     //login reward

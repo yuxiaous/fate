@@ -31,6 +31,7 @@ var server_manager = {
         addSubServer(login_reward_server);
         addSubServer(operator_server);
         addSubServer(gift_server);
+        addSubServer(guide_server);
 
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.flush, 60);
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.sync);

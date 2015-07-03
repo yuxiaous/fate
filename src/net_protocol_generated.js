@@ -131,6 +131,14 @@ _BindFunc(1301, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_EQUIP_SLOT_INFO(obj);
 });
 
+// @protocol 获取礼包倒计时时间
+// @param {uint32} playid_id, 礼包类型
+net_protocol_handlers.CMD_CS_GET_GIFT_TIME = 1613;
+net_protocol_handlers.SEND_CMD_CS_GET_GIFT_TIME = function(obj) {
+	cc.assert(obj.playid_id != undefined, "CMD_CS_GET_GIFT_TIME.playid_id is undefined.");
+	_SendFunc(1613, obj);
+};
+
 // @protocol 地图战斗
 // @param {uint32} map_id, 地图点id
 net_protocol_handlers.CMD_CS_BATTLE_MAP = 1501;
@@ -229,6 +237,14 @@ net_protocol_handlers.SEND_CMD_CS_USE_BATTLE_ITEM = function(obj) {
 	_SendFunc(1505, obj);
 };
 
+// @protocol 更新引导数据
+// @param {list} guide_info, 礼包各种类型对应的购买数量
+net_protocol_handlers.CMD_SC_UPDATE_GUIDE_INFO = 1621;
+_BindFunc(1621, function(obj) {
+	cc.assert(obj.guide_info != undefined, "CMD_SC_UPDATE_GUIDE_INFO.guide_info is undefined.");
+	net_protocol_handlers.ON_CMD_SC_UPDATE_GUIDE_INFO(obj);
+});
+
 // @protocol 购买商品结果
 // @param {uint32} result, 结果 0成功
 // @param {uint32} good_id, 商品id
@@ -313,6 +329,14 @@ net_protocol_handlers.CMD_CS_GM_CMD = 89;
 net_protocol_handlers.SEND_CMD_CS_GM_CMD = function(obj) {
 	cc.assert(obj.cmd != undefined, "CMD_CS_GM_CMD.cmd is undefined.");
 	_SendFunc(89, obj);
+};
+
+// @protocol 保存当前引导类型是否结束
+// @param {uint32} guideType, 引导类型
+net_protocol_handlers.CMD_CS_CURRENT_GUIDE_DONE = 1620;
+net_protocol_handlers.SEND_CMD_CS_CURRENT_GUIDE_DONE = function(obj) {
+	cc.assert(obj.guideType != undefined, "CMD_CS_CURRENT_GUIDE_DONE.guideType is undefined.");
+	_SendFunc(1620, obj);
 };
 
 // @protocol 装备槽升级结果

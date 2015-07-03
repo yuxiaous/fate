@@ -109,6 +109,11 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
                 var str = "花费" + conf.pay_cost +  "元，购买" + conf.name;
                 var msg = new MessageBoxOkCancel(str,"购买","取消");
                 msg.setOkCallback(function () {
+
+                    if(UiEffect.blockShopItemWithRMB()){
+                        return
+                    }
+
                     LOG("goumai");
                     ShopSystem.instance.buyGood(bottleId, 1);
                 },this);

@@ -10,6 +10,9 @@ var BattleSystem = SystemBase.extend({
         this.cur_battle_map = 0;
         this.endlessRound = 1;
 
+        this.needRestart = false;
+        this.needRestartBattleType = SceneBase.Type.NormalType;
+
         this.curBattleType = SceneBase.Type.NormalType;
     },
 
@@ -74,7 +77,7 @@ var BattleSystem = SystemBase.extend({
         this.battle_reward = obj.reward;
         notification.emit(notification.event.BATTLE_FINISH_RESULT,obj);
 
-        //LOG("BATTLE FINISH RESULT");
+        LOG("BATTLE FINISH RESULT");
         //LOGOBJ(obj);
     },
 

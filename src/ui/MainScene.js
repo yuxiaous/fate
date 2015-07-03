@@ -22,8 +22,17 @@ var MainScene = ui.GuiSceneBase.extend({
             sp_gear: this.seekWidgetByName("Node_gear"),
             gift_node: this.seekWidgetByName("gift_node"),
             lbl_rotate : this.seekWidgetByName("lbl_rotate"),
-            rotate_panel : this.seekWidgetByName("rotate_label_panel")
+            rotate_panel : this.seekWidgetByName("rotate_label_panel"),
+
+            btn_map : this.seekWidgetByName("btn_map")
         };
+
+        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_map"),101);
+        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_bag"),103);
+        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_skill"),106);
+        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_equip"),109);
+        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_shop"),112);
+
 
         this._ui.lbl_rotate.setVisible(false);
         //this._ui.gift_node.setScale(0.5);
@@ -39,6 +48,11 @@ var MainScene = ui.GuiSceneBase.extend({
 
         this._ui.diamond = new ResourcePanel(ResourcePanel.Type.Diamond);
         this._ui.diamond.setWidget(this.seekWidgetByName("ProjectNode_3"));
+        //this._ui.diamond.setVisible(false);
+
+        //appstore 显示
+        this._ui.diamond.setVisible(util.getChannelId() == GameChannel.AppStore);
+
 
         this._ui.sp_circle.runAction(cc.repeatForever(cc.rotateBy(60, 360)));
         this._ui.sp_gear.runAction(cc.repeatForever(cc.rotateBy(60, -360)));
@@ -74,7 +88,10 @@ var MainScene = ui.GuiSceneBase.extend({
         //var loginPanel = new LoginRewardLayer(3);
         //loginPanel.pop();
 
-        RewardSystem.instance.getLoginRewardDaily();
+        if(GuideSystem.instance._curGuideType == 0){
+            RewardSystem.instance.getLoginRewardDaily();
+        }
+
     },
 
 
@@ -180,18 +197,34 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_bag: function() {
+
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.zhuangbei)){
+            LOG("ASDFASFAS");
+            MessageBoxOk.show("通过第一章第三关开放");
+            return;
+        }
+
         //this.pushScene(BagScene);
         var win = new BagScene();
         win.pop();
     },
 
     _on_btn_skill: function() {
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.jineng)){
+            MessageBoxOk.show("通过第一章第四关开放");
+            return;
+        }
         //this.pushScene(SkillScene);
         var win = new SkillScene();
         win.pop();
     },
 
     _on_btn_map_endless: function() {
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shilian)){
+            MessageBoxOk.show("通过第二章第六关开放");
+            return;
+        }
+
         //ui.pushScene(new BattleEndlessScene() );
         var endless_select = new EndlessSelected();
         endless_select.pop();
@@ -199,12 +232,20 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_equip: function() {
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.duanzao)){
+            MessageBoxOk.show("通过第一章第五关开放");
+            return;
+        }
         //this.pushScene(EquipScene);
         var win = new EquipScene();
         win.pop();
     },
 
     _on_btn_shop: function() {
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
+            MessageBoxOk.show("通过第一章第六关开放");
+            return;
+        }
         this.pushScene(ShopScene);
         //var win = new ShopScene();
         //win.pop();
