@@ -121,6 +121,16 @@ var GuideSystem = SystemBase.extend({
         }
 
         return isOpen;
+    },
+
+    //判断当前是否有引导
+    getCurrentHadGuide : function () {
+        if(this._curGuideType != 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 });
 

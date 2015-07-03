@@ -227,7 +227,6 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
         this._ui = {
                  _failTitlePanel : this.seekWidgetByName("fail_title_panel"),
                 _contentPanel : this.seekWidgetByName("content_panel"),
-
                 //this._goldLabel = this.seekWidgetByName("lbl_gold");
                 //  this._expLabel = this.seekWidgetByName("lbl_exp");
                 btn_zhizun    : this.seekWidgetByName("btn_1"),
@@ -305,6 +304,44 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
 
         this.close();
         ui.popScene();
+    },
+
+    //至尊
+    _on_btn_1 : function () {
+         var   giftType = GiftSystem.GiftType.ZhiZun;
+         var   giftId = 101003;
+         var buy_panel = new GiftBuyDetail(giftType,giftId);
+         buy_panel.pop();
+         UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"));
+    },
+    //金币
+    _on_btn_2 : function () {
+
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
+            MessageBoxOk.show("通过第一章第六关开放");
+            return;
+        }
+        ui.replaceScene(ShopScene);
+    },
+    //技能
+    _on_btn_3 : function () {
+
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.jineng)){
+            MessageBoxOk.show("通过第一章第四关开放");
+            return;
+        }
+        //this.pushScene(SkillScene);
+        var win = new SkillScene();
+        win.pop();
+    },
+    //装备
+    _on_btn_4 : function () {
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.duanzao)){
+            MessageBoxOk.show("通过第一章第五关开放");
+            return;
+        }
+        var win = new EquipScene();
+        win.pop();
     }
 });
 

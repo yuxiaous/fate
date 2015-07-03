@@ -115,6 +115,17 @@ var UiEffect = {
         label.setPosition(cc.p(winSize.width/2,winSize.height/2));
         cc.director.getRunningScene().addChild(label,100000);
         UiEffect.labelMoveUp(label);
+
+
+        //var uiTxt =  new ccui.Text();
+        //uiTxt.setString("功能暂未开启，敬请期待 !");
+        //uiTxt.setColor(cc.Color(250,10,10));
+        //var winSize = cc.director.getWinSize();
+        //uiTxt.setPosition(cc.p(winSize.width/2,winSize.height/2));
+        //cc.director.getRunningScene().addChild(uiTxt,100000);
+        //cc.director.getRunningScene().addChild(uiTxt,100000);
+        //UiEffect.labelMoveUp(uiTxt);
+
         return true;
     }
 
