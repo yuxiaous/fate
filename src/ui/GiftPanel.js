@@ -59,6 +59,13 @@ var GiftPanel = ui.GuiController.extend({
                 var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
                 btn_.lbl_time.setString(String(changeStr));
             }
+
+            if(idx_ == 1){
+                UiEffect.buttonBBB(btn_);
+            }
+            else{
+                this.addBtnEffect(btn_);
+            }
         },this);
 
 
@@ -86,6 +93,28 @@ var GiftPanel = ui.GuiController.extend({
                 }
             },this);
         },this,1.0,cc.REPEAT_FOREVER,0,false,"refresh_label");
+    },
+
+    addBtnEffect : function (btn_) {
+        var tmpStr = "res/images/code_ui/ui_";
+        var vin_ani = new cc.Sprite(tmpStr + "286.png");
+        //var iconNode = this.seekWidgetByName("ProjectNode_icon")
+        //var pos = cc.p(iconNode.getPosition().x + iconNode.getContentSize().width/2,iconNode.getPosition().y + iconNode.getContentSize().height/2);
+        var pos = cc.p(0,0);
+        vin_ani.setPosition(pos);
+        vin_ani.setAnchorPoint(cc.p(0,0));
+        btn_.addChild(vin_ani);
+
+        var animFrames = []
+        for(var i = 1; i <= 5; i++){
+            var strName = tmpStr + (286+i) + ".png";
+            var size = cc.Sprite(strName).getContentSize();
+            var frame = cc.SpriteFrame.create(strName,cc.rect(0,0,size.width,size.height));
+            animFrames.push(frame);
+        }
+        var animation = new cc.Animation(animFrames,0.2,1);
+        var animationAction = new cc.Animate(animation);
+        vin_ani.runAction(cc.RepeatForever.create(animationAction));
     },
 
     refreshGiftNodeDisplay : function () {
