@@ -72,6 +72,7 @@ var MapScene = ui.GuiSceneBase.extend({
 
         if(this._sel_map_id == 201){
             GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),111);
+            GmSystem.instance.sendCommand("ar 1 270000");
         }
 
 
