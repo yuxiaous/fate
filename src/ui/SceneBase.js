@@ -104,12 +104,14 @@ var SceneBase = lh.LHScene.extend({
                 }
             },this),
             notification.createBinding(notification.event.BATTLE_HERO_REVIVE, function () {
+                LOG("revive revive");
                 this._hero.deathValue = false;
+                this._hero.roleDataManager.hp = this._hero.roleDataManager.maxHp;
+                this._hero.roleDataManager.mp = this._hero.roleDataManager.maxMp;
                 this._hero.roleActionManager.deathStatus = false;
                 this._hero.roleActionManager.playAction(RoleAction.Type.STAND_UP);
-                this._isLostBattle = true;
+                this._isLostBattle = false;
                 this.schedule(this.battleObserver);
-
             },this),
             notification.createBinding(notification.event.PLAYER_INFO, function () {
                 var system = PlayerSystem.instance;
@@ -341,7 +343,8 @@ var SceneBase = lh.LHScene.extend({
         this.unschedule(this.battleObserver);
         if(this._isLostBattle){
             // show revive window
-            var revive = new BattleRevivePanel();
+            LOG("4568348563946");
+            var revive = new BattleRevivePanel(this._curSceneType,this._sectionIndex);
             revive.pop();
         }
         else{

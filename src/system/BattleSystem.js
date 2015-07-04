@@ -21,8 +21,10 @@ var BattleSystem = SystemBase.extend({
         net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT = this.battleMapResult.bind(this);
         net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT = this.battleFinishResult.bind(this);
         net_protocol_handlers.ON_CMD_SC_USE_BATTLE_ITEM_RESULT = this.batttleUseItemResult.bind(this);
-
         net_protocol_handlers.ON_CMD_SC_ENDLESS_MAX_ROUND = this.refreshEndlessRound.bind(this);
+        net_protocol_handlers.ON_CMD_SC_ENDLESS_BATTLE_END = this.endlessBattleFinishResult.bind(this);
+
+        net_protocol_handlers.ON_CMD_SC_BATTLE_REVIVE = this.reviveFinish.bind(this);
     },
 
     onFinalize: function () {
@@ -67,6 +69,13 @@ var BattleSystem = SystemBase.extend({
           endless_round : round_
       })
     },
+
+    endlessBattleLose : function (round_) {
+      net_protocol_handlers.SEND_CMD_CS_ENDLESS_BATTLE_END({
+          endless_round : round_
+      })
+    },
+
     battleFinishResult: function(obj) {
         //if(obj.result == 0){
         //    notification.emit(notification.event.BATTLE_FINISH_RESULT,obj.result);
@@ -79,6 +88,27 @@ var BattleSystem = SystemBase.extend({
 
         LOG("BATTLE FINISH RESULT");
         //LOGOBJ(obj);
+    },
+
+    endlessBattleFinishResult : function (obj) {
+        notification.emit(notification.event.BATTLE_ENDLESS_FINISH,obj);
+        LOG("end less battle finsih");
+    },
+
+    sendReviveBattle : function (obj) {
+        net_protocol_handlers.SEND_CMD_CS_BATTLE_REVIVE({
+            player_id : 101
+        })
+    },
+
+    reviveFinish : function (obj) {
+      if(obj && obj.result == 0){
+         LOG("");
+          notification.emit(notification.event.BATTLE_HERO_REVIVE);
+      }
+      else{
+
+      }
     },
 
     useBattleItem: function (obj) {

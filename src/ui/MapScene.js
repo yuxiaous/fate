@@ -76,15 +76,16 @@ var MapScene = ui.GuiSceneBase.extend({
         }
 
 
-        if(BattleSystem.instance.needRestart){
+        if(BattleSystem.instance.needRestart) {
+            LOG("restart game");
             BattleSystem.instance.needRestart = false;
-            if(BattleSystem.instance.needRestartBattleType == BattleSystem.instance.curBattleType){
-                if(BattleSystem.instance.curBattleType == SceneBase.Type.EndlessType){
-                    ui.pushScene(new BattleEndlessScene() );
+            if (BattleSystem.instance.needRestartBattleType == BattleSystem.instance.curBattleType) {
+                if (BattleSystem.instance.curBattleType == SceneBase.Type.EndlessType) {
+                    ui.pushScene(new BattleEndlessScene());
                 }
-            }
-            else{
-                this.onBattleMapResult();
+                else {
+                    this.onBattleMapResult();
+                }
             }
         }
 

@@ -303,11 +303,9 @@ var OperationLayer = cc.Layer.extend({
         button.btnSkinned = buttonBase;
         button.isCounting = false;
 
-
-        var releaseCount = cc.LabelTTF.create("0");
-        releaseCount.setFontSize(25);
+        var releaseCount = ccui.TextBMFont.create("0","res/fonts/fnt_10.fnt");
         var buttonSize = sp1.getContentSize();
-        releaseCount.setPosition(cc.p(- buttonSize.width * 0.44,buttonSize.height * 0.44));
+        releaseCount.setPosition(cc.p(0,-buttonSize.height * 0.1));
         button.addChild(releaseCount);
         button.releaseCount = 0;
         button.releaseCountLabel = releaseCount;

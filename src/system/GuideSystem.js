@@ -82,6 +82,7 @@ var GuideSystem = SystemBase.extend({
                 break;
         }
 
+        isOpen = true;
         return isOpen;
     },
 
@@ -119,7 +120,7 @@ var GuideSystem = SystemBase.extend({
                 }
                 break;
         }
-
+        isOpen = true;
         return isOpen;
     },
 

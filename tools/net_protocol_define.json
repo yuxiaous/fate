@@ -595,6 +595,51 @@
         ]
       ]
     ]
+  },
+
+  "CMD_CS_ENDLESS_BATTLE_END" :
+  {
+    "code" : 1622,
+    "type" :"CS",
+    "desc" : "无尽模式结束",
+    "schemes" :
+    [
+      ["uint32","endless_round","无尽模式战斗结束轮数"]
+    ]
+  },
+
+  "CMD_SC_ENDLESS_BATTLE_END" :
+  {
+    "code" : 1623,
+    "type" :"SC",
+    "desc" : "无尽模式结束",
+    "schemes" :
+    [
+      ["uint32","endless_round","无尽模式战斗结束轮数"]
+    ]
+  },
+
+  "CMD_CS_BATTLE_REVIVE" :
+  {
+    "code" : 1624,
+    "type" :"CS",
+    "desc" : "战斗复活",
+    "schemes" :
+    [
+      ["uint32","play_id","player_id"]
+    ]
+  },
+
+  "CMD_SC_BATTLE_REVIVE" :
+  {
+    "code" : 1625,
+    "type" :"SC",
+    "desc" : "战斗复活",
+    "schemes" :
+    [
+      ["uint32","result","0成功"]
+    ]
   }
+
 }
 

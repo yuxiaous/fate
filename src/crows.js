@@ -12,8 +12,8 @@ crows.start = function() {
     //cc.sys.localStorage.setItem("OperatyBtn","LEFT");
     cc.sys.localStorage.setItem("OperatyBtn","RIGHT");
 
-    MusicManager.getInstance().setBackgroundMusicOn(true);
-    MusicManager.getInstance().setEffectOn(true);
+    MusicManager.getInstance().setBackgroundMusicOn(false);
+    MusicManager.getInstance().setEffectOn(false);
 
     ui.pushScene(LOGScene);
 

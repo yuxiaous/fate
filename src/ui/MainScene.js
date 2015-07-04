@@ -92,6 +92,15 @@ var MainScene = ui.GuiSceneBase.extend({
             RewardSystem.instance.getLoginRewardDaily();
         }
 
+        if(BattleSystem.instance.needRestart) {
+            BattleSystem.instance.needRestart = false;
+            if (BattleSystem.instance.needRestartBattleType == BattleSystem.instance.curBattleType) {
+                if (BattleSystem.instance.curBattleType == SceneBase.Type.EndlessType) {
+                    ui.pushScene(new BattleEndlessScene());
+                }
+            }
+        }
+
     },
 
 

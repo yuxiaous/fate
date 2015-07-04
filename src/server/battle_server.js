@@ -139,6 +139,38 @@ server.registerCallback(net_protocol_handlers.CMD_CS_ENDLESS_MAX_ROUND, function
             endless_round : battle_server.battle_info.endlessRound
         });
     }
+});
+ 
+server.registerCallback(net_protocol_handlers.CMD_CS_ENDLESS_BATTLE_END, function (obj) {
+    if(obj && obj.endless_round){
+        var conf = configdb.endlessround[obj.endless_round];
+        if(conf == undefined){
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+            return;
+        }
+
+        // add resource
+        player_server.changeExp(conf.gain_exp);
+        player_server.changeGold(conf.gain_gold);
+
+        server.send(net_protocol_handlers.CMD_SC_ENDLESS_BATTLE_END,{
+            endless_round : obj.endless_round
+        });
+    }
+});
+
+server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_REVIVE, function (obj) {
+    if(obj && obj.player_id == 101){
+
+
+        if(bag_server.addItem(100007, 3) == false) {
+           LOG("add item error");
+            return;
+        }
+        server.send(net_protocol_handlers.CMD_SC_BATTLE_REVIVE,{
+            result : 0
+        });
+    }
 })
 
 

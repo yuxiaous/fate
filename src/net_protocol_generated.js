@@ -55,6 +55,14 @@ net_protocol_handlers.SEND_CMD_CS_AUTH = function(obj) {
 	_SendFunc(500, obj);
 };
 
+// @protocol 战斗复活
+// @param {uint32} result, 0成功
+net_protocol_handlers.CMD_SC_BATTLE_REVIVE = 1625;
+_BindFunc(1625, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_BATTLE_REVIVE.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_BATTLE_REVIVE(obj);
+});
+
 // @protocol 五天连续登陆奖励
 // @param {uint32} player_id, player ID
 // @param {uint32} login_index, 当前连续登陆的天数
@@ -131,6 +139,14 @@ _BindFunc(1301, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_EQUIP_SLOT_INFO(obj);
 });
 
+// @protocol 无尽模式结束
+// @param {uint32} endless_round, 无尽模式战斗结束轮数
+net_protocol_handlers.CMD_SC_ENDLESS_BATTLE_END = 1623;
+_BindFunc(1623, function(obj) {
+	cc.assert(obj.endless_round != undefined, "CMD_SC_ENDLESS_BATTLE_END.endless_round is undefined.");
+	net_protocol_handlers.ON_CMD_SC_ENDLESS_BATTLE_END(obj);
+});
+
 // @protocol 获取礼包倒计时时间
 // @param {uint32} playid_id, 礼包类型
 net_protocol_handlers.CMD_CS_GET_GIFT_TIME = 1613;
@@ -145,6 +161,14 @@ net_protocol_handlers.CMD_CS_BATTLE_MAP = 1501;
 net_protocol_handlers.SEND_CMD_CS_BATTLE_MAP = function(obj) {
 	cc.assert(obj.map_id != undefined, "CMD_CS_BATTLE_MAP.map_id is undefined.");
 	_SendFunc(1501, obj);
+};
+
+// @protocol 无尽模式结束
+// @param {uint32} endless_round, 无尽模式战斗结束轮数
+net_protocol_handlers.CMD_CS_ENDLESS_BATTLE_END = 1622;
+net_protocol_handlers.SEND_CMD_CS_ENDLESS_BATTLE_END = function(obj) {
+	cc.assert(obj.endless_round != undefined, "CMD_CS_ENDLESS_BATTLE_END.endless_round is undefined.");
+	_SendFunc(1622, obj);
 };
 
 // @protocol 初始化进度
@@ -413,6 +437,14 @@ net_protocol_handlers.CMD_CS_UNEQUIP_ITEM = 1306;
 net_protocol_handlers.SEND_CMD_CS_UNEQUIP_ITEM = function(obj) {
 	cc.assert(obj.slot != undefined, "CMD_CS_UNEQUIP_ITEM.slot is undefined.");
 	_SendFunc(1306, obj);
+};
+
+// @protocol 战斗复活
+// @param {uint32} play_id, player_id
+net_protocol_handlers.CMD_CS_BATTLE_REVIVE = 1624;
+net_protocol_handlers.SEND_CMD_CS_BATTLE_REVIVE = function(obj) {
+	cc.assert(obj.play_id != undefined, "CMD_CS_BATTLE_REVIVE.play_id is undefined.");
+	_SendFunc(1624, obj);
 };
 
 // @protocol 更新倒计时

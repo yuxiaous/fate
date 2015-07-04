@@ -14,7 +14,8 @@ var ResourcePanel = ui.GuiController.extend({
         this._ui = {
             sp_icon: this.seekWidgetByName("sp_icon"),
             lbl_value: this.seekWidgetByName("lbl_value"),
-            btn_add: this.seekWidgetByName("btn_add")
+            btn_add: this.seekWidgetByName("btn_add"),
+            btn_bg : this.seekWidgetByName("img_bg")
         };
         this._bindings = [
             notification.createBinding(notification.event.PLAYER_INFO, this.refreshValue, this)
@@ -22,6 +23,13 @@ var ResourcePanel = ui.GuiController.extend({
 
         this.refreshIcon();
         this.refreshValue();
+
+        this._ui.btn_bg.setTouchEnabled(true);
+        this._ui.btn_bg.addTouchEventListener(function (touch,event) {
+            if(event == ccui.Widget.TOUCH_ENDED){
+              this._on_btn_add();
+            }
+        },this)
     },
 
     onExit: function() {

@@ -162,12 +162,12 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
 
 
         this._bindings = [
-            notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
-                if(itemType_ == BattleSystem.UseItemType.UseRevive){
-                    notification.emit(notification.event.BATTLE_HERO_REVIVE);
-                    this.close();
-                }
-            },this)
+            //notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
+            //    if(itemType_ == BattleSystem.UseItemType.UseRevive){
+            //        notification.emit(notification.event.BATTLE_HERO_REVIVE);
+            //        this.close();
+            //    }
+            //},this)
         ];
 
         this._ui.vicTitlePanel.setVisible(false);
@@ -244,12 +244,12 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
 
 
         this._bindings = [
-            notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
-                if(itemType_ == BattleSystem.UseItemType.UseRevive){
-                    notification.emit(notification.event.BATTLE_HERO_REVIVE);
-                    this.close();
-                }
-            },this)
+            //notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
+            //    if(itemType_ == BattleSystem.UseItemType.UseRevive){
+            //        notification.emit(notification.event.BATTLE_HERO_REVIVE);
+            //        this.close();
+            //    }
+            //},this)
         ];
 
         this._ui._failTitlePanel.setVisible(false);
@@ -345,11 +345,78 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
     }
 });
 
+var EndlessBattelLosePanel = ui.GuiWindowBase.extend({
+    _guiFile: "ui/endless_battle_fail_layer.json",
+
+    ctor: function(curRound_) {
+        this._super();
+        this._curRound = curRound_;
+    },
+
+    onEnter: function() {
+        this._super();
+
+
+        this._ui = {
+            _failTitlePanel : this.seekWidgetByName("fail_title_panel"),
+            _contentPanel : this.seekWidgetByName("content_panel"),
+            _lbl_endless : this.seekWidgetByName("lbl_fail_content"),
+            _lbl_maxRound : this.seekWidgetByName("lbl_max_round"),
+            goldLabel : this.seekWidgetByName("lbl_gold"),
+            expLabel  : this.seekWidgetByName("lbl_exp")
+        };
+
+
+        var levelNum = BattleSystem.instance.endlessRound;
+        var lblMaxStr = "最高坚持到第" + levelNum + "关";
+        this._ui._lbl_maxRound.setString(lblMaxStr);
+
+        var lblStr = "恭喜您在无尽模式坚持到第" + this._curRound + "关";
+        this._ui._lbl_endless.setString(lblStr);
+
+        var conf = configdb.endlessround[this._curRound];
+        this._ui.goldLabel.setString(conf.gain_gold || 0);
+        this._ui.expLabel.setString(conf.gain_exp || 0);
+
+        this._ui._failTitlePanel.setVisible(false);
+        this._ui._contentPanel.setVisible(false);
+        UiEffect.iconOpenYEffect(this, function () {
+            UiEffect.iconSealEffect(this._ui._failTitlePanel, function () {
+                this._ui._contentPanel.setVisible(true);
+            },this,true);
+        },this)
+    },
+
+    onExit: function() {
+
+        this._ui = null;
+
+        this._super();
+    },
+
+    _on_btn_back: function() {
+        this.exit = true;
+        this.close();
+    },
+
+    _on_btn_restart : function(){
+        BattleSystem.instance.needRestart = true;
+        BattleSystem.instance.needRestartBattleType = BattleSystem.instance.curBattleType;
+
+        this.close();
+        ui.popScene();
+    }
+});
+
 var BattleRevivePanel = ui.GuiWindowBase.extend({
     _guiFile : "ui/battle_revive_layer.json",
 
-    ctor : function () {
+    ctor : function (curBattleType_,endlessRound_) {
         this._super();
+
+        LOG("23345");
+        this._curBattleType = curBattleType_ || SceneBase.Type.NormalType;
+        this._endlessRound = endlessRound_ || 1;
     },
 
     onEnter : function () {
@@ -363,23 +430,33 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-        //this.close();
-        if(UiEffect.blockShopItemWithRMB()){
-            return;
-        }
-    },
-    
-    _on_btn_close : function () {
-
         this.close();
-        // show lose window
-        var lose = new BattleLosePanel();
-        lose.setCloseCallback(function(w) {
-            if(w.exit) {
-                cc.director.popScene();
-            }
-        }, this);
-        lose.pop();
+        //if(UiEffect.blockShopItemWithRMB()){
+        //    return;
+        //}
+
+        BattleSystem.instance.sendReviveBattle();
+
+    },
+
+    _on_btn_close : function () {
+        if(this._curBattleType == SceneBase.Type.NormalType){
+            this.close();
+            // show lose window
+            var lose = new BattleLosePanel();
+            lose.setCloseCallback(function(w) {
+                if(w.exit) {
+                    cc.director.popScene();
+                }
+            }, this);
+            lose.pop();
+        }
+        else if(this._curBattleType == SceneBase.Type.EndlessType){
+            this.close();
+
+
+            BattleSystem.instance.endlessBattleLose(this._endlessRound);
+        }
 
     }
 });
