@@ -23,7 +23,7 @@
 #include "YMTXSdk.h"
 #endif
 
-#ifdef ANDGAMESDK
+#ifdef SDK_ANDGAME
 #include "AndGame/AndGameSdk.h"
 #endif
 
@@ -60,7 +60,7 @@ void SdkManager::configureSdk()
     addSdk(new YMTXSdk());
 #endif
     
-#ifdef ANDGAMESDK
+#ifdef SDK_ANDGAME
     addSdk(AndGameSdk::getInstance());
 #endif
 
