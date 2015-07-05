@@ -1,4 +1,5 @@
 {
   "has_native": true,
-  "project_type": "js"
+  "project_type": "js",
+  "custom_step_script": "custom_step_script.py"
 }
