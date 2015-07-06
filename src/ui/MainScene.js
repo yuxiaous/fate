@@ -230,10 +230,10 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_map_endless: function() {
-        //if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shilian)){
-        //    MessageBoxOk.show("通过第二章第六关开放");
-        //    return;
-        //}
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shilian)){
+            MessageBoxOk.show("通过第二章第六关开放");
+            return;
+        }
 
         //ui.pushScene(new BattleEndlessScene() );
         var endless_select = new EndlessSelected();

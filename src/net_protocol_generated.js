@@ -31,6 +31,14 @@ _BindFunc(1203, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_SKILL_UP_RESULT(obj);
 });
 
+// @protocol 每日VIP奖励是否领取
+// @param {uint32} get_done, 0 没有领取
+net_protocol_handlers.CMD_SC_VIP_IS_GET_INFO = 1630;
+_BindFunc(1630, function(obj) {
+	cc.assert(obj.get_done != undefined, "CMD_SC_VIP_IS_GET_INFO.get_done is undefined.");
+	net_protocol_handlers.ON_CMD_SC_VIP_IS_GET_INFO(obj);
+});
+
 // @protocol 请求每日登录奖励
 // @param {uint32} player_id, 角色id
 net_protocol_handlers.CMD_CS_LOGIN_REWARD_INFO = 1604;
@@ -397,6 +405,14 @@ net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS = function(obj) {
 	_SendFunc(1101, obj);
 };
 
+// @protocol 领取每日VIP奖励
+// @param {uint32} player_id, 角色id
+net_protocol_handlers.CMD_CS_GET_VIP_REWARD = 1628;
+net_protocol_handlers.SEND_CMD_CS_GET_VIP_REWARD = function(obj) {
+	cc.assert(obj.player_id != undefined, "CMD_CS_GET_VIP_REWARD.player_id is undefined.");
+	_SendFunc(1628, obj);
+};
+
 // @protocol 装备槽一键升级到最高等级(最高只能和人物角色同级)
 // @param {uint32} slot_type, 槽类型
 net_protocol_handlers.CMD_CS_EQUIP_SLOT_UPGRADE_TOP = 1308;
@@ -478,4 +494,12 @@ net_protocol_handlers.SEND_CMD_CS_GET_REWARD = function(obj) {
 	cc.assert(obj.player_id != undefined, "CMD_CS_GET_REWARD.player_id is undefined.");
 	_SendFunc(1626, obj);
 };
+
+// @protocol 领取每日VIP奖励结果
+// @param {uint32} result, 0 成功
+net_protocol_handlers.CMD_SC_GET_VIP_REWARD_RESULT = 1629;
+_BindFunc(1629, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_GET_VIP_REWARD_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_GET_VIP_REWARD_RESULT(obj);
+});
 

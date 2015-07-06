@@ -78,6 +78,11 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
         guide_info : guide_server.guide_info
     })
 
+    //更新当天是否更新了VIP功能
+    server.send(net_protocol_handlers.CMD_SC_VIP_IS_GET_INFO,{
+        get_done :login_reward_server.getCurDailyVipIsGetDone()
+    })
+
     server.send(net_protocol_handlers.CMD_SC_INIT_END);
 });
 

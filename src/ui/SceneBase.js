@@ -149,7 +149,7 @@ var SceneBase = lh.LHScene.extend({
     
     update : function (dt) {
         if(this._isEnteringEquipSuit == false){
-            if(this._enterDropUi <100){
+            if(this._enterDropUi < 60){
                 this._enterDropUi += 1;
             }
         }
@@ -169,7 +169,7 @@ var SceneBase = lh.LHScene.extend({
                         item.flyToTarget(hero);
                     }
                 }
-                if(item._dropItemType == DroppedItem.ItemType.ItemType && !this._isEnteringEquipSuit && this._enterDropUi >= 100) {
+                if(item._dropItemType == DroppedItem.ItemType.ItemType && !this._isEnteringEquipSuit && this._enterDropUi >= 60) {
                     var enterRadius = cc.p(70, 100);
                     if (Math.abs(heroPos.x - itemPos.x) <= enterRadius.x && Math.abs(heroPos.y - itemPos.y) <= enterRadius.y) {
                         this._isEnteringEquipSuit = true;
@@ -620,7 +620,7 @@ var SceneBase = lh.LHScene.extend({
                 that._goForwardPanel = null;
             }
             //that._rolePanel.setVisible(false);
-            that._isEnteringEquipSuit = true;
+           // that._isEnteringEquipSuit = true;
             that._operator.setHide(false);
             that.playNextSection();
         }

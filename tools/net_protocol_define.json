@@ -661,6 +661,39 @@
     [
       ["uint32","result","0 成功"]
     ]
+  },
+
+  "CMD_CS_GET_VIP_REWARD" :
+  {
+    "code" : 1628,
+    "type" : "CS",
+    "desc" : "领取每日VIP奖励",
+    "schemes":
+    [
+      ["uint32","player_id","角色id"]
+    ]
+  },
+
+  "CMD_SC_GET_VIP_REWARD_RESULT" :
+  {
+    "code": 1629,
+    "type": "SC",
+    "desc": "领取每日VIP奖励结果",
+    "schemes":
+    [
+      ["uint32","result","0 成功"]
+    ]
+  },
+
+  "CMD_SC_VIP_IS_GET_INFO" :
+  {
+    "code": 1630,
+    "type": "SC",
+    "desc": "每日VIP奖励是否领取",
+    "schemes":
+    [
+      ["uint32","get_done","0 没有领取"]
+    ]
   }
 }
 
