@@ -280,3 +280,26 @@ bool SdkManager::applicationOpenURL(void *iosUIApplication, void *iosNSURL, void
 }
 #endif
 
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+extern "C" {
+    void Java_com_fate_SdkManagerJni_configureSdk()
+    {
+        cocos2d::log("Java_com_fate_SdkManagerJni_configureSdk");
+        SdkManager::configureSdk();
+    }
+
+    void Java_com_fate_SdkManagerJni_activityOnCreate(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_fate_SdkManagerJni_activityOnCreate");
+        SdkManager::activityOnCreate();
+    }
+}
+
+void SdkManager::activityOnCreate()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnCreate();
+    }
+}
+#endif

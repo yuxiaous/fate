@@ -57,6 +57,11 @@ public:
     static void applicationDidReceiveRemoteNotification(void *iosNSDictionary);
     static bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString);
 #endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+public:
+    static void activityOnCreate();
+#endif
 };
 
 #endif /* defined(__crows__SdkManager__) */

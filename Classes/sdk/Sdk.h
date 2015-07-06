@@ -34,6 +34,11 @@ public:
     virtual void applicationDidReceiveRemoteNotification(void *iosNSDictionary) {}
     virtual bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString) { return false; }
 #endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+public:
+    virtual void activityOnCreate() {}
+#endif
 };
 
 

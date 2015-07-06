@@ -2,8 +2,8 @@ package com.fate.cmcc.mm;
 
 import com.fate.SdkManagerJni;
 
-//import mm.purchasesdk.OnPurchaseListener;
 import mm.purchasesdk.Purchase;
+import android.os.Handler;
 
 /**
  * Created by yuxiao on 15/6/30.
@@ -11,19 +11,16 @@ import mm.purchasesdk.Purchase;
 public class MMSdkJni {
 
 	private static Purchase purchase = null;
+	private static IAPListener listener = null;
 
     public static void init(String appid, String appkey) {
         System.out.println("MMSdkJni.init, appid: "+appid + ", appkey :"+appkey);
 
-    	purchase = Purchase.getInstance();
-    	purchase.setAppInfo(appid, appkey);
-    	purchase.init(SdkManagerJni.activity, null);
+        listener = new IAPListener();
+        purchase = Purchase.getInstance();
+        purchase.setAppInfo(appid, appkey);
+        purchase.init(SdkManagerJni.activity, listener);
     }
-    
-//    final static OnPurchaseListener purchaseListener = new OnPurchaseListener() {
-//		@Override
-//		public void onInitFinish(int var1) {
-//
-//        }
-//	};
+
+
 }

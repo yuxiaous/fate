@@ -9,13 +9,10 @@ using namespace cocos2d;
 #define  CLASS_NAME "com/fate/cmcc/mm.MMSdkJni"
 
 
-//应用编码：	300009139532
-//app key：	BFE9123C8839FBF71862A521D6D38DB2
-
-//计费点代码	        商品名称
-//30000913953201	1瓶回复药水
-//30000913953202	6瓶回复药水
-//30000913953203 	30瓶回复药水
+//计费点代码	 商品名称
+//30000913953201	1瓶回复药水	 	应用编码：	300009139532
+//30000913953202	6瓶回复药水	 	app key：	BFE9123C8839FBF71862A521D6D38DB2
+//30000913953203 	购买大招
 //30000913953204	尼禄套装
 //30000913953205	2万金币
 //30000913953206	6.6万金币
@@ -39,7 +36,7 @@ MMSdk *MMSdk::getInstance()
     return instance;
 }
 
-void MMSdk::init()
+void MMSdk::activityOnCreate()
 {
     const char *appid = "300009139532";
     const char *appkey = "BFE9123C8839FBF71862A521D6D38DB2";
@@ -52,6 +49,11 @@ void MMSdk::init()
         minfo.env->DeleteLocalRef(jappid);
         minfo.env->DeleteLocalRef(jappkey);
     }
+}
+
+void MMSdk::init()
+{
+
 }
 
 void MMSdk::charge(const std::string &order, const std::string &identifier)

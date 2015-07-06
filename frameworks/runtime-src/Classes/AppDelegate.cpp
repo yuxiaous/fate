@@ -147,7 +147,6 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(JavaScriptObjCBridge::_js_register);
 #endif
     
-    SdkManager::configureSdk();
     SdkManager::init();
     
 #if (COCOS2D_DEBUG > 0 && CC_CODE_IDE_DEBUG_SUPPORT > 0)

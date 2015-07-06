@@ -17,30 +17,28 @@
 
 USING_NS_CC;
 
-
-#if  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-extern "C" {
-
 #define  CLASS_NAME "com/fate/TalkingDataGASdkJni"
 
-static void TalkingDataGASdkJni_init()
-{
-    cocos2d::log("TalkingDataGASdkJni_init");
-    JniMethodInfo minfo;
+//#if  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+//extern "C" {
+//
+//#define  CLASS_NAME "com/fate/TalkingDataGASdkJni"
 
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "getInstance", "()Ljava/lang/Object;")) {
-        jobject jobj = minfo.env->CallStaticObjectMethod(minfo.classID, minfo.methodID);
-
-        if(jobj) {
-            if (JniHelper::getMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
-                minfo.env->CallVoidMethod(jobj, minfo.methodID);
-            }
-        }
-    }
-}
-
-}
-#endif
+//static void TalkingDataGASdkJni_init(const char *appid, const char *channel)
+//{
+//    cocos2d::log("TalkingDataGASdkJni_init");
+//    JniMethodInfo minfo;
+//    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+//        jstring jappid = minfo.env->NewStringUTF(appid);
+//        jstring jchannel = minfo.env->NewStringUTF(channel);
+//        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jappid, jchannel);
+//        minfo.env->DeleteLocalRef(jappid);
+//        minfo.env->DeleteLocalRef(jchannel);
+//    }
+//}
+//
+//}
+//#endif
 
 
 TalkingDataGameAnalyticsSdk::TalkingDataGameAnalyticsSdk()
@@ -60,11 +58,29 @@ TalkingDataGameAnalyticsSdk *TalkingDataGameAnalyticsSdk::getInstance()
 
 void TalkingDataGameAnalyticsSdk::init()
 {
+    const char *appid = "59EC3DE05BB0234EA444193F4B9E0E4B";
+
+#if defined(CHANNEL_CMCC_MM)
+    const char *channel = "CmccMm";
+#else
+    const char *channel = "Develop";
+#endif
+
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    TDCCTalkingDataGA::onStart("59EC3DE05BB0234EA444193F4B9E0E4B", "IosDevelop");
+    TDCCTalkingDataGA::onStart(appid, channel);
 #elif  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     TDGAJniHelper::setJavaVM(JniHelper::getJavaVM());
-    TalkingDataGASdkJni_init();
+//    TalkingDataGASdkJni_init(appid, channel);
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+        jstring jappid = minfo.env->NewStringUTF(appid);
+        jstring jchannel = minfo.env->NewStringUTF(channel);
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jappid, jchannel);
+//        minfo.env->DeleteLocalRef(jappid);
+//        minfo.env->DeleteLocalRef(jchannel);
+    }
 #endif
 }
 
