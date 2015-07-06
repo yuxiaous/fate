@@ -12,7 +12,7 @@ var login_reward_server = {
     end: function() {
 
     },
-    
+
     sync: function() {
         if(this.update.length > 0) {
             database.commit("login_info", this.login_reward_info);

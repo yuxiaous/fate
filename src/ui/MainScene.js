@@ -33,6 +33,8 @@ var MainScene = ui.GuiSceneBase.extend({
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_equip"),109);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_shop"),112);
 
+        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_shop"),121);
+
 
         this._ui.lbl_rotate.setVisible(false);
         //this._ui.gift_node.setScale(0.5);
@@ -88,9 +90,9 @@ var MainScene = ui.GuiSceneBase.extend({
         //var loginPanel = new LoginRewardLayer(3);
         //loginPanel.pop();
 
-        //if(GuideSystem.instance._curGuideType == 0){
+        if(GuideSystem.instance._curGuideType == 0){
             RewardSystem.instance.getLoginRewardDaily();
-        //}
+        }
 
         if(BattleSystem.instance.needRestart) {
             BattleSystem.instance.needRestart = false;
@@ -208,7 +210,6 @@ var MainScene = ui.GuiSceneBase.extend({
     _on_btn_bag: function() {
 
         if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.zhuangbei)){
-            LOG("ASDFASFAS");
             MessageBoxOk.show("通过第一章第三关开放");
             return;
         }
@@ -229,10 +230,10 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_map_endless: function() {
-        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shilian)){
-            MessageBoxOk.show("通过第二章第六关开放");
-            return;
-        }
+        //if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shilian)){
+        //    MessageBoxOk.show("通过第二章第六关开放");
+        //    return;
+        //}
 
         //ui.pushScene(new BattleEndlessScene() );
         var endless_select = new EndlessSelected();
@@ -252,7 +253,7 @@ var MainScene = ui.GuiSceneBase.extend({
 
     _on_btn_shop: function() {
         if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
-            MessageBoxOk.show("通过第一章第六关开放");
+            MessageBoxOk.show("通过第一章第三关开放");
             return;
         }
         this.pushScene(ShopScene);

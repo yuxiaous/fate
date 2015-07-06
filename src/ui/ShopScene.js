@@ -40,18 +40,28 @@ var ShopScene = ui.GuiSceneBase.extend({
         };
 
         this._bindings = [
-
+            notification.createBinding(notification.event.SHOP_BUY_RESULT, function (event,info) {
+                if(info && info.good_id == 18000){
+                    this.refreshShopTabStatus();
+                    this.createGoodsList();
+                    this._ui.list_goods.jumpToTop();
+                }
+            }.bind(this))
         ];
 
         this.refreshShopTabStatus();
         this.createGoodsList();
         this._on_btn_girl();
 
-
-
         LOG("CUR GUIDE TYPE = " + GuideSystem.instance._curGuideType);
-        if(GuideSystem.instance._curGuideType != 0){
+        if(GuideSystem.instance._curGuideType == GuideSystem.Type.shangdian){
             this.shopType = ShopSystem.ShopType.Equip;
+            this.refreshShopTabStatus();
+            this.createGoodsList();
+            this._ui.list_goods.jumpToTop();
+        }
+        else if(GuideSystem.instance._curGuideType == GuideSystem.Type.xueping){
+            this.shopType = ShopSystem.ShopType.Item;
             this.refreshShopTabStatus();
             this.createGoodsList();
             this._ui.list_goods.jumpToTop();
@@ -75,8 +85,21 @@ var ShopScene = ui.GuiSceneBase.extend({
         var shopType = this.shopType;
         _.each(configdb.shop, function(config) {
             if(config.shop == shopType && config.platform_id == 1) {
-                var good = new ShopScene.Good(config.key);
-                this._ui.list_goods.pushBackCustomItem(good);
+                var needDisplay = false;
+                if(config.pay_cost >0){
+                   needDisplay = true;
+                }
+
+                //LOG("xueping = " + GuideSystem.instance._curGuideType);
+
+                if(GuideSystem.instance._curGuideType == GuideSystem.Type.xueping && config.pay_cost == 0){
+                    needDisplay = true;
+                }
+                if(needDisplay){
+                    var good = new ShopScene.Good(config.key);
+                    this._ui.list_goods.pushBackCustomItem(good);
+                }
+
             }
         }, this);
     },
@@ -193,7 +216,7 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
             this._ui.lbl_desc.setString(config.desc);
         }
 
-        if(config.pay_cost) {
+        if(config.pay_cost != undefined) {
             this._ui.lbl_cost.setString(String(config.pay_cost));
         }
 
@@ -227,11 +250,11 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
 
         LOG("gooid = " + this._good_id);
         if(GuideSystem.instance._curGuideType == GuideSystem.Type.shangdian && this._good_id ==12103){
-            LOG("CUR GUIDE TYPE = " + GuideSystem.instance._curGuideType);
             GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_buy"),113);
-            //if(config.pay_cost) {
-            //    this._ui.lbl_cost.setString(String(0));
-            //}
+        }
+
+        if(GuideSystem.instance._curGuideType == GuideSystem.Type.xueping && this._good_id == 18000){
+            GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_buy"),122);
         }
 
     },
@@ -249,6 +272,11 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
         //    ShopSystem.instance.buyGood(this._good_id, 1);
         //}, this);
         //win.pop();
+
+        //var confi = configdb.shop[this._good_id]
+        //if(this._good_id == 18000){
+        //
+        //}
 
         ShopSystem.instance.buyGood(this._good_id, 1);
     }

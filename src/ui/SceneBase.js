@@ -339,7 +339,6 @@ var SceneBase = lh.LHScene.extend({
         this.unschedule(this.battleObserver);
         if(this._isLostBattle){
             // show revive window
-            LOG("4568348563946");
             var revive = new BattleRevivePanel(this._curSceneType,this._sectionIndex);
             revive.pop();
         }
@@ -357,7 +356,7 @@ var SceneBase = lh.LHScene.extend({
             this._isLostBattle = true;
         }
         else if(_.every(this._monsters, function(monster) {
-                return monster.deathValue == true;
+                return monster.deathValue == true && monster.roleActionManager.runningAction == null;
             }, this)) {
 
             if(this._boss) {

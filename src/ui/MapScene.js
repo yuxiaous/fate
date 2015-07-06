@@ -55,8 +55,8 @@ var MapScene = ui.GuiSceneBase.extend({
         this._cur_chapter_id = MapSystem.instance.max_chapter_id;
         this.createChapterPages();
 
-        LOG("CHAPTER ID = " + this._cur_chapter_id);
-        LOG("LEVEL ID = " + this._sel_map_id);
+        //LOG("CHAPTER ID = " + this._cur_chapter_id);
+        //LOG("LEVEL ID = " + this._sel_map_id);
 
         if(this._sel_map_id == 104){
             GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),102);
@@ -70,10 +70,16 @@ var MapScene = ui.GuiSceneBase.extend({
             GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),108);
         }
 
-        if(this._sel_map_id == 103){
+        if(this._sel_map_id == 201){
             GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),111);
             GmSystem.instance.sendCommand("ar 1 27000");
         }
+
+        if(this._sel_map_id == 103){
+            GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),120);
+        }
+
+
 
 
         if(BattleSystem.instance.needRestart) {

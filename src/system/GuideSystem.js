@@ -76,6 +76,11 @@ var GuideSystem = SystemBase.extend({
                 }
                 break;
             case  GuideSystem.Type.shangdian :
+                if(curMapId == 201){
+                    isOpen = true;
+                }
+                break;
+            case GuideSystem.Type.xueping:
                 if(curMapId == 103){
                     isOpen = true;
                 }
@@ -148,8 +153,15 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_) {
             return 1;
         }
 
+        //判断引导是否可以执行
+        if(!sys.getCurGuideIsOpenWithMapId(guideConf.guideType)){
+            LOG("GUIDE IS not open ");
+            return 1;
+        }
+
+
         if( sys._curGuideType != 0 && sys._curGuideType != guideConf.guideType){
-            LOG("HAD GUIDE");
+            LOG("HAD GUIDE = " + sys._curGuideType );
             return 1;
         }
         else{
@@ -210,7 +222,9 @@ GuideSystem.Type = {
     jineng : 3,
     duanzao : 4,
     shangdian : 5,
-    shilian : 6
+    shilian : 6,
+    xueping : 7
+
 };
 
 GuideSystem.content = {
@@ -225,6 +239,9 @@ GuideSystem.content = {
         arr_pos: cc.p(300, 400),
         cont_pos: cc.p(310, 465)
     },
+
+
+    //引导去商城购买免费血瓶
 
     //引导过去装备
     "102" : {
@@ -361,6 +378,42 @@ GuideSystem.content = {
         guideType : GuideSystem.Type.shangdian,
         contIcon : "images/code_ui/ui_354.png",
         cur_id: 113,
+        next_id: -1,
+
+        rotate: 0,
+        arr_pos: cc.p(520, 440),
+        cont_pos: cc.p(480, 355)
+    },
+
+    //引导去商店购买
+
+    "120" : {
+        guideType : GuideSystem.Type.xueping,
+        contIcon : "images/code_ui/ui_359.png",
+        isStart : true,
+        cur_id: 120,
+        next_id: 121,
+
+        rotate: 100,
+        arr_pos: cc.p(90, 140),
+        cont_pos: cc.p(275, 240)
+    },
+
+    "121" : {
+        guideType : GuideSystem.Type.xueping,
+        contIcon : "images/code_ui/ui_359.png",
+        cur_id: 121,
+        next_id: 122,
+
+        rotate: 120,
+        arr_pos: cc.p(460, 250),
+        cont_pos: cc.p(565, 330)
+    },
+
+    "122" : {
+        guideType : GuideSystem.Type.xueping,
+        contIcon : "images/code_ui/ui_360.png",
+        cur_id: 122,
         next_id: -1,
 
         rotate: 0,
