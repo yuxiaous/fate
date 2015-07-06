@@ -206,7 +206,9 @@ BattleSystem.getAtkActualValue = function (atk_role_,def_role_) {
         runningACT.type == RoleAction.Type.SKILL4 ||
         runningACT.type == RoleAction.Type.SKILL5
         )){
-        damageValue = Formula.calculateSkillAttack(ATK_atkV,1.1,ATK_sunderV,DEF_defV);
+
+        var skillUPValue = SkillSystem.instance.getSkillUPLevel(runningACT.type);
+        damageValue = Formula.calculateSkillAttack(ATK_atkV,skillUPValue,ATK_sunderV,DEF_defV);
     }
 
     //暴击

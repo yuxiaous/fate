@@ -99,6 +99,19 @@ var GiftSystem = SystemBase.extend({
         return time;
     },
 
+    getGiftBuyNumWith : function (giftType_) {
+        var num = 0;
+        _.each(this._giftData, function (giftInfo_) {
+            if(giftInfo_.giftType == giftType_){
+                num = giftInfo_.buy_num;
+            }
+        },this)
+
+        LOG("gift type = " + giftType_);
+        LOG("num = " + num);
+        return num;
+    },
+
     changeStringToTimeStyle : function (countTime_) {
         function changeStr(str_){
             if(str_ < 10){

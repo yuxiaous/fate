@@ -64,6 +64,51 @@ var SkillSystem = SystemBase.extend({
         }, this);
 
         return ret;
+    },
+
+    getSkillUPLevel : function(skill_type_){
+
+             var skillId = 0;
+            switch (skill_type_){
+                case  RoleAction.Type.SKILL1 :
+                    skillId = 10106;
+                    break;
+                case  RoleAction.Type.SKILL2 :
+                    skillId = 10107;
+                    break;
+                case  RoleAction.Type.SKILL3 :
+                    skillId = 10108;
+                    break;
+                case  RoleAction.Type.SKILL4 :
+                    skillId = 10109;
+                    break;
+            }
+
+
+        LOG("skill type = " + skill_type_);
+        LOG("skill id = " + skillId);
+
+             var level = 1;
+            _.each(this.skills, function (skill) {
+                if( skill && skill.skill_id == skillId){
+                   level = skill.level;
+                }
+             });
+
+        //var conf = configdb.skillup
+
+        var tmpSkillInfo = null;
+        _.each(configdb.skillup, function (skillInfo_) {
+            if(skillInfo_.skill_id == skillId && skillInfo_.level == level){
+                tmpSkillInfo = skillInfo_;
+            }
+        });
+
+        LOG("skill up = " + tmpSkillInfo.skill_up);
+
+        return tmpSkillInfo.skill_up;
     }
+
+
 });
 

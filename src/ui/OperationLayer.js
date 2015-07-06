@@ -303,16 +303,22 @@ var OperationLayer = cc.Layer.extend({
         button.btnSkinned = buttonBase;
         button.isCounting = false;
 
+        var fontBg = cc.Sprite.create("images/code_ui/ui_329.png");
+        button.addChild(fontBg);
+
         var releaseCount = ccui.TextBMFont.create("0","res/fonts/fnt_10.fnt");
         var buttonSize = sp1.getContentSize();
-        releaseCount.setPosition(cc.p(0,-buttonSize.height * 0.1));
+        releaseCount.setPosition(cc.p(11,-buttonSize.height * 0.25));
         button.addChild(releaseCount);
         button.releaseCount = 0;
         button.releaseCountLabel = releaseCount;
+        button.fontBg = fontBg;
 
         needUseCount_ = false || needUseCount_;
         button.needUseCount = needUseCount_;
         button.releaseCountLabel.setVisible(button.needUseCount);
+        button.fontBg.setVisible(button.needUseCount);
+
 
         return button;
     }

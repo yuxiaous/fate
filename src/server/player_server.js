@@ -12,7 +12,7 @@ var player_server = {
             level: 1,
             exp: 0,
             diamond: 0,
-            gold: 100000,
+            gold: 0,
             action: 60 ,//行动力,
             superSkillCount : 1     //大技能可以释放的次数
         });

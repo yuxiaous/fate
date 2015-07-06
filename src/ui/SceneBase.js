@@ -169,7 +169,7 @@ var SceneBase = lh.LHScene.extend({
                         item.flyToTarget(hero);
                     }
                 }
-                if(item._dropItemType == DroppedItem.ItemType.ItemType && !this._isEnteringEquipSuit && this._enterDropUi >= 60) {
+                if(GiftSystem.instance.getGiftBuyNumWith(GiftSystem.GiftType.WuQi) <= 0 && item._dropItemType == DroppedItem.ItemType.ItemType && !this._isEnteringEquipSuit && this._enterDropUi >= 60) {
                     var enterRadius = cc.p(70, 100);
                     if (Math.abs(heroPos.x - itemPos.x) <= enterRadius.x && Math.abs(heroPos.y - itemPos.y) <= enterRadius.y) {
                         this._isEnteringEquipSuit = true;
@@ -236,7 +236,7 @@ var SceneBase = lh.LHScene.extend({
         var type = role.roleType;
         if(type == RoleBase.RoleType.Monster ||
             type == RoleBase.RoleType.Boss) {
-            if( role.dropId != undefined){
+            if( GiftSystem.instance.getGiftBuyNumWith(GiftSystem.GiftType.WuQi) <= 0 && role.dropId != undefined){
                 var dropId = role.dropId || 101002;
                 var dropType = DroppedItem.ItemType.ItemType;
                 var dropItem = new DroppedItem(dropId,dropType);
@@ -355,20 +355,26 @@ var SceneBase = lh.LHScene.extend({
             end = true;
             this._isLostBattle = true;
         }
+        else if(this._boss){
+            if(this._boss.deathValue == true){
+                _.each(this._monsters, function(monster) {
+                    monster.roleDataManager.hp = 0;
+                    monster.setBloodBar();
+                    monster.die();
+                }, this);
+            }
+
+            if(this._boss.deathValue == true && this._boss.roleActionManager.runningAction == null) {
+                end = true;
+                this._isLostBattle = false;
+            }
+        }
         else if(_.every(this._monsters, function(monster) {
                 return monster.deathValue == true && monster.roleActionManager.runningAction == null;
             }, this)) {
 
-            if(this._boss) {
-                if(this._boss.deathValue == true && this._boss.roleActionManager.runningAction == null) {
-                    end = true;
-                    this._isLostBattle = false;
-                }
-            }
-            else {
-                // win
-                end = true;
-            }
+            end = true;
+            this._isLostBattle = false;
         }
 
         if(end) {
