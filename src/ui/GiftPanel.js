@@ -45,9 +45,17 @@ var GiftPanel = ui.GuiController.extend({
                             giftId = 101002;
                             break;
                     }
-                    var buy_panel = new GiftBuyDetail(giftType,giftId);
-                    buy_panel.pop();
-                    UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"));
+
+                    if(giftType == GiftSystem.GiftType.Vip && this.getGiftNodeBuyCount(giftType) > 0){
+                        var getPanel = new VipGetDetail();
+                        getPanel.pop();
+                        UiEffect.iconOpenEffect(getPanel.seekWidgetByName("gift_panel"));
+                    }
+                    else{
+                        var buy_panel = new GiftBuyDetail(giftType,giftId);
+                        buy_panel.pop();
+                        UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"));
+                    }
                 }
             },this);
 
@@ -145,15 +153,28 @@ var GiftPanel = ui.GuiController.extend({
                     tmpGiftData = GD_;
                 }
             })
-
-            if(tmpGiftData.buy_num > 0 && tmpGiftData.giftType != GiftSystem.GiftType.ZhiZun){
+            if(tmpGiftData.buy_num > 0){
                 btn_.setVisible(false);
             }
             else{
                 btn_.setVisible(true);
             }
 
+            if(tmpGiftData.giftType == GiftSystem.GiftType.ZhiZun || tmpGiftData.giftType == GiftSystem.GiftType.Vip){
+                btn_.setVisible(true);
+            }
         },this);
+    },
+    
+    getGiftNodeBuyCount : function (giftType) {
+        var giftData = GiftSystem.instance._giftData;
+        var tmpGiftData = null;
+        _.each(giftData, function (GD_) {
+            if(GD_.giftType == giftType){
+                tmpGiftData = GD_;
+            }
+        })
+        return tmpGiftData.buy_num;
     },
 
     onExit: function() {
@@ -325,4 +346,60 @@ var BuySkillDetail = ui.GuiWindowBase.extend({
         this._callfunc.apply(this._target);
         this.close();
     }
+});
+
+var VipGetDetail = ui.GuiWindowBase.extend({
+    _guiFile : "ui/vip_lingqu_layer.json",
+
+    ctor : function (func_,target_) {
+        this._super();
+
+
+        this._callfunc = func_;
+        this._target = target_;
+    },
+
+    onEnter : function () {
+        this._super();
+        this._get_btn = this.seekWidgetByName("btn_get");
+
+        if(RewardSystem.instance._isGetVipDone){
+           // this._get_btn.setEnable(false);
+            this._get_btn.setBright(false);
+        }
+        else{
+           // this._get_btn.setEnable(true);
+            this._get_btn.setBright(true);
+        }
+
+        this._bindings = [
+            notification.createBinding(notification.event.GET_VIP_REWARD, function () {
+                if(RewardSystem.instance._isGetVipDone){
+                    // this._get_btn.setEnable(false);
+                    this._get_btn.setBright(false);
+                }
+                else{
+                    // this._get_btn.setEnable(true);
+                    this._get_btn.setBright(true);
+                }
+                this.close();
+            },this)
+        ]
+    },
+
+    onExit : function () {
+        this._super();
+        notification.removeBinding(this._bindings);
+    },
+
+    _on_btn_get : function(){
+        net_protocol_handlers.SEND_CMD_CS_GET_VIP_REWARD({
+            player_id : 101
+        })
+    },
+
+    _on_btn_close : function () {
+        this.close();
+    }
+
 });

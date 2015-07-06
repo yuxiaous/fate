@@ -124,6 +124,8 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
 
     ctor: function() {
         this._super();
+
+        this._allDetailITEM = null;
     },
 
     onEnter: function() {
@@ -162,12 +164,12 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
 
 
         this._bindings = [
-            notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
-                if(itemType_ == BattleSystem.UseItemType.UseRevive){
-                    notification.emit(notification.event.BATTLE_HERO_REVIVE);
-                    this.close();
-                }
-            },this)
+            //notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
+            //    if(itemType_ == BattleSystem.UseItemType.UseRevive){
+            //        notification.emit(notification.event.BATTLE_HERO_REVIVE);
+            //        this.close();
+            //    }
+            //},this)
         ];
 
         this._ui.vicTitlePanel.setVisible(false);
@@ -186,7 +188,12 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         this._super();
     },
 
+    deleteAllDetailItem : function () {
+        //_.each(this._allDetailITEM);
+    },
+
     refreshRewardItem : function () {
+
         var reward = BattleSystem.instance.battle_reward;
 
         this._ui.goldLabel.setString(String(reward.gold || 0));
@@ -195,14 +202,33 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         _.each(this._rewardItems, function (item_,i) {
             if(item_){
                 item_.setVisible(false);
+
+
             }
         },this);
-
         if(reward.items && reward.items.length) {
+            LOG("REWARD ITEMS = " + reward.items.length);
             _.each(reward.items, function (item, i) {
                 if(item.item_id) {
+                    LOG("ITEM ID = " + item.item_id) ;
                     this._rewardItems[i].setItemId(item.item_id);
                     this._rewardItems[i].setVisible(true);
+
+                    var rewardItemNode = this._rewardItems[i]._ui.btn_bg;
+
+                    rewardItemNode.setTouchEnabled(true);
+                    rewardItemNode.addTouchEventListener(function (touch, event) {
+                        if(event == ccui.Widget.TOUCH_ENDED){
+                            LOG("TOUCH END");
+                            if(this._allDetailITEM != null){
+                                this._allDetailITEM.removeFromParent();
+                            }
+                            this._allDetailITEM = new EquipDetailPanel(item.item_id);
+                            this._allDetailITEM.setPosition(cc.p(0,rewardItemNode.getContentSize().height));
+                            rewardItemNode.addChild(this._allDetailITEM);
+                            //detailPanel.pop();
+                        }
+                    })
                 }
             },this);
         }
@@ -244,12 +270,12 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
 
 
         this._bindings = [
-            notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
-                if(itemType_ == BattleSystem.UseItemType.UseRevive){
-                    notification.emit(notification.event.BATTLE_HERO_REVIVE);
-                    this.close();
-                }
-            },this)
+            //notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function (event_,itemType_) {
+            //    if(itemType_ == BattleSystem.UseItemType.UseRevive){
+            //        notification.emit(notification.event.BATTLE_HERO_REVIVE);
+            //        this.close();
+            //    }
+            //},this)
         ];
 
         this._ui._failTitlePanel.setVisible(false);
@@ -345,11 +371,78 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
     }
 });
 
+var EndlessBattelLosePanel = ui.GuiWindowBase.extend({
+    _guiFile: "ui/endless_battle_fail_layer.json",
+
+    ctor: function(curRound_) {
+        this._super();
+        this._curRound = curRound_;
+    },
+
+    onEnter: function() {
+        this._super();
+
+
+        this._ui = {
+            _failTitlePanel : this.seekWidgetByName("fail_title_panel"),
+            _contentPanel : this.seekWidgetByName("content_panel"),
+            _lbl_endless : this.seekWidgetByName("lbl_fail_content"),
+            _lbl_maxRound : this.seekWidgetByName("lbl_max_round"),
+            goldLabel : this.seekWidgetByName("lbl_gold"),
+            expLabel  : this.seekWidgetByName("lbl_exp")
+        };
+
+
+        var levelNum = BattleSystem.instance.endlessRound;
+        //var lblMaxStr = "最高坚持到第" + levelNum + "关";
+        this._ui._lbl_maxRound.setString(levelNum);
+
+        //var lblStr = "恭喜您在无尽模式坚持到第" + this._curRound + "关";
+        this._ui._lbl_endless.setString(this._curRound);
+
+        var conf = configdb.endlessround[this._curRound];
+        this._ui.goldLabel.setString(conf.gain_gold || 0);
+        this._ui.expLabel.setString(conf.gain_exp || 0);
+
+        this._ui._failTitlePanel.setVisible(false);
+        this._ui._contentPanel.setVisible(false);
+        UiEffect.iconOpenYEffect(this, function () {
+            UiEffect.iconSealEffect(this._ui._failTitlePanel, function () {
+                this._ui._contentPanel.setVisible(true);
+            },this,true);
+        },this)
+    },
+
+    onExit: function() {
+
+        this._ui = null;
+
+        this._super();
+    },
+
+    _on_btn_back: function() {
+        this.exit = true;
+        this.close();
+    },
+
+    _on_btn_restart : function(){
+        BattleSystem.instance.needRestart = true;
+        BattleSystem.instance.needRestartBattleType = BattleSystem.instance.curBattleType;
+
+        this.close();
+        ui.popScene();
+    }
+});
+
 var BattleRevivePanel = ui.GuiWindowBase.extend({
     _guiFile : "ui/battle_revive_layer.json",
 
-    ctor : function () {
+    ctor : function (curBattleType_,endlessRound_) {
         this._super();
+
+        LOG("23345");
+        this._curBattleType = curBattleType_ || SceneBase.Type.NormalType;
+        this._endlessRound = endlessRound_ || 1;
     },
 
     onEnter : function () {
@@ -363,23 +456,33 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-        //this.close();
-        if(UiEffect.blockShopItemWithRMB()){
-            return;
-        }
-    },
-    
-    _on_btn_close : function () {
-
         this.close();
-        // show lose window
-        var lose = new BattleLosePanel();
-        lose.setCloseCallback(function(w) {
-            if(w.exit) {
-                cc.director.popScene();
-            }
-        }, this);
-        lose.pop();
+        //if(UiEffect.blockShopItemWithRMB()){
+        //    return;
+        //}
+
+        BattleSystem.instance.sendReviveBattle();
+
+    },
+
+    _on_btn_close : function () {
+        if(this._curBattleType == SceneBase.Type.NormalType){
+            this.close();
+            // show lose window
+            var lose = new BattleLosePanel();
+            lose.setCloseCallback(function(w) {
+                if(w.exit) {
+                    cc.director.popScene();
+                }
+            }, this);
+            lose.pop();
+        }
+        else if(this._curBattleType == SceneBase.Type.EndlessType){
+            this.close();
+
+
+            BattleSystem.instance.endlessBattleLose(this._endlessRound);
+        }
 
     }
 });
@@ -416,6 +519,100 @@ var BattleWinGiftPanel = ui.GuiWindowBase.extend({
         //    }
         //}, this);
         //lose.pop();
+    }
+});
+
+var EquipDetailPanel = ui.GuiWindowBase.extend({
+    _guiFile: "ui/equip_detail_panel.json",
+
+    ctor: function(equipId_) {
+        this._super();
+
+        this._curItemID = equipId_;
+    },
+
+    onEnter: function() {
+        this._super();
+
+        this._ui = {
+            lbl_item_name : this.seekWidgetByName("lbl_item_name"),
+            lbl_item_desc: this.seekWidgetByName("lbl_item_desc"),
+            sp_change_up: this.seekWidgetByName("sp_change_up"),
+            sp_change_down: this.seekWidgetByName("sp_change_down"),
+            lbl_item_score: this.seekWidgetByName("lbl_item_score")
+        }
+
+        var config = BagSystem.getConfig(this._curItemID);
+        if(config) {
+            // name
+            this._ui.lbl_item_name.setString(config.name || "");
+
+            // desc
+            this._ui.lbl_item_desc.setString(config.desc || "");
+            // score value
+            if(config.type == undefined) {
+                var score = Formula.calculateBattleScore(config.hp, config.mp,
+                    config.atk, config.def,
+                    config.crit, config.sunder);
+
+                // score
+                this._ui.lbl_item_score.setString(this._ui.lbl_item_score._str_original.format(score));
+
+                // change value
+                var equip_info = EquipSystem.instance.slots[config.slot];
+                if(equip_info != undefined) {
+                    var equip_config = configdb.equip[equip_info.id];
+                    if(equip_config != undefined) {
+                        score -= Formula.calculateBattleScore(equip_config.hp, equip_config.mp,
+                            equip_config.atk, equip_config.def,
+                            equip_config.crit, equip_config.sunder);
+                    }
+                }
+                if(score > 0) {
+                    this._ui.sp_change_up.setVisible(true);
+                    this._ui.sp_change_down.setVisible(false);
+                }
+                else if(score < 0) {
+                    score = -score;
+                    this._ui.sp_change_up.setVisible(false);
+                    this._ui.sp_change_down.setVisible(true);
+                }
+                else {
+                    score = "";
+                    this._ui.sp_change_up.setVisible(false);
+                    this._ui.sp_change_down.setVisible(false);
+                }
+            }
+            else {
+                this._ui.lbl_score_change.setVisible(false);
+                this._ui.lbl_item_score.setString("");
+            }
+
+        }
+    },
+
+    onExit : function(){
+
+        this._ui = null;
+        this._super();
+
+    },
+
+    refreshSelectedItemInfo: function() {
+
+        var config = BagSystem.getConfig(this._curItemID);
+
+        if(config) {
+            // name
+            this._ui.lbl_item_name.setString(config.name || "");
+
+            // price
+            this._ui.lbl_item_price.setString(this._ui.lbl_item_price._str_original.format(config.price || ""));
+
+            // desc
+            this._ui.lbl_item_desc.setString(config.desc || "");
+
+        }
     }
 });
 

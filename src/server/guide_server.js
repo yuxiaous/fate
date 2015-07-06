@@ -6,6 +6,7 @@ var guide_server = {
         { guideType: guide_server.Type.jineng,          guideState : 0},
         { guideType: guide_server.Type.duanzao,         guideState : 0},
         { guideType: guide_server.Type.shangdian,       guideState : 0},
+        { guideType: guide_server.Type.xueping,         guideState : 0},
         ]);
         this.update = [];
     },
@@ -23,11 +24,20 @@ var guide_server = {
 };
 
 guide_server.Type = {
+    //enterGameGuide : 1,
+    //zhuangbei : 2,
+    //jineng : 3,
+    //duanzao : 4,
+    //shangdian : 5,
+    //xueping : 6
+
     enterGameGuide : 1,
     zhuangbei : 2,
     jineng : 3,
     duanzao : 4,
-    shangdian : 5
+    shangdian : 5,
+    shilian : 6,
+    xueping : 7
 }
 
 

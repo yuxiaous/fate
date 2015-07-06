@@ -73,6 +73,8 @@ var EquipScene = ui.GuiWindowBase.extend({
             }, this),
         ];
 
+        UiEffect.buttonBBB(this._ui.btn_top_level);
+
         this.createSlotList();
         this.refreshSelectedSlotInfo();
 
@@ -119,7 +121,7 @@ var EquipScene = ui.GuiWindowBase.extend({
         this.refreshSelectedSlotInfo();
     },
 
-    refreshSelectedSlotInfo: function() {
+    refreshSelectedSlotInfo: function()     {
         LOG("SELECT SLOT INFO");
         _.each(this._ui.cell_equips, function(cell) {
             cell.setSelected(cell.type == this._sel_type);
@@ -312,13 +314,16 @@ EquipScene.EquipIcon = ui.GuiController.extend({
         this._ui = {
             sp_icon: this.seekWidgetByName("sp_icon"),
             lbl_num: this.seekWidgetByName("lbl_num"),
-            img_sel: this.seekWidgetByName("img_sel")
+            img_sel: this.seekWidgetByName("img_sel"),
+            btn_icon : this.seekWidgetByName("btn_bg")
         };
 
         this._ui.lbl_num.setVisible(false);
         this._ui.img_sel.setVisible(false);
 
         this.refreshEquipIcon();
+
+        this._ui.btn_icon.setSwallowTouches(false);
     },
 
     onExit: function() {

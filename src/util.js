@@ -76,6 +76,30 @@ var util = {
         }
     },
 
+    getCurrentDate : function () {
+        var now = new Date();
+        //LOG("get current date = " + now.getTime());
+        //LOG("get current date day = " + now.getDate());
+        //LOG("get current date day = " + now.getFullYear());
+        //LOG("get current date day = " + Number(now.getMonth() + 1));
+        //LOG("get current date day = " + now.getDay());
+        //LOG("get current date day = " + now.toLocaleDateString());
+        //LOG("get current date day-- = " +  Date.parse(now.getTime()));
+        return now.getTime();
+    },
+
+    compareTimeWithToday : function (time_) {
+        var now = new Date();
+        var curTime = new Date();
+        curTime.setTime(time_);
+
+        var isLargeDay = false;
+        if(curTime.getFullYear() < now.getFullYear() || curTime.getMonth() < now.getMonth() || curTime.getDate() < now.getDate()){
+            isLargeDay = true;
+        }
+        return isLargeDay;
+    },
+
     getChannelId: function() {
         return jsb.GameUtils.getChannelId();
     }

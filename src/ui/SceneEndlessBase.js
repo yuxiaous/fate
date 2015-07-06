@@ -16,6 +16,18 @@ var SceneEndlessBase = SceneBase.extend({
         this._defBindings = [
             notification.createBinding(notification.event.BATTLE_DEL_SKILL_EFFECT, function () {
                 this.setBossAndMonsterTarget();
+            },this),
+            notification.createBinding(notification.event.BATTLE_ENDLESS_FINISH, function (event,obj) {
+                if(obj && obj.endless_round) {
+                    // show lose window
+                    var lose = new EndlessBattelLosePanel(obj.endless_round);
+                    lose.setCloseCallback(function(w) {
+                        if(w.exit) {
+                            cc.director.popScene();
+                        }
+                    }, this);
+                    lose.pop();
+                }
             },this)
         ]
     },
@@ -180,8 +192,13 @@ var SceneEndlessBase = SceneBase.extend({
 
     onAfterFightChatEnd : function () {
         //this._battleUiLayer.setVisible(true);
-        this._operator.setHide(false);
-        this.playNextSection();
+        this.runAction(cc.Sequence.create(
+            cc.DelayTime.create(1.0),
+            cc.CallFunc.create(function () {
+                this._operator.setHide(false);
+                this.playNextSection();
+            },this)
+        ));
     },
 
     refreshRoundTitle : function (curRound_,maxRound_) {

@@ -39,6 +39,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
     var max_map = _.max(map_server.map_info, function(info) {
         return info.map_id;
     });
+
     var is_first_battle = (battle_server.cur_battle_map == max_map.map_id);
 
     var config = configdb.map[battle_server.cur_battle_map];
@@ -69,7 +70,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
     var reward = {};
     reward.exp = config.gain_exp;
     reward.gold = config.gain_gold;
-    if(is_first_battle) {
+    if( is_first_battle) {
         reward.diamond = config.gain_diamond;
         reward.items = [
             {
@@ -137,6 +138,37 @@ server.registerCallback(net_protocol_handlers.CMD_CS_ENDLESS_MAX_ROUND, function
 
         server.send(net_protocol_handlers.CMD_SC_ENDLESS_MAX_ROUND,{
             endless_round : battle_server.battle_info.endlessRound
+        });
+    }
+});
+ 
+server.registerCallback(net_protocol_handlers.CMD_CS_ENDLESS_BATTLE_END, function (obj) {
+    if(obj && obj.endless_round){
+        var conf = configdb.endlessround[obj.endless_round];
+        if(conf == undefined){
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+            return;
+        }
+
+        // add resource
+        player_server.changeExp(conf.gain_exp);
+        player_server.changeGold(conf.gain_gold);
+
+        server.send(net_protocol_handlers.CMD_SC_ENDLESS_BATTLE_END,{
+            endless_round : obj.endless_round
+        });
+    }
+});
+
+server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_REVIVE, function (obj) {
+    if(obj && obj.player_id == 101){
+
+        if(bag_server.addItem(100007, 3) == false) {
+           LOG("add item error");
+            return;
+        }
+        server.send(net_protocol_handlers.CMD_SC_BATTLE_REVIVE,{
+            result : 0
         });
     }
 })

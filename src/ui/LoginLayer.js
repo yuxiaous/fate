@@ -141,15 +141,26 @@ var LoginRewardLayer = ui.GuiWindowBase.extend({
                 if(idx_ + 1 == this._curIdx) {
                     this._curCoverIcon = tmpIcon;
                 }
+
+                if(idx_ + 1 < this._curIdx){
+                    tmpIcon.setVisible(true);
+                }
         },this);
 
         this._login_label = this.seekWidgetByName("lbl_login_index");
 
         this._login_label.setString(String(this._curIdx));
+
+        this._bindings = [
+            notification.createBinding(notification.event.GET_LOGIN_RESULT, function (event,obj) {
+                this.close();
+            },this)
+        ]
     },
 
     onExit : function () {
         this._login_label = null;
+        notification.removeBinding(this._bindings);
         this._super();
     },
 
@@ -160,7 +171,8 @@ var LoginRewardLayer = ui.GuiWindowBase.extend({
     _on_btn_get : function () {
         this._curCoverIcon.setVisible(true);
         UiEffect.iconSealEffect_Rotate(this._curCoverIcon, function () {
-            this.close();
+           // this.close();
+            RewardSystem.instance.getCurDayReward();
         },this);
     }
 });

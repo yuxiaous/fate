@@ -151,15 +151,16 @@ var BagScene = ui.GuiWindowBase.extend({
 
     onSelectItem: function(item) {
         this._sel_index = _.indexOf(this._ui.ctrl_items, item);
-        this.refreshSelectedItemInfo();
+        this.refreshSelectedItemInfo(false);
     },
 
     onSelectEquip: function(equip) {
         this._sel_index = -equip.slot;
-        this.refreshSelectedItemInfo();
+        this.refreshSelectedItemInfo(true);
+
     },
 
-    refreshSelectedItemInfo: function() {
+    refreshSelectedItemInfo: function(needHIde_) {
         _.each(this._ui.ctrl_items, function(item, i) {
             item.setSelected(i == this._sel_index);
         }, this);
@@ -257,6 +258,22 @@ var BagScene = ui.GuiWindowBase.extend({
                 this._ui.lbl_score_change.setVisible(false);
                 this._ui.lbl_item_score.setString("");
             }
+
+
+            if(needHIde_ != undefined && needHIde_ == true){
+                this._ui.btn_use.setEnabled(false);
+                this._ui.btn_sell.setEnabled(false);
+
+                this._ui.btn_use.setBright(false);
+                this._ui.btn_sell.setBright(false);
+            }
+            else{
+                this._ui.btn_use.setEnabled(true);
+                this._ui.btn_sell.setEnabled(true);
+
+                this._ui.btn_use.setBright(true);
+                this._ui.btn_sell.setBright(true);
+            }
             return;
         }
 
@@ -264,9 +281,9 @@ var BagScene = ui.GuiWindowBase.extend({
         this._ui.lbl_item_price.setString("");
         this._ui.lbl_item_score.setString("");
         this._ui.lbl_item_desc.setString("");
-        this._ui.btn_use.setVisible(false);
-        this._ui.btn_sell.setEnabled(false);
-        this._ui.btn_sell.setBright(false);
+        //this._ui.btn_use.setVisible(false);
+        //this._ui.btn_sell.setEnabled(false);
+        //this._ui.btn_sell.setBright(false);
         this._ui.lbl_score_change.setVisible(false);
     },
 

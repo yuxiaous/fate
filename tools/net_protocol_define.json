@@ -595,6 +595,105 @@
         ]
       ]
     ]
+  },
+
+  "CMD_CS_ENDLESS_BATTLE_END" :
+  {
+    "code" : 1622,
+    "type" :"CS",
+    "desc" : "无尽模式结束",
+    "schemes" :
+    [
+      ["uint32","endless_round","无尽模式战斗结束轮数"]
+    ]
+  },
+
+  "CMD_SC_ENDLESS_BATTLE_END" :
+  {
+    "code" : 1623,
+    "type" :"SC",
+    "desc" : "无尽模式结束",
+    "schemes" :
+    [
+      ["uint32","endless_round","无尽模式战斗结束轮数"]
+    ]
+  },
+
+  "CMD_CS_BATTLE_REVIVE" :
+  {
+    "code" : 1624,
+    "type" :"CS",
+    "desc" : "战斗复活",
+    "schemes" :
+    [
+      ["uint32","play_id","player_id"]
+    ]
+  },
+
+  "CMD_SC_BATTLE_REVIVE" :
+  {
+    "code" : 1625,
+    "type" :"SC",
+    "desc" : "战斗复活",
+    "schemes" :
+    [
+      ["uint32","result","0成功"]
+    ]
+  },
+
+  "CMD_CS_GET_REWARD" :
+  {
+    "code" : 1626,
+    "type" : "CS",
+    "desc" : "领取每日登录奖励",
+    "schemes":
+    [
+      ["uint32","player_id","角色id"]
+    ]
+  },
+
+  "CMD_SC_GET_REWARD_RESULT" :
+  {
+    "code": 1627,
+    "type": "SC",
+    "desc": "领取每日登陆奖励结果",
+    "schemes":
+    [
+      ["uint32","result","0 成功"]
+    ]
+  },
+
+  "CMD_CS_GET_VIP_REWARD" :
+  {
+    "code" : 1628,
+    "type" : "CS",
+    "desc" : "领取每日VIP奖励",
+    "schemes":
+    [
+      ["uint32","player_id","角色id"]
+    ]
+  },
+
+  "CMD_SC_GET_VIP_REWARD_RESULT" :
+  {
+    "code": 1629,
+    "type": "SC",
+    "desc": "领取每日VIP奖励结果",
+    "schemes":
+    [
+      ["uint32","result","0 成功"]
+    ]
+  },
+
+  "CMD_SC_VIP_IS_GET_INFO" :
+  {
+    "code": 1630,
+    "type": "SC",
+    "desc": "每日VIP奖励是否领取",
+    "schemes":
+    [
+      ["uint32","get_done","0 没有领取"]
+    ]
   }
 }
 

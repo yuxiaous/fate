@@ -31,6 +31,14 @@ _BindFunc(1203, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_SKILL_UP_RESULT(obj);
 });
 
+// @protocol 每日VIP奖励是否领取
+// @param {uint32} get_done, 0 没有领取
+net_protocol_handlers.CMD_SC_VIP_IS_GET_INFO = 1630;
+_BindFunc(1630, function(obj) {
+	cc.assert(obj.get_done != undefined, "CMD_SC_VIP_IS_GET_INFO.get_done is undefined.");
+	net_protocol_handlers.ON_CMD_SC_VIP_IS_GET_INFO(obj);
+});
+
 // @protocol 请求每日登录奖励
 // @param {uint32} player_id, 角色id
 net_protocol_handlers.CMD_CS_LOGIN_REWARD_INFO = 1604;
@@ -54,6 +62,14 @@ net_protocol_handlers.SEND_CMD_CS_AUTH = function(obj) {
 	cc.assert(obj.token != undefined, "CMD_CS_AUTH.token is undefined.");
 	_SendFunc(500, obj);
 };
+
+// @protocol 战斗复活
+// @param {uint32} result, 0成功
+net_protocol_handlers.CMD_SC_BATTLE_REVIVE = 1625;
+_BindFunc(1625, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_BATTLE_REVIVE.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_BATTLE_REVIVE(obj);
+});
 
 // @protocol 五天连续登陆奖励
 // @param {uint32} player_id, player ID
@@ -131,6 +147,14 @@ _BindFunc(1301, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_EQUIP_SLOT_INFO(obj);
 });
 
+// @protocol 无尽模式结束
+// @param {uint32} endless_round, 无尽模式战斗结束轮数
+net_protocol_handlers.CMD_SC_ENDLESS_BATTLE_END = 1623;
+_BindFunc(1623, function(obj) {
+	cc.assert(obj.endless_round != undefined, "CMD_SC_ENDLESS_BATTLE_END.endless_round is undefined.");
+	net_protocol_handlers.ON_CMD_SC_ENDLESS_BATTLE_END(obj);
+});
+
 // @protocol 获取礼包倒计时时间
 // @param {uint32} playid_id, 礼包类型
 net_protocol_handlers.CMD_CS_GET_GIFT_TIME = 1613;
@@ -145,6 +169,14 @@ net_protocol_handlers.CMD_CS_BATTLE_MAP = 1501;
 net_protocol_handlers.SEND_CMD_CS_BATTLE_MAP = function(obj) {
 	cc.assert(obj.map_id != undefined, "CMD_CS_BATTLE_MAP.map_id is undefined.");
 	_SendFunc(1501, obj);
+};
+
+// @protocol 无尽模式结束
+// @param {uint32} endless_round, 无尽模式战斗结束轮数
+net_protocol_handlers.CMD_CS_ENDLESS_BATTLE_END = 1622;
+net_protocol_handlers.SEND_CMD_CS_ENDLESS_BATTLE_END = function(obj) {
+	cc.assert(obj.endless_round != undefined, "CMD_CS_ENDLESS_BATTLE_END.endless_round is undefined.");
+	_SendFunc(1622, obj);
 };
 
 // @protocol 初始化进度
@@ -273,6 +305,14 @@ _BindFunc(1305, function(obj) {
 	net_protocol_handlers.ON_CMD_CS_EQUIP_ITEM_RESULT(obj);
 });
 
+// @protocol 领取每日登陆奖励结果
+// @param {uint32} result, 0 成功
+net_protocol_handlers.CMD_SC_GET_REWARD_RESULT = 1627;
+_BindFunc(1627, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_GET_REWARD_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_GET_REWARD_RESULT(obj);
+});
+
 // @protocol 购买礼包结果
 // @param {uint32} result, 0成功
 // @param {list} gift_type_data, 礼包各种类型对应的购买数量
@@ -365,6 +405,14 @@ net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS = function(obj) {
 	_SendFunc(1101, obj);
 };
 
+// @protocol 领取每日VIP奖励
+// @param {uint32} player_id, 角色id
+net_protocol_handlers.CMD_CS_GET_VIP_REWARD = 1628;
+net_protocol_handlers.SEND_CMD_CS_GET_VIP_REWARD = function(obj) {
+	cc.assert(obj.player_id != undefined, "CMD_CS_GET_VIP_REWARD.player_id is undefined.");
+	_SendFunc(1628, obj);
+};
+
 // @protocol 装备槽一键升级到最高等级(最高只能和人物角色同级)
 // @param {uint32} slot_type, 槽类型
 net_protocol_handlers.CMD_CS_EQUIP_SLOT_UPGRADE_TOP = 1308;
@@ -415,6 +463,14 @@ net_protocol_handlers.SEND_CMD_CS_UNEQUIP_ITEM = function(obj) {
 	_SendFunc(1306, obj);
 };
 
+// @protocol 战斗复活
+// @param {uint32} play_id, player_id
+net_protocol_handlers.CMD_CS_BATTLE_REVIVE = 1624;
+net_protocol_handlers.SEND_CMD_CS_BATTLE_REVIVE = function(obj) {
+	cc.assert(obj.play_id != undefined, "CMD_CS_BATTLE_REVIVE.play_id is undefined.");
+	_SendFunc(1624, obj);
+};
+
 // @protocol 更新倒计时
 // @param {list} gift_type_data, 礼包各种类型对应的倒计时时间
 net_protocol_handlers.CMD_CS_UPDATE_GIFT_TIME = 1612;
@@ -430,4 +486,20 @@ net_protocol_handlers.SEND_CMD_CS_SHOP_ORDER = function(obj) {
 	cc.assert(obj.good_id != undefined, "CMD_CS_SHOP_ORDER.good_id is undefined.");
 	_SendFunc(1103, obj);
 };
+
+// @protocol 领取每日登录奖励
+// @param {uint32} player_id, 角色id
+net_protocol_handlers.CMD_CS_GET_REWARD = 1626;
+net_protocol_handlers.SEND_CMD_CS_GET_REWARD = function(obj) {
+	cc.assert(obj.player_id != undefined, "CMD_CS_GET_REWARD.player_id is undefined.");
+	_SendFunc(1626, obj);
+};
+
+// @protocol 领取每日VIP奖励结果
+// @param {uint32} result, 0 成功
+net_protocol_handlers.CMD_SC_GET_VIP_REWARD_RESULT = 1629;
+_BindFunc(1629, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_GET_VIP_REWARD_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_GET_VIP_REWARD_RESULT(obj);
+});
 

@@ -14,6 +14,9 @@ var SceneBase = lh.LHScene.extend({
 
         this._curSceneType = curType_;
 
+        this._enterDropUi = 0;
+        this._isEnteringEquipSuit = false;
+
         BattleSystem.instance.curBattleType = this._curSceneType;
     },
 
@@ -105,11 +108,12 @@ var SceneBase = lh.LHScene.extend({
             },this),
             notification.createBinding(notification.event.BATTLE_HERO_REVIVE, function () {
                 this._hero.deathValue = false;
+                this._hero.roleDataManager.hp = this._hero.roleDataManager.maxHp;
+                this._hero.roleDataManager.mp = this._hero.roleDataManager.maxMp;
                 this._hero.roleActionManager.deathStatus = false;
                 this._hero.roleActionManager.playAction(RoleAction.Type.STAND_UP);
-                this._isLostBattle = true;
+                this._isLostBattle = false;
                 this.schedule(this.battleObserver);
-
             },this),
             notification.createBinding(notification.event.PLAYER_INFO, function () {
                 var system = PlayerSystem.instance;
@@ -144,12 +148,15 @@ var SceneBase = lh.LHScene.extend({
     },
     
     update : function (dt) {
+        if(this._isEnteringEquipSuit == false){
+            if(this._enterDropUi < 60){
+                this._enterDropUi += 1;
+            }
+        }
+
         // hero pickup
         if(this._hero != null) {
             var hero = this._hero;
-            if(!this._isEntering){
-                this._isEntering = false;
-            }
             _.each(this._items, function(item) {
                 var heroPos = hero.getSpacePosition();
                 var itemPos = item.getPosition();
@@ -162,20 +169,11 @@ var SceneBase = lh.LHScene.extend({
                         item.flyToTarget(hero);
                     }
                 }
-
-                if(item._dropItemType == DroppedItem.ItemType.ItemType && !this._isEntering) {
+                if(item._dropItemType == DroppedItem.ItemType.ItemType && !this._isEnteringEquipSuit && this._enterDropUi >= 60) {
                     var enterRadius = cc.p(70, 100);
-                    if (Math.abs(heroPos.x - itemPos.x) <= enterRadius.x &&
-                        Math.abs(heroPos.y - itemPos.y) <= enterRadius.y) {
-
-                        this._isEntering = true;
+                    if (Math.abs(heroPos.x - itemPos.x) <= enterRadius.x && Math.abs(heroPos.y - itemPos.y) <= enterRadius.y) {
+                        this._isEnteringEquipSuit = true;
                         item.entranceBuyEquipSuit(hero, this);
-
-                    }
-                    else {
-                        this._isEntering = false;
-                        //item.entranceBuyEquipSuit(false, hero, this);
-
                     }
                 }
             }, this);
@@ -238,7 +236,7 @@ var SceneBase = lh.LHScene.extend({
         var type = role.roleType;
         if(type == RoleBase.RoleType.Monster ||
             type == RoleBase.RoleType.Boss) {
-            if(role.dropId != undefined){
+            if( role.dropId != undefined){
                 var dropId = role.dropId || 101002;
                 var dropType = DroppedItem.ItemType.ItemType;
                 var dropItem = new DroppedItem(dropId,dropType);
@@ -257,7 +255,7 @@ var SceneBase = lh.LHScene.extend({
                 return;
             }
 
-            if(this._curSceneType != SceneBase.Type.EndlessType &&cc.random0To1() * 100 > 40){
+            if(this._curSceneType != SceneBase.Type.EndlessType && cc.random0To1() * 100 > 40){
                 var itemId = 100005;
                 var dropType = DroppedItem.ItemType.BloodType;
                 if(cc.random0To1() * 100 > 50){
@@ -341,7 +339,7 @@ var SceneBase = lh.LHScene.extend({
         this.unschedule(this.battleObserver);
         if(this._isLostBattle){
             // show revive window
-            var revive = new BattleRevivePanel();
+            var revive = new BattleRevivePanel(this._curSceneType,this._sectionIndex);
             revive.pop();
         }
         else{
@@ -358,7 +356,7 @@ var SceneBase = lh.LHScene.extend({
             this._isLostBattle = true;
         }
         else if(_.every(this._monsters, function(monster) {
-                return monster.deathValue == true;
+                return monster.deathValue == true && monster.roleActionManager.runningAction == null;
             }, this)) {
 
             if(this._boss) {
@@ -622,11 +620,11 @@ var SceneBase = lh.LHScene.extend({
                 that._goForwardPanel = null;
             }
             //that._rolePanel.setVisible(false);
+           // that._isEnteringEquipSuit = true;
             that._operator.setHide(false);
             that.playNextSection();
         }
 
-        this._isEntering = false;
         if(this._coverView.state == 0){
             var size = cc.director.getVisibleSize();
             this._coverView.setPosition(cc.p(-size.width,0));

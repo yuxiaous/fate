@@ -22,7 +22,8 @@ var StartLayerScene = ui.GuiSceneBase.extend({
         };
 
         //电信渠道显示
-        this._ui.about_btn.setVisible(util.getChannelId() == GameChannel.ChinaTelecom);
+        //this._ui.about_btn.setVisible(util.getChannelId() == GameChannel.ChinaTelecom);
+        this._ui.about_btn.setVisible(true);
         this._ui.about_btn.setPressedActionEnabled(true);
 
         this._bindings = [
@@ -59,6 +60,13 @@ var StartLayerScene = ui.GuiSceneBase.extend({
         annLayer.pop();
 
         UiEffect.iconOpenEffect(annLayer);
+    },
+    
+    _on_btn_exit : function () {
+        var box = MessageBoxOkCancel.show("确定退出游戏？");
+        box.setOkCallback(function() {
+            cc.director.end();
+        }, this);
     }
 });
 
