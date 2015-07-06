@@ -25,6 +25,7 @@ extern "C" {
 
 static void TalkingDataGASdkJni_init()
 {
+    cocos2d::log("TalkingDataGASdkJni_init");
     JniMethodInfo minfo;
 
     if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "getInstance", "()Ljava/lang/Object;")) {

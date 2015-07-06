@@ -1,10 +1,8 @@
 package com.fate.cmcc.mm;
 
-import java.util.HashMap;
-
 import com.fate.SdkManagerJni;
 
-import mm.purchasesdk.OnPurchaseListener;
+//import mm.purchasesdk.OnPurchaseListener;
 import mm.purchasesdk.Purchase;
 
 /**

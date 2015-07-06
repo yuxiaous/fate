@@ -11,15 +11,15 @@
 #include "SdkManager.h"
 #include "Sdk.h"
 
-#ifdef TALKING_DATA_GA
+#ifdef SDK_TALKING_DATA_GA
 #include "TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.h"
 #endif
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(FATE_DEV)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(CHANNEL_DEVELOP)
 #include "DeveloperSdk.h"
 #endif
 
-#ifdef YMTXRECORDSDK
+#ifdef SDK_YMTX_RECORD
 #include "YMTXSdk.h"
 #endif
 
@@ -27,7 +27,7 @@
 #include "AndGame/AndGameSdk.h"
 #endif
 
-#ifdef FATE_MM_BILLING
+#ifdef SDK_MM_BILLING
 #include "mmbilling/MMSdk.h"
 #endif
 
@@ -48,15 +48,15 @@ void SdkManager::removeSdk(Sdk *sdk)
 
 void SdkManager::configureSdk()
 {
-#if TALKING_DATA_GA
+#if SDK_TALKING_DATA_GA
     addSdk(TalkingDataGameAnalyticsSdk::getInstance());
 #endif
     
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(FATE_DEV)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(CHANNEL_DEVELOP)
     addSdk(DeveloperSdk::getInstance());
 #endif
     
-#ifdef YMTXRECORDSDK
+#ifdef SDK_YMTX_RECORD
     addSdk(new YMTXSdk());
 #endif
     
@@ -64,7 +64,7 @@ void SdkManager::configureSdk()
     addSdk(AndGameSdk::getInstance());
 #endif
 
-#ifdef FATE_MM_BILLING
+#ifdef SDK_MM_BILLING
     addSdk(MMSdk::getInstance());
 #endif
 }
@@ -133,6 +133,7 @@ void SdkManager::login()
 
 void SdkManager::setAccount(const char* accountId)
 {
+    cocos2d::log("SdkManager::setAccount: %s", accountId);
     for(Sdk *sdk : _sdks) {
         SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
         if(account) {
@@ -143,6 +144,7 @@ void SdkManager::setAccount(const char* accountId)
 
 void SdkManager::setAccountName(const char* accountName)
 {
+    cocos2d::log("SdkManager::setAccountName: %s", accountName);
     for(Sdk *sdk : _sdks) {
         SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
         if(account) {
