@@ -58,7 +58,11 @@ public class AppActivity extends Cocos2dxActivity{
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
         hostIPAdress = getHostIpAddress();
+
+        // sdk manager
+        SdkManagerJni.configureSdk();
         SdkManagerJni.activity = this;
+        SdkManagerJni.activityOnCreate();
     }
     
     @Override

@@ -35,6 +35,7 @@
 #include "glfw3.h"
 #include "glfw3native.h"
 #include "ConfigParser.h"
+#include "SdkManager.h"
 
 #include "cocos2d.h"
 
@@ -83,6 +84,11 @@ std::string getCurAppName(void)
     if (args != nullptr && [args count] >= 2) {
     }
     g_nsAppDelegate = self;
+    
+    
+    
+    SdkManager::configureSdk();
+    
     AppDelegate app;
     Application::getInstance()->run();
     

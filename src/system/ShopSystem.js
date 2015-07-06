@@ -29,11 +29,11 @@ var ShopSystem = SystemBase.extend({
         }
 
         if(config.pay_type == ShopSystem.PayType.RMB) {
-
-            if(UiEffect.blockShopItemWithRMB()){
-                return
+            if(config.pay_cost != 0 ){
+                if(UiEffect.blockShopItemWithRMB()){
+                    return;
+                }
             }
-
             net_protocol_handlers.SEND_CMD_CS_SHOP_ORDER({
                 good_id: id
             });
@@ -54,11 +54,13 @@ var ShopSystem = SystemBase.extend({
     },
 
     onOrderResult: function(obj) {
+        LOG("order result");
         var config = configdb.shop[obj.good_id];
         if(config == undefined) {
             return;
         }
 
+        LOG("order result = " + obj.order);
         jsb.SdkManager.charge(obj.order, "001");
     }
 });

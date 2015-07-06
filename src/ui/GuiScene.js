@@ -15,23 +15,23 @@ ui.GuiSceneBase = cc.Scene.extend(ui.guiExtend).extend({
         this._super();
         this.loadGui(this._guiFile);
 
-        cc.eventManager.addListener({
-            event: cc.EventListener.KEYBOARD,
-            onKeyReleased: function(code, event){
-                switch (code) {
-                    case cc.KEY.back:
-                        if(this._on_keyboard_back) {
-                            this._on_keyboard_back();
-                        }
-                        break;
-                    case cc.KEY.menu:
-                        if(this._on_keyboard_menu) {
-                            this._on_keyboard_menu();
-                        }
-                        break;
-                }
-            }.bind(this)
-        }, this);
+        //cc.eventManager.addListener({
+        //    event: cc.EventListener.KEYBOARD,
+        //    onKeyReleased: function(code, event){
+        //        switch (code) {
+        //            case cc.KEY.back:
+        //                if(this._on_keyboard_back) {
+        //                    this._on_keyboard_back();
+        //                }
+        //                break;
+        //            case cc.KEY.menu:
+        //                if(this._on_keyboard_menu) {
+        //                    this._on_keyboard_menu();
+        //                }
+        //                break;
+        //        }
+        //    }.bind(this)
+        //}, this);
     },
 
     onExit: function() {
