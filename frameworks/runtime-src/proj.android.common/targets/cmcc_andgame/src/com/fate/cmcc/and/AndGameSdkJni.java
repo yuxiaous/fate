@@ -9,15 +9,8 @@ import cn.cmgame.billing.api.GameInterface;
 import cn.cmgame.billing.api.GameInterface.IPayCallback;
 
 public class AndGameSdkJni {
-	public static AndGameSdkJni instance = null;
-	public static Object getInstance() {
-		if(instance == null) {
-			instance = new AndGameSdkJni();
-		}
-		return instance;
-	}
 
-	public void init() {
+	public static void init() {
 		System.out.println("AndGameSdkJni.init");
 
 		if(SdkManagerJni.activity != null) {
@@ -25,8 +18,8 @@ public class AndGameSdkJni {
 		}
 	}
 
-	private String _order = "";
-	public void charge(String order, String identifier) {
+	private static String _order = "";
+	public static void charge(String order, String identifier) {
 		System.out.println("AndGameSdkJni.charge");
 		
 		if(_order.length() == 0) {
@@ -37,7 +30,7 @@ public class AndGameSdkJni {
 		}
     }
 
-	final IPayCallback payCallback = new IPayCallback() {
+	final static IPayCallback payCallback = new IPayCallback() {
 		@Override
 		public void onResult(int resultCode, String billingIndex, Object obj) {
 			String result = "";
@@ -58,23 +51,23 @@ public class AndGameSdkJni {
 		}
 	};
 	
-	private void handleResult(int resultCode, String billingIndex) {
+	private static void handleResult(int resultCode, String billingIndex) {
 		if(_order.length() > 0) {
 			System.out.println("AndGameSdkJni.handleResult");
 
 			int result = (resultCode == BillingResult.SUCCESS) ? 0 : 1;
-			onChargeCallback(result, _order);
+			onAndChargeCallback(result, _order);
 			_order = "";
 		}
 	}
 
-	private static native void onChargeCallback(int result, String order);
+	private static native void onAndChargeCallback(int result, String order);
 	
-	public boolean isMusicOn() {
+	public static boolean isMusicOn() {
 		return GameInterface.isMusicEnabled();
 	}
 	
-	public void showMoreGames() {
+	public static void showMoreGames() {
 		GameInterface.viewMoreGames(SdkManagerJni.activity);
 	}
 	
