@@ -3,6 +3,7 @@ package com.fate.cmcc.mm;
 import com.fate.SdkManagerJni;
 
 import mm.purchasesdk.Purchase;
+import mm.purchasesdk.PurchaseCode;
 import android.os.Handler;
 
 /**
@@ -22,19 +23,27 @@ public class MMSdkJni {
         purchase.init(SdkManagerJni.activity, listener);
     }
 
+    private static String _order = "";
     public static void charge(String order, String identifier) {
-        identifier = "30000913953205";
         System.out.println("MMSdkJni.charge");
-        System.out.println(order+":"+identifier);
 
-//        String tradeid = purchase.order(SdkManagerJni.activity, identifier, 1, order, false, listener);
-//        String tradeid = purchase.order(SdkManagerJni.activity, identifier, listener);
+        if(_order.length() == 0) {
+            System.out.println(order+":"+identifier);
 
-        try {
-            purchase.order(SdkManagerJni.activity, identifier, 1, order, false, listener);
-        } catch (Exception e1) {
-            System.out.println("order error");
-            e1.printStackTrace();
+            _order = order;
+            purchase.order(SdkManagerJni.activity, identifier, listener);
         }
     }
+
+    public static void handleResult(int code) {
+        if(_order.length() > 0) {
+            System.out.println("MMSdkJni.handleResult");
+            int result = (code == PurchaseCode.ORDER_OK || code == PurchaseCode.AUTH_OK || code == PurchaseCode.WEAK_ORDER_OK) ? 0 : 1;
+
+            onMmChargeCallback(code, _order);
+            _order = "";
+        }
+    }
+
+    private static native void onMmChargeCallback(int result, String order);
 }

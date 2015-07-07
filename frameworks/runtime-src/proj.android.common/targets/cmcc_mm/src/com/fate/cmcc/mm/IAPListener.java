@@ -43,21 +43,15 @@ public class IAPListener implements OnPurchaseListener {
 	public void onBillingFinish(int code, HashMap arg1) {
 		Log.d(TAG, "billing finish, status code = " + code);
 		String result = "订购结果：订购成功";
-//		Message message = iapHandler.obtainMessage(IAPHandler.BILL_FINISH);
-		// 此次订购的orderID
-		String orderID = null;
-		// 商品的paycode
-		String paycode = null;
-		// 商品的有效期(仅租赁类型商品有效)
-		String leftday = null;
-		// 商品的交易 ID，用户可以根据这个交易ID，查询商品是否已经交易
-		String tradeID = null;
 
-		String ordertype = null;
 		if (code == PurchaseCode.ORDER_OK || code == PurchaseCode.AUTH_OK || code == PurchaseCode.WEAK_ORDER_OK) {
-			/**
-			 * 商品购买成功或者已经购买。 此时会返回商品的paycode，orderID,以及剩余时间(租赁类型商品)
-			 */
+			// 商品购买成功或者已经购买。 此时会返回商品的paycode，orderID,以及剩余时间(租赁类型商品)
+			String orderID = null; // 此次订购的orderID
+			String paycode = null; // 商品的paycode
+			String leftday = null; // 商品的有效期(仅租赁类型商品有效)
+			String tradeID = null; // 商品的交易 ID，用户可以根据这个交易ID，查询商品是否已经交易
+
+			String ordertype = null;
 			if (arg1 != null) {
 				leftday = (String) arg1.get(OnPurchaseListener.LEFTDAY);
 				if (leftday != null && leftday.trim().length() != 0) {
@@ -80,16 +74,19 @@ public class IAPListener implements OnPurchaseListener {
 					result = result + ",ORDERTYPE:" + ordertype;
 				}
 			}
+
+
+
 		} else {
-			/**
-			 * 表示订购失败。
-			 */
+			// 订购失败。
 			result = "订购结果：" + Purchase.getReason(code);
 		}
-//		context.dismissProgressDialog();
 		System.out.println(result);
 
+		MMSdkJni.handleResult(code);
 	}
+
+
 
 	@Override
 	public void onQueryFinish(int code, HashMap arg1) {

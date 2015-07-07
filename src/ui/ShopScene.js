@@ -83,8 +83,9 @@ var ShopScene = ui.GuiSceneBase.extend({
         this.clearGoodsList();
 
         var shopType = this.shopType;
+        var platorm_id = ShopSystem.getShopPlatformId();
         _.each(configdb.shop, function(config) {
-            if(config.shop == shopType && config.platform_id == 1) {
+            if(config.shop == shopType && config.platform_id == platorm_id) {
                 var needDisplay = false;
                 if(config.pay_cost >0){
                    needDisplay = true;

@@ -27,6 +27,16 @@ using namespace cocos2d;
 //30000913953215	一键满级
 
 
+extern "C" {
+
+    void Java_com_fate_cmcc_mm_MMSdkJni_onMmChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+    {
+        cocos2d::log("Java_com_fate_cmcc_mm_MMSdkJni_onMmChargeCallback");
+        std::string order = JniHelper::jstring2string(jorder);
+        MMSdk::getInstance()->onChargeCallback(result, order.c_str());
+    }
+}
+
 MMSdk *MMSdk::getInstance()
 {
     static MMSdk *instance = nullptr;

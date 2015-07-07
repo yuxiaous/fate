@@ -61,9 +61,22 @@ var ShopSystem = SystemBase.extend({
         }
 
         LOG("order result = " + obj.order);
-        jsb.SdkManager.charge(obj.order, "001");
+        jsb.SdkManager.charge(obj.order, config.platform_good_id || "");
     }
 });
+
+
+ShopSystem.getShopPlatformId = function() {
+    var channel_id = util.getChannelId();
+    switch (channel_id) {
+        case GameChannel.AppStore: return 2;
+        case GameChannel.CmccAnd: return 4;
+        case GameChannel.CmccMm: return 3;
+        case GameChannel.ChinaTelecom:
+        case GameChannel.ChinaUnicom:
+        default : return 1;
+    }
+};
 
 ShopSystem.ShopType = {
     Equip: 1,

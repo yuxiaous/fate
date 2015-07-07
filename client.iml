@@ -9,6 +9,5 @@
       <excludeFolder url="file://$MODULE_DIR$/tools" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Game_Analytics_SDK_Android_3.1.68" level="project" />
   </component>
 </module>

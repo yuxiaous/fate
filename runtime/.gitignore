@@ -1,5 +1,5 @@
-fate-debug.apk
-fate Mac.app
+android/fate*.apk
+mac/fate*.app
 win32/config
 win32/res
 win32/src
