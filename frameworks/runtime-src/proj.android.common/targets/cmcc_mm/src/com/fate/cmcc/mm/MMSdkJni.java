@@ -28,13 +28,13 @@ public class MMSdkJni {
         System.out.println(order+":"+identifier);
 
 //        String tradeid = purchase.order(SdkManagerJni.activity, identifier, 1, order, false, listener);
-        String tradeid = purchase.order(SdkManagerJni.activity, identifier, listener);
+//        String tradeid = purchase.order(SdkManagerJni.activity, identifier, listener);
 
-//        try {
-//            purchase.order(SdkManagerJni.activity, identifier, 1, order, false, listener);
-//        } catch (Exception e1) {
-//            System.out.println("order error");
-//            e1.printStackTrace();
-//        }
+        try {
+            purchase.order(SdkManagerJni.activity, identifier, 1, order, false, listener);
+        } catch (Exception e1) {
+            System.out.println("order error");
+            e1.printStackTrace();
+        }
     }
 }

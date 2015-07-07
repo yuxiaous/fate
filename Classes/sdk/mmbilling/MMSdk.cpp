@@ -58,6 +58,15 @@ void MMSdk::init()
 
 void MMSdk::charge(const std::string &order, const std::string &identifier)
 {
+    cocos2d::log("MMSdk::charge");
 
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "charge", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+        jstring jorder = minfo.env->NewStringUTF(order.c_str());
+        jstring jidentifier = minfo.env->NewStringUTF(identifier.c_str());
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier);
+        minfo.env->DeleteLocalRef(jorder);
+        minfo.env->DeleteLocalRef(jidentifier);
+    }
 }
 
