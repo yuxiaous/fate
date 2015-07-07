@@ -63,16 +63,16 @@ def handle_event(event, tp, args):
         # backup 
         if event == "pre-build":
             # remove
-            # if os.path.isfile("build.xml.bak"):
-            #     os.remove("build.xml.bak")
-            # if os.path.isfile("AndroidManifest.xml.bak"):
-            #     os.remove("AndroidManifest.xml.bak")
-            # if os.path.isdir("jni.bak"):
-            #     shutil.rmtree("jni.bak")
-            # if os.path.isdir("res.bak"):
-            #     shutil.rmtree("res.bak")
-            # if os.path.isdir("src.bak"):
-            #     shutil.rmtree("src.bak")
+            if os.path.isfile("build.xml.bak"):
+                os.remove("build.xml.bak")
+            if os.path.isfile("AndroidManifest.xml.bak"):
+                os.remove("AndroidManifest.xml.bak")
+            if os.path.isdir("jni.bak"):
+                shutil.rmtree("jni.bak")
+            if os.path.isdir("res.bak"):
+                shutil.rmtree("res.bak")
+            if os.path.isdir("src.bak"):
+                shutil.rmtree("src.bak")
 
             # backup
             shutil.copy("build.xml", "build.xml.bak")
@@ -100,7 +100,7 @@ def handle_event(event, tp, args):
             pass
 
         if event == "pre-ndk-build":
-            shutil.copy2("target/jni/Application.mk", "jni/Application.mk")
+            shutil.copy("target/jni/Application.mk", "jni/Application.mk")
             pass
 
         if event == "post-copy-assets":
