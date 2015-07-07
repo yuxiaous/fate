@@ -58,6 +58,11 @@ def handle_event(event, tp, args):
     # }
 
     if tp == "android":
+        # no target
+        target_path = os.path.join(args['platform-project-path'], "target")
+        if not os.path.isdir(target_path):
+            return
+
         os.chdir(args['platform-project-path'])
 
         # backup 
