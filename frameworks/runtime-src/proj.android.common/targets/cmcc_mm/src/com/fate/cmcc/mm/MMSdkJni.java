@@ -37,10 +37,10 @@ public class MMSdkJni {
 
     public static void handleResult(int code) {
         if(_order.length() > 0) {
-            System.out.println("MMSdkJni.handleResult");
+            System.out.println("MMSdkJni.handleResult, code: " + code);
             int result = (code == PurchaseCode.ORDER_OK || code == PurchaseCode.AUTH_OK || code == PurchaseCode.WEAK_ORDER_OK) ? 0 : 1;
 
-            onMmChargeCallback(code, _order);
+            onMmChargeCallback(result, _order);
             _order = "";
         }
     }
