@@ -67,35 +67,43 @@ var SkillSystem = SystemBase.extend({
     },
 
     getSkillUPLevel : function(skill_type_){
+        var conf = this.getSkillUpConfig(skill_type_);
+        if(conf){
+            return conf.skill_up;
+        }
+        return 1;
+    },
 
-             var skillId = 0;
-            switch (skill_type_){
-                case  RoleAction.Type.SKILL1 :
-                    skillId = 10106;
-                    break;
-                case  RoleAction.Type.SKILL2 :
-                    skillId = 10107;
-                    break;
-                case  RoleAction.Type.SKILL3 :
-                    skillId = 10108;
-                    break;
-                case  RoleAction.Type.SKILL4 :
-                    skillId = 10109;
-                    break;
+    getSkillUpMpcost : function(skill_type_){
+        var conf = this.getSkillUpConfig(skill_type_);
+        if(conf){
+            return conf.cost_mp;;
+        }
+        return 1;
+    },
+
+    getSkillUpConfig : function (skill_type_) {
+        var skillId = 0;
+        switch (skill_type_){
+            case  RoleAction.Type.SKILL1 :
+                skillId = 10106;
+                break;
+            case  RoleAction.Type.SKILL2 :
+                skillId = 10107;
+                break;
+            case  RoleAction.Type.SKILL3 :
+                skillId = 10108;
+                break;
+            case  RoleAction.Type.SKILL4 :
+                skillId = 10109;
+                break;
+        }
+        var level = 1;
+        _.each(this.skills, function (skill) {
+            if( skill && skill.skill_id == skillId){
+                level = skill.level;
             }
-
-
-        LOG("skill type = " + skill_type_);
-        LOG("skill id = " + skillId);
-
-             var level = 1;
-            _.each(this.skills, function (skill) {
-                if( skill && skill.skill_id == skillId){
-                   level = skill.level;
-                }
-             });
-
-        //var conf = configdb.skillup
+        });
 
         var tmpSkillInfo = null;
         _.each(configdb.skillup, function (skillInfo_) {
@@ -104,9 +112,7 @@ var SkillSystem = SystemBase.extend({
             }
         });
 
-        LOG("skill up = " + tmpSkillInfo.skill_up);
-
-        return tmpSkillInfo.skill_up;
+        return tmpSkillInfo;
     }
 
 

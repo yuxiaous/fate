@@ -199,7 +199,8 @@ var RoleActionManager = cc.Class.extend({
                     scene._operator.setBtnTimingEnable(skillId,actionData.cdTime);
 
                     //refresh mp
-                    this.role.roleDataManager.mp -= actionData.mpCost;
+                    var curCost = SkillSystem.instance.getSkillUpMpcost(tmpSkillType);
+                    this.role.roleDataManager.mp -= curCost;
                 }
             }
             return true;
