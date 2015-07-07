@@ -25,6 +25,7 @@ var LoginSystem = SystemBase.extend({
 
     logout: function() {
         SystemManager.end();
+        server_manager.end();
     },
 
     authorize: function(token) {

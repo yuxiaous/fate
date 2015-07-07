@@ -14,13 +14,31 @@ var player_server = {
             diamond: 0,
             gold: 270000,
             action: 5 ,//行动力,
-            superSkillCount : 1     //大技能可以释放的次数
+            superSkillCount : 1,     //大技能可以释放的次数
+            actionStamp : 0
         });
 
         this.update = null;
+
+        cc.director.getScheduler().schedule(this.updateAction,this,60,cc.REPEAT_FOREVER,0,false,"refreshAction");
+    },
+
+    updateAction : function () {
+        LOG("update action");
+
+        if(this.player_info.actionStamp <= 0){
+            this.player_info.actionStamp = util.getCurrentDate();
+        }
+        var retValue = util.compareTimeWithMinutes(this.player_info.actionStamp);
+        if(retValue > 0){
+            this.player_info.actionStamp = util.getCurrentDate();
+            this.changeAction(-retValue);
+        }
     },
 
     end: function() {
+        LOG("palyer server end");
+        cc.director.getScheduler().unschedule("refreshAction",this);
 
     },
 

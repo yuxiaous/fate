@@ -100,6 +100,26 @@ var util = {
         return isLargeDay;
     },
 
+    compareTimeWithMinutes : function (time_) {
+        var now = new Date();
+        var curTime = new Date();
+        curTime.setTime(time_);
+
+        var overTime = now.getTime() - curTime.getTime();
+
+        overTime = Math.floor(overTime/1000);
+
+        var evertRecover = 8 * 60;
+
+        var ret = Math.floor( overTime / evertRecover)
+        if( ret <= 0){
+            return 0;
+        }
+        else{
+            return ret;
+        }
+    },
+
     getChannelId: function() {
         return jsb.GameUtils.getChannelId();
     }
