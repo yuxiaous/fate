@@ -71,8 +71,9 @@ var MapScene = ui.GuiSceneBase.extend({
         }
 
         if(this._sel_map_id == 201){
-            GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),111);
-            GmSystem.instance.sendCommand("ar 1 27000");
+           if(GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),111)){
+               GmSystem.instance.sendCommand("ar 1 27000");
+            }
         }
 
         if(this._sel_map_id == 103){
@@ -90,7 +91,7 @@ var MapScene = ui.GuiSceneBase.extend({
                     ui.pushScene(new BattleEndlessScene());
                 }
                 else {
-                    this.onBattleMapResult();
+                    BattleSystem.instance.battleMap(this._sel_map_id);
                 }
             }
         }
@@ -220,6 +221,7 @@ var MapScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_battle: function() {
+        LOG("btn battle");
         BattleSystem.instance.battleMap(this._sel_map_id);
     },
     _on_btn_raid: function() {
@@ -227,9 +229,8 @@ var MapScene = ui.GuiSceneBase.extend({
     },
     onBattleMapResult: function() {
         LOG("onBattleMapResult");
-        var costValue = 2;
-        PlayerSystem.instance.action -= costValue;
-
+        //var costValue = 2;
+        //PlayerSystem.instance.action -= costValue;
 
         var sel_map_id = BattleSystem.instance.cur_battle_map;
         var loadingPanel = new LoadingBattleLayer(sel_map_id);
@@ -241,7 +242,6 @@ var MapScene = ui.GuiSceneBase.extend({
                 if(mapConfig ){
                     if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
                         ui.pushScene(new BattleNorScene(sel_map_id));
-                        //ui.pushScene(new BattleDefScene(this.mapId));
                     }
                     else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
                         ui.pushScene(new BattleDefScene(sel_map_id) );

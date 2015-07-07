@@ -20,6 +20,12 @@ net_error_code[103] = {
 	desc: "物品数量不足"
 };
 
+net_error_code.ERR_LESS_ACTION = 104;
+net_error_code[104] = {
+	code: 104,
+	desc: "行动力不足"
+};
+
 net_error_code.ERR_CONFIG_NOT_EXIST = 201;
 net_error_code[201] = {
 	code: 201,

@@ -119,7 +119,6 @@
     "src/ui/DamageWorld.js",
     "src/ui/StartLayer.js",
     "src/ui/MapScene.js",
-    "src/ui/MapTitle.js",
     "src/ui/BattleNorScene.js",
     "src/ui/SceneDefBase.js",
     "src/ui/BattleDefScene.js",

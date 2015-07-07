@@ -144,25 +144,25 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_) {
     var guideConf = GuideSystem.content[guideId_];
     if(!guideConf){
         LOG("ERROR GUIDE INDEX");
-        return;
+        return false;
     }
     if(guideConf.guideType != undefined){
         //判断引导是否已经执行过
         if(sys.getCurGuideTypeIsDone(guideConf.guideType)){
             LOG("GUIDE IS DONE");
-            return 1;
+            return false;
         }
 
         //判断引导是否可以执行
         if(!sys.getCurGuideIsOpenWithMapId(guideConf.guideType)){
             LOG("GUIDE IS not open ");
-            return 1;
+            return false;
         }
 
 
         if( sys._curGuideType != 0 && sys._curGuideType != guideConf.guideType){
             LOG("HAD GUIDE = " + sys._curGuideType );
-            return 1;
+            return false;
         }
         else{
             sys._curGuideType = guideConf.guideType;
@@ -172,7 +172,7 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_) {
 
     if(!sys.getCurGuideIsOpenWithMapId(sys._curGuideType)){
         LOG("CUR IS NOT OPEN");
-       return 1;
+       return false;
     }
 
 
@@ -214,6 +214,7 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_) {
         })
     }
 
+    return true;
 }
 
 GuideSystem.Type = {

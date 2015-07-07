@@ -24,6 +24,13 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_MAP, function(obj) {
     LOG("CMD_CS_BATTLE_MAP");
     // TODO
 
+    //player_server.player_info.action -=2;
+    //player_server.update
+
+    if(player_server.changeAction(2) == false){
+        return;
+    }
+
     battle_server.cur_battle_map = obj.map_id;
     server.send(net_protocol_handlers.CMD_SC_BATTLE_MAP_RESULT, {
         result: 0,
