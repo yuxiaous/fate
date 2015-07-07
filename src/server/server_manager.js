@@ -38,6 +38,7 @@ var server_manager = {
     },
 
     end: function() {
+        LOG("server manager end");
         cc.director.getScheduler().unscheduleCallbackForTarget(this, this.flush);
         cc.director.getScheduler().unscheduleCallbackForTarget(this, this.sync);
 
