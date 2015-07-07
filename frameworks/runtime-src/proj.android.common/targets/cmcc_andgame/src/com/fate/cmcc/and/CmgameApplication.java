@@ -1,4 +1,4 @@
-package com.fate.andgame;
+package com.fate.cmcc.and;
 
 import android.app.Application;
 
