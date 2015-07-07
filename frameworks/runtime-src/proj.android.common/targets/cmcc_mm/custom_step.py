@@ -22,7 +22,7 @@ def handle_event(event, args):
     print args
 
     if event == "pre-ndk-build":
-        shutil.copy2("jni/Application.mk", "../../jni/Application.mk")
+        shutil.copy("jni/Application.mk", "../../jni/Application.mk")
         pass
 
     if event == "post-ndk-build":
