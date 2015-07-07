@@ -13,7 +13,7 @@ var player_server = {
             exp: 0,
             diamond: 0,
             gold: 0,
-            action: 5 ,//行动力,
+            action: 60 ,//行动力,
             superSkillCount : 1,     //大技能可以释放的次数
             actionStamp : 0
         });
@@ -64,9 +64,14 @@ var player_server = {
             return false;
         }
 
+
         this.update = this.update || {};
 
         this.player_info.action -= val;
+
+        if(this.player_info.action >= 60){
+            this.player_info.action = 60;
+        }
         this.update.action = this.player_info.action;
         return true;
     },
