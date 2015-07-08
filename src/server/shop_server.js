@@ -110,6 +110,7 @@ var shop_server = {
                         }
                     }
                 });
+                LOG("config buy_id = " + config.buy_id);
 
                 var gift_type = 0;
                 switch (config.buy_id){

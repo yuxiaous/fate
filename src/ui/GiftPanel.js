@@ -248,11 +248,11 @@ var GiftBuyDetail = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-
         if(UiEffect.blockShopItemWithRMB()){
             return
         }
 
+        LOG("btn buy = " + this._giftId    );
        // GiftSystem.instance.buyGiftItem(this._giftType);
         ShopSystem.instance.buyGood(this._giftId,1);
         this._on_btn_close();
