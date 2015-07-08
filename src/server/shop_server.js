@@ -110,6 +110,23 @@ var shop_server = {
                         }
                     }
                 });
+
+                var gift_type = 0;
+                switch (config.buy_id){
+                    case 101001:
+                        gift_type = gift_server.GiftType.ZhuangBei;
+                        break;
+                    case 101002:
+                        gift_type = gift_server.GiftType.WuQi;
+                        break;
+                    case 101003:
+                        gift_type = gift_server.GiftType.ZhiZun;
+                        break;
+                    case 101004:
+                        gift_type = gift_server.GiftType.Vip;
+                        break;
+                }
+                gift_server.updateGiftDate(gift_type);
             }
         }
         else if(config.buy_type == shop_server.GoodsType.EquipSlotTopLevel) {

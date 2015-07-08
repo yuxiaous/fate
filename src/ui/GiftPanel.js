@@ -253,7 +253,7 @@ var GiftBuyDetail = ui.GuiWindowBase.extend({
             return
         }
 
-        GiftSystem.instance.buyGiftItem(this._giftType);
+       // GiftSystem.instance.buyGiftItem(this._giftType);
         ShopSystem.instance.buyGood(this._giftId,1);
         this._on_btn_close();
     },

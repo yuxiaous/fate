@@ -47,9 +47,9 @@ var GiftSystem = SystemBase.extend({
     },
     
     buyGiftItem : function (type_) {
-        net_protocol_handlers.SEND_CMD_CS_BUY_GIFT({
-            gift_type : type_
-        });
+        //net_protocol_handlers.SEND_CMD_CS_BUY_GIFT({
+        //    gift_type : type_
+        //});
     },
 
     getGiftItemTime : function () {
