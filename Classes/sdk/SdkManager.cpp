@@ -32,7 +32,7 @@
 #endif
 
 #ifdef SDK_KTPLAY
-#include "KtplaySdk.h"
+#include "ktplay/KtplaySdk.h"
 #endif
 
 USING_NS_CC;
@@ -136,7 +136,12 @@ void SdkManager::onUse(const char* item, int number)
 
 void SdkManager::login()
 {
-    
+    for(Sdk *sdk : _sdks) {
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
+        if(account) {
+            account->login();
+        }
+    }
 }
 
 void SdkManager::setAccount(const char* accountId)

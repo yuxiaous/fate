@@ -322,26 +322,6 @@
 		DE36EFD31B25955E005B744E /* SneakyJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFC1B25955E005B744E /* SneakyJoystick.cpp */; };
 		DE36EFD41B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
 		DE36EFD51B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
-		DE545D821B4CE21200A91A14 /* ktlogin.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE5459ED1B4CE21100A91A14 /* ktlogin.bundle */; };
-		DE545D831B4CE21200A91A14 /* libKTAccountManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5459EF1B4CE21100A91A14 /* libKTAccountManager.a */; };
-		DE545D841B4CE21200A91A14 /* ktplay.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE5459F11B4CE21100A91A14 /* ktplay.bundle */; };
-		DE545D851B4CE21200A91A14 /* libKTPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5459F31B4CE21100A91A14 /* libKTPlay.a */; };
-		DE545D861B4CE21200A91A14 /* libKTFriendship.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5459F61B4CE21100A91A14 /* libKTFriendship.a */; };
-		DE545D871B4CE21200A91A14 /* libKTLeaderboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5459F91B4CE21100A91A14 /* libKTLeaderboard.a */; };
-		DE545D881B4CE21200A91A14 /* libktplay_plugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5459FB1B4CE21100A91A14 /* libktplay_plugin.a */; };
-		DE545D891B4CE21200A91A14 /* libktplay_plugin_sns.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5459FC1B4CE21100A91A14 /* libktplay_plugin_sns.a */; };
-		DE545D8A1B4CE21200A91A14 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545A081B4CE21100A91A14 /* libAFNetworking.a */; };
-		DE545D8B1B4CE21200A91A14 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DE545A091B4CE21100A91A14 /* LICENSE */; };
-		DE545D8C1B4CE21200A91A14 /* CAEAGLLayer+RetainedBacking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE545A0D1B4CE21100A91A14 /* CAEAGLLayer+RetainedBacking.m */; };
-		DE545D8D1B4CE21200A91A14 /* KTPlayApplicationUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE545A101B4CE21100A91A14 /* KTPlayApplicationUtils.mm */; };
-		DE545D8E1B4CE21200A91A14 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DE545A121B4CE21100A91A14 /* LICENSE */; };
-		DE545D8F1B4CE21200A91A14 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DE545A141B4CE21100A91A14 /* NSData+Base64.m */; };
-		DE545D901B4CE21200A91A14 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE545A161B4CE21100A91A14 /* OAuth+Additions.m */; };
-		DE545D911B4CE21200A91A14 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE545A181B4CE21100A91A14 /* OAuthCore.m */; };
-		DE545D921B4CE21200A91A14 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = DE545A1B1B4CE21100A91A14 /* OpenUDID.m */; };
-		DE545D931B4CE21200A91A14 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DE545A1C1B4CE21100A91A14 /* README.md */; };
-		DE545D941B4CE21200A91A14 /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE545A1E1B4CE21200A91A14 /* LICENCE.txt */; };
-		DE545D951B4CE21200A91A14 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DE545A201B4CE21200A91A14 /* Reachability.m */; };
 		DE545DB91B4CE2FB00A91A14 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DB81B4CE2FB00A91A14 /* OpenGLES.framework */; };
 		DE545DBB1B4CE30200A91A14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DBA1B4CE30200A91A14 /* UIKit.framework */; };
 		DE545DBD1B4CE31700A91A14 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DBC1B4CE31700A91A14 /* QuartzCore.framework */; };
@@ -362,6 +342,27 @@
 		DE545DDB1B4CE3E200A91A14 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DDA1B4CE3E200A91A14 /* Twitter.framework */; };
 		DE545DDD1B4CE3F200A91A14 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DDC1B4CE3F200A91A14 /* libsqlite3.dylib */; };
 		DE545DED1B4CE90E00A91A14 /* KtplaySdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE545DEB1B4CE90E00A91A14 /* KtplaySdk.cpp */; };
+		DE545DF61B4D05EE00A91A14 /* KtplaySdk.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE545DF51B4D05EE00A91A14 /* KtplaySdk.mm */; };
+		DE54BA841B4D243E00202FEA /* ktlogin.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA501B4D243E00202FEA /* ktlogin.bundle */; };
+		DE54BA851B4D243E00202FEA /* libKTAccountManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA521B4D243E00202FEA /* libKTAccountManager.a */; };
+		DE54BA861B4D243E00202FEA /* ktplay.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA541B4D243E00202FEA /* ktplay.bundle */; };
+		DE54BA871B4D243E00202FEA /* libKTPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA561B4D243E00202FEA /* libKTPlay.a */; };
+		DE54BA881B4D243E00202FEA /* libKTFriendship.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA591B4D243E00202FEA /* libKTFriendship.a */; };
+		DE54BA891B4D243F00202FEA /* libKTLeaderboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA5C1B4D243E00202FEA /* libKTLeaderboard.a */; };
+		DE54BA8A1B4D243F00202FEA /* libktplay_plugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA5E1B4D243E00202FEA /* libktplay_plugin.a */; };
+		DE54BA8B1B4D243F00202FEA /* libktplay_plugin_sns.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA5F1B4D243E00202FEA /* libktplay_plugin_sns.a */; };
+		DE54BA8C1B4D243F00202FEA /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA6B1B4D243E00202FEA /* libAFNetworking.a */; };
+		DE54BA8D1B4D243F00202FEA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA6C1B4D243E00202FEA /* LICENSE */; };
+		DE54BA8E1B4D243F00202FEA /* CAEAGLLayer+RetainedBacking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA701B4D243E00202FEA /* CAEAGLLayer+RetainedBacking.m */; };
+		DE54BA8F1B4D243F00202FEA /* KTPlayApplicationUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA731B4D243E00202FEA /* KTPlayApplicationUtils.mm */; };
+		DE54BA901B4D243F00202FEA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA751B4D243E00202FEA /* LICENSE */; };
+		DE54BA911B4D243F00202FEA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA771B4D243E00202FEA /* NSData+Base64.m */; };
+		DE54BA921B4D243F00202FEA /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA791B4D243E00202FEA /* OAuth+Additions.m */; };
+		DE54BA931B4D243F00202FEA /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA7B1B4D243E00202FEA /* OAuthCore.m */; };
+		DE54BA941B4D243F00202FEA /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA7E1B4D243E00202FEA /* OpenUDID.m */; };
+		DE54BA951B4D243F00202FEA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA7F1B4D243E00202FEA /* README.md */; };
+		DE54BA961B4D243F00202FEA /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA811B4D243E00202FEA /* LICENCE.txt */; };
+		DE54BA971B4D243F00202FEA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA831B4D243E00202FEA /* Reachability.m */; };
 		DEA0AB7F1B29924900079B42 /* libLevelHelper2-API+Box2d-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF41B258A0F005B744E /* libLevelHelper2-API+Box2d-OSX.a */; };
 		DEA0AB941B2B0ADB00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
 		DEA0AB961B2B0ADB00079B42 /* script in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB911B2B0ADB00079B42 /* script */; };
@@ -762,55 +763,6 @@
 		DE36EEFD1B25955E005B744E /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
 		DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystickSkinnedBase.cpp; sourceTree = "<group>"; };
 		DE36EEFF1B25955E005B744E /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
-		DE5455F81B4CE20F00A91A14 /* KTAccountManagerC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAccountManagerC.h; sourceTree = "<group>"; };
-		DE5455F91B4CE20F00A91A14 /* KTErrorC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTErrorC.h; sourceTree = "<group>"; };
-		DE5455FA1B4CE20F00A91A14 /* KTFriendshipC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTFriendshipC.h; sourceTree = "<group>"; };
-		DE5455FB1B4CE20F00A91A14 /* KTLeaderboardC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLeaderboardC.h; sourceTree = "<group>"; };
-		DE5455FC1B4CE20F00A91A14 /* KTLeaderboardPaginatorC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLeaderboardPaginatorC.h; sourceTree = "<group>"; };
-		DE5455FD1B4CE20F00A91A14 /* KTPlayC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlayC.h; sourceTree = "<group>"; };
-		DE5455FE1B4CE20F00A91A14 /* KTUserC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTUserC.h; sourceTree = "<group>"; };
-		DE5459EC1B4CE21100A91A14 /* KTAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAccountManager.h; sourceTree = "<group>"; };
-		DE5459ED1B4CE21100A91A14 /* ktlogin.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ktlogin.bundle; sourceTree = "<group>"; };
-		DE5459EE1B4CE21100A91A14 /* KTUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTUser.h; sourceTree = "<group>"; };
-		DE5459EF1B4CE21100A91A14 /* libKTAccountManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKTAccountManager.a; sourceTree = "<group>"; };
-		DE5459F11B4CE21100A91A14 /* ktplay.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ktplay.bundle; sourceTree = "<group>"; };
-		DE5459F21B4CE21100A91A14 /* KTPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlay.h; sourceTree = "<group>"; };
-		DE5459F31B4CE21100A91A14 /* libKTPlay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKTPlay.a; sourceTree = "<group>"; };
-		DE5459F51B4CE21100A91A14 /* KTFriendship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTFriendship.h; sourceTree = "<group>"; };
-		DE5459F61B4CE21100A91A14 /* libKTFriendship.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKTFriendship.a; sourceTree = "<group>"; };
-		DE5459F81B4CE21100A91A14 /* KTLeaderboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLeaderboard.h; sourceTree = "<group>"; };
-		DE5459F91B4CE21100A91A14 /* libKTLeaderboard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKTLeaderboard.a; sourceTree = "<group>"; };
-		DE5459FB1B4CE21100A91A14 /* libktplay_plugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libktplay_plugin.a; sourceTree = "<group>"; };
-		DE5459FC1B4CE21100A91A14 /* libktplay_plugin_sns.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libktplay_plugin_sns.a; sourceTree = "<group>"; };
-		DE5459FF1B4CE21100A91A14 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		DE545A001B4CE21100A91A14 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		DE545A011B4CE21100A91A14 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		DE545A021B4CE21100A91A14 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		DE545A031B4CE21100A91A14 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		DE545A041B4CE21100A91A14 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		DE545A051B4CE21100A91A14 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		DE545A061B4CE21100A91A14 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		DE545A071B4CE21100A91A14 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		DE545A081B4CE21100A91A14 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAFNetworking.a; sourceTree = "<group>"; };
-		DE545A091B4CE21100A91A14 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		DE545A0A1B4CE21100A91A14 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		DE545A0C1B4CE21100A91A14 /* CAEAGLLayer+RetainedBacking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAEAGLLayer+RetainedBacking.h"; sourceTree = "<group>"; };
-		DE545A0D1B4CE21100A91A14 /* CAEAGLLayer+RetainedBacking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAEAGLLayer+RetainedBacking.m"; sourceTree = "<group>"; };
-		DE545A0F1B4CE21100A91A14 /* KTPlayApplicationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlayApplicationUtils.h; sourceTree = "<group>"; };
-		DE545A101B4CE21100A91A14 /* KTPlayApplicationUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KTPlayApplicationUtils.mm; sourceTree = "<group>"; };
-		DE545A121B4CE21100A91A14 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		DE545A131B4CE21100A91A14 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		DE545A141B4CE21100A91A14 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		DE545A151B4CE21100A91A14 /* OAuth+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuth+Additions.h"; sourceTree = "<group>"; };
-		DE545A161B4CE21100A91A14 /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
-		DE545A171B4CE21100A91A14 /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
-		DE545A181B4CE21100A91A14 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
-		DE545A1A1B4CE21100A91A14 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
-		DE545A1B1B4CE21100A91A14 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
-		DE545A1C1B4CE21100A91A14 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		DE545A1E1B4CE21200A91A14 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
-		DE545A1F1B4CE21200A91A14 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		DE545A201B4CE21200A91A14 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DE545DB81B4CE2FB00A91A14 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		DE545DBA1B4CE30200A91A14 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DE545DBC1B4CE31700A91A14 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -832,6 +784,56 @@
 		DE545DDC1B4CE3F200A91A14 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/usr/lib/libsqlite3.dylib; sourceTree = DEVELOPER_DIR; };
 		DE545DEB1B4CE90E00A91A14 /* KtplaySdk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KtplaySdk.cpp; sourceTree = "<group>"; };
 		DE545DEC1B4CE90E00A91A14 /* KtplaySdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KtplaySdk.h; sourceTree = "<group>"; };
+		DE545DF51B4D05EE00A91A14 /* KtplaySdk.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KtplaySdk.mm; sourceTree = "<group>"; };
+		DE54B94A1B4D23EE00202FEA /* KTAccountManagerC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAccountManagerC.h; sourceTree = "<group>"; };
+		DE54B94B1B4D23EE00202FEA /* KTErrorC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTErrorC.h; sourceTree = "<group>"; };
+		DE54B94C1B4D23EE00202FEA /* KTFriendshipC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTFriendshipC.h; sourceTree = "<group>"; };
+		DE54B94D1B4D23EE00202FEA /* KTLeaderboardC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLeaderboardC.h; sourceTree = "<group>"; };
+		DE54B94E1B4D23EE00202FEA /* KTLeaderboardPaginatorC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLeaderboardPaginatorC.h; sourceTree = "<group>"; };
+		DE54B94F1B4D23EE00202FEA /* KTPlayC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlayC.h; sourceTree = "<group>"; };
+		DE54B9501B4D23EE00202FEA /* KTUserC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTUserC.h; sourceTree = "<group>"; };
+		DE54BA4F1B4D243E00202FEA /* KTAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAccountManager.h; sourceTree = "<group>"; };
+		DE54BA501B4D243E00202FEA /* ktlogin.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ktlogin.bundle; sourceTree = "<group>"; };
+		DE54BA511B4D243E00202FEA /* KTUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTUser.h; sourceTree = "<group>"; };
+		DE54BA521B4D243E00202FEA /* libKTAccountManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKTAccountManager.a; sourceTree = "<group>"; };
+		DE54BA541B4D243E00202FEA /* ktplay.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ktplay.bundle; sourceTree = "<group>"; };
+		DE54BA551B4D243E00202FEA /* KTPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlay.h; sourceTree = "<group>"; };
+		DE54BA561B4D243E00202FEA /* libKTPlay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKTPlay.a; sourceTree = "<group>"; };
+		DE54BA581B4D243E00202FEA /* KTFriendship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTFriendship.h; sourceTree = "<group>"; };
+		DE54BA591B4D243E00202FEA /* libKTFriendship.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKTFriendship.a; sourceTree = "<group>"; };
+		DE54BA5B1B4D243E00202FEA /* KTLeaderboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLeaderboard.h; sourceTree = "<group>"; };
+		DE54BA5C1B4D243E00202FEA /* libKTLeaderboard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKTLeaderboard.a; sourceTree = "<group>"; };
+		DE54BA5E1B4D243E00202FEA /* libktplay_plugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libktplay_plugin.a; sourceTree = "<group>"; };
+		DE54BA5F1B4D243E00202FEA /* libktplay_plugin_sns.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libktplay_plugin_sns.a; sourceTree = "<group>"; };
+		DE54BA621B4D243E00202FEA /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		DE54BA631B4D243E00202FEA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		DE54BA641B4D243E00202FEA /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		DE54BA651B4D243E00202FEA /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		DE54BA661B4D243E00202FEA /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		DE54BA671B4D243E00202FEA /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		DE54BA681B4D243E00202FEA /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		DE54BA691B4D243E00202FEA /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		DE54BA6A1B4D243E00202FEA /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		DE54BA6B1B4D243E00202FEA /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAFNetworking.a; sourceTree = "<group>"; };
+		DE54BA6C1B4D243E00202FEA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DE54BA6D1B4D243E00202FEA /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		DE54BA6F1B4D243E00202FEA /* CAEAGLLayer+RetainedBacking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAEAGLLayer+RetainedBacking.h"; sourceTree = "<group>"; };
+		DE54BA701B4D243E00202FEA /* CAEAGLLayer+RetainedBacking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAEAGLLayer+RetainedBacking.m"; sourceTree = "<group>"; };
+		DE54BA721B4D243E00202FEA /* KTPlayApplicationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPlayApplicationUtils.h; sourceTree = "<group>"; };
+		DE54BA731B4D243E00202FEA /* KTPlayApplicationUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KTPlayApplicationUtils.mm; sourceTree = "<group>"; };
+		DE54BA751B4D243E00202FEA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DE54BA761B4D243E00202FEA /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		DE54BA771B4D243E00202FEA /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		DE54BA781B4D243E00202FEA /* OAuth+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuth+Additions.h"; sourceTree = "<group>"; };
+		DE54BA791B4D243E00202FEA /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
+		DE54BA7A1B4D243E00202FEA /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
+		DE54BA7B1B4D243E00202FEA /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
+		DE54BA7D1B4D243E00202FEA /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		DE54BA7E1B4D243E00202FEA /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		DE54BA7F1B4D243E00202FEA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DE54BA811B4D243E00202FEA /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
+		DE54BA821B4D243E00202FEA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DE54BA831B4D243E00202FEA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DEA0AB851B29948800079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../config; sourceTree = "<group>"; };
 		DEA0AB901B2B0ADB00079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../publish/config; sourceTree = "<group>"; };
 		DEA0AB911B2B0ADB00079B42 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../../../publish/script; sourceTree = "<group>"; };
@@ -868,14 +870,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE54BA891B4D243F00202FEA /* libKTLeaderboard.a in Frameworks */,
 				DE29E15F1B3D7AC4000656CA /* libz.dylib in Frameworks */,
+				DE54BA8B1B4D243F00202FEA /* libktplay_plugin_sns.a in Frameworks */,
 				DE545DDD1B4CE3F200A91A14 /* libsqlite3.dylib in Frameworks */,
 				DE545DDB1B4CE3E200A91A14 /* Twitter.framework in Frameworks */,
 				DE545DD91B4CE3DB00A91A14 /* Social.framework in Frameworks */,
 				DE545DD71B4CE3D300A91A14 /* Accounts.framework in Frameworks */,
 				DE545DD51B4CE3CE00A91A14 /* AddressBook.framework in Frameworks */,
 				DE545DD31B4CE3C600A91A14 /* CoreLocation.framework in Frameworks */,
+				DE54BA8C1B4D243F00202FEA /* libAFNetworking.a in Frameworks */,
+				DE54BA881B4D243E00202FEA /* libKTFriendship.a in Frameworks */,
 				DE545DD11B4CE3BC00A91A14 /* MessageUI.framework in Frameworks */,
+				DE54BA8A1B4D243F00202FEA /* libktplay_plugin.a in Frameworks */,
 				DE545DCF1B4CE3B300A91A14 /* CoreText.framework in Frameworks */,
 				DE29E15B1B3D7A9F000656CA /* CoreTelephony.framework in Frameworks */,
 				DE545DCD1B4CE39C00A91A14 /* StoreKit.framework in Frameworks */,
@@ -891,29 +898,24 @@
 				DE545DBB1B4CE30200A91A14 /* UIKit.framework in Frameworks */,
 				DE545DB91B4CE2FB00A91A14 /* OpenGLES.framework in Frameworks */,
 				DE29E1611B3D7C6A000656CA /* GameController.framework in Frameworks */,
-				DE545D851B4CE21200A91A14 /* libKTPlay.a in Frameworks */,
 				DE29E15D1B3D7AB2000656CA /* AdSupport.framework in Frameworks */,
-				DE545D891B4CE21200A91A14 /* libktplay_plugin_sns.a in Frameworks */,
-				DE545D8A1B4CE21200A91A14 /* libAFNetworking.a in Frameworks */,
 				DE29E15A1B3D7A74000656CA /* Security.framework in Frameworks */,
 				DE36EDF71B258A63005B744E /* libLevelHelper2-API.a in Frameworks */,
+				DE54BA851B4D243E00202FEA /* libKTAccountManager.a in Frameworks */,
 				BA3D062F1A72540100739335 /* Security.framework in Frameworks */,
-				DE545D861B4CE21200A91A14 /* libKTFriendship.a in Frameworks */,
 				BA4E718719EB6E7900932425 /* MediaPlayer.framework in Frameworks */,
 				C037820C18BF77C500FE4F13 /* libjsbindings iOS.a in Frameworks */,
 				1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */,
-				DE545D871B4CE21200A91A14 /* libKTLeaderboard.a in Frameworks */,
 				D6B061241803AB9F0077942B /* CoreMotion.framework in Frameworks */,
 				1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */,
 				D454520C156E22BD00887EB5 /* libz.dylib in Frameworks */,
+				DE54BA871B4D243E00202FEA /* libKTPlay.a in Frameworks */,
 				A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */,
 				DE29E1501B3D75BE000656CA /* libTalkingDataGA.a in Frameworks */,
 				A92275441517C094001B78AA /* OpenGLES.framework in Frameworks */,
-				DE545D881B4CE21200A91A14 /* libktplay_plugin.a in Frameworks */,
 				A92275461517C094001B78AA /* OpenAL.framework in Frameworks */,
 				A92275481517C094001B78AA /* AudioToolbox.framework in Frameworks */,
 				A922754A1517C094001B78AA /* AVFoundation.framework in Frameworks */,
-				DE545D831B4CE21200A91A14 /* libKTAccountManager.a in Frameworks */,
 				A922754C1517C094001B78AA /* UIKit.framework in Frameworks */,
 				A922754E1517C094001B78AA /* Foundation.framework in Frameworks */,
 				A92275501517C094001B78AA /* CoreGraphics.framework in Frameworks */,
@@ -1250,9 +1252,7 @@
 			children = (
 				DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */,
 				DE29E12B1B3CF98F000656CA /* DeveloperSdk.h */,
-				DE5455F31B4CE20F00A91A14 /* ktplay_c++_sdk_lite_v1.5.3 */,
-				DE545DEB1B4CE90E00A91A14 /* KtplaySdk.cpp */,
-				DE545DEC1B4CE90E00A91A14 /* KtplaySdk.h */,
+				DE5455F31B4CE20F00A91A14 /* ktplay */,
 				DE25C3DA1B318F3D00A9AEC0 /* Sdk.cpp */,
 				DE25C3D91B318F3D00A9AEC0 /* Sdk.h */,
 				DE25C3DB1B318F3D00A9AEC0 /* SdkManager.cpp */,
@@ -1597,194 +1597,182 @@
 			path = ../../../Classes/SneakyInput;
 			sourceTree = "<group>";
 		};
-		DE5455F31B4CE20F00A91A14 /* ktplay_c++_sdk_lite_v1.5.3 */ = {
+		DE5455F31B4CE20F00A91A14 /* ktplay */ = {
 			isa = PBXGroup;
 			children = (
-				DE5455F71B4CE20F00A91A14 /* Include */,
-				DE5455FF1B4CE20F00A91A14 /* Platform */,
+				DE54B9491B4D23EE00202FEA /* Include */,
+				DE54BA4C1B4D243E00202FEA /* KTPlaySDK */,
+				DE545DEB1B4CE90E00A91A14 /* KtplaySdk.cpp */,
+				DE545DEC1B4CE90E00A91A14 /* KtplaySdk.h */,
+				DE545DF51B4D05EE00A91A14 /* KtplaySdk.mm */,
 			);
-			path = "ktplay_c++_sdk_lite_v1.5.3";
+			path = ktplay;
 			sourceTree = "<group>";
 		};
-		DE5455F71B4CE20F00A91A14 /* Include */ = {
+		DE54B9491B4D23EE00202FEA /* Include */ = {
 			isa = PBXGroup;
 			children = (
-				DE5455F81B4CE20F00A91A14 /* KTAccountManagerC.h */,
-				DE5455F91B4CE20F00A91A14 /* KTErrorC.h */,
-				DE5455FA1B4CE20F00A91A14 /* KTFriendshipC.h */,
-				DE5455FB1B4CE20F00A91A14 /* KTLeaderboardC.h */,
-				DE5455FC1B4CE20F00A91A14 /* KTLeaderboardPaginatorC.h */,
-				DE5455FD1B4CE20F00A91A14 /* KTPlayC.h */,
-				DE5455FE1B4CE20F00A91A14 /* KTUserC.h */,
+				DE54B94A1B4D23EE00202FEA /* KTAccountManagerC.h */,
+				DE54B94B1B4D23EE00202FEA /* KTErrorC.h */,
+				DE54B94C1B4D23EE00202FEA /* KTFriendshipC.h */,
+				DE54B94D1B4D23EE00202FEA /* KTLeaderboardC.h */,
+				DE54B94E1B4D23EE00202FEA /* KTLeaderboardPaginatorC.h */,
+				DE54B94F1B4D23EE00202FEA /* KTPlayC.h */,
+				DE54B9501B4D23EE00202FEA /* KTUserC.h */,
 			);
 			path = Include;
 			sourceTree = "<group>";
 		};
-		DE5455FF1B4CE20F00A91A14 /* Platform */ = {
+		DE54BA4C1B4D243E00202FEA /* KTPlaySDK */ = {
 			isa = PBXGroup;
 			children = (
-				DE5459E81B4CE21100A91A14 /* IOS */,
+				DE54BA4D1B4D243E00202FEA /* KTPlay */,
+				DE54BA601B4D243E00202FEA /* Libraries */,
 			);
-			path = Platform;
+			name = KTPlaySDK;
+			path = Platform/IOS/KTPlaySDK;
 			sourceTree = "<group>";
 		};
-		DE5459E81B4CE21100A91A14 /* IOS */ = {
+		DE54BA4D1B4D243E00202FEA /* KTPlay */ = {
 			isa = PBXGroup;
 			children = (
-				DE5459E91B4CE21100A91A14 /* KTPlaySDK */,
-			);
-			path = IOS;
-			sourceTree = "<group>";
-		};
-		DE5459E91B4CE21100A91A14 /* KTPlaySDK */ = {
-			isa = PBXGroup;
-			children = (
-				DE5459EA1B4CE21100A91A14 /* KTPlay */,
-				DE5459FD1B4CE21100A91A14 /* Libraries */,
-			);
-			path = KTPlaySDK;
-			sourceTree = "<group>";
-		};
-		DE5459EA1B4CE21100A91A14 /* KTPlay */ = {
-			isa = PBXGroup;
-			children = (
-				DE5459EB1B4CE21100A91A14 /* AccountManager */,
-				DE5459F01B4CE21100A91A14 /* Core */,
-				DE5459F41B4CE21100A91A14 /* Friendship */,
-				DE5459F71B4CE21100A91A14 /* Leaderboard */,
-				DE5459FA1B4CE21100A91A14 /* PluginManager */,
+				DE54BA4E1B4D243E00202FEA /* AccountManager */,
+				DE54BA531B4D243E00202FEA /* Core */,
+				DE54BA571B4D243E00202FEA /* Friendship */,
+				DE54BA5A1B4D243E00202FEA /* Leaderboard */,
+				DE54BA5D1B4D243E00202FEA /* PluginManager */,
 			);
 			path = KTPlay;
 			sourceTree = "<group>";
 		};
-		DE5459EB1B4CE21100A91A14 /* AccountManager */ = {
+		DE54BA4E1B4D243E00202FEA /* AccountManager */ = {
 			isa = PBXGroup;
 			children = (
-				DE5459EC1B4CE21100A91A14 /* KTAccountManager.h */,
-				DE5459ED1B4CE21100A91A14 /* ktlogin.bundle */,
-				DE5459EE1B4CE21100A91A14 /* KTUser.h */,
-				DE5459EF1B4CE21100A91A14 /* libKTAccountManager.a */,
+				DE54BA4F1B4D243E00202FEA /* KTAccountManager.h */,
+				DE54BA501B4D243E00202FEA /* ktlogin.bundle */,
+				DE54BA511B4D243E00202FEA /* KTUser.h */,
+				DE54BA521B4D243E00202FEA /* libKTAccountManager.a */,
 			);
 			path = AccountManager;
 			sourceTree = "<group>";
 		};
-		DE5459F01B4CE21100A91A14 /* Core */ = {
+		DE54BA531B4D243E00202FEA /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				DE5459F11B4CE21100A91A14 /* ktplay.bundle */,
-				DE5459F21B4CE21100A91A14 /* KTPlay.h */,
-				DE5459F31B4CE21100A91A14 /* libKTPlay.a */,
+				DE54BA541B4D243E00202FEA /* ktplay.bundle */,
+				DE54BA551B4D243E00202FEA /* KTPlay.h */,
+				DE54BA561B4D243E00202FEA /* libKTPlay.a */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		DE5459F41B4CE21100A91A14 /* Friendship */ = {
+		DE54BA571B4D243E00202FEA /* Friendship */ = {
 			isa = PBXGroup;
 			children = (
-				DE5459F51B4CE21100A91A14 /* KTFriendship.h */,
-				DE5459F61B4CE21100A91A14 /* libKTFriendship.a */,
+				DE54BA581B4D243E00202FEA /* KTFriendship.h */,
+				DE54BA591B4D243E00202FEA /* libKTFriendship.a */,
 			);
 			path = Friendship;
 			sourceTree = "<group>";
 		};
-		DE5459F71B4CE21100A91A14 /* Leaderboard */ = {
+		DE54BA5A1B4D243E00202FEA /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
-				DE5459F81B4CE21100A91A14 /* KTLeaderboard.h */,
-				DE5459F91B4CE21100A91A14 /* libKTLeaderboard.a */,
+				DE54BA5B1B4D243E00202FEA /* KTLeaderboard.h */,
+				DE54BA5C1B4D243E00202FEA /* libKTLeaderboard.a */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
 		};
-		DE5459FA1B4CE21100A91A14 /* PluginManager */ = {
+		DE54BA5D1B4D243E00202FEA /* PluginManager */ = {
 			isa = PBXGroup;
 			children = (
-				DE5459FB1B4CE21100A91A14 /* libktplay_plugin.a */,
-				DE5459FC1B4CE21100A91A14 /* libktplay_plugin_sns.a */,
+				DE54BA5E1B4D243E00202FEA /* libktplay_plugin.a */,
+				DE54BA5F1B4D243E00202FEA /* libktplay_plugin_sns.a */,
 			);
 			path = PluginManager;
 			sourceTree = "<group>";
 		};
-		DE5459FD1B4CE21100A91A14 /* Libraries */ = {
+		DE54BA601B4D243E00202FEA /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				DE5459FE1B4CE21100A91A14 /* AFNetworking */,
-				DE545A0B1B4CE21100A91A14 /* CAEAGLLayerCategory */,
-				DE545A0E1B4CE21100A91A14 /* KTPlayApplicationUtils */,
-				DE545A111B4CE21100A91A14 /* OAuth */,
-				DE545A191B4CE21100A91A14 /* OpenUDID */,
-				DE545A1D1B4CE21200A91A14 /* Reachability */,
+				DE54BA611B4D243E00202FEA /* AFNetworking */,
+				DE54BA6E1B4D243E00202FEA /* CAEAGLLayerCategory */,
+				DE54BA711B4D243E00202FEA /* KTPlayApplicationUtils */,
+				DE54BA741B4D243E00202FEA /* OAuth */,
+				DE54BA7C1B4D243E00202FEA /* OpenUDID */,
+				DE54BA801B4D243E00202FEA /* Reachability */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
 		};
-		DE5459FE1B4CE21100A91A14 /* AFNetworking */ = {
+		DE54BA611B4D243E00202FEA /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				DE5459FF1B4CE21100A91A14 /* AFHTTPClient.h */,
-				DE545A001B4CE21100A91A14 /* AFHTTPRequestOperation.h */,
-				DE545A011B4CE21100A91A14 /* AFImageRequestOperation.h */,
-				DE545A021B4CE21100A91A14 /* AFJSONRequestOperation.h */,
-				DE545A031B4CE21100A91A14 /* AFNetworkActivityIndicatorManager.h */,
-				DE545A041B4CE21100A91A14 /* AFNetworking.h */,
-				DE545A051B4CE21100A91A14 /* AFPropertyListRequestOperation.h */,
-				DE545A061B4CE21100A91A14 /* AFURLConnectionOperation.h */,
-				DE545A071B4CE21100A91A14 /* AFXMLRequestOperation.h */,
-				DE545A081B4CE21100A91A14 /* libAFNetworking.a */,
-				DE545A091B4CE21100A91A14 /* LICENSE */,
-				DE545A0A1B4CE21100A91A14 /* UIImageView+AFNetworking.h */,
+				DE54BA621B4D243E00202FEA /* AFHTTPClient.h */,
+				DE54BA631B4D243E00202FEA /* AFHTTPRequestOperation.h */,
+				DE54BA641B4D243E00202FEA /* AFImageRequestOperation.h */,
+				DE54BA651B4D243E00202FEA /* AFJSONRequestOperation.h */,
+				DE54BA661B4D243E00202FEA /* AFNetworkActivityIndicatorManager.h */,
+				DE54BA671B4D243E00202FEA /* AFNetworking.h */,
+				DE54BA681B4D243E00202FEA /* AFPropertyListRequestOperation.h */,
+				DE54BA691B4D243E00202FEA /* AFURLConnectionOperation.h */,
+				DE54BA6A1B4D243E00202FEA /* AFXMLRequestOperation.h */,
+				DE54BA6B1B4D243E00202FEA /* libAFNetworking.a */,
+				DE54BA6C1B4D243E00202FEA /* LICENSE */,
+				DE54BA6D1B4D243E00202FEA /* UIImageView+AFNetworking.h */,
 			);
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		DE545A0B1B4CE21100A91A14 /* CAEAGLLayerCategory */ = {
+		DE54BA6E1B4D243E00202FEA /* CAEAGLLayerCategory */ = {
 			isa = PBXGroup;
 			children = (
-				DE545A0C1B4CE21100A91A14 /* CAEAGLLayer+RetainedBacking.h */,
-				DE545A0D1B4CE21100A91A14 /* CAEAGLLayer+RetainedBacking.m */,
+				DE54BA6F1B4D243E00202FEA /* CAEAGLLayer+RetainedBacking.h */,
+				DE54BA701B4D243E00202FEA /* CAEAGLLayer+RetainedBacking.m */,
 			);
 			path = CAEAGLLayerCategory;
 			sourceTree = "<group>";
 		};
-		DE545A0E1B4CE21100A91A14 /* KTPlayApplicationUtils */ = {
+		DE54BA711B4D243E00202FEA /* KTPlayApplicationUtils */ = {
 			isa = PBXGroup;
 			children = (
-				DE545A0F1B4CE21100A91A14 /* KTPlayApplicationUtils.h */,
-				DE545A101B4CE21100A91A14 /* KTPlayApplicationUtils.mm */,
+				DE54BA721B4D243E00202FEA /* KTPlayApplicationUtils.h */,
+				DE54BA731B4D243E00202FEA /* KTPlayApplicationUtils.mm */,
 			);
 			path = KTPlayApplicationUtils;
 			sourceTree = "<group>";
 		};
-		DE545A111B4CE21100A91A14 /* OAuth */ = {
+		DE54BA741B4D243E00202FEA /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				DE545A121B4CE21100A91A14 /* LICENSE */,
-				DE545A131B4CE21100A91A14 /* NSData+Base64.h */,
-				DE545A141B4CE21100A91A14 /* NSData+Base64.m */,
-				DE545A151B4CE21100A91A14 /* OAuth+Additions.h */,
-				DE545A161B4CE21100A91A14 /* OAuth+Additions.m */,
-				DE545A171B4CE21100A91A14 /* OAuthCore.h */,
-				DE545A181B4CE21100A91A14 /* OAuthCore.m */,
+				DE54BA751B4D243E00202FEA /* LICENSE */,
+				DE54BA761B4D243E00202FEA /* NSData+Base64.h */,
+				DE54BA771B4D243E00202FEA /* NSData+Base64.m */,
+				DE54BA781B4D243E00202FEA /* OAuth+Additions.h */,
+				DE54BA791B4D243E00202FEA /* OAuth+Additions.m */,
+				DE54BA7A1B4D243E00202FEA /* OAuthCore.h */,
+				DE54BA7B1B4D243E00202FEA /* OAuthCore.m */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
 		};
-		DE545A191B4CE21100A91A14 /* OpenUDID */ = {
+		DE54BA7C1B4D243E00202FEA /* OpenUDID */ = {
 			isa = PBXGroup;
 			children = (
-				DE545A1A1B4CE21100A91A14 /* OpenUDID.h */,
-				DE545A1B1B4CE21100A91A14 /* OpenUDID.m */,
-				DE545A1C1B4CE21100A91A14 /* README.md */,
+				DE54BA7D1B4D243E00202FEA /* OpenUDID.h */,
+				DE54BA7E1B4D243E00202FEA /* OpenUDID.m */,
+				DE54BA7F1B4D243E00202FEA /* README.md */,
 			);
 			path = OpenUDID;
 			sourceTree = "<group>";
 		};
-		DE545A1D1B4CE21200A91A14 /* Reachability */ = {
+		DE54BA801B4D243E00202FEA /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				DE545A1E1B4CE21200A91A14 /* LICENCE.txt */,
-				DE545A1F1B4CE21200A91A14 /* Reachability.h */,
-				DE545A201B4CE21200A91A14 /* Reachability.m */,
+				DE54BA811B4D243E00202FEA /* LICENCE.txt */,
+				DE54BA821B4D243E00202FEA /* Reachability.h */,
+				DE54BA831B4D243E00202FEA /* Reachability.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -1986,30 +1974,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE545D941B4CE21200A91A14 /* LICENCE.txt in Resources */,
 				DEA0AB9A1B2B0B0D00079B42 /* script in Resources */,
 				1AE159EC18C9DF3600FCA372 /* project.json in Resources */,
-				DE545D841B4CE21200A91A14 /* ktplay.bundle in Resources */,
+				DE54BA8D1B4D243F00202FEA /* LICENSE in Resources */,
 				1AD7E0A818C9DB93004817A6 /* main.js in Resources */,
+				DE54BA961B4D243F00202FEA /* LICENCE.txt in Resources */,
 				509D4ABE17EBB2AB00697056 /* Default.png in Resources */,
 				C05D1C171923467600B808A4 /* config.json in Resources */,
 				5091731E17ECDF7A00D62437 /* Icon-80.png in Resources */,
 				5091731F17ECDF7A00D62437 /* Icon-100.png in Resources */,
 				DEA0AB9B1B2B0B1700079B42 /* src in Resources */,
 				509D4AC117EBB2AB00697056 /* Icon-72.png in Resources */,
-				DE545D8B1B4CE21200A91A14 /* LICENSE in Resources */,
 				509D4AC017EBB2AB00697056 /* Icon-57.png in Resources */,
 				5091731A17ECDF7A00D62437 /* Icon-29.png in Resources */,
 				509D4AC617EBB2AB00697056 /* Icon-152.png in Resources */,
-				DE545D821B4CE21200A91A14 /* ktlogin.bundle in Resources */,
 				C0799CB918BAE62000E9C828 /* res in Resources */,
 				509D4AC517EBB2AB00697056 /* Icon-144.png in Resources */,
+				DE54BA901B4D243F00202FEA /* LICENSE in Resources */,
+				DE54BA841B4D243E00202FEA /* ktlogin.bundle in Resources */,
 				DEA0AB9D1B2B0B1C00079B42 /* config in Resources */,
-				DE545D8E1B4CE21200A91A14 /* LICENSE in Resources */,
 				509D4AC317EBB2AB00697056 /* Icon-114.png in Resources */,
 				509D4ABD17EBB2AB00697056 /* Default-568h@2x.png in Resources */,
 				509D4ABF17EBB2AB00697056 /* Default@2x.png in Resources */,
 				509D4AC217EBB2AB00697056 /* Icon-76.png in Resources */,
+				DE54BA861B4D243E00202FEA /* ktplay.bundle in Resources */,
 				5091731B17ECDF7A00D62437 /* Icon-40.png in Resources */,
 				5091731C17ECDF7A00D62437 /* Icon-50.png in Resources */,
 				509D4AC417EBB2AB00697056 /* Icon-120.png in Resources */,
@@ -2205,21 +2193,21 @@
 				DE36EF0A1B25955E005B744E /* Bone.cpp in Sources */,
 				DE36EFD01B25955E005B744E /* SneakyButtonSkinnedBase.cpp in Sources */,
 				DE29E1581B3D75F7000656CA /* TalkingDataGameAnalyticsSdk.cpp in Sources */,
-				DE545D8F1B4CE21200A91A14 /* NSData+Base64.m in Sources */,
 				DE36EF141B25955E005B744E /* BaseDataParser.cpp in Sources */,
 				C00FD4B21938628E00C6382D /* Landscape_png.cpp in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
+				DE54BA911B4D243F00202FEA /* NSData+Base64.m in Sources */,
 				DE36EF281B25955E005B744E /* DragonBonesHelper.cpp in Sources */,
 				DE36EF081B25955E005B744E /* Armature.cpp in Sources */,
 				C00FD4BA1938628E00C6382D /* Runtime.cpp in Sources */,
+				DE54BA921B4D243F00202FEA /* OAuth+Additions.m in Sources */,
+				DE54BA931B4D243F00202FEA /* OAuthCore.m in Sources */,
 				DE36EFCE1B25955E005B744E /* SneakyButton.cpp in Sources */,
 				ABCA93C719E65B1C007FB844 /* FileServer.cpp in Sources */,
 				3E12D1DF1957FB18002FF0FD /* message_lite.cc in Sources */,
 				C06C37881918E81100617BED /* ConfigParser.cpp in Sources */,
 				DE29E1521B3D75BE000656CA /* TDCCItem.mm in Sources */,
-				DE545D8D1B4CE21200A91A14 /* KTPlayApplicationUtils.mm in Sources */,
 				DE36EFD21B25955E005B744E /* SneakyJoystick.cpp in Sources */,
-				DE545D931B4CE21200A91A14 /* README.md in Sources */,
 				DE36EF121B25955E005B744E /* BaseFactory.cpp in Sources */,
 				3E12D1DD1957FB18002FF0FD /* zero_copy_stream_impl_lite.cc in Sources */,
 				C00FD4B61938628E00C6382D /* PlayEnable_png.cpp in Sources */,
@@ -2236,7 +2224,6 @@
 				DE29E1511B3D75BE000656CA /* TDCCAccount.mm in Sources */,
 				DE36EF3A1B25955E005B744E /* jsb_bindings_auto.cpp in Sources */,
 				DE36EFCC1B25955E005B744E /* ShakeAction.cpp in Sources */,
-				DE545D921B4CE21200A91A14 /* OpenUDID.m in Sources */,
 				C00FD4B41938628E00C6382D /* PlayDisable_png.cpp in Sources */,
 				ABCA93CF19E6712A007FB844 /* ConnectWaitLayer.cpp in Sources */,
 				C00FD4BC1938628E00C6382D /* Shine_png.cpp in Sources */,
@@ -2245,7 +2232,8 @@
 				DE36EF1A1B25955E005B744E /* XMLDataParser.cpp in Sources */,
 				DE36EF021B25955E005B744E /* AnimationState.cpp in Sources */,
 				DE36EF0E1B25955E005B744E /* Slot.cpp in Sources */,
-				DE545D901B4CE21200A91A14 /* OAuth+Additions.m in Sources */,
+				DE54BA8E1B4D243F00202FEA /* CAEAGLLayer+RetainedBacking.m in Sources */,
+				DE54BA941B4D243F00202FEA /* OpenUDID.m in Sources */,
 				DE29E1541B3D75BE000656CA /* TDCCTalkingDataGA.mm in Sources */,
 				DE36EF161B25955E005B744E /* ConstValues.cpp in Sources */,
 				DE36EF401B25955E005B744E /* jsb_levelhelper_auto.cpp in Sources */,
@@ -2255,18 +2243,18 @@
 				DE36EFC61B25955E005B744E /* LHVideoPlayerImpl.m in Sources */,
 				DE36EFC21B25955E005B744E /* LHVideoOverlayView.m in Sources */,
 				DEE196641B443BC200359A46 /* GameUtils.cpp in Sources */,
-				DE545D8C1B4CE21200A91A14 /* CAEAGLLayer+RetainedBacking.m in Sources */,
 				DE36EF1E1B25955E005B744E /* DBCCArmature.cpp in Sources */,
+				DE54BA971B4D243F00202FEA /* Reachability.m in Sources */,
 				DE36EF221B25955E005B744E /* DBCCFactory.cpp in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
 				DE29E1531B3D75BE000656CA /* TDCCMission.mm in Sources */,
 				3E12D1E91957FB18002FF0FD /* stringprintf.cc in Sources */,
 				DE36EF0C1B25955E005B744E /* Object.cpp in Sources */,
 				3E12D1E51957FB18002FF0FD /* common.cc in Sources */,
-				DE545D951B4CE21200A91A14 /* Reachability.m in Sources */,
 				C033B524191B36AE00D06937 /* VisibleRect.cpp in Sources */,
 				DE36EFC81B25955E005B744E /* LHVideoPlayerImplCpp.mm in Sources */,
 				3E12D1D71957FB18002FF0FD /* generated_message_util.cc in Sources */,
+				DE545DF61B4D05EE00A91A14 /* KtplaySdk.mm in Sources */,
 				DE36EF041B25955E005B744E /* TimelineState.cpp in Sources */,
 				DE36EF101B25955E005B744E /* EventData.cpp in Sources */,
 				DE36EF3C1B25955E005B744E /* jsb_bindings_manual.cpp in Sources */,
@@ -2274,10 +2262,11 @@
 				DE36EF3E1B25955E005B744E /* jsb_dragonbones_auto.cpp in Sources */,
 				3E12D1DB1957FB18002FF0FD /* zero_copy_stream.cc in Sources */,
 				3E12D1D91957FB18002FF0FD /* coded_stream.cc in Sources */,
-				DE545D911B4CE21200A91A14 /* OAuthCore.m in Sources */,
 				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,
 				DE36EFC41B25955E005B744E /* LHVideoPlayer.m in Sources */,
+				DE54BA8F1B4D243F00202FEA /* KTPlayApplicationUtils.mm in Sources */,
 				C026DCC918928A2400B3EDE8 /* Runtime_ios-mac.mm in Sources */,
+				DE54BA951B4D243F00202FEA /* README.md in Sources */,
 				AB9079D419E931D80033128B /* ConsoleCommand.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2520,6 +2509,8 @@
 					"$(inherited)",
 					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginFacebook_v1.0.0/FacebookSDK_v3.20",
 					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginQQ_v1.0.0/TencentOpenAPI_SDK_2.3.1_arm64",
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/Plugins/SNSPlugins/ktplayPluginFacebook_v1.0.0/FacebookSDK_v3.20,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/Plugins/SNSPlugins/ktplayPluginQQ_v1.0.0/TencentOpenAPI_SDK_2.3.1_arm64,
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2537,25 +2528,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Classes/sdk/TalkingDataGameAnalytics/ios",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/AccountManager",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/Core",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/Friendship",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/Leaderboard",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/PluginManager",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/Libraries/AFNetworking",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginFacebook_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginQQ_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginTwitter_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginWeChat_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginWeChat_v1.0.0/WeChatSDK_1.5",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginWeibo_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginWeibo_v1.0.0/WeiboSDK3.0.1",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForShareSDK/ktplayPluginQQ_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForShareSDK/ktplayPluginWeChat_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForShareSDK/ktplayPluginWeibo_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForUMSocialSDK/ktplayPluginQQ_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForUMSocialSDK/ktplayPluginWeChat_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForUMSocialSDK/ktplayPluginWeibo_v1.0.0",
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/AccountManager,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/Core,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/Friendship,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/Leaderboard,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/PluginManager,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/Libraries/AFNetworking,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -2579,6 +2557,8 @@
 					"$(inherited)",
 					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginFacebook_v1.0.0/FacebookSDK_v3.20",
 					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginQQ_v1.0.0/TencentOpenAPI_SDK_2.3.1_arm64",
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/Plugins/SNSPlugins/ktplayPluginFacebook_v1.0.0/FacebookSDK_v3.20,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/Plugins/SNSPlugins/ktplayPluginQQ_v1.0.0/TencentOpenAPI_SDK_2.3.1_arm64,
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2595,25 +2575,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Classes/sdk/TalkingDataGameAnalytics/ios",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/AccountManager",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/Core",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/Friendship",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/Leaderboard",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/KTPlay/PluginManager",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/KTPlaySDK/Libraries/AFNetworking",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginFacebook_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginQQ_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginTwitter_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginWeChat_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginWeChat_v1.0.0/WeChatSDK_1.5",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginWeibo_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPlugins/ktplayPluginWeibo_v1.0.0/WeiboSDK3.0.1",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForShareSDK/ktplayPluginQQ_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForShareSDK/ktplayPluginWeChat_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForShareSDK/ktplayPluginWeibo_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForUMSocialSDK/ktplayPluginQQ_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForUMSocialSDK/ktplayPluginWeChat_v1.0.0",
-					"/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay_c++_sdk_lite_v1.5.3/Platform/IOS/Plugins/SNSPluginsForUMSocialSDK/ktplayPluginWeibo_v1.0.0",
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/AccountManager,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/Core,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/Friendship,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/Leaderboard,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/PluginManager,
+					/Users/yuxiao/Documents/workspace/fate/client/Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/Libraries/AFNetworking,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
