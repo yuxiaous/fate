@@ -78,6 +78,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
                     if(config && config.result_value != undefined){
                         if(this._dropItemType == DroppedItem.ItemType.BloodType){
                             var addValue = target.roleDataManager.maxHp * config.result_value;
+                            addValue = Math.floor(addValue);
                             target.roleDataManager.hp += addValue
                             if(target.roleDataManager.hp > target.roleDataManager.maxHp){
                                 target.roleDataManager.hp = target.roleDataManager.maxHp;
@@ -86,6 +87,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
                         else if(this._dropItemType == DroppedItem.ItemType.MagicType){
                             var addValue = target.roleDataManager.maxMp * config.result_value;
                             target.roleDataManager.mp += addValue
+                            addValue = Math.floor(addValue);
                             if(target.roleDataManager.mp > target.roleDataManager.maxMp){
                                 target.roleDataManager.mp = target.roleDataManager.maxMp;
                             }

@@ -281,6 +281,11 @@ var EndlessSelected = ui.GuiWindowBase.extend({
         var num = BattleSystem.instance.endlessRound;
         LOG(" num = " + num);
         this._lbl_round.setString(String(num));
+
+        this._btn_buy = this.seekWidgetByName("btn_buy");
+        if(this._btn_buy){
+            this._btn_buy.setVisible(false);
+        }
     },
 
     onExit : function () {
@@ -289,12 +294,12 @@ var EndlessSelected = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-        this.close();
-
-        if(UiEffect.blockShopItemWithRMB()){
-            return;
-        }
-        ui.pushScene(new BattleEndlessScene(true) );
+        //this.close();
+        //
+        //if(UiEffect.blockShopItemWithRMB()){
+        //    return;
+        //}
+        //ui.pushScene(new BattleEndlessScene(true) );
     },
 
     _on_btn_close : function () {
