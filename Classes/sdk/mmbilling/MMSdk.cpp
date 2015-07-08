@@ -70,6 +70,11 @@ void MMSdk::charge(const std::string &order, const std::string &identifier)
 {
     cocos2d::log("MMSdk::charge");
 
+    if(order.empty() || identifier.empty()) {
+        onChargeCallback(1, order);
+        return;
+    }
+
     JniMethodInfo minfo;
     if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "charge", "(Ljava/lang/String;Ljava/lang/String;)V")) {
         jstring jorder = minfo.env->NewStringUTF(order.c_str());
