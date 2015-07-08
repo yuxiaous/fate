@@ -3,9 +3,10 @@
 
 #include <stdio.h>
 #include "Sdk.h"
+#include "cocos2d.h"
 
 
-class MMSdk : public Sdk, public SdkChargeProtocol
+class MMSdk : public cocos2d::Ref, public Sdk, public SdkChargeProtocol
 {
 public:
     static MMSdk *getInstance();
@@ -14,6 +15,9 @@ public:
 
     virtual void init() override;
     virtual void charge(const std::string &order, const std::string &identifier) override;
+
+private:
+    void update(float);
 };
 
 #endif /* defined(__MMSdk__) */

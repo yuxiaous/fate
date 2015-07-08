@@ -26,14 +26,17 @@ using namespace cocos2d;
 //30000913953214 	复活
 //30000913953215	一键满级
 
+static std::string g_order;
+static int g_result = 0;
 
 extern "C" {
 
     void Java_com_fate_cmcc_mm_MMSdkJni_onMmChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
     {
         cocos2d::log("Java_com_fate_cmcc_mm_MMSdkJni_onMmChargeCallback");
-        std::string order = JniHelper::jstring2string(jorder);
-        MMSdk::getInstance()->onChargeCallback(result, order.c_str());
+        g_order = JniHelper::jstring2string(jorder);
+        g_result = result;
+//        MMSdk::getInstance()->onChargeCallback(result, order.c_str());
     }
 }
 
@@ -63,7 +66,16 @@ void MMSdk::activityOnCreate()
 
 void MMSdk::init()
 {
+    cocos2d::Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MMSdk::update), this, 0, false);
+}
 
+void MMSdk::update(float dt)
+{
+    if(!g_order.empty()) {
+        onChargeCallback(g_result, g_order.c_str());
+        g_result = 0;
+        g_order.clear();
+    }
 }
 
 void MMSdk::charge(const std::string &order, const std::string &identifier)
