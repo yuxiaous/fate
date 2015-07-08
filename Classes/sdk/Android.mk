@@ -13,7 +13,8 @@ LOCAL_SRC_FILES := SdkManager.cpp \
                    TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.cpp \
                    DeveloperSdk.cpp \
                    AndGame/AndGameSdk.cpp \
-                   mmbilling/MMSdk.cpp
+                   mmbilling/MMSdk.cpp \
+                   ktplay/KtplaySdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT
