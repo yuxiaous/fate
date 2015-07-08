@@ -7,13 +7,13 @@
 //
 
 #include "KtplaySdk.h"
-#include "KTPlayC.h"
-#include "KTAccountManagerC.h"
-#include "KTFriendshipC.h"
+#include "ktplay/Include/KTPlayC.h"
+#include "ktplay/Include/KTAccountManagerC.h"
+#include "ktplay/Include/KTFriendshipC.h"
 
 
 /*
- * ktplay version 1.5.3
+ * ktplay version 1.6.1
  */
 
 extern "C" {
