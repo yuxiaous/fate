@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07EF65F61B4D190F00D49363 /* IOSUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07EF65F41B4D190F00D49363 /* IOSUtil.mm */; };
 		1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */; };
 		1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */; };
 		1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A82F5FA169AC92500C4B13A /* libsqlite3.dylib */; };
@@ -1862,7 +1861,6 @@
 				DE36EF081B25955E005B744E /* Armature.cpp in Sources */,
 				C00FD4BA1938628E00C6382D /* Runtime.cpp in Sources */,
 				DE36EFCE1B25955E005B744E /* SneakyButton.cpp in Sources */,
-				07EF65F61B4D190F00D49363 /* IOSUtil.mm in Sources */,
 				ABCA93C719E65B1C007FB844 /* FileServer.cpp in Sources */,
 				3E12D1DF1957FB18002FF0FD /* message_lite.cc in Sources */,
 				C06C37881918E81100617BED /* ConfigParser.cpp in Sources */,

@@ -183,7 +183,6 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
 });
 
 server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_ORDER, function(obj) {
-    LOG("CMD_CS_SHOP_ORDER");
 
     var order = shop_server.genOrder(obj.good_id);
     server.send(net_protocol_handlers.CMD_SC_SHOP_ORDER_RESULT, {

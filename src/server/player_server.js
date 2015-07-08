@@ -77,8 +77,11 @@ var player_server = {
     },
 
     changeGold: function(val) {
-        if(val == undefined || val == 0) {
-            return;
+        if(val == undefined) {
+            return false;
+        }
+        if(val == 0) {
+            return true;
         }
         if(this.player_info.gold + val < 0) {
             LOG("changeGold error 1");

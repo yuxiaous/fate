@@ -82,25 +82,19 @@ var ShopScene = ui.GuiSceneBase.extend({
     createGoodsList: function() {
         this.clearGoodsList();
 
+        //引导特殊处理，多加了一个免费血瓶
+        LOG("guide system type xueping = " + GuideSystem.instance._curGuideType);
+        if(GuideSystem.instance._curGuideType == GuideSystem.Type.xueping){
+            var good = new ShopScene.Good(18000);
+            this._ui.list_goods.pushBackCustomItem(good);
+        }
+
         var shopType = this.shopType;
         var platorm_id = ShopSystem.getShopPlatformId();
         _.each(configdb.shop, function(config) {
             if(config.shop == shopType && config.platform_id == platorm_id) {
-                var needDisplay = false;
-                if(config.pay_cost >0){
-                   needDisplay = true;
-                }
-
-                //LOG("xueping = " + GuideSystem.instance._curGuideType);
-
-                if(GuideSystem.instance._curGuideType == GuideSystem.Type.xueping && config.pay_cost == 0){
-                    needDisplay = true;
-                }
-                if(needDisplay){
-                    var good = new ShopScene.Good(config.key);
-                    this._ui.list_goods.pushBackCustomItem(good);
-                }
-
+                var good = new ShopScene.Good(config.key);
+                this._ui.list_goods.pushBackCustomItem(good);
             }
         }, this);
     },
@@ -219,6 +213,11 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
 
         if(config.pay_cost != undefined) {
             this._ui.lbl_cost.setString(String(config.pay_cost));
+
+            if(config.pay_cost == 0){
+                this._ui.sp_curr.setVisible(false);
+                this._ui.lbl_cost.setString("免费");
+            }
         }
 
         if(config.score) {
