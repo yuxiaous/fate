@@ -456,11 +456,12 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-        this.close();
-        //if(UiEffect.blockShopItemWithRMB()){
-        //    return;
-        //}
 
+        if(UiEffect.blockShopItemWithRMB()){
+            return;
+        }
+
+        this.close();
         BattleSystem.instance.sendReviveBattle();
 
     },
