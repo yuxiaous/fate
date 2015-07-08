@@ -94,7 +94,7 @@
                         android:layout_height="43dp"
                         android:background="@drawable/kryptanium_colorbg_green_rounded"
                         android:gravity="center"
-                        android:text="@string/kryptanium_reward_button_text"
+                        android:text="@string/kt_claim"
                         android:textColor="#ffffff"
                         android:singleLine="true"
                         android:ellipsize="end"
@@ -125,7 +125,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:singleLine="true"
-                            android:text="@string/kryptanium_rewarded_button_text"
+                            android:text="@string/kt_reward_claimed"
                             android:textColor="@color/kryptanium_base_color_green"
                             android:textSize="@dimen/kryptanium_text_size_large" />
                     </LinearLayout>
@@ -152,7 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/kryptanium_bottom_title_text"
+            android:text="@string/kt_players_already_claimed"
             android:textColor="#8b8b8b"
             android:textSize="12dp" />
 

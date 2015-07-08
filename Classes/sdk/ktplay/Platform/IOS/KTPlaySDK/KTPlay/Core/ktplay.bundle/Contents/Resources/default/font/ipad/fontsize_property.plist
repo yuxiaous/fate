@@ -442,5 +442,7 @@
 	<integer>24</integer>
 	<key>login_global_font_big</key>
 	<integer>28</integer>
+	<key>font_phone_9</key>
+	<integer>18</integer>
 </dict>
 </plist>

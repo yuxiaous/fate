@@ -60,7 +60,7 @@
             android:background="#00000000"
             android:gravity="center"
             android:singleLine="true"
-            android:text="@string/s_kt_contacts_friends_invite"
+            android:text="@string/kt_invite"
             android:textColor="@color/kryptanium_text_blue"
             android:textSize="@dimen/kryptanium_text_size_standard" />
     </LinearLayout>

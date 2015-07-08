@@ -21,7 +21,7 @@
              android:id="@+id/kryptanium_usernameregister_username"
              android:layout_width="fill_parent"
             	style="@style/kryptanium_edittext"
-            	android:hint="@string/s_kt_registerview_email"
+            	android:hint="@string/kt_username"
             	android:layout_marginTop="20dp"
             	android:maxLength="30"
             />
@@ -32,7 +32,7 @@
              android:id="@+id/kryptanium_usernameregister_password"
              android:layout_width="fill_parent"
             	style="@style/kryptanium_edittext"
-            	android:hint="@string/s_kt_loginview_pwd"
+            	android:hint="@string/kt_password_placeholder"
             	android:layout_marginTop="5dp"
             	android:inputType="textPassword"
             />
@@ -43,7 +43,7 @@
             android:layout_width="fill_parent" 
             android:layout_marginTop="8dp"
             style="@style/kryptanium_button_style_main"
-            android:text="@string/s_kt_register"
+            android:text="@string/kt_register"
             />
         
         <!-- 用户条款和隐私协议 -->
@@ -52,7 +52,7 @@
              android:layout_width="wrap_content" 
              android:layout_height="wrap_content" 
              android:layout_marginTop="10dp"
-             android:text="@string/s_kt_service_policy_label"
+             android:text="@string/kt_terms_agreement"
              android:textSize="@dimen/kryptanium_fontsize_middle"
              android:textColor="@color/kryptanium_text_dark_gray"
             />
@@ -64,7 +64,7 @@
              android:id="@+id/kryptanium_usernameregister_to_phoneregister" 
              style="@style/kryptanium_link_text"
              android:layout_marginTop="40dp"
-             android:text="@string/s_kt_register_with_phone"
+             android:text="@string/kt_link_register_with_phonenumber"
              android:layout_gravity="center_horizontal|bottom"
             />
 		</LinearLayout>

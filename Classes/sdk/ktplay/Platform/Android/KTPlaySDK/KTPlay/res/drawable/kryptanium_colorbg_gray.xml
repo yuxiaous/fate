@@ -2,4 +2,5 @@
     android:shape="rectangle" >
     <solid android:color="#dedede" />
     <corners android:radius="1dp"/>
+     <size android:width="@dimen/kryptanium_title_buttom_w" android:height="@dimen/kryptanium_title_buttom_h"/>
 </shape>

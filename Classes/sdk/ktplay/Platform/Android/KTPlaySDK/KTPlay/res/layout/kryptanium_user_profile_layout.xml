@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:background="@drawable/kryptanium_button_blue_n"
-                android:text="@string/s_kt_settingview_exitlogin"
+                android:text="@string/kt_logout"
                 android:textColor="@color/kryptanium_text_white"
                 android:textSize="@dimen/kryptanium_fontsize_big"
                 android:visibility="gone" />

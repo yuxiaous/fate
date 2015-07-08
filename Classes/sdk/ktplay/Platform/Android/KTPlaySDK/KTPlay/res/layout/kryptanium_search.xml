@@ -64,7 +64,7 @@
                 android:layout_toRightOf="@id/kryptanium_topic_search_text_title"
                 android:background="@null"
                 android:clickable="true"
-                android:hint="@string/s_kt_friend_search"
+                android:hint="@string/kt_search"
                 android:imeOptions="actionDone"
                 android:singleLine="true"
                 android:textColor="@color/kryptanium_text_dark"

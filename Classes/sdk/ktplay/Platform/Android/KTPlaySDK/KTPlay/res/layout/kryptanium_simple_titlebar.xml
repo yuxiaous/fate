@@ -24,15 +24,18 @@
         <!-- 标题 -->
         <TextView
             android:id="@+id/kryptanium_simpletitlebar_title"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@null"
             android:gravity="center"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:maxWidth="@dimen/kryptanium_titlebar_title_max_width"
             android:paddingLeft="@dimen/kryptanium_spacing"
             android:paddingRight="@dimen/kryptanium_spacing"
             android:textColor="@color/kryptanium_text_black"
-            android:textSize="@dimen/kryptanium_fontsize_middle" />
+            android:textSize="@dimen/kryptanium_text_size_big" />
         
         
         <!-- 提示信息 -->

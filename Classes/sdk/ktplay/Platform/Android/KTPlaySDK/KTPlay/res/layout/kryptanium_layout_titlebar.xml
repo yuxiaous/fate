@@ -41,7 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right|center_vertical"
-                    android:text="@string/s_kt_back"
+                    android:text="@string/kt_back"
                     android:textColor="@color/kryptanium_text_blue"
                     android:textSize="@dimen/kryptanium_text_size_standard"
                     android:visibility="gone" />
@@ -56,7 +56,7 @@
             android:layout_marginRight="55dp"
             android:background="@drawable/kryptanium_title_pro"
             android:gravity="center"
-            android:text="@string/s_kt_profile_complete_setting"
+            android:text="@string/kt_profile_complete_setting"
             android:textColor="@color/kryptanium_text_white"
             android:textSize="@dimen/kryptanium_user_profile_mid"
             android:visibility="gone" />

@@ -31,7 +31,7 @@
              android:id="@+id/kryptanium_complete_userprofile_nickname"
              android:layout_width="fill_parent"
             	style="@style/kryptanium_edittext"
-            	android:hint="@string/s_kt_nickname"
+            	android:hint="@string/kt_nickname"
             	android:maxLength="128"
             	android:singleLine="true" 
             />
@@ -48,7 +48,7 @@
          <TextView 
             android:layout_width="fill_parent"
              android:layout_height="fill_parent"
-            	android:text="@string/s_kt_select_gender"
+            	android:text="@string/kt_change_gender"
             	android:textSize="@dimen/kryptanium_fontsize_middle"
             	android:gravity="center_vertical"
             	android:textColor="@color/kryptanium_text_black"
@@ -79,7 +79,7 @@
             android:layout_width="fill_parent" 
             android:layout_marginTop="8dp"
             style="@style/kryptanium_button_style_main"
-            android:text="@string/s_kt_complete_btn"
+            android:text="@string/kt_done"
             />
 		</LinearLayout>
 

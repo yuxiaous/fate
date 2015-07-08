@@ -121,6 +121,12 @@ extern "C" {
          */
         static void showInterstitialNotification();
         
+        /** @brief 显示兑换码窗口
+         *
+         */
+        
+        static void showRedemptionView();
+        
         /**
          *  @brief 关闭KTPlay主窗口
          *
@@ -148,8 +154,27 @@ extern "C" {
          */
         static bool isShowing();
         
+        /**
+         *  @brief 分享图片/文本到KTPlay社区
+         *  @param imagePath 图片的绝对路径,为NULL时，不分享图片
+         *  @param description 图片的描述,为NULL时，没有默认内容描述
+         */
+        static void shareImageToKT(const char *imagePath, const char* description);
         
+        /**
+         *  @brief 截取游戏当前画面并分享到KTPlay社区
+         *  @param description 图片的描述
+         */
+        static void shareScreenshotToKT(const char *description);
         
+        /**
+         * @brief 设置截图旋转角度
+         * @param degrees 截图旋转角度（注意，是角度而不是弧度，取值如90,180等）
+         *
+         *
+         * 通常不需要调用此方法，在截图角度不正常时（可能由游戏引擎或会游戏开发方式导致），再调用此方法进行调整
+         */
+        static void setScreenshotRotation(float degrees);
 
         /**
          * @brief 启用/禁用通知功能

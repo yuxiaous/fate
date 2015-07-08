@@ -14,11 +14,10 @@
         android:layout_height="fill_parent"
         android:layout_marginBottom="2.5dp"
         android:background="@null"
-        android:cacheColorHint="#00000000"
-        android:divider="@color/kryptanium_selected_bg_grey"
-        android:dividerHeight="0.4dp"
         android:paddingLeft="8dp"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY" 
+        style="@style/kryptanium_list"
+        />
 
     <!-- 发送邀请按钮 -->
 
@@ -30,7 +29,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/kryptanium_button_bg"
         android:gravity="center"
-        android:text="@string/s_kt_send_invite"
+        android:text="@string/kt_send_invitation"
         android:textColor="@color/kryptanium_text_white"
         android:textSize="@dimen/kryptanium_text_size_big" />
 

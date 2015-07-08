@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp" >
+
+    <LinearLayout
+        android:id="@+id/kryptanium_chat_nickname_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/kryptanium_chat_nickname_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxWidth="195dp"
+            android:text="asdfasdfasdf"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/kryptanium_chat_last_msg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxWidth="195dp"
+            android:text="asdfasdfasdf"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/kryptanium_chat_delete_tv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/kryptanium_chat_nickname_ll"
+        android:layout_toLeftOf="@+id/kryptanium_chat_delete_tv"
+        android:layout_margin="10dp"
+        android:text="时间" />
+
+</RelativeLayout>

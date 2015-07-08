@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kryptanium_chat_more_bg" >
+
+    <LinearLayout
+        android:id="@+id/kryptanium_menu_dialog_more_title_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#dfdfdf"
+         >
+
+        <TextView
+            android:id="@+id/kryptanium_menu_dialog_more_title"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="12.5dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/kryptanium_text_dark"
+            android:textSize="@dimen/kryptanium_text_size_standard" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kryptanium_menudialog_long_click"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_titlebar_line_height"
+        android:layout_below="@id/kryptanium_menu_dialog_more_title_ll"
+        android:background="@color/kryptanium_base_color_gray_light"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/kryptanium_menu_dialog_item_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/kryptanium_menudialog_long_click"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/kryptanium_barline_color"
+        android:dividerHeight="0.1dp"
+        android:scrollbars="none" >
+    </ListView>
+    <!--
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_titlebar_line_height"
+        android:layout_below="@id/kryptanium_menu_dialog_item_list"
+        android:background="@color/kryptanium_base_color_gray"
+        android:orientation="horizontal" >
+    </LinearLayout>
+    -->
+
+</RelativeLayout>

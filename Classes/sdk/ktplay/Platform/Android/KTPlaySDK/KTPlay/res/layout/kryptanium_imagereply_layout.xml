@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/kryptanium_topicrepley_addbutton"
  		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:text="@string/s_kt_create_reply"
+		android:text="@string/kt_create_reply"
 		android:layout_alignParentBottom="true"
 		android:textColor="@color/kryptanium_text_white"
         android:textSize="@dimen/kryptanium_fontsize_big"

@@ -3,6 +3,7 @@
             android:name="com.ktplay.activity.GetPhotoActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="user"
+            android:theme="@android:style/Theme.Translucent"
             android:windowSoftInputMode="adjustPan|adjustUnspecified" >
         </activity>
         

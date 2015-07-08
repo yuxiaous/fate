@@ -18,7 +18,7 @@
             android:background="@color/kryptanium_title_bg"
         	android:gravity="center_vertical"
         	android:paddingLeft="5dp"
-            android:text="@string/ui_addfriendsfromlbs_table_section_title"
+            android:text="@string/kt_players_around_you"
             android:textColor="@color/kryptanium_text_dark_gray"
         	android:textSize="@dimen/kryptanium_text_size_small" />
     </LinearLayout>
@@ -34,14 +34,11 @@
             android:id="@+id/kryptanium_players_listview"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:cacheColorHint="#00000000"
-            android:divider="@color/kryptanium_selected_bg_grey"
-            android:dividerHeight="0.4dp"
-            android:fadingEdge="none"
-            android:listSelector="#00000000" />
+            style="@style/kryptanium_list"
+            />
     </LinearLayout>
 
-    <TextView
+    <!-- <TextView
         android:id="@+id/kryptanium_ishasfriends"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -52,7 +49,7 @@
         android:text="@string/s_kt_friends_nofriends"
         android:textColor="@color/kryptanium_text_dark"
         android:textSize="@dimen/kryptanium_fontsize_small"
-        android:visibility="gone" />
+        android:visibility="gone" /> -->
 
     <ImageView
         android:id="@+id/kryptanium_addfriend_kt_title_line"
@@ -82,7 +79,7 @@
             android:layout_gravity="center_horizontal|bottom"
             android:background="@drawable/kryptanium_button_bg"
             android:gravity="center"
-            android:text="@string/s_kt_send_invite"
+            android:text="@string/kt_send_invitation"
             android:textColor="@color/kryptanium_text_white"
             android:textSize="@dimen/kryptanium_text_size_big" />
     </FrameLayout>

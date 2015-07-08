@@ -26,7 +26,7 @@
                 android:layout_marginRight="@dimen/kryptanium_msgbox_textview_marginRight"
                 android:layout_marginTop="@dimen/kryptanium_msgbox_textview_marginTop"
                 android:gravity="center_horizontal"
-                android:text="@string/s_kt_mail_box_no_content"
+                android:text="@string/kt_no_messages"
                 android:textColor="@color/kryptanium_text_dark"
                 android:textSize="@dimen/kryptanium_fontsize_small"
                 android:visibility="gone" />

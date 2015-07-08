@@ -16,5 +16,6 @@
         <item>com.kryptanium.plugin.sns.facebook.KTPluginFacebook</item>
         <item>com.kryptanium.plugin.sns.qihoo360.KTPluginQihoo360</item>
         <item>com.kryptanium.plugin.sns.twitter.KTPluginTwitter</item>
+        <item>com.kryptanium.plugin.chat.gotye.KTPluginGotye</item>
     </string-array>
 </resources>

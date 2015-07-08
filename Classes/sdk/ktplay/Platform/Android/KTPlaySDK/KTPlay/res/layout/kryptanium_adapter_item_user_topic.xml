@@ -2,7 +2,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    style="@style/kryptanium_list_item"
+     >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -54,8 +56,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <!-- android:text="@string/s_kt_discussion_lastest_reply" -->
-
                 <TextView
                     android:id="@+id/kryptanium_discussion_lastest_reply"
                     android:layout_width="wrap_content"
@@ -65,18 +65,6 @@
                     android:textColor="@color/kryptanium_base_color_near_white"
                     android:textSize="@dimen/kryptanium_text_size_small" />
 
-                <TextView
-                    android:id="@+id/kryptanium_reply_item_content"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/kryptanium_layout_marginLeft"
-                    android:ellipsize="end"
-                    android:includeFontPadding="false"
-                    android:maxLines="2"
-                    android:paddingBottom="@dimen/kryptanium_my_topic_content_padding"
-                    android:paddingTop="@dimen/kryptanium_my_topic_content_padding"
-                    android:textColor="@color/kryptanium_base_color_near_white"
-                    android:textSize="@dimen/kryptanium_text_size_small" />
             </LinearLayout>
 
             <LinearLayout
@@ -90,7 +78,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <!-- <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="right|center"
@@ -103,6 +91,6 @@
             android:layout_marginRight="@dimen/kryptanium_arrow_flag_marginRight"
             android:scaleType="centerInside"
             android:src="@drawable/kryptanium_right_arrow" />
-    </LinearLayout>
+    </LinearLayout> -->
 
 </FrameLayout>

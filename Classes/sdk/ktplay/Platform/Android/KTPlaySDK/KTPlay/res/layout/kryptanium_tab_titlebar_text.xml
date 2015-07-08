@@ -4,5 +4,5 @@
     android:layout_height="fill_parent"
     android:gravity="center"
     android:textColor="@color/kryptanium_titlebar_tabtext"
-    android:textSize="@dimen/kryptanium_text_size_medium"
+    android:textSize="@dimen/kryptanium_text_size_big"
     />

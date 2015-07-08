@@ -60,7 +60,7 @@
             android:layout_width="60dp"
             style="@style/kryptanium_button_style_main"
             android:layout_gravity="center_vertical|right"
-            android:text="@string/s_kt_add" 
+            android:text="@string/kt_add" 
             />
 </FrameLayout>
 

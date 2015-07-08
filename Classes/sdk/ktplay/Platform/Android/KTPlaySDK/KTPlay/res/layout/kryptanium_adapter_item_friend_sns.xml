@@ -18,7 +18,6 @@
         android:contentDescription="@null" />
 
     <LinearLayout
-        android:id="@+id/kryptanium_leaderboard_friend_info"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -58,7 +57,7 @@
         android:gravity="center_vertical"
         android:padding="@dimen/kryptanium_buttom_icon_padding"
         android:singleLine="true"
-        android:text="@string/s_kt_friend_invite_finish"
+        android:text="@string/kt_invited"
         android:textColor="@color/kryptanium_text_dark"
         android:textSize="@dimen/kryptanium_fontsize_middle" />
 

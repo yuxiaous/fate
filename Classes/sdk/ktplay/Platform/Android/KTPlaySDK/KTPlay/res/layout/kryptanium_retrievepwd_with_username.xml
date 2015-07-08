@@ -20,7 +20,7 @@
            android:layout_height="wrap_content"
            android:textSize="@dimen/kryptanium_fontsize_middle"
            android:textColor="@color/kryptanium_text_dark_gray"
-           android:text="@string/s_kt_bind_email_label"
+           android:text="@string/kt_tip_resetpassword_with_email"
            android:layout_marginTop="20dp"
            />
         
@@ -30,7 +30,7 @@
              android:layout_width="fill_parent"
              android:layout_marginTop="8dp"
             	style="@style/kryptanium_edittext"
-            	android:hint="@string/s_kt_input_email"
+            	android:hint="@string/kt_input_email"
             	android:inputType="textEmailAddress"
             />
         
@@ -41,7 +41,7 @@
             android:layout_width="fill_parent" 
             android:layout_marginTop="8dp"
             style="@style/kryptanium_button_style_main"
-            android:text="@string/s_kt_send"
+            android:text="@string/kt_send"
             />
         
         <!-- 手机号登录链接 -->
@@ -49,7 +49,7 @@
              android:id="@+id/kryptanium_username_retrievepwd_to_phone_retrievepwd" 
              style="@style/kryptanium_link_text"
              android:layout_marginTop="40dp"
-             android:text="@string/s_kt_retrievepwd_with_phone"
+             android:text="@string/kt_reset_password_with_phonenumber"
              android:layout_gravity="center_horizontal|bottom"
             />
 		</LinearLayout>

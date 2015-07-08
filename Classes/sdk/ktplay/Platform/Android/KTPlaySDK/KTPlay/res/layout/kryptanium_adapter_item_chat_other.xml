@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp" >
+
+    <TextView
+        android:id="@+id/kryptanium_chat_other_msg_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingBottom="9dp"
+        android:paddingTop="9.5dp"
+        android:textColor="@color/kryptanium_base_color_near_white"
+        android:textSize="@dimen/kryptanium_text_size_small" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp" >
+
+        <ImageView
+            android:id="@+id/kryptanium_chat_other_icon"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="bottom"
+            android:baselineAlignBottom="true"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/kryptanium_chat_other_msg_box_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/kryptanium_chat_other_background"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/kryptanium_chat_other_msg_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="@dimen/kryptanium_chat_content_width"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:textColor="@color/kryptanium_base_color_black"
+                    android:textSize="@dimen/kryptanium_text_size_standard" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/kryptanium_chat_other_msg_box_imagview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <com.ktplay.widget.StateImageView
+                        android:id="@+id/kryptanium_chat_other_msg_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/kryptanium_chat_other_msg_imageview_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/kryptanium_chat_other_image_background" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/kryptanium_chat_other_imageview_loading_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center" >
+
+                    <ProgressBar
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:indeterminate="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

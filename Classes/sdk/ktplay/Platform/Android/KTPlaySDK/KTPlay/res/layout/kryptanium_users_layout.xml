@@ -57,7 +57,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="6dp"
                     android:singleLine="true"
-                    android:text="@string/s_kt_livenessplayer"
+                    android:text="@string/kt_most_liked_players"
                     android:textColor="@color/kryptanium_hot_player_top5"
                     android:textSize="@dimen/kryptanium_fontsize_middle" />
                 <GridView

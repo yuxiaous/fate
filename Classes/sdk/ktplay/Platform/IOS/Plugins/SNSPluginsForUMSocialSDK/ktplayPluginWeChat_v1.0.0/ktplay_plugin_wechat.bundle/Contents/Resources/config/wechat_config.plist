@@ -28,5 +28,9 @@
 			<string>wxe15a923487a28eb4</string>
 		</dict>
 	</array>
+	<key>disable_features</key>
+	<string></string>
+	<key>prop_priority</key>
+	<integer>40</integer>
 </dict>
 </plist>

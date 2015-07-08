@@ -20,7 +20,7 @@
 
             <TextView
                 style="@style/ktplay_style_subtitle_line"
-                android:text="@string/s_kt_user_setting_basic_info" />
+                android:text="@string/kt_setting_baseinfo" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -29,263 +29,129 @@
                 android:orientation="vertical" >
 
                 <!-- 个人头像 -->
-
-                <LinearLayout
-                    android:id="@+id/kryptanium_profile_setting_head_image_linearlayout"
-                    style="@style/kryptanium_style_item_touch"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical" >
-
-                    <RelativeLayout
+                    <FrameLayout
+                        android:id="@+id/kryptanium_profile_setting_head_image_linearlayout"
                         android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_user_profile_set_head_layout_height" >
+                        android:layout_height="wrap_content"
+                        style="@style/kryptanium_list_item"
+                        >
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerVertical="true"
-                            android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                            android:text="@string/s_kt_user_face"
-                            android:textColor="@color/kryptanium_text_dark"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/kt_setting_avatar"
+                            style="@style/kryptanium_main_text"
+                            />
 
                         <ImageView
                             android:id="@+id/kryptanium_profile_setting_head_image"
                             android:layout_width="@dimen/kryptanium_user_profile_set_headimage_imageview_width_height"
                             android:layout_height="@dimen/kryptanium_user_profile_set_headimage_imageview_width_height"
-                            android:layout_centerVertical="true"
                             android:layout_marginRight="@dimen/kryptanium_user_profile_set_headimage_imageview_paddingRight"
-                            android:layout_toLeftOf="@+id/kryptanium_profile_setting_head_image_flag"
                             android:background="@null"
-                            android:scaleType="fitXY" />
+                            android:scaleType="fitXY" 
+                            android:layout_gravity="right|center_vertical"
+                            />
 
-                        <LinearLayout
-                            android:id="@+id/kryptanium_profile_setting_head_image_flag"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="right|center"
-                            android:gravity="right" >
+                        
+                    </FrameLayout>
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/kryptanium_arrow_flag_marginRight"
-                                android:scaleType="centerInside"
-                                android:src="@drawable/kryptanium_right_arrow" />
-                        </LinearLayout>
-                    </RelativeLayout>
-
-                    <ImageView
-                        android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_titlebar_line_height"
-                        android:background="@color/kryptanium_barline_color"
-                        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                        android:scaleType="fitXY" />
-                </LinearLayout>
+                    <View style="@style/kryptanium_seperate_line"/>
 
                 <!-- 昵称 -->
-
-                <LinearLayout
-                    android:id="@+id/kryptanium_profile_setting_nickname_linearlayout"
-                    style="@style/kryptanium_style_item_touch"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical" >
-
-                    <RelativeLayout
+                    <FrameLayout
+                        android:id="@+id/kryptanium_profile_setting_nickname_linearlayout"
                         android:layout_width="fill_parent"
                         android:layout_height="@dimen/kryptanium_user_profile_set_item_layout_height"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal" >
+                        style="@style/kryptanium_list_item"
+                         >
 
                         <TextView
                             android:id="@+id/kryptanium_profile_setting_nickname_title"
                             android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:ellipsize="end"
-                            android:gravity="left|center"
-                            android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+                            android:layout_height="wrap_content"
                             android:singleLine="true"
-                            android:text="@string/s_kt_nickname"
-                            android:textColor="@color/kryptanium_text_dark"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="@dimen/kryptanium_arrow_flag_marginRight"
-                            android:layout_toRightOf="@+id/kryptanium_profile_setting_nickname_title"
-                            android:gravity="right|center" >
-
-                            <TextView
+                            android:text="@string/kt_nickname"
+                            android:layout_gravity="center_vertical"
+                            style="@style/kryptanium_main_text"
+                            />
+                        
+                        <TextView
                                 android:id="@+id/kryptanium_profile_setting_nickname"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_toLeftOf="@+id/kryptanium_profile_setting_nickname_arrow"
                                 android:ellipsize="end"
+                                android:paddingLeft="100dp"
                                 android:singleLine="true"
-                                android:textColor="@color/kryptanium_base_color_near_white"
-                                android:textSize="@dimen/kryptanium_text_size_medium" />
+                                android:layout_gravity="center_vertical|right"
+                                style="@style/kryptanium_secondary_text"
+                                />
+                    </FrameLayout>
 
-                            <LinearLayout
-                                android:id="@+id/kryptanium_profile_setting_nickname_arrow"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerInParent="true" >
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:scaleType="centerInside"
-                                    android:src="@drawable/kryptanium_right_arrow" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </RelativeLayout>
-
-                    <ImageView
-                        android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_titlebar_line_height"
-                        android:background="@color/kryptanium_barline_color"
-                        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                        android:scaleType="fitXY" />
-                </LinearLayout>
+                    <View style="@style/kryptanium_seperate_line"/>
 
                 <!-- 用户名 -->
-
-                <LinearLayout
-                    android:id="@+id/kryptanium_profile_setting_username_linearlayout"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical" >
-
-                    <RelativeLayout
+                    <FrameLayout
+                        android:id="@+id/kryptanium_profile_setting_username_linearlayout"
                         android:layout_width="fill_parent"
                         android:layout_height="@dimen/kryptanium_user_profile_set_item_layout_height"
-                        android:gravity="left|center_vertical"
-                        android:paddingRight="@dimen/kryptanium_user_profile_set_flag_marginRight" >
+                        style="@style/kryptanium_list_item"
+                         >
 
                         <TextView
                             android:id="@+id/kryptanium_profile_setting_username_title"
                             android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
+                            android:layout_height="wrap_content"
                             android:ellipsize="end"
-                            android:gravity="left|center"
-                            android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
                             android:singleLine="true"
-                            android:text="@string/s_kt_username"
-                            android:textColor="@color/kryptanium_text_dark"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
+                            android:text="@string/kt_username"
+                            android:layout_gravity="center_vertical"
+                            style="@style/kryptanium_main_text"
+                            />
 
                         <TextView
-                            android:layout_toRightOf="@+id/kryptanium_profile_setting_username_title"
                             android:id="@+id/kryptanium_profile_setting_username"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="right|center_vertical"
-                            android:ellipsize="end"
-                            android:gravity="right|center"
-                            android:singleLine="true"
-                            android:textColor="@color/kryptanium_base_color_near_white"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
-                    </RelativeLayout>
-
-                    <ImageView
-                        android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_titlebar_line_height"
-                        android:background="@color/kryptanium_barline_color"
-                        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                        android:scaleType="fitXY" />
-                </LinearLayout>
-
-                <!-- 性别 -->
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical" >
-
-                    <LinearLayout
-                        android:id="@+id/kryptanium_profile_setting_gender_layout"
-                        style="@style/kryptanium_style_item_touch"
-                        android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_user_profile_set_item_layout_height"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal" >
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:gravity="left|center_vertical"
-                            android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                            android:text="@string/s_kt_user_setting_gender"
-                            android:textColor="@color/kryptanium_text_dark"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
-
-                        <TextView
-                            android:id="@+id/kryptanium_profile_setting_man"
-                            android:layout_width="@dimen/kryptanium_profile_setting_sex_wh"
-                            android:layout_height="@dimen/kryptanium_profile_setting_sex_th"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginRight="@dimen/kryptanium_default_gap"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:singleLine="true"
-                            android:text="@string/s_kt_male"
-                            android:textColor="@color/kryptanium_text_white"
-                            android:textSize="@dimen/kryptanium_fontsize_middle"
-                            android:visibility="gone" />
-
-                        <TextView
-                            android:id="@+id/kryptanium_profile_setting_woman"
-                            android:layout_width="@dimen/kryptanium_profile_setting_sex_wh"
-                            android:layout_height="@dimen/kryptanium_profile_setting_sex_th"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginRight="@dimen/kryptanium_default_gap"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:singleLine="true"
-                            android:text="@string/s_kt_female"
-                            android:textColor="@color/kryptanium_text_white"
-                            android:textSize="@dimen/kryptanium_fontsize_middle"
-                            android:visibility="gone" />
-
-                        <TextView
-                            android:id="@+id/kryptanium_profile_setting_sex_status"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_marginRight="@dimen/kryptanium_user_profile_set_status_marginRight"
-                            android:gravity="left|center"
-                            android:text="@string/s_kt_no_setting"
-                            android:textColor="@color/kryptanium_base_color_near_white"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
-
-                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="right|center_vertical"
-                            android:gravity="right|center_vertical" >
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:layout_gravity="center_vertical|right"
+                            style="@style/kryptanium_secondary_text"
+                            />
+                    </FrameLayout>
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/kryptanium_arrow_flag_marginRight"
-                                android:scaleType="centerInside"
-                                android:src="@drawable/kryptanium_right_arrow" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
+                    <View 
+                        android:id="@+id/kryptanium_settings_username_divider"
+                        style="@style/kryptanium_seperate_line"/>
+                    
+                    
+                	<!-- 性别 -->
+                    <FrameLayout
+                        android:id="@+id/kryptanium_profile_setting_gender_layout"
+                        style="@style/kryptanium_list_item"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kt_gender"
+                            android:layout_gravity="center_vertical"
+                            style="@style/kryptanium_main_text"
+                            />
+
+                        <TextView
+                            android:id="@+id/kryptanium_profile_setting_gender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:layout_gravity="center_vertical|right"
+                            style="@style/kryptanium_secondary_text"
+                            />
+                </FrameLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -297,7 +163,7 @@
                 <TextView
                     android:id="@+id/kryptanium_user_setting_sync_title"
                     style="@style/ktplay_style_subtitle_line"
-                    android:text="@string/s_kt_user_setting_sync" />
+                    android:text="@string/kt_setting_security" />
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -307,30 +173,27 @@
 
                     <!-- 登录邮箱 -->
 
-                    <LinearLayout
+                    <FrameLayout
                         android:id="@+id/kryptanium_profile_setting_email_linearlayout"
-                        style="@style/kryptanium_style_item_touch"
+                        style="@style/kryptanium_list_item"
                         android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_user_profile_set_item_layout_height"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingRight="@dimen/kryptanium_arrow_flag_marginRight" >
+                        android:layout_height="wrap_content">
 
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:gravity="left|center"
+                       <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:paddingLeft="@dimen/kryptanium_layout_paddingLeft" >
+                            android:layout_gravity="center_vertical"
+                            >
 
                             <TextView
                                 android:id="@+id/kryptanium_profile_setting_email"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/s_kt_setting_email_unbind"
-                                android:textColor="@color/kryptanium_text_dark"
-                                android:textSize="@dimen/kryptanium_text_size_medium" />
+                                android:text="@string/kt_bind_email"
+                                android:layout_gravity="center_vertical"
+                                style="@style/kryptanium_main_text"
+                                />
 
                             <ImageView
                                 android:id="@+id/kryptanium_profile_topic_new_msg"
@@ -346,60 +209,39 @@
                         <TextView
                             android:id="@+id/kryptanium_profile_setting_email_status"
                             android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_marginRight="@dimen/kryptanium_user_profile_set_status_marginRight"
-                            android:gravity="left|center"
-                            android:text="@string/s_kt_no_binding"
-                            android:textColor="@color/kryptanium_base_color_near_white"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
-
-                        <LinearLayout
-                            android:id="@+id/kryptanium_profile_setting_email_flag"
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="right|center_vertical"
-                            android:gravity="right|center_vertical" >
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:scaleType="centerInside"
-                                android:src="@drawable/kryptanium_right_arrow" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <ImageView
-                        android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_titlebar_line_height"
-                        android:background="@color/kryptanium_barline_color"
-                        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                        android:scaleType="fitXY" />
+                            android:layout_gravity="center_vertical|right"
+                            android:text="@string/kt_not_binding"
+                            style="@style/kryptanium_secondary_text"
+                            />
+					</FrameLayout>
+                   <View style="@style/kryptanium_seperate_line"/>
 
                     
                     <!-- 手机号绑定 -->
-                    <LinearLayout
+                    <FrameLayout
                         android:id="@+id/kryptanium_settings_phonebinding_container"
-                        style="@style/kryptanium_style_item_touch"
+                        style="@style/kryptanium_list_item"
                         android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_user_profile_set_item_layout_height"
+                        android:layout_height="wrap_content"
                         android:gravity="left|center_vertical"
                         android:orientation="horizontal"
-                        android:paddingRight="@dimen/kryptanium_arrow_flag_marginRight" >
+                         >
 
                         <LinearLayout
-                            android:layout_width="fill_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:gravity="left|center"
                             android:orientation="horizontal"
-                            android:paddingLeft="@dimen/kryptanium_layout_paddingLeft" >
+                            android:layout_gravity="center_vertical"
+                             >
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/s_kt_phone_binding"
-                                android:textColor="@color/kryptanium_text_dark"
-                                android:textSize="@dimen/kryptanium_text_size_medium" />
+                                android:text="@string/kt_bind_phonenumber"
+                                android:layout_gravity="center_vertical"
+                                style="@style/kryptanium_main_text"
+                                />
 
                             <ImageView
                                 android:id="@+id/kryptanium_settings_phonebinding_tip"
@@ -415,207 +257,176 @@
                         <TextView
                             android:id="@+id/kryptanium_settings_phonebinding_status"
                             android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_marginRight="@dimen/kryptanium_user_profile_set_status_marginRight"
-                            android:gravity="left|center"
-                            android:text="@string/s_kt_no_binding"
-                            android:textColor="@color/kryptanium_base_color_near_white"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
-
-                        <LinearLayout
-                            android:id="@+id/kryptanium_settings_phonebinding_arrow"
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="right|center_vertical"
-                            android:gravity="right|center_vertical" >
+                            android:text="@string/kt_not_binding"
+                             android:layout_gravity="center_vertical|right"
+                            style="@style/kryptanium_secondary_text"
+                            />
+                    </FrameLayout>
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:scaleType="centerInside"
-                                android:src="@drawable/kryptanium_right_arrow" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <ImageView
-                        android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_titlebar_line_height"
-                        android:background="@color/kryptanium_barline_color"
-                        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                        android:scaleType="fitXY" />
+                    <View style="@style/kryptanium_seperate_line"/>
                     
                     <!-- 密码 -->
-
-                    <LinearLayout
+                    <FrameLayout
                         android:id="@+id/kryptanium_profile_setting_pass_linearlayout"
-                        style="@style/kryptanium_style_item_touch"
+                        style="@style/kryptanium_list_item"
                         android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_user_profile_set_item_layout_height"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal" >
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" 
+                        >
 
                         <TextView
                             android:id="@+id/kryptanium_profile_setting_pass"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:gravity="left|center"
-                            android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                            android:text="@string/s_kt_user_setting_pass_describe"
-                            android:textColor="@color/kryptanium_text_dark"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kt_password"
+                            android:layout_gravity="center_vertical"
+                            style="@style/kryptanium_main_text"
+                            />
 
                         <TextView
                             android:id="@+id/kryptanium_profile_setting_pass_status"
                             android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_marginRight="@dimen/kryptanium_user_profile_set_status_marginRight"
-                            android:gravity="left|center"
-                            android:text="@string/s_kt_no_setting"
-                            android:textColor="@color/kryptanium_base_color_near_white"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="right|center_vertical"
-                            android:gravity="right|center_vertical" >
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/kryptanium_arrow_flag_marginRight"
-                                android:scaleType="centerInside"
-                                android:src="@drawable/kryptanium_right_arrow" />
-                        </LinearLayout>
-                    </LinearLayout>
+                            android:text="@string/kt_not_binding"
+                            android:layout_gravity="center_vertical|right"
+                            style="@style/kryptanium_secondary_text"
+                            />
+                    </FrameLayout>
                 </LinearLayout>
             </LinearLayout>
+            
+            <!-- 隐私 -->
+            <TextView
+                android:id="@+id/kryptanium_profile_setting_privacy_subtitle"
+                style="@style/ktplay_style_subtitle_line"
+                android:text="@string/kt_privacy"
+                android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/kryptanium_profile_setting_privacy_linearlayout"
+                    style="@style/kryptanium_style_item_touch"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+                        <TextView
+                            android:id="@+id/kryptanium_setting_blocklist"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="@string/kt_blocked_list"
+                           style="@style/kryptanium_list_item_simpletext"
+                            />
+                    <View style="@style/kryptanium_seperate_line"/>
+                </LinearLayout>
 
             <TextView
                 style="@style/ktplay_style_subtitle_line"
-                android:text="@string/s_kt_profile_setting" />
+                android:text="@string/kt_setting" />
+            
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
                 android:orientation="vertical" >
-
+				
+                <!-- 是否显示通知 -->
                 <FrameLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="@dimen/kryptanium_user_profile_set_item_layout_height"
-                    android:gravity="left|center_vertical"
-                    android:orientation="horizontal" >
+                    android:layout_height="wrap_content"
+                    style="@style/kryptanium_list_item"
+                     >
 
+                    <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical" >
                     <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
-                        android:gravity="left|center"
-                        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                        android:text="@string/s_kt_user_setting_notify_msg"
-                        android:textColor="@color/kryptanium_text_dark"
-                        android:textSize="@dimen/kryptanium_text_size_medium" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kt_setting_receive_new_message"
+                        android:layout_gravity="center_vertical"
+                       	style="@style/kryptanium_main_text"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kt_setting_receive_new_message_description"
+                        style="@style/kryptanium_secondary_text"
+                        />
+                    </LinearLayout>
 
                     <CheckBox
                         android:id="@+id/kryptanium_profile_setting_is_always_send_messige"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|center_vertical"
-                        android:layout_marginRight="@dimen/kryptanium_user_profile_set_flag_marginRight"
-                        android:layout_weight="1"
                         android:background="@drawable/kryptanium_checkbox"
                         android:button="@null"
                         android:gravity="center" />
                 </FrameLayout>
+                
+                <View 
+                    android:id="@+id/kryptanium_setting_soundswitcher_divider"
+                    style="@style/kryptanium_seperate_line"/>
 
-                <ImageView
+                
+                <!-- 声音开关 -->
+                <FrameLayout
+                    android:id="@+id/kryptanium_profile_setting_is_always_play_sound_layout"
                     android:layout_width="fill_parent"
-                    android:layout_height="@dimen/kryptanium_titlebar_line_height"
-                    android:background="@color/kryptanium_barline_color"
-                    android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                    android:scaleType="fitXY" />
-
-                <!-- 协议 -->
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical" >
-
-                    <LinearLayout
-                        android:id="@+id/kryptanium_profile_setting_privacypolicy_layout"
-                        style="@style/kryptanium_style_item_touch"
-                        android:layout_width="fill_parent"
-                        android:layout_height="@dimen/kryptanium_user_profile_set_item_layout_height"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal" >
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:gravity="left|center_vertical"
-                            android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
-                            android:text="@string/s_kt_user_setting_protocol_flag"
-                            android:textColor="@color/kryptanium_text_dark"
-                            android:textSize="@dimen/kryptanium_text_size_medium" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right|center_vertical"
-                            android:gravity="right|center_vertical" >
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/kryptanium_arrow_flag_marginRight"
-                                android:scaleType="centerInside"
-                                android:src="@drawable/kryptanium_right_arrow" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-                <!--
-                     <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="@dimen/kryptanium_spacing_tiny"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/kryptanium_titlebar_line" />
-
-                <RelativeLayout
-                    android:layout_width="@dimen/kryptanium_user_login_wh"
-                    android:layout_height="@dimen/kryptanium_user_login_edit_height_middle"
-                    android:gravity="left|center_vertical"
-                    android:orientation="horizontal" >
+                    android:layout_height="wrap_content"
+                    style="@style/kryptanium_list_item"
+                    android:visibility="gone"
+                     >
+                    
+                     <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical" >
 
                     <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_toLeftOf="@+id/kryptanium_profile_setting_is_always_load_image"
-                        android:gravity="left|center"
-                        android:paddingLeft="5dp"
-                        android:text="@string/kryptanium_tip_mobile_network_down_image"
-                        android:textColor="@color/kryptanium_text_dark"
-                        android:textSize="@dimen/kryptanium_fontsize_middle" />
-
-                    
-                        
-                   
-
-                    <CheckBox
-                        android:id="@+id/kryptanium_profile_setting_is_always_load_image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
+                        android:text="@string/kt_setting_receive_sounds"
+                        style="@style/kryptanium_main_text"
+                        />
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kt_setting_receive_sounds_description"
+                        style="@style/kryptanium_secondary_text"
+                        />
+                    </LinearLayout>>
+                    
+
+                    <CheckBox
+                        android:id="@+id/kryptanium_profile_setting_is_always_play_sound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="right|center_vertical"
-                        android:layout_marginRight="5dp"
                         android:background="@drawable/kryptanium_checkbox"
                         android:button="@null"
                         android:gravity="center" />
-                </RelativeLayout>
-                -->
+                     
+                </FrameLayout>
+                <View style="@style/kryptanium_seperate_line"/>
+                
+               
+
+                <!-- 协议 -->
+                <TextView
+                            android:id="@+id/kryptanium_profile_setting_privacypolicy_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kt_terms_and_privacy"
+                            style="@style/kryptanium_list_item_simpletext"
+               />
             </LinearLayout>
 
             <LinearLayout
@@ -630,7 +441,7 @@
                     android:layout_width="@dimen/kryptanium_button_special_width"
                     android:layout_height="@dimen/kryptanium_button_special_height"
                     android:background="@drawable/kryptanium_button_red_n"
-                    android:text="@string/s_kt_settingview_exitlogin"
+                    android:text="@string/kt_logout"
                     android:textColor="@color/kryptanium_text_white"
                     android:textSize="@dimen/kryptanium_text_size_standard" />
             </LinearLayout>

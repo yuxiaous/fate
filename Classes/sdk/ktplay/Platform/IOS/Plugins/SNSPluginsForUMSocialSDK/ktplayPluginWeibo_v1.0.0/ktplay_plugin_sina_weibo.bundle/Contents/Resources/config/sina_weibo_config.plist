@@ -31,5 +31,9 @@
 			<string>6976222</string>
 		</dict>
 	</array>
+	<key>disable_features</key>
+	<string></string>
+	<key>prop_priority</key>
+	<integer>50</integer>
 </dict>
 </plist>

@@ -208,10 +208,11 @@
     <dimen name="kryptanium_moregame_icon_width_height">67.5dp</dimen>
     <dimen name="kryptanium_alllayout_width">302.0dp</dimen>
     <dimen name="kryptanium_alllayout_height">486.0dp</dimen>
-    <dimen name="kryptanium_rightlayout_width">302.0dp</dimen>
+    <dimen name="kryptanium_rightlayout_width">302.8dp</dimen>
     <dimen name="kryptanium_rightlayout_height">402.0dp</dimen>
     <dimen name="kryptanium_contentlayout_width_samll">302.0dp</dimen>
     <dimen name="kryptanium_contentlayout_height_small">360.0dp</dimen>
+    <dimen name="kryptanium_contentlayout_margin_top">120.0dp</dimen>
     
     <!-- tab页 横向 -->
     <dimen name="kryptanium_tab_layout_width">74.5dp</dimen>
@@ -225,7 +226,7 @@
     <dimen name="kryptanium_home_top_layout_marginBottom">5.0dp</dimen>
     <!-- title -->
     <dimen name="kryptanium_title_promt_marginLeft">0dp</dimen>
-    <dimen name="kryptanium_title_button_width">48.0dp</dimen>
+    <dimen name="kryptanium_title_button_width">56.0dp</dimen>
     <dimen name="kryptanium_title_button_height">26.0dp</dimen>
     <dimen name="kryptanium_title_button_padding">4.0dp</dimen> <!-- 未知 -->
     <dimen name="kryptanium_title_prompt_width_height">12.5dp</dimen>
@@ -302,7 +303,7 @@
     <dimen name="kryptanium_user_profile_set_flag_marginRight">18.0dp</dimen>
     <dimen name="kryptanium_user_profile_set_status_marginRight">3dp</dimen>
     <!-- 标题线 -->
-    <dimen name="kryptanium_titlebar_line_height">0.5dp</dimen>
+    <dimen name="kryptanium_titlebar_line_height">1dp</dimen>
     <!-- 箭头 -->
     <dimen name="kryptanium_arrow_flag_width_height">22dp</dimen>
     <dimen name="kryptanium_arrow_flag_marginRight">8dp</dimen>
@@ -329,11 +330,16 @@
     
      <!-- 独立登录模块窗口尺寸 -->
     <dimen name="kryptanium_login_dialog_width">290dp</dimen>
-    <dimen name="kryptanium_login_dialog_height">280dp</dimen>
+    <dimen name="kryptanium_login_dialog_height">315dp</dimen>
     
     <dimen name="kryptanium_friends_action_item_name_maxwidth_big">165dp</dimen>
     <dimen name="kryptanium_friends_action_item_name_maxwidth_small">93dp</dimen>
     
      <dimen name="kryptanium_login_content_width">236dp</dimen>
+     <dimen name="kryptanium_chat_content_width">162.5dp</dimen>
+     
+     <!-- 标题宽度 -->
+     <dimen name="kryptanium_titlebar_title_max_width">185dp</dimen>
+     
 
 </resources>

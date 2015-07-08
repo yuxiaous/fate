@@ -1,36 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/kryptanium_addfromsns"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/kryptanium_base_color_white"
-    android:paddingBottom="5dp"
-    >
-    
-    <include layout="@layout/kryptanium_header" android:visibility="gone"/>
-    
-    <!-- 好友列表 -->
-     <ListView
-        android:id="@+id/kryptanium_addfromsns_list"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent" >
+
+    <!-- 获取好友成功界面 -->
+
+    <RelativeLayout
+        android:id="@+id/kryptanium_getuser_success"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:divider="@color/kryptanium_selected_bg_grey"
-        android:cacheColorHint="#00000000"
-        android:dividerHeight="0.4dp"
-        android:background="@null"
-        android:layout_marginBottom="@dimen/kryptanium_button_content_height"
-        android:visibility="gone"
-         />
-     
-     <!-- 邀请其他好友按钮 -->
-      <TextView
-            android:id="@+id/kryptanium_addfromsns_invite_more"
+        android:background="@color/kryptanium_base_color_white"
+        android:paddingBottom="5dp"
+        android:visibility="gone" >
+
+        <include layout="@layout/kryptanium_header" />
+
+        <!-- 好友列表 -->
+
+        <ListView
+            android:id="@+id/kryptanium_addfromsns_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@null"
+            android:footerDividersEnabled="false"
+           	style="@style/kryptanium_list"
+            />
+
+        <!-- 邀请其他好友按钮 -->
+
+        <TextView
+            android:id="@+id/kryptanium_addfromsns_success_invite_more"
+            style="@style/kryptanium_button_style_main"
             android:layout_width="@dimen/kryptanium_button_content_width"
             android:layout_height="@dimen/kryptanium_button_content_height"
-            style="@style/kryptanium_button_style_main"
-            android:text="@string/s_kt_invite_more_frineds"
-            android:visibility="gone"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            />
+            android:layout_centerHorizontal="true"
+            android:text="@string/kt_invite_more_players" />
+        
+        
+        <!-- 分割线 -->
+
+        <!-- <ImageView
+            android:id="@+id/kryptanium_dividerline"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:layout_marginBottom="3dp"
+            android:layout_above="@id/kryptanium_addfromsns_success_invite_more"
+            android:src="@color/kryptanium_barline_color" /> -->
+
+        <!-- <TextView
+            android:id="@+id/kryptanium_friend_hint_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/kryptanium_addfromsns_success_invite_more"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:text="@string/kt_sns_friends_limitation"
+            android:textColor="@color/kryptanium_text_dark_gray"
+            android:textSize="@dimen/kryptanium_text_size_medium"
+            android:visibility="gone" /> -->
+    </RelativeLayout>
+
+    <!-- 获取好友失败界面 -->
+
+    <RelativeLayout
+        android:id="@+id/kryptanium_getuser_failed"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/kryptanium_base_color_white"
+        android:paddingBottom="5dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/kryptanium_no_newfriends_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/kryptanium_text_dark_gray"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+
+        <TextView
+            android:id="@+id/kryptanium_addfromsns_failed_invite_more"
+            style="@style/kryptanium_button_style_main"
+            android:layout_width="@dimen/kryptanium_button_content_width"
+            android:layout_height="@dimen/kryptanium_button_content_height"
+            android:layout_centerInParent="true"
+            android:text="@string/kt_invite_more_players" />
+
+        <TextView
+            android:id="@+id/kryptanium_friend_hint_failed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:text="@string/kt_sns_friends_limitation"
+            android:textColor="@color/kryptanium_text_dark_gray"
+            android:textSize="@dimen/kryptanium_text_size_medium"
+            android:visibility="gone" />
+    </RelativeLayout>
+
 </RelativeLayout>

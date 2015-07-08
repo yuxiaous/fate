@@ -58,7 +58,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2.5dp"
-                    android:ellipsize="end"
                     android:text=""
                     android:textColor="@color/kryptanium_base_color_gray"
                     android:textSize="@dimen/kryptanium_text_size_medium" />
@@ -94,7 +93,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
                 android:includeFontPadding="false"
-                android:text="@string/s_kt_more"
+                android:text="@string/kt_more"
                 android:textColor="@color/kryptanium_text_blue"
                 android:textSize="@dimen/kryptanium_text_size_medium"
                 android:visibility="gone" />
@@ -113,7 +112,7 @@
                 android:layout_height="@dimen/kryptanium_msgbox_item_textview_down_height"
                 android:background="@drawable/kryptanium_colorbg_red"
                 android:gravity="center"
-                android:text="@string/s_kt_delete"
+                android:text="@string/kt_delete"
                 android:textColor="@color/kryptanium_base_color_white"
                 android:textSize="@dimen/kryptanium_text_size_standard"
                 android:visibility="gone" />
@@ -124,7 +123,7 @@
                 android:layout_height="@dimen/kryptanium_msgbox_item_textview_down_height"
                 android:background="@drawable/kryptanium_reward_button"
                 android:gravity="center"
-                android:text="@string/s_kt_message_box_claim"
+                android:text="@string/kt_claim"
                 android:textColor="@color/kryptanium_base_color_white"
                 android:textSize="@dimen/kryptanium_text_size_standard"
                 android:visibility="gone" />
@@ -135,7 +134,7 @@
                 android:layout_height="@dimen/kryptanium_msgbox_item_textview_down_height"
                 android:background="@drawable/kryptanium_reward_button"
                 android:gravity="center"
-                android:text="@string/kryptanium_invite_button_text"
+                android:text="@string/kt_go"
                 android:textColor="@color/kryptanium_base_color_white"
                 android:textSize="@dimen/kryptanium_text_size_standard"
                 android:visibility="gone" />
@@ -146,7 +145,7 @@
                 android:layout_height="@dimen/kryptanium_msgbox_item_textview_down_height"
                 android:background="@drawable/kryptanium_reward_button"
                 android:gravity="center"
-                android:text="@string/kryptanium_deeplink_button_text"
+                android:text="@string/kt_go"
                 android:textColor="@color/kryptanium_base_color_white"
                 android:textSize="@dimen/kryptanium_text_size_standard"
                 android:visibility="gone" />

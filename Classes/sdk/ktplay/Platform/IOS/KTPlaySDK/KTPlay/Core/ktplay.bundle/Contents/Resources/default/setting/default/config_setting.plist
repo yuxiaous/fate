@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>baseinfo</key>
-			<string>Basic Info</string>
+			<string>@string:setting_baseinfo</string>
 			<key>title</key>
-			<string>Basic Info</string>
+			<string>@string:setting_baseinfo</string>
 			<key>on</key>
 			<array>
 				<dict>
@@ -17,7 +17,7 @@
 					<key>icon</key>
 					<string>defaulthead.png</string>
 					<key>title</key>
-					<string>Profile Photo</string>
+					<string>@string:setting_avatar</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -25,7 +25,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>Nickname</string>
+					<string>@string:nickname</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -33,7 +33,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>Username</string>
+					<string>@string:username</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -41,15 +41,15 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>Edit Gender</string>
+					<string>@string:gender</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>safeinfo</key>
-			<string>Security Settings</string>
+			<string>@string:setting_security</string>
 			<key>title</key>
-			<string>Security Settings</string>
+			<string>@string:setting_security</string>
 			<key>on</key>
 			<array>
 				<dict>
@@ -58,7 +58,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>Email</string>
+					<string>@string:bind_email</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -66,7 +66,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>Phone</string>
+					<string>@string:bind_phonenumber</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -74,15 +74,32 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>Password</string>
+					<string>@string:password</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>blockinfo</key>
+			<string>@string:privacy</string>
+			<key>title</key>
+			<string>@string:privacy</string>
+			<key>on</key>
+			<array>
+				<dict>
+					<key>type</key>
+					<integer>10</integer>
+					<key>icon</key>
+					<string></string>
+					<key>title</key>
+					<string>@string:blocked_list</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>settinginfo</key>
-			<string>Settings</string>
+			<string>@string:setting</string>
 			<key>title</key>
-			<string>Settings</string>
+			<string>@string:setting</string>
 			<key>on</key>
 			<array>
 				<dict>
@@ -91,15 +108,15 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>Notifications</string>
+					<string>@string:setting_receive_new_message</string>
 				</dict>
 				<dict>
 					<key>type</key>
-					<string>7</string>
+					<integer>7</integer>
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>Privacy</string>
+					<string>@string:terms_and_privacy</string>
 				</dict>
 			</array>
 		</dict>

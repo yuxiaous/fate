@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>baseinfo</key>
-			<string>基本信息</string>
+			<string>@string:setting_baseinfo</string>
 			<key>title</key>
-			<string>基本信息</string>
+			<string>@string:setting_baseinfo</string>
 			<key>on</key>
 			<array>
 				<dict>
@@ -17,7 +17,7 @@
 					<key>icon</key>
 					<string>defaulthead.png</string>
 					<key>title</key>
-					<string>个人头像</string>
+					<string>@string:setting_avatar</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -25,7 +25,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>昵称</string>
+					<string>@string:nickname</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -33,7 +33,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>用户名</string>
+					<string>@string:username</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -41,15 +41,15 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>性别</string>
+					<string>@string:gender</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>safeinfo</key>
-			<string>账号与安全</string>
+			<string>@string:setting_security</string>
 			<key>title</key>
-			<string>账号与安全</string>
+			<string>@string:setting_security</string>
 			<key>on</key>
 			<array>
 				<dict>
@@ -58,7 +58,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>绑定邮箱</string>
+					<string>@string:bind_email</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -66,7 +66,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>绑定手机</string>
+					<string>@string:bind_phonenumber</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -74,15 +74,32 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>社区登录密码</string>
+					<string>@string:password</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>blockinfo</key>
+			<string>@string:privacy</string>
+			<key>title</key>
+			<string>@string:privacy</string>
+			<key>on</key>
+			<array>
+				<dict>
+					<key>type</key>
+					<integer>10</integer>
+					<key>icon</key>
+					<string></string>
+					<key>title</key>
+					<string>@string:blocked_list</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>settinginfo</key>
-			<string>设置</string>
+			<string>@string:setting</string>
 			<key>title</key>
-			<string>设置</string>
+			<string>@string:setting</string>
 			<key>on</key>
 			<array>
 				<dict>
@@ -91,7 +108,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>提示信息</string>
+					<string>@string:setting_receive_new_message</string>
 				</dict>
 				<dict>
 					<key>type</key>
@@ -99,7 +116,7 @@
 					<key>icon</key>
 					<string></string>
 					<key>title</key>
-					<string>隐私协议 和 政策条款</string>
+					<string>@string:terms_and_privacy</string>
 				</dict>
 			</array>
 		</dict>

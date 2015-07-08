@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/s_kt_ktplay_title"
+            android:text="@string/kt_ktplay_slogan"
             android:textSize="@dimen/kryptanium_fontsize_large"
             android:textColor="@color/kryptanium_base_color_black"
             android:layout_marginTop="8dp"
@@ -62,7 +62,7 @@
             		android:paddingLeft="8dp"
             		android:paddingRight="8dp"
             		android:background="@color/kryptanium_base_color_white"
-            		android:text="@string/s_kt_join_now"
+            		android:text="@string/kt_sign_up_now"
                 />
         </FrameLayout>
         
@@ -71,7 +71,7 @@
             android:id="@+id/kryptanium_login_landing_register"
             android:layout_width="fill_parent" 
             style="@style/kryptanium_button_style_main"
-            android:text="@string/s_kt_register"
+            android:text="@string/kt_register"
             android:layout_marginTop="8dp"
             />
          </LinearLayout>
@@ -80,7 +80,7 @@
         <TextView
              android:id="@+id/kryptanium_login_landing_loginlink" 
              style="@style/kryptanium_link_text"
-             android:text="@string/s_kt_login_now"
+             android:text="@string/kt_login_with_exists_account"
              android:layout_gravity="center_horizontal|bottom"
             />
 		

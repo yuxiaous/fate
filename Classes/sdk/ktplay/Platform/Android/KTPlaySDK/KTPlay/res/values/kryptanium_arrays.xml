@@ -214,7 +214,7 @@
         <item>853</item>
         <item>852</item>
     </string-array>
-    <string-array name="phone_country_name" translatable="false">
+    <string-array name="phone_country_name">
         <item>Albania</item>
         <item>Algeria</item>
         <item>Afghanistan</item>

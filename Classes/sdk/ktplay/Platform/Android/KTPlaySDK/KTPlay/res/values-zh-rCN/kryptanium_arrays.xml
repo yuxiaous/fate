@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="phone_country_name" translatable="false">
+    <string-array name="phone_country_name">
         <item>阿尔巴尼亚</item>
         <item>阿尔及利亚</item>
         <item>阿富汗</item>

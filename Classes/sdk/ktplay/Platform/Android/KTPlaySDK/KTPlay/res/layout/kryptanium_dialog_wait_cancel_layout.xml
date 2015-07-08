@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kryptanium_dialog_wait_cancel_parentview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#05000000"
+    android:layout_gravity="center"
+    android:clickable="true" >
+
+        <LinearLayout
+            
+            android:id="@+id/kryptanium_dialog_wait_ll"
+            android:layout_gravity="center"
+            android:background="@drawable/kryptanium_corner_bg_black_alpha"
+            android:padding="12.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/kryptanium_dialog_wait_progress_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/kryptanium_loading_w_x2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/kryptanium_dialog_wait_progressbar_cancel_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/kryptanium_corner_bg_black_alpha"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+             >
+            <ImageView
+                android:id="@+id/kryptanium_dialog_wait_cancel_progress_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/kryptanium_loading_w_x2" />
+
+            <TextView
+                android:id="@+id/kryptanium_dialog_wait_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:textSize="12sp"
+                android:text="@string/kt_netwaok_unstable"
+                android:textColor="#ffffff" />
+
+            <View
+                android:layout_marginTop="10dp"
+                style="@style/kryptanium_seperate_line"
+                android:layout_width="165dp" />
+
+            <TextView
+                android:clickable="true"
+                android:id="@+id/kryptanium_dialog_wait_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:text="@string/kt_cancel" />
+        </LinearLayout>
+</FrameLayout>

@@ -9,12 +9,10 @@
         android:id="@+id/kryptanium_invite_contacts_listview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:divider="@color/kryptanium_selected_bg_grey"
-        android:cacheColorHint="#00000000"
-        android:dividerHeight="0.4dp"
         android:background="@null"
         android:paddingLeft="8dp"
         android:scaleType="fitXY"
         android:layout_marginBottom="@dimen/kryptanium_button_content_height"
+        style="@style/kryptanium_list"
          />
 </FrameLayout>

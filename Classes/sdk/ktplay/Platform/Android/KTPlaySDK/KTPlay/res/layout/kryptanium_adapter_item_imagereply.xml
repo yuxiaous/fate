@@ -78,7 +78,7 @@
                         android:layout_width="@dimen/kryptanium_detail_button_wh"
                         android:layout_height="@dimen/kryptanium_detail_button_th"
                         android:background="@drawable/kryptanium_button_report_pressed"
-                        android:text="@string/s_kt_report"
+                        android:text="@string/kt_report"
                         android:textColor="@color/kryptanium_text_white"
                         android:textSize="@dimen/kryptanium_fontsize_small"
                         android:visibility="gone" />

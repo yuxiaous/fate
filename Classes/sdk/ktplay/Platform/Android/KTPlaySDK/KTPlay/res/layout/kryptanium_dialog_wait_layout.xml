@@ -29,7 +29,7 @@
 	        android:layout_marginLeft="5dp"
 	        android:id="@+id/kryptanium_dialog_wait_text"
 	        android:layout_width="wrap_content" android:layout_height="wrap_content"
-	        android:text="@string/s_kt_please_wait"
+	        android:text="@string/kt_please_wait"
 	        android:textColor="#ffffff"
 	    ></TextView>
 	</LinearLayout>

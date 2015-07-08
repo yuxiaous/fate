@@ -8,11 +8,11 @@
     <LinearLayout
         android:id="@+id/kryptanium_tab_titlebar_content"
         android:layout_width="fill_parent"
-        android:layout_height="38.5dp"
-        android:orientation="horizontal"
-        />
-      
+        android:layout_height="@dimen/kryptanium_tab_titlebar_height"
+        android:orientation="horizontal" />
+
     <!-- 分割线 -->
+
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="@dimen/kryptanium_titlebar_line_height"

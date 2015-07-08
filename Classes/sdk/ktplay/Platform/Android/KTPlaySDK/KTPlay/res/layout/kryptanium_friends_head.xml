@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="4dp"
-            android:text="@string/ui_addfriendsfromgameview_channel_social"
+            android:text="@string/kt_sns"
             android:textColor="@color/kryptanium_text_black"
             android:textSize="@dimen/kryptanium_text_size_medium" />
     </LinearLayout>
@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="4dp"
-            android:text="@string/ui_addfriendsfromgameview_channel_neighbor"
+            android:text="@string/kt_nearby"
             android:textColor="@color/kryptanium_text_black"
             android:textSize="@dimen/kryptanium_text_size_medium" />
     </LinearLayout>
@@ -72,7 +72,7 @@
             android:paddingTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ui_addfriendsfromgameview_channel_contact"
+            android:text="@string/kt_contacts"
             android:textColor="@color/kryptanium_text_black"
             android:textSize="@dimen/kryptanium_text_size_medium" />
     </LinearLayout>

@@ -140,6 +140,28 @@
 	<integer>184</integer>
 	<key>login_regionlist_cancel_height</key>
 	<integer>31</integer>
+	<key>login_recent_big_icon_width</key>
+	<integer>90</integer>
+	<key>login_recent_big_icon_borderwidth</key>
+	<integer>3</integer>
+	<key>login_recent_big_icon_nickname_paddingtop</key>
+	<integer>20</integer>
+	<key>login_recent_mark_width</key>
+	<integer>16</integer>
+	<key>login_recent_mark_margin</key>
+	<integer>5</integer>
+	<key>login_global_default_margin</key>
+	<real>12.5</real>
+	<key>login_global_default_margin_vertical</key>
+	<integer>8</integer>
+	<key>login_recent_list_cell_icon_width</key>
+	<integer>34</integer>
+	<key>login_recent_list_cell_check_margin_left</key>
+	<real>17.5</real>
+	<key>login_recent_list_cell_height</key>
+	<integer>50</integer>
+	<key>login_recent_list_height</key>
+	<integer>145</integer>
 	<key>account_horizontal_spacing</key>
 	<integer>10</integer>
 	<key>account_vertical_spacing</key>
@@ -148,5 +170,11 @@
 	<integer>1</integer>
 	<key>container_corner_radius</key>
 	<integer>6</integer>
+	<key>storeview_cell_icon_width</key>
+	<integer>55</integer>
+	<key>cell_headIcon_width_96</key>
+	<integer>48</integer>
+	<key>cell_select_round_width_28</key>
+	<integer>14</integer>
 </dict>
 </plist>

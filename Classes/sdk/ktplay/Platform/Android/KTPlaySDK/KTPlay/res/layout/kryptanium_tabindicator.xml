@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/kryptanium_tab_bg" >
 
     <FrameLayout
-        android:layout_width="@dimen/kryptanium_tab_layout_width"
-        android:layout_height="@dimen/kryptanium_tab_layout_height"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_gravity="center"
          >
 
         <ImageView
             android:id="@+id/kryptanium_tabindicator_image"
-            android:layout_width="@dimen/kryptanium_tab_layout_width"
-            android:layout_height="@dimen/kryptanium_tab_layout_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:contentDescription="@null" />
    
@@ -25,7 +25,9 @@
         android:background="@drawable/kryptanium_new_msg"
         android:contentDescription="@null"
         android:layout_gravity="right"
+        android:layout_alignRight="@+id/kryptanium_tabindicator_image"
+                android:layout_alignTop="@+id/kryptanium_tabindicator_image"
         android:visibility="gone" />
      </FrameLayout>
 
-</FrameLayout>
+</RelativeLayout>

@@ -48,7 +48,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/kryptanium_topic_item_creator_name"
                 android:includeFontPadding="false"
-                android:text="@string/s_kt_discussion_top"
+                android:text="@string/kt_on_top"
                 android:textColor="@color/kryptanium_topic_text_yellow"
                 android:textSize="@dimen/kryptanium_text_size_small"
                 android:visibility="visible" />

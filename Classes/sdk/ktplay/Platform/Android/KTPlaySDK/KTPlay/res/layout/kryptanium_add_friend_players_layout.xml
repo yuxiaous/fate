@@ -77,7 +77,7 @@
                     android:layout_toRightOf="@id/kryptanium_friends_search_text_title"
                     android:background="@null"
                     android:clickable="true"
-                    android:hint="@string/s_kt_friend_search"
+                    android:hint="@string/kt_search"
                     android:imeOptions="actionDone"
                     android:singleLine="true"
                     android:textColor="@color/kryptanium_text_dark"
@@ -96,14 +96,11 @@
             android:id="@+id/kryptanium_players_listview"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:cacheColorHint="#00000000"
-            android:divider="@color/kryptanium_selected_bg_grey"
-            android:dividerHeight="0.4dp"
-            android:fadingEdge="none"
-            android:listSelector="#00000000" />
+            style="@style/kryptanium_list"
+             />
     </LinearLayout>
 
-    <TextView
+    <!-- <TextView
         android:id="@+id/kryptanium_ishasfriends"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -114,7 +111,7 @@
         android:text="@string/s_kt_friends_nofriends"
         android:textColor="@color/kryptanium_text_dark"
         android:textSize="@dimen/kryptanium_fontsize_small"
-        android:visibility="gone" />
+        android:visibility="gone" /> -->
 
     <ImageView
         android:id="@+id/kryptanium_addfriend_kt_title_line"
@@ -143,7 +140,7 @@
             android:layout_gravity="center_horizontal|bottom"
             android:background="@drawable/kryptanium_button_bg"
             android:gravity="center"
-            android:text="@string/ui_addfriendsfromgameview_sns_title"
+            android:text="@string/kt_invite_to_be_friend"
             android:textColor="@color/kryptanium_text_white"
             android:textSize="@dimen/kryptanium_text_size_big" 
             
@@ -157,7 +154,7 @@
             android:layout_gravity="center"
             android:background="@drawable/kryptanium_colorbg_green_rounded"
             android:gravity="center"
-            android:text="@string/s_kt_send_invite"
+            android:text="@string/kt_send_invitation"
             android:textColor="@color/kryptanium_text_white"
             android:textSize="@dimen/kryptanium_text_size_big" /> -->
     </FrameLayout>

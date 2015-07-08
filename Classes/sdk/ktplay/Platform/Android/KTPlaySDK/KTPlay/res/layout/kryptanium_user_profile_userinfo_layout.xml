@@ -66,7 +66,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/s_kt_username_field"
+                    android:text="@string/kt_field_username"
                     android:textColor="@color/kryptanium_user_profile_username_color" />
 
                 <TextView

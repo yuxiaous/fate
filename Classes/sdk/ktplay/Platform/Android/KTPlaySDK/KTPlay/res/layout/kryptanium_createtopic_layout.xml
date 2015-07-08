@@ -32,7 +32,7 @@
             android:layout_toRightOf="@+id/kryptanium_create_topic_image_open_all"
             android:background="@null"
             android:gravity="top|left"
-            android:hint="@string/s_kt_input_discussion_tip"
+            android:hint="@string/kt_publish_content_placeholder"
             android:imeOptions="actionDone"
             android:paddingLeft="@dimen/kryptanium_create_topic_reply_edittext_paddingLeft"
             android:textColor="@color/kryptanium_text_black"

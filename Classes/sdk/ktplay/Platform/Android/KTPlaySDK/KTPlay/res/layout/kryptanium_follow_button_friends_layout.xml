@@ -27,7 +27,7 @@
             android:id="@+id/kryptanium_profile_friends_count_textview_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/s_kt_frindlist_title"
+            android:text="@string/kt_my_friends"
             android:textColor="@color/kryptanium_text_white"
             android:textSize="@dimen/kryptanium_fontsize_small" />
     </LinearLayout>
@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/kryptanium_layout_marginLeft"
-            android:text="@string/s_kt_otheruserfriends"
+            android:text="@string/kt_friends"
             android:textColor="@color/kryptanium_text_black"
             android:textSize="@dimen/kryptanium_text_size_standard" />
 

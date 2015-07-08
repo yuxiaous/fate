@@ -103,7 +103,7 @@
                 android:layout_toLeftOf="@+id/kryptanium_topicreply_item_button_report"
                 android:gravity="center_vertical"
                 android:paddingRight="@dimen/kryptanium_layout_paddingRight"
-                android:text="@string/s_kt_delete"
+                android:text="@string/kt_delete"
                 android:textColor="@color/kryptanium_text_dark_gray"
                 android:textSize="@dimen/kryptanium_text_size_small"
                 android:visibility="visible" />
@@ -127,7 +127,7 @@
                 android:layout_toLeftOf="@+id/kryptanium_topicreply_item_button_like"
                 android:gravity="right|center_vertical"
                 android:paddingRight="@dimen/kryptanium_layout_paddingRight"
-                android:text="@string/s_kt_report"
+                android:text="@string/kt_report"
                 android:textColor="@color/kryptanium_text_dark_gray"
                 android:textSize="@dimen/kryptanium_text_size_small"
                 android:visibility="visible" />

@@ -18,7 +18,7 @@
             android:background="@color/kryptanium_title_bg"
             android:gravity="center_vertical"
             android:paddingLeft="5dp"
-            android:text="@string/s_kt_friend_share_title"
+            android:text="@string/kt_invite_frinds_from_sns"
             android:textColor="@color/kryptanium_text_dark_gray"
             android:textSize="@dimen/kryptanium_text_size_small" />
     </LinearLayout>

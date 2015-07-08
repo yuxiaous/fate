@@ -13,7 +13,9 @@
             android:id="@+id/kryptanium_menudialog_select_gender_top"
             android:layout_width="fill_parent"
             android:layout_height="@dimen/kryptanium_classify_menu_padding_top"
-            android:layout_above="@+id/kryptanium_menudialog_select_gender_header" >
+            android:layout_above="@+id/kryptanium_menudialog_select_gender_header"
+            android:orientation="horizontal"
+             >
         </LinearLayout>
 
         <FrameLayout
@@ -51,7 +53,9 @@
             android:layout_width="fill_parent"
             android:layout_height="@dimen/kryptanium_titlebar_line_height"
             android:layout_above="@+id/kryptanium_menu_dialog_item_list"
-            android:background="@color/kryptanium_base_color_gray" >
+            android:background="@color/kryptanium_base_color_gray" 
+            android:orientation="horizontal"
+            >
         </LinearLayout>
 
         <ListView

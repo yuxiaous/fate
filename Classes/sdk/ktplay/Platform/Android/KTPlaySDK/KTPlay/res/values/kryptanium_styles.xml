@@ -2,87 +2,14 @@
 
     <style name="AppTheme" parent="android:Theme.Light" />
 
-    <!--
-         <style name="kryptanium_font_username">
-        <item name="android:textColor">@color/kryptanium_gray</item>
-        <item name="android:textSize">@dimen/kryptanium_fontsize_middle</item>
-    </style>
-    <style name="kryptanium_font_modelinfo">
-        <item name="android:textColor">@color/kryptanium_gray</item>
-        <item name="android:textSize">@dimen/kryptanium_fontsize_small</item>
-    </style>
-    <style name="kryptanium_font_modelcontent">
-        <item name="android:textColor">@color/kryptanium_black</item>
-        <item name="android:textSize">@dimen/kryptanium_fontsize_big</item>
-    </style>
-    <style name="kryptanium_font_button_light_text">
-        <item name="android:textColor">@color/kryptanium_white</item>
-        <item name="android:textSize">@dimen/kryptanium_fontsize_big</item>
-    </style>
-    <style name="kryptanium_font_button_dark_text">
-        <item name="android:textColor">@color/kryptanium_text_dark</item>
-        <item name="android:textSize">@dimen/kryptanium_fontsize_big</item>
-    </style>
-    <style name="kryptanium_font_input_text">
-    	<item name="android:textColor">@color/kryptanium_text_dark</item>
-        <item name="android:textSize">@dimen/kryptanium_text_base_size_middle_2</item>
-    </style>
-    <style name="kryptanium_edittext">
-    	<item name="android:textColor">@color/kryptanium_text_dark</item>
-        <item name="android:textSize">@dimen/kryptanium_fontsize_middle</item>
-        <item name="android:background">@drawable/kryptanium_edittext</item>
-        <item name="android:singleLine">true</item>
-    </style>
-    -->
-
-
-    <!-- Button -->
-    <!--
-         <style name="kryptanium_color_button">
-    	<item name="android:textColor">@color/kryptanium_text_white</item>
-        <item name="android:textSize">@dimen/kryptanium_fontsize_big</item>
-    </style>
-    <style name="kryptanium_button_blue" parent="kryptanium_color_button">
-        <item name="android:background">@drawable/kryptanium_button_blue</item>
-    </style>
-    <style name="kryptanium_button_red">
-        <item name="android:background">@drawable/kryptanium_button_red</item>
-    </style>
-    -->
+   
 
     <style name="kryptanium_head_image_border">
         <item name="android:background">@drawable/kryptanium_corner_bg_white</item>
         <item name="android:scaleType">fitXY</item>
     </style>
 
-    <!-- Image -->
-    <!-- Head image -->
-    <!--
-    <style name="kryptanium_head_image_base">
-		<item name="android:background">@drawable/kryptanium_corner_bg_white</item>
-		<item name="android:scaleType">fitXY</item>
-    </style>
-    <style name="kryptanium_head_image_thumbnail_small" parent="kryptanium_head_image_base">
-		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
-		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
-    </style>
-    <style name="kryptanium_head_image_thumbnail_middle" parent="kryptanium_head_image_base">
-		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
-		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
-    </style>
-    <style name="kryptanium_head_image_thumbnail_big" parent="kryptanium_head_image_base">
-		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
-		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
-    </style>
-    <style name="kryptanium_head_image_clear_small" parent="kryptanium_head_image_base">
-		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
-		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
-    </style>
-    <style name="kryptanium_head_image_clear_middle" parent="kryptanium_head_image_base">
-		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
-		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
-    </style>
-    -->
+   
 
     <style name="kryptanium_style_image_oper_button" parent="@style/kryptanium_textview_2_button">
         <item name="android:layout_margin">@dimen/kryptanium_spacing_big</item>
@@ -232,17 +159,15 @@
         <item name="android:textColor">@color/kryptanium_text_white</item>
         <item name="android:textSize">@dimen/kryptanium_fontsize_large</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">@@drawable/kryptanium_button_bg</item>
+        <item name="android:background">@drawable/kryptanium_button_bg</item>
        
     </style>
     
-    <style name="ktplay_style_subtitle_line">
+    <style name="ktplay_style_subtitle_line" parent="kryptanium_secondary_text">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">@dimen/kryptanium_user_profile_set_text_Information_height</item>
         <item name="android:background">@color/kryptanium_title_bg</item>
         <item name="android:paddingLeft">@dimen/kryptanium_layout_paddingLeft</item>
-        <item name="android:textColor">@color/kryptanium_text_black_little</item>
-        <item name="android:textSize">@dimen/kryptanium_text_size_small</item>
         <item name="android:gravity">center_vertical</item>
     </style>
     
@@ -277,4 +202,71 @@
           <item name="android:textColor">@color/kryptanium_base_color_black</item>
            <item name="android:cursorVisible">true</item>
           </style>
+          
+          <!-- 聊天输入框，特例 -->
+    <style name="kryptanium_edittext_chat" parent="android:Theme.Light">
+          <item name="android:layout_height">30dp</item>
+          <item name="android:paddingLeft">5dp</item>
+          <item name="android:paddingRight">5dp</item>
+          <item name="android:paddingBottom">7dp</item>
+          <item name="android:paddingTop">7dp</item>
+          <item name="android:background">@drawable/kryptanium_colorbg_white_with_border</item>
+          <item name="android:textSize">@dimen/kryptanium_fontsize_middle</item>
+          <item name="android:textColor">@color/kryptanium_base_color_black</item>
+           <item name="android:cursorVisible">true</item>
+    </style>
+    
+    
+    <!-- 列表 -->
+    <style name="kryptanium_list">
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:divider">@color/kryptanium_barline_color</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:listSelector">#1e000000</item>
+    </style>
+    
+    <!-- 列表项 -->
+    <style name="kryptanium_list_item">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:background">@drawable/kryptanium_listview_item_bg</item>
+        <item name="android:gravity">center_vertical</item>
+     </style>
+     
+    <!-- 
+    列表项-单独的文字 
+    使用kryptanium_list_item + kryptanium_main_text（内嵌）
+    注意，如果kryptanium_main_text有改动，必须同时改动此处
+    -->
+    <style name="kryptanium_list_item_simpletext" parent="kryptanium_list_item">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#dd000000</item>
+    </style>
+     
+    <!-- 主要文字 -->
+    <style name="kryptanium_main_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#dd000000</item>
+     </style>
+     
+    <!-- 主要文字 -->
+    <style name="kryptanium_menu_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#dd000000</item>
+     </style>
+     
+    <!-- 次要文字 -->
+    <style name="kryptanium_secondary_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#89000000</item>
+     </style>
+     
+    <!-- 再次要文字 -->
+    <style name="kryptanium_p3_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#42000000</item>
+     </style>
+    
 </resources>

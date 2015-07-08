@@ -12,7 +12,7 @@
         android:background="@color/kryptanium_title_bg"
         android:gravity="center_vertical"
         android:paddingLeft="5dp"
-        android:text="@string/s_kt_friends_invite_players_text"
+        android:text="@string/kt_invite_to_be_friend"
         android:textColor="@color/kryptanium_text_dark_gray"
         android:textSize="@dimen/kryptanium_text_size_small" />
 

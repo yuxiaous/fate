@@ -7,7 +7,6 @@
     <!-- kt好友列表 -->
 
     <LinearLayout
-        android:id="@+id/kryptanium_leaderboard_friend_info"
         style="@style/kryptanium_style_item_touch"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.ktplay.sdk"
-      android:versionCode="1"
-      android:versionName="1.0" >
-	
-	
+    package="com.kryptanium.plugin.sns.weixin"
+    android:versionCode="2"
+    android:versionName="1.2.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application >
+    </application>
+
 </manifest>

@@ -51,7 +51,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/kryptanium_button_blue_n"
-        android:text="@string/s_kt_create_reply"
+        android:text="@string/kt_create_reply"
         android:textColor="@color/kryptanium_text_white"
         android:textSize="@dimen/kryptanium_fontsize_big"
         android:layout_marginLeft="@dimen/kryptanium_buttom_blue_margin"

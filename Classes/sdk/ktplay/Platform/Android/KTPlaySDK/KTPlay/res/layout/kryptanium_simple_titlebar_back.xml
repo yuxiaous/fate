@@ -20,7 +20,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right|center_vertical"
-                    android:text="@string/s_kt_back"
+                    android:text="@string/kt_back"
                     android:textColor="@color/kryptanium_text_blue"
                     android:textSize="@dimen/kryptanium_text_size_standard"
                      />

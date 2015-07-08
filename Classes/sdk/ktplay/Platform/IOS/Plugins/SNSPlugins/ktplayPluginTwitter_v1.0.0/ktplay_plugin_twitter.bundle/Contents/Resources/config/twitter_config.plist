@@ -25,5 +25,7 @@
 			<string>x4Ksnn7pzg6OYmaDwyoPQbI84nRKWy72AEjTytjgKus</string>
 		</dict>
 	</array>
+	<key>prop_priority</key>
+	<integer>10</integer>
 </dict>
 </plist>

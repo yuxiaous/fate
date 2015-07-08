@@ -14,8 +14,8 @@
                 android:maxWidth="@dimen/kryptanium_user_topic_headtitle_textview_maxWidth"
                 android:singleLine="true"
                 android:textColor="@color/kryptanium_titlebar_tabtext"
-                android:textSize="@dimen/kryptanium_text_size_medium" 
-                android:text="@string/s_kt_all_discussion_menu"
+                android:textSize="@dimen/kryptanium_text_size_big" 
+                android:text="@string/kt_all_topics"
                 android:paddingRight="20dp"
                 />
 

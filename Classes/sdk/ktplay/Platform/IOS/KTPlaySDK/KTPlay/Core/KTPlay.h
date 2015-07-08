@@ -98,6 +98,20 @@ typedef void(^KTDeepLinkBlock)(NSString *linkScheme);
 +(void)dismiss;
 
 
+/**
+ *  @brief 分享图片/文本到KTPlay社区
+ *  @param imagePath 图片的绝对路径,为nil时，不分享图片
+ *  @param description 图片的描述,为nil时，没有默认内容描述
+ */
+
++(void)shareImageToKT:(NSString *)imagePath description:(NSString *)description;
+
+/**
+ *  @brief 截取游戏当前画面并分享到KTPlay社区
+ *  @param description 图片的描述
+ */
+
++(void)shareScreenshotToKT:(NSString *)description;
 
 
 /**
@@ -161,6 +175,14 @@ typedef void(^KTDeepLinkBlock)(NSString *linkScheme);
 
 +(BOOL)isShowing;
 
+/**
+ * @brief 设置截图旋转角度
+ * @param degrees 截图旋转角度（注意，是角度而不是弧度，取值如90,180等）
+ *
+ *
+ * 通常不需要调用此方法，在截图角度不正常时（可能由游戏引擎或会游戏开发方式导致），再调用此方法进行调整
+ */
++(void)setScreenshotRotation:(float)degrees;
 
 /**
  *  @brief 处理SNS客户端返回的信息
@@ -189,6 +211,11 @@ typedef void(^KTDeepLinkBlock)(NSString *linkScheme);
  */
 +(void)showInterstitialNotification;
 
+
+/** @brief 打开KTPlay礼包兑换窗口
+ *
+ */
++(void)showRedemptionView;
 @end
 
 

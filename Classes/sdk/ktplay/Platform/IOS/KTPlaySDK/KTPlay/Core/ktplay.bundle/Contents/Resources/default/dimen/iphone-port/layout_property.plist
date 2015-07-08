@@ -710,9 +710,33 @@
 	<integer>184</integer>
 	<key>login_regionlist_cancel_height</key>
 	<integer>31</integer>
+	<key>login_recent_big_icon_width</key>
+	<integer>90</integer>
+	<key>login_recent_big_icon_borderwidth</key>
+	<integer>3</integer>
+	<key>login_recent_big_icon_nickname_paddingtop</key>
+	<integer>20</integer>
+	<key>login_recent_mark_width</key>
+	<integer>16</integer>
+	<key>login_recent_mark_margin</key>
+	<integer>5</integer>
+	<key>login_global_default_margin</key>
+	<real>12.5</real>
+	<key>login_global_default_margin_vertical</key>
+	<integer>8</integer>
+	<key>login_recent_list_cell_icon_width</key>
+	<integer>34</integer>
+	<key>login_recent_list_cell_check_margin_left</key>
+	<real>17.5</real>
+	<key>login_recent_list_cell_height</key>
+	<integer>50</integer>
+	<key>login_recent_list_height</key>
+	<integer>149</integer>
 	<key>integrationcheckbutton_width</key>
 	<integer>165</integer>
 	<key>integrationcheckbutton_height</key>
 	<integer>28</integer>
+	<key>chat_blocklist_cell_height</key>
+	<integer>40</integer>
 </dict>
 </plist>

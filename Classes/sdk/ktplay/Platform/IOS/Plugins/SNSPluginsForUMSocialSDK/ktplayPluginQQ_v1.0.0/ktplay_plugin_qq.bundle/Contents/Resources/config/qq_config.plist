@@ -27,5 +27,7 @@
 			<string>101023540</string>
 		</dict>
 	</array>
+	<key>prop_priority</key>
+	<integer>130</integer>
 </dict>
 </plist>

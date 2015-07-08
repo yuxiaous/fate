@@ -222,9 +222,10 @@
     <dimen name="kryptanium_alllayout_width">486.0dp</dimen>
     <dimen name="kryptanium_alllayout_height">302.0dp</dimen>
     <dimen name="kryptanium_rightlayout_width">402.0dp</dimen>
-    <dimen name="kryptanium_rightlayout_height">302.0dp</dimen>
+    <dimen name="kryptanium_rightlayout_height">302.8dp</dimen>
     <dimen name="kryptanium_contentlayout_width_samll">360.0dp</dimen>
     <dimen name="kryptanium_contentlayout_height_small">294.0dp</dimen>
+    <dimen name="kryptanium_contentlayout_margin_top">80.0dp</dimen>
     <!-- 头像 -->
     <dimen name="kryptanium_head_image_width_height">34dp</dimen>
     <!-- tab页 横向 -->
@@ -250,9 +251,10 @@
     <dimen name="kryptanium_title_icon_padding">4dp</dimen>
     <dimen name="kryptanium_title_promt_marginLeft">56dp</dimen>
     <dimen name="kryptanium_title_layout_padding">3.5dp</dimen>
-    <dimen name="kryptanium_title_button_width">48.0dp</dimen>
+    <dimen name="kryptanium_title_button_width">56.0dp</dimen>
     <dimen name="kryptanium_title_button_height">26.0dp</dimen>
-    <dimen name="kryptanium_title_button_padding">4.0dp</dimen> <!-- 未知 -->
+    <dimen name="kryptanium_title_button_padding">4.0dp</dimen>
+    <!-- 未知 -->
     <dimen name="kryptanium_title_prompt_width_height">12.5dp</dimen>
     <dimen name="kryptanium_title_prompt_margining">6.25dp</dimen>
     <!-- menu -->
@@ -316,7 +318,8 @@
     <!-- 热门话题 -->
     <dimen name="kryptanium_home_hot_topic_layout_height">80.0dp</dimen>
     <dimen name="kryptanium_home_hot_topic_layout_height_small">80.0dp</dimen>
-    <dimen name="kryptanium_home_hot_topic_gallery_spacing">4.98dp</dimen> <!-- 未知 -->
+    <dimen name="kryptanium_home_hot_topic_gallery_spacing">4.98dp</dimen>
+    <!-- 未知 -->
     <dimen name="kryptanium_home_hot_topic_pageindicator_paddingTop">5.0dp</dimen>
     <dimen name="kryptanium_home_hot_topic_item_imageview_width_height">50.0dp</dimen>
     <dimen name="kryptanium_home_hot_topic_item_layout_paddingTop">7.5dp</dimen>
@@ -421,7 +424,8 @@
     <dimen name="kryptanium_replay_nickname_maxWidth">72dp</dimen>
     <dimen name="kryptanium_replay_imageview_width_height">95dp</dimen>
     <dimen name="kryptanium_replay_item_textview_createtime_marginLeft">39dp</dimen>
-    <dimen name="kryptanium_replay_item_imageview_delete_height">24dp</dimen> <!-- 通用 -->
+    <dimen name="kryptanium_replay_item_imageview_delete_height">24dp</dimen>
+    <!-- 通用 -->
     <dimen name="kryptanium_replay_item_imageview_delete_marginRght">3dp</dimen>
     <dimen name="kryptanium_replay_item_textview_delete_marginRght">5dp</dimen>
     <dimen name="kryptanium_replay_item_textview_delete_paddingRight">10dp</dimen>
@@ -474,31 +478,35 @@
     <dimen name="kryptanium_friend_login_or_register_button_layout_height">61dp</dimen>
     <!-- kt好友列表 -->
     <dimen name="kryptanium_friend_kt_item_layout_height">46dp</dimen>
-    
+
     <!-- 独立登录模块窗口尺寸 -->
     <dimen name="kryptanium_login_dialog_width">290dp</dimen>
-    <dimen name="kryptanium_login_dialog_height">270dp</dimen>
+    <dimen name="kryptanium_login_dialog_height">305dp</dimen>
     <dimen name="kryptanium_friend_share_spacing">60dp</dimen>
-    
-    
-     <dimen name="kryptanium_strong_picture_samll">187.5dp</dimen>
+    <dimen name="kryptanium_strong_picture_samll">187.5dp</dimen>
     <dimen name="kryptanium_strong_content_width_samll">106dp</dimen>
-    
     <dimen name="kryptanium_strong_picture_marginleft_samll">30dp</dimen>
     <dimen name="kryptanium_strong_picture_margintop_samll">31dp</dimen>
-    
     <dimen name="kryptanium_strong_content_marginleft_samll">18.75dp</dimen>
     <dimen name="kryptanium_strong_content_margintop_samll">40dp</dimen>
-    <dimen name="kryptanium_strong_content_marginright_samll">30dp</dimen>	
-    
-        <!-- kt好友列表 -->
+    <dimen name="kryptanium_strong_content_marginright_samll">30dp</dimen>
+
+    <!-- kt好友列表 -->
     <dimen name="kryptanium_user_head_image_width_height">30dp</dimen>
     <dimen name="kryptanium_user_listview_spacing_small">5.0dp</dimen>
     <dimen name="kryptanium_user_listview_spacing_big">10.0dp</dimen>
-    
     <dimen name="kryptanium_friends_action_item_name_maxwidth_big">270dp</dimen>
     <dimen name="kryptanium_friends_action_item_name_maxwidth_small">190dp</dimen>
-    
     <dimen name="kryptanium_login_content_width">236dp</dimen>
+    <dimen name="kryptanium_chat_content_width">222.5dp</dimen>
+    <dimen name="kryptanium_tab_titlebar_height">38.5dp</dimen>
+    
+    <!-- 聊天  -->
+    <dimen name="kryptanium_chat_dialog_width">125dp</dimen>
+    <dimen name="kryptanium_chat_dialog_height">96.5dp</dimen>
+    <dimen name="kryptanium_chat_imageview_control">100dp</dimen>
+    
+    <!-- 标题 -->
+    <dimen name="kryptanium_titlebar_title_max_width">270dp</dimen>
 
 </resources>

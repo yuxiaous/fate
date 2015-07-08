@@ -27,7 +27,7 @@
 	        android:layout_height="wrap_content"
 	        android:textColor="#7d899d"
 	        android:textSize="@dimen/kryptanium_commons_pull_view_font_size"
-	        android:text="@string/s_kt_loading"
+	        android:text="@string/kt_loading"
 	        android:layout_gravity="center"
 	        android:gravity="center"
 	        android:textAppearance="?android:attr/textAppearanceMedium" />

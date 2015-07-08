@@ -33,7 +33,7 @@
             android:gravity="center"
             android:paddingLeft="@dimen/kryptanium_spacing"
             android:paddingRight="@dimen/kryptanium_spacing"
-            android:text="@string/s_kt_frindlist_title"
+            android:text="@string/kt_my_friends"
             android:textColor="@color/kryptanium_text_black"
             android:textSize="@dimen/kryptanium_text_size_standard" />
     </FrameLayout>
@@ -113,7 +113,7 @@
                     android:layout_toRightOf="@id/kryptanium_friends_search_text_title"
                     android:background="@null"
                     android:clickable="true"
-                    android:hint="@string/s_kt_friend_search"
+                    android:hint="@string/kt_search"
                     android:imeOptions="actionDone"
                     android:singleLine="true"
                     android:textColor="@color/kryptanium_text_dark"
@@ -149,7 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="45dp"
-            android:text="@string/s_kt_friends_request_title"
+            android:text="@string/kt_friend_requests"
             android:textColor="#444444"
             android:textSize="16sp" />
 
@@ -178,7 +178,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="@string/s_kt_new_friend_requests"
+            android:text="@string/kt_friend_requests"
             android:textColor="@color/kryptanium_text_dark"
             android:textSize="@dimen/kryptanium_text_size_medium" />
 
@@ -211,12 +211,17 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="5dp"
-                android:cacheColorHint="#ffffffff"
-                android:divider="@color/kryptanium_selected_bg_grey"
-                android:dividerHeight="0.4dp"
-                android:fadingEdge="none"
-                android:listSelector="#00000000" 
                 android:clickable="false"
+                style="@style/kryptanium_list"
+                />
+            
+            
+            <!-- 解决新请求列表点击不能进入下一级的问题 -->
+            <View 
+                android:id="@+id/kryptanium_friendrequest_mask"
+                android:layout_width="fill_parent"
+                android:layout_height="34dp"
+                android:background="@null"
                 />
         </RelativeLayout>
 
@@ -260,7 +265,7 @@
         android:padding="@dimen/kryptanium_default_gap_half"
         android:visibility="gone" >
 
-        <TextView
+      <!--   <TextView
             android:id="@+id/kryptanium_ishasfriends"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -270,7 +275,7 @@
             android:gravity="center"
             android:text="@string/s_kt_friends_nofriends"
             android:textColor="@color/kryptanium_text_dark"
-            android:textSize="@dimen/kryptanium_fontsize_large" />
+            android:textSize="@dimen/kryptanium_fontsize_large" /> -->
 
         <LinearLayout
             android:id="@+id/kryptanium_add_friends"
@@ -284,32 +289,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/s_kt_add_friends"
+                android:text="@string/kt_add_friends"
                 android:textColor="@color/kryptanium_text_white"
                 android:textSize="@dimen/kryptanium_fontsize_big" />
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/kryptanium_nofriends_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/s_kt_friendlist_invitation_alter"
-        android:textColor="@color/kryptanium_text_black_little"
-        android:textSize="@dimen/kryptanium_text_size_standard"
-        android:visibility="gone" >
-    </TextView>
-
     <ListView
         android:id="@+id/kryptanium_friends_listview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:cacheColorHint="#00000000"
-        android:divider="@color/kryptanium_selected_bg_grey"
-        android:dividerHeight="0.4dp"
-        android:fadingEdge="none"
-        android:listSelector="#00000000" />
+        style="@style/kryptanium_list"
+        />
 
 </LinearLayout>

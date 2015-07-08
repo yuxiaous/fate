@@ -8,7 +8,6 @@
     android:paddingTop="6dp" >
 
     <RelativeLayout
-        android:id="@+id/kryptanium_leaderboard_friend_info"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -63,7 +62,7 @@
             android:layout_height="@dimen/kryptanium_msgbox_item_textview_down_height"
             android:background="@drawable/kryptanium_colorbg_red"
             android:gravity="center"
-            android:text="@string/s_kt_delete"
+            android:text="@string/kt_delete"
             android:textColor="@color/kryptanium_text_white"
             android:visibility="gone" />
 
@@ -73,7 +72,7 @@
             android:layout_height="@dimen/kryptanium_msgbox_item_textview_down_height"
             android:background="@drawable/kryptanium_colorbg_green"
             android:gravity="center"
-            android:text="@string/s_kt_friend_request_accept"
+            android:text="@string/kt_accept"
             android:textColor="@color/kryptanium_text_white"
             android:visibility="visible" />
     </FrameLayout>

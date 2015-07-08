@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/s_kt_ktplay_title"
+            android:text="@string/kt_ktplay_slogan"
             android:textSize="@dimen/kryptanium_fontsize_large"
             android:textColor="@color/kryptanium_base_color_black"
             android:layout_marginTop="8dp"
@@ -59,7 +59,7 @@
             		android:paddingLeft="8dp"
             		android:paddingRight="8dp"
             		android:background="@color/kryptanium_base_color_white"
-            		android:text="@string/s_kt_login_with_sns"
+            		android:text="@string/kt_login_with_sns"
             		android:textColor="@color/kryptanium_text_dark_gray"
             		android:textSize="@dimen/kryptanium_fontsize_middle"
                 />
@@ -91,7 +91,7 @@
             		android:paddingLeft="8dp"
             		android:paddingRight="8dp"
             		android:background="@color/kryptanium_base_color_white"
-            		android:text="@string/s_kt_join_now"
+            		android:text="@string/kt_sign_up_now"
             		android:textColor="@color/kryptanium_text_dark_gray"
             		android:textSize="@dimen/kryptanium_fontsize_middle"
                 />
@@ -103,7 +103,7 @@
             android:layout_width="fill_parent" 
             android:layout_marginTop="4dp"
             style="@style/kryptanium_button_style_main"
-            android:text="@string/s_kt_register"
+            android:text="@string/kt_register"
             />
         
         <!-- 登录链接 -->
@@ -111,7 +111,7 @@
              android:id="@+id/kryptanium_login_landing_loginlink" 
              style="@style/kryptanium_link_text"
              android:layout_marginTop="20dp"
-             android:text="@string/s_kt_login_now"
+             android:text="@string/kt_login_with_exists_account"
              android:layout_gravity="center_horizontal"
             />
       <!--   </LinearLayout> -->

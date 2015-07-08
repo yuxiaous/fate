@@ -14,13 +14,14 @@
         android:id="@+id/kryptanium_login_dialog_container"
         android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
-    		android:orientation="vertical" 
+    		android:orientation="horizontal" 
         >
+
         <ImageView
-        android:id="@+id/kryptanium_login_dialog_close"
-        android:layout_width="@dimen/kryptanium_tab_frame_image_width_height"
-        android:layout_height="@dimen/kryptanium_tab_frame_image_width_height"
-        android:background="@drawable/kryptanium_close_dialog_img" /> 
+            android:id="@+id/kryptanium_login_dialog_close"
+            android:layout_width="@dimen/kryptanium_tab_frame_image_width_height"
+            android:layout_height="@dimen/kryptanium_tab_frame_image_width_height"
+            android:background="@drawable/kryptanium_close_dialog_img" />
     
 		<FrameLayout
 		    android:id="@+id/kryptanium_login_dialog_content"

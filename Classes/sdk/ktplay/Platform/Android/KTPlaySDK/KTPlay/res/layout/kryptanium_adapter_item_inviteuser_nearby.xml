@@ -2,7 +2,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="46dp"
-    android:id="@+id/kryptanium_leaderboard_friend_info"
     android:paddingLeft="18dp"
     android:paddingRight="8dp"
     android:paddingTop="6dp"

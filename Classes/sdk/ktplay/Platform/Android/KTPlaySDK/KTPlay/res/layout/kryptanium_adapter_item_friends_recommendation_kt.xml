@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="46dp"
-    android:id="@+id/kryptanium_leaderboard_friend_info"
     android:paddingLeft="18dp" >
 
     <ImageView
@@ -26,7 +25,6 @@
         android:defaultValue="true" />
 
     <LinearLayout
-        android:id="@+id/kryptanium_leaderboard_friend_info"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"

@@ -270,5 +270,11 @@
 	<string>#ffc0c0c0</string>
 	<key>login_loginview_sepline_title</key>
 	<string>#ff999999</string>
+	<key>chat_listview_cell_detail_color</key>
+	<string>#ff666666</string>
+	<key>chat_listview_cell_time_color</key>
+	<string>#ff999999</string>
+	<key>default_image_color</key>
+	<string>#ffe9e9e9</string>
 </dict>
 </plist>

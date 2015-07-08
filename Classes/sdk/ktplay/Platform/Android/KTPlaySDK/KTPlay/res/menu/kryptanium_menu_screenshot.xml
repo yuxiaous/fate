@@ -3,18 +3,18 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
   <item
   android:id="@+id/kryptanium_menu_takescreenshot"
-  android:title="@string/s_kt_sheet_screenshot"
+  android:title="@string/kt_take_screenshot"
   android:icon="@drawable/kryptanium_icon_takephoto"
   />
   
   <item
   android:id="@+id/kryptanium_menu_openfile"
-  android:title="@string/s_kt_sheet_photo"
+  android:title="@string/kt_upload_from_album"
   android:icon="@drawable/kryptanium_icon_openfile"
   />
   
   <item
   android:id="@+id/kryptanium_menu_cancel"
-  android:title="@string/s_kt_cancel"
+  android:title="@string/kt_cancel"
   />
 </menu>
