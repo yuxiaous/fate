@@ -46,6 +46,9 @@ var GiftPanel = ui.GuiController.extend({
                             break;
                     }
 
+                    if(util.getChannelId() == GameChannel.CmccMm) {
+                        giftId = 200000;
+                    }
                     if(giftType == GiftSystem.GiftType.Vip && this.getGiftNodeBuyCount(giftType) > 0){
                         var getPanel = new VipGetDetail();
                         getPanel.pop();
