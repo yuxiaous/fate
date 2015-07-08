@@ -9,6 +9,7 @@
 #include "KtplaySdk.h"
 #include "KTPlayC.h"
 #include "KTAccountManagerC.h"
+#include "KTFriendshipC.h"
 
 
 /*
@@ -88,15 +89,26 @@ void KtplaySdk::init()
 
 void KtplaySdk::login()
 {
-    KTAccountManagerC::showLoginView(false, showLoginViewCallback);
+    showLoginView();
 }
 
-void KtplaySdk::show()
+void KtplaySdk::showKTPlay()
 {
     KTPlayC::show();
 }
 
+void KtplaySdk::showLoginView()
+{
+    KTAccountManagerC::showLoginView(false, showLoginViewCallback);
+}
 
+void KtplaySdk::showFriendRequestsView()
+{
+    KTFriendshipC::showFriendRequestsView();
+}
 
-
+void KtplaySdk::showRedemptionView()
+{
+    KTPlayC::showRedemptionView();
+}
 

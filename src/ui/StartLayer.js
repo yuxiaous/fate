@@ -52,8 +52,8 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_enter: function() {
-        //LoginSystem.instance.authorize(101);
-        jsb.SdkManager.login();
+        LoginSystem.instance.authorize(101);
+        //jsb.SdkManager.login();
     },
     
     _on_btn_about : function () {

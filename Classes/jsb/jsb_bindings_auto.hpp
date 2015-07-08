@@ -163,6 +163,7 @@ bool js_jsb_bindings_auto_SdkManager_setGender(JSContext *cx, uint32_t argc, jsv
 bool js_jsb_bindings_auto_SdkManager_onChargeResult(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_onPurchase(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_setAccountName(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_jsb_bindings_auto_SdkManager_sdkCommond(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_charge(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_setAccount(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_init(JSContext *cx, uint32_t argc, jsval *vp);

@@ -84,6 +84,13 @@ void SdkManager::init()
     }
 }
 
+void SdkManager::sdkCommond(const std::string &cmd)
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->sdkCommond(cmd);
+    }
+}
+
 void SdkManager::charge(const std::string &order, const std::string &identifier)
 {
     for(Sdk *sdk : _sdks) {

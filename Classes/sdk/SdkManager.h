@@ -18,6 +18,7 @@ class SdkManager
 public:
     static void configureSdk();
     static void init();
+    static void sdkCommond(const std::string &cmd);
     
     // ChargeProtocol
     static void charge(const std::string &order, const std::string &identifier);
@@ -58,7 +59,7 @@ public:
     static bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString);
 #endif
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) && !defined(SKIP_BY_AUTO_BINDINGS)
 public:
     static void activityOnCreate();
 #endif

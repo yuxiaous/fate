@@ -21,8 +21,10 @@ public:
     
     virtual void login() override;
     
-    void show();
-    
+    void showKTPlay();
+    void showLoginView();
+    void showFriendRequestsView();
+    void showRedemptionView();
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 private: void initWithIos();

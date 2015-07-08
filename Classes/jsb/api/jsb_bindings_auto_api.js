@@ -1096,6 +1096,16 @@ char
 },
 
 /**
+ * @method sdkCommond
+ * @param {String} arg0
+ */
+sdkCommond : function (
+str 
+)
+{
+},
+
+/**
  * @method charge
  * @param {String} arg0
  * @param {String} arg1
