@@ -4,4 +4,4 @@
 #cocos jscompile -s ./config -d ./publish/config
 #cocos jscompile -s ./frameworks/js-bindings/bindings/script/ -d ./publish/script
 
-cocos compile -p android --compile-script 1 -m debug
+tools/cocos2d-console/bin/cocos compile -p android --compile-script 1 -m debug
