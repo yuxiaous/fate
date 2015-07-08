@@ -31,6 +31,10 @@
 #include "mmbilling/MMSdk.h"
 #endif
 
+#ifdef SDK_KTPLAY
+#include "KtplaySdk.h"
+#endif
+
 USING_NS_CC;
 
 
@@ -66,6 +70,10 @@ void SdkManager::configureSdk()
 
 #ifdef SDK_MM_BILLING
     addSdk(MMSdk::getInstance());
+#endif
+    
+#ifdef SDK_KTPLAY
+    addSdk(KtplaySdk::getInstance());
 #endif
 }
 
