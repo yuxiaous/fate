@@ -1,0 +1,15 @@
+<resources>
+    
+    <!-- Settings -->
+    <string name="kryptanium_qq_prop_region">China</string>
+    <string name="kryptanium_qq_prop_name">tencent_qzone</string>
+    <string name="kryptanium_qq_prop_category">sns</string>
+    <string name="kryptanium_qq_prop_sharetype_image">icon</string>
+    <string name="kryptanium_qq_prop_sharetype_imagepath">url</string>
+    <integer name="kryptanium_qq_prop_priority">2</integer>
+    <string name="kryptanium_qq_prop_version">1.2.0</string>
+    
+    <string-array name="kryptanium_qq_shareable_targets">
+        <item>@string/kryptanium_qq_prop_name</item>
+    </string-array>
+</resources>

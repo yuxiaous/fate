@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/kryptanium_reply_bg"
+    >
+    
+    <TextView
+        android:id="@+id/kryptanium_topicrepley_addbutton"
+ 		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:text="@string/s_kt_create_reply"
+		android:layout_alignParentBottom="true"
+		android:textColor="@color/kryptanium_text_white"
+        android:textSize="@dimen/kryptanium_fontsize_big"
+        android:background="@drawable/kryptanium_button_blue_n"
+		android:layout_marginLeft="@dimen/kryptanium_buttom_blue_margin"
+        android:layout_marginRight="@dimen/kryptanium_buttom_blue_margin"
+        android:layout_marginBottom="2dp"
+		style="@style/kryptanium_textview_2_button"
+        />
+	<com.ktplay.widget.PullRefreshView
+        android:id="@+id/kryptanium_pull_refresh_viewgroup"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:layout_above="@id/kryptanium_topicrepley_addbutton"
+        >
+	    <ListView 
+	        android:id="@+id/kryptanium_topicrepley_listview"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:cacheColorHint="#00000000"
+			android:divider="#00000000"
+			android:fadingEdge="none"
+	        />
+	</com.ktplay.widget.PullRefreshView>
+</RelativeLayout>

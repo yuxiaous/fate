@@ -1,0 +1,15 @@
+
+"wechat_displayname"="WeChat";
+"wechat_install_tip_msg"="You need to install the latest version of WeChat App";
+"wechat_contacts_displayname"="WeChat";
+"wechat_moments_displayname"="Moments";
+"network_error"="Internet connection failed";
+"share_failed"="Sharing failed";
+"auth_failed"="Authorization failed";
+"error_emptyconfig"="%@%@ configuration not found";
+"error_emptyconfig_hassuggestion"="When adding %@ in %@,find the %@ line in ktplay_config and add the appropriate %@";
+"error_testconfig"="%@ is using a trial %@";
+"error_testconfig_hassuggestion"="When editing setting %@ in %@, find %@ line in ktplay_config and revise trial %@ with formal %@";
+"error_notfoundconfig"="Did not find setting information for %@";
+"error_notfoundconfig_hassuggestion"="When adding %@ setting information,add ktplay_config item in the app info.plist file ";
+"error_suggestion"="In ktplay_config file, add %@ item. Under this item, add %@" ;

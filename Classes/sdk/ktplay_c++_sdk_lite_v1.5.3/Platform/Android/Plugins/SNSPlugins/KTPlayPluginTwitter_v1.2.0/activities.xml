@@ -1,0 +1,5 @@
+        <!-- twitter Start -->
+		<meta-data android:name="TWITTER_APPKEY" android:value="6Lc1b3yN1lDh1vOWkZF04ITeE"/>
+		<meta-data android:name="TWITTER_APPSECRET" android:value="hZwIcOIydd6lAsYeg1cU3jeoJx6U0lYwYR3cI7r0cCtxMdv2jd"/>
+		<meta-data android:name="TWITTER_CALLBACKURL" android:value="http://cn.ktplay.com/twitter/callback"/>
+        <!-- twitter end -->

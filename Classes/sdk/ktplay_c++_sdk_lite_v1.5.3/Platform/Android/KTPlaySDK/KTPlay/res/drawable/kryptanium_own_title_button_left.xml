@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true" android:drawable="@drawable/kryptanium_colorbg_silvery"/>
+    <item android:state_selected="true" android:drawable="@drawable/kryptanium_colorbg_silvery"/>
+    <item android:drawable="@drawable/kryptanium_colorbg_silvery"/>
+<!--     <item android:state_pressed="true">
+        <solid android:color="#dfdfdf" />
+    </item>
+    <item android:state_selected="true">
+        <solid android:color="#d5d5d5" />
+    </item> -->
+
+</selector>

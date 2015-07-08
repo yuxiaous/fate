@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid android:color="@color/kryptanium_white" />
+
+    <!-- <stroke
+        android:width="@dimen/kryptanium_spacing_tiny"
+        android:color="@color/kryptanium_base_color_light_gray" /> -->
+
+    <corners
+        android:bottomRightRadius="@dimen/kryptanium_spacing"
+        android:topRightRadius="@dimen/kryptanium_spacing" />
+
+    <padding
+        android:bottom="@dimen/kryptanium_default_gap_half"
+        android:left="@dimen/kryptanium_default_gap_half"
+        android:right="@dimen/kryptanium_default_gap_half"
+        android:top="@dimen/kryptanium_default_gap_half" />
+
+</shape>

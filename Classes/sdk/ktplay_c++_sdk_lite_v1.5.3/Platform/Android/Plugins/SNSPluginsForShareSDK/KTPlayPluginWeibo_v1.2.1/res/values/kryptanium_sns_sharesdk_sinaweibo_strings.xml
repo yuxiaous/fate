@@ -1,0 +1,35 @@
+<resources>
+    <string name="kryptanium_sharesdk_sinaweibo_suggestion_unknow"></string>
+    <string name="kryptanium_sns_name_sharesdk_sinaweibo">Weibo</string>
+    
+    <string name="kryptanium_sharesdk_error_sinaweibo_network_unavailable">Internet connection failed</string>
+    <string name="kryptanium_sharesdk_error_sinaweibo_network_not_inline">Internet connection failed</string>
+    <string name="kryptanium_sharesdk_error_sinaweibo_network_set">Internet connection failed</string>
+    <string name="kryptanium_sns_sharesdk_error_sinaweibo_error_app_unavailable">You need to install the latest version of Sina App</string>
+    <string name="kryptanium_sns_sharesdk_error_sinaweibo_error_not_install_app">You need to install the latest version of Sina App</string>
+    <string name="kryptanium_sns_sharesdk_error_sinaweibo_error_install_app">You need to install the latest version of Sina App</string>
+    
+    <string name="kryptanium_sharesdk_error_sinaweibo_necessary_description_perssion_not_set">Share SDK必要权限未设置或设置不全。</string>
+    <string name="kryptanium_sharesdk_error_sinaweibo_necessary_perssion_not_set">未设置的权限有：</string>
+    <string name="kryptanium_sharesdk_sinaweibo_suggestion_set_necessary_perssion">请在AndroidManifest.xml新增必要的权限.</string>
+    
+    <string name="kryptanium_sharesdk_sinaweibo_error_description_miss_activity">AndroidManifest.xml缺少Share SDK必要类声明</string>   
+    <string name="kryptanium_sharesdk_sinaweibo_error_failureReason_miss_activity">以下是未声明的类：\n</string> 
+    <string name="kryptanium_sharesdk_sinaweibo_suggestion_miss_activity">请在 AndroidManifest.xml新增类声明样式如下:\n
+       &#060;activity\n
+            android:name=\&#034;cn.sharesdk.framework.ShareSDKUIShell\&#034;\n
+            android:configChanges=\&#034;keyboardHidden|orientation|screenSize\&#034;\n
+            android:theme=\&#034;&#064;@android:style/Theme.Translucent.NoTitleBar\&#034;\n
+            android:windowSoftInputMode=\&#034;stateHidden|adjustResize\&#034; &#062;\n
+        &#060;&#047;activity&#062;\n" 
+    </string> 
+        
+    <string name="kryptanium_sharesdk_sinaweibo_error_description_getdb_params_fail">获取数据失败</string>   
+    <string name="kryptanium_sharesdk_sinaweibo_error_failureReason_getdb_params_fail">从DB中获取数据为空</string>   
+    <string name="kryptanium_sharesdk_sinaweibo_error_description_target_null">未传参数"target"则使用默认SNS新浪微博</string>   
+    <string name="kryptanium_sharesdk_sinaweibo_error_failureReason_target_null">"target"参数null</string>   
+    <string name="kryptanium_sharesdk_sinaweibo_error_miss_params">缺少参数</string>   
+    <string name="kryptanium_sharesdk_sinaweibo_error_sinashare_support_type">新浪微博分享参数只支持网络图片url或本地图片String路径</string>   
+    <string name="kryptanium_sharesdk_sinaweibo_error_imagesize_out">"原始图片太大,导致缩略图压缩过后还大于32KB,微信OpenAPI对分享图片大小有限制。"</string>
+    <string name="kryptanium_sharesdk_sinaweibo_suggestion_compress_image">请将分享到微信的图片进行适当缩小.</string>
+</resources>

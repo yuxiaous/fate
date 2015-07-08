@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.ktplay.widget.YoGallery4Full
+        android:id="@+id/kryptanium_fullscreen_image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/kryptanium_base_color_black"
+        android:cacheColorHint="#00ff00"
+        android:listSelector="#00000000"
+        android:spacing="@dimen/kryptanium_default_gap_half" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+
+
+        <com.ktplay.widget.StateImageView
+            android:id="@+id/kryptanium_image_save_button"
+            android:layout_width="@dimen/kryptanium_buttom_save_w"
+            android:layout_height="@dimen/kryptanium_buttom_save_h"
+            android:layout_alignParentTop="true"
+            android:padding="@dimen/kryptanium_spacing"
+            android:scaleType="fitCenter" 
+            android:layout_marginLeft="@dimen/kryptanium_spacing_big"
+            android:src="@drawable/kryptanium_button_save_icon"
+            android:background="@drawable/kryptanium_colorbg_tran_black_btn_save"
+            android:contentDescription="@null" />
+
+        <com.ktplay.widget.StateImageView
+            android:id="@+id/kryptanium_image_fullscreen_close_button"
+            android:layout_width="@dimen/kryptanium_buttom_fullscreem_close_w"
+            android:layout_height="@dimen/kryptanium_buttom_fullscreem_close_w"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/kryptanium_default_gap"
+            android:scaleType="fitCenter" 
+            android:padding="@dimen/kryptanium_buttom_icon_padding_big"
+            android:src="@drawable/kryptanium_button_fullscreen_close_icon"
+            android:background="@drawable/kryptanium_colorbg_tran_black_btn_close"
+            android:contentDescription="@null"
+             />
+
+                <LinearLayout
+                    android:id="@+id/kryptanium_include_show_rl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="bottom"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

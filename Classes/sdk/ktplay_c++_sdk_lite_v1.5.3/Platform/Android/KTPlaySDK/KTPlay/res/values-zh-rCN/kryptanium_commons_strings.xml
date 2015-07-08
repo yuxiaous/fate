@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="kryptanium_ok">确定</string>
+    <string name="kryptanium_post">发送</string>
+    <string name="kryptanium_back">返回</string>
+    <string name="kryptanium_continue">继续</string>
+    <string name="kryptanium_finish">完成</string>
+    <string name="kryptanium_cancel">取消</string>
+    <string name="kryptanium_add">添加</string>
+    <string name="kryptanium_commons_waiting">请稍候...</string>
+    <string name="kryptanium_update">更新</string>
+    <string name="kryptanium_exit">退出</string>
+    <string name="kryptanium_network_unavailable">对不起，您的网络连接不可用！</string>
+    <string name="kryptanium_network_error">网络连接错误！</string>
+    <string name="kryptanium_auth_failed">授权失败</string>
+    <string name="kryptanium_connection_failed">网络连接失败</string>
+    <string name="kryptanium_no_data">暂无数据</string>
+    <string name="kryptanium_pull_refresh_pullrefresh">下拉更新</string>
+    <string name="kryptanium_commons_date_year">"yy-MM"</string>
+    <string name="kryptanium_commons_date">"MM-dd"</string>
+    <string name="kryptanium_commons_datetime">"MM-dd HH:mm"</string>
+    <string name="kryptanium_commons_datetime_detail">"MM-dd HH:mm:ss"</string>
+    <string name="kryptanium_commons_date_time">"HH:mm"</string>
+    <string name="kryptanium_commons_date_all">"yyyy-MM-dd"</string>
+    <string name="kryptanium_pull_refresh_loosenfresh">释放以更新</string>
+    <string name="kryptanium_pull_refresh_loading">正在更新…</string>
+    <string name="kryptanium_pull_refresh_updateat">最后更新：</string>
+    <string name="kryptanium_pull_refresh_unknown">未知</string>
+
+</resources>

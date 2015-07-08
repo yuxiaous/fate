@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="kryptanium_ok">OK</string>
+    <string name="kryptanium_post">Send</string>
+    <string name="kryptanium_back">Back</string>
+    <string name="kryptanium_continue">Continue</string>
+    <string name="kryptanium_finish">Finish</string>
+    <string name="kryptanium_cancel">Cancel</string>
+    <string name="kryptanium_add">Add</string>
+    <string name="kryptanium_commons_waiting">Loading...</string>
+    <string name="kryptanium_update">Upgrade</string>
+    <string name="kryptanium_exit">Exit</string>
+    <string name="kryptanium_network_unavailable">Sorry,your network connection is not available!</string>
+    <string name="kryptanium_network_error">Connection error!</string>
+    <string name="kryptanium_auth_failed">Authorization failed</string>
+    <string name="kryptanium_connection_failed">Network connection failed</string>
+    <string name="kryptanium_no_data">Empty Data</string>
+    <string name="kryptanium_pull_refresh_pullrefresh">Pull down to update</string>
+    <string name="kryptanium_pull_refresh_loosenfresh">Release to update</string>
+    <string name="kryptanium_commons_date_year">"yyyy-MM"</string>
+    <string name="kryptanium_commons_date">"MM-dd"</string>
+    <string name="kryptanium_commons_datetime">"MM-dd HH:mm"</string>
+    <string name="kryptanium_commons_datetime_detail">"MM-dd HH:mm:ss"</string>
+    <string name="kryptanium_commons_date_time">"HH:mm"</string>
+    <string name="kryptanium_commons_date_all">"yyyy-MM-dd"</string>
+    <string name="kryptanium_pull_refresh_loading"> Updating…</string>
+    <string name="kryptanium_pull_refresh_updateat">Updated at:</string>
+    <string name="kryptanium_pull_refresh_unknown">Unknown</string>
+    
+    <string-array name="errorDeviceIds">
+        <item >1234567890</item>
+        <item >12345678</item>
+    </string-array>
+
+</resources>

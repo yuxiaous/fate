@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fadingEdge="none"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/kryptanium_dialog_bg"
+        android:orientation="vertical" >
+
+        <!-- message -->
+
+        <TextView
+            android:id="@id/kryptanium_dialog_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="#000000"
+            android:textSize="@dimen/kryptanium_text_size_big"
+            android:visibility="gone" />
+
+        <!-- content view -->
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/kryptanium_titlebar_line_height"
+            android:background="@color/kryptanium_barline_color"
+            android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+            android:scaleType="fitXY" />
+        <!-- buttons -->
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:minHeight="44dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center" >
+
+                <!-- negative button -->
+
+                <TextView
+                    android:id="@id/kryptanium_dialog_negative_button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kryptanium_colorbg_white"
+                    android:gravity="center"
+                    android:textColor="@color/kryptanium_text_blue"
+                    android:textSize="@dimen/kryptanium_text_size_big"
+                    android:visibility="gone" />
+
+                <!-- positive button -->
+
+                <ImageView
+                    android:layout_width="@dimen/kryptanium_titlebar_line_height"
+                    android:layout_height="fill_parent"
+                    android:background="@color/kryptanium_barline_color"
+                    android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@id/kryptanium_dialog_positive_button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/kryptanium_colorbg_white"
+                    android:gravity="center"
+                    android:textColor="@color/kryptanium_text_blue"
+                    android:textSize="@dimen/kryptanium_text_size_big"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape  xmlns:android="http://schemas.android.com/apk/res/android" >
+	<solid android:color="#ffffff" /><!-- 背景的填充颜色 -->
+	<!-- <corners android:bottomRightRadius="@dimen/kryptanium_frame_radian" 
+	    android:topRightRadius="@dimen/kryptanium_frame_radian"/> -->
+	    <stroke android:color="@color/kryptanium_frame" android:width="@dimen/kryptanium_frame_wh_padding"/>
+	</shape>

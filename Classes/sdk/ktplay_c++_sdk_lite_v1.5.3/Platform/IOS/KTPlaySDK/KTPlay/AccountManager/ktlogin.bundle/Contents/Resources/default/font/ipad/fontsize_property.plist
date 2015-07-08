@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>inputtextfield_font</key>
+        <integer>24</integer>
+        <key>btn_text_font</key>
+        <integer>28</integer>
+        <key>createnewaccount_label_font</key>
+        <integer>24</integer>
+        <key>service_label_font</key>
+        <integer>20</integer>
+        <key>login_global_font_small</key>
+        <integer>20</integer>
+        <key>login_global_font_normal</key>
+        <integer>24</integer>
+        <key>login_global_font_big</key>
+        <integer>28</integer>
+        
+        <key>font_phone_11</key>
+        <integer>22</integer>
+        <key>font_phone_14</key>
+        <integer>28</integer>
+        <key>font_phone_bold_14</key>
+        <dict>
+            <key>size</key>
+            <integer>28</integer>
+            <key>bold</key>
+            <true/>
+        </dict>
+        <key>font_phone_10</key>
+        <integer>20</integer>
+        <key>font_phone_12</key>
+        <integer>24</integer>
+        <key>font_phone_16</key>
+        <integer>32</integer>
+        
+    </dict>
+</plist>

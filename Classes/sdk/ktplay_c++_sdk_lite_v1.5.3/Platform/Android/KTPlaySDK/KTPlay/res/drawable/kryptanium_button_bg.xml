@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/kryptanium_head_tab_bg"/>
+    <size android:width="@dimen/kryptanium_head_tab_w" android:height="@dimen/kryptanium_head_tab_h"/>
+</shape> -->
+
+<!-- <shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <solid android:color="#ff00ff00"/>
+</shape> -->
+
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_enabled="false" android:drawable="@drawable/kryptanium_colorbg_gray"/>
+	<item android:drawable="@drawable/kryptanium_colorbg_green"/>
+</selector>

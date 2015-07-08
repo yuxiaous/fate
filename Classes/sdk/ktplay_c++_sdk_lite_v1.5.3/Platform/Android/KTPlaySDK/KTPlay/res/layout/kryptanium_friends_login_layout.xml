@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!--
+        <FrameLayout
+	        android:layout_width="269dp"
+	        android:layout_height="162dp"
+	        android:background="@drawable/zhangyam" >
+	
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:text="和Ta们成为好友，随时一起玩！"
+	            android:textColor="@color/kryptanium_text_white"
+	            android:textSize="@dimen/kryptanium_text_size_big" />
+	    </FrameLayout>
+	           android:layout_marginLeft="@dimen/kryptanium_friend_login_or_register_pic_layout_marginleft"
+        android:layout_marginTop="@dimen/kryptanium_friend_login_or_register_pic_layout_margintop"
+    -->
+
+    <LinearLayout
+        android:layout_above="@+id/kryptanium_friend_login_or_register_button_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/kryptanium_friend_login_or_register_textview"
+            android:layout_width="@dimen/kryptanium_friend_login_or_register_textview_width"
+            android:layout_height="@dimen/kryptanium_friend_login_or_register_textview_height"
+            android:layout_gravity="center"
+            android:background="@drawable/kryptanium_friends_login"
+            android:gravity="center"
+            android:text="@string/s_kt_login_reg_text"
+            android:textColor="@color/kryptanium_base_color_black"
+            android:textSize="@dimen/kryptanium_text_size_big" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kryptanium_friend_login_or_register_button_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_friend_login_or_register_button_layout_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/kryptanium_title_bg"
+        android:gravity="center" >
+
+        <FrameLayout
+            android:id="@+id/kryptanium_friends_login_button"
+            android:layout_width="@dimen/kryptanium_button_content_width"
+            android:layout_height="@dimen/kryptanium_button_content_height"
+            android:background="@drawable/kryptanium_colorbg_green_rounded" >
+
+            <TextView
+                android:id="@+id/kryptanium_friends_login_sns_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/s_kt_login_or_register"
+                android:textColor="@color/kryptanium_text_white"
+                android:textSize="@dimen/kryptanium_text_size_big" />
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

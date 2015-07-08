@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="46dp"
+    android:id="@+id/kryptanium_leaderboard_friend_info"
+    android:paddingLeft="18dp"
+    android:paddingRight="8dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:orientation="horizontal"
+    android:background="@color/kryptanium_base_color_white"
+     >
+
+    <!-- 选择框 -->
+    <CheckBox
+        android:id="@+id/kryptanium_inviteuser_check"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:background="@drawable/kryptanium_checkbox_circle"
+        android:button="@null"
+        android:checked="true"
+        android:defaultValue="true" 
+        android:layout_gravity="center_vertical"
+        android:clickable="false"
+        />
+
+    	<!-- 头像 -->
+        <ImageView
+            android:id="@+id/kryptanium_inviteuser_avatar"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@null"
+            android:scaleType="fitXY" 
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="33dp"
+            />
+        
+        <!-- 性别图标 -->
+        <ImageView
+            android:id="@+id/kryptanium_inviteuser_gender"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="77dp"
+            />
+        
+		<LinearLayout
+		    android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+           android:layout_marginLeft="97dp"
+           android:layout_marginRight="40dp"
+		    >
+		    
+		 <!-- 用户昵称 -->
+        <TextView
+            android:id="@+id/kryptanium_inviteuser_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/kryptanium_text_dark"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+        
+        		<!-- 收到的赞 -->
+          <TextView
+            android:id="@+id/kryptanium_inviteuser_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:singleLine="true"
+            android:textColor="@color/kryptanium_text_dark_gray"
+            android:textSize="@dimen/kryptanium_text_size_small"
+             />
+        </LinearLayout>
+        
+		<!-- 发送状态 -->
+		<TextView
+            android:id="@+id/kryptanium_inviteuser_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:singleLine="true"
+            android:textColor="@color/kryptanium_text_dark_gray"
+            android:textSize="@dimen/kryptanium_text_size_small"
+            android:layout_gravity="center_vertical|right"
+             />
+		
+</FrameLayout>
+

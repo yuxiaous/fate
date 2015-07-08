@@ -1,0 +1,16 @@
+
+"twitter_displayname"="twitter";
+"twitter_install_tip_msg"="您还未在设备中登录您的Twitter帐号";
+"twitter_install_permission_denied_msg"="请您在系统设置中开启授权";
+"account_select_title"="账号";
+"account_select_cancel"="取消";
+"network_error"="网络连接失败!";
+"share_failed"="分享失败！";
+"auth_failed"="授权失败";
+"error_emptyconfig"="未找到%@%@";
+"error_emptyconfig_hassuggestion"="添加%@中%@，在ktplay_config中找到%@字段，添加%@";
+"error_testconfig"="%@正在使用测试的%@";
+"error_testconfig_hassuggestion"="修改%@配置中%@,在ktplay_config中找到%@字段，修改测试%@为正式%@";
+"error_notfoundconfig"="未找到%@配置信息";
+"error_notfoundconfig_hassuggestion"="添加%@配置信息,在app info.plist文件中添加ktplay_config项";
+"error_suggestion"="在ktplay_config项中添加%@项，并在该项下，增加%@项" ;

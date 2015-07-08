@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>text</key>
+	<dict>
+		<key>backgroundColor</key>
+		<string>18</string>
+		<key>parent</key>
+		<string>NavTitle</string>
+	</dict>
+	<key>InputTextField</key>
+	<dict>
+		<key>parent</key>
+		<string>text</string>
+		<key>textSize</key>
+		<string>18</string>
+		<key>textColor</key>
+		<string>@color/login_register_textcolor</string>
+		<key>padding</key>
+		<string>10,10,10,10</string>
+	</dict>
+	<key>NavTitle</key>
+	<dict>
+		<key>test</key>
+		<string>18</string>
+		<key>parent</key>
+		<string>HomePageHotImageContainer</string>
+	</dict>
+	<key>HomePageHotImageContainer</key>
+	<dict>
+		<key>padding</key>
+		<string>101,10,101,10</string>
+		<key>backgroundImge</key>
+		<string>@image/test</string>
+	</dict>
+	<key>HomePageHotDiscussionContainer</key>
+	<dict>
+		<key>padding</key>
+		<dict>
+			<key>top</key>
+			<string>10</string>
+			<key>bottom</key>
+			<string>10</string>
+		</dict>
+		<key>backgroundColor</key>
+		<string>18</string>
+		<key>backgroundImge</key>
+		<string>18</string>
+		<key>textSize</key>
+		<string>18</string>
+		<key>textColor</key>
+		<string>#008</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/kryptanium_flag_friend_invite_selected" 
+        android:state_checked="true"
+        android:state_enabled="true"
+        ></item>  
+   <!--  <item android:drawable="@drawable/kryptanium_flag_friend_invite_selected" android:state_selected="true"></item>   -->
+   <!--  <item android:drawable="@drawable/kryptanium_flag_friend_invite_selected" android:state_pressed="true"></item>   -->
+    <item android:drawable="@drawable/kryptanium_flag_friend_invite_already" 
+        android:state_checked="true"
+        android:state_enabled="false"
+        />  
+    <item android:drawable="@drawable/kryptanium_flag_friend_invite_normal"></item>
+</selector>

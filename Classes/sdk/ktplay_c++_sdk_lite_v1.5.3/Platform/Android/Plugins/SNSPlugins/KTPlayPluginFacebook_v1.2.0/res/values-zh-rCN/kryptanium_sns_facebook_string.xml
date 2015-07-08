@@ -1,0 +1,29 @@
+<resources>
+    <string name="kryptanium_sns_name_facebook">Facebook</string>
+    <string name="kryptanium_facebook_error_app_unavailable">facebook客户端不可用</string>
+    <string name="kryptanium_facebook_error_not_install_app">facebook客户端</string>
+    <string name="kryptanium_facebook_error_install_app">请先安装facebook客户端</string>
+    
+    <string name="kryptanium_facebook_error_network_unavailable">网络不可用</string>
+    <string name="kryptanium_facebook_error_network_not_inline">检测不到网络</string>
+    <string name="kryptanium_facebook_error_network_set">请检查网络设置</string>
+    
+        <string name="kryptanium_facebook_error_description_miss_metadata">"facebook SDK必需的meta-data有：
+        \n 1.com.facebook.sdk.ApplicationId:value为应用程序 ID
+        \n注意：
+        \n a.value不要使用&#064;string引用，
+        </string>
+    <string name="kryptanium_facebook_error_failureReason_miss_metadata">"必需的meta-data未配置：\n"</string>
+    <string name="kryptanium_facebook_suggestion_miss_metadata">"请检查AndroidManifest.xml文件，补全facebook SDK配置，以下是样例：\n
+        &#060;meta-data android:name=\&#034;com.facebook.sdk.ApplicationId\&#034; android:value=\&#034;你申请的app_id\&#034; &#062; &#060;&#047;meta-data&#062;"</string>
+    <string name="kryptanium_facebook_error_description_miss_activity">AndroidManifest.xml缺少facebook SDK必要类声明</string>   
+    <string name="kryptanium_facebook_error_failureReason_miss_activity">以下是未声明的类：\n</string> 
+    <string name="kryptanium_facebook_suggestion_miss_activity">请在 AndroidManifest.xml新增类声明样式如下:\n
+       &#060;activity\n
+            android:name=\&#034;com.facebook.LoginActivity\&#034;\n
+        &#060;&#047;activity&#062;\n" 
+    </string> 
+    <string name="kryptanium_facebook_failureReason_miss_accesstoken">获取AccessToken失败</string>
+    <string name="kryptanium_facebook_failureReason_miss_userid">获取用户ID失败</string>
+    <string name="kryptanium_facebook_failureReason_miss_user">获取用户信息失败</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>prop_category</key>
+	<string>sns</string>
+	<key>prop_region</key>
+	<string>China</string>
+	<key>prop_name</key>
+	<string>qq</string>
+	<key>prop_version</key>
+	<string>1.0.0</string>
+	<key>prop_shareable_targets</key>
+	<array>
+		<string>qq</string>
+	</array>
+	<key>prop_scheme</key>
+	<string>tencent,QQ</string>
+	<key>test_appkeys</key>
+	<array>
+		<dict>
+			<key>AppID</key>
+			<string>101023543</string>
+		</dict>
+		<dict>
+			<key>AppID</key>
+			<string>101023540</string>
+		</dict>
+	</array>
+</dict>
+</plist>

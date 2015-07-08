@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.ktplay.widget.PullRefreshView
+        android:id="@+id/kryptanium_pull_refresh_viewgroup"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+     <TextView
+            android:id="@+id/ishascount"
+            android:layout_width="fill_parent"
+            android:visibility="gone"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="@dimen/kryptanium_default_gap"
+            android:layout_marginTop="@dimen/kryptanium_default_gap_2x"
+            android:layout_marginRight="@dimen/kryptanium_default_gap_half"
+            android:textColor="@color/kryptanium_text_dark"
+            android:gravity="center_horizontal"
+            android:text=""
+            android:textSize="@dimen/kryptanium_fontsize_small" />
+        <ListView
+            android:id="@+id/kryptanium_other_friends_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="@color/kryptanium_selected_bg_grey"
+            android:dividerHeight="0.4dp"
+            android:cacheColorHint="#00000000"
+            android:listSelector="#00000000"
+            android:fadingEdge="none"
+             />
+    </com.ktplay.widget.PullRefreshView>
+
+</RelativeLayout>

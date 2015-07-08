@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/kryptanium_topic_addbutton"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_margin="@dimen/kryptanium_spacing"
+        android:text="@string/s_kt_create_discussion"
+        android:textColor="@color/kryptanium_text_white"
+		android:textSize="@dimen/kryptanium_fontsize_big"
+		android:background="@drawable/kryptanium_button_blue_n"
+		android:layout_marginLeft="@dimen/kryptanium_buttom_blue_margin"
+        android:layout_marginRight="@dimen/kryptanium_buttom_blue_margin"
+        android:layout_marginBottom="2dp"
+		style="@style/kryptanium_textview_2_button"
+    />
+    <com.ktplay.widget.PullRefreshView
+        android:id="@+id/kryptanium_pull_refresh_viewgroup"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:layout_above="@id/kryptanium_topic_addbutton"
+		android:layout_below="@id/kryptanium_topic_num_group"
+        >
+          <TextView
+            android:id="@+id/ishascount"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/kryptanium_default_gap"
+            android:layout_marginTop="@dimen/kryptanium_default_gap_2x"
+            android:layout_marginRight="@dimen/kryptanium_default_gap_half"
+            android:textColor="@color/kryptanium_text_dark"
+            android:gravity="center_horizontal"
+            android:text=""
+            android:textSize="@dimen/kryptanium_fontsize_small" />
+	    <ListView 
+	        android:id="@+id/kryptanium_topic_listview"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:listSelector="#00000000"
+			android:cacheColorHint="#00000000"
+			android:divider="@color/kryptanium_selected_bg_grey"
+            android:dividerHeight="0.4dp"
+			android:fadingEdge="none"
+	        />
+	</com.ktplay.widget.PullRefreshView>
+</RelativeLayout>

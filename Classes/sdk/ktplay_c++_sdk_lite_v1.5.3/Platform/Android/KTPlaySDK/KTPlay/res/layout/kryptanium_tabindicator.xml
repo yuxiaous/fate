@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/kryptanium_tab_bg" >
+
+    <FrameLayout
+        android:layout_width="@dimen/kryptanium_tab_layout_width"
+        android:layout_height="@dimen/kryptanium_tab_layout_height"
+        android:layout_gravity="center"
+         >
+
+        <ImageView
+            android:id="@+id/kryptanium_tabindicator_image"
+            android:layout_width="@dimen/kryptanium_tab_layout_width"
+            android:layout_height="@dimen/kryptanium_tab_layout_height"
+            android:layout_gravity="center"
+            android:contentDescription="@null" />
+   
+
+    <ImageView
+        android:id="@+id/kryptanium_tabindicator_new_msg"
+        android:layout_width="@dimen/kryptanium_new_msg_size"
+        android:layout_height="@dimen/kryptanium_new_msg_size"
+        android:background="@drawable/kryptanium_new_msg"
+        android:contentDescription="@null"
+        android:layout_gravity="right"
+        android:visibility="gone" />
+     </FrameLayout>
+
+</FrameLayout>

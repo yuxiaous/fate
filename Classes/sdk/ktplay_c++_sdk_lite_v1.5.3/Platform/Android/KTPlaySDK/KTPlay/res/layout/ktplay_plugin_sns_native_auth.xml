@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ktplay_plugin_auth_parentview"
+    android:layout_width="fill_parent"
+    android:background="#ffffff"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" >
+        <!-- 授权页面 -->
+		<ScrollView 
+		     android:id="@+id/ktplay_plugin_sns_scrollview"
+		    android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="none"
+		>
+            <LinearLayout
+                android:layout_width="fill_parent"
+	            android:layout_height="wrap_content" 
+                >
+		        <WebView
+		            android:id="@+id/ktplay_plugin_sns_webview"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:scrollbars="none" />
+	        </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+     <ImageButton
+        android:id="@+id/ktplay_plugin_sns_button_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="15dp"
+        android:background="@drawable/ktplay_plugin_sns_button_close" />
+</FrameLayout>

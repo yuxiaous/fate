@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 手机号登录界面 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kryptanium_base_color_white" >
+
+    <!-- 内容区 -->
+    <LinearLayout
+        android:layout_width="@dimen/kryptanium_login_content_width"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+        
+        <FrameLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            >
+        <ImageView
+            android:id="@+id/kryptanium_complete_userprofile_avatar" 
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            />
+        </FrameLayout>
+        
+        <!-- 昵称 -->
+        <EditText 
+             android:id="@+id/kryptanium_complete_userprofile_nickname"
+             android:layout_width="fill_parent"
+            	style="@style/kryptanium_edittext"
+            	android:hint="@string/s_kt_nickname"
+            	android:maxLength="128"
+            	android:singleLine="true" 
+            />
+        
+        
+        <!-- 性别 -->
+        <FrameLayout
+             android:id="@+id/kryptanium_complete_userprofile_gender"
+             android:layout_width="fill_parent"
+             android:layout_height="30dp"
+             android:background="@drawable/kryptanium_colorbg_white_with_border"
+             android:layout_marginTop="5dp"
+             >
+         <TextView 
+            android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+            	android:text="@string/s_kt_select_gender"
+            	android:textSize="@dimen/kryptanium_fontsize_middle"
+            	android:gravity="center_vertical"
+            	android:textColor="@color/kryptanium_text_black"
+            	android:paddingLeft="5dp"
+            />
+         
+         <TextView
+             android:id="@+id/kryptanium_complete_userprofile_gender_text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical|right"
+             android:textColor="@color/kryptanium_text_black"
+             android:layout_marginRight="30dp"
+             />
+         
+         <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical|right"
+             android:layout_marginRight="10dp"
+             android:src="@drawable/kryptanium_right_arrow"
+             />
+         </FrameLayout>
+        
+        <!-- 完成按钮 -->
+        <TextView
+            android:id="@+id/kryptanium_complete_userprofile_done"
+            android:layout_width="fill_parent" 
+            android:layout_marginTop="8dp"
+            style="@style/kryptanium_button_style_main"
+            android:text="@string/s_kt_complete_btn"
+            />
+		</LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="180dp"
+ android:layout_height="80dp"
+ android:minWidth="180dp"
+ android:minHeight="80dp"
+ android:background="@drawable/ktplay_plugin_sns_loading_bg"
+ android:paddingLeft="15dp"
+>
+	<ImageView
+	android:id="@+id/ktplay_plugin_sns_loading_anim"
+	android:layout_width="wrap_content"
+ 	android:layout_height="wrap_content"
+ 	android:src="@drawable/ktplay_plugin_sns_loading"
+ 	android:layout_gravity="center_vertical"
+	/>
+	
+	<TextView
+	android:id="@+id/ktplay_plugin_sns_loading_hint"
+	android:layout_width="wrap_content"
+ 	android:layout_height="wrap_content"
+ 	android:text="@string/ktplay_plugin_sns_dialog_waiting"
+ 	android:layout_gravity="center_vertical"
+ 	android:textColor="@color/ktplay_plugin_sns_dialog_loading_text_color"
+ 	android:textSize="17sp"
+ 	android:paddingLeft="60dp"
+	/>
+</FrameLayout>

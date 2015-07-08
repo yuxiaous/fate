@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp" >
+
+    <LinearLayout
+        android:id="@+id/kryptanium_friends_kt_friends_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kryptanium_frineds_kt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:text="@string/ui_addfriendsfromgameview_channel_social"
+            android:textColor="@color/kryptanium_text_black"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kryptanium_friends_nearby_friends_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kryptanium_frineds_nearby" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:text="@string/ui_addfriendsfromgameview_channel_neighbor"
+            android:textColor="@color/kryptanium_text_black"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kryptanium_friends_contacts_friends_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kryptanium_frineds_contacts" />
+
+        <TextView
+            android:paddingTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ui_addfriendsfromgameview_channel_contact"
+            android:textColor="@color/kryptanium_text_black"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+    </LinearLayout>
+
+</LinearLayout>

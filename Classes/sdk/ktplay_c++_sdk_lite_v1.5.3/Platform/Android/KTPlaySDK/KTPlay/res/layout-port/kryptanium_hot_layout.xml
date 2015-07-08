@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     <com.ktplay.widget.PullRefreshView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kryptanium_pull_refresh_viewgroup"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!-- line1 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/kryptanium_home_top_layout_marginBottom"
+        android:layout_marginTop="@dimen/kryptanium_layout_marginTop"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+        android:paddingRight="@dimen/kryptanium_layout_paddingLeft" >
+
+        <!--
+ android:paddingLeft="@dimen/kryptanium_spacing_big"
+            android:paddingRight="@dimen/kryptanium_spacing_big"
+        -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/kryptanium_home_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/s_kt_ktplay_info"
+                android:textColor="#ff000000"
+                android:textSize="@dimen/kryptanium_text_size_standard"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/kryptanium_hot_user_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/kryptanium_number_bg"
+                    android:gravity="center"
+                    android:textColor="@color/kryptanium_text_white"
+                    android:textSize="@dimen/kryptanium_fontsize_small" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="bottom"
+                    android:text="@string/s_kt_mainpage_peopleplay"
+                    android:textColor="@color/kryptanium_text_black"
+                    android:textSize="@dimen/kryptanium_fontsize_small" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/kryptanium_hot_rightbuttom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" >
+
+              
+
+                <ImageView
+                    android:id="@+id/kryptanium_hot_messagebox"
+                    android:layout_width="@dimen/kryptanium_title_button_width"
+                    android:layout_height="@dimen/kryptanium_title_button_height"
+                    android:background="@drawable/kryptanium_colorbg_green"
+                    android:padding="@dimen/kryptanium_title_button_padding"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/kryptanium_message_box_icon" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/kryptanium_tabindicator_new_msg"
+                android:layout_width="@dimen/kryptanium_title_prompt_width_height"
+                android:layout_height="@dimen/kryptanium_title_prompt_width_height"
+                android:layout_alignRight="@+id/kryptanium_hot_rightbuttom"
+                android:layout_alignTop="@+id/kryptanium_hot_rightbuttom"
+                android:background="@drawable/kryptanium_new_msg"
+                android:contentDescription="@null"
+                android:visibility="gone" />
+        </RelativeLayout>
+        <!-- line2 -->
+
+        <FrameLayout
+            android:id="@+id/kryptanium_hot_topic_container"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/kryptanium_home_hot_topic_layout_height"
+            android:layout_marginTop="@dimen/kryptanium_home_hot_topic_layout_marginTop"
+            android:background="@drawable/kryptanium_hot_topic_backgrount"
+            android:orientation="vertical" >
+
+
+          <!--   <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" > -->
+
+                <com.ktplay.widget.YoGallery
+                    android:id="@+id/kryptanium_hot_topic_gallery"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="top|center_horizontal"
+                    android:spacing="@dimen/kryptanium_home_hot_topic_gallery_spacing"
+                    android:paddingBottom="@dimen/kryptanium_home_hot_topic_pageindicator_layout_height" 
+                    />
+                
+          <!--   </LinearLayout> -->
+
+           <!--  <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/kryptanium_home_hot_topic_pageindicator_layout_height"
+                android:layout_gravity="bottom"
+                android:gravity="center" > -->
+
+                <com.ktplay.widget.PageIndicator
+                    android:id="@+id/kryptanium_hot_topic_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/kryptanium_home_hot_topic_pageindicator_paddingTop" 
+                    android:layout_gravity="center_horizontal|bottom"
+                    />
+            <!-- </LinearLayout> -->
+        </FrameLayout>
+
+        <!-- <include layout="@layout/kryptanium_line"/> -->
+
+
+        <!-- line2 -->
+
+        <RelativeLayout
+            android:id="@+id/kryptanium_hot_lvimage_fl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/kryptanium_home_hot_image_Layout_marginTop" >
+
+            <com.ktplay.widget.HorizontalListView
+                android:id="@+id/kryptanium_hot_lvimage"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/kryptanium_home_hot_image_listview_height"
+                android:cacheColorHint="#ffffffff"
+                android:listSelector="#00000000"
+                android:spacing="@dimen/kryptanium_home_hot_image_listview_spacing" />
+        </RelativeLayout>
+        <!-- line3 -->
+
+        <LinearLayout
+            android:id="@+id/kryptanium_hot_topic_rl_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+             >
+
+            <TextView
+                android:id="@+id/kryptanium_hot_playertitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="@dimen/kryptanium_home_hot_game_textview_marginBottom"
+                android:layout_marginTop="@dimen/kryptanium_home_hot_game_textview_margintop"
+                android:singleLine="true"
+                android:textColor="@color/kryptanium_hot_player_top5"
+                android:textSize="@dimen/kryptanium_text_size_standard" />
+
+            <com.ktplay.widget.HorizontalListView
+                android:id="@+id/kryptanium_hot_lvplayer"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/kryptanium_home_hot_game_listview_height"
+                android:cacheColorHint="#ffffffff"
+                android:listSelector="#00000000"
+                android:spacing="@dimen/kryptanium_home_hot_game_listview_spacing" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--
+         <TextView
+        android:id="@+id/kryptanium_hot_gome_button"
+        android:layout_width="@dimen/kryptanium_moregame_icon_size_w"
+        android:layout_height="@dimen/kryptanium_moregame_icon_size_h"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/kryptanium_hotgame_btn_n"
+        android:textColor="@color/kryptanium_text_white"
+        android:textSize="@dimen/kryptanium_fontsize_big"
+        android:visibility="gone" />
+    -->
+
+    <TextView
+        android:id="@+id/host"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#E40B0B"
+        android:textSize="@dimen/kryptanium_fontsize_tiny" />
+
+</RelativeLayout> <!-- </com.ktplay.widget.PullRefreshView> -->

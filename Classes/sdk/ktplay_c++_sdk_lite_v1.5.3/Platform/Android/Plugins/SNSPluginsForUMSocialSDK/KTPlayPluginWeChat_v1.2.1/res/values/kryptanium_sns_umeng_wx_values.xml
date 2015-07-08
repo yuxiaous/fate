@@ -1,0 +1,17 @@
+<resources>
+    
+    <!-- Settings -->
+    <string name="kryptanium_sns_umeng_wx_prop_category">sns</string>
+    <string name="kryptanium_sns_umeng_wx_prop_region">China</string>
+    <string name="kryptanium_sns_umeng_wx_prop_name">wechat</string>
+    <string name="kryptanium_sns_umeng_wx_prop_sharetype_image">icon</string>
+    <string name="kryptanium_sns_umeng_wx_prop_sharetype_imagepath">data</string>
+    <integer name="kryptanium_sns_umeng_wx_prop_priority">2</integer>
+    <string name="kryptanium_sns_umeng_wx_prop_version">1.2.0</string>
+    <string name="kryptanium_sns_umeng_wx_target_weixin">wechat</string>
+    <string name="kryptanium_sns_umeng_wx_target_weixin_group">wechat_group</string>
+    <string-array name="kryptanium_sns_umeng_wx_shareable_targets">
+        <item>@string/kryptanium_sns_umeng_wx_target_weixin</item>
+        <item>@string/kryptanium_sns_umeng_wx_target_weixin_group</item>
+    </string-array>
+</resources>

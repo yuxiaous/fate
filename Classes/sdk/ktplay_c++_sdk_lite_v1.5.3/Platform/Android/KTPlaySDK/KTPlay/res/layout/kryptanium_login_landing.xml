@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 登录界面首页 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kryptanium_base_color_white" >
+
+    <!-- 内容区 -->
+    <LinearLayout
+        android:layout_width="@dimen/kryptanium_login_content_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+        
+        <!-- KTplay LOGO -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/kryptanium_icon_ktplay"
+            android:scaleType="fitCenter"
+            />
+        
+         <!-- KTplay Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/s_kt_ktplay_title"
+            android:textSize="@dimen/kryptanium_fontsize_large"
+            android:textColor="@color/kryptanium_base_color_black"
+            android:layout_marginTop="8dp"
+             />
+        
+        <!-- SNS登录 -->
+      <!--  <LinearLayout
+        android:id="@+id/kryptanium_login_landing_sns_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        > -->
+        
+        		<!-- SNS标题 -->
+        <FrameLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="12dp"
+            >
+            <View 
+            style="@style/kryptanium_seperate_line"
+            android:layout_gravity="center_vertical"
+                />
+            <TextView 
+            		android:layout_width="wrap_content"
+            		android:layout_height="wrap_content"
+            		android:layout_gravity="center"
+            		android:paddingLeft="8dp"
+            		android:paddingRight="8dp"
+            		android:background="@color/kryptanium_base_color_white"
+            		android:text="@string/s_kt_login_with_sns"
+            		android:textColor="@color/kryptanium_text_dark_gray"
+            		android:textSize="@dimen/kryptanium_fontsize_middle"
+                />
+        </FrameLayout>
+        
+        <GridView
+                android:id="@+id/kryptanium_login_landing_sns_list"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/kryptanium_head_wh_user_group"
+                android:cacheColorHint="#ffffffff"
+                android:listSelector="#00000000"
+                android:paddingTop="16dp"
+                android:spacing="@dimen/kryptanium_spacing" />
+        
+        <!-- 标题-立即加入 -->
+        <FrameLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="0dp"
+            >
+            <View 
+            style="@style/kryptanium_seperate_line"
+            android:layout_gravity="center_vertical"
+                />
+            <TextView 
+            		android:layout_width="wrap_content"
+            		android:layout_height="wrap_content"
+            		android:layout_gravity="center"
+            		android:paddingLeft="8dp"
+            		android:paddingRight="8dp"
+            		android:background="@color/kryptanium_base_color_white"
+            		android:text="@string/s_kt_join_now"
+            		android:textColor="@color/kryptanium_text_dark_gray"
+            		android:textSize="@dimen/kryptanium_fontsize_middle"
+                />
+        </FrameLayout>
+        
+        <!-- 注册按钮 -->
+        <TextView
+            android:id="@+id/kryptanium_login_landing_register"
+            android:layout_width="fill_parent" 
+            android:layout_marginTop="4dp"
+            style="@style/kryptanium_button_style_main"
+            android:text="@string/s_kt_register"
+            />
+        
+        <!-- 登录链接 -->
+        <TextView
+             android:id="@+id/kryptanium_login_landing_loginlink" 
+             style="@style/kryptanium_link_text"
+             android:layout_marginTop="20dp"
+             android:text="@string/s_kt_login_now"
+             android:layout_gravity="center_horizontal"
+            />
+      <!--   </LinearLayout> -->
+        
+        
+		
+    </LinearLayout>
+
+</FrameLayout>

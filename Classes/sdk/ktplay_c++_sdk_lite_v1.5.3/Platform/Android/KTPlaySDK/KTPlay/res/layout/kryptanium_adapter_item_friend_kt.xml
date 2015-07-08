@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kryptanium_friend_kt_item_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/kryptanium_friend_kt_item_layout_height" >
+
+    <!-- kt好友列表 -->
+
+    <LinearLayout
+        android:id="@+id/kryptanium_leaderboard_friend_info"
+        style="@style/kryptanium_style_item_touch"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="6dp"
+        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+        android:paddingTop="6dp" >
+
+        <ImageView
+            android:id="@+id/kryptanium_leaderboard_friend_info_hand_image"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@null"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/kryptanium_leaderboard_friend_info_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/kryptanium_user_login_edit_height"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textColor="@color/kryptanium_text_dark"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+    </LinearLayout>
+
+    <LinearLayout
+   	 	android:paddingBottom="6dp"
+        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+        android:paddingTop="6dp"
+        android:id="@+id/kryptanium_leaderboard_friend_played_games"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_toLeftOf="@+id/kryptanium_leaderboard_add_friend"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+    </LinearLayout>
+
+</RelativeLayout>

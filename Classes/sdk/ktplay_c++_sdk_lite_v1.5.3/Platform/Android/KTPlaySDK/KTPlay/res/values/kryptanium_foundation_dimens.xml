@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <dimen name="kryptanium_foundation_pull_view_font_size">14sp</dimen>
+     
+     
+     <dimen name="kryptanium_foundation_small">3dp</dimen>
+     <dimen name="kryptanium_foundation_spacing">5dp</dimen>
+     <dimen name="kryptanium_foundation_spacing_big">8dp</dimen>
+     <dimen name="kryptanium_foundation_spacing_superbig">12dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+	<dimen name="kryptanium_dialog_listview_item_height">31dp</dimen>
+	<dimen name="kryptanium_dialog_listview_height">137dp</dimen>
+     
+</resources>

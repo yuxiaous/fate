@@ -1,0 +1,13 @@
+  		<!-- KTPlay SDK配置开始 -->
+        <activity
+            android:name="com.ktplay.activity.GetPhotoActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="user"
+            android:windowSoftInputMode="adjustPan|adjustUnspecified" >
+        </activity>
+        
+        <meta-data
+            android:name="KTPLAY_CHANNELID"
+            android:value="GP"
+            />
+         <!-- KTPlay SDK配置结束 -->

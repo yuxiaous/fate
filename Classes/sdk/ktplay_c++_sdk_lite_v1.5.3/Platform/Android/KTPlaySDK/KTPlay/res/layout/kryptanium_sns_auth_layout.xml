@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+>
+		<!-- 授权页面 -->
+	<RelativeLayout 
+	    		  	android:layout_width="fill_parent"
+		  	android:layout_height="fill_parent"
+		  	android:scrollbars="none">
+		 
+		 <ScrollView android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fadingEdge="none"
+            android:scrollbars="none"
+		>
+            <LinearLayout
+                android:layout_width="fill_parent"
+	            android:layout_height="wrap_content" 
+                >
+                <WebView
+		  	android:id="@+id/kryptanium_sns_auth_webview"
+		  	android:layout_width="fill_parent"
+		  	android:layout_height="600dp"
+		  	android:scrollbars="none"
+		/>
+		       
+	        </LinearLayout>
+        </ScrollView>
+	</RelativeLayout>	 
+</FrameLayout>

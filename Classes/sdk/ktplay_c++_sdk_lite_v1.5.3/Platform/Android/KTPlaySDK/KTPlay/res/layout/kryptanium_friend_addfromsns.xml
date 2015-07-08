@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kryptanium_addfromsns"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/kryptanium_base_color_white"
+    android:paddingBottom="5dp"
+    >
+    
+    <include layout="@layout/kryptanium_header" android:visibility="gone"/>
+    
+    <!-- 好友列表 -->
+     <ListView
+        android:id="@+id/kryptanium_addfromsns_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@color/kryptanium_selected_bg_grey"
+        android:cacheColorHint="#00000000"
+        android:dividerHeight="0.4dp"
+        android:background="@null"
+        android:layout_marginBottom="@dimen/kryptanium_button_content_height"
+        android:visibility="gone"
+         />
+     
+     <!-- 邀请其他好友按钮 -->
+      <TextView
+            android:id="@+id/kryptanium_addfromsns_invite_more"
+            android:layout_width="@dimen/kryptanium_button_content_width"
+            android:layout_height="@dimen/kryptanium_button_content_height"
+            style="@style/kryptanium_button_style_main"
+            android:text="@string/s_kt_invite_more_frineds"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            />
+</RelativeLayout>

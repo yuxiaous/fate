@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- 添加好友 -->
+
+    <LinearLayout
+        android:id="@+id/kryptanium_addfriend_nearby_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="19dp"
+            android:background="@color/kryptanium_title_bg"
+        	android:gravity="center_vertical"
+        	android:paddingLeft="5dp"
+            android:text="@string/ui_addfriendsfromlbs_table_section_title"
+            android:textColor="@color/kryptanium_text_dark_gray"
+        	android:textSize="@dimen/kryptanium_text_size_small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/kryptanium_addfriend_kt_title_line"
+        android:layout_below="@+id/kryptanium_addfriend_nearby_title"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/kryptanium_players_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/kryptanium_selected_bg_grey"
+            android:dividerHeight="0.4dp"
+            android:fadingEdge="none"
+            android:listSelector="#00000000" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/kryptanium_ishasfriends"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="@dimen/kryptanium_default_gap"
+        android:layout_marginRight="@dimen/kryptanium_default_gap_half"
+        android:layout_marginTop="@dimen/kryptanium_default_gap_2x"
+        android:gravity="center_horizontal"
+        android:text="@string/s_kt_friends_nofriends"
+        android:textColor="@color/kryptanium_text_dark"
+        android:textSize="@dimen/kryptanium_fontsize_small"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/kryptanium_addfriend_kt_title_line"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_titlebar_line_height"
+        android:layout_above="@+id/kryptanium_addfriend_foot_button"
+        android:background="@color/kryptanium_barline_color"
+        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+        android:scaleType="fitXY" />
+
+    <FrameLayout
+        android:id="@+id/kryptanium_addfriend_foot_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:background="@drawable/kryptanium_colorbg_white_alpha"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp" >
+
+        <!-- 发送邀请按钮 -->
+
+        <TextView
+            android:id="@+id/kryptanium_add_friends_action"
+            android:layout_width="@dimen/kryptanium_button_content_width"
+            android:layout_height="@dimen/kryptanium_button_content_height"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/kryptanium_button_bg"
+            android:gravity="center"
+            android:text="@string/s_kt_send_invite"
+            android:textColor="@color/kryptanium_text_white"
+            android:textSize="@dimen/kryptanium_text_size_big" />
+    </FrameLayout>
+
+</RelativeLayout>

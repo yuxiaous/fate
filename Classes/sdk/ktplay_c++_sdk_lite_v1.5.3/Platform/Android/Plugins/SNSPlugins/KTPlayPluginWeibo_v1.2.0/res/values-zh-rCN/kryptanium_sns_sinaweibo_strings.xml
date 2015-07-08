@@ -1,0 +1,61 @@
+<resources>
+    <string name="kryptanium_sns_name_sinaweibo">新浪微博</string>
+    
+    <string name="kryptanium_sinaweibo_error_app_unavailable">新浪微博客户端不可用</string>
+    <string name="kryptanium_sinaweibo_error_not_install_app">未安装新浪微博客户端</string>
+    <string name="kryptanium_sinaweibo_error_install_app">未安装新浪微博客户端或新浪微博客户端版本过旧</string>
+    
+    <string name="kryptanium_sinaweibo_error_network_unavailable">网络不可用</string>
+    <string name="kryptanium_sinaweibo_error_network_not_inline">检测不到网络</string>
+    <string name="kryptanium_sinaweibo_error_network_set">请检查网络设置</string>
+    
+    <string name="kryptanium_sinaweibo_error_unknow"></string>
+    <string name="kryptanium_sinaweibo_suggestion_unknow"></string>
+    <string name="kryptanium_sinaweibo_error_integraion">新浪微博接入错误</string>
+    <string name="kryptanium_sinaweibo_error_miss_param">新浪微博缺少必要的参数</string>
+    <string name="kryptanium_sinaweibo_error_openapi">新浪微博响应错误</string>
+    <string name="kryptanium_sinaweibo_error_total">错误数：</string>
+    
+    <string name="kryptanium_sinaweibo_error_description_test_appkey">appkey是测试key\n</string>
+    <string name="kryptanium_sinaweibo_error_test_appkey">AndroidManifest.xml中配置的appkey是kt提供的测试key，\n</string>
+    
+    <string name="kryptanium_sinaweibo_error_description_test_appsecret">appsecret是测试secret\n</string>
+    <string name="kryptanium_sinaweibo_error_test_appsecret">AndroidManifest.xml中配置的appsecret是kt提供的测试secret，\n</string>
+    
+    <string name="kryptanium_sinaweibo_error_description_test_redirecturl">appsecret是测试secret\n</string>
+    <string name="kryptanium_sinaweibo_error_test_redirecturl">AndroidManifest.xml中配置的redirecturl是kt测试redirecturl，\n</string>
+    
+    <string name="kryptanium_sinaweibo_error_description_no_appkey">未配置 appkey\n</string>
+    <string name="kryptanium_sinaweibo_error_no_appkey">在 AndroidManifest.xml中未配置 appkey\n</string>
+    <string name="kryptanium_sinaweibo_suggestion_set_appkey">"配置步骤：\n1.从新浪微博官网注册并申请appkey，具体见:http://open.weibo.com/wiki/新手指南";\n2.在  AndroidManifest.xml 中 配置  SINAWEIBO_APPKEY:\n
+        &#060;meta-data android:name=\&#034;SINAWEIBO_APPKEY\&#034; android:value=\&#034;你的Appkey\&#034; &#062; &#060;&#047;meta-data&#062;
+    </string>
+    
+    <string name="kryptanium_sinaweibo_error_description_no_appsecret">未配置 appsecret\n</string>
+    <string name="kryptanium_sinaweibo_error_no_appsecret">在 AndroidManifest.xml中未配置 appsecret\n</string>
+    <string name="kryptanium_sinaweibo_suggestion_set_appsecret">"配置步骤：\n1.从新浪微博官网注册成功后会得到一个appsecret，具体见:http://open.weibo.com/wiki/新手指南";\n2.在  AndroidManifest.xml 中 配置  SINAWEIBO_APPSECRET:\n
+        &#060;meta-data android:name=\&#034;SINAWEIBO_APPSECRET\&#034; android:value=\&#034;你的appsecret\&#034; &#062; &#060;&#047;meta-data&#062;
+    </string>
+    
+    <string name="kryptanium_sinaweibo_error_description_no_redirecturl">未配置  RedirectURL\n</string>
+    <string name="kryptanium_sinaweibo_error_no_redirecturl">在 AndroidManifest.xml中未配置  RedirectURL,没有定义将无法使用微博 SDK认证登录。\n</string>
+    <string name="kryptanium_sinaweibo_suggestion_set_redirecturl">"配置步骤：\n1.RedirectURL值建议使用默认回调页：https://api.weibo.com/oauth2/default.html\n2.在  AndroidManifest.xml 中 配置  SINAWEIBO_REDIRECTURL:\n&#060;meta-data android:name=\&#034;SINAWEIBO_REDIRECTURL\&#034; android:value=\&#034;你的RedirectURL\&#034; &#062; &#060;&#047;meta-data&#062;
+    </string>
+    
+    <string name="kryptanium_sinaweibo_error_description_no_ktsinaweiboactivity">"未声明KTSinaWeiboActivity.\n"</string>
+    <string name="kryptanium_sinaweibo_error_no_ktsinaweiboactivity">"AndroidManifest.xml中未声明KTSinaWeiboActivity,该类用于新浪微博的SSO登录以及话题分享功能.\n"</string>
+    <string name="kryptanium_sinaweibo_suggestion_add_ktsinaweiboactivity">"请在 AndroidManifest.xml新增如下类声明：\n
+        &#060;activity
+            android:name=\&#034;com.kryptanium.plugin.sns.sinaweibo.KTSinaWeiboActivity\&#034;
+            android:screenOrientation=\&#034;portrait\&#034;
+            android:windowSoftInputMode=\&#034;adjustPan|adjustUnspecified\&#034; &#062;
+            &#060;intent-filter&#062;
+				&#060;action android:name=\&#034;com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY\&#034; &#047;&#062;
+				&#060;category android:name=\&#034;android.intent.category.DEFAULT\&#034; &#047;&#062;
+			&#060;&#047;intent-filter&#062;
+        &#060;&#047;activity&#062;"</string>
+    <string name="kryptanium_sinaweibo_error_not_exist_user">"返回用户不存在。"</string>
+    <string name="kryptanium_sinaweibo_error_request_no_uid">"返回参数uid为null。"</string>
+    <string name="kryptanium_sinaweibo_error_request_no_token">"返回参数token为null。"</string>
+    <string name="kryptanium_sinaweibo_error_request_code_for_token">"通过code获取Token失败，参数null"</string>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <!-- <FrameLayout 
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        >
+    <ImageView
+                android:id="@+id/kryptanium_info_page_close"
+                style="@style/kryptanium_textview_2_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/kryptanium_game_inform_close" />
+    </FrameLayout>
+    
+     <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_titlebar_line_height"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@color/kryptanium_barline_color" /> -->
+    
+	<ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+
+        <TextView
+            android:id="@+id/kryptanium_info_page_text"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingLeft="@dimen/kryptanium_default_gap"
+            android:paddingRight="@dimen/kryptanium_default_gap"
+            android:text=""
+            android:textColor="@color/kryptanium_text_black"
+            android:textSize="@dimen/kryptanium_fontsize_middle" />
+    </ScrollView>
+</LinearLayout>

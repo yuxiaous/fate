@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/kryptanium_layout_marginLeft"
+    android:paddingRight="@dimen/kryptanium_layout_marginRight" >
+
+    <!-- dxh topic -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/kryptanium_game_promotion_linearlayout_marginTop" >
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_kt_think_you_like"
+            android:textColor="@color/kryptanium_text_black"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/kryptanium_game_promotion_margin"
+        android:layout_marginTop="@dimen/kryptanium_game_promotion_marginTop" >
+
+        <RelativeLayout
+            android:layout_marginRight="25dp"
+            android:layout_toLeftOf="@+id/game_donwload_bt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/game_iocn"
+                android:layout_width="@dimen/kryptanium_game_promotion_gameicon_width_height"
+                android:layout_height="@dimen/kryptanium_game_promotion_gameicon_width_height"
+                android:background="@drawable/kryptanium_corner_bg_white"
+                android:scaleType="centerCrop"
+                android:src="@drawable/kryptanium_corner_bg_white" />
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/kryptanium_game_promotion_margin"
+                android:layout_toRightOf="@+id/game_iocn"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/game_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/kryptanium_text_black"
+                    android:textSize="@dimen/kryptanium_text_size_standard" />
+
+                <TextView
+                    android:id="@+id/game_description"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/kryptanium_game_promotion_marginTop"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="2"
+                    android:textColor="@color/kryptanium_text_black"
+                    android:textSize="@dimen/kryptanium_text_size_medium" >
+                </TextView>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/game_donwload_bt"
+            style="@style/kryptanium_buttom_style_download"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/kryptanium_game_promotion_margin" />
+        <LinearLayout
+            android:id="@+id/game_screenshots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="1000dp"
+            android:layout_marginRight="@dimen/kryptanium_layout_marginRight"
+            android:layout_toRightOf="@id/game_iocn"
+            android:background="@drawable/kryptanium_corner_bg_gray"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

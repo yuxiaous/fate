@@ -1,0 +1,77 @@
+<resources>
+
+    <!--
+    <color name="kryptanium_white">#ffffffff</color>
+    <color name="kryptanium_black">#ff000000</color>
+    <color name="kryptanium_black">#ff000000</color>
+    <color name="kryptanium_black_alpha">#aa000000</color>
+    <color name="kryptanium_red">#ffff0000</color>
+    <color name="kryptanium_yellow">#ff00ff00</color>
+    <color name="kryptanium_blue">#ff0000ff</color>
+    <color name="kryptanium_gray">#999999</color>
+    <color name="kryptanium_gray">#999999</color>#
+    <color name="kryptanium_light_gray">#DEDEDE</color>
+    -->
+    <color name="kryptanium_selected_bg_grey">#E6E6E6</color>
+    <color name="kryptanium_white_alpha">#bbf0f0f0</color>
+    <color name="kryptanium_white_bg_alpha">#ddffffff</color>
+    <color name="kryptanium_white">#ffffffff</color>
+    <color name="kryptanium_solid_white">#ffffff</color>
+    <color name="kryptanium_text_dark">#000000</color>
+    <color name="kryptanium_black_alpha">#aa000000</color>
+    <color name="kryptanium_black_alpha_cancel">#99000000</color>
+    <color name="kryptanium_transparent_bg">#00000000</color>
+    <color name="kryptanium_title_bg">#E4E4E4</color>
+    <!-- Base color -->
+    <color name="kryptanium_base_color_black">#ff000000</color>
+    <color name="kryptanium_base_color_transparent_black">#55000000</color>
+    <color name="kryptanium_base_color_red">#ffff0000</color>
+    <color name="kryptanium_base_color_yellow">#ff00ff00</color>
+    <color name="kryptanium_base_bg_color_yellow">#FFFF00</color>
+    <color name="kryptanium_base_color_blue">#ff0000ff</color>
+    <color name="kryptanium_base_color_white">#ffffffff</color>
+    <color name="kryptanium_base_color_green">#16ae2b</color>
+    <color name="kryptanium_base_color_classify_gray">#203842</color>
+    <color name="kryptanium_base_color_near_white">#C0C0C0</color>
+    <color name="kryptanium_hot_topic_color">#5b6165</color>
+    <color name="kryptanium_base_color_gray">#969696</color>
+    <color name="kryptanium_base_color_gray_1">#333333</color>
+     <color name="kryptanium_base_color_gray_2">#c0c0c0</color>
+    <color name="kryptanium_base_color_gray_light">#f8f8f8</color>
+    <color name="kryptanium_base_color_light_gray">#dedede</color>
+    <color name="kryptanium_base_color_hight_light_gray">#F6F6F6</color>
+    <color name="kryptanium_user_profile_other">#d1d1d1</color>
+    <color name="kryptanium_hot_player_top5">#666666</color>
+    <!-- Background color -->
+    <color name="kryptanium_common_background">@color/kryptanium_base_color_near_white</color>
+    <color name="kryptanium_image_creator_comment_background">#99000000</color>
+    <color name="kryptanium_hot_topic_background">#f8f8f8</color>
+    <color name="kryptanium_add_friend_background">#fff600</color>
+    
+    <!-- Text color -->
+    <color name="kryptanium_text_white">@color/kryptanium_base_color_white</color>
+    <color name="kryptanium_text_register">#7d7d7d</color>
+    <color name="kryptanium_text_light_gray">@color/kryptanium_base_color_light_gray</color>
+    <color name="kryptanium_text_dark_gray">@color/kryptanium_base_color_gray_2</color>
+    <color name="kryptanium_text_black">#333333</color>
+    <color name="kryptanium_text_black_little">#595959</color>
+    <color name="kryptanium_text_dar_black">#000000</color>
+    <color name="kryptanium_text_black_top5">#717171</color>
+    <color name="kryptanium_text_blackish_green">#6D99A6</color>
+    <color name="kryptanium_text_green">#1BB232</color>
+    <color name="kryptanium_topic_text_yellow">#988800</color>
+     <color name="kryptanium_topic_yellow_little">#fffdec</color>
+    <color name="kryptanium_barline_color">#cccccc</color>
+    <color name="kryptanium_text_blue">#007aff</color>
+    <color name="kryptanium_topicreply_layout_color">#F0F0F0</color>
+    <color name="kryptanium_user_profile_game_list_color">#e5e5e5</color>
+    <color name="kryptanium_user_profile_username_color">#7d96a0</color>
+    
+     <color name="kryptanium_strong_new_msg_text_color">#8b8b8b</color>
+    
+    
+    
+    
+    
+
+</resources>

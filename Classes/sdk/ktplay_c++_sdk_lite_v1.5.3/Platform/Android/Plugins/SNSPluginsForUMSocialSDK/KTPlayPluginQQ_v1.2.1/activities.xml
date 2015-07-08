@@ -1,0 +1,32 @@
+        <!-- 友盟qq配置 开始 -->
+        <activity
+            android:name="com.kryptanium.plugin.sns.qq.KTPluginUmengQQActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustPan|adjustUnspecified" >
+        </activity>
+        
+        <!-- ############ QQ空间和QQ SSO授权的Activity注册 ############ -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 100424468，如果你使用的公用账号，则不需要修改；否则修改成你在QQ开放平台申请的 APP ID-->
+                <data android:scheme="tencent100424468" /> 
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.plus.ImageActivity" />
+        <activity android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <meta-data android:name="QQ_APPID" android:value="222222" ></meta-data>
+        <meta-data android:value="4f98cabc52701579cb000054" android:name="UMENG_APPKEY"></meta-data>
+        <!-- 友盟qq配置 开始 -->

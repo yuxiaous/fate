@@ -1,0 +1,41 @@
+       <!-- Qihuoo 360配置开始 -->
+        <!-- 360SDK官方说明-添加360SDK必需的meta-data：QHOPENSDK_APPID。 -->
+        <!-- 添加360SDK必需的activity：com.qihoopp.qcoinpay.QcoinActivity android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"-->
+        <activity
+            android:name="com.qihoopp.qcoinpay.QcoinActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" ></activity>
+        <!-- 360SDK官方说明-添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
+        <activity
+            android:name="com.qihoo.gamecenter.sdk.activity.ContainerActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true" >
+        </activity>
+        <meta-data
+            android:name="QHOPENSDK_APPID"
+            android:value="201296651" >
+        </meta-data>
+
+        <!-- 360SDK官方说明-添加360SDK必需的meta-data：QHOPENSDK_APPKEY。此处value为app_key。请在360应用开放平台http://open.app.360.cn/?from=open_dt注册申请app_key和app_secret -->
+        <!-- 360SDK官方说明-此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_APPKEY"
+            android:value="003dce9872fcf76cb785a4640f962e2a" >
+        </meta-data>
+
+        <!-- 360SDK官方说明-添加360SDK必需的meta-data：QHOPENSDK_PRIVATEKEY。此处value为private_key，其生成算法为md5(app_secret +”#”+ app_key)，全小写，详细算法请看开发文档附录。 -->
+        <!-- 360SDK官方说明-此处不要使用@string引用，上传APK时服务器要从这里读取值 。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_PRIVATEKEY"
+            android:value="741c92dce343b8710ff0eea1affbd2c5" >
+        </meta-data>
+        <meta-data android:name="KTPLAY_REGION" android:value="china" />
+        <meta-data android:name="KTPLAY_LOCK_LOGINTYPE" android:value="qihoo360" />
+
+    	<meta-data
+            android:name="QHOPENSDK_APPSECRET"
+            android:value="c38f65c966640bdb89c1f2cf5262cc35" >
+        </meta-data>
+        <!-- Qihuoo 360配置结束-->

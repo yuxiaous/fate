@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/kryptanium_title_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/kryptanium_leaderboard_friend_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/kryptanium_title_bg"
+            android:paddingLeft="5dp"
+            android:text="@string/s_kt_user_setting_basic_info"
+            android:textColor="@color/kryptanium_text_dark_gray"
+            android:textSize="@dimen/kryptanium_fontsize_small" />
+    </LinearLayout>

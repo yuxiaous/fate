@@ -1,0 +1,14 @@
+<resources>
+    
+    <!-- Settings -->
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_category">sns</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_region">China</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_name">sina_weibo</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_sharetype_image">photo</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_sharetype_imagepath">path</string>
+    <integer name="kryptanium_sns_umeng_sinaweibo_prop_priority">2</integer>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_version">1.2.0</string>
+    <string-array name="kryptanium_sns_umeng_sinaweibo_shareable_targets">
+        <item>@string/kryptanium_sns_umeng_sinaweibo_prop_name</item>
+    </string-array>
+</resources>

@@ -1,0 +1,18 @@
+        <!-- 友盟微信配置开始 -->
+        <activity
+            android:name="com.kryptanium.plugin.sns.weixin.KTPluginUmengWXActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustPan|adjustUnspecified" >
+        </activity>
+        
+		<activity
+  			android:name=".wxapi.WXEntryActivity"
+   			android:theme="@android:style/Theme.Translucent.NoTitleBar"
+   			android:configChanges="keyboardHidden|orientation|screenSize"
+   			android:exported="true"
+   			android:screenOrientation="portrait" />
+		<meta-data android:name="WEIXIN_APPID" android:value="wx1eb0e8a5dcd92736"> </meta-data>
+		<meta-data android:value="4f98cabc52701579cb000054" android:name="UMENG_APPKEY"></meta-data>
+        <!-- 友盟微信配置结束 -->

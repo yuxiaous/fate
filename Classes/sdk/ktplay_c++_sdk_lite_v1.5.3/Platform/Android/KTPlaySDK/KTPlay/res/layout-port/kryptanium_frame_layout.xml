@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kryptanium_slidingdrawer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center" >
+
+    <FrameLayout
+        android:id="@+id/kryptanium_frame_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/kryptanium_close_dialog"
+        android:layout_below="@+id/kryptanium_close_dialog"
+        android:layout_centerInParent="true" >
+
+        <LinearLayout
+            android:id="@+id/kryptanium_frame_content_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@+id/kryptanium_tabpage_content_parentview"
+                android:layout_width="@dimen/kryptanium_rightlayout_width"
+                android:layout_height="@dimen/kryptanium_rightlayout_height"
+                android:background="@drawable/kryptanium_frame_contex_port" />
+
+            <LinearLayout
+                android:id="@+id/kryptanium_frame_content_body_detailedness"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/kryptanium_tab_layout_height"
+                android:background="@drawable/kryptanium_frame_menu_port"
+                android:gravity="top|center_horizontal"
+                android:paddingBottom="@dimen/kryptanium_frame_wh_padding" >
+
+                <LinearLayout
+                    android:id="@+id/kryptanium_tabpage_indicator_parentview"
+                    android:layout_width="@dimen/kryptanium_rightlayout_width"
+                    android:layout_height="fill_parent"
+                    android:gravity="top|center_horizontal"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout 
+            android:id="@+id/kryptaniun_integration_error_button"
+            android:layout_width="172dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:background="@drawable/kryptanium_button_warning"
+            android:paddingLeft="6dp"
+            >
+            
+            <ImageView 
+            android:layout_width="16dp"
+            	android:layout_height="16dp"
+            	android:layout_gravity="center_vertical"
+            	android:src="@drawable/kryptanium_warning"
+                />
+            
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="22dp"
+            android:text="@string/s_kt_integration_error"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/kryptanium_fontsize_middle"
+            android:layout_gravity="center_vertical"
+            android:visibility="visible" />
+        </FrameLayout>
+        
+        <!-- 测试应用提示 -->
+        <FrameLayout 
+            android:id="@+id/kryptaniun_testapp_hint"
+            android:layout_width="176dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/kryptanium_button_warning"
+            android:paddingLeft="6dp"
+            android:visibility="gone"
+            android:layout_marginTop="7dp"
+            >
+            <ImageView 
+            android:layout_width="16dp"
+            	android:layout_height="16dp"
+            	android:layout_gravity="center_vertical"
+            	android:src="@drawable/kryptanium_warning"
+                />
+            
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="22dp"
+            android:text="@string/s_kt_app_type_hint"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/kryptanium_fontsize_middle"
+            android:layout_gravity="center_vertical"
+            android:visibility="visible" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <!-- android:layout_marginLeft="@dimen/kryptanium_close_dialog_padding_big" -->
+
+    <ImageView
+        android:id="@+id/kryptanium_close_dialog"
+        android:layout_width="@dimen/kryptanium_tab_frame_image_width_height"
+        android:layout_height="@dimen/kryptanium_tab_frame_image_width_height"
+        android:background="@drawable/kryptanium_close_dialog_img" />
+
+</RelativeLayout>

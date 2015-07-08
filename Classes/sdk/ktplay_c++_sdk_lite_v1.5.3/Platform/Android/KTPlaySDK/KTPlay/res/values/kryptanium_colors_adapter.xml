@@ -1,0 +1,4 @@
+<resources>
+     <color name="kryptanium_bg">#F0F0F0</color>
+     <color name="kryptanium_hot_topic_bg">@color/kryptanium_white</color>
+</resources>

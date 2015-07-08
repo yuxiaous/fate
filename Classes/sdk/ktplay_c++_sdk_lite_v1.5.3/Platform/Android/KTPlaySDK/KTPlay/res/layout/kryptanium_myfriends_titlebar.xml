@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 我的好友页标题栏 -->
+<!-- 因为和"所有玩家"共用一个标题栏，这里只包含我的好友相关的部分，即右边部分标题栏 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+
+    <!-- 标题 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_title_button_height"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@+id/kryptanium_myfriends_titlebar_addfriends"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/kryptanium_myfriends_titlebar_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/s_kt_view_user_tab_friends"
+            android:textColor="@color/kryptanium_titlebar_tabtext"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+
+        <!-- 新状态提示 -->
+
+        <ImageView
+            android:id="@+id/kryptanium_myfriends_titlebar_newmsg"
+            android:layout_width="@dimen/kryptanium_title_prompt_width_height"
+            android:layout_height="@dimen/kryptanium_title_prompt_width_height"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/kryptanium_new_msg"
+            android:contentDescription="@null"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <!-- 添加好友按钮 -->
+
+    <ImageView
+        android:id="@+id/kryptanium_myfriends_titlebar_addfriends"
+        style="@style/kryptanium_textview_2_button"
+        android:layout_width="@dimen/kryptanium_title_button_width"
+        android:layout_height="@dimen/kryptanium_title_button_height"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="11dp"
+        android:background="@drawable/kryptanium_colorbg_green"
+        android:contentDescription="@null"
+        android:padding="@dimen/kryptanium_title_button_padding"
+        android:src="@drawable/kryptanium_button_addfriend_icon" />
+
+</RelativeLayout>

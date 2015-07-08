@@ -1,0 +1,48 @@
+<resources>
+    <string name="kryptanium_weixin_suggestion_unknow"></string>
+    <string name="kryptanium_sns_name_weixin">微信</string>
+    <string name="kryptanium_sns_name_weixin_friends">朋友圈</string>
+    <string name="kryptanium_weixin_error_app_unavailable">微信客户端不可用</string>
+    <string name="kryptanium_weixin_error_not_install_app">微信 未安装。</string>
+    <string name="kryptanium_weixin_suggestion_install_app">"未安装微信客户端或微信客户端版本过旧端"</string>
+    
+    <string name="kryptanium_weixin_error_network_unavailable">网络不可用</string>
+    <string name="kryptanium_weixin_error_network_not_inline">检测不到网络</string>
+    <string name="kryptanium_weixin_error_error_network_set">请检查网络设置</string>
+    
+    <string name="kryptanium_weixin_error_integraion">微信接入错误</string>
+    <string name="kryptanium_weixin_error_miss_param">微信缺少必要的参数</string>
+    <string name="kryptanium_weixin_error_openapi">微信OpenAPI响应错误</string>
+    <string name="kryptanium_weixin_error_auth_denied">"认证被否决，详情请见官方SDK文档:http://open.weixin.qq.com/document/sdk/android/?lang=zh_CN。"</string>
+    <string name="kryptanium_weixin_error_description_test_appid">微信appid是测试id。 </string>
+    <string name="kryptanium_weixin_error_test_appid">AndroidManifest.xml中配置appid是kt提供的测试id。 </string>
+    <string name="kryptanium_weixin_error_no_description_appid">"微信appid未配置。 "</string>
+    <string name="kryptanium_weixin_error_no_appid">"AndroidManifest.xml中未配置微信的appid。 "</string>
+    <string name="kryptanium_weixin_suggestion_set_appid">配置步骤：\n1.后台配置申请微信appid,该appid必须为经过审核的id，否则只能分享一次。\n2.在  AndroidManifest.xml 中 配置 :\n
+        &#060;meta-data\n 
+        android:name=\&#034;WEIXIN_APPID\&#034;\n 
+        android:value=\&#034;xxx\&#034;&#047;&#062;\n3.微信appid获取见:http://open.weixin.qq.com/app/list/?lang=zh_CN \n</string>
+    <string name="kryptanium_weixin_error_description_miss_class">"缺少wxapi.WXEntryActivity类"</string>
+    <string name="kryptanium_weixin_error_miss_class">"WXEntryActivity是微信SDK用于接收请求和回调返回值的类， 要成功回调，必须满足以下条件：\n1.类名必须是WXEntryActivity，并且要放在/wxapi目录下；\n2.wxapi目录必须是在应用主包目录下，即manifest里package对应的包目录下；\n3.在AndroidManifest.xml注册该类，属性name写全包名或者是“.wxapi.WXEntryActivity”,而且必须加上android:exported=\&#034;true\&#034;属性让该类能为第三方应用调用。 详见官方教程中第4.[3]条目:http://open.weixin.qq.com/document/gettingstart/android/?lang=zh_CN"</string>
+    <string name="kryptanium_weixin_suggestion_add_class">"配置步骤：\n1.在包相应目录下新建目录 wxapi/WXEntryActivity.java,该包目录必须与后台配置的包名目录一致.\n2.WXEntryActivity继承com.kryptanium.plugin.sns.weixin.KTWXCallbackActivity类，\n3.在AndroidManifest.xml中注册该类: \n
+        &#060;activity\n
+        android:name=\&#034;.wxapi.WXEntryActivity\&#034;\n
+        android:exported=\&#034;true\&#034;\n
+        android:label=\&#034;&#064;string/app_name\&#034;&#062;\n
+        &#060;/activity&#062;\n"</string>
+    <string name="kryptanium_weixin_error_description_not_supported_sdk_ver">该微信不支持sdk分享。</string>
+    <string name="kryptanium_weixin_error_not_supported_sdk_ver">微信当前版本不支持sdk分享功能。</string>
+    <string name="kryptanium_weixin_suggestion_change_version">"升级微信到最新版本,下载地址为：http://weixin.qq.com/download。"</string>
+    <string name="kryptanium_weixin_error_description_check_url">参数中缺少url</string>
+    <string name="kryptanium_weixin_error_check_url">参数中缺少webPageUrl，该url用于分享到微信后的网页跳转，若不配置则微信分享不成功。</string>
+    <string name="kryptanium_weixin_suggestion_check_url">请传入url参数。</string>
+    <string name="kryptanium_weixin_error_total">错误数：</string>
+    <string name="kryptanium_weixin_error_description_check_content">缺少内容参数。</string>
+    <string name="kryptanium_weixin_error_check_content">title和content参数必须设置一个，否则微信分享不成功。</string>
+    <string name="kryptanium_weixin_suggestion_check_content">请传入title或者content。</string>
+    <string name="kryptanium_weixin_error_imagesize_out">"原始图片太大,导致缩略图压缩过后还大于32KB,OpenAPI对分享图片大小有限制,详情见SDK文档:http://open.weixin.qq.com/document/sdk/android/?lang=zh_CN。"</string>
+    <string name="kryptanium_weixin_suggestion_compress_image">请将分享到微信的图片进行适当缩小.</string>
+    <string name="kryptanium_weixin_error_comm">"一般错误，详情请见官方SDK文档:http://open.weixin.qq.com/document/sdk/android/?lang=zh_CN。"</string>
+    <string name="kryptanium_weixin_error_send_failed">"发送失败，详情请见官方SDK文档:http://open.weixin.qq.com/document/sdk/android/?lang=zh_CN。"</string>
+    <string name="kryptanium_weixin_error_unsupport">"不支持错误，详情请见官方SDK文档:http://open.weixin.qq.com/document/sdk/android/?lang=zh_CN。"</string>
+</resources>

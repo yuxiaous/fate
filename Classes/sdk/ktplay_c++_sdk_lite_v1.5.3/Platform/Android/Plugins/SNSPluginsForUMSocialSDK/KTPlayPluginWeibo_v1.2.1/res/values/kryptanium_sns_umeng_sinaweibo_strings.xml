@@ -1,0 +1,33 @@
+<resources>
+    <string name="kryptanium_sns_umeng_sinaweibo_suggestion_unknow"></string>
+    <string name="kryptanium_sns_umeng_sinaweibo_name">Weibo</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_param_gender_male">男</string>
+    
+    <string name="kryptanium_sns_umeng_sinaweibo_network_unavailable">Internet connection failed</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_network_not_inline">Internet connection failed</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_network_set">Internet connection failed</string>
+    
+    <string name="kryptanium_sns_umeng_sinaweibo_error_app_unavailable">You need to install the latest version of Sina App</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_error_not_install_app">You need to install the latest version of Sina App</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_error_install_app">You need to install the latest version of Sina App</string>
+    
+    <string name="kryptanium_sns_umeng_sinaweibo_error_description_miss_metadata">"Umeng社会化组件必需的meta-data有：</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_error_failureReason_miss_metadata">"必需的meta-data未配置：\n"</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_suggestion_miss_metadata">"请检查AndroidManifest.xml文件，补全Umeng社会化组件配置，以下是样例：\n
+        &#060;meta-data android:name=\&#034;UMENG_APPKEY\&#034; android:value=\&#034;你申请的app_key\&#034; &#062; &#060;&#047;meta-data&#062;"</string>
+        
+    <string name="kryptanium_sns_umeng_sinaweibo_error_necessary_description_perssion_not_set">Umeng社会化组件必要权限未设置或设置不全。</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_error_necessary_perssion_not_set">未设置的权限有：</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_suggestion_set_necessary_perssion">请在AndroidManifest.xml新增必要的权限.</string>
+    
+    <string name="kryptanium_sns_umeng_sinaweibo_error_description_miss_activity">AndroidManifest.xml缺少Umeng社会化组件必要类声明</string>   
+    <string name="kryptanium_sns_umeng_sinaweibo_error_failureReason_miss_activity">以下是未声明的类：\n</string> 
+    <string name="kryptanium_sns_umeng_sinaweibo_suggestion_miss_activity">请在 AndroidManifest.xml新增类声明样式如下:\n
+       &#060;activity\n
+            android:name=\&#034;com.kryptanium.plugin.sns.umeng.KTPluginUmengSinaWeiboActivity\&#034;\n
+            android:configChanges=\&#034;keyboardHidden|orientation|screenSize\&#034;\n
+            android:theme=\&#034;&#064;@android:style/Theme.Translucent.NoTitleBar\&#034;\n
+            android:windowSoftInputMode=\&#034;stateHidden|adjustResize\&#034; &#062;\n
+        &#060;&#047;activity&#062;\n" 
+    </string> 
+</resources>

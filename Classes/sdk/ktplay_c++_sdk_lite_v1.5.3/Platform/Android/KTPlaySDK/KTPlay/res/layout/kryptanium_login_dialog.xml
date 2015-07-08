@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ktplay.login.KTLoginView xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    
+    <FrameLayout
+        android:id="@+id/kryptanium_login_dialog_bg" 
+        android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+        >
+    <LinearLayout
+        android:id="@+id/kryptanium_login_dialog_container"
+        android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:orientation="vertical" 
+        >
+        <ImageView
+        android:id="@+id/kryptanium_login_dialog_close"
+        android:layout_width="@dimen/kryptanium_tab_frame_image_width_height"
+        android:layout_height="@dimen/kryptanium_tab_frame_image_width_height"
+        android:background="@drawable/kryptanium_close_dialog_img" /> 
+    
+		<FrameLayout
+		    android:id="@+id/kryptanium_login_dialog_content"
+		    android:layout_width="@dimen/kryptanium_login_dialog_width"
+		    android:layout_height="@dimen/kryptanium_login_dialog_height"
+		    android:background="@drawable/kryptanium_login_dialog_bg"
+		    android:padding="@dimen/kryptanium_frame_wh_padding"
+		 />
+  	</LinearLayout>
+  	</FrameLayout>
+  
+    <ImageView
+        android:id="@+id/kryptanium_login_dialog_gamelogo" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/kryptanium_standalone_login_gamelogo"
+        />
+    
+ </com.ktplay.login.KTLoginView>

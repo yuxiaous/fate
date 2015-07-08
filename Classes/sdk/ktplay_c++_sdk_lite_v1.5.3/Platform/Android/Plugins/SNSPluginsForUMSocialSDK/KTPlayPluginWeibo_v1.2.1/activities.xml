@@ -1,0 +1,10 @@
+        <!-- 友盟新浪微博配置开始 -->
+        <activity
+            android:name="com.kryptanium.plugin.sns.sinaweibo.KTPluginUmengSinaWeiboActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustPan|adjustUnspecified" >
+        </activity>
+        <meta-data android:value="4f98cabc52701579cb000054" android:name="UMENG_APPKEY"></meta-data>
+        <!-- 友盟新浪微博配置结束 -->

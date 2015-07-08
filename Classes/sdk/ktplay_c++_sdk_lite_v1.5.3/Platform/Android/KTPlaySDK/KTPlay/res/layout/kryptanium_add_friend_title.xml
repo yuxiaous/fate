@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/kryptanium_leaderboard_friend_title"
+        android:layout_width="fill_parent"
+        android:layout_height="19dp"
+        android:background="@color/kryptanium_title_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:text="@string/s_kt_friends_invite_players_text"
+        android:textColor="@color/kryptanium_text_dark_gray"
+        android:textSize="@dimen/kryptanium_text_size_small" />
+
+</LinearLayout>

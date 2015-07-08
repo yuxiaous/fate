@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kryptanium_strong_msg_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:background="#aa000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/kryptanium_strong_msg_top_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/kryptanium_strong_msg_bottom_layout"
+        android:layout_marginBottom="17.5dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/kryptanium_strong_title_msg_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="35dp"
+                android:visibility="visible" >
+            </ImageView>
+
+            <RelativeLayout
+                android:id="@+id/kryptanium_strong_strong_notice_content"
+                android:layout_width="285dp"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="45dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <ScrollView
+                    android:id="@+id/kryptanium_strong_scrollview"
+                    android:paddingLeft="4.5dp"
+                    android:paddingRight="4.5dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="140.5dp"
+                    android:layout_above="@+id/kryptanium_strong_submit_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="25dp"
+                    android:fadingEdge="none"
+                    android:scrollbars="none" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/kryptanium_strong_title_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="恭喜你获取大礼包恭喜你发黑会飞的黑色的分公司的敢死队风格啥都管使得法国水电费速度告诉对方公司的敢死队风格司法官打手犯规速度公司的干豆腐水电费速度水电费都是过的都是公司的公司的过的"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/kryptanium_text_size_large" />
+
+                        <TextView
+                            android:id="@+id/kryptanium_strong_content_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:text="恭喜你发黑会飞的黑色的分公司的敢死队风格啥都管使得法国水电费速度告诉对方公司的敢死队风格司法官打手犯规速度公司的干豆腐水电费速度水电费都是过的都是公司的公司的过的"
+                            android:textColor="@color/kryptanium_base_color_near_white"
+                            android:textSize="@dimen/kryptanium_text_size_big" />
+                    </LinearLayout>
+                </ScrollView>
+
+                <RelativeLayout
+                    android:id="@+id/kryptanium_strong_submit_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true" >
+
+                    <TextView
+                        android:id="@+id/kryptanium_strong_submit_button"
+                        android:layout_width="fill_parent"
+                        android:layout_height="43dp"
+                        android:background="@drawable/kryptanium_colorbg_green_rounded"
+                        android:gravity="center"
+                        android:text="@string/kryptanium_reward_button_text"
+                        android:textColor="#ffffff"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/kryptanium_text_size_large" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/kryptanium_strong_submit_ok_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone" >
+
+                    <LinearLayout
+                        android:layout_width="285dp"
+                        android:layout_height="43dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/kryptanium_strong_submit_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/kryptanium_rewarded_button_text"
+                            android:textColor="@color/kryptanium_base_color_green"
+                            android:textSize="@dimen/kryptanium_text_size_large" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kryptanium_strong_msg_bottom_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="25dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/kryptanium_strong_msg_bottom_title_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/kryptanium_bottom_title_text"
+            android:textColor="#8b8b8b"
+            android:textSize="12dp" />
+
+        <com.ktplay.widget.HorizontalListView
+            android:id="@+id/kryptanium_strong_msg_bottom_friends_listview"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:cacheColorHint="#ffffffff"
+            android:divider="@color/kryptanium_selected_bg_grey"
+            android:dividerHeight="0.4dp"
+            android:fadingEdge="none"
+            android:gravity="center"
+            android:listSelector="#00000000"
+            android:spacing="0dp" />
+        <!-- android:spacing="@dimen/kryptanium_home_hot_game_listview_spacing" -->
+
+    </LinearLayout>
+
+</RelativeLayout>

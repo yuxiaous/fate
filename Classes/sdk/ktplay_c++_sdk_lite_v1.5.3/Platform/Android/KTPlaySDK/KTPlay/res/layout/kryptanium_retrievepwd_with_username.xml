@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 手机号登录界面 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kryptanium_base_color_white" >
+
+    <!-- 内容区 -->
+    <LinearLayout
+        android:layout_width="@dimen/kryptanium_login_content_width"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+        
+         <!-- 提示信息 -->
+       <TextView 
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:textSize="@dimen/kryptanium_fontsize_middle"
+           android:textColor="@color/kryptanium_text_dark_gray"
+           android:text="@string/s_kt_bind_email_label"
+           android:layout_marginTop="20dp"
+           />
+        
+        <!-- 邮箱 -->
+        <EditText 
+             android:id="@+id/kryptanium_username_retrievepwd_email"
+             android:layout_width="fill_parent"
+             android:layout_marginTop="8dp"
+            	style="@style/kryptanium_edittext"
+            	android:hint="@string/s_kt_input_email"
+            	android:inputType="textEmailAddress"
+            />
+        
+        
+        <!-- 发送按钮 -->
+        <TextView
+            android:id="@+id/kryptanium_username_retrievepwd_send"
+            android:layout_width="fill_parent" 
+            android:layout_marginTop="8dp"
+            style="@style/kryptanium_button_style_main"
+            android:text="@string/s_kt_send"
+            />
+        
+        <!-- 手机号登录链接 -->
+        <TextView
+             android:id="@+id/kryptanium_username_retrievepwd_to_phone_retrievepwd" 
+             style="@style/kryptanium_link_text"
+             android:layout_marginTop="40dp"
+             android:text="@string/s_kt_retrievepwd_with_phone"
+             android:layout_gravity="center_horizontal|bottom"
+            />
+		</LinearLayout>
+
+</FrameLayout>

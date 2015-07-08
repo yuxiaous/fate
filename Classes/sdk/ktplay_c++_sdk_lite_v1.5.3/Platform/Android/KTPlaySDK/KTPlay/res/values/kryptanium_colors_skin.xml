@@ -1,0 +1,5 @@
+<resources>
+    <color name="kryptanium_tab_background">#ff2EB9ED</color>
+    <color name="kryptanium_head_tab_bg">#ffffffff</color>
+    <color name="kryptanium_frame">#000000</color>
+</resources>

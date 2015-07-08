@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>prop_category</key>
+	<string>sns</string>
+	<key>prop_region</key>
+	<string>China</string>
+	<key>prop_name</key>
+	<string>sina_weibo</string>
+	<key>prop_version</key>
+	<string>1.0.0</string>
+	<key>prop_shareable_targets</key>
+	<array>
+		<string>sina_weibo</string>
+	</array>
+	<key>prop_scheme</key>
+	<string>wb,sina</string>
+	<key>test_appkeys</key>
+	<array>
+		<dict>
+			<key>CallbackUrl</key>
+			<string>http://ktplay.cn</string>
+			<key>AppKey</key>
+			<string>481374103</string>
+		</dict>
+		<dict>
+			<key>CallbackUrl</key>
+			<string>http://ktplay.cn</string>
+			<key>AppKey</key>
+			<string>6976222</string>
+		</dict>
+	</array>
+</dict>
+</plist>

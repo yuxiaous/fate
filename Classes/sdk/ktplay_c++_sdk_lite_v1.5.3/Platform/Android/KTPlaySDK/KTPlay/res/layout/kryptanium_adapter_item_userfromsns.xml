@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingRight="8dp"
+    android:background="@color/kryptanium_base_color_white"
+     >
+     
+     <!-- KT用户头像 -->
+      <ImageView
+            android:id="@+id/kryptanium_userfromsns_avatar"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@null"
+            android:scaleType="fitXY" 
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            />
+    
+	<LinearLayout
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:layout_marginRight="80dp"
+	     android:orientation="vertical"
+	     android:paddingLeft="45dp"
+	     android:layout_gravity="center_vertical"
+	     >
+	     <!-- KT用户昵称 -->
+    		<TextView
+            android:id="@+id/kryptanium_userfromsns_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:singleLine="true"
+            android:textColor="@color/kryptanium_text_dark"
+            android:textSize="@dimen/kryptanium_text_size_medium"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical" 
+            />
+    
+    		<!-- SNS用户昵称 -->
+    		<TextView
+            android:id="@+id/kryptanium_userfromsns_snsnickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:singleLine="true"
+            android:textColor="@color/kryptanium_text_dark_gray"
+            android:textSize="@dimen/kryptanium_text_size_medium"
+            android:layout_gravity="center_vertical" 
+             android:gravity="center_vertical" 
+            />
+    </LinearLayout>
+		
+	<!-- 添加按钮 -->
+	<TextView
+            android:id="@+id/kryptanium_userfromsns_add"
+            android:layout_width="60dp"
+            style="@style/kryptanium_button_style_main"
+            android:layout_gravity="center_vertical|right"
+            android:text="@string/s_kt_add" 
+            />
+</FrameLayout>
+

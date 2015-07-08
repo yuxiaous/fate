@@ -1,0 +1,40 @@
+<resources>
+    <string name="kryptanium_qihoo360_suggestion_unknow"></string>
+    <string name="kryptanium_sns_name_qihoo360">360</string>
+    
+            <string name="kryptanium_qihoo360_error_network_unavailable">Internet connection failed</string>
+    <string name="kryptanium_qihoo360_error_network_not_inline">Internet connection failed</string>
+    <string name="kryptanium_qihoo360_error_network_set">Internet connection failed</string>
+    <string name="kryptanium_qihoo360_gender_male">男</string>
+    
+    <string name="kryptanium_qihoo360_error_description_miss_metadata">"360SDK必需的meta-data有：
+        \n 1.QHOPENSDK_APPKEY:value为app_key
+        \n 2.QHOPENSDK_PRIVATEKEY:value为private_key,其生成算法为md5(app_secret +”#”+ app_key)，全小写，详细算法请看360SDK官方开发文档附录。
+        \n 3.QHOPENSDK_APPSECRET:value通常为appSecret，
+        \n注意：
+        \n a.value不要使用&#064;string引用，上传APK时服务器要从中读取值 。读取失败会影响统计和结算，务必填写正确。
+        \n b.请在360应用开放平台 http://open.app.360.cn/?from=open_dt 注册申请app_key和app_secret。
+        \n c.360SDK官方开发文档下载地址见：http://openapi.360.cn/page/sdk_cms"
+        </string>
+    <string name="kryptanium_qihoo360_error_failureReason_miss_metadata">"必需的meta-data未配置：\n"</string>
+    <string name="kryptanium_qihoo360_suggestion_miss_metadata">"请检查AndroidManifest.xml文件，补全360SDK配置，以下是样例：\n
+        &#060;meta-data android:name=\&#034;QHOPENSDK_APPKEY\&#034; android:value=\&#034;你申请的app_key\&#034; &#062; &#060;&#047;meta-data&#062;"</string>
+    <string name="kryptanium_qihoo360_error_description_miss_activity">AndroidManifest.xml缺少360SDK必要类声明</string>   
+    <string name="kryptanium_qihoo360_error_failureReason_miss_activity">以下是未声明的类：\n</string> 
+    <string name="kryptanium_qihoo360_suggestion_miss_activity">请在 AndroidManifest.xml新增类声明样式如下:\n
+       &#060;activity\n
+            android:name=\&#034;com.qihoopp.qcoinpay.QcoinActivity\&#034;\n
+            android:configChanges=\&#034;fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode\&#034;\n
+            android:theme=\&#034;&#064;android:style/Theme.Translucent.NoTitleBar\&#034;\n
+            android:windowSoftInputMode=\&#034;stateAlwaysHidden|adjustResize\&#034; &#062;\n
+        &#060;&#047;activity&#062;\n" 
+        </string> 
+    <string name="kryptanium_qihoo360_error_necessary_description_perssion_not_set">360SDK必要权限未设置或设置不全。</string>
+    <string name="kryptanium_qihoo360_error_necessary_perssion_not_set">未设置的权限有：</string>
+    <string name="kryptanium_qihoo360_suggestion_set_necessary_perssion">请在AndroidManifest.xml新增必要的权限.</string>
+    
+    <string name="kryptanium_qihoo360_error_description_get_userinfo_fail">获取用户信息失败。</string>
+    <string name="kryptanium_qihoo360_error_failureReason_get_userinfo_fail">拉取用户信息时失败，userInfo为null</string>
+    <string name="kryptanium_qihoo360_suggestion_get_userinfo_fail">请检查AndroidManifest中各项配置是否正确.</string>
+    <string name="kryptanium_qihoo360_error_failureReason_get_jsoncode_fail">从Json字符中获取授权码错误</string>
+</resources>

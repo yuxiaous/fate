@@ -1,0 +1,7 @@
+        <!-- Share SDK 新浪微博配置开始 -->
+<activity
+   android:name="cn.sharesdk.framework.ShareSDKUIShell"
+   android:theme="@android:style/Theme.Translucent.NoTitleBar"
+   android:configChanges="keyboardHidden|orientation|screenSize"
+   android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- Share SDK 新浪微博配置结束 -->

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:background="#000000"
+    >
+	<com.ktplay.widget.YoMoveImage xmlns:android="http://schemas.android.com/apk/res/android"
+	   	android:id="@+id/kryptanium_fullscreen_image"
+	   	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	   	android:contentDescription="@null"
+	   	android:scaleType="fitCenter"
+	   	android:src="@null"
+	/>
+</FrameLayout>

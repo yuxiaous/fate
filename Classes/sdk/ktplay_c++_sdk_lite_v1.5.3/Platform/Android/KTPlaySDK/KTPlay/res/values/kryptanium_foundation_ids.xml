@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Menu Dialog -->
+    <item name="kryptanium_menu_dialog_item_button" type="id"/>
+    <item name="kryptanium_menu_dialog_item_icon" type="id"/>
+    <item name="kryptanium_menu_dialog_item_text" type="id"/>
+    <item name="kryptanium_menu_dialog_item_list" type="id"/>
+    <item name="kryptanium_menu_dialog_title" type="id"/>
+    <item name="kryptanium_menu_dialog_cancel" type="id"/>
+    
+    <!-- Custom Dialog -->
+    <item name="kryptanium_dialog_title_container" type="id"/>
+    <item name="kryptanium_dialog_title" type="id"/>
+    <item name="kryptanium_dialog_message" type="id"/>
+    <item name="kryptanium_dialog_contentview" type="id"/>
+    <item name="kryptanium_dialog_positive_button" type="id"/>
+    <item name="kryptanium_dialog_negative_button" type="id"/>
+</resources>

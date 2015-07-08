@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kryptanium_plugin_classes" translatable="false">
+        <item>com.kryptanium.plugin.sns.qq.KTPluginQQ</item>
+        <item>com.kryptanium.plugin.sns.qq.KTPluginShareSdkQQ</item>
+        <item>com.kryptanium.plugin.sns.qq.KTPluginUmengQQ</item>
+        <item>com.kryptanium.plugin.sns.weixin.KTPluginWeiXin</item>
+        <item>com.kryptanium.plugin.sns.weixin.KTPluginShareSdkWX</item>
+        <item>com.kryptanium.plugin.sns.weixin.KTPluginUmengWX</item>
+        <item>com.kryptanium.plugin.sns.sinaweibo.KTPluginSinaWeibo</item>
+        <item>com.kryptanium.plugin.sns.sinaweibo.KTPluginShareSdkSinaWeibo</item>
+        <item>com.kryptanium.plugin.sns.sinaweibo.KTPluginUmengSinaWeibo</item>
+        <item>com.kryptanium.plugin.sns.wandoujia.KTPluginWandoujia</item>
+        <item>com.kryptanium.plugin.sns.baidu.KTPluginBaidu</item>
+        <item>com.kryptanium.plugin.sns.lenovo.KTPluginLenovo</item>
+        <item>com.kryptanium.plugin.sns.facebook.KTPluginFacebook</item>
+        <item>com.kryptanium.plugin.sns.qihoo360.KTPluginQihoo360</item>
+        <item>com.kryptanium.plugin.sns.twitter.KTPluginTwitter</item>
+    </string-array>
+</resources>

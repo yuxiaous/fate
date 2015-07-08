@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+  android:id="@+id/kryptanium_menu_takescreenshot"
+  android:title="@string/s_kt_sheet_screenshot"
+  android:icon="@drawable/kryptanium_icon_takephoto"
+  />
+  
+  <item
+  android:id="@+id/kryptanium_menu_openfile"
+  android:title="@string/s_kt_sheet_photo"
+  android:icon="@drawable/kryptanium_icon_openfile"
+  />
+  
+  <item
+  android:id="@+id/kryptanium_menu_cancel"
+  android:title="@string/s_kt_cancel"
+  />
+</menu>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>errorMsg</key>
+	<dict>
+		<key>150001</key>
+		<string>Error</string>
+		<key>150002</key>
+		<string>Error</string>
+		<key>150003</key>
+		<string>Error</string>
+		<key>150004</key>
+		<string>Error</string>
+		<key>150005</key>
+		<string>Error</string>
+		<key>150101</key>
+		<string>Error</string>
+		<key>150102</key>
+		<string>Error</string>
+		<key>150103</key>
+		<string>This content no longer exists</string>
+		<key>150104</key>
+		<string>Please log in again</string>
+		<key>150105</key>
+		<string>The users of a blacklist</string>
+		<key>150106</key>
+		<string>You cannot post the same content more than once</string>
+		<key>150107</key>
+		<string>You are posting content too quickly</string>
+		<key>150108</key>
+		<string>Your post contains prohibited language</string>
+		<key>150201</key>
+		<string>This account does not exist</string>
+		<key>150202</key>
+		<string>Incorrect password</string>
+		<key>150203</key>
+		<string>Invalid email address</string>
+		<key>150204</key>
+		<string>The password is 6-18 bit English or digital</string>
+		<key>150205</key>
+		<string>This social networking account has already been authorized</string>
+		<key>150206</key>
+		<string>SNS Error</string>
+		<key>150207</key>
+		<string>Missing User Name</string>
+		<key>150208</key>
+		<string>This username is no longer available</string>
+		<key>150209</key>
+		<string>Username must be between 2-15 characters</string>
+		<key>150221</key>
+		<string>Username can not be include space</string>
+		<key>150222</key>
+		<string>The user name must be 2-30 Chinese, English or digital</string>
+		<key>150223</key>
+		<string>Modify the nickname is not supported</string>
+		<key>150210</key>
+		<string>Current password is invalid</string>
+		<key>150211</key>
+		<string>Account is already in use</string>
+		<key>150213</key>
+		<string>Registration failed. Please try again</string>
+		<key>150214</key>
+		<string>Current and new passwords cannot be the same</string>
+		<key>150215</key>
+		<string>User name contain prohibited language</string>
+		<key>150216</key>
+		<string>Send email failed</string>
+		<key>150217</key>
+		<string>Incorrect email format, please input again</string>
+		<key>150303</key>
+		<string>Content exceeds character limit</string>
+		<key>150304</key>
+		<string> You cannot delete a discussion with replies</string>
+		<key>150305</key>
+		<string>You cannot add more screenshots</string>
+		<key>150306</key>
+		<string>Upload image format is incorrect</string>
+		<key>150307</key>
+		<string>You cannot “like” your own content</string>
+		<key>150308</key>
+		<string>You cannot remove content created by other users</string>
+		<key>150309</key>
+		<string>You have already liked this content</string>
+		<key>150322</key>
+		<string>Your reply exceeds character limit</string>
+		<key>150324</key>
+		<string>Number of images in your reply exceeds image limit</string>
+		<key>150325</key>
+		<string>Image reply upload format is incorrect</string>
+		<key>150326</key>
+		<string>You cannot “like” your own reply</string>
+		<key>150327</key>
+		<string>You cannot remove replies posted by other users</string>
+		<key>150328</key>
+		<string>You have already “liked” this reply</string>
+		<key>150402</key>
+		<string>Image caption exceeds character limit</string>
+		<key>150403</key>
+		<string>Upload image format is incorrect</string>
+		<key>150404</key>
+		<string>You cannot “like” your own images</string>
+		<key>150405</key>
+		<string>You have already liked this image</string>
+		<key>150422</key>
+		<string>Your reply to this image exceeds character limit</string>
+		<key>150423</key>
+		<string>You cannot remove image replies posted by other users</string>
+		<key>150501</key>
+		<string>You have already reported this content</string>
+		<key>150502</key>
+		<string>You have already reported this image</string>
+		<key>150701</key>
+		<string>Can&apos;t invite yourself</string>
+		<key>150702</key>
+		<string>You are friends</string>
+		<key>150703</key>
+		<string>The number of your friends reach the limit,request fail</string>
+		<key>150704</key>
+		<string>This person&apos;s number of friends has reached the maximum limit</string>
+		<key>150705</key>
+		<string>You&apos;ve already invited him</string>
+		<key>150706</key>
+		<string>He/She is not your friend</string>
+		<key>150801</key>
+		<string>You have already claimed your reward</string>
+		<key>150802</key>
+		<string>The rewards was not found</string>
+		<key>-1009</key>
+		<string>Server connection failed</string>
+	</dict>
+</dict>
+</plist>

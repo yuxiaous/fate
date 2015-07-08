@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/kryptanium_default_gap_half" >
+
+        <com.ktplay.widget.PullRefreshView
+            android:id="@+id/kryptanium_pull_refresh_viewgroup"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="100dp" 
+            >
+
+            <GridView
+                android:id="@id/kryptanium_users_grieview_id"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:horizontalSpacing="@dimen/kryptanium_users_weight_list_spacing"
+                android:listSelector="@null"
+                android:numColumns="5"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="@dimen/kryptanium_users_weight_list_spacing" />
+        </com.ktplay.widget.PullRefreshView>
+
+        <RelativeLayout
+            android:id="@+id/kryptanium_top5_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/kryptanium_titlebar_line_height"
+                    android:background="@color/kryptanium_barline_color"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="6dp"
+                    android:singleLine="true"
+                    android:text="@string/s_kt_livenessplayer"
+                    android:textColor="@color/kryptanium_hot_player_top5"
+                    android:textSize="@dimen/kryptanium_fontsize_middle" />
+                <GridView
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/kryptanium_hot_player_top5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="6dp"
+                    android:cacheColorHint="#00000000"
+                    android:gravity="center"
+                    android:horizontalSpacing="@dimen/kryptanium_users_weight_list_spacing"
+                    android:listSelector="@null"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="@dimen/kryptanium_users_weight_list_spacing" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!--
+             <TextView
+            android:id="@+id/kryptanium_hot_gome_button"
+            style="@style/kryptanium_textview_2_button"
+            android:layout_width="@dimen/kryptanium_moregame_icon_size_w"
+            android:layout_height="@dimen/kryptanium_moregame_icon_size_h"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/kryptanium_hotgame_btn_n"
+            android:textColor="@color/kryptanium_text_white"
+            android:textSize="@dimen/kryptanium_fontsize_big"
+            android:visibility="gone" />
+        -->
+    </FrameLayout>
+
+</LinearLayout>

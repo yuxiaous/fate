@@ -1,0 +1,16 @@
+        <!-- 微信配置开始 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="WXEntryActivity"
+            />
+        <meta-data
+            android:name="WEIXIN_APPID"
+            android:value="这里填写你自己申请到的appid" >
+        </meta-data>
+        
+        <meta-data
+            android:name="WEIXIN_APP_SECRET"
+            android:value="这里填写你自己申请到的app_secret" >
+        </meta-data>
+        <!-- 微信配置结束 -->

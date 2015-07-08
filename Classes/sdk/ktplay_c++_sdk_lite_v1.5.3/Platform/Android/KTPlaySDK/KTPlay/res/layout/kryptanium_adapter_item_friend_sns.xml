@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    style="@style/kryptanium_style_item_touch"
+    android:paddingBottom="6dp"
+    android:paddingLeft="@dimen/kryptanium_default_gap_half_2x"
+    android:paddingTop="6dp" >
+
+    <ImageView
+        android:id="@+id/kryptanium_friend_sns_invite_flag"
+        android:layout_width="@dimen/kryptanium_new_msg_size"
+        android:layout_height="@dimen/kryptanium_new_msg_size"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/kryptanium_default_gap"
+        android:layout_marginRight="@dimen/kryptanium_default_gap"
+        android:background="@drawable/kryptanium_flag_friend_invite_normal"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:id="@+id/kryptanium_leaderboard_friend_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_toLeftOf="@+id/kryptanium_friend_sns_invite_finish"
+        android:layout_toRightOf="@+id/kryptanium_friend_sns_invite_flag"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/kryptanium_leaderboard_friend_info_hand_image"
+            android:layout_width="@dimen/kryptanium_friend_sns_head"
+            android:layout_height="@dimen/kryptanium_friend_sns_head"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/kryptanium_leaderboard_friend_info_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/kryptanium_user_login_edit_height"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textColor="@color/kryptanium_text_dark"
+            android:textSize="@dimen/kryptanium_fontsize_big" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/kryptanium_friend_sns_invite_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/kryptanium_title_buttom_h"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:background="#00000000"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:padding="@dimen/kryptanium_buttom_icon_padding"
+        android:singleLine="true"
+        android:text="@string/s_kt_friend_invite_finish"
+        android:textColor="@color/kryptanium_text_dark"
+        android:textSize="@dimen/kryptanium_fontsize_middle" />
+
+</RelativeLayout>

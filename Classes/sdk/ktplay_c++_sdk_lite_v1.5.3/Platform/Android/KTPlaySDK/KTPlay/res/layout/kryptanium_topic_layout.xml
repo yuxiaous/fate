@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+<!--     <RelativeLayout
+        android:id="@+id/kryptanium_topic_num_group"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_headtitle_layout_height"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+        android:paddingRight="@dimen/kryptanium_layout_paddingRight" >
+
+        话题数目
+
+        <TextView
+            android:id="@+id/kryptanium_topic_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/kryptanium_text_black"
+            android:textSize="@dimen/kryptanium_text_size_standard" />
+
+        <RelativeLayout
+            android:id="@+id/kryptanium_topic_classify"
+            android:layout_width="@dimen/kryptanium_user_topic_headtitle_classify_layout_width"
+            android:layout_height="@dimen/kryptanium_user_topic_headtitle_classify_layout_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/kryptanium_colorbg_green_rounded"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_toLeftOf="@+id/kryptanium_topic_classify_flag"
+                android:id="@+id/kryptanium_topic_classify_text"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/kryptanium_user_topic_headtitle_textview_marginLeft"
+                android:layout_marginRight="@dimen/kryptanium_user_topic_headtitle_textview_marginRight"
+                android:gravity="center"
+                android:maxWidth="@dimen/kryptanium_user_topic_headtitle_textview_maxWidth"
+                android:singleLine="true"
+                android:textColor="@color/kryptanium_text_white"
+                android:textSize="@dimen/kryptanium_text_size_medium" />
+
+            <ImageView
+                android:id="@+id/kryptanium_topic_classify_flag"
+                android:layout_width="@dimen/kryptanium_user_topic_headtitle_imageview_width_height"
+                android:layout_height="@dimen/kryptanium_user_topic_headtitle_imageview_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/kryptanium_user_topic_headtitle_textview_marginRight"
+                android:scaleType="fitCenter"
+                android:src="@drawable/kryptanium_topic_classify_text_down" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/kryptanium_title_liner"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_titlebar_line_height"
+        android:layout_below="@+id/kryptanium_topic_num_group"
+        android:background="@color/kryptanium_barline_color"
+        android:scaleType="fitXY" /> -->
+
+    <com.ktplay.widget.PullRefreshView
+        android:id="@+id/kryptanium_pull_refresh_viewgroup"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/kryptanium_title_liner" >
+
+        <ListView
+            android:id="@+id/kryptanium_topic_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/kryptanium_selected_bg_grey"
+            android:dividerHeight="@dimen/kryptanium_user_topic_listview_dividerHeight"
+            android:fadingEdge="none"
+            android:listSelector="#00000000" />
+    </com.ktplay.widget.PullRefreshView>
+
+    <include
+        android:layout_alignParentBottom="true"
+        layout="@layout/kryptanium_topic_footerview"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

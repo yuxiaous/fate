@@ -1,0 +1,4 @@
+<!-- 微信权限配置开始 -->
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<!-- 微信权限配置结束 -->

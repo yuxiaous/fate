@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/kryptanium_scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/kryptanium_reply_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/kryptanium_topicrepley_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/kryptanium_topicrepley_addbutton"
+            android:layout_below="@+id/kryptanium_show_listview_tag_ll">
+
+            <ListView
+                android:id="@+id/kryptanium_topicrepley_listview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="#00000000"
+                android:divider="#00000000"
+                android:fadingEdge="none" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/kryptanium_show_listview_tag_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/kryptanium_show_listview_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/kryptanium_open_reply" />
+        </LinearLayout>
+        <TextView
+        android:id="@+id/kryptanium_topicrepley_addbutton"
+        style="@style/kryptanium_textview_2_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/kryptanium_button_blue_n"
+        android:text="@string/s_kt_create_reply"
+        android:textColor="@color/kryptanium_text_white"
+        android:textSize="@dimen/kryptanium_fontsize_big"
+        android:layout_marginLeft="@dimen/kryptanium_buttom_blue_margin"
+        android:layout_marginRight="@dimen/kryptanium_buttom_blue_margin"
+        android:visibility="gone" />
+    </RelativeLayout>
+
+    
+
+</RelativeLayout>

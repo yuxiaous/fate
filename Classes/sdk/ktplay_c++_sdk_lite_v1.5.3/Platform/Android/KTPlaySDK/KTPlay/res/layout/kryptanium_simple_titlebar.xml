@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="38.5dp"
+        android:paddingBottom="@dimen/kryptanium_title_layout_padding"
+        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+        android:paddingRight="@dimen/kryptanium_layout_paddingRight"
+        android:paddingTop="@dimen/kryptanium_title_layout_padding" >
+
+        <!-- 左边按钮 -->
+        <ViewStub 
+            android:id="@+id/kryptanium_simpletitlebar_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            />
+        
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/kryptanium_simpletitlebar_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:gravity="center"
+            android:paddingLeft="@dimen/kryptanium_spacing"
+            android:paddingRight="@dimen/kryptanium_spacing"
+            android:textColor="@color/kryptanium_text_black"
+            android:textSize="@dimen/kryptanium_fontsize_middle" />
+        
+        
+        <!-- 提示信息 -->
+        <ViewStub 
+            android:id="@+id/kryptanium_simpletitlebar_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="55dp"
+            />
+        
+        <!-- 右边按钮 -->
+        <ViewStub 
+            android:id="@+id/kryptanium_simpletitlebar_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            />
+
+
+        
+    </FrameLayout>
+
+    <!-- 分割线 -->
+    <ImageView
+         android:id="@+id/kryptanium_simpletitlebar_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_titlebar_line_height"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@color/kryptanium_barline_color" />
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+        <!-- ShareSDK 微信配置  开始 -->
+<activity
+   android:name="cn.sharesdk.framework.ShareSDKUIShell"
+   android:theme="@android:style/Theme.Translucent.NoTitleBar"
+   android:configChanges="keyboardHidden|orientation|screenSize"
+   android:windowSoftInputMode="stateHidden|adjustResize" />
+<activity
+   android:name=".wxapi.WXEntryActivity"
+   android:exported="true"
+   android:label="WXEntryActivity"
+/>
+        <!-- ShareSDK 微信配置  结束 -->

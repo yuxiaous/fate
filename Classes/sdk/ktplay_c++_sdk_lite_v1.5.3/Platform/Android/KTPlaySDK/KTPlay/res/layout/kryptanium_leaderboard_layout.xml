@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+     >
+
+    <!-- line1 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/kryptanium_close_dialog"
+        android:orientation="vertical"
+        android:background="@drawable/kryptanium_colorbg_white"
+        android:paddingBottom="@dimen/kryptanium_default_gap_2x">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/kryptanium_default_gap_5x"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/kryptanium_leaderboard_title_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/kryptanium_leaderboard_title_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LeaderBoard"
+                android:textColor="@color/kryptanium_base_color_black"
+                android:textSize="@dimen/kryptanium_fontsize_small" />
+        </LinearLayout>
+        <!-- line2 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="@dimen/kryptanium_default_gap_half"
+            android:orientation="vertical"
+            android:paddingTop="0dp" >
+
+
+                <ListView
+                    android:id="@+id/kryptanium_leaderboard_listview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@color/kryptanium_selected_bg_grey"
+                    android:dividerHeight="0.4dp"
+                    android:fadingEdge="none"
+                    android:scrollbars="none"
+                    android:listSelector="#00000000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/kryptanium_close_dialog"
+        android:layout_width="@dimen/kryptanium_close_dialog_w"
+        android:layout_height="@dimen/kryptanium_close_dialog_h"
+        android:layout_marginLeft="@dimen/kryptanium_close_dialog_padding_big"
+        android:background="@drawable/kryptanium_close_dialog_img" />
+
+</RelativeLayout>

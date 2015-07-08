@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/kryptanium_create_topic_reply_layout_padding"
+    android:paddingRight="@dimen/kryptanium_create_topic_reply_layout_padding" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@null"
+        android:gravity="top|left"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/kryptanium_create_topic_reply_content_layout_paddingTop"
+        android:textColor="@color/kryptanium_text_black" >
+
+        <TextView
+            android:id="@+id/s_kt_input_surplus_characters"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/kryptanium_create_topic_image_open_all"
+            android:gravity="right"
+            android:textColor="@color/kryptanium_base_color_gray"
+            android:textSize="@dimen/kryptanium_text_size_small" />
+
+        <EditText
+            android:id="@+id/kryptanium_createtopic_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="@style/kryptanium_edittext"
+            android:layout_below="@id/s_kt_input_surplus_characters"
+            android:layout_toRightOf="@+id/kryptanium_create_topic_image_open_all"
+            android:background="@null"
+            android:gravity="top|left"
+            android:hint="@string/s_kt_input_discussion_tip"
+            android:imeOptions="actionDone"
+            android:paddingLeft="@dimen/kryptanium_create_topic_reply_edittext_paddingLeft"
+            android:textColor="@color/kryptanium_text_black"
+            android:textSize="@dimen/kryptanium_text_size_standard" />
+
+        <FrameLayout
+            android:id="@+id/kryptanium_create_topic_image_open_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/s_kt_input_surplus_characters" >
+
+            <LinearLayout
+                android:id="@+id/kryptanium_createtopic_image_open_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <ScrollView
+                        android:id="@+id/kryptanium_create_topic_scrollview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fadingEdge="none"
+                        android:scrollbars="none" >
+
+                        <LinearLayout
+                            android:id="@+id/kryptanium_createtopic_image_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+                        </LinearLayout>
+                    </ScrollView>
+
+                    <!-- <include layout="@layout/kryptanium_add_image_thumbnail_item_layout" /> -->
+                    <!-- visiable="invisiable" -->
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/kryptanium_createtopic_addbutton"
+                android:layout_width="@dimen/kryptanium_my_topic_reply_item_image_group_width_height"
+                android:layout_height="@dimen/kryptanium_my_topic_reply_item_image_group_width_height"
+                android:background="@drawable/kryptanium_button_add_image_icon" />
+        </FrameLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

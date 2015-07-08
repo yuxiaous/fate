@@ -1,0 +1,12 @@
+<resources>
+    
+    <!-- Settings -->
+    <string name="kryptanium_qihoo360_prop_category">sns</string>
+    <string name="kryptanium_qihoo360_prop_region">China</string>
+    <string name="kryptanium_qihoo360_prop_name">qihoo360</string>
+    <integer name="kryptanium_qihoo360_prop_priority">2</integer>
+    <string name="kryptanium_qihoo360_prop_version">1.2.0</string>
+    <string name="kryptanium_qihoo360_prop_channel">true</string>
+    <string-array name="kryptanium_qihoo360_shareable_targets">
+    </string-array>
+</resources>

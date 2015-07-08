@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="left"
+    android:padding="@dimen/kryptanium_spacing_superbig" >
+
+    <ProgressBar
+        android:id="@+id/kryptanium_footerview_progressbar"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="10dip"
+        android:indeterminate="true"
+        android:visibility="visible" />
+	<LinearLayout
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="center"
+        	android:gravity="center"
+        	android:orientation="vertical"
+	>
+	    <TextView
+	        android:id="@+id/kryptanium_footerview_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="#7d899d"
+	        android:textSize="@dimen/kryptanium_commons_pull_view_font_size"
+	        android:text="@string/s_kt_loading"
+	        android:layout_gravity="center"
+	        android:gravity="center"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	</LinearLayout>
+
+
+</FrameLayout>

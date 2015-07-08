@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 手机号登录界面 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kryptanium_base_color_white" >
+
+    <!-- 内容区 -->
+    <LinearLayout
+        android:layout_width="@dimen/kryptanium_login_content_width"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+        
+       
+        
+        <!-- 用户名/邮箱 -->
+        <EditText 
+             android:id="@+id/kryptanium_usernameregister_username"
+             android:layout_width="fill_parent"
+            	style="@style/kryptanium_edittext"
+            	android:hint="@string/s_kt_registerview_email"
+            	android:layout_marginTop="20dp"
+            	android:maxLength="30"
+            />
+        
+        
+        <!-- 密码 -->
+         <EditText 
+             android:id="@+id/kryptanium_usernameregister_password"
+             android:layout_width="fill_parent"
+            	style="@style/kryptanium_edittext"
+            	android:hint="@string/s_kt_loginview_pwd"
+            	android:layout_marginTop="5dp"
+            	android:inputType="textPassword"
+            />
+        
+        <!-- 注册按钮 -->
+        <TextView
+            android:id="@+id/kryptanium_usernameregister_register"
+            android:layout_width="fill_parent" 
+            android:layout_marginTop="8dp"
+            style="@style/kryptanium_button_style_main"
+            android:text="@string/s_kt_register"
+            />
+        
+        <!-- 用户条款和隐私协议 -->
+         <com.ktplay.widget.KTLinkableTextView
+             android:id="@+id/kryptanium_usernameregister_privacy" 
+             android:layout_width="wrap_content" 
+             android:layout_height="wrap_content" 
+             android:layout_marginTop="10dp"
+             android:text="@string/s_kt_service_policy_label"
+             android:textSize="@dimen/kryptanium_fontsize_middle"
+             android:textColor="@color/kryptanium_text_dark_gray"
+            />
+        
+        
+        
+        <!-- 手机注册录链接 -->
+        <TextView
+             android:id="@+id/kryptanium_usernameregister_to_phoneregister" 
+             style="@style/kryptanium_link_text"
+             android:layout_marginTop="40dp"
+             android:text="@string/s_kt_register_with_phone"
+             android:layout_gravity="center_horizontal|bottom"
+            />
+		</LinearLayout>
+
+</FrameLayout>

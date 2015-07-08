@@ -1,0 +1,280 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <!--
+         <style name="kryptanium_font_username">
+        <item name="android:textColor">@color/kryptanium_gray</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_middle</item>
+    </style>
+    <style name="kryptanium_font_modelinfo">
+        <item name="android:textColor">@color/kryptanium_gray</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_small</item>
+    </style>
+    <style name="kryptanium_font_modelcontent">
+        <item name="android:textColor">@color/kryptanium_black</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_big</item>
+    </style>
+    <style name="kryptanium_font_button_light_text">
+        <item name="android:textColor">@color/kryptanium_white</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_big</item>
+    </style>
+    <style name="kryptanium_font_button_dark_text">
+        <item name="android:textColor">@color/kryptanium_text_dark</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_big</item>
+    </style>
+    <style name="kryptanium_font_input_text">
+    	<item name="android:textColor">@color/kryptanium_text_dark</item>
+        <item name="android:textSize">@dimen/kryptanium_text_base_size_middle_2</item>
+    </style>
+    <style name="kryptanium_edittext">
+    	<item name="android:textColor">@color/kryptanium_text_dark</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_middle</item>
+        <item name="android:background">@drawable/kryptanium_edittext</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    -->
+
+
+    <!-- Button -->
+    <!--
+         <style name="kryptanium_color_button">
+    	<item name="android:textColor">@color/kryptanium_text_white</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_big</item>
+    </style>
+    <style name="kryptanium_button_blue" parent="kryptanium_color_button">
+        <item name="android:background">@drawable/kryptanium_button_blue</item>
+    </style>
+    <style name="kryptanium_button_red">
+        <item name="android:background">@drawable/kryptanium_button_red</item>
+    </style>
+    -->
+
+    <style name="kryptanium_head_image_border">
+        <item name="android:background">@drawable/kryptanium_corner_bg_white</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <!-- Image -->
+    <!-- Head image -->
+    <!--
+    <style name="kryptanium_head_image_base">
+		<item name="android:background">@drawable/kryptanium_corner_bg_white</item>
+		<item name="android:scaleType">fitXY</item>
+    </style>
+    <style name="kryptanium_head_image_thumbnail_small" parent="kryptanium_head_image_base">
+		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
+		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
+    </style>
+    <style name="kryptanium_head_image_thumbnail_middle" parent="kryptanium_head_image_base">
+		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
+		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
+    </style>
+    <style name="kryptanium_head_image_thumbnail_big" parent="kryptanium_head_image_base">
+		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
+		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
+    </style>
+    <style name="kryptanium_head_image_clear_small" parent="kryptanium_head_image_base">
+		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
+		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
+    </style>
+    <style name="kryptanium_head_image_clear_middle" parent="kryptanium_head_image_base">
+		<item name="android:layout_width">@dimen/kryptanium_thumbnailimage_wh</item>
+		<item name="android:layout_height">@dimen/kryptanium_thumbnailimage_wh</item>
+    </style>
+    -->
+
+    <style name="kryptanium_style_image_oper_button" parent="@style/kryptanium_textview_2_button">
+        <item name="android:layout_margin">@dimen/kryptanium_spacing_big</item>
+        <item name="android:drawablePadding">@dimen/kryptanium_spacing</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_tiny</item>
+        <item name="android:textColor">@color/kryptanium_text_white</item>
+        <item name="android:minWidth">@dimen/kryptanium_image_oper_button_width</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="kryptanium_style_topic_oper_button" parent="@style/kryptanium_textview_2_button">
+        <item name="android:layout_margin">@dimen/kryptanium_spacing</item>
+        <item name="android:background">#00ff0000</item>
+        <item name="android:padding">@dimen/kryptanium_spacing</item>
+        <item name="android:drawablePadding">@dimen/kryptanium_spacing</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_small</item>
+        <item name="android:textColor">@color/kryptanium_text_dark_gray</item>
+    </style>
+
+    <style name="kryptanium_style_content">
+        <item name="android:textColor">@color/kryptanium_text_black</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_middle</item>
+        <item name="android:paddingTop">@dimen/kryptanium_spacing</item>
+        <item name="android:paddingBottom">@dimen/kryptanium_spacing</item>
+    </style>
+
+    <style name="kryptanium_textview_2_button">
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="kryptanium_menudialog_anim">
+        <item name="@android:windowEnterAnimation">@anim/kryptanium_slide_bottom_to_top</item>
+        <item name="@android:windowExitAnimation">@anim/kryptanium_slide_top_to_bottom</item>
+    </style>
+
+    <style name="kryptanium_menudialog_anim_topic">
+        <item name="@android:windowEnterAnimation">@anim/kryptanium_slide_top_to_bottom</item>
+        <item name="@android:windowExitAnimation">@anim/kryptanium_slide_bottom_to_top</item>
+    </style>
+
+    <!-- Dialog的样式 -->
+    <style name="kryptanium_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item> <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item> <!-- 是否启用标题栏 -->
+        <item name="android:background">@color/kryptanium_transparent_bg</item>
+        <item name="android:windowBackground">@color/kryptanium_transparent_bg</item>
+        <item name="android:backgroundDimEnabled">true</item> <!-- 是否使用背景半透明 -->
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Dialog全屏的样式 -->
+    <style name="kryptanium_dialog_fullscreen_style">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@color/kryptanium_base_color_black</item>
+    </style>
+
+    <style name="kryptanium_activity_home">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@color/kryptanium_transparent_bg</item>
+        <item name="android:windowBackground">@color/kryptanium_black_alpha</item>
+        <item name="android:windowAnimationStyle">@style/kryptanium_activity_home_animation</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="kryptanium_activity_home_animation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+        <item name="android:taskOpenEnterAnimation">@null</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskCloseEnterAnimation">@null</item>
+        <item name="android:taskCloseExitAnimation">@null</item>
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+    </style>
+    <!-- Dialog全屏的样式 -->
+    <style name="kryptanium_dialog_showcenter_style" parent="@style/kryptanium_dialog_fullscreen_style">
+        <item name="android:windowBackground">@color/kryptanium_transparent_bg</item>
+        <item name="android:windowFrame">@null</item> <!-- 边框 -->
+        <item name="android:windowNoTitle">true</item> <!-- 是否启用标题栏 -->
+        <item name="android:background">@color/kryptanium_transparent_bg</item>
+        <item name="android:backgroundDimEnabled">false</item> <!-- 是否使用背景半透明 -->
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 各种常用按钮的样式 -->
+
+    <style name="kryptanium_buttom_style_addfriend"> <!-- 添加单个好友按钮 -->
+        <item name="android:layout_width">@dimen/kryptanium_title_buttom_w</item>
+        <item name="android:layout_height">@dimen/kryptanium_title_buttom_h</item>
+        <item name="android:padding">@dimen/kryptanium_buttom_icon_padding</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@drawable/kryptanium_button_addfriend_icon</item>
+        <item name="android:background">@drawable/kryptanium_colorbg_green</item>
+    </style>
+
+    <style name="kryptanium_buttom_style_addedfriend"> <!-- 已添加好友按钮 -->
+        <item name="android:layout_width">@dimen/kryptanium_title_buttom_w</item>
+        <item name="android:layout_height">@dimen/kryptanium_title_buttom_h</item>
+        <item name="android:padding">@dimen/kryptanium_buttom_icon_padding</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@drawable/kryptanium_button_friend_added_icon</item>
+        <item name="android:background">@drawable/kryptanium_colorbg_silvery</item>
+    </style>
+
+    <style name="kryptanium_buttom_style_confirm"> <!-- 确认按钮 -->
+        <item name="android:layout_width">@dimen/kryptanium_title_buttom_w</item>
+        <item name="android:layout_height">@dimen/kryptanium_title_buttom_h</item>
+        <item name="android:padding">@dimen/kryptanium_buttom_icon_padding</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@drawable/kryptanium_button_title_icon</item>
+        <item name="android:background">@drawable/kryptanium_colorbg_blue_btn_title</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="kryptanium_buttom_style_download"> <!-- 下载按钮 -->
+        <item name="android:layout_width">@dimen/kryptanium_msgbox_item_textview_down_width</item>
+        <item name="android:layout_height">@dimen/kryptanium_msgbox_item_textview_down_height</item>
+        <item name="android:padding">@dimen/kryptanium_buttom_icon_padding</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@drawable/kryptanium_btn_download_icon</item>
+        <item name="android:background">@drawable/kryptanium_colorbg_green</item>
+    </style>
+
+    <style name="kryptanium_buttom_style_delete"> <!-- 话题和相册的删除按钮 -->
+        <item name="android:layout_width">@dimen/kryptanium_button_title_width</item>
+        <item name="android:layout_height">@dimen/kryptanium_button_title_height</item>
+        <item name="android:padding">@dimen/kryptanium_buttom_icon_padding</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@drawable/kryptanium_button_delete_icon</item>
+        <item name="android:background">@drawable/kryptanium_colorbg_tran_black_btn_delete</item>
+    </style>
+    
+    <style name="kryptanium_button_style_main"> <!-- 主按钮 -->
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">31dp</item>
+        <item name="android:textColor">@color/kryptanium_text_white</item>
+        <item name="android:textSize">@dimen/kryptanium_fontsize_large</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@@drawable/kryptanium_button_bg</item>
+       
+    </style>
+    
+    <style name="ktplay_style_subtitle_line">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/kryptanium_user_profile_set_text_Information_height</item>
+        <item name="android:background">@color/kryptanium_title_bg</item>
+        <item name="android:paddingLeft">@dimen/kryptanium_layout_paddingLeft</item>
+        <item name="android:textColor">@color/kryptanium_text_black_little</item>
+        <item name="android:textSize">@dimen/kryptanium_text_size_small</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    
+    <style name="kryptanium_style_item_touch">
+        <item name="android:background">@drawable/kryptanium_colorbg_white</item>
+    </style>
+    
+    
+    <!-- 分隔线 -->
+    <style name="kryptanium_seperate_line">
+          <item name="android:layout_width">fill_parent</item>
+          <item name="android:layout_height">@dimen/kryptanium_titlebar_line_height</item>
+          <item name="android:background">@color/kryptanium_barline_color</item>
+        </style>
+        
+    <!-- 链接文字 -->
+     <style name="kryptanium_link_text">
+          <item name="android:layout_width">wrap_content</item>
+          <item name="android:layout_height">wrap_content</item>
+          <item name="android:textColor">@color/kryptanium_base_color_green</item>
+          <item name="android:textSize">@dimen/kryptanium_fontsize_large</item>
+          
+        </style>
+        
+    <!-- 输入框 -->
+    <style name="kryptanium_edittext" parent="android:Theme.Light">
+          <item name="android:layout_height">30dp</item>
+          <item name="android:paddingLeft">5dp</item>
+          <item name="android:paddingRight">5dp</item>
+          <item name="android:background">@drawable/kryptanium_colorbg_white_with_border</item>
+          <item name="android:textSize">@dimen/kryptanium_fontsize_middle</item>
+          <item name="android:textColor">@color/kryptanium_base_color_black</item>
+           <item name="android:cursorVisible">true</item>
+          </style>
+</resources>

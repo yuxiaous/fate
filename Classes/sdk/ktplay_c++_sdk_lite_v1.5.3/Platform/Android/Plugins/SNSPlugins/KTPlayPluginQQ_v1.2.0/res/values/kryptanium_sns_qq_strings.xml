@@ -1,0 +1,64 @@
+<resources>
+    <string name="kryptanium_sns_name_qq">QQ</string>
+    <string name="kryptanium_qq_error_app_unavailable">You need to install the latest version of QQ App</string>
+    <string name="kryptanium_qq_error_not_install_app">You need to install the latest version of QQ App</string>
+    <string name="kryptanium_qq_error_install_app">"You need to install the latest version of QQ App</string>
+    <string name="kryptanium_qq_error_gender">"男"</string>
+    
+    <string name="kryptanium_qq_error_network_unavailable">Internet connection failed</string>
+    <string name="kryptanium_qq_error_network_not_inline">Internet connection failed</string>
+    <string name="kryptanium_qq_error_network_set">Internet connection failed</string>
+    
+    <string name="kryptanium_qq_error_description_test_appid">"appid为测试id" </string>
+    <string name="kryptanium_qq_error_test_appid">"在 AndroidManifest.xml中配置 的appid是kt提供的测试id。" </string>
+    
+    <string name="kryptanium_qq_error_description_no_appid">"appid未配置" </string>
+    <string name="kryptanium_qq_error_no_appid">"在 AndroidManifest.xml中未配置 appid" </string>
+    <string name="kryptanium_qq_suggestion_set_appid">"配置步骤：\n1.从QQ官网注册并申请appid，具体见:http://wiki.connect.qq.com/移动应用接入流程";\n2.在  AndroidManifest.xml 中 配置  QQ_APPID:\n
+        &#060;meta-data android:name=\&#034;QQ_APPID\&#034; android:value=\&#034;你的AppId\&#034; &#062; &#060;&#047;meta-data&#062;
+        </string>
+        
+    <string name="kryptanium_qq_error_description_no_assistactivity">"缺少AssistActivity类声明.\n" </string>
+    <string name="kryptanium_qq_error_no_assistactivity">"在 AndroidManifest.xml中找不到AssistActivity声明.\n" </string>
+    <string name="kryptanium_qq_error_suggestion_add_assistactivity">"请在 AndroidManifest.xml新增如下类声明:\n
+        &#060;activity 
+        	android:name=\&#034;com.tencent.connect.common.AssistActivity\&#034; 
+        	android:screenOrientation=\&#034;portrait\&#034;  
+        	android:theme=\&#034;&#064;android:style/Theme.Translucent.NoTitleBar\&#034; &#047;&#062;\n\n" </string>
+    <string name="kryptanium_qq_error_description_no_authactivity">"缺少AuthActivity类声明缺失.\n" </string>
+    <string name="kryptanium_qq_error_no_authactivity">"在 AndroidManifest.xml中找不到AuthActivity声明.\n" </string>
+    <string name="kryptanium_qq_error_suggestion_add_authactivity">"请在 AndroidManifest.xml新增如下类声明:\n
+        &#060;activity\n
+            android:name=\&#034;com.tencent.tauth.AuthActivity\&#034;\n
+            android:launchMode=\&#034;singleTask\&#034;\n
+            android:noHistory=\&#034;true\&#034; &#062;\n
+            &#060;intent-filter&#062;\n
+                &#060;action android:name=\&#034;android.intent.action.VIEW\&#034; &#047;&#062;\n
+                &#060;category android:name=\&#034;android.intent.category.DEFAULT\&#034; &#047;&#062;\n
+                &#060;category android:name=\&#034;android.intent.category.BROWSABLE\&#034; &#047;&#062;\n
+                &#060;data android:scheme=\&#034;tencent你的AppId\&#034; &#047;&#062;\n
+            &#060;&#047;intent-filter&#062;\n
+        &#060;&#047;activity&#062;\n" </string>
+        
+    <string name="kryptanium_qq_error_necessary_description_perssion_not_set">QQSDK必要权限未设置或设置不全。\n</string>
+    <string name="kryptanium_qq_error_necessary_perssion_not_set">QQSDK未设置的权限有：\n</string>
+    <string name="kryptanium_qq_suggestion_set_necessary_perssion">请在AndroidManifest.xml新增必要的权限.</string>
+    <string name="kryptanium_qq_suggestion_unknow"></string>
+    <string name="kryptanium_qq_error_openapi">QQSDK响应错误</string>
+    <string name="kryptanium_qq_error_description_no_appname">Strings.xml里未设置app_name\n</string>
+    <string name="kryptanium_qq_error_no_appname">Strings.xml没有设置app_name,若未设置则无法使用QQSDK登录功能，抛出找不到资源id的错误,无法调出QQ客户端。\n</string>
+    <string name="kryptanium_qq_suggestion_set_appname">"请在主工程的res/values/Strings.xml中添加：\n&#060;string name=\&#034;app_name\&#034;&#062; &#060;/string&#062;"</string>
+    <string name="kryptanium_qq_error_miss_param">QQ缺少必要的参数</string>
+    <string name="kryptanium_qq_error_integraion">QQ接入错误</string>
+    <string name="kryptanium_qq_error_relogin">请重新登录</string>
+    <string name="kryptanium_qq_error_no_authority">第三方应用没有对该api操作的权限.</string>
+    <string name="kryptanium_qq_suggestion_authority_application">"请发送邮件进行OpenAPI权限申请,详情见:http://wiki.connect.qq.com/openapi权限申请."</string>
+    <string name="kryptanium_qq_error_invalid_session">会话无效登出.</string>
+    <string name="kryptanium_qq_error_total">QQ错误数：</string>
+    
+     <string name="kryptanium_qq_error_code">QQ内部错误</string>
+     <string name="kryptanium_qq_suggestion_sdcard_unavailable">QQ错误，建议插入SD卡</string>
+     <string name="kryptanium_qq_error_sdcard_unavailable">QQ错误，SD卡不可用</string>
+     
+     
+</resources>

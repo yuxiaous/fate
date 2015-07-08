@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="top|center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="@dimen/kryptanium_user_set_info_layout_width"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/kryptanium_user_set_info_layout_paddingTop" >
+
+        <TextView
+            android:id="@+id/kryptanium_title_describe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/kryptanium_user_set_info_title_describe_marginBottom"
+            android:text=""
+            android:textColor="@color/kryptanium_text_black"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+        <!-- 安全设置 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/kryptanium_colorbg_white_with_border"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/kryptanium_user_change_edit_one"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/kryptanium_user_set_info_edittext_height"
+                style="@style/kryptanium_edittext"
+                android:background="#00000000"
+                android:ellipsize="end"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:nextFocusDown="@id/kryptanium_user_register_password"
+                android:paddingLeft="@dimen/kryptanium_user_set_info_edittext_padding"
+                android:paddingRight="@dimen/kryptanium_user_set_info_edittext_padding"
+                android:singleLine="true"
+                android:maxLength="128"
+                android:textColor="@color/kryptanium_text_black"
+                android:textColorHint="@color/kryptanium_text_dark_gray"
+                android:textSize="@dimen/kryptanium_text_size_medium" />
+
+            <LinearLayout
+                android:id="@+id/kryptanium_user_change_line_one"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/kryptanium_titlebar_line_height"
+                android:background="@color/kryptanium_text_dark_gray"
+                android:orientation="vertical" />
+
+            <EditText
+                android:id="@+id/kryptanium_user_change_edit_two"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/kryptanium_user_set_info_edittext_height"
+                style="@style/kryptanium_edittext"
+                android:background="#00000000"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:maxLength="18"
+                android:nextFocusDown="@id/kryptanium_user_register_nickname"
+                android:paddingLeft="@dimen/kryptanium_user_set_info_edittext_padding"
+                android:paddingRight="@dimen/kryptanium_user_set_info_edittext_padding"
+                android:singleLine="true"
+                android:textColor="@color/kryptanium_text_black"
+                android:textColorHint="@color/kryptanium_text_dark_gray"
+                android:textSize="@dimen/kryptanium_text_size_medium" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/kryptanium_confrim"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/kryptanium_user_set_info_edittext_height"
+            android:layout_marginTop="@dimen/kryptanium_user_set_info_textview_marginTop"
+            android:background="@drawable/kryptanium_button_bg"
+            android:gravity="center"
+            android:text="@string/s_kt_ok"
+            android:textColor="@color/kryptanium_text_white"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+    </LinearLayout>
+
+</LinearLayout>
