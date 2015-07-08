@@ -215,7 +215,7 @@ var EquipScene = ui.GuiWindowBase.extend({
         }
         if(shop_id != 0) {
             if(util.getChannelId == GameChannel.CmccMm) {
-                shop_id += 100000;
+                shop_id += 200000;
             }
             ShopSystem.instance.buyGood(shop_id);
         }
