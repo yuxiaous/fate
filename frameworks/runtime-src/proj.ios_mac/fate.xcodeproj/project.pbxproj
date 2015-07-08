@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07EF65F61B4D190F00D49363 /* IOSUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07EF65F41B4D190F00D49363 /* IOSUtil.mm */; };
 		1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */; };
 		1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */; };
 		1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A82F5FA169AC92500C4B13A /* libsqlite3.dylib */; };
@@ -451,6 +452,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07EF65F41B4D190F00D49363 /* IOSUtil.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = IOSUtil.mm; path = ../../../Classes/IOSUtil.mm; sourceTree = "<group>"; };
+		07EF65F51B4D190F00D49363 /* IOSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IOSUtil.h; path = ../../../Classes/IOSUtil.h; sourceTree = "<group>"; };
 		1A1A081B18C9DF05005C6854 /* project.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = project.json; path = ../../../project.json; sourceTree = "<group>"; };
 		1A6BF21418C9DB5900FB0E1C /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = main.js; path = ../../../main.js; sourceTree = "<group>"; };
 		1A82F5FA169AC92500C4B13A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -1229,6 +1232,8 @@
 				DE36EEF61B25955E005B744E /* SneakyInput */,
 				DEE196621B443BC200359A46 /* GameUtils.cpp */,
 				DEE196631B443BC200359A46 /* GameUtils.h */,
+				07EF65F41B4D190F00D49363 /* IOSUtil.mm */,
+				07EF65F51B4D190F00D49363 /* IOSUtil.h */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -1857,6 +1862,7 @@
 				DE36EF081B25955E005B744E /* Armature.cpp in Sources */,
 				C00FD4BA1938628E00C6382D /* Runtime.cpp in Sources */,
 				DE36EFCE1B25955E005B744E /* SneakyButton.cpp in Sources */,
+				07EF65F61B4D190F00D49363 /* IOSUtil.mm in Sources */,
 				ABCA93C719E65B1C007FB844 /* FileServer.cpp in Sources */,
 				3E12D1DF1957FB18002FF0FD /* message_lite.cc in Sources */,
 				C06C37881918E81100617BED /* ConfigParser.cpp in Sources */,

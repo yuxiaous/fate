@@ -38,6 +38,8 @@
 
 #include "SdkManager.h"
 
+#include "IOSUtil.h"
+
 USING_NS_CC;
 using namespace CocosDenshion;
 
@@ -160,6 +162,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     ScriptingCore::getInstance()->runScript(ConfigParser::getInstance()->getEntryFile().c_str());
 #endif
     
+    
+    printf("--- uuid = %s",IOSUtil::getUUID());
     return true;
 }
 
