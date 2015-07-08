@@ -44,8 +44,10 @@ void SdkChargeProtocol::onChargeCallback(int result, const std::string &order) {
         rapidjson::StringBuffer buffer;
         rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
         json.Accept(writer);
-        
-        _chargeCallback((char*)buffer.GetString());
+
+        if(_chargeCallback) {
+            _chargeCallback((char*)buffer.GetString());
+        }
     }
     
     SdkManager::onChargeResult(result, order);
