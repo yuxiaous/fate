@@ -63,12 +63,13 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
     },
 
     refreshBattleData : function () {
-        var magicBottleNum = 0;
-        _.reduce(BagSystem.instance.items, function(sum, item) {
-            if(item.id == 100007) {
-                magicBottleNum += item.num || 0;
-            }
-        }, 0, this)
+        var magicBottleNum = BagSystem.instance.getItemNums(100007);
+
+        //_.reduce(BagSystem.instance.items, function(sum, item) {
+        //    if(item.id == 100007) {
+        //        magicBottleNum += item.num || 0;
+        //    }
+        //}, 0, this)
 
         this._magicBottleLable.setString(String(magicBottleNum));
     },
@@ -104,6 +105,9 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         }
         else{
             var bottleId = 18002;
+            if(util.getChannelId() == GameChannel.CmccMm) {
+                bottleId += 20000;
+            }
             var conf = configdb.shop[bottleId];
             if(conf){
                 var str = "花费" + conf.pay_cost +  "元，购买" + conf.name;
@@ -112,9 +116,8 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
                     if(UiEffect.blockShopItemWithRMB()){
                         return
                     }
-                    cc.director.resume()
-                    //LOG("goumai");
                     ShopSystem.instance.buyGood(bottleId, 1);
+                    cc.director.resume()
                 },this);
                 msg.setCancelCallback(function () {
                     cc.director.resume()

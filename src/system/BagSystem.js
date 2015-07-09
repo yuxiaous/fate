@@ -38,6 +38,18 @@ var BagSystem = SystemBase.extend({
         notification.emit(notification.event.ITEM_INFO);
     },
 
+    getItemNums : function (itemId_) {
+        var magicBottleNum = 0;
+        _.reduce(BagSystem.instance.items, function(sum, item) {
+
+            if(item.id == itemId_) {
+                magicBottleNum += item.num || 0;
+            }
+        }, 0, this)
+
+        return magicBottleNum;
+    },
+
     sell: function(uid, num) {
         net_protocol_handlers.SEND_CMD_CS_ITEM_SELL({
             uid: uid,

@@ -457,11 +457,11 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
 
     _on_btn_buy : function(){
 
+        LOG("buy action");
         if(UiEffect.blockShopItemWithRMB()){
             return;
         }
 
-        this.close();
         //BattleSystem.instance.sendReviveBattle();
 
         var itemId = 101013;
@@ -470,6 +470,7 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
         }
         ShopSystem.instance.buyGood(itemId,1);
 
+        this.close();
     },
 
     _on_btn_close : function () {

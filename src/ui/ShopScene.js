@@ -175,7 +175,8 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
             lbl_cost: this.seekWidgetByName("lbl_cost"),
             sp_curr: this.seekWidgetByName("Sprite_1"),
             sale_panel : this.seekWidgetByName("sale_panel"),
-            lbl_sale : this.seekWidgetByName("lbl_sale_value")
+            lbl_sale : this.seekWidgetByName("lbl_sale_value"),
+            btn_buy : this.seekWidgetByName("btn_buy")
         };
         this._ui.icon = new IconWidget();
         this._ui.icon.setWidget(this.seekWidgetByName("ProjectNode_1"));
@@ -198,6 +199,12 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
         }
         else if(config.buy_type == ShopSystem.GoodType.Skin) {
             this._ui.icon.setIcon(config.buy_id, IconWidget.Type.Skin, config.buy_count);
+
+            if(SkinSystem.instance.skins[102] != undefined ){
+                this._ui.btn_buy.setEnabled(false);
+                this._ui.btn_buy.setBright(false);
+                this._ui.btn_buy.setTitleText("已购买");
+            }
         }
         else if(config.buy_id) {
             this._ui.icon.setIcon(config.buy_id, IconWidget.Type.Item, config.buy_count);
@@ -258,7 +265,6 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
         if(GuideSystem.instance._curGuideType == GuideSystem.Type.xueping && this._good_id == 18000){
             GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_buy"),122);
         }
-
     },
 
     onExit: function() {
