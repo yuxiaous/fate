@@ -75,17 +75,25 @@ var GiftSystem = SystemBase.extend({
 
     randomSellGiftPanel : function () {
         var giftData = GiftSystem.instance._giftData;
-
         var tmpGiftData = null;
+        var needReRandom = true;
         do{
+            needReRandom = true;
             var idx = _.random(1,4);
             _.each(giftData, function (GD_) {
                 if(GD_.giftType == idx){
                     tmpGiftData = GD_;
                 }
             },this)
-        }while((tmpGiftData.buy_num > 0 && tmpGiftData.giftType != GiftSystem.GiftType.ZhiZun) || tmpGiftData.giftType == GiftSystem.GiftType.ZhiZun );
-
+            if(tmpGiftData.giftType == GiftSystem.GiftType.ZhiZun){
+                needReRandom = false;
+            }
+            else{
+                if(tmpGiftData.buy_num <= 0){
+                    needReRandom = false;
+                }
+            }
+        }while(needReRandom);
         return tmpGiftData.giftType;
     },
 
