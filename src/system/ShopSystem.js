@@ -60,7 +60,7 @@ var ShopSystem = SystemBase.extend({
             return;
         }
 
-        LOG("order: {0}, good_id: {1}".format(obj.order, config.platform_good_id));
+        LOG("good id: {2}, order: {0}, platform_good_id: {1}".format(obj.order, config.platform_good_id, obj.good_id));
         jsb.SdkManager.charge(obj.order, config.platform_good_id || "");
     }
 });

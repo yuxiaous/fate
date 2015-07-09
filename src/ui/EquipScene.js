@@ -214,7 +214,7 @@ var EquipScene = ui.GuiWindowBase.extend({
             case EquipSystem.EquipSlotType.Amulet: shop_id = 101010; break;
         }
         if(shop_id != 0) {
-            if(util.getChannelId == GameChannel.CmccMm) {
+            if(util.getChannelId() == GameChannel.CmccMm) {
                 shop_id += 200000;
             }
             ShopSystem.instance.buyGood(shop_id);
