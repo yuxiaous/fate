@@ -8,9 +8,9 @@ var operator_server = {
     }
 };
 server.registerCallback(net_protocol_handlers.CMD_CS_BUY_SUPER_SKILL_COUNT, function(obj) {
-    if(!player_server.changeSuperSkillCount(3)){
-        return;
-    }
+    //if(!player_server.changeSuperSkillCount(3)){
+    //    return;
+    //}
 
     //server.send(net_protocol_handlers.CMD_SC_BUY_SUPER_SKILL_COUNT_RESULT, {
     //    player_id : player_server.player_info.player_id,

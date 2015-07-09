@@ -347,7 +347,13 @@ var BuySkillDetail = ui.GuiWindowBase.extend({
             return
         }
 
-        BattleSystem.instance.buySuperSkill();
+       // BattleSystem.instance.buySuperSkill();
+
+        var itemId = 101011;
+        if(util.getChannelId() == GameChannel.CmccMm) {
+            itemId += 200000;
+        }
+        ShopSystem.instance.buyGood(itemId,1);
     },
 
     _on_btn_close : function () {

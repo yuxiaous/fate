@@ -462,7 +462,13 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
         }
 
         this.close();
-        BattleSystem.instance.sendReviveBattle();
+        //BattleSystem.instance.sendReviveBattle();
+
+        var itemId = 101013;
+        if(util.getChannelId() == GameChannel.CmccMm) {
+            itemId += 200000;
+        }
+        ShopSystem.instance.buyGood(itemId,1);
 
     },
 

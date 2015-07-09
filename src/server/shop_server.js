@@ -135,6 +135,42 @@ var shop_server = {
                 return false;
             }
         }
+        else if(config.buy_type == shop_server.GoodsType.DaZhao){
+            LOG("buy dazhao");
+            //if(!player_server.changeSuperSkillCount(3)){
+            //    return;
+            //}
+            player_server.changeSuperSkillCount(3);
+        }
+        else if(config.buy_type == shop_server.GoodsType.Tili){
+            LOG("buy tili");
+            player_server.changeAction(-60);
+        }
+        else if(config.buy_type == shop_server.GoodsType.FuHuo){
+            LOG("buy fuhuo");
+
+            server.send(net_protocol_handlers.CMD_SC_BATTLE_REVIVE,{
+                result : 0
+            });
+
+            var giftConf = configdb.item[config.buy_id];
+            if(giftConf){
+                _.each([["gift1","gift1_val"],
+                    ["gift2","gift2_val"],
+                    ["gift3","gift3_val"],
+                    ["gift4","gift4_val"],
+                    ["gift5","gift5_val"]
+                ], function (conf_) {
+                    if(conf_ && giftConf[conf_[0]]){
+                        var type = BagSystem.getConfigType(giftConf[conf_[0]]);
+                        if(type == BagSystem.ConfigType.Equip) {
+                            bag_server.addItem(giftConf[conf_[0]], giftConf[conf_[1]])
+                        }
+                    }
+                });
+            }
+
+        }
 
         return true;
     },
@@ -179,7 +215,10 @@ shop_server.GoodsType = {
     Gold: 5,
     Diamond: 6,
     Gift : 7,
-    EquipSlotTopLevel: 8
+    EquipSlotTopLevel: 8,
+    DaZhao : 9,
+    Tili : 10,
+    FuHuo : 11
 };
 shop_server.PayType = {
     Gold: 1,
