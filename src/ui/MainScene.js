@@ -130,7 +130,7 @@ var MainScene = ui.GuiSceneBase.extend({
     refreshRotateLabel : function () {
         var label_content = [
             "残血时可以使用血瓶满血满蓝",
-            "尼禄套装，炫酷外形，所向披靡",
+            "红色骑士套装，炫酷外形，所向披靡",
             "不要忘记技能和锻造升级",
             "替换装备不影响锻造提升属性",
             "金币可提升技能和锻造等级",
