@@ -105,7 +105,7 @@ def handle_event(event, tp, args):
             pass
 
         if event == "pre-ndk-build":
-            shutil.copy2("target/jni/Application.mk", "jni/Application.mk")
+            shutil.copy("target/jni/Application.mk", "jni/Application.mk")
             pass
 
         if event == "post-copy-assets":
