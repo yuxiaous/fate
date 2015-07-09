@@ -336,6 +336,9 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
     _on_btn_1 : function () {
          var   giftType = GiftSystem.GiftType.ZhiZun;
          var   giftId = 101003;
+        if(util.getChannelId() == GameChannel.CmccMm) {
+            giftId += 200000;
+        }
          var buy_panel = new GiftBuyDetail(giftType,giftId);
          buy_panel.pop();
          UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"));

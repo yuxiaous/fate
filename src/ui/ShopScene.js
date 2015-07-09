@@ -265,11 +265,30 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
         if(GuideSystem.instance._curGuideType == GuideSystem.Type.xueping && this._good_id == 18000){
             GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_buy"),122);
         }
+
+        this._bindings = [
+            notification.createBinding(notification.event.SKIN_INFO, this.refreshBtnBuy, this)
+        ]
+    },
+
+    refreshBtnBuy : function () {
+        var config = configdb.shop[this._good_id];
+        if(config == undefined) {
+            return;
+        }
+        if(config.buy_type == ShopSystem.GoodType.Skin) {
+            if(SkinSystem.instance.skins[102] != undefined ){
+                this._ui.btn_buy.setEnabled(false);
+                this._ui.btn_buy.setBright(false);
+                this._ui.btn_buy.setTitleText("已购买");
+            }
+        }
     },
 
     onExit: function() {
         this._ui.icon.setWidget(null);
         this._ui = null;
+        notification.removeBinding(this._bindings);
         this._super();
     },
 

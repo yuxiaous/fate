@@ -394,7 +394,7 @@ var SceneBase = lh.LHScene.extend({
         if( mapConf && mapConf.drop_gift){
             var  giftType = GiftSystem.instance.randomSellGiftPanel();
             var giftId = 0;
-            switch (giftType){
+            switch (giftType) {
                 case  GiftSystem.GiftType.Vip :
                     giftId = 101004;
                     break;
@@ -408,13 +408,13 @@ var SceneBase = lh.LHScene.extend({
                     giftId = 101002;
                     break;
                 default  :
-                    giftType = GiftSystem.GiftType.ZhiZun ;
+                    giftType = GiftSystem.GiftType.ZhiZun;
                     giftId = 101003;
                     break;
             }
-            LOG("GIFT TYPE = " + giftType);
-            LOG("GIFTID = " + giftId);
-            
+            if(util.getChannelId() == GameChannel.CmccMm) {
+                giftId += 200000;
+            }
             var revive = new GiftBuyDetail(giftType,giftId);
             revive.setCloseCallback(function () {
                 var win = new BattleWinPanel();
