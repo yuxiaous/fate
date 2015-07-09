@@ -61,7 +61,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
             giftId += 200000;
         }
 
-         this._dabaojianPanel = new GiftBuyDetail(GiftSystem.GiftType.WuQi,101002, this,function () {
+         this._dabaojianPanel = new GiftBuyDetail(GiftSystem.GiftType.WuQi,giftId, this,function () {
             curScene_._isEnteringEquipSuit = false;
             curScene_._enterDropUi = 0;
          });
