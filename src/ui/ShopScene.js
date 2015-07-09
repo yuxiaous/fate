@@ -248,7 +248,7 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
 
         var giftId = 12103;
         if(util.getChannelId() == GameChannel.CmccMm) {
-            giftId += 200000;
+            giftId += 20000;
         }
 
         if(GuideSystem.instance._curGuideType == GuideSystem.Type.shangdian && this._good_id == giftId){
