@@ -61,12 +61,15 @@ extern "C" {
 }
 
 
+static KtplaySdk *instance = nullptr;
+
+KtplaySdk::KtplaySdk()
+{
+    instance = this;
+}
+
 KtplaySdk *KtplaySdk::getInstance()
 {
-    static KtplaySdk *instance = nullptr;
-    if(instance == nullptr) {
-        instance = new KtplaySdk();
-    }
     return instance;
 }
 

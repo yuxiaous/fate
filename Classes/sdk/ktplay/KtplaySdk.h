@@ -15,6 +15,7 @@
 class KtplaySdk : public Sdk, public SdkAccountProtocol
 {
 public:
+    KtplaySdk();
     static KtplaySdk *getInstance();
     
     virtual void init() override;

@@ -16,6 +16,9 @@ class Sdk;
 class SdkManager
 {
 public:
+    static void addSdk(Sdk *sdk);
+    static void removeSdk(Sdk *sdk);
+    
     static void configureSdk();
     static void init();
     static void sdkCommond(const std::string &cmd);
@@ -36,10 +39,6 @@ public:
     static void setGender(int gender);
     static void setAge(int age);
     static void setGameServer(const char* gameServer);
-    
-private:
-    static void addSdk(Sdk *sdk);
-    static void removeSdk(Sdk *sdk);
     
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)

@@ -16,15 +16,13 @@
 
 Sdk::Sdk()
 {
-//    SdkManager::addSdk(this);
+    SdkManager::addSdk(this);
 }
 
 Sdk::~Sdk()
 {
-//    SdkManager::removeSdk(this);
+    SdkManager::removeSdk(this);
 }
-
-
 
 void SdkChargeProtocol::onChargeCallback(int result, const std::string &order) {
     if(_chargeCallback) {

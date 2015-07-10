@@ -40,19 +40,16 @@ USING_NS_CC;
 //}
 //#endif
 
+static TalkingDataGameAnalyticsSdk *instance = nullptr;
 
 TalkingDataGameAnalyticsSdk::TalkingDataGameAnalyticsSdk()
 : _account(nullptr)
 {
-    
+    instance = this;
 }
 
-static TalkingDataGameAnalyticsSdk *instance = nullptr;
 TalkingDataGameAnalyticsSdk *TalkingDataGameAnalyticsSdk::getInstance()
 {
-    if(instance == nullptr) {
-        instance = new TalkingDataGameAnalyticsSdk();
-    }
     return instance;
 }
 
