@@ -113,11 +113,11 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
                 var str = "花费" + conf.pay_cost +  "元，购买" + conf.name;
                 var msg = new MessageBoxOkCancel(str,"购买","取消");
                 msg.setOkCallback(function () {
+                    cc.director.resume()
                     if(UiEffect.blockShopItemWithRMB()){
                         return
                     }
                     ShopSystem.instance.buyGood(bottleId, 1);
-                    cc.director.resume()
                 },this);
                 msg.setCancelCallback(function () {
                     cc.director.resume()
