@@ -347,7 +347,7 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
     _on_btn_2 : function () {
 
         if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
-            MessageBoxOk.show("通过第一章第六关开放");
+            MessageBoxOk.show("通过第一章第二关开放");
             return;
         }
         ui.replaceScene(ShopScene);

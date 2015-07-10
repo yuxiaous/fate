@@ -71,6 +71,12 @@ var PhysicalNode = cc.Node.extend({
         this.addChild(shadow, -100);
     },
 
+    hideShadow : function () {
+        if(this._shadow){
+            this._shadow.setVisible(false);
+        }
+    },
+
     setGuanghuan : function () {
         var _guanghuan = this._guanghuan;
         if(_guanghuan == null) {
