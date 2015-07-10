@@ -1,0 +1,19 @@
+<resources>
+    
+    <!-- Settings -->
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_category" translatable="false">sns</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_region" translatable="false">China</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_name" translatable="false">sina_weibo</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_sharetype_image" translatable="false">photo</string>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_sharetype_imagepath" translatable="false">path</string>
+
+    <!-- value取值:visible/invisible -->
+    <string name="kryptanium_sinaweibo_prop_friends_hint_visibility" translatable="false">visible</string>
+    <integer name="kryptanium_sns_umeng_sinaweibo_prop_priority" translatable="false">2</integer>
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_version" translatable="false">1.2.0</string>
+    <!-- 用于禁用插件的方法，可选值为authorize,postStatus,requestFriends。可以指定多个用“,”分隔 -->
+    <string name="kryptanium_sns_umeng_sinaweibo_prop_disable_features" translatable="false"></string>
+    <string-array name="kryptanium_sns_umeng_sinaweibo_shareable_targets" translatable="false">
+        <item>@string/kryptanium_sns_umeng_sinaweibo_prop_name</item>
+    </string-array>
+</resources>

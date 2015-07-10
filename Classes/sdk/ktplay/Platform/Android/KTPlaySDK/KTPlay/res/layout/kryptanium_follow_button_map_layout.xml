@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/kryptanium_colorbg_purple" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/kryptanium_profile_map_count_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="@color/kryptanium_text_white"
+            android:textSize="@dimen/kryptanium_fontsize_large" />
+
+        <TextView
+            android:id="@+id/kryptanium_profile_map_count_textview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/kryptanium_text_white"
+            android:textSize="@dimen/kryptanium_fontsize_small" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/kryptanium_profile_map_new_msg"
+        android:layout_width="@dimen/kryptanium_new_msg_size"
+        android:layout_height="@dimen/kryptanium_new_msg_size"
+        android:layout_gravity="right|top"
+        android:contentDescription="@null"
+        android:background="@drawable/kryptanium_new_msg"
+        android:visibility="gone" />
+
+</FrameLayout>

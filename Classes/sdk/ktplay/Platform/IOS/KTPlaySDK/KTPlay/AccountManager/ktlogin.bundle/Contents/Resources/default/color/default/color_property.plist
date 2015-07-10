@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>login_global_default_bg</key>
+	<string>#ffffffff</string>
+	<key>login_global_default_border</key>
+	<string>#ff000000</string>
+	<key>login_global_selection_button_fg</key>
+	<string>#ff007aff</string>
+	<key>login_global_textfield_border</key>
+	<string>#ffdfdfdf</string>
+	<key>login_global_textfield_placeholder</key>
+	<string>#ff808080</string>
+	<key>login_global_pushbutton_fg</key>
+	<string>#ffffffff</string>
+	<key>login_global_pushbutton_bg</key>
+	<string>#ff16ae2b</string>
+	<key>send_bg_color_16ac2b</key>
+	<string>#ff16ae2b</string>
+	<key>login_terms_entry</key>
+	<string>#ff808080</string>
+	<key>login_regionlist_title</key>
+	<string>#ff595959</string>
+	<key>login_regionlist_title_bg</key>
+	<string>#fff0f0f0</string>
+	<key>blank_bg_color</key>
+	<string>#99000000</string>
+	<key>fontcolor_black</key>
+	<string>#ff000000</string>
+	<key>line_color</key>
+	<string>#ffe4e4e4</string>
+	<key>login_loginview_sepline</key>
+	<string>#ffc0c0c0</string>
+	<key>login_loginview_sepline_title</key>
+	<string>#ff999999</string>
+	<key>reply_title_nickname_fontcolor</key>
+	<string>#ff007aff</string>
+	<key>cancel_btn_color</key>
+	<string>#ff8f8f8f</string>
+	<key>fontcolor_white</key>
+	<string>#ffffffff</string>
+	<key>default_image_color</key>
+	<string>#ffe9e9e9</string>
+</dict>
+</plist>

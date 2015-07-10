@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" > <!-- android:shape="" 表示是圆角矩形还是椭圆等等 -->
+    <solid android:color="@color/kryptanium_black_alpha_cancel" /> <!-- 背景颜色 -->
+    <corners android:topLeftRadius="@dimen/kryptanium_default_gap_half" android:topRightRadius="@dimen/kryptanium_default_gap_half"/>
+
+
+</shape>

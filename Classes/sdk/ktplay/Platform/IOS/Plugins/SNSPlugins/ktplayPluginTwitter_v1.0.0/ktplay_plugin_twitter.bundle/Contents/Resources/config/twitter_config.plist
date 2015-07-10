@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>prop_category</key>
+	<string>sns</string>
+	<key>prop_region</key>
+	<string>International</string>
+	<key>prop_name</key>
+	<string>twitter</string>
+	<key>prop_version</key>
+	<string>1.0.0</string>
+	<key>prop_shareable_targets</key>
+	<array>
+		<string>twitter</string>
+	</array>
+	<key>prop_scheme</key>
+	<string>twitter</string>
+	<key>test_appkeys</key>
+	<array>
+		<dict>
+			<key>AppKey</key>
+			<string>GLx5FHJgzditSbjzN4g</string>
+			<key>AppSecret</key>
+			<string>x4Ksnn7pzg6OYmaDwyoPQbI84nRKWy72AEjTytjgKus</string>
+		</dict>
+	</array>
+	<key>prop_priority</key>
+	<integer>10</integer>
+</dict>
+</plist>

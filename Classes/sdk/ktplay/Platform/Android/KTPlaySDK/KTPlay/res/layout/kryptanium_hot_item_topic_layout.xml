@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/kryptanium_hot_topic_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <!--
+     android:paddingLeft="@dimen/kryptanium_home_hot_topic_item_layout_paddingLeft"
+        android:paddingTop="@dimen/kryptanium_home_hot_topic_item_layout_paddingTop"
+        -->
+        <!-- dxh 头像图片 -->
+
+        <com.ktplay.widget.StateImageView
+            android:id="@+id/kryptanium_hot_topic_head_iv"
+            android:layout_width="@dimen/kryptanium_home_hot_topic_item_imageview_width_height"
+            android:layout_height="@dimen/kryptanium_home_hot_topic_item_imageview_width_height"
+            android:background="@null"
+            android:layout_marginLeft="@dimen/kryptanium_home_hot_topic_item_layout_paddingLeft"
+            android:layout_marginTop="@dimen/kryptanium_home_hot_topic_item_layout_paddingTop"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/kryptanium_hot_topic_head_iv"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/kryptanium_home_hot_topic_item_text_layout_paddingLeft" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="1dp" >
+
+                <TextView
+                    android:id="@+id/kryptanium_hot_topic_head_tvname"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/kryptanium_hot_topic_tvcomment_replay"
+                    android:paddingTop="@dimen/kryptanium_home_hot_topic_item_text_name_paddingTop"
+                    android:singleLine="true"
+                    android:textColor="@color/kryptanium_base_color_near_white"
+                    android:textSize="@dimen/kryptanium_text_size_medium" />
+
+                <TextView
+                    android:id="@+id/kryptanium_hot_topic_tvcomment_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="@color/kryptanium_base_color_near_white"
+                    android:textSize="@dimen/kryptanium_fontsize_small"
+                    android:visibility="gone" /> 
+
+                <TextView
+                    android:id="@+id/kryptanium_hot_topic_tvcomment_replay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/kryptanium_spacing_superbig"
+                    android:paddingRight="@dimen/kryptanium_home_hot_topic_item_text_reply_paddingRight"
+                    android:paddingTop="@dimen/kryptanium_home_hot_topic_item_text_reply_paddingTop"
+                    android:textColor="@color/kryptanium_base_color_near_white"
+                    android:textSize="@dimen/kryptanium_text_size_small" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/kryptanium_hot_topic_tvcomment_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingRight="@dimen/kryptanium_layout_paddingRight"
+                android:textColor="@color/kryptanium_text_white"
+                android:textSize="@dimen/kryptanium_text_size_standard" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

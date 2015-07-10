@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/kryptanium_title_pro"
+            android:gravity="center"
+            android:textColor="@color/kryptanium_text_white"
+            android:textSize="@dimen/kryptanium_user_profile_mid"
+             />
+	

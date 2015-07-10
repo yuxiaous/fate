@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/kryptanium_menu_dialog_item_text"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/kryptanium_topic_category_bg"
+    android:minHeight="@dimen/kryptanium_button_title_height" 
+    android:ellipsize="end"
+    android:gravity="center"
+    android:singleLine="true"
+    android:tag="menu_dialog_item_text"
+    android:textColor="@color/kryptanium_text_black"
+    android:textSize="@dimen/kryptanium_text_size_medium" />
+
+    <!--
+ dxh 下拉框 textview 
+    android:textStyle="bold" 
+    -->

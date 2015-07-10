@@ -1,5 +1,42 @@
 LOCAL_PATH := $(call my-dir)
 
+
+
+
+
+
+#prebuild KTPlay library
+#KTPLAY_LIBRARIES_PATH := ../../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/armeabi
+KTPLAY_LIBRARIES_PATH := ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/armeabi
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := KTPlay
+LOCAL_SRC_FILES := $(KTPLAY_LIBRARIES_PATH)/libKTPlay.so
+LOCAL_MODULE_FILENAME := libKTPlay
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := KTAccountmanager
+LOCAL_SRC_FILES := $(KTPLAY_LIBRARIES_PATH)/libKTAccountmanager.so
+LOCAL_MODULE_FILENAME := libKTAccountmanager
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := KTFriendship
+LOCAL_SRC_FILES := $(KTPLAY_LIBRARIES_PATH)/libKTFriendship.so
+LOCAL_MODULE_FILENAME := libKTFriendship
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := KTLeaderboard
+LOCAL_SRC_FILES := $(KTPLAY_LIBRARIES_PATH)/libKTLeaderboard.so
+LOCAL_MODULE_FILENAME := libKTLeaderboard
+include $(PREBUILT_SHARED_LIBRARY)
+
+
+
+
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := game_sdk_static
@@ -13,7 +50,8 @@ LOCAL_SRC_FILES := SdkManager.cpp \
                    TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.cpp \
                    DeveloperSdk.cpp \
                    AndGame/AndGameSdk.cpp \
-                   mmbilling/MMSdk.cpp
+                   mmbilling/MMSdk.cpp \
+                   ktplay/KtplaySdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT
@@ -34,6 +72,12 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos \
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../sdk
 
 LOCAL_STATIC_LIBRARIES := cocos2dx-talkingdata
+
+
+LOCAL_SHARED_LIBRARIES := KTPlay \
+                          KTAccountmanager \
+                          KTFriendship \
+                          KTLeaderboard
 
 include $(BUILD_STATIC_LIBRARY)
 

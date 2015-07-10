@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape  xmlns:android="http://schemas.android.com/apk/res/android" >
+	<solid android:color="#ffffff" /><!-- 背景的填充颜色 -->
+	<corners android:topLeftRadius="@dimen/kryptanium_frame_radian" 
+	    android:bottomLeftRadius="@dimen/kryptanium_frame_radian"/><!-- 边角圆弧的半径 -->
+	</shape>

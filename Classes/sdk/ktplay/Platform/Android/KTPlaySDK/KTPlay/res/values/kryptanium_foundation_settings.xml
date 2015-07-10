@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<integer name="kryptanium_foundation_max_imagewidth">1024</integer>
+	<integer name="kryptanium_foundation_max_imageheight">1024</integer>
+</resources>

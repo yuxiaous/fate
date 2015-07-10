@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+<string name="kt_please_wait">Hang on…</string>
+<string name="kt_loading">Loading…</string>
+<string name="kt_load_failed_retry">Click to reload</string>
+<string name="kt_pressagain_to_quit">Click on the back button to return to game</string>
+<string name="kt_sdcard_unavailable">Secure Digital (SD) card not get recognized</string>
+<string formatted="false" name="kt_sns_app_unavailable">You need to install the latest version of %@ App</string>
+<string formatted="false" name="kt_login_with_channel_account">Login With %@</string>
+<string name="kt_log_appkey">[KTPlaySDK Info]App Key:\t\t</string>
+<string name="kt_log_appsecret">[KTPlaySDK Info]App Secret:\t\t</string>
+<string name="kt_log_kryptanium_version">[KTPlaySDK Info]SDK Version:</string>
+<string name="kt_log_kryptanium_type">[KTPlaySDK Info]Type of Version:</string>
+<string name="kt_log_kryptanium_type_china">China</string>
+<string name="kt_log_kryptanium_type_international">International</string>
+<string name="kt_log_kryptanium_type_universal">Global</string>
+<string name="kt_log_kryptanium_channelid">Channel ID</string>
+<string name="kt_error_failurereason">Reason for error</string>
+<string name="kt_error_recoverysuggestion">Solution</string>
+<string name="kt_plugin_not_found">Plug-In not get recognized</string>
+<string formatted="false" name="kt_locked_loginchannel_plugin_missed">You have specified %@ as the only Login method, but we can\'t find this Plug-In in your project.</string>
+<string formatted="false" name="kt_locked_loginchannel_plugin_missed_suggestion">Add %@ Plug-In to your project, when you sure want to use %@ Login. If you don\'t need this function, please remove the meta-data named KTPLAY_LOCK-LOGINTYPE in the AndroidManifaest.xml</string>
+<string name="kt_terms_agreement">You\'ve read and agreed to our Terms of Service and Privacy Policy</string>
+<string name="kt_terms_agreement_link">Terms of Service and Privacy Policy</string>
+<string name="kt_photo_select">All Photos</string>
+</resources>

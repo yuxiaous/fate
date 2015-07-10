@@ -31,6 +31,10 @@
 #include "mmbilling/MMSdk.h"
 #endif
 
+#ifdef SDK_KTPLAY
+#include "ktplay/KtplaySdk.h"
+#endif
+
 USING_NS_CC;
 
 
@@ -67,12 +71,23 @@ void SdkManager::configureSdk()
 #ifdef SDK_MM_BILLING
     addSdk(MMSdk::getInstance());
 #endif
+    
+#ifdef SDK_KTPLAY
+    addSdk(KtplaySdk::getInstance());
+#endif
 }
 
 void SdkManager::init()
 {
     for(Sdk *sdk : _sdks) {
         sdk->init();
+    }
+}
+
+void SdkManager::sdkCommond(const std::string &cmd)
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->sdkCommond(cmd);
     }
 }
 
@@ -128,7 +143,12 @@ void SdkManager::onUse(const char* item, int number)
 
 void SdkManager::login()
 {
-    
+    for(Sdk *sdk : _sdks) {
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
+        if(account) {
+            account->login();
+        }
+    }
 }
 
 void SdkManager::setAccount(const char* accountId)
@@ -294,12 +314,38 @@ extern "C" {
         cocos2d::log("Java_com_fate_SdkManagerJni_activityOnCreate");
         SdkManager::activityOnCreate();
     }
+
+    void Java_com_fate_SdkManagerJni_activityOnPause(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_fate_SdkManagerJni_activityOnPause");
+        SdkManager::activityOnCreate();
+    }
+
+    void Java_com_fate_SdkManagerJni_activityOnResume(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_fate_SdkManagerJni_activityOnResume");
+        SdkManager::activityOnCreate();
+    }
 }
 
 void SdkManager::activityOnCreate()
 {
     for(Sdk *sdk : _sdks) {
         sdk->activityOnCreate();
+    }
+}
+
+void SdkManager::activityOnPause()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnPause();
+    }
+}
+
+void SdkManager::activityOnResume()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnResume();
     }
 }
 #endif

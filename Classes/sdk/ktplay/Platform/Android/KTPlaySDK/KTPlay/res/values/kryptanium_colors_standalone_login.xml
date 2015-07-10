@@ -1,0 +1,29 @@
+<resources>
+    <!-- 内容区域背景颜色 -->
+    <color name="kryptanium_standalone_login_frame_bg">#af111111</color>
+    
+     <!-- 内容区域边框颜色 -->
+    <color name="kryptanium_standalone_login_frame_border">#ff111111</color>
+    
+    <!-- 按钮背景颜色 -->
+    <color name="kryptanium_standalone_login_button_bg">#ffdddddd</color>
+    
+    <!-- 按钮字体颜色 -->
+    <color name="kryptanium_standalone_login_button_text">#ff000000</color>
+    
+    <!-- 链接字体颜色  -->
+    <color name="kryptanium_standalone_login_link_text">#ffdddddd</color>
+    
+    <!-- 输入框背景颜色 -->
+    <color name="kryptanium_standalone_login_input_bg">#ffafafaf</color>
+    
+    <!-- 输入框边框颜色 -->
+    <color name="kryptanium_standalone_login_input_border">#ff333333</color>
+    
+    <!-- 输入框字体颜色 -->
+    <color name="kryptanium_standalone_login_input_text">#ff333333</color>
+    
+    <!-- 标签字体颜色 -->
+     <color name="kryptanium_standalone_login_label_text">#ffcccccc</color>
+    
+</resources>

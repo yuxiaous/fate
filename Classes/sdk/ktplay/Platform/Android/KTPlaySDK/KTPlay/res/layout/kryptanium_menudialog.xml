@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/kryptanium_menudialog_bg" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<ListView
+    android:id="@id/kryptanium_menu_dialog_item_list"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:cacheColorHint="#00000000"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+    android:divider="#000000"
+    android:scrollbars="none"
+    >
+</ListView>
+</FrameLayout>

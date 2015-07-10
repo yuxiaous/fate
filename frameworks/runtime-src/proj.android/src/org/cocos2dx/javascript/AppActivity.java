@@ -26,6 +26,7 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.javascript;
 
+import com.ktplay.open.KTPlay;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
@@ -46,6 +47,11 @@ public class AppActivity extends Cocos2dxActivity{
     static String hostIPAdress = "0.0.0.0";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.loadLibrary("KTPlay");
+        System.loadLibrary("KTAccountmanager");
+        System.loadLibrary("KTFriendship");
+        System.loadLibrary("KTLeaderboard");
+
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         
@@ -63,6 +69,8 @@ public class AppActivity extends Cocos2dxActivity{
         SdkManagerJni.configureSdk();
         SdkManagerJni.activity = this;
         SdkManagerJni.activityOnCreate();
+
+        KTPlay.startWithAppKey(this, "2yipeBu5W7", "ad24d7d5ee7c86f3b266f8066f5549f67a3bae29");
     }
     
     @Override
@@ -87,5 +95,22 @@ public class AppActivity extends Cocos2dxActivity{
     
     private static native boolean nativeIsLandScape();
     private static native boolean nativeIsDebug();
-    
+
+    @Override
+    protected void onPause() {
+        System.out.println("AppActivity.onPause");
+        super.onPause();
+        SdkManagerJni.activityOnPause();
+
+        KTPlay.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        System.out.println("AppActivity.onResume");
+        super.onResume();
+        SdkManagerJni.activityOnResume();
+
+        KTPlay.onResume(this);
+    }
 }

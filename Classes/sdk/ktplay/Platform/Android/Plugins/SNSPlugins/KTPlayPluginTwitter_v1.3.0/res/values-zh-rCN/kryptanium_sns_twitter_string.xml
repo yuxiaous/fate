@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="kryptanium_sns_name_twitter">Twitter</string>
+    <string name="kryptanium_twitter_error_network_unavailable">网络不可用</string>
+    <string name="kryptanium_twitter_error_network_not_inline">检测不到网络</string>
+    <string name="kryptanium_twitter_error_network_set">请检查网络设置</string>
+    <string name="kryptanium_twitter_error_description_miss_metadata">"twitter SDK必需的meta-data有：
+        \n 1.TWITTER_APPKEY
+        \n 2.TWITTER_APPSECRET
+        \n 3.TWITTER_CALLBACKURL</string>
+    <string name="kryptanium_twitter_error_failureReason_miss_metadata">"必需的meta-data未配置：\n"</string>
+    <string name="kryptanium_twitter_suggestion_miss_metadata">"请检查AndroidManifest.xml文件，补全twitter SDK配置，以下是样例：\n
+        &#060;meta-data android:name=\&#034;TWITTER_APPKEY\&#034; android:value=\&#034;你申请的app_key\&#034; &#062; &#060;&#047;meta-data&#062;"</string>
+        
+    <string name="kryptanium_twitter_error_necessary_description_perssion_not_set">twitter SDK必要权限未设置或设置不全。</string>
+    <string name="kryptanium_twitter_error_necessary_perssion_not_set">未设置的权限有：</string>
+    <string name="kryptanium_twitter_suggestion_set_necessary_perssion">请在AndroidManifest.xml新增必要的权限.</string>
+
+</resources>

@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kryptanium.plugin.sns.qihoo360"
+    android:versionCode="2"
+    android:versionName="1.2.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application >
+    </application>
+
+</manifest>

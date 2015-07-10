@@ -20,6 +20,7 @@ public:
     virtual ~Sdk();
     
     virtual void init() {}
+    virtual void sdkCommond(const std::string &cmd) {}
     
     
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
@@ -38,6 +39,8 @@ public:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
     virtual void activityOnCreate() {}
+    virtual void activityOnPause() {}
+    virtual void activityOnResume() {}
 #endif
 };
 

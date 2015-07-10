@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridView android:id="@+id/kryptanium_selectimage_gridview" xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent" 
+	android:numColumns="3"
+	android:verticalSpacing="1dp"
+	android:horizontalSpacing="1dp"
+	android:listSelector="@null"
+	android:background="#ffffff"
+	android:stretchMode="columnWidth"
+	android:gravity="center"
+/>

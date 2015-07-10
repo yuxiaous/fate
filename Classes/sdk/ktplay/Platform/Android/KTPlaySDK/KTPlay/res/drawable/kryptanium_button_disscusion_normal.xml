@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+   <!--  <item android:drawable="@drawable/kryptanium_profile_login_user_head_portrait_bg_left" /> -->
+     <item android:drawable="@drawable/kryptanium_colorbg_blue_disscusion" />
+	<item>
+		<bitmap android:src="@drawable/kryptanium_button_disscusion_icon" android:gravity="left" />
+	</item>
+</layer-list>

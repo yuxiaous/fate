@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <!-- 更多游戏 -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/kryptanium_more_game_layout_item_margin_Top_Bottom"
+        android:layout_marginTop="@dimen/kryptanium_more_game_layout_item_margin_Top_Bottom"
+        android:paddingLeft="@dimen/kryptanium_layout_marginLeft" >
+
+        <!-- android:minHeight="@dimen/kryptanium_hot_game_frame_th" -->
+        <!--
+     <ImageView
+	    android:id="@+id/kryptanium_hot_item_player_iv"
+	    android:layout_width="@dimen/kryptanium_head_wh_small"
+	    android:layout_height="@dimen/kryptanium_head_wh_small"
+	    android:scaleType="fitXY" />
+        -->
+        <!-- android:background="@drawable/kryptanium_corner_bg_white" -->
+        <!-- 下载按钮 -->
+
+        <ImageView
+            android:id="@+id/kryptanium_hot_game_donwload"
+            style="@style/kryptanium_buttom_style_download"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/kryptanium_layout_marginRight" />
+
+        <RelativeLayout
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="25dp"
+            android:layout_toLeftOf="@+id/kryptanium_hot_game_donwload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/kryptanium_hot_game_portrait"
+                android:layout_width="@dimen/kryptanium_more_game_layout_item_image_icon_width_height"
+                android:layout_height="@dimen/kryptanium_more_game_layout_item_image_icon_width_height"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/kryptanium_hot_game_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/kryptanium_more_game_textview_marginLeft"
+                android:layout_toRightOf="@+id/kryptanium_hot_game_portrait"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Chat Jellysssssddddddddddssssssssssssssssss"
+                android:textColor="@color/kryptanium_text_dar_black"
+                android:textSize="@dimen/kryptanium_text_size_standard" />
+
+            <TextView
+                android:id="@+id/kryptanium_hot_game_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/kryptanium_hot_game_name"
+                android:layout_marginLeft="@dimen/kryptanium_more_game_textview_marginLeft"
+                android:layout_marginTop="@dimen/kryptanium_more_game_textview_marginTop"
+                android:layout_toRightOf="@+id/kryptanium_hot_game_portrait"
+                android:text="通讯录好友通讯录好友通讯通讯录通讯录好友通讯录好友通讯通讯录好友通讯录好友通讯通讯录好友通讯录好友通讯好友通讯录好友通讯通讯录好友通讯录好友通讯通讯录好友通讯录好友通讯"
+                android:textColor="@color/kryptanium_text_dar_black"
+                android:textSize="@dimen/kryptanium_text_size_small" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
