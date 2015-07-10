@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+     <item>
+	<shape>
+	<solid android:color="@color/kryptanium_frame" /><!-- 背景的填充颜色 -->
+
+
+	</shape>
+   </item>
+     <item android:bottom="@dimen/kryptanium_frame_wh_padding" android:right="0dip"  android:left="@dimen/kryptanium_frame_wh_padding" android:top="@dimen/kryptanium_frame_wh_padding" > 
+<shape>
+	<solid android:color="@color/kryptanium_tab_background" /><!-- 背景的填充颜色 -->
+
+
+	</shape>
+   </item>
+</layer-list>  

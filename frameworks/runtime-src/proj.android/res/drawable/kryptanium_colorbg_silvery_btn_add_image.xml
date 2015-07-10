@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+    <solid android:color="#dfdfdf" />
+    <corners android:radius="2dp"/>
+    <!-- <size android:width="@dimen/kryptanium_add_image_buttom_w" android:height="@dimen/kryptanium_add_image_buttom_h"/> -->
+</shape>

@@ -39,6 +39,8 @@ public:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
     virtual void activityOnCreate() {}
+    virtual void activityOnPause() {}
+    virtual void activityOnResume() {}
 #endif
 };
 

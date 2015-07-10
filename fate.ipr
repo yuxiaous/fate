@@ -171,6 +171,20 @@
     <mapping directory="" vcs="" />
   </component>
   <component name="libraryTable">
+    <library name="Game_Analytics_SDK_Android_3.1.68">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="ktplay">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="mmbilling.3.1.3">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/mmbilling/android/mmbilling.3.1.3.jar!/" />

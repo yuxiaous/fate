@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/kryptanium_base_color_white"
+     >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/kryptanium_contentlayout_margin_top"
+        android:orientation="vertical" >
+        
+        <TextView android:text="@string/kt_login_failed"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textColor="@color/kryptanium_text_dar_black"
+           android:textSize="@dimen/kryptanium_text_size_big"
+           android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:text="@string/kt_quicklaunch_relogin"
+            android:id="@+id/kryptanium_game_relogin_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+             android:layout_marginTop="10dp"
+            android:id="@+id/kryptanium_game_relogin"
+            style="@style/kryptanium_button_style_main"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/kt_relogin" />
+    </LinearLayout>
+
+</FrameLayout>

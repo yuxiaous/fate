@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 兑换码界面 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kryptanium_base_color_white"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <LinearLayout
+        android:layout_width="@dimen/kryptanium_login_content_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/kryptanium_redemption_code"
+            style="@style/kryptanium_edittext"
+            android:layout_width="235dp"
+            android:layout_marginTop="10dp"
+            android:cursorVisible="true"
+            android:hint="@string/kt_input_redeem_code" />
+
+        <TextView
+            android:id="@+id/kryptanium_redempt"
+            style="@style/kryptanium_button_style_main"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10dp"
+            android:text="@string/kt_redeem"
+            android:textColor="@color/kryptanium_text_white"
+            android:textSize="@dimen/kryptanium_text_size_big" />
+
+        <TextView
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/kt_redeem_code_description"
+            android:textColor="@color/kryptanium_text_dark_gray"
+            android:textSize="@dimen/kryptanium_text_size_medium" />
+    </LinearLayout>
+
+</FrameLayout>

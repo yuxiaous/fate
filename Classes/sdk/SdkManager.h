@@ -62,6 +62,8 @@ public:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) && !defined(SKIP_BY_AUTO_BINDINGS)
 public:
     static void activityOnCreate();
+    static void activityOnPause();
+    static void activityOnResume();
 #endif
 };
 

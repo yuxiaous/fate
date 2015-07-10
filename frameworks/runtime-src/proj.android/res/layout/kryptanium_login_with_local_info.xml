@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 本地账户登陆界面 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kryptanium_base_color_white"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <!-- 内容区 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <!-- 多个账户布局 -->
+
+        <RelativeLayout
+            android:id="@+id/kryptanium_login_local_info_multiple_account"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" >
+
+            <ListView
+                android:id="@+id/kryptanium_login_local_info_listview"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:cacheColorHint="#00000000"
+                android:divider="@color/kryptanium_barline_color"
+                android:dividerHeight="0.5dp"
+                android:fadingEdge="none"
+                android:listSelector="#00000000" />
+
+            <View
+                style="@style/kryptanium_seperate_line"
+                android:layout_below="@id/kryptanium_login_local_info_listview"
+                android:layout_gravity="center_vertical"
+                android:paddingBottom="10dp" />
+        </RelativeLayout>
+
+        <!-- 单个账户布局 -->
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/kryptanium_login_local_info_one_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <FrameLayout
+                android:id="@+id/kryptanium_login_local_info_one_account_fl"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17.5dp" >
+
+                <ImageView
+                    android:id="@+id/kryptanium_login_local_info_one_account_iv"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+
+                <CheckBox
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="2dp"
+                    android:id="@+id/kryptanium_login_check"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/kryptanium_checkbox_circle"
+                    android:button="@null"
+                    android:checked="true"
+                    android:clickable="false"
+                    android:defaultValue="true" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/kryptanium_login_nickname_single"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/kryptanium_login_local_info_one_account_fl"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="#00000000"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/kryptanium_text_dark"
+                android:textSize="@dimen/kryptanium_text_size_big" />
+        </RelativeLayout>
+
+        <!-- 使用该账户进入按钮 -->
+
+        <FrameLayout
+            android:id="@+id/kryptanium_login_local_info_foot_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/kryptanium_colorbg_white_alpha"
+            android:paddingBottom="12.5dp"
+            android:paddingLeft="12.5dp"
+            android:paddingRight="12.5dp" >
+
+            <TextView
+                android:id="@+id/kryptanium_login_local_info_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/kryptanium_button_content_height"
+                android:layout_gravity="center"
+                android:background="@drawable/kryptanium_button_bg"
+                android:gravity="center"
+                android:text="@string/kt_login_with_selected_account"
+                android:textColor="@color/kryptanium_text_white"
+                android:textSize="@dimen/kryptanium_text_size_big" />
+        </FrameLayout>
+        <!-- 切换其他账户链接 -->
+
+        <View
+            style="@style/kryptanium_seperate_line"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/kryptanium_login_other_account_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:paddingBottom="15dp"
+            android:paddingTop="12.5dp"
+            android:text="@string/kt_login_with_other_accounts"
+            android:textColor="#2c9000"
+            android:textSize="@dimen/kryptanium_text_size_big" />
+    </LinearLayout>
+
+</FrameLayout>

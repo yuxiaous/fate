@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/kryptanium_hot_gome_button"
+	    android:layout_width="@dimen/kryptanium_moregame_icon_width_height"
+	    android:layout_height="@dimen/kryptanium_moregame_icon_width_height"
+	    android:layout_gravity="bottom|right"
+	    android:background="@drawable/kryptanium_hotgame_btn_n"
+	    android:textColor="@color/kryptanium_text_white"
+	    android:textSize="@dimen/kryptanium_fontsize_big" />
+

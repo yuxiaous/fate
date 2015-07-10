@@ -52,8 +52,10 @@ extern "C" {
     {
         if (isSuccess) {
             //登录成功
+            cocos2d::log("showLoginViewCallback login success");
         } else {
             //登录失败
+            cocos2d::log("showLoginViewCallback login fail");
         }
     }
 }

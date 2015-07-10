@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/kryptanium_image_thumbnail_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="8.5dp"
+        android:paddingTop="8.5dp" >
+
+        <ImageView
+            android:id="@+id/kryptanium_image_thumbnail"
+            android:layout_width="@dimen/kryptanium_topic_add_image_wh"
+            android:layout_height="@dimen/kryptanium_topic_add_image_wh"
+            android:scaleType="centerCrop"
+            android:src="@drawable/kryptanium_default_icon_image_small" />
+    </RelativeLayout>
+
+    <com.ktplay.widget.StateImageView
+        android:id="@+id/kryptanium_image_thumbnail_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/kryptanium_image_thumbnail_layout"
+        android:layout_alignTop="@+id/kryptanium_image_thumbnail_layout"
+        android:src="@drawable/kryptanium_clear_input_button" />
+
+</RelativeLayout>

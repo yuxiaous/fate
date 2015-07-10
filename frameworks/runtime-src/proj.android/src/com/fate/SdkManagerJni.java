@@ -9,4 +9,6 @@ public class SdkManagerJni {
 
 	public static native void configureSdk();
 	public static native void activityOnCreate();
+	public static native void activityOnPause();
+	public static native void activityOnResume();
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Required Plugins  -->
+	<string-array name="kryptanium_plugins_required">
+	    <!-- <item >analytics_umeng</item>
+	    <item >@string/s_kt_pluginmiss_umeng_analytics</item> -->
+	</string-array>
+	
+	
+	<!-- Recommended Plugins -->
+	<string-array name="kryptanium_plugins_recommended">
+	   <!--  <item >sina_weibo</item>
+	    <item >@string/s_kt_pluginmiss_sinaweibo</item>
+	    <item >tencent_qzone</item>
+	    <item >@string/s_kt_pluginmiss_qq</item>
+	    <item >weixin</item>
+	    <item >@string/s_kt_pluginmiss_weixin</item> -->
+	</string-array>
+	
+
+	<string-array name="kryptanium_plugins_testkeys" translatable="false">
+	    <!-- sina weibo -->
+	    <item>sina_weibo</item>
+	    <item>172094080</item>
+	    <item>9a7d64aa28f6511f4065afb851b39117</item>
+	    <item>http://www.sina.com</item>
+	    
+	</string-array>
+	
+</resources>

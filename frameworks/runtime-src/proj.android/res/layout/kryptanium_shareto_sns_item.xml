@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kryptanium_send_to_sns_facebook_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <com.ktplay.widget.StateImageView
+        android:id="@+id/kryptanium_shareto_sns_item_icon"
+        style="@style/kryptanium_textview_2_button"
+        android:layout_width="@dimen/kryptanium_share_icon_width_height"
+        android:layout_height="@dimen/kryptanium_share_icon_width_height"
+        android:textColor="@color/kryptanium_text_white"
+        android:textSize="@dimen/kryptanium_fontsize_big" />
+
+    <TextView
+        android:id="@+id/kryptanium_shareto_sns_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left|center"
+        android:textColor="@color/kryptanium_text_black"
+        android:textSize="@dimen/kryptanium_text_size_small" />
+
+</LinearLayout>

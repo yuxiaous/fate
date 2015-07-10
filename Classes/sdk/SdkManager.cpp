@@ -314,12 +314,38 @@ extern "C" {
         cocos2d::log("Java_com_fate_SdkManagerJni_activityOnCreate");
         SdkManager::activityOnCreate();
     }
+
+    void Java_com_fate_SdkManagerJni_activityOnPause(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_fate_SdkManagerJni_activityOnPause");
+        SdkManager::activityOnCreate();
+    }
+
+    void Java_com_fate_SdkManagerJni_activityOnResume(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_fate_SdkManagerJni_activityOnResume");
+        SdkManager::activityOnCreate();
+    }
 }
 
 void SdkManager::activityOnCreate()
 {
     for(Sdk *sdk : _sdks) {
         sdk->activityOnCreate();
+    }
+}
+
+void SdkManager::activityOnPause()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnPause();
+    }
+}
+
+void SdkManager::activityOnResume()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnResume();
     }
 }
 #endif

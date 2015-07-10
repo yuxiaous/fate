@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/kryptanium_base_color_black"
+	android:gravity="center"
+	>
+	
+		
+
+		<ImageView 
+		    android:id="@+id/kryptanium_selectimage_view"
+		    android:layout_width="fill_parent" android:layout_height="fill_parent" 
+		    android:contentDescription="@null"
+		    android:scaleType="fitCenter"
+		    android:background="@color/kryptanium_base_color_black"
+		/>
+	
+		<ProgressBar
+		    android:id="@+id/kryptanium_selectimage_loading"
+		    style="@android:style/Widget.ProgressBar.Small"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center"
+		    android:visibility="gone"
+		    />
+	
+	
+	
+</FrameLayout>

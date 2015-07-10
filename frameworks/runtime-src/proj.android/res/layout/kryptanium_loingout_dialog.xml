@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/kryptanium_loginout_dialog_w"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/kryptanium_colorbg_white_with_border"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/kryptanium_loginout_dialog_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_loginout_dialog_title_h"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/kryptanium_text_black"
+        android:textSize="@dimen/kryptanium_fontsize_large" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_line_h"
+        android:background="@color/kryptanium_base_color_gray" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_loginout_dialog_title_h"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/kryptanium_loginout_dialog_comfirm"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="@dimen/kryptanium_default_gap"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="确认退出"
+            android:textColor="@color/kryptanium_base_color_blue"
+            android:textSize="@dimen/kryptanium_fontsize_large" />
+
+        <LinearLayout
+            android:id="@+id/kryptanium_loginout_dialog_line"
+            android:layout_width="@dimen/kryptanium_line_h"
+            android:layout_height="fill_parent"
+            android:background="@color/kryptanium_base_color_gray" 
+            android:orientation="horizontal"
+            />
+
+        <TextView
+            android:id="@+id/kryptanium_loginout_dialog_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="@dimen/kryptanium_default_gap"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="完善安全设置"
+            android:textColor="@color/kryptanium_base_color_blue"
+            android:textSize="@dimen/kryptanium_fontsize_large" />
+    </LinearLayout>
+
+</LinearLayout>
