@@ -25,6 +25,7 @@ DeveloperSdk developersdk;
 
 #ifdef SDK_YMTX_RECORD
 #include "YMTXSdk.h"
+YMTXSdk ymtxsdk;
 #endif
 
 #ifdef SDK_ANDGAME
@@ -65,7 +66,7 @@ void SdkManager::configureSdk()
 #endif
     
 #ifdef SDK_YMTX_RECORD
-    addSdk(new YMTXSdk());
+//    addSdk(new YMTXSdk());
 #endif
     
 #ifdef SDK_ANDGAME
