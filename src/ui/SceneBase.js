@@ -437,19 +437,41 @@ var SceneBase = lh.LHScene.extend({
     },
 
     play: function(status,startIndex_,isFirst_) {
-        this._sceneStatus = status;
-        // weather
-        var tmpWeather = this._sceneStatus.stage.weather_file;
-        if(tmpWeather) {
-            this._weather = cc.ParticleSystem.create(tmpWeather);
-            this._weather.setPositionType(cc.ParticleSystem.TYPE_RELATIVE);
-            this._gameWorld.addChild(this._weather);
-        }
+        //this._sceneStatus = status;
+        //// weather
+        //var tmpWeather = this._sceneStatus.stage.weather_file;
+        //if(tmpWeather) {
+        //    this._weather = cc.ParticleSystem.create(tmpWeather);
+        //    this._weather.setPositionType(cc.ParticleSystem.TYPE_RELATIVE);
+        //    this._gameWorld.addChild(this._weather);
+        //}
+        //
+        //this._sectionIndex = startIndex_ || 0;
+        //this._sectionAmount = this._sceneStatus.BSection.length;
+        //this.playNextSection(isFirst_);
 
-        this._sectionIndex = startIndex_ || 0;
-        this._sectionAmount = this._sceneStatus.BSection.length;
-        this.playNextSection(isFirst_);
 
+        var sel_map_id = BattleSystem.instance.cur_battle_map;
+        var loadingPanel = new LoadingBattleLayer(sel_map_id);
+        loadingPanel.pop();
+        var that = this;
+        loadingPanel.setLoadDoneFunc(function() {
+            (function () {
+                that._sceneStatus = status;
+                // weather
+                var tmpWeather = that._sceneStatus.stage.weather_file;
+                if(tmpWeather) {
+                    that._weather = cc.ParticleSystem.create(tmpWeather);
+                    that._weather.setPositionType(cc.ParticleSystem.TYPE_RELATIVE);
+                    that._gameWorld.addChild(that._weather);
+                }
+
+                that._sectionIndex = startIndex_ || 0;
+                that._sectionAmount = that._sceneStatus.BSection.length;
+                that.playNextSection(isFirst_);
+            } ());
+            loadingPanel.close();
+        }, this)
     },
 
     playNextSection : function () {
