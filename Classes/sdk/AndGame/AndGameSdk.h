@@ -6,6 +6,7 @@
 class AndGameSdk : public Sdk, public SdkChargeProtocol
 {
 public:
+    AndGameSdk();
     static AndGameSdk *getInstance();
 
     virtual void init();
