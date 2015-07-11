@@ -34,6 +34,7 @@ YMTXSdk ymtxsdk;
 
 #ifdef SDK_MM_BILLING
 #include "mmbilling/MMSdk.h"
+MMSdk mmsdk;
 #endif
 
 #ifdef SDK_KTPLAY
@@ -74,7 +75,7 @@ void SdkManager::configureSdk()
 #endif
 
 #ifdef SDK_MM_BILLING
-    addSdk(MMSdk::getInstance());
+//    addSdk(MMSdk::getInstance());
 #endif
     
 #ifdef SDK_KTPLAY

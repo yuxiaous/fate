@@ -9,6 +9,7 @@
 class MMSdk : public cocos2d::Ref, public Sdk, public SdkChargeProtocol
 {
 public:
+    MMSdk();
     static MMSdk *getInstance();
 
     virtual void activityOnCreate() override;
