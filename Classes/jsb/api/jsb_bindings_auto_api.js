@@ -1042,31 +1042,11 @@ str
 jsb.SdkManager = {
 
 /**
- * @method configureSdk
- */
-configureSdk : function (
-)
-{
-},
-
-/**
  * @method setGender
  * @param {int} arg0
  */
 setGender : function (
 int 
-)
-{
-},
-
-/**
- * @method onChargeResult
- * @param {int} arg0
- * @param {String} arg1
- */
-onChargeResult : function (
-int, 
-str 
 )
 {
 },
@@ -1106,12 +1086,12 @@ str
 },
 
 /**
- * @method charge
- * @param {String} arg0
+ * @method onChargeResult
+ * @param {int} arg0
  * @param {String} arg1
  */
-charge : function (
-str, 
+onChargeResult : function (
+int, 
 str 
 )
 {
@@ -1128,9 +1108,13 @@ char
 },
 
 /**
- * @method init
+ * @method charge
+ * @param {String} arg0
+ * @param {String} arg1
  */
-init : function (
+charge : function (
+str, 
+str 
 )
 {
 },

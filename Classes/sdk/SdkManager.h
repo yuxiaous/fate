@@ -16,11 +16,13 @@ class Sdk;
 class SdkManager
 {
 public:
+#ifndef SKIP_BY_AUTO_BINDINGS
+public:
     static void addSdk(Sdk *sdk);
     static void removeSdk(Sdk *sdk);
-    
-    static void configureSdk();
     static void init();
+#endif
+    
     static void sdkCommond(const std::string &cmd);
     
     // ChargeProtocol
@@ -40,7 +42,6 @@ public:
     static void setAge(int age);
     static void setGameServer(const char* gameServer);
     
-    
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 public:
     static void *appController;
@@ -58,11 +59,13 @@ public:
     static bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString);
 #endif
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) && !defined(SKIP_BY_AUTO_BINDINGS)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#ifndef SKIP_BY_AUTO_BINDINGS
 public:
     static void activityOnCreate();
     static void activityOnPause();
     static void activityOnResume();
+#endif
 #endif
 };
 

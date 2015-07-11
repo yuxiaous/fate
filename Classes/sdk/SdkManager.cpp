@@ -57,33 +57,6 @@ void SdkManager::removeSdk(Sdk *sdk)
     _sdks.erase(sdk);
 }
 
-void SdkManager::configureSdk()
-{
-#if SDK_TALKING_DATA_GA
-//    addSdk(TalkingDataGameAnalyticsSdk::getInstance());
-#endif
-    
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(CHANNEL_DEVELOP)
-//    addSdk(DeveloperSdk::getInstance());
-#endif
-    
-#ifdef SDK_YMTX_RECORD
-//    addSdk(new YMTXSdk());
-#endif
-    
-#ifdef SDK_ANDGAME
-//    addSdk(AndGameSdk::getInstance());
-#endif
-
-#ifdef SDK_MM_BILLING
-//    addSdk(MMSdk::getInstance());
-#endif
-    
-#ifdef SDK_KTPLAY
-//    addSdk(KtplaySdk::getInstance());
-#endif
-}
-
 void SdkManager::init()
 {
     for(Sdk *sdk : _sdks) {
@@ -310,12 +283,6 @@ bool SdkManager::applicationOpenURL(void *iosUIApplication, void *iosNSURL, void
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 extern "C" {
-    void Java_com_fate_SdkManagerJni_configureSdk()
-    {
-        cocos2d::log("Java_com_fate_SdkManagerJni_configureSdk");
-        SdkManager::configureSdk();
-    }
-
     void Java_com_fate_SdkManagerJni_activityOnCreate(JNIEnv *env, jobject thiz)
     {
         cocos2d::log("Java_com_fate_SdkManagerJni_activityOnCreate");

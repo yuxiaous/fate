@@ -85,10 +85,6 @@ std::string getCurAppName(void)
     }
     g_nsAppDelegate = self;
     
-    
-    
-    SdkManager::configureSdk();
-    
     AppDelegate app;
     Application::getInstance()->run();
     

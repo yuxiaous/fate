@@ -66,7 +66,6 @@ public class AppActivity extends Cocos2dxActivity{
         hostIPAdress = getHostIpAddress();
 
         // sdk manager
-        SdkManagerJni.configureSdk();
         SdkManagerJni.activity = this;
         SdkManagerJni.activityOnCreate();
 
