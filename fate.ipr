@@ -171,6 +171,13 @@
     <mapping directory="" vcs="" />
   </component>
   <component name="libraryTable">
+    <library name="CMBilling">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/AndGame/android/runtime/CMBilling.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="Game_Analytics_SDK_Android_3.1.68">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar!/" />

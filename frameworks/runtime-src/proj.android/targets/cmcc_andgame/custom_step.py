@@ -32,7 +32,6 @@ def handle_event(event, args):
         pass
 
     if event == "post-copy-assets":
-        print "sdfsdfsdfsadfsdaf"
         path = "../../../../../Classes/sdk/AndGame/android/assets"
         merge_dir(path, "../../assets")
         pass

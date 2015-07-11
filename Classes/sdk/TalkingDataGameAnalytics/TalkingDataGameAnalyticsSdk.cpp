@@ -75,8 +75,8 @@ void TalkingDataGameAnalyticsSdk::init()
         jstring jappid = minfo.env->NewStringUTF(appid);
         jstring jchannel = minfo.env->NewStringUTF(channel);
         minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jappid, jchannel);
-//        minfo.env->DeleteLocalRef(jappid);
-//        minfo.env->DeleteLocalRef(jchannel);
+        minfo.env->DeleteLocalRef(jappid);
+        minfo.env->DeleteLocalRef(jchannel);
     }
 #endif
 }
