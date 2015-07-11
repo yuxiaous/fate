@@ -11,34 +11,41 @@
 #include "SdkManager.h"
 #include "Sdk.h"
 
+static std::set<Sdk*> _sdks;
+
 #ifdef SDK_TALKING_DATA_GA
 #include "TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.h"
+TalkingDataGameAnalyticsSdk talkingdatagameanalyticssdk;
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(CHANNEL_DEVELOP)
 #include "DeveloperSdk.h"
+DeveloperSdk developersdk;
 #endif
 
 #ifdef SDK_YMTX_RECORD
 #include "YMTXSdk.h"
+YMTXSdk ymtxsdk;
 #endif
 
 #ifdef SDK_ANDGAME
 #include "AndGame/AndGameSdk.h"
+AndGameSdk andgamesdk;
 #endif
 
 #ifdef SDK_MM_BILLING
 #include "mmbilling/MMSdk.h"
+MMSdk mmsdk;
 #endif
 
 #ifdef SDK_KTPLAY
 #include "ktplay/KtplaySdk.h"
+KtplaySdk ktplaysdk;
 #endif
 
 USING_NS_CC;
 
 
-static std::set<Sdk*> _sdks;
 
 void SdkManager::addSdk(Sdk *sdk)
 {
@@ -53,27 +60,27 @@ void SdkManager::removeSdk(Sdk *sdk)
 void SdkManager::configureSdk()
 {
 #if SDK_TALKING_DATA_GA
-    addSdk(TalkingDataGameAnalyticsSdk::getInstance());
+//    addSdk(TalkingDataGameAnalyticsSdk::getInstance());
 #endif
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(CHANNEL_DEVELOP)
-    addSdk(DeveloperSdk::getInstance());
+//    addSdk(DeveloperSdk::getInstance());
 #endif
     
 #ifdef SDK_YMTX_RECORD
-    addSdk(new YMTXSdk());
+//    addSdk(new YMTXSdk());
 #endif
     
 #ifdef SDK_ANDGAME
-    addSdk(AndGameSdk::getInstance());
+//    addSdk(AndGameSdk::getInstance());
 #endif
 
 #ifdef SDK_MM_BILLING
-    addSdk(MMSdk::getInstance());
+//    addSdk(MMSdk::getInstance());
 #endif
     
 #ifdef SDK_KTPLAY
-    addSdk(KtplaySdk::getInstance());
+//    addSdk(KtplaySdk::getInstance());
 #endif
 }
 

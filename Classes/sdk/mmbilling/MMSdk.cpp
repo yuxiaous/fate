@@ -40,12 +40,16 @@ extern "C" {
     }
 }
 
+
+static MMSdk *instance = nullptr;
+
+MMSdk::MMSdk()
+{
+    instance = this;
+}
+
 MMSdk *MMSdk::getInstance()
 {
-    static MMSdk *instance = nullptr;
-    if(instance == nullptr) {
-        instance = new MMSdk();
-    }
     return instance;
 }
 

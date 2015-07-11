@@ -40,19 +40,16 @@ USING_NS_CC;
 //}
 //#endif
 
+static TalkingDataGameAnalyticsSdk *instance = nullptr;
 
 TalkingDataGameAnalyticsSdk::TalkingDataGameAnalyticsSdk()
 : _account(nullptr)
 {
-    
+    instance = this;
 }
 
-static TalkingDataGameAnalyticsSdk *instance = nullptr;
 TalkingDataGameAnalyticsSdk *TalkingDataGameAnalyticsSdk::getInstance()
 {
-    if(instance == nullptr) {
-        instance = new TalkingDataGameAnalyticsSdk();
-    }
     return instance;
 }
 
@@ -78,8 +75,8 @@ void TalkingDataGameAnalyticsSdk::init()
         jstring jappid = minfo.env->NewStringUTF(appid);
         jstring jchannel = minfo.env->NewStringUTF(channel);
         minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jappid, jchannel);
-//        minfo.env->DeleteLocalRef(jappid);
-//        minfo.env->DeleteLocalRef(jchannel);
+        minfo.env->DeleteLocalRef(jappid);
+        minfo.env->DeleteLocalRef(jchannel);
     }
 #endif
 }

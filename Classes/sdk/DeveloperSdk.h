@@ -16,6 +16,7 @@
 class DeveloperSdk : public Sdk, public SdkChargeProtocol
 {
 public:
+    DeveloperSdk();
     static DeveloperSdk *getInstance();
     
     // SdkChargeProtocol

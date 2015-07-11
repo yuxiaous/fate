@@ -13,15 +13,28 @@
 #import "AppController.h"
 
 
-//YMTXSdk *YMTXSdk::getInstance()
-//{
-//    static YMTXSdk *sdk = nullptr;
-//    if(sdk == nullptr) {
-//        sdk = new YMTXSdk();
-//    }
-//    return sdk;
-//}
+static YMTXSdk *instance = nullptr;
 
+YMTXSdk::YMTXSdk()
+{
+    instance = this;
+}
+
+YMTXSdk *YMTXSdk::getInstance()
+{
+    return instance;
+}
+
+
+void YMTXSdk::init()
+{
+    AppController *appController = (AppController*)SdkManager::appController;
+    UIViewController *viewController = (UIViewController*)SdkManager::viewController;
+    
+    [YMTXRecordManager registerApp:@"10153"]; //命运之刃(10153)
+    [YMTXRecordManager setHomeTitleString:@"命运之刃"];
+    [YMTXRecordManager initWithDelegate:appController andParentViewController:viewController];
+}
 
 void YMTXSdk::applicationDidFinishLaunching()
 {
@@ -60,14 +73,4 @@ void YMTXSdk::applicationDidFinishLaunching()
         }
     }
 #endif
-}
-
-void YMTXSdk::init()
-{
-    AppController *appController = (AppController*)SdkManager::appController;
-    UIViewController *viewController = (UIViewController*)SdkManager::viewController;
-    
-    [YMTXRecordManager registerApp:@"10153"]; //命运之刃(10153)
-    [YMTXRecordManager setHomeTitleString:@"命运之刃"];
-    [YMTXRecordManager initWithDelegate:appController andParentViewController:viewController];
 }

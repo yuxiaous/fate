@@ -15,11 +15,14 @@
 
 
 static DeveloperSdk *instance = nullptr;
+
+DeveloperSdk::DeveloperSdk()
+{
+    instance = this;
+}
+
 DeveloperSdk *DeveloperSdk::getInstance()
 {
-    if(instance == nullptr) {
-        instance = new DeveloperSdk();
-    }
     return instance;
 }
 

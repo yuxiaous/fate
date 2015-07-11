@@ -61,17 +61,22 @@ extern "C" {
 }
 
 
+static KtplaySdk *instance = nullptr;
+
+KtplaySdk::KtplaySdk()
+{
+    instance = this;
+}
+
 KtplaySdk *KtplaySdk::getInstance()
 {
-    static KtplaySdk *instance = nullptr;
-    if(instance == nullptr) {
-        instance = new KtplaySdk();
-    }
     return instance;
 }
 
 void KtplaySdk::init()
 {
+    cocos2d::log("KtplaySdk::init");
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     initWithIos();
 #endif
@@ -82,9 +87,9 @@ void KtplaySdk::init()
     KTPlayC::setActivityStatusChangedCallback(activityStatusChanged);
     // 设置监听者，监听KTPlay SDK的可用状态变更
     KTPlayC::setAvailabilityChangedCallback(availabilityChangedCallback);
-    
+
     KTPlayC::showInterstitialNotification();
-    
+
     // 设置监听者，监听深度链接发放事件
     KTPlayC::setDeepLinkCallback(deepLinkCallback);
 }

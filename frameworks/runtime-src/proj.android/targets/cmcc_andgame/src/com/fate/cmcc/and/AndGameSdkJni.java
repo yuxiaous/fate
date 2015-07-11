@@ -13,12 +13,11 @@ public class AndGameSdkJni {
 	public static void init() {
 		System.out.println("AndGameSdkJni.init");
 
-		if(SdkManagerJni.activity != null) {
-			GameInterface.initializeApp(SdkManagerJni.activity);
-		}
+		GameInterface.initializeApp(SdkManagerJni.activity);
 	}
 
 	private static String _order = "";
+
 	public static void charge(String order, String identifier) {
 		System.out.println("AndGameSdkJni.charge");
 		

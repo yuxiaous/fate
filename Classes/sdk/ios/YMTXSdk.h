@@ -15,7 +15,8 @@
 class YMTXSdk : public Sdk
 {
 public:
-//    static YMTXSdk *getInstance();
+    YMTXSdk();
+    static YMTXSdk *getInstance();
     
     virtual void init();
     
