@@ -10,7 +10,7 @@
 
     <application android:label="@string/app_name"
                  android:icon="@drawable/icon"
-                 android:name=".CmgameApplication">
+                 android:name="com.fate.cmcc.and.CmgameApplication">
 
         <!-- Tell NativeActivity the name of our .so -->
         <meta-data android:name="android.app.lib_name" android:value="cocos2djs" />
@@ -40,6 +40,21 @@
                 <category android:name="android.intent.category.CHINAMOBILE_GAMES" />
             </intent-filter>
         </activity>
+
+        <!-- KTPlay SDK配置开始 -->
+        <activity
+                android:name="com.ktplay.activity.GetPhotoActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:screenOrientation="user"
+                android:theme="@android:style/Theme.Translucent"
+                android:windowSoftInputMode="adjustPan|adjustUnspecified" >
+        </activity>
+
+        <meta-data
+                android:name="KTPLAY_CHANNELID"
+                android:value="GP"
+                />
+        <!-- KTPlay SDK配置结束 -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -65,5 +80,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- KTPlay SDK 权限配置开始 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- KTPlay SDK 权限配置结束 -->
 
 </manifest> 

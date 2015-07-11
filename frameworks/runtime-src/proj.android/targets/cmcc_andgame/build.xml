@@ -95,6 +95,7 @@
             </path>
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
             <pathelement location="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
+            <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

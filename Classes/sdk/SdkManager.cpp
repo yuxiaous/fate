@@ -30,6 +30,7 @@ YMTXSdk ymtxsdk;
 
 #ifdef SDK_ANDGAME
 #include "AndGame/AndGameSdk.h"
+AndGameSdk andgamesdk;
 #endif
 
 #ifdef SDK_MM_BILLING
@@ -71,7 +72,7 @@ void SdkManager::configureSdk()
 #endif
     
 #ifdef SDK_ANDGAME
-    addSdk(AndGameSdk::getInstance());
+//    addSdk(AndGameSdk::getInstance());
 #endif
 
 #ifdef SDK_MM_BILLING
