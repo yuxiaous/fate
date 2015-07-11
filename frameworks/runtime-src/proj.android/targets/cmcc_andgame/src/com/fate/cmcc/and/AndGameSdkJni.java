@@ -13,7 +13,7 @@ public class AndGameSdkJni {
 	public static void init() {
 		System.out.println("AndGameSdkJni.init");
 
-//		GameInterface.initializeApp(SdkManagerJni.activity);
+		GameInterface.initializeApp(SdkManagerJni.activity);
 	}
 
 	private static String _order = "";
@@ -21,34 +21,34 @@ public class AndGameSdkJni {
 	public static void charge(String order, String identifier) {
 		System.out.println("AndGameSdkJni.charge");
 		
-//		if(_order.length() == 0) {
-//	        System.out.println(order+":"+identifier);
-//
-//	        _order = order;
-//	        GameInterface.doBilling(SdkManagerJni.activity, true, true, identifier, null, payCallback);
-//		}
+		if(_order.length() == 0) {
+	        System.out.println(order+":"+identifier);
+
+	        _order = order;
+	        GameInterface.doBilling(SdkManagerJni.activity, true, true, identifier, null, payCallback);
+		}
     }
 
-//	final static IPayCallback payCallback = new IPayCallback() {
-//		@Override
-//		public void onResult(int resultCode, String billingIndex, Object obj) {
-//			String result = "";
-//			switch (resultCode) {
-//				case BillingResult.SUCCESS:
-//					result = "购买商品【" + billingIndex + "】成功！";
-//					break;
-//				case BillingResult.FAILED:
-//					result = "购买商品【" + billingIndex + "】失败！";
-//					break;
-//				default:
-//					result = "购买商品【" + billingIndex + "】取消！";
-//					break;
-//			}
-//			Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();
-//
-//			handleResult(resultCode, billingIndex);
-//		}
-//	};
+	final static IPayCallback payCallback = new IPayCallback() {
+		@Override
+		public void onResult(int resultCode, String billingIndex, Object obj) {
+			String result = "";
+			switch (resultCode) {
+				case BillingResult.SUCCESS:
+					result = "购买商品【" + billingIndex + "】成功！";
+					break;
+				case BillingResult.FAILED:
+					result = "购买商品【" + billingIndex + "】失败！";
+					break;
+				default:
+					result = "购买商品【" + billingIndex + "】取消！";
+					break;
+			}
+			Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();
+
+			handleResult(resultCode, billingIndex);
+		}
+	};
 	
 	private static void handleResult(int resultCode, String billingIndex) {
 		if(_order.length() > 0) {

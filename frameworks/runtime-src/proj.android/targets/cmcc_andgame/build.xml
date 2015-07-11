@@ -68,6 +68,21 @@
     -->
     <import file="custom_rules.xml" optional="true" />
 
+    <target name="-pre-compile" >
+        <path id="third.lib" >
+            <path path="${toString:project.all.jars.path}" >
+            </path>
+            <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
+            <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
+        </path>
+        <path id="project.all.jars.path" >
+            <path refid="third.lib" >
+            </path>
+        </path>
+    </target>
+
+    <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
+
     <!-- Import the actual build file.
 
          To customize existing targets, there are two options:
@@ -88,19 +103,5 @@
     -->
     <!-- version-tag: 1 -->
     <import file="${sdk.dir}/tools/ant/build.xml" />
-
-    <target name="-pre-compile" >
-        <path id="third.lib" >
-            <path path="${toString:project.all.jars.path}" >
-            </path>
-            <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
-            <pathelement location="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
-            <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
-        </path>
-        <path id="project.all.jars.path" >
-            <path refid="third.lib" >
-            </path>
-        </path>
-    </target>
 
 </project>

@@ -2,8 +2,9 @@
 #define __AndGameSdk__
 
 #include "Sdk.h"
+#include "cocos2d.h"
 
-class AndGameSdk : public Sdk, public SdkChargeProtocol
+class AndGameSdk : public cocos2d::Ref, public Sdk, public SdkChargeProtocol
 {
 public:
     AndGameSdk();
@@ -13,6 +14,9 @@ public:
     virtual void charge(const std::string &order, const std::string &identifier) override;
 
     static bool isMusicEnabled();
+
+private:
+    void update(float);
 };
 
 #endif /* defined(__AndGameSdk__) */
