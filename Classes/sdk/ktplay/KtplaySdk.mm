@@ -10,7 +10,8 @@
 #import "KTPlay.h"
 
 
-void KtplaySdk::initWithIos()
+void KtplaySdk::initWithIos(const char *appKey, const char *appSecret)
 {
-    [KTPlay startWithAppKey:@"2yipeBu5W7" appSecret:@"ad24d7d5ee7c86f3b266f8066f5549f67a3bae29"];
+    [KTPlay startWithAppKey:[NSString stringWithUTF8String:appKey]
+                  appSecret:[NSString stringWithUTF8String:appSecret]];
 }

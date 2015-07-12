@@ -6,7 +6,7 @@
 
 using namespace cocos2d;
 
-#define  CLASS_NAME "com/fate/cmcc/mm.MMSdkJni"
+#define  CLASS_NAME "com/fate/cmcc/mm/MMSdkJni"
 
 
 //计费点代码	 商品名称

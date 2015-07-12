@@ -77,8 +77,13 @@ void KtplaySdk::init()
 {
     cocos2d::log("KtplaySdk::init");
 
+    const char *appKey = "2yipeBu5W7";
+    const char *appSecret = "ad24d7d5ee7c86f3b266f8066f5549f67a3bae29";
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    initWithIos();
+    initWithIos(appKey, appSecret);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    initWithAndroid(appKey, appSecret);
 #endif
     
     // 设置监听者，监听奖励发放事件
@@ -119,3 +124,30 @@ void KtplaySdk::showRedemptionView()
     KTPlayC::showRedemptionView();
 }
 
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "platform/android/jni/JniHelper.h"
+#include "platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
+#include <jni.h>
+
+using namespace cocos2d;
+
+void KtplaySdk::initWithAndroid(const char *appKey, const char *appSecret)
+{
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo,
+        "com/ktplay/open/KTPlay",
+        "startWithAppKey",
+        "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V")) {
+
+        jobject jactivity = (jobject)SdkManager::appActivity;
+        jstring jappKey = minfo.env->NewStringUTF(appKey);
+        jstring jappSecret = minfo.env->NewStringUTF(appSecret);
+
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jactivity, jappKey, jappSecret);
+
+        minfo.env->DeleteLocalRef(jappKey);
+        minfo.env->DeleteLocalRef(jappSecret);
+    }
+}
+#endif

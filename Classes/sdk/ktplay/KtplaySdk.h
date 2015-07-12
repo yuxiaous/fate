@@ -28,7 +28,9 @@ public:
     void showRedemptionView();
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-private: void initWithIos();
+private: void initWithIos(const char *appKey, const char *appSecret);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+private: void initWithAndroid(const char *appKey, const char *appSecret);
 #endif
 };
 

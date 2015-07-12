@@ -67,9 +67,8 @@ public class AppActivity extends Cocos2dxActivity{
 
         // sdk manager
         SdkManagerJni.activity = this;
+        SdkManagerJni.setAppActivity(this);
         SdkManagerJni.activityOnCreate();
-
-        KTPlay.startWithAppKey(this, "2yipeBu5W7", "ad24d7d5ee7c86f3b266f8066f5549f67a3bae29");
     }
     
     @Override

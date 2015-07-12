@@ -15,14 +15,14 @@ class Sdk;
 
 class SdkManager
 {
-public:
 #ifndef SKIP_BY_AUTO_BINDINGS
 public:
     static void addSdk(Sdk *sdk);
     static void removeSdk(Sdk *sdk);
     static void init();
 #endif
-    
+
+public:
     static void sdkCommond(const std::string &cmd);
     
     // ChargeProtocol
@@ -59,13 +59,13 @@ public:
     static bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString);
 #endif
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-#ifndef SKIP_BY_AUTO_BINDINGS
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) && !defined(SKIP_BY_AUTO_BINDINGS)
 public:
+    static void *appActivity;
+
     static void activityOnCreate();
     static void activityOnPause();
     static void activityOnResume();
-#endif
 #endif
 };
 
