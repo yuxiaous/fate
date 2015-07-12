@@ -11,5 +11,10 @@ public class AppApplication extends Application {
     public void onCreate() {
         super.onCreate();
         SdkManagerJni.application = this;
+
+        System.loadLibrary("KTPlay");
+        System.loadLibrary("KTAccountmanager");
+        System.loadLibrary("KTFriendship");
+        System.loadLibrary("KTLeaderboard");
     }
 }

@@ -149,4 +149,35 @@ void KtplaySdk::initWithAndroid(const char *appKey, const char *appSecret)
         minfo.env->DeleteLocalRef(jappSecret);
     }
 }
+
+void KtplaySdk::activityOnPause()
+{
+    cocos2d::log("KtplaySdk::activityOnPause");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo,
+        "com/ktplay/open/KTPlay",
+        "onPause",
+        "(Landroid/content/Context;)V")) {
+
+        jobject jactivity = (jobject)SdkManager::appActivity;
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jactivity);
+    }
+}
+
+void KtplaySdk::activityOnResume()
+{
+    cocos2d::log("KtplaySdk::activityOnResume");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo,
+        "com/ktplay/open/KTPlay",
+        "onResume",
+        "(Landroid/content/Context;)V")) {
+
+        jobject jactivity = (jobject)SdkManager::appActivity;
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jactivity);
+    }
+}
 #endif
+

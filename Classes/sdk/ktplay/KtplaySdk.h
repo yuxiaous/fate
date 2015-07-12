@@ -19,7 +19,6 @@ public:
     static KtplaySdk *getInstance();
     
     virtual void init() override;
-    
     virtual void login() override;
     
     void showKTPlay();
@@ -28,9 +27,16 @@ public:
     void showRedemptionView();
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-private: void initWithIos(const char *appKey, const char *appSecret);
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-private: void initWithAndroid(const char *appKey, const char *appSecret);
+private:
+    void initWithIos(const char *appKey, const char *appSecret);
+#endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+private:
+    void initWithAndroid(const char *appKey, const char *appSecret);
+    virtual void activityOnPause() override;
+    virtual void activityOnResume() override;
+
 #endif
 };
 

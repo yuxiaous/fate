@@ -26,7 +26,6 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.javascript;
 
-import com.ktplay.open.KTPlay;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
@@ -47,10 +46,7 @@ public class AppActivity extends Cocos2dxActivity{
     static String hostIPAdress = "0.0.0.0";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.loadLibrary("KTPlay");
-        System.loadLibrary("KTAccountmanager");
-        System.loadLibrary("KTFriendship");
-        System.loadLibrary("KTLeaderboard");
+        System.out.println("AppActivity.onCreate");
 
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
@@ -99,8 +95,6 @@ public class AppActivity extends Cocos2dxActivity{
         System.out.println("AppActivity.onPause");
         super.onPause();
         SdkManagerJni.activityOnPause();
-
-        KTPlay.onPause(this);
     }
 
     @Override
@@ -108,7 +102,5 @@ public class AppActivity extends Cocos2dxActivity{
         System.out.println("AppActivity.onResume");
         super.onResume();
         SdkManagerJni.activityOnResume();
-
-        KTPlay.onResume(this);
     }
 }
