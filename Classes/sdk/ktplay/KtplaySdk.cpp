@@ -129,8 +129,7 @@ void KtplaySdk::showRedemptionView()
 #include "platform/android/jni/JniHelper.h"
 #include "platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
 #include <jni.h>
-
-using namespace cocos2d;
+USING_NS_CC;
 
 void KtplaySdk::initWithAndroid(const char *appKey, const char *appSecret)
 {
