@@ -9,36 +9,14 @@
 #include "TalkingDataGameAnalyticsSdk.h"
 
 #if  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "TalkingDataGameAnalytics/android/TDGAJniHelper.h"
 #include "platform/android/jni/JniHelper.h"
 #include "platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
 #include <jni.h>
-#include "TalkingDataGameAnalytics/android/TDGAJniHelper.h"
 #endif
 
 USING_NS_CC;
 
-#define  CLASS_NAME "com/fate/TalkingDataGASdkJni"
-
-//#if  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-//extern "C" {
-//
-//#define  CLASS_NAME "com/fate/TalkingDataGASdkJni"
-
-//static void TalkingDataGASdkJni_init(const char *appid, const char *channel)
-//{
-//    cocos2d::log("TalkingDataGASdkJni_init");
-//    JniMethodInfo minfo;
-//    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "(Ljava/lang/String;Ljava/lang/String;)V")) {
-//        jstring jappid = minfo.env->NewStringUTF(appid);
-//        jstring jchannel = minfo.env->NewStringUTF(channel);
-//        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jappid, jchannel);
-//        minfo.env->DeleteLocalRef(jappid);
-//        minfo.env->DeleteLocalRef(jchannel);
-//    }
-//}
-//
-//}
-//#endif
 
 static TalkingDataGameAnalyticsSdk *instance = nullptr;
 
@@ -55,10 +33,18 @@ TalkingDataGameAnalyticsSdk *TalkingDataGameAnalyticsSdk::getInstance()
 
 void TalkingDataGameAnalyticsSdk::init()
 {
+    cocos2d::log("TalkingDataGameAnalyticsSdk::init");
+
     const char *appid = "59EC3DE05BB0234EA444193F4B9E0E4B";
 
 #if defined(CHANNEL_CMCC_MM)
     const char *channel = "CmccMm";
+#enif defined(CHANNEL_CMCC_AND)
+    const char *channel = "CmccAnd";
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    const char *channel = "IosDevelop";
+#elif  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    const char *channel = "AndroidDevelop";
 #else
     const char *channel = "Develop";
 #endif
@@ -68,13 +54,19 @@ void TalkingDataGameAnalyticsSdk::init()
     TDCCTalkingDataGA::onStart(appid, channel);
 #elif  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     TDGAJniHelper::setJavaVM(JniHelper::getJavaVM());
-//    TalkingDataGASdkJni_init(appid, channel);
 
     JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+    if (JniHelper::getStaticMethodInfo(minfo,
+        "com.tendcloud.tenddata.TalkingDataGA",
+        "init",
+        "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V")) {
+
+        jobject jactivity = (jobject)SdkManager::appActivity;
         jstring jappid = minfo.env->NewStringUTF(appid);
         jstring jchannel = minfo.env->NewStringUTF(channel);
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jappid, jchannel);
+
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jactivity, jappid, jchannel);
+
         minfo.env->DeleteLocalRef(jappid);
         minfo.env->DeleteLocalRef(jchannel);
     }
