@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-      <string-array name="kryptanium_invalid_deviceids" translatable="false">
-        <item >1234567890</item>
-        <item >12345678</item>
-    </string-array>
-</resources>
