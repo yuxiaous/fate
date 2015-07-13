@@ -39,7 +39,7 @@ void TalkingDataGameAnalyticsSdk::init()
 
 #if defined(CHANNEL_CMCC_MM)
     const char *channel = "CmccMm";
-#enif defined(CHANNEL_CMCC_AND)
+#elif defined(CHANNEL_CMCC_AND)
     const char *channel = "CmccAnd";
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     const char *channel = "IosDevelop";

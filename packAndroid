@@ -1,4 +1,6 @@
 
+#!/bin/sh
+
 #rm -rf ./publish
 #cocos jscompile -s ./src -d ./publish/src
 #cocos jscompile -s ./config -d ./publish/config
