@@ -57,65 +57,66 @@ def handle_event(event, tp, args):
     #     'output-dir': '/Users/yuxiao/Documents/workspace/fate/client/runtime/android'
     # }
 
-    if tp == "android":
-        # no target
-        target_path = os.path.join(args['platform-project-path'], "target")
-        if not os.path.isdir(target_path):
-            return
+    project_path = args['platform-project-path']
 
-        os.chdir(args['platform-project-path'])
+
+    if tp == "android":
+        os.chdir(project_path)
 
         # backup 
         if event == "pre-build":
-            # remove
-            if os.path.isfile("build.xml.bak"):
-                os.remove("build.xml.bak")
-            if os.path.isfile("AndroidManifest.xml.bak"):
-                os.remove("AndroidManifest.xml.bak")
-            if os.path.isdir("jni.bak"):
-                shutil.rmtree("jni.bak")
-            if os.path.isdir("res.bak"):
-                shutil.rmtree("res.bak")
-            if os.path.isdir("src.bak"):
-                shutil.rmtree("src.bak")
+            # remove temp files and folders
+            if os.path.isfile("build.xml"):
+                os.remove("build.xml")
+            if os.path.isfile("AndroidManifest.xml"):
+                os.remove("AndroidManifest.xml")
+            if os.path.isdir("jni"):
+                shutil.rmtree("jni")
+            if os.path.isdir("res"):
+                shutil.rmtree("res")
+            if os.path.isdir("src"):
+                shutil.rmtree("src")
 
-            # backup
-            shutil.copy("build.xml", "build.xml.bak")
-            shutil.copy("AndroidManifest.xml", "AndroidManifest.xml.bak")
-            shutil.copytree("jni", "jni.bak", True)
-            shutil.copytree("res", "res.bak", True)
-            shutil.copytree("src", "src.bak", True)
-            pass
+            # copy inherit files
+            inherit_path = os.path.join(project_path, "targets", "inherit")
+            if os.path.isdir(inherit_path):
+                shutil.copy(os.path.join(inherit_path, "build.xml"), ".")
+                shutil.copy(os.path.join(inherit_path, "AndroidManifest.xml"), ".")
+                shutil.copytree(os.path.join(inherit_path, "jni"), "jni", True)
+                shutil.copytree(os.path.join(inherit_path, "res"), "res", True)
+                shutil.copytree(os.path.join(inherit_path, "src"), "src", True)
 
-        # resume
-        if event == "post-ant-build":
-            # # remove
-            os.remove("build.xml")
-            os.remove("AndroidManifest.xml")
-            shutil.rmtree("jni")
-            shutil.rmtree("res")
-            shutil.rmtree("src")
+            # copy target files
+            target_path = os.path.join(project_path, "target")
+            if os.path.isdir(target_path):
+                shutil.copy(os.path.join(target_path, "build.xml"), ".")
+                shutil.copy(os.path.join(target_path, "AndroidManifest.xml"), ".")
+                merge_dir("target/jni", "jni")
+                merge_dir("target/res", "res")
+                merge_dir("target/src", "src")
+                pass
 
-            # # rename
-            os.rename("build.xml.bak", "build.xml")
-            os.rename("AndroidManifest.xml.bak", "AndroidManifest.xml")
-            shutil.move("jni.bak", "jni")
-            shutil.move("res.bak", "res")
-            shutil.move("src.bak", "src")
             pass
 
         if event == "pre-ndk-build":
-            shutil.copy("target/jni/Application.mk", "jni/Application.mk")
+            pass
+
+        if event == "post-ndk-build":
+            pass
+
+        if event == "pre-copy-assets":
             pass
 
         if event == "post-copy-assets":
-            merge_dir("target/res", "res")
             pass
 
         if event == "pre-ant-build":
-            shutil.copy("target/AndroidManifest.xml", "AndroidManifest.xml")
-            shutil.copy("target/build.xml", "build.xml")
-            merge_dir("target/src", "src")
+            pass
+
+        if event == "post-ant-build":
+            pass
+
+        if event == "post-build":
             pass
 
         # handle event
