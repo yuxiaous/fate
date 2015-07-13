@@ -1,5 +1,9 @@
 
 var SceneBase = lh.LHScene.extend({
+    status: {
+
+    },
+
     ctor : function (sceneName,curType_) {
         if(!sceneName.startsWith("scenes")){
             sceneName = "scenes/" + sceneName + ".lhplist";
@@ -16,13 +20,15 @@ var SceneBase = lh.LHScene.extend({
 
         this._enterDropUi = 0;
         this._isEnteringEquipSuit = false;
+        this._LoadingNode = null;
 
         BattleSystem.instance.curBattleType = this._curSceneType;
     },
 
     onEnter : function () {
         this._super();
-
+        LOG("scenebase === " + util.getCurrentDate()) ;
+       // return;
         var winSize = cc.director.getWinSize();
         var gameWorld = this.getGameWorldNode();
         var backUi = this.getBackUINode();
@@ -121,14 +127,27 @@ var SceneBase = lh.LHScene.extend({
             }, this)
         ];
 
-        this.scheduleUpdate();
+        //this.scheduleUpdate();
 
-        //if(MapSystem.instance.max_map_id == 101){
-        //    LOG("212352353463456");
-        //    var cover_tmp = new CaoZuoJiaoXue();
-        //    cover_tmp.pop();
-        //}
+        if( this._LoadingNode ) {
+            this._LoadingNode.close();
+        }
+
     },
+
+    //initBattleData : function (map_id_) {
+    //    var skin = SkinSystem.instance.use_skin;
+    //    if(skin == 101){
+    //        this.status.hero = Saber;
+    //    }
+    //    else if(skin == 102){
+    //        this.status.hero = Nero;
+    //    }
+    //
+    //    this.status.stage = BattleNorScene.initStageInfo(map_id_);
+    //    this.status.BSection = BattleNorScene.initBattleSection(map_id_);
+    //    this.status.chatData = BattleNorScene.initChatInfo(map_id_);
+    //},
 
     onExit : function () {
         this._camera = null;
@@ -437,41 +456,22 @@ var SceneBase = lh.LHScene.extend({
     },
 
     play: function(status,startIndex_,isFirst_) {
-        //this._sceneStatus = status;
-        //// weather
-        //var tmpWeather = this._sceneStatus.stage.weather_file;
-        //if(tmpWeather) {
-        //    this._weather = cc.ParticleSystem.create(tmpWeather);
-        //    this._weather.setPositionType(cc.ParticleSystem.TYPE_RELATIVE);
-        //    this._gameWorld.addChild(this._weather);
-        //}
-        //
-        //this._sectionIndex = startIndex_ || 0;
-        //this._sectionAmount = this._sceneStatus.BSection.length;
-        //this.playNextSection(isFirst_);
-
-
-        var sel_map_id = BattleSystem.instance.cur_battle_map;
-        var loadingPanel = new LoadingBattleLayer(sel_map_id);
-        loadingPanel.pop();
         var that = this;
-        loadingPanel.setLoadDoneFunc(function() {
-            (function () {
-                that._sceneStatus = status;
-                // weather
-                var tmpWeather = that._sceneStatus.stage.weather_file;
-                if(tmpWeather) {
-                    that._weather = cc.ParticleSystem.create(tmpWeather);
-                    that._weather.setPositionType(cc.ParticleSystem.TYPE_RELATIVE);
-                    that._gameWorld.addChild(that._weather);
-                }
+        //var sel_map_id = BattleSystem.instance.cur_battle_map;
+        //that.initBattleData(sel_map_id);
+        that._sceneStatus = status;
+        // weather
+        var tmpWeather = that._sceneStatus.stage.weather_file;
+        if(tmpWeather) {
+            that._weather = cc.ParticleSystem.create(tmpWeather);
+            that._weather.setPositionType(cc.ParticleSystem.TYPE_RELATIVE);
+            that._gameWorld.addChild(that._weather);
+        }
 
-                that._sectionIndex = startIndex_ || 0;
-                that._sectionAmount = that._sceneStatus.BSection.length;
-                that.playNextSection(isFirst_);
-            } ());
-            loadingPanel.close();
-        }, this)
+        that._sectionIndex = startIndex_ || 0;
+        that._sectionAmount = that._sceneStatus.BSection.length;
+        that.playNextSection(isFirst_);
+        that.scheduleUpdate();
     },
 
     playNextSection : function () {
