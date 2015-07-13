@@ -193,7 +193,10 @@ class CCPluginCompile(cocos.CCPlugin):
             "project-path": self._project.get_project_dir(),
             "platform-project-path": self._platforms.project_path(),
             "build-mode": self._mode,
-            "output-dir": self._output_dir
+            "output-dir": self._output_dir,
+            # yuxiao begin
+            "target-name": self.xcode_target_name
+            # yuxiao end
         }
 
         if self._platforms.is_android_active():

@@ -44,6 +44,10 @@ def handle_event(event, tp, args):
     # }
 
     project_path = args['platform-project-path']
+    target_name = args['target-name']
+
+    inherit_path = os.path.join(project_path, "targets", "inherit")
+    target_path = os.path.join(project_path, "targets", target_name)
 
 
     if tp == "android":
@@ -64,7 +68,6 @@ def handle_event(event, tp, args):
                 shutil.rmtree("src")
 
             # copy inherit files
-            inherit_path = os.path.join(project_path, "targets", "inherit")
             if os.path.isdir(inherit_path):
                 shutil.copy2(os.path.join(inherit_path, "build.xml"), ".")
                 shutil.copy2(os.path.join(inherit_path, "AndroidManifest.xml"), ".")
@@ -73,13 +76,12 @@ def handle_event(event, tp, args):
                 shutil.copytree(os.path.join(inherit_path, "src"), "src", True)
 
             # copy target files
-            target_path = os.path.join(project_path, "target")
             if os.path.isdir(target_path):
                 shutil.copy2(os.path.join(target_path, "build.xml"), ".")
                 shutil.copy2(os.path.join(target_path, "AndroidManifest.xml"), ".")
-                merge_dir("target/jni", "jni")
-                merge_dir("target/res", "res")
-                merge_dir("target/src", "src")
+                merge_dir(os.path.join("targets", target_name, "jni"), "jni")
+                merge_dir(os.path.join("targets", target_name, "res"), "res")
+                merge_dir(os.path.join("targets", target_name, "src"), "src")
                 pass
 
             pass
@@ -88,18 +90,16 @@ def handle_event(event, tp, args):
             pass
 
         if event == "post-ndk-build":
-            target_path = os.path.join(project_path, "target")
             if os.path.isdir(target_path):
-                merge_dir("target/libs", "libs")
+                merge_dir(os.path.join("targets", target_name, "libs"), "libs")
             pass
 
         if event == "pre-copy-assets":
             pass
 
         if event == "post-copy-assets":
-            target_path = os.path.join(project_path, "target")
             if os.path.isdir(target_path):
-                merge_dir("target/assets", "assets")
+                merge_dir(os.path.join("targets", target_name, "assets"), "assets")
             pass
 
         if event == "pre-ant-build":
