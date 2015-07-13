@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <com.ktplay.widget.StateImageView
+        android:id="@id/kryptanium_users_head_id"
+        android:layout_width="@dimen/kryptanium_users_tophead_wh"
+        android:layout_height="@dimen/kryptanium_users_tophead_wh"
+        android:baselineAlignBottom="true"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@id/kryptanium_users_city_id"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_head_wh_user_like_count"
+        android:layout_marginTop="@dimen/kryptanium_head_wh_user_like_count_up"
+        android:background="@drawable/kryptanium_userhead_like"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="@dimen/kryptanium_spacing_small"
+        android:singleLine="true"
+        android:textColor="@color/kryptanium_text_black"
+        android:textSize="@dimen/kryptanium_fontsize_tiny" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@id/kryptanium_users_nickname_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="@color/kryptanium_text_black"
+        android:textSize="@dimen/kryptanium_fontsize_small" />
+
+</LinearLayout>

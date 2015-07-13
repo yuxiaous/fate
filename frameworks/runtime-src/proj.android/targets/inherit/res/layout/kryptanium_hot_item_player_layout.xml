@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:paddingRight="@dimen/kryptanium_home_hot_game_item_layout_paddingRight" >
+
+    <com.ktplay.widget.NoClickStateImageView
+        android:id="@+id/kryptanium_hot_item_player_iv"
+        android:layout_width="@dimen/kryptanium_home_hot_game_item_image_width_height"
+        android:layout_height="@dimen/kryptanium_home_hot_game_item_image_width_height"
+        android:scaleType="fitXY" />
+
+</LinearLayout>

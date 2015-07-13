@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kryptanium_chat_friend_info"
+        style="@style/kryptanium_style_item_touch"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp" >
+
+        <TextView
+            android:id="@+id/kryptanium_chat_blocked_user_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/kryptanium_user_login_edit_height"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/kryptanium_text_dark"
+            android:textSize="@dimen/kryptanium_text_size_standard" />
+        
+        <TextView
+            android:id="@+id/kryptanium_chat_blocked_user_unblock"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/kryptanium_user_login_edit_height"
+            android:background="#00000000"
+            android:gravity="center_vertical"
+            android:paddingRight="8dp"
+            android:text="@string/kt_unblock"
+            android:textColor="@color/kryptanium_text_blue"
+            android:textSize="@dimen/kryptanium_text_size_standard" />
+
+</LinearLayout>

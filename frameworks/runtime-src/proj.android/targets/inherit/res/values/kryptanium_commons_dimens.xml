@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <dimen name="kryptanium_commons_pull_view_font_size">14sp</dimen>
+     
+     
+     <dimen name="kryptanium_commons_small">3dp</dimen>
+     <dimen name="kryptanium_commons_spacing">5dp</dimen>
+     <dimen name="kryptanium_commons_spacing_big">8dp</dimen>
+     <dimen name="kryptanium_commons_spacing_superbig">12dp</dimen>
+     
+</resources>

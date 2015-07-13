@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item type="id" name="kryptanium_users_head_id"/>
+	<item type="id" name="kryptanium_users_nickname_id"/>
+	<item type="id" name="kryptanium_users_city_id"/>
+	<item type="id" name="kryptanium_users_grieview_id"/>
+		
+	<item type="id" name="kryptanium_user_register_email" />
+	<item type="id" name="kryptanium_user_register_nickname" />
+	<item type="id" name="kryptanium_user_register_password" />
+	<item type="id" name="kryptanium_user_login_email" />
+	<item type="id" name="kryptanium_user_login_password" />
+	<item type="id" name="kryptanium_users_forget_password_email" />
+	<item type="id" name="kryptanium_imagepreview_loader" />
+	<item type="id" name="kryptanium_arrow_flag" />
+</resources>

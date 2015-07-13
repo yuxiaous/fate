@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="ktplay_plugin_sns_message_color">#ff333333</color>
+	<color name="ktplay_plugin_dialog_button_color">#ff394959</color>
+	<color name="ktplay_plugin_sns_dialog_loading_text_color">#ffffffff</color>
+</resources>

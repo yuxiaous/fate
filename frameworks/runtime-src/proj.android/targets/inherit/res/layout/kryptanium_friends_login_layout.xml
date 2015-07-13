@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_above="@+id/kryptanium_friend_login_or_register_button_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+            <TextView
+            android:id="@+id/kryptanium_friend_login_or_register_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/kryptanium_base_color_black"
+            android:textSize="@dimen/kryptanium_text_size_big" />
+
+        <ImageView
+            android:id="@+id/kryptanium_chat_login_or_register_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/kryptanium_chat_login"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kryptanium_friend_login_or_register_button_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_friend_login_or_register_button_layout_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/kryptanium_title_bg"
+        android:gravity="center" >
+
+        <FrameLayout
+            android:id="@+id/kryptanium_friends_login_button"
+            android:layout_width="@dimen/kryptanium_button_content_width"
+            android:layout_height="@dimen/kryptanium_button_content_height"
+            android:background="@drawable/kryptanium_colorbg_green_rounded" >
+
+            <TextView
+                android:id="@+id/kryptanium_friends_login_sns_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/kt_login_or_register"
+                android:textColor="@color/kryptanium_text_white"
+                android:textSize="@dimen/kryptanium_text_size_big" />
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

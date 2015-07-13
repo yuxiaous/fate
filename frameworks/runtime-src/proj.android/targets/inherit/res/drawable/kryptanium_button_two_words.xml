@@ -1,0 +1,9 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+    <solid android:color="#dfdfdf" />
+    <corners android:radius="2dp"/>
+    <padding android:top="@dimen/kryptanium_buttom_two_words_pandding_top"/>
+    <padding android:bottom="@dimen/kryptanium_buttom_two_words_pandding_top"/>
+    <padding android:left="@dimen/kryptanium_buttom_two_words_pandding_left"/>
+    <padding android:right="@dimen/kryptanium_buttom_two_words_pandding_left"/>
+</shape>

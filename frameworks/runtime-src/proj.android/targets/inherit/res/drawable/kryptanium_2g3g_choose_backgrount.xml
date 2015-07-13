@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+	<solid android:color="@color/kryptanium_selected_bg_grey" />
+    <stroke  
+	    android:width="1dip"  
+	    android:color="@color/kryptanium_text_dark_gray" />  
+	<corners  
+    	android:radius="@dimen/kryptanium_spacing_big" />  
+
+</shape>

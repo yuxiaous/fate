@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/kryptanium_tab_background"/>
+    <size android:width="@dimen/kryptanium_head_tab_w" android:height="@dimen/kryptanium_head_tab_h"/>
+</shape>

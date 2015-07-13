@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/kryptanium_dialog_cancel_layout_paddingBottom"
+    android:paddingTop="@dimen/kryptanium_dialog_cancel_layout_paddingTop" >
+
+    <FrameLayout
+        android:layout_gravity="center"
+        android:id="@id/kryptanium_menu_dialog_item_button"
+        android:layout_width="@dimen/kryptanium_button_special_width"
+        android:layout_height="@dimen/kryptanium_button_special_height"
+        android:background="@drawable/kryptanium_button_menu_cancel" >
+
+        <!-- icon -->
+
+        <ImageView
+            android:id="@id/kryptanium_menu_dialog_item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+             />
+
+        <!-- title -->
+
+        <TextView
+            android:id="@id/kryptanium_menu_dialog_item_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:tag="menu_dialog_item_text"
+            android:textColor="@color/kryptanium_text_black_little"
+            android:textSize="@dimen/kryptanium_text_size_big"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</FrameLayout>
