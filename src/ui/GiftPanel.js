@@ -315,7 +315,21 @@ var EndlessSelected = ui.GuiWindowBase.extend({
     
     _on_btn_challenge : function () {
         this.close();
-        ui.pushScene(new BattleEndlessScene() );
+
+
+       ui.pushScene(new BattleEndlessScene() );
+
+        //var sel_map_id = BattleSystem.instance.cur_battle_map;
+        //var loadingPanel = new LoadingBattleLayer(sel_map_id);
+        //loadingPanel.pop();
+        //
+        //loadingPanel.setLoadDoneFunc(function() {
+        //    (function () {
+        //        var scene = new BattleEndlessScene();
+        //        scene._LoadingNode = loadingPanel;
+        //        ui.pushSceneExtend(scene,loadingPanel);
+        //    } ());
+        //}, this)
     }
 
 });

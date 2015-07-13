@@ -13,7 +13,9 @@ var BattleDefScene = SceneDefBase.extend({
         }
 
         this._super(this.stage_config.scene_file);
+        LOG("start -- = " + util.getCurrentDate()) ;
         this.initBattleData(this.map_id);
+        LOG("end -- = " + util.getCurrentDate()) ;
     },
 
     onEnter: function() {

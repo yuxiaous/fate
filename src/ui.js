@@ -21,6 +21,21 @@ var ui = {
         return scene;
     },
 
+    pushSceneExtend : function (oClass,retainNode_) {
+
+        var curS = ui.pushScene(oClass);
+        if(curS){
+            LOG("1111 2222 = ");
+            retainNode_.retain();
+            retainNode_.removeFromParent();
+
+            curS.addChild(retainNode_);
+           // retainNode_.pop();
+
+        }
+        retainNode_.release();
+    },
+
     popScene: function(level) {
         if(level === undefined) {
             cc.director.popScene();
