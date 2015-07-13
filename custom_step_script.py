@@ -2,21 +2,6 @@ import shutil
 import sys 
 import os
 
-def android_handle_event(event, args):
-    target_path = os.path.join(args['platform-project-path'], "target")
-    if not os.path.exists(target_path):
-        print target_path + " not exists."
-        return
-
-    global custom
-    if not target_path in sys.path:
-        sys.path.append(target_path) 
-    if not "custom_step" in sys.modules:
-        custom = __import__("custom_step")
-
-    os.chdir(target_path)
-    custom.handle_event(event, args)
-
 
 def merge_dir(from_dir, to_dir):
     for parent, dirnames, filenames in os.walk(from_dir):
@@ -41,6 +26,7 @@ def merge_dir(from_dir, to_dir):
             # print "file src  : " + srd_file
             # print "file dest : " + dest_file
             shutil.copy(srd_file, dest_file)
+    pass
 
 
 
@@ -102,12 +88,18 @@ def handle_event(event, tp, args):
             pass
 
         if event == "post-ndk-build":
+            target_path = os.path.join(project_path, "target")
+            if os.path.isdir(target_path):
+                merge_dir("target/libs", "libs")
             pass
 
         if event == "pre-copy-assets":
             pass
 
         if event == "post-copy-assets":
+            target_path = os.path.join(project_path, "target")
+            if os.path.isdir(target_path):
+                merge_dir("target/assets", "assets")
             pass
 
         if event == "pre-ant-build":
@@ -118,9 +110,6 @@ def handle_event(event, tp, args):
 
         if event == "post-build":
             pass
-
-        # handle event
-        android_handle_event(event, args)
 
         pass
 

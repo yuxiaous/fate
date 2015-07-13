@@ -5,4 +5,11 @@ gen
 libs
 obj
 local.properties
-target
+
+/target
+/build.xml
+/AndroidManifest.xml
+/jni
+/res
+/src
+
