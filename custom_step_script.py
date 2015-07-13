@@ -25,7 +25,7 @@ def merge_dir(from_dir, to_dir):
 
             # print "file src  : " + srd_file
             # print "file dest : " + dest_file
-            shutil.copy(srd_file, dest_file)
+            shutil.copy2(srd_file, dest_file)
     pass
 
 
@@ -66,8 +66,8 @@ def handle_event(event, tp, args):
             # copy inherit files
             inherit_path = os.path.join(project_path, "targets", "inherit")
             if os.path.isdir(inherit_path):
-                shutil.copy(os.path.join(inherit_path, "build.xml"), ".")
-                shutil.copy(os.path.join(inherit_path, "AndroidManifest.xml"), ".")
+                shutil.copy2(os.path.join(inherit_path, "build.xml"), ".")
+                shutil.copy2(os.path.join(inherit_path, "AndroidManifest.xml"), ".")
                 shutil.copytree(os.path.join(inherit_path, "jni"), "jni", True)
                 shutil.copytree(os.path.join(inherit_path, "res"), "res", True)
                 shutil.copytree(os.path.join(inherit_path, "src"), "src", True)
@@ -75,8 +75,8 @@ def handle_event(event, tp, args):
             # copy target files
             target_path = os.path.join(project_path, "target")
             if os.path.isdir(target_path):
-                shutil.copy(os.path.join(target_path, "build.xml"), ".")
-                shutil.copy(os.path.join(target_path, "AndroidManifest.xml"), ".")
+                shutil.copy2(os.path.join(target_path, "build.xml"), ".")
+                shutil.copy2(os.path.join(target_path, "AndroidManifest.xml"), ".")
                 merge_dir("target/jni", "jni")
                 merge_dir("target/res", "res")
                 merge_dir("target/src", "src")

@@ -409,6 +409,12 @@ class CCPluginCompile(cocos.CCPlugin):
                     toolchain_param = "NDK_TOOLCHAIN=%s" % self.ndk_toolchain
                     ndk_build_param.append(toolchain_param)
 
+                # yuxiao begin
+                if self.xcode_target_name:
+                    target_param = "NDK_OUT=%s" % os.path.join("targets", self.xcode_target_name, "obj")
+                    ndk_build_param.append(target_param)
+                # yuxiao end
+
                 self._project.invoke_custom_step_script(cocos_project.Project.CUSTOM_STEP_PRE_NDK_BUILD, target_platform, args_ndk_copy)
 
                 modify_mk = False

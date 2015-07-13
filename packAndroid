@@ -1,9 +1,13 @@
 
 #!/bin/sh
 
-#rm -rf ./publish
-#cocos jscompile -s ./src -d ./publish/src
-#cocos jscompile -s ./config -d ./publish/config
-#cocos jscompile -s ./frameworks/js-bindings/bindings/script/ -d ./publish/script
+target=$1
 
-tools/cocos2d-console/bin/cocos compile -p android --compile-script 1 -m debug
+if [ "$target" == "" ]; then
+    target="inherit"
+fi
+
+
+echo "target is $target"
+
+tools/cocos2d-console/bin/cocos compile -p android --compile-script 1 -m debug -t $target
