@@ -29,7 +29,7 @@ var shop_server = {
     },
 
     buyGood: function(good_id, good_num, order) {
-        var config = configdb.shop[good_id];
+        var config = ShopSystem.getConfig(good_id);
         if(config == undefined) {
             LOG("CMD_CS_SHOP_BUY_GOODS error 1");
             server.sendError(net_error_code.ERR_SHOP_GOODS_NOT_EXIST);

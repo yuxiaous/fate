@@ -90,10 +90,10 @@ var ShopScene = ui.GuiSceneBase.extend({
         }
 
         var shopType = this.shopType;
-        var platorm_id = ShopSystem.getShopPlatformId();
-        _.each(configdb.shop, function(config) {
-            if(config.shop == shopType && config.platform_id == platorm_id) {
-                var good = new ShopScene.Good(config.key);
+        _.each(_.keys(configdb.shop), function(key) {
+            var config = ShopSystem.getConfig(key);
+            if(config && config.shop == shopType) {
+                var good = new ShopScene.Good(key);
                 this._ui.list_goods.pushBackCustomItem(good);
             }
         }, this);
@@ -181,7 +181,7 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
         this._ui.icon = new IconWidget();
         this._ui.icon.setWidget(this.seekWidgetByName("ProjectNode_1"));
 
-        var config = configdb.shop[this._good_id];
+        var config = ShopSystem.getConfig(this._good_id);
         if(config == undefined) {
             return;
         }
@@ -272,7 +272,7 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
     },
 
     refreshBtnBuy : function () {
-        var config = configdb.shop[this._good_id];
+        var config = ShopSystem.getConfig(this._good_id);
         if(config == undefined) {
             return;
         }

@@ -23,7 +23,7 @@ var ShopSystem = SystemBase.extend({
     buyGood: function(id, num) {
         if(num == undefined) num = 1;
 
-        var config = configdb.shop[id];
+        var config = ShopSystem.getConfig(id);
         if(config == undefined) {
             return;
         }
@@ -55,7 +55,7 @@ var ShopSystem = SystemBase.extend({
 
     onOrderResult: function(obj) {
         LOG("order result");
-        var config = configdb.shop[obj.good_id];
+        var config = ShopSystem.getConfig(obj.good_id);
         if(config == undefined) {
             return;
         }
@@ -76,6 +76,18 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.ChinaUnicom:
         default : return 1;
     }
+};
+
+ShopSystem.getConfig = function(good_id) {
+    var config = configdb.shop[good_id];
+    if(config != undefined) {
+        var platform_id = ShopSystem.getShopPlatformId();
+        var config2 = config[platform_id];
+        if(config2 != undefined) {
+            config = config2;
+        }
+    }
+    return config;
 };
 
 ShopSystem.ShopType = {

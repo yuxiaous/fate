@@ -105,10 +105,7 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         }
         else{
             var bottleId = 18002;
-            if(util.getChannelId() == GameChannel.CmccMm) {
-                bottleId += 20000;
-            }
-            var conf = configdb.shop[bottleId];
+            var conf = ShopSystem.getConfig(bottleId);
             if(conf){
                 var str = "花费" + conf.pay_cost +  "元，购买" + conf.name;
                 var msg = new MessageBoxOkCancel(str,"购买","取消");
