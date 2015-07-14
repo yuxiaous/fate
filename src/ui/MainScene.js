@@ -259,6 +259,10 @@ var MainScene = ui.GuiSceneBase.extend({
         this.pushScene(ShopScene);
         //var win = new ShopScene();
         //win.pop();
+    },
+
+    _on_btn_redemption: function() {
+        jsb.SdkManager.sdkCommond("KtplaySdk::showRedemptionView");
     }
 });
 

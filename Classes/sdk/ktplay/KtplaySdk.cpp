@@ -104,6 +104,13 @@ void KtplaySdk::login()
     showLoginView();
 }
 
+void KtplaySdk::sdkCommond(const std::string &cmd)
+{
+    if(cmd == "KtplaySdk::showRedemptionView") {
+        showRedemptionView();
+    }
+}
+
 void KtplaySdk::showKTPlay()
 {
     KTPlayC::show();

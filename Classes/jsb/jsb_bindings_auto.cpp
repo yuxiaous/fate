@@ -2776,6 +2776,24 @@ bool js_jsb_bindings_auto_SdkManager_setGender(JSContext *cx, uint32_t argc, jsv
     return false;
 }
 
+bool js_jsb_bindings_auto_SdkManager_onChargeResult(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    if (argc == 2) {
+        int arg0;
+        std::string arg1;
+        ok &= jsval_to_int32(cx, args.get(0), (int32_t *)&arg0);
+        ok &= jsval_to_std_string(cx, args.get(1), &arg1);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_onChargeResult : Error processing arguments");
+        SdkManager::onChargeResult(arg0, arg1);
+        args.rval().setUndefined();
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_onChargeResult : wrong number of arguments");
+    return false;
+}
+
 bool js_jsb_bindings_auto_SdkManager_onPurchase(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -2828,21 +2846,21 @@ bool js_jsb_bindings_auto_SdkManager_sdkCommond(JSContext *cx, uint32_t argc, js
     return false;
 }
 
-bool js_jsb_bindings_auto_SdkManager_onChargeResult(JSContext *cx, uint32_t argc, jsval *vp)
+bool js_jsb_bindings_auto_SdkManager_charge(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
     bool ok = true;
     if (argc == 2) {
-        int arg0;
+        std::string arg0;
         std::string arg1;
-        ok &= jsval_to_int32(cx, args.get(0), (int32_t *)&arg0);
+        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
         ok &= jsval_to_std_string(cx, args.get(1), &arg1);
-        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_onChargeResult : Error processing arguments");
-        SdkManager::onChargeResult(arg0, arg1);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_charge : Error processing arguments");
+        SdkManager::charge(arg0, arg1);
         args.rval().setUndefined();
         return true;
     }
-    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_onChargeResult : wrong number of arguments");
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_charge : wrong number of arguments");
     return false;
 }
 
@@ -2862,21 +2880,52 @@ bool js_jsb_bindings_auto_SdkManager_setAccount(JSContext *cx, uint32_t argc, js
     return false;
 }
 
-bool js_jsb_bindings_auto_SdkManager_charge(JSContext *cx, uint32_t argc, jsval *vp)
+bool js_jsb_bindings_auto_SdkManager_setSdkCommondCallback(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
     bool ok = true;
-    if (argc == 2) {
-        std::string arg0;
-        std::string arg1;
-        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
-        ok &= jsval_to_std_string(cx, args.get(1), &arg1);
-        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_charge : Error processing arguments");
-        SdkManager::charge(arg0, arg1);
+    if (argc == 1) {
+        std::function<void (char *)> arg0;
+        do {
+		    if(JS_TypeOfValue(cx, args.get(0)) == JSTYPE_FUNCTION)
+		    {
+		        std::shared_ptr<JSFunctionWrapper> func(new JSFunctionWrapper(cx, args.thisv().toObjectOrNull(), args.get(0)));
+		        auto lambda = [=](char* larg0) -> void {
+		            JSB_AUTOCOMPARTMENT_WITH_GLOBAL_OBJCET
+		            jsval largv[1];
+		            largv[0] = c_string_to_jsval(cx, larg0);
+		            JS::RootedValue rval(cx);
+		            bool ok = func->invoke(1, &largv[0], &rval);
+		            if (!ok && JS_IsExceptionPending(cx)) {
+		                JS_ReportPendingException(cx);
+		            }
+		        };
+		        arg0 = lambda;
+		    }
+		    else
+		    {
+		        arg0 = nullptr;
+		    }
+		} while(0)
+		;
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_setSdkCommondCallback : Error processing arguments");
+        SdkManager::setSdkCommondCallback(arg0);
         args.rval().setUndefined();
         return true;
     }
-    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_charge : wrong number of arguments");
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_setSdkCommondCallback : wrong number of arguments");
+    return false;
+}
+
+bool js_jsb_bindings_auto_SdkManager_init(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        SdkManager::init();
+        args.rval().setUndefined();
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_init : wrong number of arguments");
     return false;
 }
 
@@ -3041,12 +3090,14 @@ void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject gl
 
     static JSFunctionSpec st_funcs[] = {
         JS_FN("setGender", js_jsb_bindings_auto_SdkManager_setGender, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("onChargeResult", js_jsb_bindings_auto_SdkManager_onChargeResult, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("onPurchase", js_jsb_bindings_auto_SdkManager_onPurchase, 3, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setAccountName", js_jsb_bindings_auto_SdkManager_setAccountName, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("sdkCommond", js_jsb_bindings_auto_SdkManager_sdkCommond, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("onChargeResult", js_jsb_bindings_auto_SdkManager_onChargeResult, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setAccount", js_jsb_bindings_auto_SdkManager_setAccount, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("charge", js_jsb_bindings_auto_SdkManager_charge, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setAccount", js_jsb_bindings_auto_SdkManager_setAccount, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setSdkCommondCallback", js_jsb_bindings_auto_SdkManager_setSdkCommondCallback, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("init", js_jsb_bindings_auto_SdkManager_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setAccountType", js_jsb_bindings_auto_SdkManager_setAccountType, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("onUse", js_jsb_bindings_auto_SdkManager_onUse, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setGameServer", js_jsb_bindings_auto_SdkManager_setGameServer, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
