@@ -20,7 +20,7 @@ var SceneBase = lh.LHScene.extend({
 
         this._enterDropUi = 0;
         this._isEnteringEquipSuit = false;
-        this._LoadingNode = null;
+       // this._LoadingNode = null;
 
         BattleSystem.instance.curBattleType = this._curSceneType;
     },
@@ -129,9 +129,9 @@ var SceneBase = lh.LHScene.extend({
 
         //this.scheduleUpdate();
 
-        if( this._LoadingNode ) {
-            this._LoadingNode.close();
-        }
+        //if( this._LoadingNode ) {
+        //    this._LoadingNode.close();
+        //}
 
     },
 

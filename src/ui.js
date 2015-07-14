@@ -22,16 +22,11 @@ var ui = {
     },
 
     pushSceneExtend : function (oClass,retainNode_) {
-
         var curS = ui.pushScene(oClass);
-        if(curS){
-            LOG("1111 2222 = ");
+        if(curS && retainNode_){
             retainNode_.retain();
             retainNode_.removeFromParent();
-
             curS.addChild(retainNode_);
-           // retainNode_.pop();
-
         }
         retainNode_.release();
     },

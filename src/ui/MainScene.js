@@ -24,8 +24,11 @@ var MainScene = ui.GuiSceneBase.extend({
             lbl_rotate : this.seekWidgetByName("lbl_rotate"),
             rotate_panel : this.seekWidgetByName("rotate_label_panel"),
 
-            btn_map : this.seekWidgetByName("btn_map")
+            btn_map : this.seekWidgetByName("btn_map"),
+            btn_exchange : this.seekWidgetByName("btn_redemption")
         };
+
+        this._ui.btn_exchange.setVisible(false);
 
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_map"),101);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_bag"),103);

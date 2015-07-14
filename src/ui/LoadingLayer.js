@@ -24,12 +24,20 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
         this.BSection = BattleNorScene.initBattleSection(mapId_);
         this.chatData = BattleNorScene.initChatInfo(mapId_);
 
+        LOG("judge res data");
         if(this.stage){
             var battleSceneFile = this.stage.scene_file;
             var endString = (battleSceneFile.split(".lhplist"))[0];
             endString = (endString.split("/"))[1];
             endString = "res/scenes/568/"+endString+".png";
             this.addResToContent(endString);
+
+            //LOG("lh scene tmp----" + endString);
+            ////var tmpScene = new lh.LHScene();
+            ////tmpScene.initWithContentOfFile(this.stage.scene_file);
+            ////tmpScene.removeFromParent();
+            //LOG("--- done");
+            ////tmpScene = null;
         }
 
         var that = this;
@@ -67,7 +75,7 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
             if(!hadAdd){
                 this._addResContent.push(res_);
                 this._loadResMax = this._addResContent.length;
-                LOG("this load res max = " + this._loadResMax);
+                //LOG("this load res max = " + this._loadResMax);
             }
         }
     },
@@ -116,7 +124,6 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
             this._avater.setScale(0.8);
             this._avater.setPosition(cc.p(0,30));
             this.loadBar.addChild(this._avater);
-
 
             this._maxWidth = this.loadBar.getContentSize().width;
         }

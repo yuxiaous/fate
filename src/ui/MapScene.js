@@ -239,20 +239,25 @@ var MapScene = ui.GuiSceneBase.extend({
                 var mapConfig = configdb.map[sel_map_id];
                 if(mapConfig ){
                     if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
+                        //var scene = new BattleNorScene(sel_map_id);
+                        //scene._LoadingNode = loadingPanel;
+                        //ui.pushSceneExtend(scene,loadingPanel);
                         var scene = new BattleNorScene(sel_map_id);
-                        scene._LoadingNode = loadingPanel;
-                        ui.pushSceneExtend(scene,loadingPanel);
+                        ui.pushScene(scene);
                     }
                     else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
+                        //var scene = new BattleDefScene(sel_map_id);
+                        //scene._LoadingNode = loadingPanel;
+                        //ui.pushSceneExtend(scene,loadingPanel );
                         var scene = new BattleDefScene(sel_map_id);
-                        scene._LoadingNode = loadingPanel;
-                        ui.pushSceneExtend(scene,loadingPanel );
+                        ui.pushScene(scene );
                     }
                 }
                 else{
                     LOG("MAP ID NOT FIND!");
                 }
             } ());
+            loadingPanel.close();
         }, this)
 
     },
