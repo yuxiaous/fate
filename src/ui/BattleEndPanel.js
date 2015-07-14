@@ -334,12 +334,7 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
 
     //至尊
     _on_btn_1 : function () {
-         var   giftType = GiftSystem.GiftType.ZhiZun;
-         var   giftId = 101003;
-        if(util.getChannelId() == GameChannel.CmccMm) {
-            giftId += 200000;
-        }
-         var buy_panel = new GiftBuyDetail(giftType,giftId);
+         var buy_panel = new GiftBuyDetail(GiftSystem.GiftType.ZhiZun, 101003);
          buy_panel.pop();
          UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"));
     },
@@ -467,11 +462,7 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
 
         //BattleSystem.instance.sendReviveBattle();
 
-        var itemId = 101013;
-        if(util.getChannelId() == GameChannel.CmccMm) {
-            itemId += 200000;
-        }
-        ShopSystem.instance.buyGood(itemId,1);
+        ShopSystem.instance.buyGood(101013, 1);
 
         this.close();
     },

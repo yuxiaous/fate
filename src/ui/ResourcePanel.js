@@ -147,12 +147,7 @@ var BuyFullAction = ui.GuiWindowBase.extend({
             return;
         }
 
-
-        var itemId = 101012;
-        if(util.getChannelId() == GameChannel.CmccMm) {
-            itemId += 200000;
-        }
-        ShopSystem.instance.buyGood(itemId,1);
+        ShopSystem.instance.buyGood(101012, 1);
 
         this._on_btn_close();
     },

@@ -46,12 +46,6 @@ var GiftPanel = ui.GuiController.extend({
                             break;
                     }
 
-                    if(util.getChannelId() == GameChannel.CmccMm) {
-                        giftId += 200000;
-                    }
-                    else if(util.getChannelId() == GameChannel.CmccAnd) {
-                        giftId += 300000;
-                    }
                     if(giftType == GiftSystem.GiftType.Vip && this.getGiftNodeBuyCount(giftType) > 0){
                         var getPanel = new VipGetDetail();
                         getPanel.pop();
@@ -366,11 +360,7 @@ var BuySkillDetail = ui.GuiWindowBase.extend({
 
        // BattleSystem.instance.buySuperSkill();
 
-        var itemId = 101011;
-        if(util.getChannelId() == GameChannel.CmccMm) {
-            itemId += 200000;
-        }
-        ShopSystem.instance.buyGood(itemId,1);
+        ShopSystem.instance.buyGood(101011, 1);
     },
 
     _on_btn_close : function () {

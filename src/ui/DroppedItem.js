@@ -56,15 +56,10 @@ var DroppedItem = ui.GuiWidgetBase.extend({
     },
 
     entranceBuyEquipSuit : function (target_,curScene_) {
-        var giftId = 101002;
-        if(util.getChannelId() == GameChannel.CmccMm) {
-            giftId += 200000;
-        }
-
-         this._dabaojianPanel = new GiftBuyDetail(GiftSystem.GiftType.WuQi,giftId, this,function () {
+        this._dabaojianPanel = new GiftBuyDetail(GiftSystem.GiftType.WuQi, 101002, this,function () {
             curScene_._isEnteringEquipSuit = false;
             curScene_._enterDropUi = 0;
-         });
+        });
         this._dabaojianPanel.pop();
         cc.director.pause();
     },

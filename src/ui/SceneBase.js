@@ -431,9 +431,6 @@ var SceneBase = lh.LHScene.extend({
                     giftId = 101003;
                     break;
             }
-            if(util.getChannelId() == GameChannel.CmccMm) {
-                giftId += 200000;
-            }
             var revive = new GiftBuyDetail(giftType,giftId);
             revive.setCloseCallback(function () {
                 var win = new BattleWinPanel();

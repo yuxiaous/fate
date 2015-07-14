@@ -253,12 +253,7 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
                 break;
         }
 
-        var giftId = 12103;
-        if(util.getChannelId() == GameChannel.CmccMm) {
-            giftId += 20000;
-        }
-
-        if(GuideSystem.instance._curGuideType == GuideSystem.Type.shangdian && this._good_id == giftId){
+        if(GuideSystem.instance._curGuideType == GuideSystem.Type.shangdian && this._good_id == 12103){
             GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_buy"),113);
         }
 
