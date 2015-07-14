@@ -38,6 +38,12 @@ net_error_code[202] = {
 	desc: "已到最高等级"
 };
 
+net_error_code.ERR_LOGIN_FAIL = 501;
+net_error_code[501] = {
+	code: 501,
+	desc: "登陆失败"
+};
+
 net_error_code.ERR_SHOP_GOODS_NOT_EXIST = 1001;
 net_error_code[1001] = {
 	code: 1001,

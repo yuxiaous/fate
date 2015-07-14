@@ -2,10 +2,12 @@
 	[101, "ERR_LESS_GOLD", "金币不足"],
 	[102, "ERR_LESS_DIAMOND", "钻石不足"],
     [103, "ERR_LESS_ITEM", "物品数量不足"],
-    [104,"ERR_LESS_ACTION","行动力不足"],
+    [104, "ERR_LESS_ACTION","行动力不足"],
 
     [201, "ERR_CONFIG_NOT_EXIST", "配置无法找到"],
     [202, "ERR_TOP_LEVEL", "已到最高等级"],
+
+    [501, "ERR_LOGIN_FAIL", "登陆失败"],
 
     [1001, "ERR_SHOP_GOODS_NOT_EXIST", "商品不存在"],
 

@@ -84,9 +84,11 @@ notification.event = {
     GM_CMD: 2,
     ERROR_MSG: 3,
 
-    INIT_BEGIN: 90,
-    INIT_END: 91,
-    INIT_PROGRESS: 92,
+    LOGIN: 90,
+    LOGIN_RESULT: 91,
+    INIT_BEGIN: 92,
+    INIT_END: 93,
+    INIT_PROGRESS: 94,
 
     PLAYER_LEVEL_UP: 98,
     PLAYER_INFO: 99,

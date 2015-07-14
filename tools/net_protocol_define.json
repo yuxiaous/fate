@@ -20,19 +20,52 @@
 		]	
 	},
 
+    "CMD_CS_LOGIN_WITH_USER_PASS":
+    {
+        "code": 501,
+        "type": "CS",
+        "desc": "使用用户名密码登录",
+        "schemes":
+        [
+            ["string", "username", "用户名"],
+            ["string", "password", "密码"]
+        ]
+    },
+    "CMD_CS_LOGIN_WITH_IDENTIFIER":
+    {
+        "code": 502,
+        "type": "CS",
+        "desc": "使用识别符登录",
+        "schemes":
+        [
+            ["string", "identifier", "识别符"]
+        ]
+    },
+    "CMD_SC_LOGIN_RESULT":
+    {
+        "code": 503,
+        "type": "SC",
+        "desc": "登陆结果",
+        "schemes":
+        [
+            ["uint32", "result", "结果 成功=0"],
+            ["string", "token", "Token"]
+        ]
+    },
+
 	"CMD_CS_AUTH":
 	{
-		"code": 500,
+		"code": 504,
 		"type": "CS",
 		"desc": "获取授权",
 		"schemes":
 		[
-			["uint32", "token", "Token"]
+			["string", "token", "Token"]
 		]
 	},
 	"CMD_SC_INIT_BEGIN":
 	{
-		"code": 501,
+		"code": 505,
 		"type": "SC",
 		"desc": "开始初始化",
 		"schemes": 
@@ -41,7 +74,7 @@
 	},
 	"CMD_SC_INIT_END":
 	{
-		"code": 502,
+		"code": 506,
 		"type": "SC",
 		"desc": "初始化结束",
 		"schemes": 
@@ -50,7 +83,7 @@
 	},
 	"CMD_SC_INIT_PROGRESS":
 	{
-		"code": 503,
+		"code": 507,
 		"type": "SC",
 		"desc": "初始化进度",
 		"schemes": 

@@ -56,11 +56,11 @@ _BindFunc(1603, function(obj) {
 });
 
 // @protocol 获取授权
-// @param {uint32} token, Token
-net_protocol_handlers.CMD_CS_AUTH = 500;
+// @param {string} token, Token
+net_protocol_handlers.CMD_CS_AUTH = 504;
 net_protocol_handlers.SEND_CMD_CS_AUTH = function(obj) {
 	cc.assert(obj.token != undefined, "CMD_CS_AUTH.token is undefined.");
-	_SendFunc(500, obj);
+	_SendFunc(504, obj);
 };
 
 // @protocol 战斗复活
@@ -81,6 +81,14 @@ _BindFunc(1605, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_LOGIN_REWARD_INFO(obj);
 });
 
+// @protocol 获取礼包倒计时时间
+// @param {uint32} playid_id, 礼包类型
+net_protocol_handlers.CMD_CS_GET_GIFT_TIME = 1613;
+net_protocol_handlers.SEND_CMD_CS_GET_GIFT_TIME = function(obj) {
+	cc.assert(obj.playid_id != undefined, "CMD_CS_GET_GIFT_TIME.playid_id is undefined.");
+	_SendFunc(1613, obj);
+};
+
 // @protocol 战斗结束返回的详细信息
 // @param {uint32} result, 战斗结果，1胜利 2失败
 // @param {uint32} map_id, 地图id
@@ -92,6 +100,14 @@ _BindFunc(1504, function(obj) {
 	cc.assert(obj.reward != undefined, "CMD_SC_BATTLE_FINISH_RESULT.reward is undefined.");
 	net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT(obj);
 });
+
+// @protocol 使用识别符登录
+// @param {string} identifier, 识别符
+net_protocol_handlers.CMD_CS_LOGIN_WITH_IDENTIFIER = 502;
+net_protocol_handlers.SEND_CMD_CS_LOGIN_WITH_IDENTIFIER = function(obj) {
+	cc.assert(obj.identifier != undefined, "CMD_CS_LOGIN_WITH_IDENTIFIER.identifier is undefined.");
+	_SendFunc(502, obj);
+};
 
 // @protocol 装备物品
 // @param {uint32} uid, 物品uid
@@ -110,8 +126,8 @@ _BindFunc(900, function(obj) {
 });
 
 // @protocol 开始初始化
-net_protocol_handlers.CMD_SC_INIT_BEGIN = 501;
-_BindFunc(501, function(obj) {
+net_protocol_handlers.CMD_SC_INIT_BEGIN = 505;
+_BindFunc(505, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_INIT_BEGIN(obj);
 });
 
@@ -133,9 +149,17 @@ net_protocol_handlers.SEND_CMD_CS_ENDLESS_MAX_ROUND = function(obj) {
 	_SendFunc(1611, obj);
 };
 
+// @protocol 卸下装备结果
+// @param {uint32} result, 结果 0成功
+net_protocol_handlers.CMD_CS_UNEQUIP_ITEM_RESULT = 1307;
+_BindFunc(1307, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_CS_UNEQUIP_ITEM_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_CS_UNEQUIP_ITEM_RESULT(obj);
+});
+
 // @protocol 初始化结束
-net_protocol_handlers.CMD_SC_INIT_END = 502;
-_BindFunc(502, function(obj) {
+net_protocol_handlers.CMD_SC_INIT_END = 506;
+_BindFunc(506, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_INIT_END(obj);
 });
 
@@ -155,12 +179,12 @@ _BindFunc(1623, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_ENDLESS_BATTLE_END(obj);
 });
 
-// @protocol 获取礼包倒计时时间
-// @param {uint32} playid_id, 礼包类型
-net_protocol_handlers.CMD_CS_GET_GIFT_TIME = 1613;
-net_protocol_handlers.SEND_CMD_CS_GET_GIFT_TIME = function(obj) {
-	cc.assert(obj.playid_id != undefined, "CMD_CS_GET_GIFT_TIME.playid_id is undefined.");
-	_SendFunc(1613, obj);
+// @protocol 使用角色大招次数
+// @param {uint32} player_id, player ID
+net_protocol_handlers.CMD_CS_USE_SUPER_SKILL = 1607;
+net_protocol_handlers.SEND_CMD_CS_USE_SUPER_SKILL = function(obj) {
+	cc.assert(obj.player_id != undefined, "CMD_CS_USE_SUPER_SKILL.player_id is undefined.");
+	_SendFunc(1607, obj);
 };
 
 // @protocol 地图战斗
@@ -181,19 +205,21 @@ net_protocol_handlers.SEND_CMD_CS_ENDLESS_BATTLE_END = function(obj) {
 
 // @protocol 初始化进度
 // @param {uint32} percent, 初始化百分比
-net_protocol_handlers.CMD_SC_INIT_PROGRESS = 503;
-_BindFunc(503, function(obj) {
+net_protocol_handlers.CMD_SC_INIT_PROGRESS = 507;
+_BindFunc(507, function(obj) {
 	cc.assert(obj.percent != undefined, "CMD_SC_INIT_PROGRESS.percent is undefined.");
 	net_protocol_handlers.ON_CMD_SC_INIT_PROGRESS(obj);
 });
 
-// @protocol 升级技能
-// @param {uint32} skill_id, 技能id
-net_protocol_handlers.CMD_CS_SKILL_UP = 1202;
-net_protocol_handlers.SEND_CMD_CS_SKILL_UP = function(obj) {
-	cc.assert(obj.skill_id != undefined, "CMD_CS_SKILL_UP.skill_id is undefined.");
-	_SendFunc(1202, obj);
-};
+// @protocol 登陆结果
+// @param {uint32} result, 结果 成功=0
+// @param {string} token, Token
+net_protocol_handlers.CMD_SC_LOGIN_RESULT = 503;
+_BindFunc(503, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_LOGIN_RESULT.result is undefined.");
+	cc.assert(obj.token != undefined, "CMD_SC_LOGIN_RESULT.token is undefined.");
+	net_protocol_handlers.ON_CMD_SC_LOGIN_RESULT(obj);
+});
 
 // @protocol 物品使用结果
 // @param {uint32} result, 结果 0成功
@@ -331,20 +357,22 @@ _BindFunc(1309, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_EQUIP_SLOT_UPGRADE_TOP_RESULT(obj);
 });
 
-// @protocol 卸下装备结果
-// @param {uint32} result, 结果 0成功
-net_protocol_handlers.CMD_CS_UNEQUIP_ITEM_RESULT = 1307;
-_BindFunc(1307, function(obj) {
-	cc.assert(obj.result != undefined, "CMD_CS_UNEQUIP_ITEM_RESULT.result is undefined.");
-	net_protocol_handlers.ON_CMD_CS_UNEQUIP_ITEM_RESULT(obj);
-});
+// @protocol 使用用户名密码登录
+// @param {string} username, 用户名
+// @param {string} password, 密码
+net_protocol_handlers.CMD_CS_LOGIN_WITH_USER_PASS = 501;
+net_protocol_handlers.SEND_CMD_CS_LOGIN_WITH_USER_PASS = function(obj) {
+	cc.assert(obj.username != undefined, "CMD_CS_LOGIN_WITH_USER_PASS.username is undefined.");
+	cc.assert(obj.password != undefined, "CMD_CS_LOGIN_WITH_USER_PASS.password is undefined.");
+	_SendFunc(501, obj);
+};
 
-// @protocol 使用角色大招次数
-// @param {uint32} player_id, player ID
-net_protocol_handlers.CMD_CS_USE_SUPER_SKILL = 1607;
-net_protocol_handlers.SEND_CMD_CS_USE_SUPER_SKILL = function(obj) {
-	cc.assert(obj.player_id != undefined, "CMD_CS_USE_SUPER_SKILL.player_id is undefined.");
-	_SendFunc(1607, obj);
+// @protocol 升级技能
+// @param {uint32} skill_id, 技能id
+net_protocol_handlers.CMD_CS_SKILL_UP = 1202;
+net_protocol_handlers.SEND_CMD_CS_SKILL_UP = function(obj) {
+	cc.assert(obj.skill_id != undefined, "CMD_CS_SKILL_UP.skill_id is undefined.");
+	_SendFunc(1202, obj);
 };
 
 // @protocol 购买角色大招释放数量

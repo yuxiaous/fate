@@ -52,7 +52,7 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_enter: function() {
-        LoginSystem.instance.authorize(101);
+        LoginSystem.instance.login(LoginSystem.LoginType.Identifier, "yuxiao");
     },
     
     _on_btn_about : function () {

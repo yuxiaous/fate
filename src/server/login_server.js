@@ -20,9 +20,30 @@ var login_server = {
     }
 };
 
+server.registerCallback(net_protocol_handlers.CMD_CS_LOGIN_WITH_USER_PASS, function(obj) {
+    LOG("CMD_CS_LOGIN_WITH_USER_PASS");
+    server.sendError(net_error_code.ERR_LOGIN_FAIL);
+});
+
+server.registerCallback(net_protocol_handlers.CMD_CS_LOGIN_WITH_IDENTIFIER, function(obj) {
+    LOG("CMD_CS_LOGIN_WITH_IDENTIFIER");
+    LOG(obj.identifier);
+
+    var identifier = obj.identifier;
+
+    // TODO: check identifier
+
+    server.send(net_protocol_handlers.CMD_SC_LOGIN_RESULT, {
+        result: 0,
+        token: identifier
+    });
+});
+
 server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
     LOG("CMD_CS_AUTH");
     LOG(obj.token);
+
+    // TODO: check token
 
     // start player server
     server_manager.flush();
