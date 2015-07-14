@@ -52,6 +52,8 @@ def handle_event(event, tp, args):
         inherit_path = os.path.join(project_path, "targets", "inherit")
         target_path = os.path.join(project_path, "targets", target_name)
 
+        os.chdir(project_path)
+
         if not os.path.isdir(target_path):
             print "Target not exist."
             exit(0)
