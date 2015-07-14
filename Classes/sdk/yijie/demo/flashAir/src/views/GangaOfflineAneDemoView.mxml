@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="Ganga Demo">
+
+	<fx:Script> 
+		<![CDATA[
+			import cn.snowfish.ganga.ane.CallbackEvent;
+			import cn.snowfish.ganga.ane.Constants;
+			import cn.snowfish.ganga.ane.SFCommonSDKInterface;
+			
+			protected function btnInit_clickHandler(event:MouseEvent):void
+			{
+				outputs("初始化...");
+				SFCommonSDKInterface.getInstance().initSDK();
+				SFCommonSDKInterface.getInstance().addEventListener(Constants.EVENT_TYPE_GANGA_CALLBACK,onCallbackEvent);
+			}
+			
+			protected function btnPayPoint_one_clickHandler(event:MouseEvent):void
+			{
+				SFCommonSDKInterface.getInstance().pay("0");
+				outputs("计费点1...");
+				
+			}
+			
+			protected function btnPayPoint_two_clickHandler(event:MouseEvent):void
+			{
+				SFCommonSDKInterface.getInstance().pay("1");
+				outputs("计费点2...");
+				
+			}
+			
+			protected function btnPayPoint_three_clickHandler(event:MouseEvent):void
+			{
+				SFCommonSDKInterface.getInstance().pay("2");
+				outputs("计费点3...");
+				
+			}
+			protected function btnUPointCharge_clickHandler(event:MouseEvent):void
+			{	
+				SFCommonSDKInterface.getInstance().recharge(1*100, "购买此道具您需要支付1元","测试额外参数");
+				outputs("充值...");
+			}
+			
+			protected function btnIsMusicEnable_clickHandler(event:MouseEvent):void
+			{
+				SFCommonSDKInterface.getInstance().isMusicEnable();	
+				outputs("是否需要打开游戏声音");
+			}
+				
+			protected function btnViewMoreGame_clickHandler(event:MouseEvent):void
+			{
+				SFCommonSDKInterface.getInstance().viewMoreGame();
+				outputs("更多游戏...");
+			}
+			
+			protected function btnExitSDK_clickHandler(event:MouseEvent):void
+			{
+				SFCommonSDKInterface.getInstance().exitSDK();
+				SFCommonSDKInterface.getInstance().dealloc();
+				outputs("退出...");
+			}
+			
+			private function outputs(txt:String):void
+			{
+				txtOutputs.appendText(txt + "\n");
+			}
+			public function onCallbackEvent(event:CallbackEvent):void 
+			{
+				outputs("received callback event: " + event.toString());
+				var callbackType:String = event.callbackType;
+				var code:int = event.code;
+				var data:Object = event.data;
+				outputs("received callback event: callbackType=" + callbackType + ", code=" + code + ", data=" + (data != null ? data.toString() : "") );
+				
+				 if (callbackType == Constants.CALLBACKTYE_MusicEnable) { 
+					outputs("onStatus isMusicEnable ");
+					var enable:String = (data == true?"音效打开":"音效关闭");
+					outputs(enable);
+					
+				}else if (callbackType == Constants.CALLBACKTYE_PaySuccess) { 
+					outputs("onStatus Paysuccess ");
+					
+				}else if (callbackType == Constants.CALLBACKTYE_PayFailed) { 
+					outputs("onStatus Payfail ");
+					
+				}else if (callbackType == Constants.CALLBACKTYE_PayCancel) { 
+					outputs("onStatus Paycancle ");
+					
+				}else if (callbackType == Constants.CALLBACKTYPE_GetMetaData){
+					
+					var metaValue:String = data.toString();
+					outputs("getMetaData metaValue = "+metaValue); 
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<s:Group width="100%" height="100%" >
+		<s:Label text="Ganga Ane Demo" />
+		<s:Button id="btnInit" x="19" y="38" width="274" height="58" label="初始化"
+				  click="btnInit_clickHandler(event)" fontSize="24"/>
+		<s:Button id="btnPayPoint_one" x="330" y="38" width="274" height="58" label="计费点 1"
+				  click="btnPayPoint_one_clickHandler(event)" fontSize="24"/>
+		<s:Button id="btnPayPoint_two" x="19" y="148" width="274" height="58" label="计费点 2"
+				  click="btnPayPoint_two_clickHandler(event)" fontSize="24"/>
+		<s:Button id="btnPayPoint_three" x="330" y="148" width="274" height="58" label="计费点 3"
+				  click="btnPayPoint_three_clickHandler(event)" fontSize="24"/>
+		<s:Button id="btnUPointCharge" x="19" y="258" width="274" height="58" label="更多游戏"
+				  click="btnViewMoreGame_clickHandler(event)" fontSize="24"/>
+		<s:Button id="btnIsMusicEnable" x="330" y="258" width="274" height="58" label="是否需要打开游戏声音"
+				  click="btnIsMusicEnable_clickHandler(event)" fontSize="24"/>
+		<s:Button id="btnExitSDK" x="0" y="368" width="100%" height="58" label="退出"
+				  click="btnExitSDK_clickHandler(event)" fontSize="24"/>
+		
+		<s:TextArea id="txtOutputs" x="0" y="480" width="100%" height="379" fontSize="24" text=""/>
+	</s:Group>
+	
+</s:View>
