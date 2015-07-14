@@ -15,15 +15,12 @@ class Sdk;
 
 class SdkManager
 {
-#ifndef SKIP_BY_AUTO_BINDINGS
+    friend Sdk;
+    
 public:
-    static void addSdk(Sdk *sdk);
-    static void removeSdk(Sdk *sdk);
     static void init();
-#endif
-
-public:
     static void sdkCommond(const std::string &cmd);
+    static void setSdkCommondCallback(const std::function<void(char *param)> &callback) {}
     
     // ChargeProtocol
     static void charge(const std::string &order, const std::string &identifier);
@@ -41,6 +38,12 @@ public:
     static void setGender(int gender);
     static void setAge(int age);
     static void setGameServer(const char* gameServer);
+    
+private:
+    static void addSdk(Sdk *sdk);
+    static void removeSdk(Sdk *sdk);
+    static std::function<void(char*)> _sdkCommondCallback;
+    
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 public:

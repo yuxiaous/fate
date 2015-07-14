@@ -1052,6 +1052,18 @@ int
 },
 
 /**
+ * @method onChargeResult
+ * @param {int} arg0
+ * @param {String} arg1
+ */
+onChargeResult : function (
+int, 
+str 
+)
+{
+},
+
+/**
  * @method onPurchase
  * @param {char} arg0
  * @param {int} arg1
@@ -1086,12 +1098,12 @@ str
 },
 
 /**
- * @method onChargeResult
- * @param {int} arg0
+ * @method charge
+ * @param {String} arg0
  * @param {String} arg1
  */
-onChargeResult : function (
-int, 
+charge : function (
+str, 
 str 
 )
 {
@@ -1108,13 +1120,19 @@ char
 },
 
 /**
- * @method charge
- * @param {String} arg0
- * @param {String} arg1
+ * @method setSdkCommondCallback
+ * @param {function} arg0
  */
-charge : function (
-str, 
-str 
+setSdkCommondCallback : function (
+func 
+)
+{
+},
+
+/**
+ * @method init
+ */
+init : function (
 )
 {
 },
