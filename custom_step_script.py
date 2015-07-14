@@ -43,15 +43,19 @@ def handle_event(event, tp, args):
     #     'output-dir': '/Users/yuxiao/Documents/workspace/fate/client/runtime/android'
     # }
 
-    project_path = args['platform-project-path']
-    target_name = args['target-name']
-
-    inherit_path = os.path.join(project_path, "targets", "inherit")
-    target_path = os.path.join(project_path, "targets", target_name)
 
 
     if tp == "android":
-        os.chdir(project_path)
+        project_path = args['platform-project-path']
+        target_name = args['target-name']
+
+        inherit_path = os.path.join(project_path, "targets", "inherit")
+        target_path = os.path.join(project_path, "targets", target_name)
+
+        if not os.path.isdir(target_path):
+            print "Target not exist."
+            exit(0)
+            return
 
         # backup 
         if event == "pre-build":
