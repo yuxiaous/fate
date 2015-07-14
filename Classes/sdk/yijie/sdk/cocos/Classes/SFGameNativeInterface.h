@@ -12,40 +12,40 @@
 
 class SFNativeGameExitCallBack {
 public:
-	SFNativeGameExitCallBack() {};
-	virtual ~SFNativeGameExitCallBack() {};
-	virtual void onGameExit(bool b) = 0;
+    SFNativeGameExitCallBack() {};
+    virtual ~SFNativeGameExitCallBack() {};
+    virtual void onGameExit(bool b) = 0;
 };
 
 class SFNativeIPayResulBack {
 public:
-	SFNativeIPayResulBack() {};
-	virtual ~SFNativeIPayResulBack() {};
-	virtual void onCanceled(const char* remain) = 0;
-	virtual void onFailed(const char* remain) = 0;
-	virtual void onSuccess(const char* remain) = 0;
+    SFNativeIPayResulBack() {};
+    virtual ~SFNativeIPayResulBack() {};
+    virtual void onCanceled(const char* remain) = 0;
+    virtual void onFailed(const char* remain) = 0;
+    virtual void onSuccess(const char* remain) = 0;
 };
 
 class SFGameNativeInterface {
 public:
-	//ÉèÖÃÍË³ö»Øµ÷
-	static void setSFGameExitCallBack(SFNativeGameExitCallBack* exitCallBack);
-	//ÉèÖÃÖ§¸¶»Øµ÷
-	static void setSFIPayResulBack(SFNativeIPayResulBack* payCallBack);
-	static void onDestroy();
-	static void onExit();
-	static void onInit();
-	static void onPause();
-	static void onResume();
-	static bool isPaid(const char* id);
-	//Ö§¸¶½Ó¿Ú id:¼Æ·Ñµã±àºÅ
-	static void pay(const char* id);
-	static void recharge(int price,
-			const char* chargeDesc, const char* sign);
-	static void setPaid(const char* id);
-	//ÒÆ¶¯»ùµØSDK£¬½øÈëÓÎÏ·Ê±±ØĞëÊ¹ÓÃÕâ¸ö·½·¨½øĞĞÅĞ¶ÏÒôÀÖÊÇ·ñ¿ª¹Ø
-	static bool isMusicEnabled();
-	static void viewMoreGames();
+    //è®¾ç½®é€€å‡ºå›è°ƒ
+    static void setSFGameExitCallBack(SFNativeGameExitCallBack* exitCallBack);
+    //è®¾ç½®æ”¯ä»˜å›è°ƒ
+    static void setSFIPayResulBack(SFNativeIPayResulBack* payCallBack);
+    static void onDestroy();
+    static void onExit();
+    static void onInit();
+    static void onPause();
+    static void onResume();
+    static bool isPaid(const char* id);
+    //æ”¯ä»˜æ¥å£ id:è®¡è´¹ç‚¹ç¼–å·
+    static void pay(const char* id);
+    static void recharge(int price,
+                         const char* chargeDesc, const char* sign);
+    static void setPaid(const char* id);
+    //ç§»åŠ¨åŸºåœ°SDKï¼Œè¿›å…¥æ¸¸æˆæ—¶å¿…é¡»ä½¿ç”¨è¿™ä¸ªæ–¹æ³•è¿›è¡Œåˆ¤æ–­éŸ³ä¹æ˜¯å¦å¼€å…³
+    static bool isMusicEnabled();
+    static void viewMoreGames();
 };
 
 #endif /* SFGAMENATIVEINTERFACE_H_ */

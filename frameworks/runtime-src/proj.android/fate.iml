@@ -19,5 +19,8 @@
     <orderEntry type="library" name="Game_Analytics_SDK_Android_3.1.68" level="project" />
     <orderEntry type="library" name="CMBilling" level="project" />
     <orderEntry type="library" name="ktplay" level="project" />
+    <orderEntry type="library" name="gangaofflinehelper" level="project" />
+    <orderEntry type="library" name="gangaofflineyijie" level="project" />
+    <orderEntry type="library" name="ahelper" level="project" />
   </component>
 </module>

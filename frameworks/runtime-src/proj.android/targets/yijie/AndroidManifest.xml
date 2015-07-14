@@ -10,7 +10,7 @@
 
     <application android:label="@string/app_name"
                  android:icon="@drawable/icon"
-                 android:name="org.cocos2dx.javascript.AppApplication">
+                 android:name="com.fate.yijie.YijieApplication">
 
         <!-- Tell NativeActivity the name of our .so -->
         <meta-data android:name="android.app.lib_name" android:value="cocos2djs" />
@@ -21,10 +21,10 @@
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
                   android:configChanges="orientation">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <!-- KTPlay SDK配置开始 -->
@@ -41,6 +41,55 @@
                 android:value="GP"
                 />
         <!-- KTPlay SDK配置结束 -->
+
+        <!-- add by snowfish -->
+        <activity
+                android:name="com.snowfish.cn.ganga.offline.helper.SFGameSplashActivity"
+                android:label="@string/app_name"
+                android:screenOrientation="sensor"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.snowfish.a.a.s.PA"
+                android:configChanges="keyboardHidden|orientation"
+                android:theme="@android:style/Theme.Translucent"
+                android:windowSoftInputMode="stateHidden" >
+        </activity>
+
+        <service
+                android:name="com.snowfish.a.a.s.ABGSvc"
+                android:enabled="true"
+                android:process="com.snowfish.a.a.bg">
+            <intent-filter>
+                <action android:name="com.snowfish.a.a.s.ABGSvc" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+                android:name="com.snowfish.appid"
+                android:value="{0041C930-8A68C019}" >
+        </meta-data>
+        <meta-data
+                android:name="com.snowfish.customer"
+                android:value="snowfish" >
+        </meta-data>
+        <meta-data
+                android:name="com.snowfish.channel"
+                android:value="snowfish" >
+        </meta-data>
+        <meta-data
+                android:name="com.snowfish.sdk.version"
+                android:value="1" >
+        </meta-data>
+        <!-- end by snowfish -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -67,4 +116,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <!-- KTPlay SDK 权限配置结束 -->
+
+    <!--add by snowfish-->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--end add by snowfish -->
 </manifest>

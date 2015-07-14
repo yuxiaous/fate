@@ -171,6 +171,13 @@
     <mapping directory="" vcs="" />
   </component>
   <component name="libraryTable">
+    <library name="ahelper">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/yijie/sdk/cocos/libs/ahelper.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="CMBilling">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/AndGame/android/runtime/CMBilling.jar!/" />
@@ -181,6 +188,20 @@
     <library name="Game_Analytics_SDK_Android_3.1.68">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="gangaofflinehelper">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/yijie/sdk/cocos/libs/gangaofflinehelper.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="gangaofflineyijie">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/yijie/sdk/cocos/libs/gangaofflineyijie.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
