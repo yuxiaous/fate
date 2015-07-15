@@ -131,6 +131,10 @@ class CCPluginCompile(cocos.CCPlugin):
         self.xcode_target_name = None
         if args.target_name is not None:
             self.xcode_target_name = args.target_name
+        # yuxiao begin
+        elif args.platform == "android":
+            self.xcode_target_name = "inherit"
+        # yuxiao end
 
         if args.compile_script is not None:
             self._compile_script = bool(args.compile_script)
