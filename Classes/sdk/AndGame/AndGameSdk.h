@@ -10,13 +10,15 @@ public:
     AndGameSdk();
     static AndGameSdk *getInstance();
 
-    virtual void init();
+    virtual void init() override;
+    virtual void update(float dt) override;
+
+    // SdkChargeProtocol
     virtual void charge(const std::string &order, const std::string &identifier) override;
 
     static bool isMusicEnabled();
 
 private:
-    void update(float);
 };
 
 #endif /* defined(__AndGameSdk__) */

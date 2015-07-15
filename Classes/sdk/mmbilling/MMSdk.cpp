@@ -53,6 +53,15 @@ MMSdk *MMSdk::getInstance()
     return instance;
 }
 
+void MMSdk::update(float dt)
+{
+    if(!g_order.empty()) {
+        onChargeCallback(g_result, g_order.c_str());
+        g_result = 0;
+        g_order.clear();
+    }
+}
+
 void MMSdk::activityOnCreate()
 {
     const char *appid = "300009139532";
@@ -65,20 +74,6 @@ void MMSdk::activityOnCreate()
         minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jappid, jappkey);
         minfo.env->DeleteLocalRef(jappid);
         minfo.env->DeleteLocalRef(jappkey);
-    }
-}
-
-void MMSdk::init()
-{
-    cocos2d::Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MMSdk::update), this, 0, false);
-}
-
-void MMSdk::update(float dt)
-{
-    if(!g_order.empty()) {
-        onChargeCallback(g_result, g_order.c_str());
-        g_result = 0;
-        g_order.clear();
     }
 }
 

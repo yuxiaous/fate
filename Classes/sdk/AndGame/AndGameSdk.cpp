@@ -47,8 +47,6 @@ void AndGameSdk::init()
     if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
         minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
     }
-
-    cocos2d::Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(AndGameSdk::update), this, 0, false);
 }
 
 void AndGameSdk::update(float dt)

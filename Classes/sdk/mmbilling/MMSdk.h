@@ -12,13 +12,12 @@ public:
     MMSdk();
     static MMSdk *getInstance();
 
+    virtual void update(float dt) override;
+
     virtual void activityOnCreate() override;
 
-    virtual void init() override;
+    // SdkChargeProtocol
     virtual void charge(const std::string &order, const std::string &identifier) override;
-
-private:
-    void update(float);
 };
 
 #endif /* defined(__MMSdk__) */

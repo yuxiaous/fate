@@ -57,7 +57,7 @@ public:
         SdkManager::update(dt);
     }
 };
-static SdkManagerUpdate s_sdk_manager_update;
+static SdkManagerUpdate *s_sdk_manager_update = nullptr;
 
 
 
@@ -80,6 +80,10 @@ void SdkManager::update(float dt)
 
 void SdkManager::init()
 {
+    if(s_sdk_manager_update == nullptr) {
+        s_sdk_manager_update = new SdkManagerUpdate();
+    }
+    
     for(Sdk *sdk : _sdks) {
         sdk->init();
     }
