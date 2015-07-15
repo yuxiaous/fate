@@ -43,6 +43,11 @@ MMSdk mmsdk;
 KtplaySdk ktplaysdk;
 #endif
 
+#ifdef SDK_UNIPAY
+#include "unipay/UniPaySdk.h"
+UniPaySdk unipaysdk;
+#endif
+
 USING_NS_CC;
 
 

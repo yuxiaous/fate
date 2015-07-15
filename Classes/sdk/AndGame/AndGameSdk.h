@@ -4,7 +4,7 @@
 #include "Sdk.h"
 #include "cocos2d.h"
 
-class AndGameSdk : public cocos2d::Ref, public Sdk, public SdkChargeProtocol
+class AndGameSdk : public Sdk, public SdkChargeProtocol
 {
 public:
     AndGameSdk();

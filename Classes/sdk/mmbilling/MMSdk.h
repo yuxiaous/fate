@@ -6,7 +6,7 @@
 #include "cocos2d.h"
 
 
-class MMSdk : public cocos2d::Ref, public Sdk, public SdkChargeProtocol
+class MMSdk : public Sdk, public SdkChargeProtocol
 {
 public:
     MMSdk();
