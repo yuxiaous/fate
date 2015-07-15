@@ -114,6 +114,7 @@
     "src/ui/SceneNight.js",
     "src/ui/BattleEndPanel.js",
     "src/ui/LoadingLayer.js",
+    "src/ui/LoadingScene",
     "src/ui/DroppedItem.js",
     "src/ui/GoForwardPanel.js",
     "src/ui/DamageWorld.js",
