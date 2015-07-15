@@ -2,7 +2,7 @@
 assets
 bin
 gen
-libs
+/libs
 obj
 local.properties
 
