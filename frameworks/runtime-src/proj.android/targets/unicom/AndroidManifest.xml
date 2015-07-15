@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.fate.unicom"
+      android:versionCode="1"
+      android:versionName="1.0"
+      android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="9"/>
+    <uses-feature android:glEsVersion="0x00020000" />
+
+    <application android:label="@string/app_name"
+                 android:icon="@drawable/icon"
+                 android:name="org.cocos2dx.javascript.AppApplication">
+
+        <!-- Tell NativeActivity the name of our .so -->
+        <meta-data android:name="android.app.lib_name" android:value="cocos2djs" />
+
+        <activity android:name="org.cocos2dx.javascript.AppActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:configChanges="orientation">
+
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <!-- KTPlay SDK配置开始 -->
+        <activity
+                android:name="com.ktplay.activity.GetPhotoActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:screenOrientation="user"
+                android:theme="@android:style/Theme.Translucent"
+                android:windowSoftInputMode="adjustPan|adjustUnspecified" >
+        </activity>
+
+        <meta-data
+                android:name="KTPLAY_CHANNELID"
+                android:value="GP"
+                />
+        <!-- KTPlay SDK配置结束 -->
+
+        <!-- 联通沃商店开始 -->
+        <meta-data android:name="wostore_billing_otherpay" android:value="true"/>
+        <meta-data android:name="wostore_billing_chinaunicom" android:value="true"/>
+        <meta-data android:name="wostore_billing_chinamobile"  android:value="true" />
+        <meta-data android:name="wostore_billing_chinatele"  android:value="true" />
+
+        <service android:name="com.unicom.wostore.unipay.paysecurity.SecurityServiceFramework">
+            <intent-filter>
+                <action android:name="com.fate.unicom.unicom.wostore.unipay.securityserviceframework" />
+            </intent-filter>
+        </service>
+
+        <!-- alipay sdk begin -->
+        <activity
+                android:name="com.alipay.sdk.app.H5PayActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:exported="false"
+                android:screenOrientation="behind" >
+        </activity>
+        <activity
+                android:name="com.alipay.sdk.auth.AuthActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:exported="false"
+                android:screenOrientation="behind" >
+        </activity>
+        <!-- alipay sdk end -->
+
+        <activity
+                android:name="com.unicom.dcLoader.welcomeview"
+                android:label="@string/app_name"
+                android:screenOrientation="sensor"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                android:configChanges="keyboardHidden|screenSize|navigation|orientation"
+                >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            <meta-data android:name="UNICOM_DIST_ACTIVITY"
+                       android:value="org.cocos2dx.javascript.AppActivity"/>
+        </activity>
+        <!-- 联通沃商店结束 -->
+
+    </application>
+
+    <supports-screens android:anyDensity="true"
+                      android:smallScreens="true"
+                      android:normalScreens="true"
+                      android:largeScreens="true"
+                      android:xlargeScreens="true"/>
+					  
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>  
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>  
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>  
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>  
+    
+  	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+ 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+ 	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+ 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+ 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+ 	<uses-permission android:name="android.permission.GET_TASKS"/>
+
+    <!-- KTPlay SDK 权限配置开始 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- KTPlay SDK 权限配置结束 -->
+
+    <!-- 联通沃商店开始 -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <!-- 联通沃商店结束 -->
+
+
+</manifest>
