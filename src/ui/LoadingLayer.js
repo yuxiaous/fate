@@ -51,6 +51,7 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
                         if(modelConfig){
                             var armatureStr = modelConfig.armature;
                             armatureStr = "res/armatures/" + armatureStr + "/texture.png";
+                            LOG("armature str = " + armatureStr);
                             that.addResToContent(armatureStr);
                         }
                     });
@@ -60,6 +61,24 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
 
         if(this.chatData){
 
+        }
+
+        var skin = SkinSystem.instance.use_skin;
+        var tmpHero = null;
+        if(skin == 101){
+            tmpHero = new Saber();
+        }
+        else if(skin == 102){
+            tmpHero = new Nero();
+        }
+
+        if(true){
+            var armStr = tmpHero.armatureName;
+            var armStr = "res/armatures/" + armStr + "/texture.png";
+            this.addResToContent(armStr);
+
+            var str = "res/armatures/sabar_effect/texture.png";
+            this.addResToContent(str);
         }
     },
 
@@ -75,7 +94,7 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
             if(!hadAdd){
                 this._addResContent.push(res_);
                 this._loadResMax = this._addResContent.length;
-                //LOG("this load res max = " + this._loadResMax);
+                LOG("this load res max = " + this._loadResMax);
             }
         }
     },
@@ -151,9 +170,8 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
     updateAvaterAndPercent : function () {
             var _curPercent = this._loadResCount / this._loadResMax;
             var endPosx = this._maxWidth * _curPercent;
-            LOG("end pos  = " + endPosx);
-            LOG("this maxwidth = " +this._maxWidth);
-
+            //LOG("end pos  = " + endPosx);
+            //LOG("this maxwidth = " +this._maxWidth);
             var dur = _curPercent * this._moveMaxTime;
             var moveAct = cc.MoveTo.create(dur,cc.p(endPosx,30));
             var Callf = cc.CallFunc.create(function () {

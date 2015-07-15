@@ -27,8 +27,7 @@ var SceneBase = lh.LHScene.extend({
 
     onEnter : function () {
         this._super();
-        LOG("scenebase === " + util.getCurrentDate()) ;
-       // return;
+
         var winSize = cc.director.getWinSize();
         var gameWorld = this.getGameWorldNode();
         var backUi = this.getBackUINode();
