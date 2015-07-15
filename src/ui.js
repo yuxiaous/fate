@@ -99,7 +99,8 @@ var ui = {
                     oCaller[fnName](oTarget);
 
                     // play sound effect
-                    cc.audioEngine.playEffect("sounds/press_button.mp3");
+                    //cc.audioEngine.playEffect("sounds/press_button.mp3");
+                    MusicManager.getInstance().playEffectMusic("sounds/press_button.mp3");
                 }
             });
         }

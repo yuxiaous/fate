@@ -387,7 +387,7 @@ var RoleActionWalk = RoleAction.extend({
         this._super();
 
         if(this.sound) {
-            this._soundId = cc.audioEngine.playEffect(this.sound, true);
+            this._soundId = MusicManager.getInstance().playEffectMusic(this.sound);
         }
     },
 
@@ -395,7 +395,7 @@ var RoleActionWalk = RoleAction.extend({
         this._super();
 
         if(this._soundId) {
-            cc.audioEngine.stopEffect(this._soundId);
+            MusicManager.getInstance().stopEffectMusic(this._soundId);
         }
     }
 });
@@ -411,7 +411,8 @@ var RoleActionInjure = RoleAction.extend({
         this._super();
 
         if(this.sound) {
-            cc.audioEngine.playEffect(this.sound);
+            //cc.audioEngine.playEffect(this.sound);
+            MusicManager.getInstance().playEffectMusic(this.sound);
         }
     }
 });
@@ -461,7 +462,8 @@ var RoleActionAttack = RoleAction.extend({
         //}
         var attr = this.attack;
         if(attr && attr.sound) {
-            cc.audioEngine.playEffect(attr.sound);
+            //cc.audioEngine.playEffect(attr.sound);
+            MusicManager.getInstance().playEffectMusic(attr.sound);
         }
     },
     //
@@ -513,7 +515,8 @@ var RoleActionAttack = RoleAction.extend({
 
             // sound
             if(attr.sound) {
-                cc.audioEngine.playEffect(attr.sound);
+                //cc.audioEngine.playEffect(attr.sound);
+                MusicManager.getInstance().playEffectMusic(attr.sound);
             }
 
             // effect
@@ -650,7 +653,8 @@ var RoleActionDie = RoleAction.extend({
     onDieSound: function() {
         var attr = this.effect;
         if(attr && attr.sound) {
-            cc.audioEngine.playEffect(attr.sound);
+            //cc.audioEngine.playEffect(attr.sound);
+            MusicManager.getInstance().playEffectMusic(attr.sound);
         }
     },
 
