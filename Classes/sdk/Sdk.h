@@ -20,6 +20,7 @@ public:
     virtual ~Sdk();
     
     virtual void init() {}
+    virtual void update(float dt) {}
     virtual void sdkCommond(const std::string &cmd) {}
     
     

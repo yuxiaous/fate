@@ -46,6 +46,20 @@ KtplaySdk ktplaysdk;
 USING_NS_CC;
 
 
+class SdkManagerUpdate : public cocos2d::Ref
+{
+public:
+    SdkManagerUpdate() {
+        cocos2d::Scheduler *scheduler = cocos2d::Director::getInstance()->getScheduler();
+        scheduler->schedule(CC_SCHEDULE_SELECTOR(SdkManagerUpdate::update), this, 0, false);
+    }
+    void update(float dt) {
+        SdkManager::update(dt);
+    }
+};
+static SdkManagerUpdate s_sdk_manager_update;
+
+
 
 void SdkManager::addSdk(Sdk *sdk)
 {
@@ -55,6 +69,13 @@ void SdkManager::addSdk(Sdk *sdk)
 void SdkManager::removeSdk(Sdk *sdk)
 {
     _sdks.erase(sdk);
+}
+
+void SdkManager::update(float dt)
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->update(dt);
+    }
 }
 
 void SdkManager::init()

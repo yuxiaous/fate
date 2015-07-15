@@ -12,10 +12,12 @@
 #include <stdio.h>
 
 class Sdk;
+class SdkManagerUpdate;
 
 class SdkManager
 {
     friend Sdk;
+    friend SdkManagerUpdate;
     
 public:
     static void init();
@@ -42,6 +44,7 @@ public:
 private:
     static void addSdk(Sdk *sdk);
     static void removeSdk(Sdk *sdk);
+    static void update(float dt);
     static std::function<void(char*)> _sdkCommondCallback;
     
     
