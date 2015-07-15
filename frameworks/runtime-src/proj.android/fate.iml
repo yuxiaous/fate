@@ -22,5 +22,8 @@
     <orderEntry type="library" name="gangaofflinehelper" level="project" />
     <orderEntry type="library" name="gangaofflineyijie" level="project" />
     <orderEntry type="library" name="ahelper" level="project" />
+    <orderEntry type="library" name="Multimode_Unipay_base" level="project" />
+    <orderEntry type="library" name="utdid4all-1.0.4" level="project" />
+    <orderEntry type="library" name="MobileSecSdk" level="project" />
   </component>
 </module>

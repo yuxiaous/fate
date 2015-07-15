@@ -220,5 +220,28 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="MobileSecSdk">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/unipay/android/libs/MobileSecSdk.jar!/" />
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/unipay/android/libs/alipaysdk.jar!/" />
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/unipay/android/libs/miniapay.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Multimode_Unipay_base">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="utdid4all-1.0.4">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/unipay/android/libs/utdid4all-1.0.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
