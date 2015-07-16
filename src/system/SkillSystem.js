@@ -79,7 +79,7 @@ var SkillSystem = SystemBase.extend({
         if(conf){
             return conf.cost_mp;;
         }
-        return 1;
+        return 0;
     },
 
     getSkillUpConfig : function (skill_type_) {
