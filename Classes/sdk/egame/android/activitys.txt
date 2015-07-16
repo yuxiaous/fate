@@ -1,0 +1,2 @@
+<!-- 根据游戏实际情况修改screenOrientation属性 -->
+<activity android:name="cn.egame.terminal.paysdk.EgamePayActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:screenOrientation="portrait" android:configChanges="orientation|keyboard|keyboardHidden"> </activity>
