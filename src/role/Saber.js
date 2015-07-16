@@ -65,7 +65,7 @@ var Saber = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.06
+                    time: 0
                 }
             }
 
@@ -93,7 +93,7 @@ var Saber = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.06
+                    time: 0
                 }
             }
         });
@@ -115,7 +115,7 @@ var Saber = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.06
+                    time: 0
                 }
             }
         });
@@ -137,7 +137,7 @@ var Saber = RoleBase.extend({
                     time: 0.09
                 },
                 pause: {
-                    time: 0.1
+                    time: 0
                 }
             }
         });
@@ -159,7 +159,7 @@ var Saber = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.1
+                    time: 0
                 }
             }
         });
@@ -182,7 +182,7 @@ var Saber = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.2
             },
@@ -207,7 +207,7 @@ var Saber = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.3
             },
@@ -232,7 +232,7 @@ var Saber = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.4
             },
@@ -257,7 +257,7 @@ var Saber = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.5
             },
@@ -283,7 +283,7 @@ var Saber = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.0
             },
@@ -356,7 +356,7 @@ var Nero = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.06
+                    time: 0
                 }
             }
 
@@ -384,7 +384,7 @@ var Nero = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.06
+                    time: 0
                 }
             }
         });
@@ -406,7 +406,7 @@ var Nero = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.06
+                    time: 0
                 }
             }
         });
@@ -428,7 +428,7 @@ var Nero = RoleBase.extend({
                     time: 0.09
                 },
                 pause: {
-                    time: 0.1
+                    time: 0
                 }
             }
         });
@@ -450,7 +450,7 @@ var Nero = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.1
+                    time: 0
                 }
             }
         });
@@ -473,7 +473,7 @@ var Nero = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.2
             },
@@ -498,7 +498,7 @@ var Nero = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.3
             },
@@ -523,7 +523,7 @@ var Nero = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.4
             },
@@ -548,7 +548,7 @@ var Nero = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.5
             },
@@ -574,7 +574,7 @@ var Nero = RoleBase.extend({
                     time: 0.05
                 },
                 pause: {
-                    time: 0.05
+                    time: 0
                 },
                 power : 1.0
             },

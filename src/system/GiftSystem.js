@@ -115,8 +115,6 @@ var GiftSystem = SystemBase.extend({
             }
         },this)
 
-        LOG("gift type = " + giftType_);
-        LOG("num = " + num);
         return num;
     },
 
