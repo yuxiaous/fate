@@ -29,6 +29,8 @@ extern "C" {
 //                Game.appendGold( item->value)
 //            }
         }
+        
+        SdkManager::recvSdkCommand("dispatchRewards");
     }
     
     void activityStatusChanged(bool hasNewActivities) {
@@ -104,10 +106,19 @@ void KtplaySdk::login()
     showLoginView();
 }
 
-void KtplaySdk::sdkCommond(const std::string &cmd)
+void KtplaySdk::sdkCommand(const std::string &cmd)
 {
     if(cmd == "KtplaySdk::showRedemptionView") {
         showRedemptionView();
+    }
+    else if(cmd == "KtplaySdk::showKTPlay") {
+        showKTPlay();
+    }
+    else if(cmd == "KtplaySdk::showFriendRequestsView") {
+        showFriendRequestsView();
+    }
+    else if(cmd == "KtplaySdk::showLoginView") {
+        showLoginView();
     }
 }
 

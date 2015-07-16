@@ -56,6 +56,7 @@
     "src/net_protocol_generated.js",
     "src/error_code_generated.js",
     "src/ui.js",
+    "src/sdk_manager.js",
 
     "src/system/SystemManager.js",
     "src/system/SystemBase.js",

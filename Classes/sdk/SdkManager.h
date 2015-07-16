@@ -21,8 +21,10 @@ class SdkManager
     
 public:
     static void init();
-    static void sdkCommond(const std::string &cmd);
-    static void setSdkCommondCallback(const std::function<void(char *param)> &callback) {}
+    
+    static void setSdkCommandCallback(const std::function<void(char*)> &cb) {_sdkCmdCallback = cb;}
+    static void sendSdkCommand(const std::string &cmd);
+    static void recvSdkCommand(const std::string &cmd);
     
     // ChargeProtocol
     static void charge(const std::string &order, const std::string &identifier);
@@ -45,7 +47,7 @@ private:
     static void addSdk(Sdk *sdk);
     static void removeSdk(Sdk *sdk);
     static void update(float dt);
-    static std::function<void(char*)> _sdkCommondCallback;
+    static std::function<void(char*)> _sdkCmdCallback;
     
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)

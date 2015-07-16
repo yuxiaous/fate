@@ -28,7 +28,7 @@ var MainScene = ui.GuiSceneBase.extend({
             btn_exchange : this.seekWidgetByName("btn_redemption")
         };
 
-        this._ui.btn_exchange.setVisible(false);
+        //this._ui.btn_exchange.setVisible(false);
 
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_map"),101);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_bag"),103);
@@ -265,7 +265,7 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_redemption: function() {
-        jsb.SdkManager.sdkCommond("KtplaySdk::showRedemptionView");
+        sdk_manager.sendSdkCommand("KtplaySdk::showRedemptionView");
     }
 });
 

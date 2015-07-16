@@ -99,10 +99,19 @@ void SdkManager::init()
     }
 }
 
-void SdkManager::sdkCommond(const std::string &cmd)
+void SdkManager::sendSdkCommand(const std::string &cmd)
 {
     for(Sdk *sdk : _sdks) {
-        sdk->sdkCommond(cmd);
+        sdk->sdkCommand(cmd);
+    }
+}
+
+std::function<void(char*)> SdkManager::_sdkCmdCallback = nullptr;
+
+void SdkManager::recvSdkCommand(const std::string &cmd)
+{
+    if(_sdkCmdCallback) {
+        _sdkCmdCallback((char*)cmd.c_str());
     }
 }
 

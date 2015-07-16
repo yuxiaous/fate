@@ -1042,6 +1042,16 @@ str
 jsb.SdkManager = {
 
 /**
+ * @method setAccountType
+ * @param {int} arg0
+ */
+setAccountType : function (
+int 
+)
+{
+},
+
+/**
  * @method setGender
  * @param {int} arg0
  */
@@ -1088,16 +1098,6 @@ char
 },
 
 /**
- * @method sdkCommond
- * @param {String} arg0
- */
-sdkCommond : function (
-str 
-)
-{
-},
-
-/**
  * @method charge
  * @param {String} arg0
  * @param {String} arg1
@@ -1110,20 +1110,20 @@ str
 },
 
 /**
- * @method setAccount
- * @param {char} arg0
+ * @method setAge
+ * @param {int} arg0
  */
-setAccount : function (
-char 
+setAge : function (
+int 
 )
 {
 },
 
 /**
- * @method setSdkCommondCallback
+ * @method setSdkCommandCallback
  * @param {function} arg0
  */
-setSdkCommondCallback : function (
+setSdkCommandCallback : function (
 func 
 )
 {
@@ -1138,11 +1138,11 @@ init : function (
 },
 
 /**
- * @method setAccountType
- * @param {int} arg0
+ * @method sendSdkCommand
+ * @param {String} arg0
  */
-setAccountType : function (
-int 
+sendSdkCommand : function (
+str 
 )
 {
 },
@@ -1170,6 +1170,16 @@ char
 },
 
 /**
+ * @method recvSdkCommand
+ * @param {String} arg0
+ */
+recvSdkCommand : function (
+str 
+)
+{
+},
+
+/**
  * @method login
  */
 login : function (
@@ -1178,11 +1188,11 @@ login : function (
 },
 
 /**
- * @method setAge
- * @param {int} arg0
+ * @method setAccount
+ * @param {char} arg0
  */
-setAge : function (
-int 
+setAccount : function (
+char 
 )
 {
 },
