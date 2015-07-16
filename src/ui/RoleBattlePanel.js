@@ -246,17 +246,21 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
         //    cc.director.getScheduler().unschedule("MP",this);
         //}
 
-        var actions = this._role.roleActionManager.actions;
+        //var actions = this._role.roleActionManager.actions;
         _.each([RoleAction.Type.SKILL1,
                 RoleAction.Type.SKILL2,
                 RoleAction.Type.SKILL3,
                 RoleAction.Type.SKILL4,
                 RoleAction.Type.SKILL5],
                 function (skillType_) {
-                    var actionData = actions[skillType_];
+                    //var actionData = actions[skillType_];
+
+                    var curCost = SkillSystem.instance.getSkillUpMpcost(skillType_);
+                    LOG("cur cost = " + curCost);
                     var scene = cc.director.getRunningScene();
                     var isEnoughMp = true;
-                    if(actionData && actionData.mpCost > originData.mp){
+
+                    if(curCost > originData.mp){
                         isEnoughMp = false;
                     }
                     scene._operator.setBtnMpIsNotEnough(skillType_,isEnoughMp);
