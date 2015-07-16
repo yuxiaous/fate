@@ -48,6 +48,11 @@ KtplaySdk ktplaysdk;
 UniPaySdk unipaysdk;
 #endif
 
+#ifdef SDK_EGAME
+#include "egame/EgameSdk.h"
+EgameSdk egamesdk;
+#endif
+
 USING_NS_CC;
 
 

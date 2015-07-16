@@ -52,7 +52,8 @@ LOCAL_SRC_FILES := SdkManager.cpp \
                    AndGame/AndGameSdk.cpp \
                    mmbilling/MMSdk.cpp \
                    ktplay/KtplaySdk.cpp \
-                   unipay/UniPaySdk.cpp
+                   unipay/UniPaySdk.cpp \
+                   egame/EgameSdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT
