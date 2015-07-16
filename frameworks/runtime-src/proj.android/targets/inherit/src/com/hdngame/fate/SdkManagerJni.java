@@ -1,4 +1,4 @@
-package com.fate;
+package com.hdngame.fate;
 
 import android.app.Activity;
 import android.app.Application;

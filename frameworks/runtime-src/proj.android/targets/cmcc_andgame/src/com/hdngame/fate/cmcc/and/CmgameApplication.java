@@ -1,8 +1,8 @@
-package com.fate.cmcc.and;
+package com.hdngame.fate.cmcc.and;
 
 import android.app.Application;
 
-import com.fate.SdkManagerJni;
+import com.hdngame.fate.SdkManagerJni;
 import org.cocos2dx.javascript.AppApplication;
 
 /**

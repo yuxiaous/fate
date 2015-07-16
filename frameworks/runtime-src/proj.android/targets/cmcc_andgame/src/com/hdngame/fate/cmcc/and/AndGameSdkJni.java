@@ -1,8 +1,8 @@
-package com.fate.cmcc.and;
+package com.hdngame.fate.cmcc.and;
 
 import android.widget.Toast;
 
-import com.fate.SdkManagerJni;
+import com.hdngame.fate.SdkManagerJni;
 
 import cn.cmgame.billing.api.BillingResult;
 import cn.cmgame.billing.api.GameInterface;

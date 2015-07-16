@@ -1,6 +1,6 @@
-package com.fate.yijie;
+package com.hdngame.fate.yijie;
 
-import com.fate.SdkManagerJni;
+import com.hdngame.fate.SdkManagerJni;
 import com.snowfish.cn.ganga.offline.helper.SFOfflineApplication;
 
 /**

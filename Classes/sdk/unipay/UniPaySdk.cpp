@@ -4,7 +4,7 @@
 #include <jni.h>
 using namespace cocos2d;
 
-#define  CLASS_NAME "com/fate/unicom/UniPaySdkJni"
+#define  CLASS_NAME "com/hdngame/fate/unicom/UniPaySdkJni"
 
 
 static std::string g_order;
@@ -12,9 +12,9 @@ static int g_result = 0;
 
 extern "C" {
 
-    void Java_com_fate_unicom_UniPaySdkJni_onUniPayChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+    void Java_com_hdn_fate_unicom_UniPaySdkJni_onUniPayChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
     {
-        cocos2d::log("Java_com_fate_unicom_UniPaySdkJni_onUniPayChargeCallback");
+        cocos2d::log("Java_com_hdngame_fate_unicom_UniPaySdkJni_onUniPayChargeCallback");
         g_order = JniHelper::jstring2string(jorder);
         g_result = result;
 //        MMSdk::getInstance()->onChargeCallback(result, order.c_str());

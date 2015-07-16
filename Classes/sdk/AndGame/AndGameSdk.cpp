@@ -6,7 +6,7 @@
 
 using namespace cocos2d;
 
-#define  CLASS_NAME "com/fate/cmcc/and/AndGameSdkJni"
+#define  CLASS_NAME "com/hdngame/fate/cmcc/and/AndGameSdkJni"
 
 
 static std::string g_order;
@@ -14,9 +14,9 @@ static int g_result = 0;
 
 extern "C" {
 
-    void Java_com_fate_cmcc_and_AndGameSdkJni_onAndChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+    void Java_com_hdngame_fate_cmcc_and_AndGameSdkJni_onAndChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
     {
-        cocos2d::log("Java_com_fate_cmcc_and_AndGameSdkJni_onAndChargeCallback");
+        cocos2d::log("Java_com_hdngame_fate_cmcc_and_AndGameSdkJni_onAndChargeCallback");
         g_order = JniHelper::jstring2string(jorder);
         g_result = result;
 //        std::string order = JniHelper::jstring2string(jorder);

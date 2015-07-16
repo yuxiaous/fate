@@ -1,4 +1,4 @@
-package com.fate.unicom;
+package com.hdngame.fate.unicom;
 
 import org.cocos2dx.javascript.AppApplication;
 

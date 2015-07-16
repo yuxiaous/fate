@@ -1,7 +1,7 @@
-package com.fate.unicom;
+package com.hdngame.fate.unicom;
 
 
-import com.fate.SdkManagerJni;
+import com.hdngame.fate.SdkManagerJni;
 import com.unicom.dcLoader.Utils;
 import com.unicom.dcLoader.Utils.UnipayPayResultListener;
 //import com.unicom.dcLoader.Utils.SimType;

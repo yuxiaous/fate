@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.fate.cmcc.and"
+      package="com.hdngame.fate.cmcc.and"
       android:versionCode="1"
       android:versionName="1.0"
       android:installLocation="auto">
@@ -10,7 +10,7 @@
 
     <application android:label="@string/app_name"
                  android:icon="@drawable/icon"
-                 android:name="com.fate.cmcc.and.CmgameApplication">
+                 android:name="com.hdngame.fate.cmcc.and.CmgameApplication">
 
         <!-- Tell NativeActivity the name of our .so -->
         <meta-data android:name="android.app.lib_name" android:value="cocos2djs" />

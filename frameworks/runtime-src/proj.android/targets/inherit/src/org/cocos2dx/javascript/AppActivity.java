@@ -35,7 +35,7 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import com.fate.SdkManagerJni;
+import com.hdngame.fate.SdkManagerJni;
 
 
 // The name of .so is specified in AndroidMenifest.xml. NativityActivity will load it automatically for you.

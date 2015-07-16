@@ -336,27 +336,27 @@ void SdkManager::activityOnResume()
 }
 
 extern "C" {
-    void Java_com_fate_SdkManagerJni_setAppActivity(JNIEnv *env, jobject thiz, jobject activity)
+    void Java_com_hdngame_fate_SdkManagerJni_setAppActivity(JNIEnv *env, jobject thiz, jobject activity)
     {
-        cocos2d::log("Java_com_fate_SdkManagerJni_setAppActivity");
+        cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_setAppActivity");
         SdkManager::appActivity = (void*)env->NewGlobalRef(activity);
     }
 
-    void Java_com_fate_SdkManagerJni_activityOnCreate(JNIEnv *env, jobject thiz)
+    void Java_com_hdngame_fate_SdkManagerJni_activityOnCreate(JNIEnv *env, jobject thiz)
     {
-        cocos2d::log("Java_com_fate_SdkManagerJni_activityOnCreate");
+        cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnCreate");
         SdkManager::activityOnCreate();
     }
 
-    void Java_com_fate_SdkManagerJni_activityOnPause(JNIEnv *env, jobject thiz)
+    void Java_com_hdngame_fate_SdkManagerJni_activityOnPause(JNIEnv *env, jobject thiz)
     {
-        cocos2d::log("Java_com_fate_SdkManagerJni_activityOnPause");
+        cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnPause");
         SdkManager::activityOnPause();
     }
 
-    void Java_com_fate_SdkManagerJni_activityOnResume(JNIEnv *env, jobject thiz)
+    void Java_com_hdngame_fate_SdkManagerJni_activityOnResume(JNIEnv *env, jobject thiz)
     {
-        cocos2d::log("Java_com_fate_SdkManagerJni_activityOnResume");
+        cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnResume");
         SdkManager::activityOnResume();
     }
 }

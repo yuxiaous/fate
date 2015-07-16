@@ -1,6 +1,6 @@
-package com.fate.cmcc.mm;
+package com.hdngame.fate.cmcc.mm;
 
-import com.fate.SdkManagerJni;
+import com.hdngame.fate.SdkManagerJni;
 
 import mm.purchasesdk.Purchase;
 import mm.purchasesdk.PurchaseCode;
