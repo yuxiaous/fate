@@ -73,14 +73,17 @@ public class UniPaySdkJni {
     };
 
     public static void onPause() {
+        System.out.println("UniPaySdkJni.onPause");
         Utils.getInstances().onPause(SdkManagerJni.activity);
     }
 
     public static void onResume() {
+        System.out.println("UniPaySdkJni.onResume");
         Utils.getInstances().onResume(SdkManagerJni.activity);
     }
 
     public static void moreGame() {
+        System.out.println("UniPaySdkJni.moreGame");
         Utils.getInstances().MoreGame(SdkManagerJni.activity);
     }
 
@@ -91,4 +94,6 @@ public class UniPaySdkJni {
     public static boolean isInit() {
         return Utils.getInstances().isInit();
     }
+
+    public native void onUniPayChargeCallback();
 }

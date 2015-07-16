@@ -14,6 +14,14 @@ public:
 
     virtual void init() override;
     virtual void charge(const std::string &order, const std::string &identifier) override;
+
+    void moreGame();
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+public:
+    virtual void activityOnPause() override;
+    virtual void activityOnResume() override;
+#endif
 };
 
 #endif /* defined(__UniPaySdk__) */
