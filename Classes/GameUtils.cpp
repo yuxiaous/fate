@@ -18,7 +18,7 @@ int GameUtils::getChannelId()
     return 3;
 #elif defined(CHANNEL_CT) //电信
     return 4;
-#elif defined(CHANNEL_CUCC) //联通
+#elif defined(CHANNEL_UNICOM) //联通
     return 5;
 #endif
     

@@ -130,7 +130,7 @@ var GameChannel = {
     CmccAnd: 2,
     CmccMm: 3,
     ChinaTelecom: 4,
-    ChinaUnicom: 5
+    Unicom: 5
 };
 
 var LOG = util.log;

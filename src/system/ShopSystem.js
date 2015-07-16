@@ -21,10 +21,12 @@ var ShopSystem = SystemBase.extend({
     },
 
     buyGood: function(id, num) {
+        LOG("ShopSystem.buyGood id: {0}, num: {1}".format(id, num));
         if(num == undefined) num = 1;
 
         var config = ShopSystem.getConfig(id);
         if(config == undefined) {
+            LOG("Error: ShopSystem.buyGood 1");
             return;
         }
 
@@ -34,11 +36,13 @@ var ShopSystem = SystemBase.extend({
                     return;
                 }
             }
+            LOG("buyGood get order");
             net_protocol_handlers.SEND_CMD_CS_SHOP_ORDER({
                 good_id: id
             });
         }
         else {
+            LOG("buyGood purchase")
             net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS({
                 good_id: id,
                 count: num
@@ -54,7 +58,7 @@ var ShopSystem = SystemBase.extend({
     },
 
     onOrderResult: function(obj) {
-        LOG("order result");
+        LOG("onOrderResult");
         var config = ShopSystem.getConfig(obj.good_id);
         if(config == undefined) {
             return;
@@ -72,8 +76,8 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.AppStore: return 2;
         case GameChannel.CmccAnd: return 4;
         case GameChannel.CmccMm: return 3;
-        case GameChannel.ChinaTelecom:
-        case GameChannel.ChinaUnicom:
+        case GameChannel.ChinaTelecom: return 1;
+        case GameChannel.Unicom: return 5;
         default : return 1;
     }
 };
