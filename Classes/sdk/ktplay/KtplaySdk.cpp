@@ -20,20 +20,19 @@ extern "C" {
     
     void dispatchRewards (KTRewardItemC *rewards, int length)
     {
-        std::string rewardsStr = "KTPlayRewards";
+        std::ostringstream s1;
+        s1 << "Rewards";
         
         for ( int i = 0; i < length; i ++) {
             KTRewardItemC *item = &rewards[i];
             
-//            if (strcmp(item->typeId, "Gold") == 0) {
-//                Game.appendGold( item->value)
-//            } else if (strcmp(item->typeId, "Diamond") == 0) {
-//                Game.appendGold( item->value)
-//            }
-            
+            s1 << ";";
+            s1 << item->typeId;
+            s1 << "=";
+            s1 << item->value;
         }
         
-        SdkManager::recvSdkCommand("KTPlay", rewardsStr);
+        SdkManager::recvSdkCommand("Ktplay", s1.str());
     }
     
     void activityStatusChanged(bool hasNewActivities) {
