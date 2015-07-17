@@ -107,10 +107,13 @@ var shop_server = {
                             else if(giftConf[conf_[0]] == 100005){
                                 bag_server.addItem(giftConf[conf_[0]], giftConf[conf_[1]])
                             }
+                            else {
+                                bag_server.addItem(giftConf[conf_[0]], giftConf[conf_[1]])
+                            }
                         }
                     }
                 });
-                LOG("config buy_id = " + config.buy_id);
+               // LOG("config buy_id = " + config.buy_id);
 
                 var gift_type = 0;
                 switch (config.buy_id){
@@ -163,7 +166,7 @@ var shop_server = {
                 ], function (conf_) {
                     if(conf_ && giftConf[conf_[0]]){
                         var type = BagSystem.getConfigType(giftConf[conf_[0]]);
-                        LOG("type = " + type);
+                        //LOG("type = " + type);
                         if(type == BagSystem.ConfigType.Item) {
                             bag_server.addItem(giftConf[conf_[0]], giftConf[conf_[1]])
                         }
