@@ -10,6 +10,10 @@ var sdk_manager = {
 
     onSdkCommond: function(name, cmd) {
         LOG("onSdkCommond name: {0}, cmd: {1}".format(name, cmd));
+
+        if(name == "Ktplay") {
+
+        }
     }
 };
 
