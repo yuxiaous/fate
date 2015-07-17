@@ -8,16 +8,13 @@ using namespace cocos2d;
 
 
 static std::string g_order;
-static int g_result = 0;
 
 extern "C" {
 
-    void Java_com_hdn_fate_unicom_UniPaySdkJni_onUniPayChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+    void Java_com_hdngame_fate_unicom_UniPaySdkJni_onUniPayChargeCallback(JNIEnv *env, jobject thiz, jint result)
     {
-        cocos2d::log("Java_com_hdngame_fate_unicom_UniPaySdkJni_onUniPayChargeCallback");
-        g_order = JniHelper::jstring2string(jorder);
-        g_result = result;
-//        MMSdk::getInstance()->onChargeCallback(result, order.c_str());
+        cocos2d::log("Java_com_hdn_fate_unicom_UniPaySdkJni_onUniPayChargeCallback");
+        UniPaySdk::getInstance()->onChargeCallback(result, g_order);
     }
 }
 
@@ -48,6 +45,8 @@ void UniPaySdk::charge(const std::string &order, const std::string &identifier)
         onChargeCallback(1, order);
         return;
     }
+
+    g_order = order;
 
     JniMethodInfo minfo;
     if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;)V")) {

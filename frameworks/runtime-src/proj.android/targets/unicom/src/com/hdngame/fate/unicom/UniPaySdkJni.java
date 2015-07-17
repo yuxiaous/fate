@@ -3,8 +3,10 @@ package com.hdngame.fate.unicom;
 
 import com.hdngame.fate.SdkManagerJni;
 import com.unicom.dcLoader.Utils;
-import com.unicom.dcLoader.Utils.UnipayPayResultListener;
-//import com.unicom.dcLoader.Utils.SimType;
+
+import java.lang.String;
+import android.os.Handler;
+import android.widget.Toast;
 
 /**
  * Created by yuxiao on 15/6/30.
@@ -13,22 +15,34 @@ public class UniPaySdkJni {
 
     public static void init() {
         System.out.println("UniPaySdkJni.init");
-
-        Utils.getInstances().initSDK(SdkManagerJni.application, callback);
+        Utils.getInstances().initSDK(SdkManagerJni.application, new Utils.UnipayPayResultListener() {
+            @Override
+            public void PayResult(String, int, int, String) {}
+        });
     }
+
+    private static String _number = "";
+    private static Handler _handler = new Handler();
 
     public static void pay(String number) {
-        System.out.println("UniPaySdkJni.pay number: " + number);
+        System.out.println("UniPaySdkJni.pay 1, number: " + number);
+        _number = number;
 
-        Utils.getInstances().pay(SdkManagerJni.activity, number, callback);
+        _handler.post(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("UniPaySdkJni.pay 2, number: " + _number);
+                Utils.getInstances().pay(SdkManagerJni.activity, _number, callback);
+            }
+        });
     }
 
-    final static UnipayPayResultListener callback = new UnipayPayResultListener() {
+    final static Utils.UnipayPayResultListener callback = new Utils.UnipayPayResultListener() {
         @Override
         public void PayResult(String paycode, int flag, int flag2, String error) {
+            // flag为支付回调结果，flag2为回调类型，error为当前结果描述，paycode是完整的支付编码
             System.out.println("UnipayPayResultListener.PayResult paycode: "+paycode
                     + ", flag: "+flag + ", flag2: "+flag2 + ", error:"+error);
-            // flag为支付回调结果，flag2为回调类型，error为当前结果描述，paycode是完整的支付编码
 
             // flag2参数，请参考如下定义：
             // SMS_SEND = 5;
@@ -56,14 +70,18 @@ public class UniPaySdkJni {
             switch (flag) {
                 case 1://success
                     //此处放置支付请求已提交的相关处理代码
+                    onUniPayChargeCallback(0);
+                    _number = "";
                     break;
 
                 case 2://fail
                     //此处放置支付请求失败的相关处理代码
+                    Toast.makeText(SdkManagerJni.activity, error, Toast.LENGTH_SHORT).show();
                     break;
 
                 case 3://cancel
                     //此处放置支付请求被取消的相关处理代码
+                    Toast.makeText(SdkManagerJni.activity, error, Toast.LENGTH_SHORT).show();
                     break;
 
                 default:
@@ -92,8 +110,10 @@ public class UniPaySdkJni {
 //    }
 
     public static boolean isInit() {
+        System.out.println("UniPaySdkJni.isInit");
         return Utils.getInstances().isInit();
     }
 
-    public native void onUniPayChargeCallback();
+    public static native void onUniPayChargeCallback(int result);
 }
+
