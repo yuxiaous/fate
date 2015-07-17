@@ -4,12 +4,12 @@
 
 
 var sdk_manager = {
-    sendSdkCommand: function(cmd) {
-        jsb.SdkManager.sendSdkCommand(cmd);
+    sendSdkCommand: function(name, cmd) {
+        jsb.SdkManager.sendSdkCommand(name, cmd);
     },
 
-    onSdkCommond: function(cmd) {
-        LOG("onSdkCommond cmd: "+cmd);
+    onSdkCommond: function(name, cmd) {
+        LOG("onSdkCommond name: {0}, cmd: {1}".format(name, cmd));
     }
 };
 

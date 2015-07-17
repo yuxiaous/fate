@@ -21,7 +21,7 @@ public:
     
     virtual void init() {}
     virtual void update(float dt) {}
-    virtual void sdkCommand(const std::string &cmd) {}
+    virtual void sdkCommand(const std::string &name, const std::string &cmd) {}
     
     
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS

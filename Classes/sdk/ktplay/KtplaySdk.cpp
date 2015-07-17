@@ -18,19 +18,22 @@
 
 extern "C" {
     
-    void dispatchRewards (KTRewardItemC * rewards, int length)
+    void dispatchRewards (KTRewardItemC *rewards, int length)
     {
-        KTRewardItemC *item = NULL;
+        std::string rewardsStr = "KTPlayRewards";
+        
         for ( int i = 0; i < length; i ++) {
-//            item = &pRewardArray[i];
+            KTRewardItemC *item = &rewards[i];
+            
 //            if (strcmp(item->typeId, "Gold") == 0) {
 //                Game.appendGold( item->value)
 //            } else if (strcmp(item->typeId, "Diamond") == 0) {
 //                Game.appendGold( item->value)
 //            }
+            
         }
         
-        SdkManager::recvSdkCommand("dispatchRewards");
+        SdkManager::recvSdkCommand("KTPlay", rewardsStr);
     }
     
     void activityStatusChanged(bool hasNewActivities) {
@@ -106,18 +109,21 @@ void KtplaySdk::login()
     showLoginView();
 }
 
-void KtplaySdk::sdkCommand(const std::string &cmd)
+void KtplaySdk::sdkCommand(const std::string &name, const std::string &cmd)
 {
-    if(cmd == "KtplaySdk::showRedemptionView") {
+    if(name != "Ktplay") {
+        return;
+    }
+    if(cmd == "showRedemptionView") {
         showRedemptionView();
     }
-    else if(cmd == "KtplaySdk::showKTPlay") {
+    else if(cmd == "showKTPlay") {
         showKTPlay();
     }
-    else if(cmd == "KtplaySdk::showFriendRequestsView") {
+    else if(cmd == "showFriendRequestsView") {
         showFriendRequestsView();
     }
-    else if(cmd == "KtplaySdk::showLoginView") {
+    else if(cmd == "showLoginView") {
         showLoginView();
     }
 }

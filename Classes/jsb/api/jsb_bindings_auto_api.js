@@ -1140,8 +1140,10 @@ init : function (
 /**
  * @method sendSdkCommand
  * @param {String} arg0
+ * @param {String} arg1
  */
 sendSdkCommand : function (
+str, 
 str 
 )
 {
@@ -1172,8 +1174,10 @@ char
 /**
  * @method recvSdkCommand
  * @param {String} arg0
+ * @param {String} arg1
  */
 recvSdkCommand : function (
+str, 
 str 
 )
 {

@@ -2885,17 +2885,18 @@ bool js_jsb_bindings_auto_SdkManager_setSdkCommandCallback(JSContext *cx, uint32
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
     bool ok = true;
     if (argc == 1) {
-        std::function<void (char *)> arg0;
+        std::function<void (char *, char *)> arg0;
         do {
 		    if(JS_TypeOfValue(cx, args.get(0)) == JSTYPE_FUNCTION)
 		    {
 		        std::shared_ptr<JSFunctionWrapper> func(new JSFunctionWrapper(cx, args.thisv().toObjectOrNull(), args.get(0)));
-		        auto lambda = [=](char* larg0) -> void {
+		        auto lambda = [=](char* larg0, char* larg1) -> void {
 		            JSB_AUTOCOMPARTMENT_WITH_GLOBAL_OBJCET
-		            jsval largv[1];
+		            jsval largv[2];
 		            largv[0] = c_string_to_jsval(cx, larg0);
+		            largv[1] = c_string_to_jsval(cx, larg1);
 		            JS::RootedValue rval(cx);
-		            bool ok = func->invoke(1, &largv[0], &rval);
+		            bool ok = func->invoke(2, &largv[0], &rval);
 		            if (!ok && JS_IsExceptionPending(cx)) {
 		                JS_ReportPendingException(cx);
 		            }
@@ -2933,11 +2934,13 @@ bool js_jsb_bindings_auto_SdkManager_sendSdkCommand(JSContext *cx, uint32_t argc
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
     bool ok = true;
-    if (argc == 1) {
+    if (argc == 2) {
         std::string arg0;
+        std::string arg1;
         ok &= jsval_to_std_string(cx, args.get(0), &arg0);
+        ok &= jsval_to_std_string(cx, args.get(1), &arg1);
         JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_sendSdkCommand : Error processing arguments");
-        SdkManager::sendSdkCommand(arg0);
+        SdkManager::sendSdkCommand(arg0, arg1);
         args.rval().setUndefined();
         return true;
     }
@@ -2983,11 +2986,13 @@ bool js_jsb_bindings_auto_SdkManager_recvSdkCommand(JSContext *cx, uint32_t argc
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
     bool ok = true;
-    if (argc == 1) {
+    if (argc == 2) {
         std::string arg0;
+        std::string arg1;
         ok &= jsval_to_std_string(cx, args.get(0), &arg0);
+        ok &= jsval_to_std_string(cx, args.get(1), &arg1);
         JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_recvSdkCommand : Error processing arguments");
-        SdkManager::recvSdkCommand(arg0);
+        SdkManager::recvSdkCommand(arg0, arg1);
         args.rval().setUndefined();
         return true;
     }
@@ -3114,10 +3119,10 @@ void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject gl
         JS_FN("setAge", js_jsb_bindings_auto_SdkManager_setAge, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setSdkCommandCallback", js_jsb_bindings_auto_SdkManager_setSdkCommandCallback, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("init", js_jsb_bindings_auto_SdkManager_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("sendSdkCommand", js_jsb_bindings_auto_SdkManager_sendSdkCommand, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("sendSdkCommand", js_jsb_bindings_auto_SdkManager_sendSdkCommand, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("onUse", js_jsb_bindings_auto_SdkManager_onUse, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setGameServer", js_jsb_bindings_auto_SdkManager_setGameServer, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("recvSdkCommand", js_jsb_bindings_auto_SdkManager_recvSdkCommand, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("recvSdkCommand", js_jsb_bindings_auto_SdkManager_recvSdkCommand, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("login", js_jsb_bindings_auto_SdkManager_login, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setAccount", js_jsb_bindings_auto_SdkManager_setAccount, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setChargeCallback", js_jsb_bindings_auto_SdkManager_setChargeCallback, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),

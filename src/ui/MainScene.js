@@ -265,7 +265,7 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_redemption: function() {
-        sdk_manager.sendSdkCommand("KtplaySdk::showRedemptionView");
+        sdk_manager.sendSdkCommand("Ktplay", "showRedemptionView");
     }
 });
 
