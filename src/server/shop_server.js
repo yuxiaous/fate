@@ -163,7 +163,8 @@ var shop_server = {
                 ], function (conf_) {
                     if(conf_ && giftConf[conf_[0]]){
                         var type = BagSystem.getConfigType(giftConf[conf_[0]]);
-                        if(type == BagSystem.ConfigType.Equip) {
+                        LOG("type = " + type);
+                        if(type == BagSystem.ConfigType.Item) {
                             bag_server.addItem(giftConf[conf_[0]], giftConf[conf_[1]])
                         }
                     }
