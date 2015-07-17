@@ -211,11 +211,6 @@ var BagScene = ui.GuiWindowBase.extend({
                 this._ui.btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
             }
 
-            // sell
-            var enable = config.can_sale && config.price && config.price > 0;
-            this._ui.btn_sell.setEnabled(enable);
-            this._ui.btn_sell.setBright(enable);
-
             // score value
             if(config.type == undefined) {
                 var score = Formula.calculateBattleScore(config.hp, config.mp,
@@ -259,7 +254,6 @@ var BagScene = ui.GuiWindowBase.extend({
                 this._ui.lbl_item_score.setString("");
             }
 
-
             if(needHIde_ != undefined && needHIde_ == true){
                 this._ui.btn_use.setEnabled(false);
                 this._ui.btn_sell.setEnabled(false);
@@ -274,6 +268,12 @@ var BagScene = ui.GuiWindowBase.extend({
                 this._ui.btn_use.setBright(true);
                 this._ui.btn_sell.setBright(true);
             }
+
+            // sell
+            var enable = config.can_sale && config.price && config.price > 0;
+            this._ui.btn_sell.setEnabled(enable);
+            this._ui.btn_sell.setBright(enable);
+
             return;
         }
 
