@@ -6,7 +6,6 @@
 //
 //
 
-#include "cocos2d.h"
 #include "GameUtils.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
@@ -34,7 +33,7 @@ int GameUtils::getChannelId()
     return 0;
 }
 
-const char *GameUtils::getUdid()
+std::string GameUtils::getUdid()
 {
     cocos2d::log("GameUtils::getUdid");
 
@@ -49,7 +48,7 @@ const char *GameUtils::getUdid()
 
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-const char *GameUtils::getUdidWithAndroid()
+std::string GameUtils::getUdidWithAndroid()
 {
     JniMethodInfo minfo;
     if (JniHelper::getStaticMethodInfo(minfo,
@@ -61,6 +60,6 @@ const char *GameUtils::getUdidWithAndroid()
         return androidId.c_str();
     }
     
-    return "";
+    return std::string();
 }
 #endif

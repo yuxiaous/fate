@@ -1240,12 +1240,12 @@ getChannelId : function (
 
 /**
  * @method getUdid
- * @return {char}
+ * @return {String}
  */
 getUdid : function (
 )
 {
-    return 0;
+    return ;
 },
 
 };

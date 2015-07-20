@@ -10,19 +10,19 @@
 #define __fate__GameUtils__
 
 #include <stdio.h>
-
+#include "cocos2d.h"
 
 class GameUtils
 {
 public:
     static int getChannelId();
-    static const char *getUdid();
+    static std::string getUdid();
     
 private:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    static const char *getUdidWithIos();
+    static std::string getUdidWithIos();
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    static const char *getUdidWithAndroid();
+    static std::string getUdidWithAndroid();
 #endif
 };
 

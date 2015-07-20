@@ -3179,9 +3179,9 @@ bool js_jsb_bindings_auto_GameUtils_getUdid(JSContext *cx, uint32_t argc, jsval 
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
     if (argc == 0) {
-        const char* ret = GameUtils::getUdid();
+        std::string ret = GameUtils::getUdid();
         jsval jsret = JSVAL_NULL;
-        jsret = c_string_to_jsval(cx, ret);
+        jsret = std_string_to_jsval(cx, ret);
         args.rval().set(jsret);
         return true;
     }

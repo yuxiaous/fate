@@ -11,7 +11,7 @@
 #include "GameUtils.h"
 
 
-const char *GameUtils::getUdidWithIos()
+std::string GameUtils::getUdidWithIos()
 {
     NSString *openUdid = [OpenUDID value];
     return [openUdid UTF8String];
