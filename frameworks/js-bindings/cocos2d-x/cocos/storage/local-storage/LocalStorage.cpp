@@ -69,7 +69,7 @@ void localStorageInit( const std::string& fullpath/* = "" */)
 			ret = sqlite3_open(fullpath.c_str(), &_db);
         
 #ifdef SQLITE_HAS_CODEC
-        sqlite3_key(_db, "test", 4);
+//        sqlite3_key(_db, "test", 4);
 #endif
         
 		localStorageCreateTable();
