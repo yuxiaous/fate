@@ -25,6 +25,7 @@ var BattleSystem = SystemBase.extend({
         net_protocol_handlers.ON_CMD_SC_ENDLESS_BATTLE_END = this.endlessBattleFinishResult.bind(this);
 
         net_protocol_handlers.ON_CMD_SC_BATTLE_REVIVE = this.reviveFinish.bind(this);
+        net_protocol_handlers.ON_CMD_SC_RECOVER_BATTLE = this.recoverBattle.bind(this);
     },
 
     onFinalize: function () {
@@ -37,6 +38,10 @@ var BattleSystem = SystemBase.extend({
         if(obj && obj.endless_round){
             this.endlessRound = obj.endless_round;
         }
+    },
+
+    recoverBattle : function (obj) {
+        notification.emit(notification.event.BATTLE_RECOVER_STATE);
     },
 
     battleMap: function(map_id) {

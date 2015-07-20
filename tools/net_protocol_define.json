@@ -739,6 +739,17 @@
     [
       ["uint32","result","0"]
     ]
+  },
+
+  "CMD_SC_RECOVER_BATTLE" :
+  {
+    "code": 1650,
+    "type": "SC",
+    "desc": "恢复战斗",
+    "schemes":
+    [
+      ["uint32","result","0"]
+    ]
   }
 }
 

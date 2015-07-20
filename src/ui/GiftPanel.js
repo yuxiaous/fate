@@ -322,7 +322,6 @@ var EndlessSelected = ui.GuiWindowBase.extend({
         //ui.pushScene(new BattleEndlessScene(true) );
 
         ShopSystem.instance.buyGood(101014, 1);
-        LOG("buy asdfasfasdf");
     },
 
     _on_btn_close : function () {
