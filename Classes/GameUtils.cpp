@@ -24,3 +24,8 @@ int GameUtils::getChannelId()
     
     return 0;
 }
+
+const char *GameUtils::getUdid()
+{
+    return "afddddsfsdfds";
+}

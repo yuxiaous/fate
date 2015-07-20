@@ -1238,4 +1238,14 @@ getChannelId : function (
     return 0;
 },
 
+/**
+ * @method getUdid
+ * @return {char}
+ */
+getUdid : function (
+)
+{
+    return 0;
+},
+
 };

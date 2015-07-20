@@ -213,10 +213,12 @@ _BindFunc(507, function(obj) {
 
 // @protocol 登陆结果
 // @param {uint32} result, 结果 成功=0
+// @param {string} account, 账号唯一标识
 // @param {string} token, Token
 net_protocol_handlers.CMD_SC_LOGIN_RESULT = 503;
 _BindFunc(503, function(obj) {
 	cc.assert(obj.result != undefined, "CMD_SC_LOGIN_RESULT.result is undefined.");
+	cc.assert(obj.account != undefined, "CMD_SC_LOGIN_RESULT.account is undefined.");
 	cc.assert(obj.token != undefined, "CMD_SC_LOGIN_RESULT.token is undefined.");
 	net_protocol_handlers.ON_CMD_SC_LOGIN_RESULT(obj);
 });

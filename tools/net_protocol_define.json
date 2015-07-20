@@ -49,6 +49,7 @@
         "schemes":
         [
             ["uint32", "result", "结果 成功=0"],
+            ["string", "account", "账号唯一标识"],
             ["string", "token", "Token"]
         ]
     },

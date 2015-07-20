@@ -122,6 +122,10 @@ var util = {
 
     getChannelId: function() {
         return jsb.GameUtils.getChannelId();
+    },
+
+    getUdid: function() {
+        return jsb.GameUtils.getUdid();
     }
 };
 

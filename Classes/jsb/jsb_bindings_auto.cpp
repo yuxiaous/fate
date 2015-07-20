@@ -3175,6 +3175,20 @@ bool js_jsb_bindings_auto_GameUtils_getChannelId(JSContext *cx, uint32_t argc, j
     return false;
 }
 
+bool js_jsb_bindings_auto_GameUtils_getUdid(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        const char* ret = GameUtils::getUdid();
+        jsval jsret = JSVAL_NULL;
+        jsret = c_string_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_getUdid : wrong number of arguments");
+    return false;
+}
+
 
 
 void js_GameUtils_finalize(JSFreeOp *fop, JSObject *obj) {
@@ -3205,6 +3219,7 @@ void js_register_jsb_bindings_auto_GameUtils(JSContext *cx, JS::HandleObject glo
 
     static JSFunctionSpec st_funcs[] = {
         JS_FN("getChannelId", js_jsb_bindings_auto_GameUtils_getChannelId, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getUdid", js_jsb_bindings_auto_GameUtils_getUdid, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 

@@ -35,6 +35,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_LOGIN_WITH_IDENTIFIER, func
 
     server.send(net_protocol_handlers.CMD_SC_LOGIN_RESULT, {
         result: 0,
+        account: identifier,
         token: identifier
     });
 });

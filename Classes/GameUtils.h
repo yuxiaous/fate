@@ -16,6 +16,7 @@ class GameUtils
 {
 public:
     static int getChannelId();
+    static const char *getUdid();
 };
 
 #endif /* defined(__fate__GameUtils__) */

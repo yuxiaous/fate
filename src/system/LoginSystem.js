@@ -5,7 +5,7 @@
 
 var LoginSystem = SystemBase.extend({
     ctor: function () {
-
+        this.account = "";
     },
 
     onInit: function () {
@@ -35,10 +35,12 @@ var LoginSystem = SystemBase.extend({
     },
 
     onLoginResult: function(obj) {
-        var result = obj.result;
-        var token = obj.token;
-        if(result == 0) {
-            this.authorize(token);
+        if(obj.result == 0) {
+            this.account = obj.account;
+            this.authorize(obj.token);
+        }
+        else {
+            this.account = "";
         }
         notification.emit(notification.event.LOGIN_RESULT);
     },
