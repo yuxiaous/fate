@@ -8,13 +8,17 @@ using namespace cocos2d;
 
 
 static std::string g_order;
+static int g_result;
+static bool g_confirm = false;
 
 extern "C" {
 
     void Java_com_hdngame_fate_unicom_UniPaySdkJni_onUniPayChargeCallback(JNIEnv *env, jobject thiz, jint result)
     {
         cocos2d::log("Java_com_hdn_fate_unicom_UniPaySdkJni_onUniPayChargeCallback");
-        UniPaySdk::getInstance()->onChargeCallback(result, g_order);
+        g_result = result;
+        g_confirm = true;
+//        UniPaySdk::getInstance()->onChargeCallback(result, g_order);
     }
 }
 
@@ -35,6 +39,16 @@ UniPaySdk *UniPaySdk::getInstance()
 void UniPaySdk::init()
 {
 
+}
+
+void UniPaySdk::update(float dt)
+{
+    if(g_confirm) {
+        onChargeCallback(g_result, g_order.c_str());
+        g_result = 0;
+        g_order.clear();
+        g_confirm = false;
+    }
 }
 
 void UniPaySdk::charge(const std::string &order, const std::string &identifier)

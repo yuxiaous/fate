@@ -14,6 +14,7 @@ public:
 
     virtual void init() override;
     virtual void charge(const std::string &order, const std::string &identifier) override;
+    virtual void update(float dt);
 
     void moreGame();
 

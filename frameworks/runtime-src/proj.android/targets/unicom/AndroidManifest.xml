@@ -43,7 +43,7 @@
         <!-- KTPlay SDK配置结束 -->
 
         <!-- 联通沃商店开始 -->
-        <meta-data android:name="wostore_billing_otherpay" android:value="true"/>
+        <meta-data android:name="wostore_billing_otherpay" android:value="false"/>
         <meta-data android:name="wostore_billing_chinaunicom" android:value="true"/>
         <meta-data android:name="wostore_billing_chinamobile"  android:value="true" />
         <meta-data android:name="wostore_billing_chinatele"  android:value="true" />
