@@ -39,21 +39,28 @@ const char *GameUtils::getUdid()
     cocos2d::log("GameUtils::getUdid");
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    
+    return getUdidWithIos();
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    JniMethodInfo minfo;
-
-    if (JniHelper::getStaticMethodInfo(minfo,
-        "org/cocos2dx/javascript/AppActivity",
-        "getAndroidId",
-        "()Ljava/lang/String;")) {
-
-        jstring jAndroidId = (jstring)minfo.env->CallStaticObjectMethod(minfo.classID, minfo.methodID);
-        std::string androidId = JniHelper::jstring2string(jAndroidId);
-        return androidId.c_str();
-    }
+    return getUdidWithAndroid();
 #endif
 
     return "hdngame";
 }
 
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+const char *GameUtils::getUdidWithAndroid()
+{
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo,
+                                       "org/cocos2dx/javascript/AppActivity",
+                                       "getAndroidId",
+                                       "()Ljava/lang/String;")) {
+        jstring jAndroidId = (jstring)minfo.env->CallStaticObjectMethod(minfo.classID, minfo.methodID);
+        std::string androidId = JniHelper::jstring2string(jAndroidId);
+        return androidId.c_str();
+    }
+    
+    return "";
+}
+#endif
