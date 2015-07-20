@@ -1,0 +1,8 @@
+Changes included in the v3.1.0 release of SQLCipher for Android:
+
+ * Bump SQLCipher core to 3.1.0
+ * Static libcrypto based on OpenSSL 1.0.1g
+ * Merge remote-tracking branch 'origin/prerelease'
+ * Bump OpenSSL submodule to 1.0.1g
+ * Initial support for armeabi-v7a
+ * Update version support text
