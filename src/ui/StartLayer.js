@@ -46,6 +46,10 @@ var StartLayerScene = ui.GuiSceneBase.extend({
         this._super();
     },
 
+    onLoginResult: function() {
+        jsb.SdkManager.setAccount(LoginSystem.instance.account);
+    },
+
     onEnterGame: function() {
         jsb.SdkManager.setAccountName("Saber");
         this.pushScene(MainScene);
@@ -53,10 +57,6 @@ var StartLayerScene = ui.GuiSceneBase.extend({
 
     _on_btn_enter: function() {
         LoginSystem.instance.login(LoginSystem.LoginType.Identifier, util.getUdid());
-    },
-
-    onLoginResult: function() {
-        jsb.SdkManager.setAccount(LoginSystem.instance.account);
     },
     
     _on_btn_about : function () {
