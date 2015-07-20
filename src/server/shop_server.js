@@ -175,6 +175,11 @@ var shop_server = {
             }
 
         }
+        else if(config.buy_type == shop_server.GoodsType.ShiLian){
+            server.send(net_protocol_handlers.CMD_SC_BUY_SHILIAN_FINISH,{
+                result : 0
+            });
+        }
 
         return true;
     },
@@ -222,7 +227,8 @@ shop_server.GoodsType = {
     EquipSlotTopLevel: 8,
     DaZhao : 9,
     Tili : 10,
-    FuHuo : 11
+    FuHuo : 11,
+    ShiLian : 12
 };
 shop_server.PayType = {
     Gold: 1,

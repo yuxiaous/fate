@@ -435,6 +435,14 @@ net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS = function(obj) {
 	_SendFunc(1101, obj);
 };
 
+// @protocol 试炼购买从最高关卡开始
+// @param {uint32} result, 0
+net_protocol_handlers.CMD_SC_BUY_SHILIAN_FINISH = 1640;
+_BindFunc(1640, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_BUY_SHILIAN_FINISH.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_BUY_SHILIAN_FINISH(obj);
+});
+
 // @protocol 领取每日VIP奖励
 // @param {uint32} player_id, 角色id
 net_protocol_handlers.CMD_CS_GET_VIP_REWARD = 1628;

@@ -12,12 +12,14 @@ var ShopSystem = SystemBase.extend({
         this._super();
         net_protocol_handlers.ON_CMD_SC_SHOP_BUY_RESULT = this.onBuyGoodResult.bind(this);
         net_protocol_handlers.ON_CMD_SC_SHOP_ORDER_RESULT = this.onOrderResult.bind(this);
+        net_protocol_handlers.ON_CMD_SC_BUY_SHILIAN_FINISH = this.onBuyShiLianResult.bind(this);
     },
 
     onFinalize: function () {
         this._super();
         net_protocol_handlers.ON_CMD_SC_SHOP_BUY_RESULT = null;
         net_protocol_handlers.ON_CMD_SC_SHOP_ORDER_RESULT = null;
+        net_protocol_handlers.ON_CMD_SC_BUY_SHILIAN_FINISH = null;
     },
 
     buyGood: function(id, num) {
@@ -55,6 +57,10 @@ var ShopSystem = SystemBase.extend({
         MessageBoxOk.show("购买成功");
         notification.emit(notification.event.SHOP_BUY_RESULT,obj);
 
+    },
+
+    onBuyShiLianResult : function(){
+        notification.emit(notification.event.BATTLE_ENDLESS_BUY_FINISH);
     },
 
     onOrderResult: function(obj) {
@@ -111,10 +117,16 @@ ShopSystem.PayType = {
 ShopSystem.GoodType = {
     Equip: 1,
     Item: 2,
-    
+
     Skin: 4,
     Gold: 5,
-    Diamond: 6
+    Diamond: 6,
+    Gift : 7,
+    EquipSlotTopLevel: 8,
+    DaZhao : 9,
+    Tili : 10,
+    FuHuo : 11,
+    ShiLian : 12
 };
 
 //ShopSystem.GoodType = {

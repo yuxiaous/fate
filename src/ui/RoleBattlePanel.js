@@ -256,7 +256,7 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
                     //var actionData = actions[skillType_];
 
                     var curCost = SkillSystem.instance.getSkillUpMpcost(skillType_);
-                    LOG("cur cost = " + curCost);
+                    //LOG("cur cost = " + curCost);
                     var scene = cc.director.getRunningScene();
                     var isEnoughMp = true;
 

@@ -283,9 +283,29 @@ var EndlessSelected = ui.GuiWindowBase.extend({
         this._lbl_round.setString(String(num));
 
         this._btn_buy = this.seekWidgetByName("btn_buy");
-        if(this._btn_buy){
-            this._btn_buy.setVisible(false);
+        this._btn_challenge = this.seekWidgetByName("btn_challenge");
+        this._panel_1 = this.seekWidgetByName("panel_1");
+        this._chargetPosNode = this.seekWidgetByName("charge_node");
+        //if(this._btn_buy){
+        //    this._btn_buy.setVisible(false);
+        //}
+
+        if(util.getChannelId() != GameChannel.CmccMm){
+            LOG("xxxxxxx");
+            this._panel_1.setVisible(true);
+
+            this._btn_challenge.setPosition(this._chargetPosNode.getPosition());
         }
+        else{
+            this._panel_1.setVisible(false);
+        }
+
+        this._bindings = [
+            notification.createBinding(notification.event.BATTLE_ENDLESS_BUY_FINISH, function (event,obj) {
+                LOG("111111111");
+                ui.pushScene(new BattleEndlessScene(true) );
+            },this)
+        ]
     },
 
     onExit : function () {
@@ -294,12 +314,15 @@ var EndlessSelected = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-        //this.close();
-        //
-        //if(UiEffect.blockShopItemWithRMB()){
-        //    return;
-        //}
+        this.close();
+
+        if(UiEffect.blockShopItemWithRMB()){
+            return;
+        }
         //ui.pushScene(new BattleEndlessScene(true) );
+
+        ShopSystem.instance.buyGood(101014, 1);
+        LOG("buy asdfasfasdf");
     },
 
     _on_btn_close : function () {

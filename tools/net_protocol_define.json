@@ -728,6 +728,17 @@
     [
       ["uint32","get_done","0 没有领取"]
     ]
+  },
+
+  "CMD_SC_BUY_SHILIAN_FINISH" :
+  {
+    "code": 1640,
+    "type": "SC",
+    "desc": "试炼购买从最高关卡开始",
+    "schemes":
+    [
+      ["uint32","result","0"]
+    ]
   }
 }
 
