@@ -2543,7 +2543,7 @@
 					"-ObjC",
 					"-lxml2",
 				);
-				PROVISIONING_PROFILE = "95569c48-86d6-450e-88b0-c6b80cec0950";
+				PROVISIONING_PROFILE = "2f2592ae-2c60-4985-9d13-0b7b1782136f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
@@ -2590,7 +2590,7 @@
 					"-ObjC",
 					"-lxml2",
 				);
-				PROVISIONING_PROFILE = "95934fed-f6d6-44c3-83b7-1ebffefd7191";
+				PROVISIONING_PROFILE = "e297bf5d-988a-4839-99b7-07ebc320ae90";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
