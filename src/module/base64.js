@@ -8,10 +8,10 @@
 *
 */
  
-function Base64(key) {
+function Base64() {
  
 	// private property
-	this._keyStr = key || "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+	this._keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
  
 	// public method for encoding
 	this.encode = function (input) {
