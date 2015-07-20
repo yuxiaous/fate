@@ -17,7 +17,7 @@ public class UniPaySdkJni {
         System.out.println("UniPaySdkJni.init");
         Utils.getInstances().initSDK(SdkManagerJni.application, new Utils.UnipayPayResultListener() {
             @Override
-            public void PayResult(String, int, int, String) {}
+            public void PayResult(String paycode, int flag, int flag2, String error) {}
         });
     }
 
