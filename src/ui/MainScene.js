@@ -13,6 +13,12 @@ var MainScene = ui.GuiSceneBase.extend({
     onEnter: function() {
         this._super();
         this.playAnimation("fadein");
+        this.runAction(cc.Sequence.create(
+            cc.DelayTime.create(0.5),
+            cc.CallFunc.create(function () {
+                GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_map"),101);
+            },this)
+        ));
         MusicManager.getInstance().playBackgroundMusic("sounds/background.mp3");
 
         this._ui = {
@@ -30,13 +36,13 @@ var MainScene = ui.GuiSceneBase.extend({
 
         this._ui.btn_exchange.setVisible(false);
 
-        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_map"),101);
+
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_bag"),103);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_skill"),106);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_equip"),109);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_shop"),112);
-
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_shop"),121);
+        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_map"),101);
 
 
         this._ui.lbl_rotate.setVisible(false);
