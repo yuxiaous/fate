@@ -118,7 +118,10 @@ var SceneBase = lh.LHScene.extend({
                 this._hero.roleActionManager.deathStatus = false;
                 this._hero.roleActionManager.playAction(RoleAction.Type.STAND_UP);
                 this._isLostBattle = false;
+                this._hero.invincible();
                 this.schedule(this.battleObserver);
+
+
             },this),
             notification.createBinding(notification.event.PLAYER_INFO, function () {
                 var system = PlayerSystem.instance;
