@@ -127,6 +127,17 @@ var UiEffect = {
         //UiEffect.labelMoveUp(uiTxt);
 
         return true;
+    },
+
+    addMpOrHpParticle : function (node_,isHp_) {
+        var parStr = "res/particles/add_mp.plist";
+        if(isHp_){
+            parStr = "res/particles/add_hp.plist";
+        }
+        var particle = cc.ParticleSystem.create(parStr);
+        particle.setPosition(cc.p(0,0));
+        particle.setDuration(1.0);
+        node_.addChild(particle);
     }
 
 }

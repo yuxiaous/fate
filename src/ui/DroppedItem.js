@@ -83,6 +83,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
                             if(target.roleDataManager.hp > target.roleDataManager.maxHp){
                                 target.roleDataManager.hp = target.roleDataManager.maxHp;
                             }
+                            UiEffect.addMpOrHpParticle(target,true);
                         }
                         else if(this._dropItemType == DroppedItem.ItemType.MagicType){
                             var addValue = target.roleDataManager.maxMp * config.result_value;
@@ -92,6 +93,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
                             if(target.roleDataManager.mp > target.roleDataManager.maxMp){
                                 target.roleDataManager.mp = target.roleDataManager.maxMp;
                             }
+                            UiEffect.addMpOrHpParticle(target,false);
                         }
                     }
                     notification.emit(notification.event.ITEM_DISAPPEAR, this);
