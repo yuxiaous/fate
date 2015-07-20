@@ -6,7 +6,16 @@
 //
 //
 
+#include "cocos2d.h"
 #include "GameUtils.h"
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "platform/android/jni/JniHelper.h"
+#include "platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
+#include <jni.h>
+#endif
+
+USING_NS_CC;
 
 int GameUtils::getChannelId()
 {
@@ -27,5 +36,31 @@ int GameUtils::getChannelId()
 
 const char *GameUtils::getUdid()
 {
-    return "afddddsfsdfds";
+    cocos2d::log("GameUtils::getUdid");
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    return getUdidWithIos();
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    return getUdidWithAndroid();
+#endif
+
+    return "hdngame";
 }
+
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+const char *GameUtils::getUdidWithAndroid()
+{
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo,
+                                       "org/cocos2dx/javascript/AppActivity",
+                                       "getAndroidId",
+                                       "()Ljava/lang/String;")) {
+        jstring jAndroidId = (jstring)minfo.env->CallStaticObjectMethod(minfo.classID, minfo.methodID);
+        std::string androidId = JniHelper::jstring2string(jAndroidId);
+        return androidId.c_str();
+    }
+    
+    return "";
+}
+#endif

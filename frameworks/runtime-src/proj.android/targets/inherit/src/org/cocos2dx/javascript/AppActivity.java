@@ -26,6 +26,7 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.javascript;
 
+import android.provider.Settings;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
@@ -37,6 +38,8 @@ import android.view.WindowManager;
 
 import com.hdngame.fate.SdkManagerJni;
 
+import java.lang.String;
+
 
 // The name of .so is specified in AndroidMenifest.xml. NativityActivity will load it automatically for you.
 // You can use "System.loadLibrary()" to load other .so files.
@@ -44,6 +47,8 @@ import com.hdngame.fate.SdkManagerJni;
 public class AppActivity extends Cocos2dxActivity{
 
     static String hostIPAdress = "0.0.0.0";
+    static String androidId = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("AppActivity.onCreate");
@@ -60,6 +65,7 @@ public class AppActivity extends Cocos2dxActivity{
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
         hostIPAdress = getHostIpAddress();
+        androidId = Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
         // sdk manager
         SdkManagerJni.activity = this;
@@ -85,6 +91,10 @@ public class AppActivity extends Cocos2dxActivity{
     
     public static String getLocalIpAddress() {
         return hostIPAdress;
+    }
+
+    public static String getAndroidId() {
+        return androidId;
     }
     
     private static native boolean nativeIsLandScape();

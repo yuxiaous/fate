@@ -322,6 +322,9 @@
 		DE36EFD31B25955E005B744E /* SneakyJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFC1B25955E005B744E /* SneakyJoystick.cpp */; };
 		DE36EFD41B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
 		DE36EFD51B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
+		DE48917E1B5D0E9A0097D3BD /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */; };
+		DE48917F1B5D0EEE0097D3BD /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */; };
+		DE4891801B5D0EEF0097D3BD /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */; };
 		DE545DB91B4CE2FB00A91A14 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DB81B4CE2FB00A91A14 /* OpenGLES.framework */; };
 		DE545DBB1B4CE30200A91A14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DBA1B4CE30200A91A14 /* UIKit.framework */; };
 		DE545DBD1B4CE31700A91A14 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DBC1B4CE31700A91A14 /* QuartzCore.framework */; };
@@ -765,6 +768,9 @@
 		DE36EEFD1B25955E005B744E /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
 		DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystickSkinnedBase.cpp; sourceTree = "<group>"; };
 		DE36EEFF1B25955E005B744E /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
+		DE4891761B5D0B840097D3BD /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		DE4891771B5D0B840097D3BD /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GameUtils.mm; path = ../../../Classes/GameUtils.mm; sourceTree = "<group>"; };
 		DE545DB81B4CE2FB00A91A14 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		DE545DBA1B4CE30200A91A14 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DE545DBC1B4CE31700A91A14 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -1377,20 +1383,22 @@
 			isa = PBXGroup;
 			children = (
 				DE36EDF91B25955C005B744E /* dragonbones */,
+				DEE196621B443BC200359A46 /* GameUtils.cpp */,
+				DEE196631B443BC200359A46 /* GameUtils.h */,
+				DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */,
+				07EF65F51B4D190F00D49363 /* IOSUtil.h */,
+				07EF65F41B4D190F00D49363 /* IOSUtil.mm */,
 				DE36EE521B25955D005B744E /* jsb */,
 				DE36EE601B25955D005B744E /* jsb.h */,
 				DE36EE611B25955D005B744E /* JsonStorage.cpp */,
 				DE36EE621B25955D005B744E /* JsonStorage.h */,
+				DE4891751B5D0B840097D3BD /* OpenUDID */,
 				DE36EEE61B25955E005B744E /* PlayCG.cpp */,
 				DE36EEE71B25955E005B744E /* PlayCG.h */,
 				DE36EEE81B25955E005B744E /* playMP4 */,
 				DE36EEF41B25955E005B744E /* ShakeAction.cpp */,
 				DE36EEF51B25955E005B744E /* ShakeAction.h */,
 				DE36EEF61B25955E005B744E /* SneakyInput */,
-				DEE196621B443BC200359A46 /* GameUtils.cpp */,
-				DEE196631B443BC200359A46 /* GameUtils.h */,
-				07EF65F41B4D190F00D49363 /* IOSUtil.mm */,
-				07EF65F51B4D190F00D49363 /* IOSUtil.h */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -1599,6 +1607,16 @@
 			);
 			name = SneakyInput;
 			path = ../../../Classes/SneakyInput;
+			sourceTree = "<group>";
+		};
+		DE4891751B5D0B840097D3BD /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				DE4891761B5D0B840097D3BD /* OpenUDID.h */,
+				DE4891771B5D0B840097D3BD /* OpenUDID.m */,
+			);
+			name = OpenUDID;
+			path = ../../../Classes/OpenUDID;
 			sourceTree = "<group>";
 		};
 		DE5455F31B4CE20F00A91A14 /* ktplay */ = {
@@ -2164,6 +2182,7 @@
 				DE36EF1F1B25955E005B744E /* DBCCArmature.cpp in Sources */,
 				DE36EF131B25955E005B744E /* BaseFactory.cpp in Sources */,
 				ABCA93D019E6712A007FB844 /* ConnectWaitLayer.cpp in Sources */,
+				DE48917F1B5D0EEE0097D3BD /* GameUtils.mm in Sources */,
 				3E12D1E21957FB18002FF0FD /* repeated_field.cc in Sources */,
 				DE36EF291B25955E005B744E /* DragonBonesHelper.cpp in Sources */,
 				DE36EF111B25955E005B744E /* EventData.cpp in Sources */,
@@ -2262,6 +2281,7 @@
 				DE36EF041B25955E005B744E /* TimelineState.cpp in Sources */,
 				DE36EF101B25955E005B744E /* EventData.cpp in Sources */,
 				DE36EF3C1B25955E005B744E /* jsb_bindings_manual.cpp in Sources */,
+				DE48917E1B5D0E9A0097D3BD /* GameUtils.mm in Sources */,
 				DE36EF241B25955E005B744E /* DBCCSlot.cpp in Sources */,
 				DE36EF3E1B25955E005B744E /* jsb_dragonbones_auto.cpp in Sources */,
 				3E12D1DB1957FB18002FF0FD /* zero_copy_stream.cc in Sources */,
@@ -2280,6 +2300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE25C3621B317BA800A9AEC0 /* once.cc in Sources */,
+				DE4891801B5D0EEF0097D3BD /* GameUtils.mm in Sources */,
 				DE25C3631B317BA800A9AEC0 /* Portrait_png.cpp in Sources */,
 				DE25C3641B317BA800A9AEC0 /* PlayCG.cpp in Sources */,
 				DE25C3651B317BA800A9AEC0 /* RootViewController.mm in Sources */,
