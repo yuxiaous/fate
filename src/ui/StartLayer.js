@@ -27,8 +27,7 @@ var StartLayerScene = ui.GuiSceneBase.extend({
         this._ui.about_btn.setPressedActionEnabled(true);
 
         this._bindings = [
-            notification.createBinding(notification.event.INIT_END, this.onEnterGame, this),
-            notification.createBinding(notification.event.LOGIN_RESULT, this.onLoginResult, this)
+            notification.createBinding(notification.event.INIT_END, this.onEnterGame, this)
         ];
 
         this._ui.sp_touch.runAction(cc.repeatForever(cc.sequence(
@@ -44,10 +43,6 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     onExit: function() {
         notification.removeBinding(this._bindings);
         this._super();
-    },
-
-    onLoginResult: function() {
-        jsb.SdkManager.setAccount(LoginSystem.instance.account);
     },
 
     onEnterGame: function() {

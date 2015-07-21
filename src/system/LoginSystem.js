@@ -37,6 +37,8 @@ var LoginSystem = SystemBase.extend({
     onLoginResult: function(obj) {
         if(obj.result == 0) {
             this.account = obj.account;
+            jsb.SdkManager.setAccount(this.account);
+
             this.authorize(obj.token);
         }
         else {
