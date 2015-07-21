@@ -43,13 +43,24 @@ var ktplay_helper = {
         LOG("dispatchRewards");
         _.each(rewards, function(reward) {
             var types = reward.typeId.split(".");
-            var config = configdb[types[0]][types[1]];
-            if(config == undefined) {
-                return;
+            var config;
+            switch (types[0]) {
+                case "item":
+                    config = configdb.item[types[1]];
+                    if(config) {
+                        if(config.result == 2) {
+                            player_server.changeGold(reward.value);
+                        }
+                        else if(config.result == 3) {
+                            player_server.changeDiamond(reward.value);
+                        }
+                    }
+                    break;
+
+                case "equip":
+                    bag_server.addItem(types[1], reward.value);
+                    break;
             }
-
-
-
         });
     }
 };
