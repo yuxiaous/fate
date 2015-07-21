@@ -96,9 +96,16 @@ var ResourcePanel = ui.GuiController.extend({
 
         switch (this.type){
             case  ResourcePanel.Type.Action:
-                var buyAction = new BuyFullAction();
-                buyAction.pop();
-                UiEffect.iconOpenEffect(buyAction);
+                var curAction = PlayerSystem.instance.action;
+                if(curAction >= 60){
+                    MessageBoxOk.show("体力已满");
+                    return;
+                }
+                else{
+                    var buyAction = new BuyFullAction();
+                    buyAction.pop();
+                    UiEffect.iconOpenEffect(buyAction);
+                }
                 break;
             case ResourcePanel.Type.Gold:
                 if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
