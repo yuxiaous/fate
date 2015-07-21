@@ -126,7 +126,10 @@ var SceneBase = lh.LHScene.extend({
             notification.createBinding(notification.event.PLAYER_INFO, function () {
                 var system = PlayerSystem.instance;
                 this._operator.setBtnReleaseCount(4,system.superSkillCount);
-            }, this)
+            }, this),
+            notification.createBinding(notification.event.BATTLE_RECOVER_STATE, function () {
+                cc.director.resume();
+            },this)
         ];
 
         //this.scheduleUpdate();

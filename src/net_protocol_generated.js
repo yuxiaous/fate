@@ -141,6 +141,14 @@ net_protocol_handlers.SEND_CMD_CS_ITEM_SELL = function(obj) {
 	_SendFunc(1402, obj);
 };
 
+// @protocol 恢复战斗
+// @param {uint32} result, 0
+net_protocol_handlers.CMD_SC_RECOVER_BATTLE = 1650;
+_BindFunc(1650, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_RECOVER_BATTLE.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_RECOVER_BATTLE(obj);
+});
+
 // @protocol 购买角色大招释放数量
 // @param {uint32} endless_round, 无尽模式战斗的最大回合数
 net_protocol_handlers.CMD_CS_ENDLESS_MAX_ROUND = 1611;
