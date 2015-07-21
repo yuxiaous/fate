@@ -57,7 +57,7 @@ std::string GameUtils::getUdidWithAndroid()
                                        "()Ljava/lang/String;")) {
         jstring jAndroidId = (jstring)minfo.env->CallStaticObjectMethod(minfo.classID, minfo.methodID);
         std::string androidId = JniHelper::jstring2string(jAndroidId);
-        return androidId.c_str();
+        return androidId;
     }
     
     return std::string();
