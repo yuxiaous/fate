@@ -314,14 +314,13 @@ var EndlessSelected = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-        this.close();
-
         if(UiEffect.blockShopItemWithRMB()){
             return;
         }
         //ui.pushScene(new BattleEndlessScene(true) );
 
         ShopSystem.instance.buyGood(101014, 1);
+        this.close();
     },
 
     _on_btn_close : function () {
