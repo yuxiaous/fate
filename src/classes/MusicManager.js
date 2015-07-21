@@ -60,8 +60,9 @@ var MusicManager = (function () {
                 if(loop_ == undefined){
                     loop_ = true;
                 }
+                LOG("mmmmmm volume = " + this.getBackgroundVolume());
                 cc.audioEngine.playMusic(musicType_,loop_);
-                cc.audioEngine.setMusicVolume(this.getBackgroundVolume());
+                //cc.audioEngine.setMusicVolume(this.getBackgroundVolume());
             }
         }
 
@@ -72,7 +73,7 @@ var MusicManager = (function () {
         
         this.playEffectMusic = function (musicType_) {
             cc.audioEngine.playEffect(musicType_);
-            cc.audioEngine.setEffectsVolume(this.getEffectVolume());
+           // cc.audioEngine.setEffectsVolume(this.getEffectVolume());
         }
     }
 
