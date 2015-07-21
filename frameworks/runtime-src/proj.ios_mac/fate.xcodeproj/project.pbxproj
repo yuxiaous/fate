@@ -323,7 +323,6 @@
 		DE36EFD41B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
 		DE36EFD51B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
 		DE48917E1B5D0E9A0097D3BD /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */; };
-		DE48917F1B5D0EEE0097D3BD /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */; };
 		DE4891801B5D0EEF0097D3BD /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */; };
 		DE545DB91B4CE2FB00A91A14 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DB81B4CE2FB00A91A14 /* OpenGLES.framework */; };
 		DE545DBB1B4CE30200A91A14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DBA1B4CE30200A91A14 /* UIKit.framework */; };
@@ -2182,7 +2181,6 @@
 				DE36EF1F1B25955E005B744E /* DBCCArmature.cpp in Sources */,
 				DE36EF131B25955E005B744E /* BaseFactory.cpp in Sources */,
 				ABCA93D019E6712A007FB844 /* ConnectWaitLayer.cpp in Sources */,
-				DE48917F1B5D0EEE0097D3BD /* GameUtils.mm in Sources */,
 				3E12D1E21957FB18002FF0FD /* repeated_field.cc in Sources */,
 				DE36EF291B25955E005B744E /* DragonBonesHelper.cpp in Sources */,
 				DE36EF111B25955E005B744E /* EventData.cpp in Sources */,
