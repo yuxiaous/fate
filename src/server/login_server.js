@@ -46,7 +46,6 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
 
     // TODO: check token
 
-    database.init("saber");
 
     // start player server
     server_manager.flush();
