@@ -10,7 +10,7 @@ var database = {
 
     init: function(name) {
         cc.sys.localStorage.free();
-        cc.sys.localStorage.init(name + ".data");
+        cc.sys.localStorage.init(jsb.fileUtils.getWritablePath() + name + ".data");
     },
 
     checkout: function(key, default_obj) {
