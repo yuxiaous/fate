@@ -12,5 +12,7 @@ JS_DefineFunction(_cx, system, "removeItem", JSB_localStorageRemoveItem, 1, JSPR
 JS_DefineFunction(_cx, system, "setItem", JSB_localStorageSetItem, 2, JSPROP_READONLY | JSPROP_PERMANENT | JSPROP_ENUMERATE );
 JS_DefineFunction(_cx, system, "clear", JSB_localStorageClear, 0, JSPROP_READONLY | JSPROP_PERMANENT | JSPROP_ENUMERATE );
 
+JS_DefineFunction(_cx, system, "init", JSB_localStorageInit, 1, JSPROP_READONLY | JSPROP_PERMANENT | JSPROP_ENUMERATE );
+JS_DefineFunction(_cx, system, "free", JSB_localStorageFree, 0, JSPROP_READONLY | JSPROP_PERMANENT | JSPROP_ENUMERATE );
 
 //#endif // JSB_INCLUDE_SYSTEM

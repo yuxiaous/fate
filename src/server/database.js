@@ -8,6 +8,11 @@ var database = {
     //JSON.stringify(obj); -> json
     //JSON.parse(json) -> obj
 
+    init: function(name) {
+        cc.sys.localStorage.free();
+        cc.sys.localStorage.init(name + ".data");
+    },
+
     checkout: function(key, default_obj) {
         var code = cc.sys.localStorage.getItem(key);
         if(code && code.length > 0) {

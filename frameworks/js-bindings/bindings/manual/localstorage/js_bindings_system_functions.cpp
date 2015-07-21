@@ -80,5 +80,28 @@ bool JSB_localStorageClear(JSContext *cx, uint32_t argc, jsval *vp) {
     return true;
 }
 
+bool JSB_localStorageInit(JSContext *cx, uint32_t argc, jsval *vp) {
+    JSB_PRECONDITION2( argc == 1, cx, false, "Invalid number of arguments" );
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    std::string arg0;
+    
+    ok &= jsval_to_std_string( cx, args.get(0), &arg0 );
+    JSB_PRECONDITION2(ok, cx, false, "Error processing arguments");
+    std::string ret_val;
+    
+    localStorageInit(arg0);
+    args.rval().setUndefined();
+    return true;
+}
+
+bool JSB_localStorageFree(JSContext *cx, uint32_t argc, jsval *vp) {
+    JSB_PRECONDITION2( argc == 0, cx, false, "Invalid number of arguments" );
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    
+    localStorageFree();
+    args.rval().setUndefined();
+    return true;
+}
 
 //#endif // JSB_INCLUDE_SYSTEM

@@ -13,6 +13,9 @@ bool JSB_localStorageGetItem(JSContext *cx, uint32_t argc, jsval *vp);
 bool JSB_localStorageRemoveItem(JSContext *cx, uint32_t argc, jsval *vp);
 bool JSB_localStorageSetItem(JSContext *cx, uint32_t argc, jsval *vp);
 bool JSB_localStorageClear(JSContext *cx, uint32_t argc, jsval *vp);
+    
+bool JSB_localStorageInit(JSContext *cx, uint32_t argc, jsval *vp);
+bool JSB_localStorageFree(JSContext *cx, uint32_t argc, jsval *vp);
 
 #ifdef __cplusplus
 }
