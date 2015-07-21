@@ -1,10 +1,10 @@
 package com.hdngame.fate.telecom;
 
-import android.os.Handler;
 import android.app.Activity;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
+import android.os.Handler;
 import cn.egame.terminal.paysdk.EgameExitListener;
 import cn.egame.terminal.paysdk.EgamePay;
 import cn.egame.terminal.paysdk.EgamePayListener;
@@ -24,23 +24,22 @@ public class EgameSdkJni {
     public static void init() {
         System.out.println("EgameSdkJni.init");
 
-//        int GameId = 5018840;
-//        int ChannelId = 10000000;
-//        try {
-//            Activity a = SdkManagerJni.activity;
-//            ApplicationInfo info = a.getPackageManager().getApplicationInfo(
-//                    a.getPackageName(),
-//                    PackageManager.GET_META_DATA);
-//            ChannelId = info.metaData.getInt("EGAME_CHANNEL");
-//        }
-//        catch(PackageManager.NameNotFoundException ex) {
-//            ChannelId = 10000000;
-//        }
-//
-//        EgamePay.init(SdkManagerJni.activity);
+        int GameId = 5018840;
+        int ChannelId = 10000000;
+        try {
+            Activity a = SdkManagerJni.activity;
+            ApplicationInfo info = a.getPackageManager().getApplicationInfo(
+                    a.getPackageName(),
+                    PackageManager.GET_META_DATA);
+            ChannelId = info.metaData.getInt("EGAME_CHANNEL");
+        }
+        catch(PackageManager.NameNotFoundException ex) {
+            ChannelId = 10000000;
+        }
+
+        EgamePay.init(SdkManagerJni.activity);
 //        CheckTool.init(this, ""+GameId, ""+ChannelId);
     }
-
 
     private static String  _alias = "";
     private static Handler _handler = new Handler();
@@ -49,19 +48,19 @@ public class EgameSdkJni {
         System.out.println("EgameSdkJni.pay 1, alias: " + alias);
         _alias = alias;
 
-//        _handler.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                System.out.println("EgameSdkJni.pay 2, alias: " + _alias);
-//
-//                HashMap payParam = new HashMap();
-//                payParam.put(EgamePay.PAY_PARAMS_KEY_TOOLS_ALIAS, _alias);
-//                //payParams.put(EgamePay.PAY_PARAMS_KEY_PRIORITY, "sms");
-//                //payParams.put(EgamePay.PAY_PARAMS_KEY_USE_SMSPAY, "false");
-//
-//                EgamePay.pay(SdkManagerJni.activity, payParam, listener);
-//            }
-//        });
+        _handler.post(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("EgameSdkJni.pay 2, alias: " + _alias);
+
+                HashMap payParam = new HashMap();
+                payParam.put(EgamePay.PAY_PARAMS_KEY_TOOLS_ALIAS, _alias);
+                //payParams.put(EgamePay.PAY_PARAMS_KEY_PRIORITY, "sms");
+                //payParams.put(EgamePay.PAY_PARAMS_KEY_USE_SMSPAY, "false");
+
+                EgamePay.pay(SdkManagerJni.activity, payParam, listener);
+            }
+        });
     }
 
     final static EgamePayListener listener = new EgamePayListener() {

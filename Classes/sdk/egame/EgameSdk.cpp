@@ -7,15 +7,17 @@ using namespace cocos2d;
 #define  CLASS_NAME "com/hdngame/fate/telecom/EgameSdkJni"
 
 
-void EgameSdk::init()
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+void EgameSdk::activityOnCreate()
 {
-    cocos2d::log("EgameSdk::init");
+    cocos2d::log("EgameSdk::activityOnCreate");
 
     JniMethodInfo minfo;
     if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
         minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
     }
 }
+#endif
 
 void EgameSdk::charge(const std::string &order, const std::string &identifier)
 {
