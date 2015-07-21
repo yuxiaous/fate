@@ -91,7 +91,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.AppStore: return 2;
         case GameChannel.CmccAnd: return 4;
         case GameChannel.CmccMm: return 3;
-        case GameChannel.ChinaTelecom: return 1;
+        case GameChannel.Telecom: return 6;
         case GameChannel.Unicom: return 5;
         default : return 1;
     }

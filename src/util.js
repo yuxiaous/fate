@@ -133,7 +133,7 @@ var GameChannel = {
     AppStore: 1,
     CmccAnd: 2,
     CmccMm: 3,
-    ChinaTelecom: 4,
+    Telecom: 4,
     Unicom: 5
 };
 
