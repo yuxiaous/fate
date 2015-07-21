@@ -43,10 +43,13 @@ var ktplay_helper = {
         LOG("dispatchRewards");
         _.each(rewards, function(reward) {
             var types = reward.typeId.split(".");
+
+            var config_type = types[0];
+            var config_id = types[1];
             var config;
-            switch (types[0]) {
+            switch (config_type) {
                 case "item":
-                    config = configdb.item[types[1]];
+                    config = configdb.item[config_id];
                     if(config) {
                         if(config.result == 2) {
                             player_server.changeGold(reward.value);
@@ -54,11 +57,18 @@ var ktplay_helper = {
                         else if(config.result == 3) {
                             player_server.changeDiamond(reward.value);
                         }
+                        else {
+                            bag_server.addItem(config_id, reward.value);
+                        }
                     }
                     break;
 
                 case "equip":
-                    bag_server.addItem(types[1], reward.value);
+                    bag_server.addItem(config_id, reward.value);
+                    break;
+
+                case "skin":
+                    skin_server.addSkin(config_id);
                     break;
             }
         });
