@@ -303,24 +303,27 @@ var EndlessSelected = ui.GuiWindowBase.extend({
         this._bindings = [
             notification.createBinding(notification.event.BATTLE_ENDLESS_BUY_FINISH, function (event,obj) {
                 LOG("111111111");
+                this.close();
                 ui.pushScene(new BattleEndlessScene(true) );
+
             },this)
         ]
     },
 
     onExit : function () {
+        notification.removeBinding(this._bindings);
         this._super();
-
     },
 
     _on_btn_buy : function(){
+        LOG("btn buy endless");
         if(UiEffect.blockShopItemWithRMB()){
             return;
         }
         //ui.pushScene(new BattleEndlessScene(true) );
 
         ShopSystem.instance.buyGood(101014, 1);
-        this.close();
+        //this.close();
     },
 
     _on_btn_close : function () {

@@ -139,10 +139,15 @@ var UiEffect = {
     },
 
     addMpOrHpParticle : function (node_,isHp_) {
-        var parStr = "res/particles/add_mp.plist";
+        LOG("isHp = " + isHp_);
+        var parStr = "";
         if(isHp_){
             parStr = "res/particles/add_hp.plist";
         }
+        else{
+            parStr = "res/particles/add_mp.plist";
+        }
+        LOG("par str = " + parStr);
         var particle = cc.ParticleSystem.create(parStr);
         particle.setPosition(cc.p(0,0));
         particle.setDuration(1.0);

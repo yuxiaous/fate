@@ -55,7 +55,15 @@ var ShopSystem = SystemBase.extend({
 
     onBuyGoodResult: function(obj) {
         //MessageBoxOk.show("购买成功");
-        UiEffect.showFloatLabel("购买成功");
+
+
+        if(obj && obj.good_id == 101014){
+
+        }
+        else{
+            UiEffect.showFloatLabel("购买成功");
+        }
+
         notification.emit(notification.event.SHOP_BUY_RESULT,obj);
 
     },
