@@ -25,5 +25,7 @@
     <orderEntry type="library" name="Multimode_Unipay_base" level="project" />
     <orderEntry type="library" name="utdid4all-1.0.4" level="project" />
     <orderEntry type="library" name="MobileSecSdk" level="project" />
+    <orderEntry type="library" name="cn.egame.terminal.paysdk" level="project" />
+    <orderEntry type="library" name="egame.log_20150625_out_release" level="project" />
   </component>
 </module>

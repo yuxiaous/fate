@@ -4,7 +4,7 @@
 #include <jni.h>
 using namespace cocos2d;
 
-//#define  CLASS_NAME "com/hdngame/fate/unicom/UniPaySdkJni"
+#define  CLASS_NAME "com/hdngame/fate/telecom/EgameSdkJni"
 
 
 
@@ -22,7 +22,12 @@ EgameSdk *EgameSdk::getInstance()
 
 void EgameSdk::init()
 {
+    cocos2d::log("EgameSdk::init");
 
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+    }
 }
 
 void EgameSdk::charge(const std::string &order, const std::string &identifier)

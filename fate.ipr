@@ -185,6 +185,20 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="cn.egame.terminal.paysdk">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="egame.log_20150625_out_release">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="Game_Analytics_SDK_Android_3.1.68">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar!/" />
