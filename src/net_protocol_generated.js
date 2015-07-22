@@ -317,11 +317,13 @@ _BindFunc(1621, function(obj) {
 // @param {uint32} result, 结果 0成功
 // @param {uint32} good_id, 商品id
 // @param {uint32} remaining, 剩余数量
+// @param {string} order, 订单id
 net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT = 1102;
 _BindFunc(1102, function(obj) {
 	cc.assert(obj.result != undefined, "CMD_SC_SHOP_BUY_RESULT.result is undefined.");
 	cc.assert(obj.good_id != undefined, "CMD_SC_SHOP_BUY_RESULT.good_id is undefined.");
 	cc.assert(obj.remaining != undefined, "CMD_SC_SHOP_BUY_RESULT.remaining is undefined.");
+	cc.assert(obj.order != undefined, "CMD_SC_SHOP_BUY_RESULT.order is undefined.");
 	net_protocol_handlers.ON_CMD_SC_SHOP_BUY_RESULT(obj);
 });
 

@@ -102,12 +102,13 @@ void TalkingDataGameAnalyticsSdk::sdkCommand(const std::string &clazz, const std
         setGameServer(param.c_str());
     }
     else if(method == "onChargeRequest") {
-        
-        
-        onChargeRequest("order", "test", 100, "CNY", 100, "test pay");
+        std::vector<std::string> ret;
+        GameUtils::split(param, ",", ret);
+        onChargeRequest(ret[0].c_str(), ret[1].c_str(), atof(ret[2].c_str()), ret[3].c_str(), atof(ret[4].c_str()), ret[5].c_str());
     }
     else if(method == "onChargeSuccess") {
         
+        onChargeSuccess(param.c_str());
     }
     else if(method == "onReward") {
         
@@ -119,7 +120,9 @@ void TalkingDataGameAnalyticsSdk::sdkCommand(const std::string &clazz, const std
         
     }
     else if(method == "onUse") {
-        
+        std::vector<std::string> ret;
+        GameUtils::split(param, ",", ret);
+        onUse(ret[0].c_str(), atoi(ret[1].c_str()));
     }
     else if(method == "onBegin") {
         

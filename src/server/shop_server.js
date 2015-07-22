@@ -215,7 +215,8 @@ var shop_server = {
             server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {
                 result: 0,
                 good_id: order.good_id,
-                remaining: 0
+                remaining: 0,
+                order: order.order
             });
         }
     },
@@ -257,7 +258,8 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(ob
     server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {
         result: 0,
         good_id: obj.good_id,
-        remaining: 12345
+        remaining: 12345,
+        order: ""
     });
 });
 

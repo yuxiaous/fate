@@ -23,6 +23,18 @@ var ItemSystem = SystemBase.extend({
             uid: uid,
             num: num
         });
+
+        var info = BagSystem.instance.items[uid];
+        if(info != undefined) {
+            var config = BagSystem.getConfig(info.id);
+            if(config != undefined) {
+                sdk_manager.sendSdkCommand("TalkingDataGA", "onUse",
+                    "{item},{number}".format({
+                        item: config.name,
+                        number: num
+                    }));
+            }
+        }
     },
 
     onUseResult: function(obj) {

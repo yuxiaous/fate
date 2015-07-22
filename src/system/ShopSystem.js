@@ -50,7 +50,11 @@ var ShopSystem = SystemBase.extend({
                 count: num
             });
             sdk_manager.sendSdkCommand("TalkingDataGA", "onPurchase",
-                config.name + "," + String(num) + "," +String(config.pay_cost));
+                "{item},{number},{price}".format({
+                    item: config.name,
+                    number: num,
+                    price: config.pay_cost
+                }));
         }
     },
 
@@ -63,6 +67,10 @@ var ShopSystem = SystemBase.extend({
         }
         else{
             UiEffect.showFloatLabel("购买成功");
+        }
+
+        if(obj.result == 0 && obj.order && obj.order.length > 0) {
+            sdk_manager.sendSdkCommand("TalkingDataGA", "onChargeSuccess", obj.order);
         }
 
         notification.emit(notification.event.SHOP_BUY_RESULT,obj);
@@ -80,6 +88,16 @@ var ShopSystem = SystemBase.extend({
             return;
         }
         sdk_manager.charge(obj.order, config.platform_good_id);
+
+        sdk_manager.sendSdkCommand("TalkingDataGA", "onChargeRequest",
+            "{order},{iapId},{currencyAmount},{currencyType},{virtualCurrencyAmount},{paymentType}".format({
+                order: obj.order,
+                iapId: config.name,
+                currencyAmount: config.pay_cost,
+                currencyType: "CNY",
+                virtualCurrencyAmount: 0,
+                paymentType: ""
+            }));
     }
 });
 

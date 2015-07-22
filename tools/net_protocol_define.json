@@ -148,7 +148,8 @@
 		[
 			["uint32", "result", "结果 0成功"],
 			["uint32", "good_id", "商品id"],
-			["uint32", "remaining", "剩余数量"]
+			["uint32", "remaining", "剩余数量"],
+            ["string", "order", "订单id"]
 		]
 	},
 	"CMD_CS_SHOP_ORDER":
