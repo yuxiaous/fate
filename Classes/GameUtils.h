@@ -18,6 +18,12 @@ public:
     static int getChannelId();
     static std::string getUdid();
     
+    static std::string call(const std::string &clazz, const std::string &method, const std::string &param);
+    
+#ifndef SKIP_BY_AUTO_BINDINGS
+    static void split(const std::string &s, const std::string &delim, std::vector<std::string> &ret);
+#endif
+    
 private:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     static std::string getUdidWithIos();

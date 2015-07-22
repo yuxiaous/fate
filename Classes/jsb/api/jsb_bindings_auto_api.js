@@ -1042,32 +1042,6 @@ str
 jsb.SdkManager = {
 
 /**
- * @method onChargeResult
- * @param {int} arg0
- * @param {String} arg1
- */
-onChargeResult : function (
-int, 
-str 
-)
-{
-},
-
-/**
- * @method onPurchase
- * @param {char} arg0
- * @param {int} arg1
- * @param {double} arg2
- */
-onPurchase : function (
-char, 
-int, 
-double 
-)
-{
-},
-
-/**
  * @method charge
  * @param {String} arg0
  * @param {String} arg1
@@ -1101,22 +1075,12 @@ init : function (
  * @method sendSdkCommand
  * @param {String} arg0
  * @param {String} arg1
+ * @param {String} arg2
  */
 sendSdkCommand : function (
 str, 
+str, 
 str 
-)
-{
-},
-
-/**
- * @method onUse
- * @param {char} arg0
- * @param {int} arg1
- */
-onUse : function (
-char, 
-int 
 )
 {
 },
@@ -1125,8 +1089,10 @@ int
  * @method recvSdkCommand
  * @param {String} arg0
  * @param {String} arg1
+ * @param {String} arg2
  */
 recvSdkCommand : function (
+str, 
 str, 
 str 
 )
@@ -1166,6 +1132,22 @@ getChannelId : function (
 )
 {
     return 0;
+},
+
+/**
+ * @method call
+ * @param {String} arg0
+ * @param {String} arg1
+ * @param {String} arg2
+ * @return {String}
+ */
+call : function (
+str, 
+str, 
+str 
+)
+{
+    return ;
 },
 
 /**

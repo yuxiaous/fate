@@ -7,6 +7,7 @@
 //
 
 #include "GameUtils.h"
+#include "ScriptingCore.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "platform/android/jni/JniHelper.h"
@@ -46,6 +47,18 @@ std::string GameUtils::getUdid()
     return "hdngame";
 }
 
+std::string GameUtils::call(const std::string &clazz, const std::string &method, const std::string &param)
+{
+//    JS::HandleValueArray args;
+//    JS::MutableHandleValue retVal;
+//    
+//    ScriptingCore *sc = ScriptingCore::getInstance();
+//    sc->executeFunctionWithOwner(null, "", args, retVal);
+    
+    
+    return std::string();
+}
+
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 std::string GameUtils::getUdidWithAndroid()
@@ -63,3 +76,19 @@ std::string GameUtils::getUdidWithAndroid()
     return std::string();
 }
 #endif
+
+void GameUtils::split(const std::string &s, const std::string &delim, std::vector<std::string> &ret)
+{
+    size_t last = 0;
+    size_t index = s.find_first_of(delim, last);
+    while (index != std::string::npos) {
+        ret.push_back(s.substr(last, index - last));
+        last = index + 1;
+        index = s.find_first_of(delim, last);
+    }
+    if (index - last > 0) {
+        ret.push_back(s.substr(last, index - last));
+    }
+}
+
+

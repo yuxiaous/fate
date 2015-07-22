@@ -99,22 +99,35 @@ void SdkManager::init()
     }
 }
 
-void SdkManager::sendSdkCommand(const std::string &name, const std::string &cmd)
+void SdkManager::sendSdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
 {
     for(Sdk *sdk : _sdks) {
-        sdk->sdkCommand(name, cmd);
+        sdk->sdkCommand(clazz, method, param);
     }
 }
 
-std::function<void(char*, char*)> SdkManager::_sdkCmdCallback = nullptr;
+std::function<void(char*, char*, char*)> SdkManager::_sdkCmdCallback = nullptr;
 
-void SdkManager::recvSdkCommand(const std::string &name, const std::string &cmd)
+void SdkManager::recvSdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
 {
     if(_sdkCmdCallback) {
-        _sdkCmdCallback((char*)name.c_str(), (char*)cmd.c_str());
+        _sdkCmdCallback((char*)clazz.c_str(), (char*)method.c_str(), (char*)param.c_str());
     }
 }
 
+
+// AccountProtocol
+void SdkManager::login()
+{
+    for(Sdk *sdk : _sdks) {
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
+        if(account) {
+            account->login();
+        }
+    }
+}
+
+// ChargeProtocol
 void SdkManager::charge(const std::string &order, const std::string &identifier)
 {
     for(Sdk *sdk : _sdks) {
@@ -134,50 +147,6 @@ void SdkManager::setChargeCallback(const std::function<void(char *param)> &callb
         }
     }
 }
-
-void SdkManager::onChargeResult(int result, const std::string &order)
-{
-    for(Sdk *sdk : _sdks) {
-        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
-        if(charge) {
-            charge->onChargeResult(result, order);
-        }
-    }
-}
-
-void SdkManager::onPurchase(const char* item, int number, double price)
-{
-    for(Sdk *sdk : _sdks) {
-        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
-        if(charge) {
-            charge->onPurchase(item, number, price);
-        }
-    }
-}
-
-void SdkManager::onUse(const char* item, int number)
-{
-    for(Sdk *sdk : _sdks) {
-        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
-        if(charge) {
-            charge->onUse(item, number);
-        }
-    }
-}
-
-void SdkManager::login()
-{
-    for(Sdk *sdk : _sdks) {
-        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
-        if(account) {
-            account->login();
-        }
-    }
-}
-
-
-
-
 
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS

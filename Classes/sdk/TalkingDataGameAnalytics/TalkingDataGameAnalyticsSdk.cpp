@@ -7,6 +7,7 @@
 //
 
 #include "TalkingDataGameAnalyticsSdk.h"
+#include "GameUtils.h"
 
 #if  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "TalkingDataGameAnalytics/android/TDGAJniHelper.h"
@@ -73,47 +74,65 @@ void TalkingDataGameAnalyticsSdk::init()
 #endif
 }
 
-void TalkingDataGameAnalyticsSdk::sdkCommand(const std::string &name, const std::string &cmd)
+void TalkingDataGameAnalyticsSdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
 {
-    if(name != "TalkingDataGA"){
+    if(clazz != "TalkingDataGA"){
         return;
     }
     
-    std::string type;
-    std::string value;
-    
-    size_t find = cmd.find(":");
-    if(find == std::string::npos) {
-        type = cmd;
+    if(method == "setAccount") {
+        setAccount(param.c_str());
     }
-    else {
-        type = cmd.substr(0, find);
-        value = cmd.substr(find+1);
+    else if(method == "setAccountName") {
+        setAccountName(param.c_str());
     }
-    
-    if(type == "setAccount") {
-        setAccount(value.c_str());
+    else if(method == "setAccountType") {
+        setAccountType(atoi(param.c_str()));
     }
-    else if(type == "setAccountName") {
-        setAccountName(value.c_str());
+    else if(method == "setLevel") {
+        setLevel(atoi(param.c_str()));
     }
-    else if(type == "setAccountType") {
-        setAccountType(atoi(value.c_str()));
+    else if(method == "setGender") {
+        setGender(atoi(param.c_str()));
     }
-    else if(type == "setLevel") {
-        setLevel(atoi(value.c_str()));
+    else if(method == "setAge") {
+        setAge(atoi(param.c_str()));
     }
-    else if(type == "setGender") {
-        setGender(atoi(value.c_str()));
+    else if(method == "setGameServer") {
+        setGameServer(param.c_str());
     }
-    else if(type == "setAge") {
-        setAge(atoi(value.c_str()));
+    else if(method == "onChargeRequest") {
+        
+        
+        onChargeRequest("order", "test", 100, "CNY", 100, "test pay");
     }
-    else if(type == "setGameServer") {
-        setGameServer(value.c_str());
+    else if(method == "onChargeSuccess") {
+        
+    }
+    else if(method == "onReward") {
+        
+    }
+    else if(method == "onPurchase") {
+        std::vector<std::string> ret;
+        GameUtils::split(param, ",", ret);
+        onPurchase(ret[0].c_str(), atoi(ret[1].c_str()), atof(ret[2].c_str()));
+        
+    }
+    else if(method == "onUse") {
+        
+    }
+    else if(method == "onBegin") {
+        
+    }
+    else if(method == "onCompleted") {
+        
+    }
+    else if(method == "onFailed") {
+        
     }
 }
 
+// TDCCAccount
 void TalkingDataGameAnalyticsSdk::setAccount(const char* accountId)
 {
     if(_account == nullptr) {
@@ -163,18 +182,23 @@ void TalkingDataGameAnalyticsSdk::setGameServer(const char* gameServer)
     }
 }
 
-void TalkingDataGameAnalyticsSdk::charge(const std::string &order, const std::string &identifier)
+// TDCCVirtualCurrency
+void TalkingDataGameAnalyticsSdk::onChargeRequest(const char* orderId, const char* iapId, double currencyAmount, const char* currencyType, double virtualCurrencyAmount, const char* paymentType)
 {
-    TDCCVirtualCurrency::onChargeRequest(order.c_str(), "test", 100, "CNY", 100, "test pay");
+    TDCCVirtualCurrency::onChargeRequest(orderId, iapId, currencyAmount, currencyType, virtualCurrencyAmount, paymentType);
 }
 
-void TalkingDataGameAnalyticsSdk::onChargeResult(int result, const std::string &order)
+void TalkingDataGameAnalyticsSdk::onChargeSuccess(const char* orderId)
 {
-    if(result == 0) {
-        TDCCVirtualCurrency::onChargeSuccess(order.c_str());
-    }
+    TDCCVirtualCurrency::onChargeSuccess(orderId);
 }
 
+void TalkingDataGameAnalyticsSdk::onReward(double currencyAmount, const char* reason)
+{
+    TDCCVirtualCurrency::onReward(currencyAmount, reason);
+}
+
+// TDCCItem
 void TalkingDataGameAnalyticsSdk::onPurchase(const char* item, int number, double price)
 {
     TDCCItem::onPurchase(item, number, price);
@@ -183,5 +207,21 @@ void TalkingDataGameAnalyticsSdk::onPurchase(const char* item, int number, doubl
 void TalkingDataGameAnalyticsSdk::onUse(const char* item, int number)
 {
     TDCCItem::onUse(item, number);
+}
+
+// TDCCMission
+void TalkingDataGameAnalyticsSdk::onBegin(const char* missionId)
+{
+    TDCCMission::onBegin(missionId);
+}
+
+void TalkingDataGameAnalyticsSdk::onCompleted(const char* missionId)
+{
+    TDCCMission::onCompleted(missionId);
+}
+
+void TalkingDataGameAnalyticsSdk::onFailed(const char* missionId, const char* failedCause)
+{
+    TDCCMission::onFailed(missionId, failedCause);
 }
 

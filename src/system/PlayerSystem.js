@@ -30,12 +30,14 @@ var PlayerSystem = SystemBase.extend({
         var player = obj.player;
         if(player.player_id != undefined) this.playerId = player.player_id;
         if(player.level != undefined) {
-            var level = this.level;
+            var last_level = this.level;
             this.level = player.level;
 
-            if(player.level > level && level != 0) {
+            if(this.level > last_level && last_level != 0) {
                 MusicManager.getInstance().playEffectMusic("sounds/levelup.mp3");
                 notification.emit(notification.event.PLAYER_LEVEL_UP);
+
+                sdk_manager.sendSdkCommand("TalkingDataGA", "setLevel", String(this.level));
             }
         }
         if(player.exp != undefined) this.exp = player.exp;
