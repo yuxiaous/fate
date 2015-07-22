@@ -139,19 +139,27 @@ var UiEffect = {
     },
 
     addMpOrHpParticle : function (node_,isHp_) {
-        LOG("isHp = " + isHp_);
         var parStr = "";
+        var spStr = "";
         if(isHp_){
             parStr = "res/particles/add_hp.plist";
+            spStr = "res/particles/ui_361.png";
         }
         else{
             parStr = "res/particles/add_mp.plist";
+            spStr = "res/particles/ui_362.png";
+
         }
+
         LOG("par str = " + parStr);
-        var particle = cc.ParticleSystem.create(parStr);
+        var particle = new cc.ParticleSystem(parStr);
+        particle.setDisplayFrame(new cc.SpriteFrame(spStr,cc.rect(0,0,30,30)));
+        particle.setAutoRemoveOnFinish(true);
         particle.setPosition(cc.p(0,0));
         particle.setDuration(1.0);
+        particle.setPositionType(cc.ParticleSystem.TYPE_RELATIVE);
         node_.addChild(particle);
+        node_.particleEffect = particle;
     }
 
 }
