@@ -38,8 +38,18 @@ var ItemSystem = SystemBase.extend({
     },
 
     onUseResult: function(obj) {
-
-
+        if(obj.result == 0){
+            var target = cc.director.getRunningScene()._hero;
+            if(obj.item_type == ItemSystem.ItemUseType.AddHpMp){    //加满血和蓝
+                target.roleDataManager.hp = target.roleDataManager.maxHp;
+                target.roleDataManager.mp = target.roleDataManager.maxMp;
+            }
+            //else if(obj.item_type == BattleSystem.UseItemType.UseRevive){ //复活币
+            //    target.roleDataManager.hp = target.roleDataManager.maxHp;
+            //    target.roleDataManager.mp = target.roleDataManager.maxMp;
+            //}
+            notification.emit(notification.event.BATTLE_USE_ITEM_RESULT,obj.item_type);
+        }
     }
 });
 
@@ -52,6 +62,22 @@ ItemSystem.ItemType = {
     Exp: 5,
     GameCoin: 6,
     Skin: 7
+};
+
+ItemSystem.ItemUseType = {
+    AddEXP :    1,  //增加经验
+    AddGold:    2,  //增加金币
+    AddDiamond: 3,  //增加钻石
+    AddAction : 4,  //增加行动力
+    AddHpPer :  5,  //增加HP
+    AddMpPer :  6,  //增加MP
+    AddHpMp :   7,  //增加HP 和 MP
+    AddSkin:    8,  //角色套装
+    AddLive :   9,   //战斗复活 复活币
+
+    EntranceDaBaoJian : 10,  //大保健礼包购买入口
+    SuperSkillCount : 11,   //大招次数
+    BattleRevive : 12       //战斗复活
 };
 
 ItemSystem.getItemTypeName = function(type) {

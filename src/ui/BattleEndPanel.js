@@ -315,13 +315,13 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_use : function () {
-        var reviveNum = this._getReviveItemNum();
-        if(reviveNum > 0){
-            BattleSystem.instance.useBattleItem({
-                itemId : 100001,
-                num : 1
-            });
-        }
+        //var reviveNum = this._getReviveItemNum();
+        //if(reviveNum > 0){
+        //    BattleSystem.instance.useBattleItem({
+        //        itemId : 100001,
+        //        num : 1
+        //    });
+        //}
     },
 
     _on_btn_restart : function(){
