@@ -36,7 +36,6 @@ public:
     virtual void applicationDidReceiveRemoteNotification(void *iosNSDictionary) {}
     virtual bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString) { return false; }
 #endif
-
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
     virtual void activityOnCreate() {}
@@ -59,9 +58,6 @@ class SdkChargeProtocol
 {
 public:
     virtual void charge(const std::string &order, const std::string &identifier) {}
-    virtual void onChargeResult(int result, const std::string &order) {}
-    virtual void onPurchase(const char* item, int number, double price) {}
-    virtual void onUse(const char* item, int number) {}
     
     void setChargeCallback(const std::function<void(char *param)> &cb) {_chargeCallback = cb;}
     void onChargeCallback(int result, const std::string &order);

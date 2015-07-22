@@ -7,6 +7,7 @@
 //
 
 #include "GameUtils.h"
+#include "ScriptingCore.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "platform/android/jni/JniHelper.h"
@@ -44,6 +45,18 @@ std::string GameUtils::getUdid()
 #endif
 
     return "hdngame";
+}
+
+std::string GameUtils::call(const std::string &clazz, const std::string &method, const std::string &param)
+{
+//    JS::HandleValueArray args;
+//    JS::MutableHandleValue retVal;
+//    
+//    ScriptingCore *sc = ScriptingCore::getInstance();
+//    sc->executeFunctionWithOwner(null, "", args, retVal);
+    
+    
+    return std::string();
 }
 
 

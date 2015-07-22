@@ -49,7 +49,7 @@ var ShopSystem = SystemBase.extend({
                 good_id: id,
                 count: num
             });
-            jsb.SdkManager.onPurchase(config.name, num, config.pay_cost);
+            //jsb.SdkManager.onPurchase(config.name, num, config.pay_cost);
         }
     },
 
@@ -80,7 +80,7 @@ var ShopSystem = SystemBase.extend({
         }
 
         LOG("good id: {2}, order: {0}, platform_good_id: {1}".format(obj.order, config.platform_good_id, obj.good_id));
-        jsb.SdkManager.charge(obj.order, config.platform_good_id || "");
+        //jsb.SdkManager.charge(obj.order, config.platform_good_id || "");
     }
 });
 

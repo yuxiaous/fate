@@ -112,8 +112,35 @@ void TalkingDataGameAnalyticsSdk::sdkCommand(const std::string &name, const std:
     else if(type == "setGameServer") {
         setGameServer(value.c_str());
     }
+    else if(type == "onChargeRequest") {
+        
+        
+        onChargeRequest("order", "test", 100, "CNY", 100, "test pay");
+    }
+    else if(type == "onChargeSuccess") {
+        
+    }
+    else if(type == "onReward") {
+        
+    }
+    else if(type == "onPurchase") {
+        
+    }
+    else if(type == "onUse") {
+        
+    }
+    else if(type == "onBegin") {
+        
+    }
+    else if(type == "onCompleted") {
+        
+    }
+    else if(type == "onFailed") {
+        
+    }
 }
 
+// TDCCAccount
 void TalkingDataGameAnalyticsSdk::setAccount(const char* accountId)
 {
     if(_account == nullptr) {
@@ -163,18 +190,23 @@ void TalkingDataGameAnalyticsSdk::setGameServer(const char* gameServer)
     }
 }
 
-void TalkingDataGameAnalyticsSdk::charge(const std::string &order, const std::string &identifier)
+// TDCCVirtualCurrency
+void TalkingDataGameAnalyticsSdk::onChargeRequest(const char* orderId, const char* iapId, double currencyAmount, const char* currencyType, double virtualCurrencyAmount, const char* paymentType)
 {
-    TDCCVirtualCurrency::onChargeRequest(order.c_str(), "test", 100, "CNY", 100, "test pay");
+    TDCCVirtualCurrency::onChargeRequest(orderId, iapId, currencyAmount, currencyType, virtualCurrencyAmount, paymentType);
 }
 
-void TalkingDataGameAnalyticsSdk::onChargeResult(int result, const std::string &order)
+void TalkingDataGameAnalyticsSdk::onChargeSuccess(const char* orderId)
 {
-    if(result == 0) {
-        TDCCVirtualCurrency::onChargeSuccess(order.c_str());
-    }
+    TDCCVirtualCurrency::onChargeSuccess(orderId);
 }
 
+void TalkingDataGameAnalyticsSdk::onReward(double currencyAmount, const char* reason)
+{
+    TDCCVirtualCurrency::onReward(currencyAmount, reason);
+}
+
+// TDCCItem
 void TalkingDataGameAnalyticsSdk::onPurchase(const char* item, int number, double price)
 {
     TDCCItem::onPurchase(item, number, price);
@@ -183,5 +215,21 @@ void TalkingDataGameAnalyticsSdk::onPurchase(const char* item, int number, doubl
 void TalkingDataGameAnalyticsSdk::onUse(const char* item, int number)
 {
     TDCCItem::onUse(item, number);
+}
+
+// TDCCMission
+void TalkingDataGameAnalyticsSdk::onBegin(const char* missionId)
+{
+    TDCCMission::onBegin(missionId);
+}
+
+void TalkingDataGameAnalyticsSdk::onCompleted(const char* missionId)
+{
+    TDCCMission::onCompleted(missionId);
+}
+
+void TalkingDataGameAnalyticsSdk::onFailed(const char* missionId, const char* failedCause)
+{
+    TDCCMission::onFailed(missionId, failedCause);
 }
 

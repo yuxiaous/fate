@@ -115,6 +115,19 @@ void SdkManager::recvSdkCommand(const std::string &name, const std::string &cmd)
     }
 }
 
+
+// AccountProtocol
+void SdkManager::login()
+{
+    for(Sdk *sdk : _sdks) {
+        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
+        if(account) {
+            account->login();
+        }
+    }
+}
+
+// ChargeProtocol
 void SdkManager::charge(const std::string &order, const std::string &identifier)
 {
     for(Sdk *sdk : _sdks) {
@@ -134,50 +147,6 @@ void SdkManager::setChargeCallback(const std::function<void(char *param)> &callb
         }
     }
 }
-
-void SdkManager::onChargeResult(int result, const std::string &order)
-{
-    for(Sdk *sdk : _sdks) {
-        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
-        if(charge) {
-            charge->onChargeResult(result, order);
-        }
-    }
-}
-
-void SdkManager::onPurchase(const char* item, int number, double price)
-{
-    for(Sdk *sdk : _sdks) {
-        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
-        if(charge) {
-            charge->onPurchase(item, number, price);
-        }
-    }
-}
-
-void SdkManager::onUse(const char* item, int number)
-{
-    for(Sdk *sdk : _sdks) {
-        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
-        if(charge) {
-            charge->onUse(item, number);
-        }
-    }
-}
-
-void SdkManager::login()
-{
-    for(Sdk *sdk : _sdks) {
-        SdkAccountProtocol *account = dynamic_cast<SdkAccountProtocol *>(sdk);
-        if(account) {
-            account->login();
-        }
-    }
-}
-
-
-
-
 
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS

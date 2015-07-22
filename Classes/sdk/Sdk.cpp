@@ -48,5 +48,6 @@ void SdkChargeProtocol::onChargeCallback(int result, const std::string &order) {
         }
     }
     
-    SdkManager::onChargeResult(result, order);
+//    SdkManager::onChargeResult(result, order);
 }
+

@@ -24,17 +24,14 @@ public:
     
     static void setSdkCommandCallback(const std::function<void(char*, char*)> &cb) {_sdkCmdCallback = cb;}
     static void sendSdkCommand(const std::string &name, const std::string &cmd);
-    static void recvSdkCommand(const std::string &name, const std::string &cmd);
+    static void recvSdkCommand(const std::string &name, const std::string &cmd);\
+    
+    // AccountProtocol
+    static void login();
     
     // ChargeProtocol
     static void charge(const std::string &order, const std::string &identifier);
     static void setChargeCallback(const std::function<void(char *param)> &callback);
-    static void onChargeResult(int result, const std::string &order);
-    static void onPurchase(const char* item, int number, double price);
-    static void onUse(const char* item, int number);
-    
-    // AccountProtocol
-    static void login();
     
 private:
     static void addSdk(Sdk *sdk);
@@ -59,7 +56,6 @@ public:
     static void applicationDidReceiveRemoteNotification(void *iosNSDictionary);
     static bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString);
 #endif
-
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) && !defined(SKIP_BY_AUTO_BINDINGS)
 public:
     static void *appActivity;
