@@ -99,19 +99,19 @@ void SdkManager::init()
     }
 }
 
-void SdkManager::sendSdkCommand(const std::string &name, const std::string &cmd)
+void SdkManager::sendSdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
 {
     for(Sdk *sdk : _sdks) {
-        sdk->sdkCommand(name, cmd);
+        sdk->sdkCommand(clazz, method, param);
     }
 }
 
-std::function<void(char*, char*)> SdkManager::_sdkCmdCallback = nullptr;
+std::function<void(char*, char*, char*)> SdkManager::_sdkCmdCallback = nullptr;
 
-void SdkManager::recvSdkCommand(const std::string &name, const std::string &cmd)
+void SdkManager::recvSdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
 {
     if(_sdkCmdCallback) {
-        _sdkCmdCallback((char*)name.c_str(), (char*)cmd.c_str());
+        _sdkCmdCallback((char*)clazz.c_str(), (char*)method.c_str(), (char*)param.c_str());
     }
 }
 

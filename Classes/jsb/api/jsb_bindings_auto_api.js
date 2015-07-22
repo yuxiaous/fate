@@ -1075,8 +1075,10 @@ init : function (
  * @method sendSdkCommand
  * @param {String} arg0
  * @param {String} arg1
+ * @param {String} arg2
  */
 sendSdkCommand : function (
+str, 
 str, 
 str 
 )
@@ -1087,8 +1089,10 @@ str
  * @method recvSdkCommand
  * @param {String} arg0
  * @param {String} arg1
+ * @param {String} arg2
  */
 recvSdkCommand : function (
+str, 
 str, 
 str 
 )

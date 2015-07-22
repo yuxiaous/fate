@@ -21,18 +21,18 @@ extern "C" {
     void dispatchRewards (KTRewardItemC *rewards, int length)
     {
         std::ostringstream s1;
-        s1 << "Rewards";
-        
         for ( int i = 0; i < length; i ++) {
             KTRewardItemC *item = &rewards[i];
             
-            s1 << ";";
+            if(i != 0) {
+                s1 << ",";
+            }
             s1 << item->typeId;
-            s1 << "=";
+            s1 << ",";
             s1 << item->value;
         }
         
-        SdkManager::recvSdkCommand("Ktplay", s1.str());
+        SdkManager::recvSdkCommand("Ktplay", "dispatchRewards", s1.str());
     }
     
     void activityStatusChanged(bool hasNewActivities) {
@@ -108,21 +108,21 @@ void KtplaySdk::login()
     showLoginView();
 }
 
-void KtplaySdk::sdkCommand(const std::string &name, const std::string &cmd)
+void KtplaySdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
 {
-    if(name != "Ktplay") {
+    if(clazz != "Ktplay") {
         return;
     }
-    if(cmd == "showRedemptionView") {
+    if(method == "showRedemptionView") {
         showRedemptionView();
     }
-    else if(cmd == "showKTPlay") {
+    else if(method == "showKTPlay") {
         showKTPlay();
     }
-    else if(cmd == "showFriendRequestsView") {
+    else if(method == "showFriendRequestsView") {
         showFriendRequestsView();
     }
-    else if(cmd == "showLoginView") {
+    else if(method == "showLoginView") {
         showLoginView();
     }
 }

@@ -22,9 +22,9 @@ class SdkManager
 public:
     static void init();
     
-    static void setSdkCommandCallback(const std::function<void(char*, char*)> &cb) {_sdkCmdCallback = cb;}
-    static void sendSdkCommand(const std::string &name, const std::string &cmd);
-    static void recvSdkCommand(const std::string &name, const std::string &cmd);\
+    static void setSdkCommandCallback(const std::function<void(char*, char*, char*)> &cb) {_sdkCmdCallback = cb;}
+    static void sendSdkCommand(const std::string &clazz, const std::string &method, const std::string &param);
+    static void recvSdkCommand(const std::string &clazz, const std::string &method, const std::string &param);
     
     // AccountProtocol
     static void login();
@@ -37,7 +37,7 @@ private:
     static void addSdk(Sdk *sdk);
     static void removeSdk(Sdk *sdk);
     static void update(float dt);
-    static std::function<void(char*, char*)> _sdkCmdCallback;
+    static std::function<void(char*, char*, char*)> _sdkCmdCallback;
     
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)

@@ -37,7 +37,7 @@ var LoginSystem = SystemBase.extend({
     onLoginResult: function(obj) {
         if(obj.result == 0) {
             this.account = obj.account;
-            sdk_manager.sendSdkCommand("TalkingDataGA", "setAccount:" + this.account);
+            sdk_manager.sendSdkCommand("TalkingDataGA", "setAccount", this.account);
 
             this.authorize(obj.token);
         }

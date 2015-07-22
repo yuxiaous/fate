@@ -20,7 +20,7 @@ public:
     
     virtual void init() override;
     virtual void login() override;
-    virtual void sdkCommand(const std::string &name, const std::string &cmd) override;
+    virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
     
     void showKTPlay();
     void showLoginView();

@@ -20,7 +20,7 @@ public:
     static TalkingDataGameAnalyticsSdk *getInstance();
     
     virtual void init() override;
-    virtual void sdkCommand(const std::string &name, const std::string &cmd) override;
+    virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
     
     // TDCCAccount
     void setAccount(const char* accountId);

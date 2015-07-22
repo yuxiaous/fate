@@ -73,69 +73,57 @@ void TalkingDataGameAnalyticsSdk::init()
 #endif
 }
 
-void TalkingDataGameAnalyticsSdk::sdkCommand(const std::string &name, const std::string &cmd)
+void TalkingDataGameAnalyticsSdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
 {
-    if(name != "TalkingDataGA"){
+    if(clazz != "TalkingDataGA"){
         return;
     }
     
-    std::string type;
-    std::string value;
-    
-    size_t find = cmd.find(":");
-    if(find == std::string::npos) {
-        type = cmd;
+    if(method == "setAccount") {
+        setAccount(param.c_str());
     }
-    else {
-        type = cmd.substr(0, find);
-        value = cmd.substr(find+1);
+    else if(method == "setAccountName") {
+        setAccountName(param.c_str());
     }
-    
-    if(type == "setAccount") {
-        setAccount(value.c_str());
+    else if(method == "setAccountType") {
+        setAccountType(atoi(param.c_str()));
     }
-    else if(type == "setAccountName") {
-        setAccountName(value.c_str());
+    else if(method == "setLevel") {
+        setLevel(atoi(param.c_str()));
     }
-    else if(type == "setAccountType") {
-        setAccountType(atoi(value.c_str()));
+    else if(method == "setGender") {
+        setGender(atoi(param.c_str()));
     }
-    else if(type == "setLevel") {
-        setLevel(atoi(value.c_str()));
+    else if(method == "setAge") {
+        setAge(atoi(param.c_str()));
     }
-    else if(type == "setGender") {
-        setGender(atoi(value.c_str()));
+    else if(method == "setGameServer") {
+        setGameServer(param.c_str());
     }
-    else if(type == "setAge") {
-        setAge(atoi(value.c_str()));
-    }
-    else if(type == "setGameServer") {
-        setGameServer(value.c_str());
-    }
-    else if(type == "onChargeRequest") {
+    else if(method == "onChargeRequest") {
         
         
         onChargeRequest("order", "test", 100, "CNY", 100, "test pay");
     }
-    else if(type == "onChargeSuccess") {
+    else if(method == "onChargeSuccess") {
         
     }
-    else if(type == "onReward") {
+    else if(method == "onReward") {
         
     }
-    else if(type == "onPurchase") {
+    else if(method == "onPurchase") {
         
     }
-    else if(type == "onUse") {
+    else if(method == "onUse") {
         
     }
-    else if(type == "onBegin") {
+    else if(method == "onBegin") {
         
     }
-    else if(type == "onCompleted") {
+    else if(method == "onCompleted") {
         
     }
-    else if(type == "onFailed") {
+    else if(method == "onFailed") {
         
     }
 }
