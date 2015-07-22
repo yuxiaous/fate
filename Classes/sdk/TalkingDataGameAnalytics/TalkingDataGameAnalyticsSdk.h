@@ -47,6 +47,13 @@ public:
     
 private:
     TDCCAccount* _account;
+    
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+public:
+    virtual void activityOnPause() override;
+    virtual void activityOnResume() override;
+#endif
 };
 
 #endif /* defined(__fate__TalkingDataGameAnalyticsSdk__) */

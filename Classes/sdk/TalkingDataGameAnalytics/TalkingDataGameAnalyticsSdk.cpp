@@ -225,3 +225,34 @@ void TalkingDataGameAnalyticsSdk::onFailed(const char* missionId, const char* fa
     TDCCMission::onFailed(missionId, failedCause);
 }
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+void TalkingDataGameAnalyticsSdk::activityOnPause()
+{
+    cocos2d::log("TalkingDataGameAnalyticsSdk::activityOnPause");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo,
+        "com.tendcloud.tenddata.TalkingDataGA",
+        "onPause",
+        "(Landroid/app/Activity;)V")) {
+
+        jobject jactivity = (jobject)SdkManager::appActivity;
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jactivity);
+    }
+}
+void TalkingDataGameAnalyticsSdk::activityOnResume()
+{
+    cocos2d::log("TalkingDataGameAnalyticsSdk::activityOnResume");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo,
+        "com.tendcloud.tenddata.TalkingDataGA",
+        "onResume",
+        "(Landroid/app/Activity;)V")) {
+
+        jobject jactivity = (jobject)SdkManager::appActivity;
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jactivity);
+    }
+}
+#endif
+

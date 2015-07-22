@@ -69,9 +69,11 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos \
                     $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/cocos/storage \
                     $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/extensions \
                     $(LOCAL_PATH)/../../frameworks/js-bindings/cocos2d-x/external \
-                    $(LOCAL_PATH)/../sdk
+                    $(LOCAL_PATH) \
+                    $(LOCAL_PATH)/..
 
-LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../sdk
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH) \
+                           $(LOCAL_PATH)/..
 
 LOCAL_STATIC_LIBRARIES := cocos2dx-talkingdata
 
