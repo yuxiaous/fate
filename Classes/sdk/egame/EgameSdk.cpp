@@ -36,3 +36,13 @@ void EgameSdk::charge(const std::string &order, const std::string &identifier)
     }
 }
 
+void EgameSdk::moreGame()
+{
+    cocos2d::log("EgameSdk::moreGame");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "moreGame", "()V")) {
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+    }
+}
+

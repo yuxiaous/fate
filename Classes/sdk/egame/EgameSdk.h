@@ -10,6 +10,8 @@ class EgameSdk : public Sdk, public SdkChargeProtocol
 public:
     virtual void charge(const std::string &order, const std::string &identifier) override;
 
+    void moreGame();
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
     virtual void activityOnCreate();
