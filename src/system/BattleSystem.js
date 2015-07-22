@@ -60,6 +60,8 @@ var BattleSystem = SystemBase.extend({
     battleMapResult: function(obj) {
         this.cur_battle_map = obj.map_id;
         notification.emit(notification.event.BATTLE_MAP_RESULT);
+        
+        sdk_manager.sendSdkCommand("TalkingDataGA", "onBegin", "map."+String(obj.map_id));
     },
 
     battleFinish: function(isWin) {
@@ -67,6 +69,8 @@ var BattleSystem = SystemBase.extend({
             result: isWin ? 1: 2,
             time: 0
         });
+
+        sdk_manager.sendSdkCommand("TalkingDataGA", "onCompleted", "map."+String(this.cur_battle_map));
     },
 
     updateEndlessBattleRound : function (round_) {

@@ -744,6 +744,12 @@ var PauseLayer = ui.GuiWindowBase.extend({
     _on_btn_back : function () {
         cc.director.resume();
         ui.popScene();
+
+        sdk_manager.sendSdkCommand("TalkingDataGA", "onFailed",
+            "map.{missionId},{failedCause}".format({
+                missionId: BattleSystem.instance.cur_battle_map,
+                failedCause: "玩家暂停退出"
+            }));
     },
 
     _on_keyboard_back: function() {

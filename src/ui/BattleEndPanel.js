@@ -477,6 +477,12 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
                 }
             }, this);
             lose.pop();
+
+            sdk_manager.sendSdkCommand("TalkingDataGA", "onFailed",
+                "map.{missionId},{failedCause}".format({
+                    missionId: BattleSystem.instance.cur_battle_map,
+                    failedCause: "战斗失败退出"
+                }));
         }
         else if(this._curBattleType == SceneBase.Type.EndlessType){
             this.close();

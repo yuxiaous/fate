@@ -125,13 +125,15 @@ void TalkingDataGameAnalyticsSdk::sdkCommand(const std::string &clazz, const std
         onUse(ret[0].c_str(), atoi(ret[1].c_str()));
     }
     else if(method == "onBegin") {
-        
+        onBegin(param.c_str());
     }
     else if(method == "onCompleted") {
-        
+        onCompleted(param.c_str());
     }
     else if(method == "onFailed") {
-        
+        std::vector<std::string> ret;
+        GameUtils::split(param, ",", ret);
+        onFailed(ret[0].c_str(), ret[1].c_str());
     }
 }
 
