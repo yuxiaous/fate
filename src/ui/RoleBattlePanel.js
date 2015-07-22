@@ -184,7 +184,11 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
     onEnter: function() {
         this._super();
         this._progress_hp = this.seekWidgetByName("loading_hp");
+        this._progress_hp_droping = this.seekWidgetByName("loading_hp_droping");
         this._progress_mp = this.seekWidgetByName("loading_mp");
+        this._progress_mp_droping = this.seekWidgetByName("loading_mp_droping");
+
+
         this._lbl_hp = this.seekWidgetByName("lbl_hp");
         this._lbl_mp = this.seekWidgetByName("lbl_mp");
         this._lbl_level = this.seekWidgetByName("lbl_level");
@@ -202,6 +206,8 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
         cc.director.getScheduler().unschedule("MP", this);
         this._progress_hp = null;
         this._progress_mp = null;
+        this._progress_hp_droping = null;
+        this._progress_mp_droping = null;
         this._lbl_hp = null;
         this._lbl_mp = null;
         this._lbl_level = null;
@@ -232,21 +238,18 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
         // hp
         var percentHP = originData.hp / originData.maxHp * 100;
         this._progress_hp.setPercent(percentHP);
+        RoleBloodBar.setPercentChangeTo(percentHP,this._progress_hp_droping);
+
         this._lbl_hp.setString(this._lbl_hp._str_original.format(originData.hp, originData.maxHp));
 
         //mp
         var percentMP = originData.mp / originData.maxMp * 100;
         this._progress_mp.setPercent(percentMP);
+        RoleBloodBar.setPercentChangeTo(percentMP,this._progress_mp_droping);
+
         this._lbl_mp.setString(this._lbl_hp._str_original.format(originData.mp,originData.maxMp));
 
-        //if(originData.mp < originData.maxMp){
-        //    cc.director.getScheduler().schedule(this.refreshMp,this,4.0,cc.REPEAT_FOREVER,0,false,"MP");
-        //}
-        //else{
-        //    cc.director.getScheduler().unschedule("MP",this);
-        //}
 
-        //var actions = this._role.roleActionManager.actions;
         _.each([RoleAction.Type.SKILL1,
                 RoleAction.Type.SKILL2,
                 RoleAction.Type.SKILL3,
@@ -281,15 +284,17 @@ BattleUILayer.BossPanel = ui.GuiController.extend({
         this._super();
 
         this._progress_hp = this.seekWidgetByName("loading_hp");
+        this._progress_hp_droping = this.seekWidgetByName("loading_hp_droping");
 
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.refresh);
-
     },
 
     onExit : function () {
         this._super();
 
         this._progress_hp = null;
+        this._progress_hp_droping = null;
+
         this._boss = null;
         cc.director.getScheduler().unscheduleCallbackForTarget(this,this.refresh)
     },
@@ -312,6 +317,8 @@ BattleUILayer.BossPanel = ui.GuiController.extend({
         // hp
         var percent = data.hp / data.maxHp * 100;
         this._progress_hp.setPercent(percent);
+
+        RoleBloodBar.setPercentChangeTo(percent,this._progress_hp_droping)
     }
 });
 
