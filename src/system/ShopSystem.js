@@ -44,12 +44,14 @@ var ShopSystem = SystemBase.extend({
             });
         }
         else {
-            LOG("buyGood purchase")
+            LOG("buyGood purchase");
             net_protocol_handlers.SEND_CMD_CS_SHOP_BUY_GOODS({
                 good_id: id,
                 count: num
             });
             //jsb.SdkManager.onPurchase(config.name, num, config.pay_cost);
+            sdk_manager.sendSdkCommand("TalkingDataGA", "onPurchase",
+                config.name+","+String(num)+","+String(config.pay_cost));
         }
     },
 
@@ -80,7 +82,7 @@ var ShopSystem = SystemBase.extend({
         }
 
         LOG("good id: {2}, order: {0}, platform_good_id: {1}".format(obj.order, config.platform_good_id, obj.good_id));
-        //jsb.SdkManager.charge(obj.order, config.platform_good_id || "");
+        jsb.SdkManager.charge(obj.order, config.platform_good_id || "");
     }
 });
 
