@@ -33,7 +33,7 @@ var RoleBloodBar = ui.GuiWidgetBase.extend({
         this._curValue = curValue_;
 
         var tmpPercent = this._curValue / this._maxValue * 100;
-        RoleBloodBar.setPercentChangeTo(Math.floor(tmpPercent),this._bloodBarPro,3);
+        RoleBloodBar.setPercentChangeTo(Math.floor(tmpPercent),this._bloodBarPro,5);
     }
 });
 
@@ -78,6 +78,6 @@ RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
         }
         loadNode_.setPercent(nextPer);
     }
-    loadNode_.schedule(updateBloodBar,1/30);
+    loadNode_.schedule(updateBloodBar,1/15);
 }
 
