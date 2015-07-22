@@ -7,6 +7,7 @@
 //
 
 #include "TalkingDataGameAnalyticsSdk.h"
+#include "GameUtils.h"
 
 #if  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "TalkingDataGameAnalytics/android/TDGAJniHelper.h"
@@ -112,6 +113,9 @@ void TalkingDataGameAnalyticsSdk::sdkCommand(const std::string &clazz, const std
         
     }
     else if(method == "onPurchase") {
+        std::vector<std::string> ret;
+        GameUtils::split(param, ",", ret);
+        onPurchase(ret[0].c_str(), atoi(ret[1].c_str()), atof(ret[2].c_str()));
         
     }
     else if(method == "onUse") {

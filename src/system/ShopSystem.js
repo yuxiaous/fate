@@ -49,9 +49,8 @@ var ShopSystem = SystemBase.extend({
                 good_id: id,
                 count: num
             });
-            //jsb.SdkManager.onPurchase(config.name, num, config.pay_cost);
             sdk_manager.sendSdkCommand("TalkingDataGA", "onPurchase",
-                config.name+","+String(num)+","+String(config.pay_cost));
+                config.name + "," + String(num) + "," +String(config.pay_cost));
         }
     },
 
@@ -80,9 +79,7 @@ var ShopSystem = SystemBase.extend({
         if(config == undefined) {
             return;
         }
-
-        LOG("good id: {2}, order: {0}, platform_good_id: {1}".format(obj.order, config.platform_good_id, obj.good_id));
-        jsb.SdkManager.charge(obj.order, config.platform_good_id || "");
+        sdk_manager.charge(obj.order, config.platform_good_id);
     }
 });
 

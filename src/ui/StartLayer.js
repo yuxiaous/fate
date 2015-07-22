@@ -46,7 +46,7 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     },
 
     onEnterGame: function() {
-        //jsb.SdkManager.setAccountName("Saber");
+        sdk_manager.sendSdkCommand("TalkingDataGA", "setAccountName", "Saber");
         this.pushScene(MainScene);
     },
 

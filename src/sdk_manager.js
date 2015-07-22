@@ -4,6 +4,17 @@
 
 
 var sdk_manager = {
+    charge: function(order, id) {
+        if(id == undefined) id = "";
+        
+        LOG("sdk_manager.charge, order: {0}, id: {1}".format(order, id));
+        if(order == undefined || order.length == 0) {
+            MessageBoxOk.show("购买订单");
+            return;
+        }
+        jsb.SdkManager.charge(order, id);
+    },
+
     sendSdkCommand: function(calzz, method, param) {
         if(param == undefined) param = "";
         jsb.SdkManager.sendSdkCommand(calzz, method, param);
