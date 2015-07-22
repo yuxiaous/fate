@@ -378,9 +378,11 @@ var SceneBase = lh.LHScene.extend({
             // lose
             end = true;
             this._isLostBattle = true;
+            this._operator.setHide(false);
         }
         else if(this._boss){
             if(this._boss.deathValue == true){
+                this._operator.setHide(false);
                 _.each(this._monsters, function(monster) {
                     monster.roleDataManager.hp = 0;
                     monster.setBloodBar();
