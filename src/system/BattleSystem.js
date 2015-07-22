@@ -124,10 +124,7 @@ var BattleSystem = SystemBase.extend({
             }
         }, this);
 
-        net_protocol_handlers.SEND_CMD_CS_USE_BATTLE_ITEM({
-            uid : uid,
-            num : obj.num
-        })
+        ItemSystem.instance.useItem(uid,obj.num);
     },
 
     batttleUseItemResult: function (obj) {

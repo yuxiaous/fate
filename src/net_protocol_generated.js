@@ -233,9 +233,11 @@ _BindFunc(503, function(obj) {
 
 // @protocol 物品使用结果
 // @param {uint32} result, 结果 0成功
+// @param {uint32} item_type, 1加血，2加蓝，3加血加蓝
 net_protocol_handlers.CMD_SC_ITEM_USE_RESULT = 1405;
 _BindFunc(1405, function(obj) {
 	cc.assert(obj.result != undefined, "CMD_SC_ITEM_USE_RESULT.result is undefined.");
+	cc.assert(obj.item_type != undefined, "CMD_SC_ITEM_USE_RESULT.item_type is undefined.");
 	net_protocol_handlers.ON_CMD_SC_ITEM_USE_RESULT(obj);
 });
 

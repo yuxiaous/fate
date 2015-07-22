@@ -22,8 +22,11 @@ item_server.ItemUseType = {
     AddMpPer :  6,  //增加MP
     AddHpMp :   7,  //增加HP 和 MP
     AddSkin:    8,  //角色套装
-    AddLive :   9,   //战斗复活
-    EntranceDaBaoJian : 10
+    AddLive :   9,   //战斗复活 复活币
+
+    EntranceDaBaoJian : 10,  //大保健礼包购买入口
+    SuperSkillCount : 11,   //大招次数
+    BattleRevive : 12       //战斗复活
 };
 
 
@@ -61,7 +64,8 @@ server.registerCallback(net_protocol_handlers.CMD_CS_ITEM_USE, function(obj) {
     }
 
     server.send(net_protocol_handlers.CMD_SC_ITEM_USE_RESULT, {
-        result: 0
+        result: 0,
+        item_type : config.result
     });
 });
 

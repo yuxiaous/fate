@@ -361,7 +361,8 @@
 		"desc": "物品使用结果",
 		"schemes":
 		[
-			["uint32", "result", "结果 0成功"]
+			["uint32", "result", "结果 0成功"],
+            ["uint32","item_type","1加血，2加蓝，3加血加蓝"]
 		]
 	},
 
