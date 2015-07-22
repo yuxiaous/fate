@@ -438,7 +438,6 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
     ctor : function (curBattleType_,endlessRound_) {
         this._super();
 
-        LOG("23345");
         this._curBattleType = curBattleType_ || SceneBase.Type.NormalType;
         this._endlessRound = endlessRound_ || 1;
     },

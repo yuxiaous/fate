@@ -119,6 +119,7 @@ var SceneBase = lh.LHScene.extend({
                 this._hero.roleActionManager.playAction(RoleAction.Type.STAND_UP);
                 this._isLostBattle = false;
                 this._hero.invincible();
+                this._operator.setHide(true);
                 this.schedule(this.battleObserver);
 
 
