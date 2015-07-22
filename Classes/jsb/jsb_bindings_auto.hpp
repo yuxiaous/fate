@@ -158,23 +158,16 @@ bool js_jsb_bindings_auto_SdkManager_constructor(JSContext *cx, uint32_t argc, j
 void js_jsb_bindings_auto_SdkManager_finalize(JSContext *cx, JSObject *obj);
 void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject global);
 void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj);
-bool js_jsb_bindings_auto_SdkManager_setAccountType(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_bindings_auto_SdkManager_setGender(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_onChargeResult(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_onPurchase(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_bindings_auto_SdkManager_setAccountName(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_charge(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_bindings_auto_SdkManager_setAge(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_setSdkCommandCallback(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_init(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_sendSdkCommand(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_onUse(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_bindings_auto_SdkManager_setGameServer(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_recvSdkCommand(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_login(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_bindings_auto_SdkManager_setAccount(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_SdkManager_setChargeCallback(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_bindings_auto_SdkManager_setLevel(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_GameUtils_class;
 extern JSObject *jsb_GameUtils_prototype;

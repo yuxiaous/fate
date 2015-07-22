@@ -324,6 +324,8 @@
 		DE36EFD51B25955E005B744E /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEFE1B25955E005B744E /* SneakyJoystickSkinnedBase.cpp */; };
 		DE48917E1B5D0E9A0097D3BD /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */; };
 		DE4891801B5D0EEF0097D3BD /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */; };
+		DE4891901B5F618F0097D3BD /* DeveloperSdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */; };
+		DE4891911B5F61C00097D3BD /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4891771B5D0B840097D3BD /* OpenUDID.m */; };
 		DE545DB91B4CE2FB00A91A14 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DB81B4CE2FB00A91A14 /* OpenGLES.framework */; };
 		DE545DBB1B4CE30200A91A14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DBA1B4CE30200A91A14 /* UIKit.framework */; };
 		DE545DBD1B4CE31700A91A14 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE545DBC1B4CE31700A91A14 /* QuartzCore.framework */; };
@@ -2318,9 +2320,11 @@
 				DE25C3731B317BA800A9AEC0 /* SneakyJoystick.cpp in Sources */,
 				DE25C3741B317BA800A9AEC0 /* BaseFactory.cpp in Sources */,
 				DE25C3751B317BA800A9AEC0 /* zero_copy_stream_impl_lite.cc in Sources */,
+				DE4891911B5F61C00097D3BD /* OpenUDID.m in Sources */,
 				DE25C3761B317BA800A9AEC0 /* PlayEnable_png.cpp in Sources */,
 				DE25C3771B317BA800A9AEC0 /* Protos.pb.cc in Sources */,
 				DE25C3781B317BA800A9AEC0 /* SneakyJoystickSkinnedBase.cpp in Sources */,
+				DE4891901B5F618F0097D3BD /* DeveloperSdk.cpp in Sources */,
 				DE25C3791B317BA800A9AEC0 /* DBCCArmatureNode.cpp in Sources */,
 				DE25C37A1B317BA800A9AEC0 /* JsonStorage.cpp in Sources */,
 				DE25C37B1B317BA800A9AEC0 /* atomicops_internals_x86_msvc.cc in Sources */,
@@ -2634,6 +2638,7 @@
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
 					SDK_YMTX_RECORD,
+					CHANNEL_DEVELOP,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
@@ -2646,7 +2651,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = fate_WeRec;
-				PROVISIONING_PROFILE = "7ce4175d-cd93-4f2b-9556-7bc07061df2f";
+				PROVISIONING_PROFILE = "2f2592ae-2c60-4985-9d13-0b7b1782136f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
@@ -2683,7 +2688,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = fate_WeRec;
-				PROVISIONING_PROFILE = "cce7e205-e848-4007-99dd-d8c6af4c1c93";
+				PROVISIONING_PROFILE = "e297bf5d-988a-4839-99b7-07ebc320ae90";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";

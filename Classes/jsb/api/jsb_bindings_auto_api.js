@@ -1042,26 +1042,6 @@ str
 jsb.SdkManager = {
 
 /**
- * @method setAccountType
- * @param {int} arg0
- */
-setAccountType : function (
-int 
-)
-{
-},
-
-/**
- * @method setGender
- * @param {int} arg0
- */
-setGender : function (
-int 
-)
-{
-},
-
-/**
  * @method onChargeResult
  * @param {int} arg0
  * @param {String} arg1
@@ -1088,16 +1068,6 @@ double
 },
 
 /**
- * @method setAccountName
- * @param {char} arg0
- */
-setAccountName : function (
-char 
-)
-{
-},
-
-/**
  * @method charge
  * @param {String} arg0
  * @param {String} arg1
@@ -1105,16 +1075,6 @@ char
 charge : function (
 str, 
 str 
-)
-{
-},
-
-/**
- * @method setAge
- * @param {int} arg0
- */
-setAge : function (
-int 
 )
 {
 },
@@ -1162,16 +1122,6 @@ int
 },
 
 /**
- * @method setGameServer
- * @param {char} arg0
- */
-setGameServer : function (
-char 
-)
-{
-},
-
-/**
  * @method recvSdkCommand
  * @param {String} arg0
  * @param {String} arg1
@@ -1192,31 +1142,11 @@ login : function (
 },
 
 /**
- * @method setAccount
- * @param {char} arg0
- */
-setAccount : function (
-char 
-)
-{
-},
-
-/**
  * @method setChargeCallback
  * @param {function} arg0
  */
 setChargeCallback : function (
 func 
-)
-{
-},
-
-/**
- * @method setLevel
- * @param {int} arg0
- */
-setLevel : function (
-int 
 )
 {
 },
