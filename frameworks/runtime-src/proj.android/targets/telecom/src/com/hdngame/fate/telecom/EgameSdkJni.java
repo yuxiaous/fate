@@ -24,7 +24,7 @@ public class EgameSdkJni {
     public static void init() {
         System.out.println("EgameSdkJni.init");
 
-        int GameId = 5018840;
+        int GameId = 5051359;
         int ChannelId = 10000000;
         try {
             Activity a = SdkManagerJni.activity;
@@ -66,16 +66,43 @@ public class EgameSdkJni {
     final static EgamePayListener listener = new EgamePayListener() {
         @Override
         public void paySuccess(Map map) {
+            System.out.println("支付成功");
             Toast.makeText(SdkManagerJni.activity, "支付成功", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void payFailed(Map params, int errorInt) {
-            Toast.makeText(SdkManagerJni.activity, "支付失败：错误代码："+errorInt, Toast.LENGTH_SHORT).show();
+            //    错误代码	错误描述
+            //    -2	未获得到实例，init重复调用，或与pay方法调用间隔过短
+            //    -10	外部SDK无法读取，检查工程及打好的apk的assets/egame文件夹内是否缺少文件
+            //    -11	打开输出文件错误,外部SDK无法解包
+            //    -12	MD5校验错误
+            //    -13	文件拷贝错误
+            //    -14	无法初始化实例
+            //    -100	Activity对象为空
+            //    -101	feeInfo.dat计费文件未找到或者数据读取异常
+            //    -102	无法读取当前应用信息
+            //    -103	应用信息校验失败，请检查包名及app_name是否和申报一致
+            //    -104	非电信用户
+            //    -106	计费金额错误
+            //    -200	初始化失败，无法进行计费
+            //    -201	计费回调对象为空
+            //    -202	计费道具别名错误
+            //    -203	渠道ID数据异常
+            //    -204	SERVICE_CODE数据异常
+            //    -205	自定义参数格式异常
+            //    -206	计费方法调用过快
+            //    -207	计费短信发送失败
+            //    -300	获取计费流水号网络异常
+            //    -301	获取计费流水号数据异常，检查open平台游戏状态是否正常
+
+            System.out.println("支付失败：错误代码：" + errorInt);
+            Toast.makeText(SdkManagerJni.activity, "支付失败：错误代码：" + errorInt, Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void payCancel(Map map) {
+            System.out.println("取消支付");
             Toast.makeText(SdkManagerJni.activity, "取消支付", Toast.LENGTH_SHORT).show();
         }
     };
