@@ -18,7 +18,7 @@ static std::set<Sdk*> _sdks;
 TalkingDataGameAnalyticsSdk talkingdatagameanalyticssdk;
 #endif
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || defined(CHANNEL_DEVELOP)
+#if defined(SDK_DEVELOPER) || defined(CHANNEL_DEVELOP) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
 #include "DeveloperSdk.h"
 DeveloperSdk developersdk;
 #endif
