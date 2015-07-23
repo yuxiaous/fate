@@ -217,6 +217,10 @@ var GiftBuyDetail = ui.GuiWindowBase.extend({
                 break;
             case GiftSystem.GiftType.Vip:
                 gift_detail_img = "ui_315.png";
+
+                if(util.getChannelId() == GameChannel.Telecom){
+                    gift_detail_img = "ui_363.png";
+                }
                 break;
         }
 
@@ -291,7 +295,6 @@ var EndlessSelected = ui.GuiWindowBase.extend({
         //}
 
         if(util.getChannelId() != GameChannel.CmccMm){
-            LOG("xxxxxxx");
             this._panel_1.setVisible(true);
 
             this._btn_challenge.setPosition(this._chargetPosNode.getPosition());
@@ -302,7 +305,6 @@ var EndlessSelected = ui.GuiWindowBase.extend({
 
         this._bindings = [
             notification.createBinding(notification.event.BATTLE_ENDLESS_BUY_FINISH, function (event,obj) {
-                LOG("111111111");
                 this.close();
                 ui.pushScene(new BattleEndlessScene(true) );
 
@@ -316,7 +318,6 @@ var EndlessSelected = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-        LOG("btn buy endless");
         if(UiEffect.blockShopItemWithRMB()){
             return;
         }
@@ -407,6 +408,11 @@ var VipGetDetail = ui.GuiWindowBase.extend({
     onEnter : function () {
         this._super();
         this._get_btn = this.seekWidgetByName("btn_get");
+        this._bg_img = this.seekWidgetByName("Image_1");
+
+        if(util.getChannelId() == GameChannel.Telecom){
+            this._bg_img.loadTexture("images/code_ui/ui_364.png");
+        }
 
         if(RewardSystem.instance._isGetVipDone){
            // this._get_btn.setEnable(false);
@@ -433,8 +439,12 @@ var VipGetDetail = ui.GuiWindowBase.extend({
     },
 
     onExit : function () {
-        this._super();
+
+        this._get_btn = null;
+        this._bg_img = null;
+
         notification.removeBinding(this._bindings);
+        this._super();
     },
 
     _on_btn_get : function(){
