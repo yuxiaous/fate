@@ -7,7 +7,42 @@ using namespace cocos2d;
 #define  CLASS_NAME "com/hdngame/fate/telecom/EgameSdkJni"
 
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+static std::string g_order;
+static int g_result;
+static bool g_confirm = false;
+
+extern "C" {
+
+    void Java_com_hdngame_fate_telecom_EgameSdkJni_onEgameChargeCallback(JNIEnv *env, jobject thiz, jint result)
+    {
+        cocos2d::log("Java_com_hdngame_fate_telecom_EgameSdkJni_onEgameChargeCallback");
+        g_result = result;
+        g_confirm = true;
+    }
+}
+
+static EgameSdk *instance = nullptr;
+
+EgameSdk::EgameSdk()
+{
+    instance = this;
+}
+
+EgameSdk *EgameSdk::getInstance()
+{
+    return instance;
+}
+
+void EgameSdk::update(float dt)
+{
+    if(g_confirm) {
+        onChargeCallback(g_result, g_order.c_str());
+        g_result = 0;
+        g_order.clear();
+        g_confirm = false;
+    }
+}
+
 void EgameSdk::activityOnCreate()
 {
     cocos2d::log("EgameSdk::activityOnCreate");
@@ -17,7 +52,6 @@ void EgameSdk::activityOnCreate()
         minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
     }
 }
-#endif
 
 void EgameSdk::charge(const std::string &order, const std::string &identifier)
 {
@@ -27,6 +61,8 @@ void EgameSdk::charge(const std::string &order, const std::string &identifier)
         onChargeCallback(1, order);
         return;
     }
+
+    g_order = order;
 
     JniMethodInfo minfo;
     if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;)V")) {

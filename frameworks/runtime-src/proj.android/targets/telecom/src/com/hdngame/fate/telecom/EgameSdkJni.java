@@ -68,6 +68,8 @@ public class EgameSdkJni {
         public void paySuccess(Map map) {
             System.out.println("支付成功");
             Toast.makeText(SdkManagerJni.activity, "支付成功", Toast.LENGTH_SHORT).show();
+
+            onEgameChargeCallback(0);
         }
 
         @Override
@@ -127,6 +129,6 @@ public class EgameSdkJni {
         });
     }
 
-//    public static native void onEgameChargeCallback(int result);
+    public static native void onEgameChargeCallback(int result);
 }
 

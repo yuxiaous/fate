@@ -8,6 +8,10 @@
 class EgameSdk : public Sdk, public SdkChargeProtocol
 {
 public:
+    EgameSdk();
+    static EgameSdk *getInstance();
+    virtual void update(float dt) override;
+
     virtual void charge(const std::string &order, const std::string &identifier) override;
 
     void moreGame();
