@@ -76,6 +76,11 @@
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/mmsmsbilling1.5.0.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/Multimode_UniPay_base.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/alipaysdk.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/MobileSecSdk.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/utdid4all-1.0.4.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

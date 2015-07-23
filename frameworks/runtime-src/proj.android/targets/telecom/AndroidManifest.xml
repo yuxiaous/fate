@@ -50,6 +50,17 @@
         </activity>
 
         <meta-data android:name="EGAME_CHANNEL" android:value="10000000"  />
+
+        <activity android:name="com.alipay.sdk.app.H5PayActivity"
+                  android:screenOrientation="behind"
+                  android:configChanges="orientation|keyboardHidden|navigation"
+                  android:exported="false">
+        </activity>
+        <activity android:name="com.alipay.sdk.auth.AuthActivity"
+                  android:screenOrientation="behind"
+                  android:configChanges="orientation|keyboardHidden|navigation"
+                  android:exported="false">
+        </activity>
         <!-- 电信爱游戏结束 -->
 
     </application>
