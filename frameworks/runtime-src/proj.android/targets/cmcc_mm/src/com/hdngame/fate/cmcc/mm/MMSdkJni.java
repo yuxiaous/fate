@@ -3,7 +3,6 @@ package com.hdngame.fate.cmcc.mm;
 import com.hdngame.fate.SdkManagerJni;
 
 import mm.purchasesdk.Purchase;
-import mm.purchasesdk.PurchaseCode;
 import android.os.Handler;
 
 /**
@@ -19,31 +18,44 @@ public class MMSdkJni {
 
         listener = new IAPListener();
         purchase = Purchase.getInstance();
-        purchase.setAppInfo(appid, appkey);
-        purchase.init(SdkManagerJni.activity, listener);
-    }
 
-    private static String _order = "";
-    public static void charge(String order, String identifier) {
-        System.out.println("MMSdkJni.charge");
+        try {
+            purchase.setAppInfo(appid, appkey);
 
-        if(_order.length() == 0) {
-            System.out.println(order+":"+identifier);
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
 
-            _order = order;
-            purchase.order(SdkManagerJni.activity, identifier, listener);
+        try {
+            purchase.init(SdkManagerJni.activity, listener);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    public static void handleResult(int code) {
-        if(_order.length() > 0) {
-            System.out.println("MMSdkJni.handleResult, code: " + code);
-            int result = (code == PurchaseCode.ORDER_OK || code == PurchaseCode.AUTH_OK || code == PurchaseCode.WEAK_ORDER_OK) ? 0 : 1;
+    private static String _paycode = "";
+    private static Handler _handler = new Handler();
 
-            onMmChargeCallback(result, _order);
-            _order = "";
-        }
+    public static void order(String paycode) {
+        System.out.println("MMSdkJni.order 1, paycode: " + paycode);
+        _paycode = paycode;
+
+        _handler.post(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("MMSdkJni.order 2, paycode: " + _paycode);
+
+                try {
+                    purchase.order(SdkManagerJni.activity, _paycode, listener);
+                } catch (Exception e1) {
+                    //
+                    e1.printStackTrace();
+                    return;
+                }
+            }
+        });
     }
 
-    private static native void onMmChargeCallback(int result, String order);
+    public static native void onMmChargeCallback(int result);
 }

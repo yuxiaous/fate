@@ -4,7 +4,9 @@ import java.util.HashMap;
 
 import mm.purchasesdk.OnPurchaseListener;
 import mm.purchasesdk.Purchase;
-import mm.purchasesdk.PurchaseCode;
+import mm.purchasesdk.core.PurchaseCode;
+import android.content.Context;
+import android.os.Message;
 import android.util.Log;
 
 public class IAPListener implements OnPurchaseListener {
@@ -31,8 +33,8 @@ public class IAPListener implements OnPurchaseListener {
 	}
 
 	@Override
-	public void onInitFinish(int code) {
-		Log.d(TAG, "onInitFinish, code = " + code);
+	public void onInitFinish(String code) {
+		Log.d(TAG, "Init finish, status code = " + code);
 //		Message message = iapHandler.obtainMessage(IAPHandler.INIT_FINISH);
 //		String result = "初始化结果：" + Purchase.getReason(code);
 //		message.obj = result;
@@ -40,18 +42,23 @@ public class IAPListener implements OnPurchaseListener {
 	}
 
 	@Override
-	public void onBillingFinish(int code, HashMap arg1) {
+	public void onBillingFinish(String code, HashMap arg1) {
 		Log.d(TAG, "billing finish, status code = " + code);
 		String result = "订购结果：订购成功";
 
-		if (code == PurchaseCode.ORDER_OK || code == PurchaseCode.AUTH_OK || code == PurchaseCode.WEAK_ORDER_OK) {
-			// 商品购买成功或者已经购买。 此时会返回商品的paycode，orderID,以及剩余时间(租赁类型商品)
+		if ( PurchaseCode.BILL_ORDER_OK.equalsIgnoreCase( code )
+				|| PurchaseCode.AUTH_OK.equalsIgnoreCase( code )
+				|| PurchaseCode.WEAK_ORDER_OK.equalsIgnoreCase( code ) ) {
+
 			String orderID = null; // 此次订购的orderID
 			String paycode = null; // 商品的paycode
 			String leftday = null; // 商品的有效期(仅租赁类型商品有效)
 			String tradeID = null; // 商品的交易 ID，用户可以根据这个交易ID，查询商品是否已经交易
-
 			String ordertype = null;
+
+			/**
+			 * 商品购买成功或者已经购买。 此时会返回商品的paycode，orderID,以及剩余时间(租赁类型商品)
+			 */
 			if (arg1 != null) {
 				leftday = (String) arg1.get(OnPurchaseListener.LEFTDAY);
 				if (leftday != null && leftday.trim().length() != 0) {
@@ -75,23 +82,25 @@ public class IAPListener implements OnPurchaseListener {
 				}
 			}
 
-
+			MMSdkJni.onMmChargeCallback(0);
 
 		} else {
-			// 订购失败。
+			/**
+			 * 表示订购失败。
+			 */
 			result = "订购结果：" + Purchase.getReason(code);
+
+			MMSdkJni.onMmChargeCallback(1);
 		}
 		System.out.println(result);
-
-		MMSdkJni.handleResult(code);
 	}
 
 
 
 	@Override
-	public void onQueryFinish(int code, HashMap arg1) {
+	public void onQueryFinish(String code, HashMap arg1) {
 		Log.d(TAG, "license finish, status code = " + code);
-//		Message message = iapHandler.obtainMessage(IAPHandler.QUERY_FINISH);
+//		iapHandler.obtainMessage(IAPHandler.QUERY_FINISH);
 //		String result = "查询成功,该商品已购买";
 //		// 此次订购的orderID
 //		String orderID = null;
@@ -99,7 +108,7 @@ public class IAPListener implements OnPurchaseListener {
 //		String paycode = null;
 //		// 商品的有效期(仅租赁类型商品有效)
 //		String leftday = null;
-//		if (code != PurchaseCode.QUERY_OK) {
+//		if (code.compareTo(PurchaseCode.QUERY_OK) != 0) {
 //			/**
 //			 * 查询不到商品购买的相关信息
 //			 */
@@ -127,7 +136,7 @@ public class IAPListener implements OnPurchaseListener {
 	}
 
 	@Override
-	public void onUnsubscribeFinish(int code) {
+	public void onUnsubscribeFinish(String code) {
 		// TODO Auto-generated method stub
 		String result = "退订结果：" + Purchase.getReason(code);
 		System.out.println(result);

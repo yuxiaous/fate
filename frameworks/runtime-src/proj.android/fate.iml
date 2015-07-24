@@ -27,5 +27,6 @@
     <orderEntry type="library" name="MobileSecSdk" level="project" />
     <orderEntry type="library" name="cn.egame.terminal.paysdk" level="project" />
     <orderEntry type="library" name="egame.log_20150625_out_release" level="project" />
+    <orderEntry type="library" name="mmbilling.3.1.7" level="project" />
   </component>
 </module>
