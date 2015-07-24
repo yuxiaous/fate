@@ -74,7 +74,61 @@ void AndGameSdk::charge(const std::string &order, const std::string &identifier)
     }
 }
 
+void AndGameSdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
+{
+    if(clazz != "AndGame"){
+        return;
+    }
+    if(method == "exit") {
+        exit();
+    }
+    else if(method == "showMoreGames") {
+        showMoreGames();
+    }
+    else if(method == "doScreenShotShare") {
+        doScreenShotShare();
+    }
+}
+
 bool AndGameSdk::isMusicEnabled()
 {
+    cocos2d::log("AndGameSdk::isMusicEnabled");
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "isMusicEnabled", "()Z")) {
+        bool ret = minfo.env->CallStaticBooleanMethod(minfo.classID, minfo.methodID);
+        cocos2d::log("isMusicEnabled: %d", ret);
+        return ret;
+    }
     return true;
 }
+
+void AndGameSdk::exit()
+{
+    cocos2d::log("AndGameSdk::exit");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "exit", "()V")) {
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+    }
+}
+
+void AndGameSdk::showMoreGames()
+{
+    cocos2d::log("AndGameSdk::showMoreGames");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "showMoreGames", "()V")) {
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+    }
+}
+
+void AndGameSdk::doScreenShotShare()
+{
+    cocos2d::log("AndGameSdk::doScreenShotShare");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "doScreenShotShare", "()V")) {
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+    }
+}
+

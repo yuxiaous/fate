@@ -1,12 +1,15 @@
 package com.hdngame.fate.cmcc.and;
 
+import android.net.Uri;
 import android.widget.Toast;
 
 import com.hdngame.fate.SdkManagerJni;
 
 import cn.cmgame.billing.api.BillingResult;
 import cn.cmgame.billing.api.GameInterface;
-import cn.cmgame.billing.api.GameInterface.IPayCallback;
+
+import java.lang.Override;
+import java.lang.String;
 
 public class AndGameSdkJni {
 
@@ -29,9 +32,14 @@ public class AndGameSdkJni {
 		}
     }
 
-	final static IPayCallback payCallback = new IPayCallback() {
+	final static GameInterface.IPayCallback payCallback = new GameInterface.IPayCallback() {
 		@Override
 		public void onResult(int resultCode, String billingIndex, Object obj) {
+			System.out.println("AndGameSdkJni.charge IPayCallback" +
+					", code: " + resultCode +
+					", index: " + billingIndex +
+					", obj: " + obj.toString());
+
 			String result = "";
 			switch (resultCode) {
 				case BillingResult.SUCCESS:
@@ -41,7 +49,7 @@ public class AndGameSdkJni {
 					result = "购买商品【" + billingIndex + "】失败！";
 					break;
 				default:
-					result = "购买商品【" + billingIndex + "】取消！" + obj.toString();
+					result = "购买商品【" + billingIndex + "】取消！";
 					break;
 			}
 			Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();
@@ -62,13 +70,43 @@ public class AndGameSdkJni {
 
 	private static native void onAndChargeCallback(int result, String order);
 	
-	public static boolean isMusicOn() {
+	public static boolean isMusicEnabled() {
+		System.out.println("AndGameSdkJni.isMusicEnabled");
 		return GameInterface.isMusicEnabled();
 	}
 	
 	public static void showMoreGames() {
+		System.out.println("AndGameSdkJni.showMoreGames");
 		GameInterface.viewMoreGames(SdkManagerJni.activity);
 	}
 	
-       
+	public static void exit() {
+		System.out.println("AndGameSdkJni.exit");
+		GameInterface.exit(SdkManagerJni.activity, new GameInterface.GameExitCallback() {
+			@Override
+			public void onConfirmExit() {
+				System.out.println("AndGameSdkJni.exit onConfirmExit");
+			}
+
+			@Override
+			public void onCancelExit() {
+				System.out.println("AndGameSdkJni.exit onCancelExit");
+			}
+		});
+	}
+
+//	public static boolean getActivateFlag(String billingIndex) {
+//		System.out.println("AndGameSdkJni.getActivateFlag");
+//		return GameInterface.getActivateFlag(billingIndex);
+//	}
+
+//	public static int getGamePlayerAuthState() {
+//		System.out.println("AndGameSdkJni.getGamePlayerAuthState");
+//		return GameInterface.getGamePlayerAuthState();
+//	}
+
+	public static void doScreenShotShare() {
+		System.out.println("AndGameSdkJni.doScreenShotShare");
+		GameInterface.doScreenShotShare(SdkManagerJni.activity, null);
+	}
 }
