@@ -42,6 +42,11 @@ void TalkingDataGameAnalyticsSdk::init()
     const char *channel = "CmccMm";
 #elif defined(CHANNEL_CMCC_AND)
     const char *channel = "CmccAnd";
+#elif defined(CHANNEL_UNICOM)
+    const char *channel = "Unicom";
+#elif defined(CHANNEL_TELECOM)
+    const char *channel = "Egame";
+    
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     const char *channel = "IosDevelop";
 #elif  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
