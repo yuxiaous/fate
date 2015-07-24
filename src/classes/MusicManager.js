@@ -5,48 +5,82 @@
 
 var MusicManager = (function () {
     function Singleton(){
-        BGM_KEY = "shilei_background_music_key";
-        EFF_KEY = "shilei_effect_music_key";
+        BGM_KEY = "background_music_volume_key";
+        EFF_KEY = "effect_music_volume_key";
+
+        BGM_OPEN = "background_music_is_open_key";
+        EFF_OPEN = "effect_music_is_open_key";
+
+        MUSIC_FATE = "fate_music_set";
 
         this.curPlayType = 0;
 
-        this.setBackgroundMusicOn = function(isOn_){
-            if(isOn_){
-                this.setBackgroundVolumn(1);
-            }
-            else{
-                this.setBackgroundVolumn(0);
-            }
+        this.setBackgroundMusicVolume = function(volume_){
+            //if(isOn_){
+            //    this.setBackgroundVolumn(1);
+            //}
+            //else{
+            //    this.setBackgroundVolumn(0);
+            //}
+            this.setBackgroundVolumn(volume_);
         }
 
-        this.setEffectOn = function (isOn_) {
-            if(isOn_){
-                this.serEffectVolumn(1);
-            }
-            else{
-                this.serEffectVolumn(0);
-            }
+        this.setEffectVolume = function (volume_) {
+            //if(isOn_){
+            //    this.serEffectVolumn(1);
+            //}
+            //else{
+            //    this.serEffectVolumn(0);
+            //}
+            this.serEffectVolumn(volume_);
+
         }
 
         /*
         *   volumn 0.0 -> 1.0
         * */
-        this.setBackgroundVolumn = function(volumn_){
-            cc.sys.localStorage.setItem(BGM_KEY,String(volumn_));
+        this.setBackgroundVolumn = function(volume_){
+            //cc.sys.localStorage.setItem(BGM_KEY,String(volumn_));
+
+            jsb.JsonStorage.GetInstance(MUSIC_FATE).setDoubleForKey(BGM_KEY,volume_)
+            jsb.JsonStorage.GetInstance(MUSIC_FATE).flush();
         }
 
-        this.serEffectVolumn = function(volumn_){
-            cc.sys.localStorage.setItem(EFF_KEY,String(volumn_));
+        this.serEffectVolumn = function(volume_){
+            //cc.sys.localStorage.setItem(EFF_KEY,String(volumn_));
+            jsb.JsonStorage.GetInstance(MUSIC_FATE).setDoubleForKey(EFF_KEY,volume_)
+            jsb.JsonStorage.GetInstance(MUSIC_FATE).flush();
         }
 
         this.getBackgroundVolume = function () {
-            return Number(cc.sys.localStorage.getItem(BGM_KEY));
+
+            //return Number(cc.sys.localStorage.getItem(BGM_KEY));
+            return jsb.JsonStorage.GetInstance(MUSIC_FATE).getDoubleForKey(BGM_KEY);
         }
 
         this.getEffectVolume = function () {
-            return Number(cc.sys.localStorage.getItem(EFF_KEY));
+            //return Number(cc.sys.localStorage.getItem(EFF_KEY));
+            return jsb.JsonStorage.GetInstance(MUSIC_FATE).getDoubleForKey(EFF_KEY);
         }
-        
+
+        this.setBackgroundMusicIsOpen = function (isOpen_) {
+            jsb.JsonStorage.GetInstance(MUSIC_FATE).setBoolForKey(BGM_OPEN,isOpen_);
+            jsb.JsonStorage.GetInstance(MUSIC_FATE).flush();
+        },
+
+        this.setEffectMusicIsOpen = function (isOpen_) {
+            jsb.JsonStorage.GetInstance(MUSIC_FATE).setBoolForKey(EFF_OPEN,isOpen_)
+            jsb.JsonStorage.GetInstance(MUSIC_FATE).flush();
+        },
+
+       this.getBackgroundIsOpen = function () {
+           return jsb.JsonStorage.GetInstance(MUSIC_FATE).getBoolForKey(BGM_OPEN);
+       },
+
+       this.getEffectIsOpen = function () {
+           return jsb.JsonStorage.GetInstance(MUSIC_FATE).getBoolForKey(EFF_OPEN);
+       },
+
         this.playBackgroundMusic = function (musicType_,loop_) {
             if(musicType_){
                 if(this.curPlayType && this.curPlayType == musicType_){
@@ -60,9 +94,15 @@ var MusicManager = (function () {
                 if(loop_ == undefined){
                     loop_ = true;
                 }
-                LOG("mmmmmm volume = " + this.getBackgroundVolume());
+                //LOG("mmmmmm volume = " + this.getBackgroundVolume());
+                //LOG("backgroun id open = " + this.getBackgroundIsOpen());
                 cc.audioEngine.playMusic(musicType_,loop_);
-                //cc.audioEngine.setMusicVolume(this.getBackgroundVolume());
+                if(this.getBackgroundIsOpen()){
+                    cc.audioEngine.setMusicVolume(this.getBackgroundVolume());
+                }
+                else{
+                    this.stopBackgroundMusic();
+                }
             }
         }
 
@@ -73,7 +113,13 @@ var MusicManager = (function () {
         
         this.playEffectMusic = function (musicType_) {
             cc.audioEngine.playEffect(musicType_);
-           // cc.audioEngine.setEffectsVolume(this.getEffectVolume());
+            //LOG("effect music is open = " + this.getEffectIsOpen());
+            if(this.getEffectIsOpen()){
+                cc.audioEngine.setEffectsVolume(this.getEffectVolume());
+            }
+            else{
+                cc.audioEngine.stopAllEffects();
+            }
         }
     }
 
