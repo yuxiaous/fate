@@ -43,13 +43,13 @@ public class AndGameSdkJni {
 			String result = "";
 			switch (resultCode) {
 				case BillingResult.SUCCESS:
-					result = "购买商品【" + billingIndex + "】成功！";
+					result = "购买成功！";
 					break;
 				case BillingResult.FAILED:
-					result = "购买商品【" + billingIndex + "】失败！";
+					result = "购买失败！";
 					break;
 				default:
-					result = "购买商品【" + billingIndex + "】取消！";
+					result = "取消购买！";
 					break;
 			}
 			Toast.makeText(SdkManagerJni.activity, result, Toast.LENGTH_SHORT).show();
@@ -60,8 +60,6 @@ public class AndGameSdkJni {
 	
 	private static void handleResult(int resultCode, String billingIndex) {
 		if(_order.length() > 0) {
-			System.out.println("AndGameSdkJni.handleResult");
-
 			int result = (resultCode == BillingResult.SUCCESS) ? 0 : 1;
 			onAndChargeCallback(result, _order);
 			_order = "";
