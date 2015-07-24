@@ -3,6 +3,7 @@
 #include "platform/android/jni/JniHelper.h"
 #include "platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
 #include <jni.h>
+#include "JsonStorage.h"
 
 using namespace cocos2d;
 
@@ -47,6 +48,11 @@ void AndGameSdk::init()
     if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
         minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
     }
+
+    bool enable = isMusicEnabled();
+    JsonStorage *storage = JsonStorage::GetInstance("setting.json");
+    storage->setBoolForKey("background_music_is_open_key", enable);
+    storage->setBoolForKey("effect_music_is_open_key", enable);
 }
 
 void AndGameSdk::update(float dt)

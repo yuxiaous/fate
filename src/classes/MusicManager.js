@@ -23,7 +23,7 @@ var MusicManager = (function () {
             //    this.setBackgroundVolumn(0);
             //}
             this.setBackgroundVolumn(volume_);
-        }
+        };
 
         this.setEffectVolume = function (volume_) {
             //if(isOn_){
@@ -34,7 +34,7 @@ var MusicManager = (function () {
             //}
             this.serEffectVolumn(volume_);
 
-        }
+        };
 
         /*
         *   volumn 0.0 -> 1.0
@@ -44,42 +44,42 @@ var MusicManager = (function () {
 
             jsb.JsonStorage.GetInstance(FATE_SETTING).setDoubleForKey(BGM_KEY,volume_)
             jsb.JsonStorage.GetInstance(FATE_SETTING).flush();
-        }
+        };
 
         this.serEffectVolumn = function(volume_){
             //cc.sys.localStorage.setItem(EFF_KEY,String(volumn_));
             jsb.JsonStorage.GetInstance(FATE_SETTING).setDoubleForKey(EFF_KEY,volume_)
             jsb.JsonStorage.GetInstance(FATE_SETTING).flush();
-        }
+        };
 
         this.getBackgroundVolume = function () {
 
             //return Number(cc.sys.localStorage.getItem(BGM_KEY));
             return jsb.JsonStorage.GetInstance(FATE_SETTING).getDoubleForKey(BGM_KEY);
-        }
+        };
 
         this.getEffectVolume = function () {
             //return Number(cc.sys.localStorage.getItem(EFF_KEY));
             return jsb.JsonStorage.GetInstance(FATE_SETTING).getDoubleForKey(EFF_KEY);
-        }
+        };
 
         this.setBackgroundMusicIsOpen = function (isOpen_) {
             jsb.JsonStorage.GetInstance(FATE_SETTING).setBoolForKey(BGM_OPEN,isOpen_);
             jsb.JsonStorage.GetInstance(FATE_SETTING).flush();
-        },
+        };
 
         this.setEffectMusicIsOpen = function (isOpen_) {
-            jsb.JsonStorage.GetInstance(FATE_SETTING).setBoolForKey(EFF_OPEN,isOpen_)
+            jsb.JsonStorage.GetInstance(FATE_SETTING).setBoolForKey(EFF_OPEN,isOpen_);
             jsb.JsonStorage.GetInstance(FATE_SETTING).flush();
-        },
+        };
 
        this.getBackgroundIsOpen = function () {
-           return jsb.JsonStorage.GetInstance(FATE_SETTING).getBoolForKey(BGM_OPEN);
-       },
+           return jsb.JsonStorage.GetInstance(FATE_SETTING).getBoolForKey(BGM_OPEN, true);
+       };
 
        this.getEffectIsOpen = function () {
-           return jsb.JsonStorage.GetInstance(FATE_SETTING).getBoolForKey(EFF_OPEN);
-       },
+           return jsb.JsonStorage.GetInstance(FATE_SETTING).getBoolForKey(EFF_OPEN, true);
+       };
 
         this.playBackgroundMusic = function (musicType_,loop_) {
             if(musicType_){
@@ -104,12 +104,12 @@ var MusicManager = (function () {
                     this.stopBackgroundMusic();
                 }
             }
-        }
+        };
 
         this.stopBackgroundMusic = function () {
             this.curPlayType = 0;
             cc.audioEngine.stopMusic();
-        }
+        };
         
         this.playEffectMusic = function (musicType_) {
             cc.audioEngine.playEffect(musicType_);
@@ -120,7 +120,7 @@ var MusicManager = (function () {
             else{
                 cc.audioEngine.stopAllEffects();
             }
-        }
+        };
     }
 
     var instance ;
