@@ -11,7 +11,7 @@ var MusicManager = (function () {
         BGM_OPEN = "background_music_is_open_key";
         EFF_OPEN = "effect_music_is_open_key";
 
-        MUSIC_FATE = "fate_music_set";
+        FATE_SETTING = "setting.json";
 
         this.curPlayType = 0;
 
@@ -42,43 +42,43 @@ var MusicManager = (function () {
         this.setBackgroundVolumn = function(volume_){
             //cc.sys.localStorage.setItem(BGM_KEY,String(volumn_));
 
-            jsb.JsonStorage.GetInstance(MUSIC_FATE).setDoubleForKey(BGM_KEY,volume_)
-            jsb.JsonStorage.GetInstance(MUSIC_FATE).flush();
+            jsb.JsonStorage.GetInstance(FATE_SETTING).setDoubleForKey(BGM_KEY,volume_)
+            jsb.JsonStorage.GetInstance(FATE_SETTING).flush();
         }
 
         this.serEffectVolumn = function(volume_){
             //cc.sys.localStorage.setItem(EFF_KEY,String(volumn_));
-            jsb.JsonStorage.GetInstance(MUSIC_FATE).setDoubleForKey(EFF_KEY,volume_)
-            jsb.JsonStorage.GetInstance(MUSIC_FATE).flush();
+            jsb.JsonStorage.GetInstance(FATE_SETTING).setDoubleForKey(EFF_KEY,volume_)
+            jsb.JsonStorage.GetInstance(FATE_SETTING).flush();
         }
 
         this.getBackgroundVolume = function () {
 
             //return Number(cc.sys.localStorage.getItem(BGM_KEY));
-            return jsb.JsonStorage.GetInstance(MUSIC_FATE).getDoubleForKey(BGM_KEY);
+            return jsb.JsonStorage.GetInstance(FATE_SETTING).getDoubleForKey(BGM_KEY);
         }
 
         this.getEffectVolume = function () {
             //return Number(cc.sys.localStorage.getItem(EFF_KEY));
-            return jsb.JsonStorage.GetInstance(MUSIC_FATE).getDoubleForKey(EFF_KEY);
+            return jsb.JsonStorage.GetInstance(FATE_SETTING).getDoubleForKey(EFF_KEY);
         }
 
         this.setBackgroundMusicIsOpen = function (isOpen_) {
-            jsb.JsonStorage.GetInstance(MUSIC_FATE).setBoolForKey(BGM_OPEN,isOpen_);
-            jsb.JsonStorage.GetInstance(MUSIC_FATE).flush();
+            jsb.JsonStorage.GetInstance(FATE_SETTING).setBoolForKey(BGM_OPEN,isOpen_);
+            jsb.JsonStorage.GetInstance(FATE_SETTING).flush();
         },
 
         this.setEffectMusicIsOpen = function (isOpen_) {
-            jsb.JsonStorage.GetInstance(MUSIC_FATE).setBoolForKey(EFF_OPEN,isOpen_)
-            jsb.JsonStorage.GetInstance(MUSIC_FATE).flush();
+            jsb.JsonStorage.GetInstance(FATE_SETTING).setBoolForKey(EFF_OPEN,isOpen_)
+            jsb.JsonStorage.GetInstance(FATE_SETTING).flush();
         },
 
        this.getBackgroundIsOpen = function () {
-           return jsb.JsonStorage.GetInstance(MUSIC_FATE).getBoolForKey(BGM_OPEN);
+           return jsb.JsonStorage.GetInstance(FATE_SETTING).getBoolForKey(BGM_OPEN);
        },
 
        this.getEffectIsOpen = function () {
-           return jsb.JsonStorage.GetInstance(MUSIC_FATE).getBoolForKey(EFF_OPEN);
+           return jsb.JsonStorage.GetInstance(FATE_SETTING).getBoolForKey(EFF_OPEN);
        },
 
         this.playBackgroundMusic = function (musicType_,loop_) {
