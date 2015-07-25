@@ -1,4 +1,4 @@
-package com.hdngame.fate.cmcc.mm;
+package com.hdngame.fate.mm;
 
 import android.app.Activity;
 import android.app.AlertDialog;

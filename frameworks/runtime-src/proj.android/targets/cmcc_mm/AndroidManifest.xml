@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.hdngame.fate.cmcc.mm"
+      package="com.hdngame.fate.mm"
       android:versionCode="1"
       android:versionName="1.0"
       android:installLocation="auto">
@@ -34,7 +34,7 @@
 
             <!-- android:process="mm.iapServices" > -->
             <intent-filter android:priority="313" >
-                <action android:name="com.hdngame.fate.cmcc.mm.purchaseservice.BIND" />
+                <action android:name="com.hdngame.fate.mm.purchaseservice.BIND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -46,7 +46,7 @@
                 android:configChanges="orientation|keyboardHidden"
                 android:theme="@android:style/Theme.Translucent" >
             <intent-filter android:priority="313" >
-                <action android:name="com.hdngame.fate.cmcc.mm.com.mmiap.activity" />
+                <action android:name="com.hdngame.fate.mm.com.mmiap.activity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

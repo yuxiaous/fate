@@ -6,7 +6,7 @@
 
 using namespace cocos2d;
 
-#define  CLASS_NAME "com/hdngame/fate/cmcc/mm/MMSdkJni"
+#define  CLASS_NAME "com/hdngame/fate/mm/MMSdkJni"
 
 
 //计费点代码	 商品名称
@@ -32,9 +32,9 @@ static bool g_confirm = false;
 
 extern "C" {
 
-    void Java_com_hdngame_fate_cmcc_mm_MMSdkJni_onMmChargeCallback(JNIEnv *env, jobject thiz, jint result)
+    void Java_com_hdngame_fate_mm_MMSdkJni_onMmChargeCallback(JNIEnv *env, jobject thiz, jint result)
     {
-        cocos2d::log("Java_com_hdngame_fate_cmcc_mm_MMSdkJni_onMmChargeCallback");
+        cocos2d::log("Java_com_hdngame_fate_mm_MMSdkJni_onMmChargeCallback");
         g_result = result;
         g_confirm = true;
 //        MMSdk::getInstance()->onChargeCallback(result, order.c_str());
