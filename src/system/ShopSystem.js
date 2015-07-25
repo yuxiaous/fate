@@ -105,12 +105,20 @@ var ShopSystem = SystemBase.extend({
 ShopSystem.getShopPlatformId = function() {
     var channel_id = util.getChannelId();
     switch (channel_id) {
-        case GameChannel.AppStore: return 2;
-        case GameChannel.CmccAnd: return 4;
-        case GameChannel.CmccMm: return 3;
-        case GameChannel.Telecom: return 6;
-        case GameChannel.Unicom: return 5;
-        default : return 1;
+        case GameChannel.AppStore:
+            return 2;
+        case GameChannel.CmccAnd:
+            return 4;
+        case GameChannel.CmccMm:
+        case GameChannel.Mzw:
+        case GameChannel['4399']:
+            return 3;
+        case GameChannel.Telecom:
+            return 6;
+        case GameChannel.Unicom:
+            return 5;
+        default :
+            return 1;
     }
 };
 

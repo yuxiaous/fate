@@ -134,7 +134,9 @@ var GameChannel = {
     CmccAnd: 2,
     CmccMm: 3,
     Telecom: 4,
-    Unicom: 5
+    Unicom: 5,
+    Mzw: 6,
+    "4399": 7
 };
 
 var LOG = util.log;
