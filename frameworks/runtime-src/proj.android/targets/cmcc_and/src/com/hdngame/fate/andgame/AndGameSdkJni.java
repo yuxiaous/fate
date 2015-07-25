@@ -1,4 +1,4 @@
-package com.hdngame.fate.cmcc.and;
+package com.hdngame.fate.andgame;
 
 import android.net.Uri;
 import android.widget.Toast;
