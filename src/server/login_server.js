@@ -50,6 +50,10 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
     // start player server
     server_manager.flush();
     server_manager.end();
+
+    database.init("saber");
+    database.verify(obj.token + "saber");
+
     server_manager.start();
 
     server.send(net_protocol_handlers.CMD_SC_INIT_BEGIN);

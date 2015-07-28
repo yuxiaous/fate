@@ -18,8 +18,6 @@ var server_manager = {
             }
         }
 
-        database.init("saber");
-
         addSubServer(player_server);
         addSubServer(gm_server);
         addSubServer(map_server);
