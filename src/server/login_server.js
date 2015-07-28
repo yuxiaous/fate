@@ -52,7 +52,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
     server_manager.end();
 
     database.init("saber");
-    database.verify(obj.token + "saber");
+    database.verify(hex_md5(obj.token + "saber"));
 
     server_manager.start();
 

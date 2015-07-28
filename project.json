@@ -21,6 +21,7 @@
     "src/module/underscore.js",
     "src/module/GameSession.js",
     "src/module/base64.js",
+    "src/module/md5.js",
     "src/module/Math.uuid.js",
 
     "config/modeldb.js",
