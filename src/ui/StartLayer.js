@@ -19,7 +19,8 @@ var StartLayerScene = ui.GuiSceneBase.extend({
             sp_bg: this.seekWidgetByName("sp_background"),
             sp_touch: this.seekWidgetByName("Sprite_1"),
             about_btn : this.seekWidgetByName("btn_about"),
-            btn_more_game: this.seekWidgetByName("btn_more_game")
+            btn_more_game: this.seekWidgetByName("btn_more_game"),
+            btn_exit: this.seekWidgetByName("btn_exit")
         };
 
         // 电信渠道显示
@@ -29,6 +30,9 @@ var StartLayerScene = ui.GuiSceneBase.extend({
 
         // 更多游戏按钮
         this._ui.btn_more_game.setVisible(util.getChannelId() == GameChannel.CmccAnd);
+
+        // 退出按钮
+        this._ui.btn_exit.setVisible(cc.sys.os == cc.sys.OS_ANDROID);
 
         this._bindings = [
             notification.createBinding(notification.event.INIT_END, this.onEnterGame, this)
