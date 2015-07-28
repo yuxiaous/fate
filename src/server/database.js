@@ -14,7 +14,8 @@ var database = {
     },
 
     checkout: function(key, default_obj) {
-        var code = cc.sys.localStorage.getItem(key);
+        var skey = this.base64.encode(key);
+        var code = cc.sys.localStorage.getItem(skey);
         if(code && code.length > 0) {
             var json = this.base64.decode(code);
             return JSON.parse(json);
@@ -26,7 +27,8 @@ var database = {
         if(key && obj) {
             var json = JSON.stringify(obj);
             var code = this.base64.encode(json);
-            cc.sys.localStorage.setItem(key, code);
+            var skey = this.base64.encode(key);
+            cc.sys.localStorage.setItem(skey, code);
         }
     }
 };

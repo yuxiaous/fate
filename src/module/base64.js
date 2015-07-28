@@ -11,7 +11,7 @@
 function Base64() {
  
 	// private property
-	this._keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=hdngame";
+	this._keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ+abcdefghijklmnopqrstuvwxyz/0123456789=hdngame";
  
 	// public method for encoding
 	this.encode = function (input) {
