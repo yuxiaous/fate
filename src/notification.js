@@ -123,6 +123,8 @@ notification.event = {
 
     BATTLE_ENDLESS_BUY_FINISH : 608,
     BATTLE_RECOVER_STATE : 609,
+    BATTLE_STOP_STATE : 610,
+
 
     SKIN: 700,
     SKIN_INFO: 701,

@@ -43,6 +43,9 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
             notification.createBinding(notification.event.ITEM_INFO, function () {
                 this.refreshBattleData();
             }, this),
+            notification.createBinding(notification.event.BATTLE_STOP_STATE, function () {
+                this._on_btn_stopBattle();
+            },this)
         ];
     },
 
@@ -114,6 +117,7 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
                     if(UiEffect.blockShopItemWithRMB()){
                         return
                     }
+                    this._on_btn_stopBattle();
                     ShopSystem.instance.buyGood(bottleId, 1);
                 },this);
                 msg.setCancelCallback(function () {
