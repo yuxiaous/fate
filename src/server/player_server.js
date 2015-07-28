@@ -20,11 +20,11 @@ var player_server = {
 
         this.update = null;
 
+        this.updateAction();
         cc.director.getScheduler().schedule(this.updateAction,this,60,cc.REPEAT_FOREVER,0,false,"refreshAction");
     },
 
     updateAction : function () {
-        LOG("update action");
 
         if(this.player_info.actionStamp <= 0){
             this.player_info.actionStamp = util.getCurrentDate();
@@ -37,7 +37,6 @@ var player_server = {
     },
 
     end: function() {
-        LOG("palyer server end");
         cc.director.getScheduler().unschedule("refreshAction",this);
 
     },

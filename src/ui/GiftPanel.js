@@ -385,6 +385,7 @@ var BuySkillDetail = ui.GuiWindowBase.extend({
 
        // BattleSystem.instance.buySuperSkill();
 
+        notification.emit(notification.event.BATTLE_STOP_STATE);
         ShopSystem.instance.buyGood(101011, 1);
     },
 
