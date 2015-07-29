@@ -8,6 +8,7 @@ import android.os.Handler;
 import cn.egame.terminal.paysdk.EgameExitListener;
 import cn.egame.terminal.paysdk.EgamePay;
 import cn.egame.terminal.paysdk.EgamePayListener;
+import cn.play.dserv.CheckTool;
 import com.hdngame.fate.SdkManagerJni;
 
 import java.lang.Override;
@@ -24,21 +25,21 @@ public class EgameSdkJni {
     public static void init() {
         System.out.println("EgameSdkJni.init");
 
-        int GameId = 5051359;
-        int ChannelId = 10000000;
-        try {
-            Activity a = SdkManagerJni.activity;
-            ApplicationInfo info = a.getPackageManager().getApplicationInfo(
-                    a.getPackageName(),
-                    PackageManager.GET_META_DATA);
-            ChannelId = info.metaData.getInt("EGAME_CHANNEL");
-        }
-        catch(PackageManager.NameNotFoundException ex) {
-            ChannelId = 10000000;
-        }
+//        int GameId = 5051359;
+//        int ChannelId = 10000000;
+//        try {
+//            Activity a = SdkManagerJni.activity;
+//            ApplicationInfo info = a.getPackageManager().getApplicationInfo(
+//                    a.getPackageName(),
+//                    PackageManager.GET_META_DATA);
+//            ChannelId = info.metaData.getInt("EGAME_CHANNEL");
+//        }
+//        catch(PackageManager.NameNotFoundException ex) {
+//            ChannelId = 10000000;
+//        }
 
         EgamePay.init(SdkManagerJni.activity);
-//        CheckTool.init(this, ""+GameId, ""+ChannelId);
+        CheckTool.init(SdkManagerJni.activity);
     }
 
     private static String  _alias = "";

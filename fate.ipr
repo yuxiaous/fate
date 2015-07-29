@@ -192,6 +192,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="egame.ck">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/egame/android/libs/egame.ck.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="egame.log_20150625_out_release">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar!/" />
