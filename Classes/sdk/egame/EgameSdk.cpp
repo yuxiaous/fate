@@ -82,6 +82,16 @@ void EgameSdk::moreGame()
     }
 }
 
+void EgameSdk::exit()
+{
+    cocos2d::log("EgameSdk::exit");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "exit", "()V")) {
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+    }
+}
+
 void EgameSdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
 {
     if(clazz != "Egame"){
@@ -89,6 +99,9 @@ void EgameSdk::sdkCommand(const std::string &clazz, const std::string &method, c
     }
     if(method == "moreGame") {
         moreGame();
+    }
+    else if(method == "exit") {
+        exit();
     }
 }
 

@@ -70,13 +70,18 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     },
     
     _on_btn_exit : function () {
-        if(util.getChannelId() == GameChannel.CmccAnd) {
-            sdk_manager.sendSdkCommand("AndGame", "exit", "")
-        }
-        else {
-            MessageBoxOkCancel.show("确定退出游戏？").setOkCallback(function() {
-                cc.director.end();
-            });
+        switch (util.getChannelId()) {
+            case GameChannel.CmccAnd:
+                sdk_manager.sendSdkCommand("AndGame", "exit", "");
+                break;
+            case GameChannel.Telecom:
+                sdk_manager.sendSdkCommand("Egame", "exit", "");
+                break;
+            default:
+                MessageBoxOkCancel.show("确定退出游戏？").setOkCallback(function() {
+                    cc.director.end();
+                });
+                break;
         }
     },
 

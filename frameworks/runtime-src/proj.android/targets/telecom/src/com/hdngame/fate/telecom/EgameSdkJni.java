@@ -110,21 +110,32 @@ public class EgameSdkJni {
     };
 
     public static void moreGame() {
+        System.out.println("EgameSdkJni.moreGame");
         EgamePay.moreGame(SdkManagerJni.activity);
     }
 
     public static void exit() {
-        //用户退出游戏的时候调用，弹出退出确认对话框
-        EgamePay.exit(SdkManagerJni.activity, new EgameExitListener() {
-            @Override
-            public void exit() {
-                //用户点击退出游戏，游戏需要处理退出逻辑
-                //finish();
-            }
+        System.out.println("EgameSdkJni.exit");
 
+        _handler.post(new Runnable() {
             @Override
-            public void cancel() {
-                //用户取消退出游戏，这里不用处理
+            public void run() {
+                //用户退出游戏的时候调用，弹出退出确认对话框
+                EgamePay.exit(SdkManagerJni.activity, new EgameExitListener() {
+                    @Override
+                    public void exit() {
+                        System.out.println("EgameSdkJni.exit exit");
+                        //用户点击退出游戏，游戏需要处理退出逻辑
+                        android.os.Process.killProcess(android.os.Process.myPid());    //获取PID
+                        System.exit(0);   //常规java、c#的标准退出法，返回值为0代表正常退出
+                    }
+
+                    @Override
+                    public void cancel() {
+                        System.out.println("EgameSdkJni.exit cancel");
+                        //用户取消退出游戏，这里不用处理
+                    }
+                });
             }
         });
     }

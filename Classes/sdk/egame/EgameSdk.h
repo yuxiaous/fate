@@ -16,6 +16,7 @@ public:
     virtual void charge(const std::string &order, const std::string &identifier) override;
 
     void moreGame();
+    void exit();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
