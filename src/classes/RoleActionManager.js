@@ -171,12 +171,14 @@ var RoleActionManager = cc.Class.extend({
                     if(system.superSkillCount <= 0){
                         this.skillStatus = true;
                         var buy_panel = new BuySkillDetail(function () {
-                            cc.director.resume();
+                            //cc.director.resume();
+                            notification.emit(notification.event.PHYSICAL_RESUME);
                             this.skillStatus = false;
                         },this);
                         buy_panel.pop();
                         UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"), function () {
-                            cc.director.pause();
+                            //cc.director.pause();
+                            notification.emit(notification.event.PHYSICAL_PAUSE);
                         },this);
                     }
                     else{
@@ -498,7 +500,7 @@ var RoleActionAttack = RoleAction.extend({
 
             // pause
             if(attr.pause) {
-                notification.emit(notification.event.PHYSICAL_PAUSE, attr.pause);
+                notification.emit(notification.event.PHYSICAL_PAUSE, attr.pause.time);
             }
 
             // quake

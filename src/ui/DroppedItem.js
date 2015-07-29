@@ -61,7 +61,8 @@ var DroppedItem = ui.GuiWidgetBase.extend({
             curScene_._enterDropUi = 0;
         });
         this._dabaojianPanel.pop();
-        cc.director.pause();
+        //cc.director.pause();
+        notification.emit(notification.event.PHYSICAL_PAUSE);
     },
 
     flyToTarget: function(target) {
@@ -150,14 +151,16 @@ var DaBaoJianLayer = ui.GuiWindowBase.extend({
     },
 
     _on_btn_enter : function () {
-        cc.director.resume();
+        //cc.director.resume();
+        notification.emit(notification.event.PHYSICAL_RESUME);
         this.removeFromParent();
 
         this._callFunc.apply(this._target);
     },
 
     _on_btn_back : function () {
-        cc.director.resume();
+        //cc.director.resume();
+        notification.emit(notification.event.PHYSICAL_RESUME);
         this.removeFromParent();
         this._callFunc.apply(this._target);
     }

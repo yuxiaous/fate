@@ -23,10 +23,16 @@ var PhysicalWorld = cc.Layer.extend({
         this._super();
 
         this._bindings = [
-            notification.createBinding(notification.event.PHYSICAL_PAUSE, function(event, attr) {
-                if(attr && attr.time) {
-                    this.pause(attr.time);
+            notification.createBinding(notification.event.PHYSICAL_PAUSE, function(event, time) {
+                if(time != undefined) {
+                    this.pause(time);
                 }
+                else {
+                    this.pause();
+                }
+            }, this),
+            notification.createBinding(notification.event.PHYSICAL_RESUME, function() {
+                this.resume();
             }, this),
             notification.createBinding(notification.event.PHYSICAL_QUAKE, function(event, attr) {
                 if(attr && attr.intensity && attr.time) {
@@ -134,9 +140,15 @@ var PhysicalWorld = cc.Layer.extend({
     },
 
     pause: function(time) {
+        if(time == undefined) time = 3600 * 24 * 30;
+
         this.scheduleOnce(function() {
             this._pauseTime = time;
         }.bind(this));
+    },
+
+    resume: function() {
+        this._pauseTime = 0;
     },
 
     quake: function(intensity, duration) {

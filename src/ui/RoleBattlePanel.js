@@ -82,9 +82,10 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
     },
 
     _on_btn_stopBattle : function () {
-        cc.director.pause();
+        //cc.director.pause();
         var pausePanel = new PauseLayer();
         pausePanel.pop();
+        notification.emit(notification.event.PHYSICAL_PAUSE);
     },
 
     _on_btn_bloodBottle : function () {
@@ -113,24 +114,23 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
                 var str = "花费" + conf.pay_cost +  "元，购买" + conf.name;
                 var msg = new MessageBoxOkCancel(str,"购买","取消");
                 msg.setOkCallback(function () {
-                    cc.director.resume()
+                    //cc.director.resume();
+                    notification.emit(notification.event.PHYSICAL_RESUME);
                     if(UiEffect.blockShopItemWithRMB()){
                         return
                     }
-                    this._on_btn_stopBattle();
                     ShopSystem.instance.buyGood(bottleId, 1);
+                    this._on_btn_stopBattle();
                 },this);
                 msg.setCancelCallback(function () {
-                    cc.director.resume()
+                    //cc.director.resume();
+                    notification.emit(notification.event.PHYSICAL_RESUME);
                 });
                 msg.pop();
-                cc.director.pause();
+                //cc.director.pause();
+                notification.emit(notification.event.PHYSICAL_PAUSE);
             }
-
-
         }
-
-
     },
     
     startActionRoundLabel : function (roundIdx_, callFunc_, target_) {
