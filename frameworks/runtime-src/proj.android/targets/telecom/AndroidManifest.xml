@@ -89,7 +89,7 @@
 
     <!-- KTPlay SDK 权限配置开始 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!--<uses-permission android:name="android.permission.READ_CONTACTS"/> 电信不允许该权限-->
     <!-- KTPlay SDK 权限配置结束 -->
 
     <!-- 电信爱游戏开始 -->

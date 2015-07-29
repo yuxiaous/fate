@@ -217,10 +217,6 @@ var GiftBuyDetail = ui.GuiWindowBase.extend({
                 break;
             case GiftSystem.GiftType.Vip:
                 gift_detail_img = "ui_315.png";
-
-                if(util.getChannelId() == GameChannel.Telecom){
-                    gift_detail_img = "ui_363.png";
-                }
                 break;
         }
 

@@ -50,6 +50,7 @@ var StartLayerScene = ui.GuiSceneBase.extend({
 
     onExit: function() {
         notification.removeBinding(this._bindings);
+        this._ui = null;
         this._super();
     },
 
