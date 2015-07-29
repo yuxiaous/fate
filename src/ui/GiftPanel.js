@@ -405,11 +405,6 @@ var VipGetDetail = ui.GuiWindowBase.extend({
     onEnter : function () {
         this._super();
         this._get_btn = this.seekWidgetByName("btn_get");
-        this._bg_img = this.seekWidgetByName("Image_1");
-
-        if(util.getChannelId() == GameChannel.Telecom){
-            this._bg_img.loadTexture("images/code_ui/ui_364.png");
-        }
 
         if(RewardSystem.instance._isGetVipDone){
            // this._get_btn.setEnable(false);
@@ -436,11 +431,8 @@ var VipGetDetail = ui.GuiWindowBase.extend({
     },
 
     onExit : function () {
-
-        this._get_btn = null;
-        this._bg_img = null;
-
         notification.removeBinding(this._bindings);
+        this._get_btn = null;
         this._super();
     },
 
