@@ -82,3 +82,13 @@ void EgameSdk::moreGame()
     }
 }
 
+void EgameSdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
+{
+    if(clazz != "Egame"){
+        return;
+    }
+    if(method == "moreGame") {
+        moreGame();
+    }
+}
+

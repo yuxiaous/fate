@@ -18,18 +18,17 @@ var StartLayerScene = ui.GuiSceneBase.extend({
         this._ui = {
             sp_bg: this.seekWidgetByName("sp_background"),
             sp_touch: this.seekWidgetByName("Sprite_1"),
-            about_btn : this.seekWidgetByName("btn_about"),
+            btn_about : this.seekWidgetByName("btn_about"),
             btn_more_game: this.seekWidgetByName("btn_more_game"),
             btn_exit: this.seekWidgetByName("btn_exit")
         };
 
-        // 电信渠道显示
-        //this._ui.about_btn.setVisible(util.getChannelId() == GameChannel.ChinaTelecom);
-        this._ui.about_btn.setVisible(true);
-        this._ui.about_btn.setPressedActionEnabled(true);
+        var channel_id = util.getChannelId();
 
         // 更多游戏按钮
-        this._ui.btn_more_game.setVisible(util.getChannelId() == GameChannel.CmccAnd);
+        this._ui.btn_more_game.setVisible(
+            channel_id == GameChannel.CmccAnd ||
+            channel_id == GameChannel.Telecom);
 
         // 退出按钮
         this._ui.btn_exit.setVisible(cc.sys.os == cc.sys.OS_ANDROID);
@@ -82,8 +81,13 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_more_game: function() {
-        if(util.getChannelId() == GameChannel.CmccAnd) {
-            sdk_manager.sendSdkCommand("AndGame", "showMoreGames", "")
+        switch (util.getChannelId()) {
+            case GameChannel.CmccAnd:
+                sdk_manager.sendSdkCommand("AndGame", "showMoreGames", "");
+                break;
+            case GameChannel.Telecom:
+                sdk_manager.sendSdkCommand("Egame", "moreGame", "");
+                break;
         }
     }
 });
