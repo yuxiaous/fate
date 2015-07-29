@@ -3029,6 +3029,7 @@
 					"$(inherited)",
 					CHANNEL_DEVELOP,
 					SDK_TALKING_DATA_GA,
+					SDK_KTPLAY,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
@@ -3149,7 +3150,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
-					CHANNEL_DEVELOP,
+					CHANNEL_APPSTORE,
 					SDK_TALKING_DATA_GA,
 					SDK_KTPLAY,
 				);
@@ -3198,8 +3199,9 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
-					CHANNEL_DEVELOP,
+					CHANNEL_APPSTORE,
 					SDK_TALKING_DATA_GA,
+					SDK_KTPLAY,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
