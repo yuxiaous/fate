@@ -51,8 +51,8 @@ var ShopSystem = SystemBase.extend({
             });
             sdk_manager.sendSdkCommand("TalkingDataGA", "onPurchase",
                 "{item},{number},{price}".format({
-                    item: config.name,
-                    number: num,
+                    item: config.buy_id,
+                    number: num * config.buy_count,
                     price: config.pay_cost
                 }));
         }

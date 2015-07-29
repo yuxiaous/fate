@@ -30,7 +30,7 @@ var ItemSystem = SystemBase.extend({
             if(config != undefined) {
                 sdk_manager.sendSdkCommand("TalkingDataGA", "onUse",
                     "{item},{number}".format({
-                        item: config.name,
+                        item: config.key,
                         number: num
                     }));
             }
