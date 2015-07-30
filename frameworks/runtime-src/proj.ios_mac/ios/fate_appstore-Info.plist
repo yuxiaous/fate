@@ -10,12 +10,13 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Icon.png</string>
-		<string>Icon@2x.png</string>
-		<string>Icon-72.png</string>
-		<string>Icon-144.png</string>
-		<string>Icon-57.png</string>
-		<string>Icon-114.png</string>
+		<string>appstore-57</string>
+		<string>appstore-72</string>
+		<string>appstore-76</string>
+		<string>appstore-114</string>
+		<string>appstore-120</string>
+		<string>appstore-144</string>
+		<string>appstore-152</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -23,16 +24,13 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>Icon-80</string>
-				<string>Icon-58</string>
-				<string>Icon-29</string>
-				<string>Icon-120</string>
-				<string>Icon-72.png</string>
-				<string>Icon.png</string>
-				<string>Icon@2x.png</string>
-				<string>Icon-57.png</string>
-				<string>Icon-114.png</string>
-				<string>Icon-144.png</string>
+				<string>appstore-57</string>
+				<string>appstore-72</string>
+				<string>appstore-76</string>
+				<string>appstore-114</string>
+				<string>appstore-120</string>
+				<string>appstore-144</string>
+				<string>appstore-152</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -44,21 +42,13 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>Icon-58</string>
-				<string>Icon-29</string>
-				<string>Icon-80</string>
-				<string>Icon-40</string>
-				<string>Icon-100</string>
-				<string>Icon-50</string>
-				<string>Icon-152</string>
-				<string>Icon-76</string>
-				<string>Icon-120</string>
-				<string>Icon-72.png</string>
-				<string>Icon.png</string>
-				<string>Icon@2x.png</string>
-				<string>Icon-57.png</string>
-				<string>Icon-114.png</string>
-				<string>Icon-144.png</string>
+				<string>appstore-57</string>
+				<string>appstore-72</string>
+				<string>appstore-76</string>
+				<string>appstore-114</string>
+				<string>appstore-120</string>
+				<string>appstore-144</string>
+				<string>appstore-152</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>

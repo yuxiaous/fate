@@ -507,27 +507,21 @@
 		DE5AD28E1B678CF4003F6331 /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA811B4D243E00202FEA /* LICENCE.txt */; };
 		DE5AD28F1B678CF4003F6331 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AAE17EBB2AB00697056 /* Default.png */; };
 		DE5AD2901B678CF4003F6331 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = C05D1C161923467600B808A4 /* config.json */; };
-		DE5AD2911B678CF4003F6331 /* Icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091731817ECDF7A00D62437 /* Icon-80.png */; };
-		DE5AD2921B678CF4003F6331 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091731917ECDF7A00D62437 /* Icon-100.png */; };
 		DE5AD2931B678CF4003F6331 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
-		DE5AD2941B678CF4003F6331 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AB117EBB2AB00697056 /* Icon-72.png */; };
-		DE5AD2951B678CF4003F6331 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AB017EBB2AB00697056 /* Icon-57.png */; };
-		DE5AD2961B678CF4003F6331 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091731417ECDF7A00D62437 /* Icon-29.png */; };
-		DE5AD2971B678CF4003F6331 /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AB617EBB2AB00697056 /* Icon-152.png */; };
 		DE5AD2981B678CF4003F6331 /* res in Resources */ = {isa = PBXBuildFile; fileRef = C0799CB518BAE62000E9C828 /* res */; };
-		DE5AD2991B678CF4003F6331 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AB517EBB2AB00697056 /* Icon-144.png */; };
 		DE5AD29A1B678CF4003F6331 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA751B4D243E00202FEA /* LICENSE */; };
 		DE5AD29B1B678CF4003F6331 /* ktlogin.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA501B4D243E00202FEA /* ktlogin.bundle */; };
 		DE5AD29C1B678CF4003F6331 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
-		DE5AD29D1B678CF4003F6331 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AB317EBB2AB00697056 /* Icon-114.png */; };
 		DE5AD29E1B678CF4003F6331 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AAD17EBB2AB00697056 /* Default-568h@2x.png */; };
 		DE5AD29F1B678CF4003F6331 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AAF17EBB2AB00697056 /* Default@2x.png */; };
-		DE5AD2A01B678CF4003F6331 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AB217EBB2AB00697056 /* Icon-76.png */; };
 		DE5AD2A11B678CF4003F6331 /* ktplay.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA541B4D243E00202FEA /* ktplay.bundle */; };
-		DE5AD2A21B678CF4003F6331 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091731517ECDF7A00D62437 /* Icon-40.png */; };
-		DE5AD2A31B678CF4003F6331 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091731617ECDF7A00D62437 /* Icon-50.png */; };
-		DE5AD2A41B678CF4003F6331 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AB417EBB2AB00697056 /* Icon-120.png */; };
-		DE5AD2A51B678CF4003F6331 /* Icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 5091731717ECDF7A00D62437 /* Icon-58.png */; };
+		DE5AD2D21B6A5602003F6331 /* appstore-57.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2CB1B6A5602003F6331 /* appstore-57.png */; };
+		DE5AD2D31B6A5602003F6331 /* appstore-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2CC1B6A5602003F6331 /* appstore-72.png */; };
+		DE5AD2D41B6A5602003F6331 /* appstore-76.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2CD1B6A5602003F6331 /* appstore-76.png */; };
+		DE5AD2D51B6A5602003F6331 /* appstore-114.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2CE1B6A5602003F6331 /* appstore-114.png */; };
+		DE5AD2D61B6A5602003F6331 /* appstore-120.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2CF1B6A5602003F6331 /* appstore-120.png */; };
+		DE5AD2D71B6A5602003F6331 /* appstore-144.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2D01B6A5602003F6331 /* appstore-144.png */; };
+		DE5AD2D81B6A5602003F6331 /* appstore-152.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2D11B6A5602003F6331 /* appstore-152.png */; };
 		DEA0AB7F1B29924900079B42 /* libLevelHelper2-API+Box2d-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF41B258A0F005B744E /* libLevelHelper2-API+Box2d-OSX.a */; };
 		DEA0AB941B2B0ADB00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
 		DEA0AB961B2B0ADB00079B42 /* script in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB911B2B0ADB00079B42 /* script */; };
@@ -1026,6 +1020,13 @@
 		DE54BA821B4D243E00202FEA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		DE54BA831B4D243E00202FEA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DE5AD2AA1B678CF4003F6331 /* fate_appstore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fate_appstore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE5AD2CB1B6A5602003F6331 /* appstore-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-57.png"; path = "ios/appstore-57.png"; sourceTree = "<group>"; };
+		DE5AD2CC1B6A5602003F6331 /* appstore-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-72.png"; path = "ios/appstore-72.png"; sourceTree = "<group>"; };
+		DE5AD2CD1B6A5602003F6331 /* appstore-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-76.png"; path = "ios/appstore-76.png"; sourceTree = "<group>"; };
+		DE5AD2CE1B6A5602003F6331 /* appstore-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-114.png"; path = "ios/appstore-114.png"; sourceTree = "<group>"; };
+		DE5AD2CF1B6A5602003F6331 /* appstore-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-120.png"; path = "ios/appstore-120.png"; sourceTree = "<group>"; };
+		DE5AD2D01B6A5602003F6331 /* appstore-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-144.png"; path = "ios/appstore-144.png"; sourceTree = "<group>"; };
+		DE5AD2D11B6A5602003F6331 /* appstore-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-152.png"; path = "ios/appstore-152.png"; sourceTree = "<group>"; };
 		DEA0AB851B29948800079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../config; sourceTree = "<group>"; };
 		DEA0AB901B2B0ADB00079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../publish/config; sourceTree = "<group>"; };
 		DEA0AB911B2B0ADB00079B42 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../../../publish/script; sourceTree = "<group>"; };
@@ -1307,15 +1308,22 @@
 		5091732E17ECDF8A00D62437 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				DE5AD2CB1B6A5602003F6331 /* appstore-57.png */,
+				DE5AD2CC1B6A5602003F6331 /* appstore-72.png */,
+				DE5AD2CD1B6A5602003F6331 /* appstore-76.png */,
+				DE5AD2CE1B6A5602003F6331 /* appstore-114.png */,
+				DE5AD2CF1B6A5602003F6331 /* appstore-120.png */,
+				DE5AD2D01B6A5602003F6331 /* appstore-144.png */,
+				DE5AD2D11B6A5602003F6331 /* appstore-152.png */,
 				5091731417ECDF7A00D62437 /* Icon-29.png */,
 				5091731517ECDF7A00D62437 /* Icon-40.png */,
 				5091731617ECDF7A00D62437 /* Icon-50.png */,
-				5091731717ECDF7A00D62437 /* Icon-58.png */,
-				5091731817ECDF7A00D62437 /* Icon-80.png */,
-				5091731917ECDF7A00D62437 /* Icon-100.png */,
 				509D4AB017EBB2AB00697056 /* Icon-57.png */,
+				5091731717ECDF7A00D62437 /* Icon-58.png */,
 				509D4AB117EBB2AB00697056 /* Icon-72.png */,
 				509D4AB217EBB2AB00697056 /* Icon-76.png */,
+				5091731817ECDF7A00D62437 /* Icon-80.png */,
+				5091731917ECDF7A00D62437 /* Icon-100.png */,
 				509D4AB317EBB2AB00697056 /* Icon-114.png */,
 				509D4AB417EBB2AB00697056 /* Icon-120.png */,
 				509D4AB517EBB2AB00697056 /* Icon-144.png */,
@@ -2339,27 +2347,21 @@
 				DE5AD28E1B678CF4003F6331 /* LICENCE.txt in Resources */,
 				DE5AD28F1B678CF4003F6331 /* Default.png in Resources */,
 				DE5AD2901B678CF4003F6331 /* config.json in Resources */,
-				DE5AD2911B678CF4003F6331 /* Icon-80.png in Resources */,
-				DE5AD2921B678CF4003F6331 /* Icon-100.png in Resources */,
+				DE5AD2D31B6A5602003F6331 /* appstore-72.png in Resources */,
 				DE5AD2931B678CF4003F6331 /* src in Resources */,
-				DE5AD2941B678CF4003F6331 /* Icon-72.png in Resources */,
-				DE5AD2951B678CF4003F6331 /* Icon-57.png in Resources */,
-				DE5AD2961B678CF4003F6331 /* Icon-29.png in Resources */,
-				DE5AD2971B678CF4003F6331 /* Icon-152.png in Resources */,
 				DE5AD2981B678CF4003F6331 /* res in Resources */,
-				DE5AD2991B678CF4003F6331 /* Icon-144.png in Resources */,
+				DE5AD2D61B6A5602003F6331 /* appstore-120.png in Resources */,
+				DE5AD2D41B6A5602003F6331 /* appstore-76.png in Resources */,
+				DE5AD2D21B6A5602003F6331 /* appstore-57.png in Resources */,
+				DE5AD2D81B6A5602003F6331 /* appstore-152.png in Resources */,
 				DE5AD29A1B678CF4003F6331 /* LICENSE in Resources */,
+				DE5AD2D51B6A5602003F6331 /* appstore-114.png in Resources */,
 				DE5AD29B1B678CF4003F6331 /* ktlogin.bundle in Resources */,
 				DE5AD29C1B678CF4003F6331 /* config in Resources */,
-				DE5AD29D1B678CF4003F6331 /* Icon-114.png in Resources */,
 				DE5AD29E1B678CF4003F6331 /* Default-568h@2x.png in Resources */,
 				DE5AD29F1B678CF4003F6331 /* Default@2x.png in Resources */,
-				DE5AD2A01B678CF4003F6331 /* Icon-76.png in Resources */,
 				DE5AD2A11B678CF4003F6331 /* ktplay.bundle in Resources */,
-				DE5AD2A21B678CF4003F6331 /* Icon-40.png in Resources */,
-				DE5AD2A31B678CF4003F6331 /* Icon-50.png in Resources */,
-				DE5AD2A41B678CF4003F6331 /* Icon-120.png in Resources */,
-				DE5AD2A51B678CF4003F6331 /* Icon-58.png in Resources */,
+				DE5AD2D71B6A5602003F6331 /* appstore-144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3157,7 +3159,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
 				INFOPLIST_FILE = "ios/fate_appstore-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Classes/sdk/TalkingDataGameAnalytics/ios",
 					"$(SRCROOT)/../../../Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/AccountManager",
@@ -3176,7 +3178,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -3206,7 +3208,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
 				INFOPLIST_FILE = "ios/fate_appstore-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Classes/sdk/TalkingDataGameAnalytics/ios",
 					"$(SRCROOT)/../../../Classes/sdk/ktplay/Platform/IOS/KTPlaySDK/KTPlay/AccountManager",
@@ -3225,7 +3227,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
