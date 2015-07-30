@@ -85,7 +85,7 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         //cc.director.pause();
         var pausePanel = new PauseLayer();
         pausePanel.pop();
-        notification.emit(notification.event.PHYSICAL_PAUSE);
+        notification.emit(notification.event.GAME_PAUSE);
     },
 
     _on_btn_bloodBottle : function () {
@@ -115,7 +115,7 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
                 var msg = new MessageBoxOkCancel(str,"购买","取消");
                 msg.setOkCallback(function () {
                     //cc.director.resume();
-                    notification.emit(notification.event.PHYSICAL_RESUME);
+                    notification.emit(notification.event.GAME_RESUME);
                     if(UiEffect.blockShopItemWithRMB()){
                         return
                     }
@@ -124,11 +124,11 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
                 },this);
                 msg.setCancelCallback(function () {
                     //cc.director.resume();
-                    notification.emit(notification.event.PHYSICAL_RESUME);
+                    notification.emit(notification.event.GAME_RESUME);
                 });
                 msg.pop();
                 //cc.director.pause();
-                notification.emit(notification.event.PHYSICAL_PAUSE);
+                notification.emit(notification.event.GAME_PAUSE);
             }
         }
     },

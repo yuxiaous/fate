@@ -172,13 +172,13 @@ var RoleActionManager = cc.Class.extend({
                         this.skillStatus = true;
                         var buy_panel = new BuySkillDetail(function () {
                             //cc.director.resume();
-                            notification.emit(notification.event.PHYSICAL_RESUME);
+                            notification.emit(notification.event.GAME_RESUME);
                             this.skillStatus = false;
                         },this);
                         buy_panel.pop();
                         UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"), function () {
                             //cc.director.pause();
-                            notification.emit(notification.event.PHYSICAL_PAUSE);
+                            notification.emit(notification.event.GAME_PAUSE);
                         },this);
                     }
                     else{
@@ -500,7 +500,7 @@ var RoleActionAttack = RoleAction.extend({
 
             // pause
             if(attr.pause) {
-                notification.emit(notification.event.PHYSICAL_PAUSE, attr.pause.time);
+                notification.emit(notification.event.GAME_PAUSE, attr.pause.time);
             }
 
             // quake

@@ -258,7 +258,7 @@ var GiftBuyDetail = ui.GuiWindowBase.extend({
     _on_btn_close : function () {
         if(this._target && this._callfunc){
             //cc.director.resume();
-            notification.emit(notification.event.PHYSICAL_RESUME);
+            notification.emit(notification.event.GAME_RESUME);
             this._callfunc(this._target);
         }
         this.close();

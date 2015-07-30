@@ -62,7 +62,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
         });
         this._dabaojianPanel.pop();
         //cc.director.pause();
-        notification.emit(notification.event.PHYSICAL_PAUSE);
+        notification.emit(notification.event.GAME_PAUSE);
     },
 
     flyToTarget: function(target) {
@@ -152,7 +152,7 @@ var DaBaoJianLayer = ui.GuiWindowBase.extend({
 
     _on_btn_enter : function () {
         //cc.director.resume();
-        notification.emit(notification.event.PHYSICAL_RESUME);
+        notification.emit(notification.event.GAME_RESUME);
         this.removeFromParent();
 
         this._callFunc.apply(this._target);
@@ -160,7 +160,7 @@ var DaBaoJianLayer = ui.GuiWindowBase.extend({
 
     _on_btn_back : function () {
         //cc.director.resume();
-        notification.emit(notification.event.PHYSICAL_RESUME);
+        notification.emit(notification.event.GAME_RESUME);
         this.removeFromParent();
         this._callFunc.apply(this._target);
     }
