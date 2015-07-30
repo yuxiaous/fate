@@ -130,7 +130,7 @@ var SceneBase = lh.LHScene.extend({
             }, this),
             notification.createBinding(notification.event.BATTLE_RECOVER_STATE, function () {
                 //cc.director.resume();
-                notification.emit(notification.event.PHYSICAL_RESUME);
+                notification.emit(notification.event.GAME_RESUME);
             },this)
         ];
 
@@ -739,13 +739,13 @@ var PauseLayer = ui.GuiWindowBase.extend({
 
     _on_btn_restart : function () {
         //cc.director.resume();
-        notification.emit(notification.event.PHYSICAL_RESUME);
+        notification.emit(notification.event.GAME_RESUME);
         this.close();
     },
 
     _on_btn_back : function () {
         //cc.director.resume();
-        notification.emit(notification.event.PHYSICAL_RESUME);
+        notification.emit(notification.event.GAME_RESUME);
         ui.popScene();
 
         sdk_manager.sendSdkCommand("TalkingDataGA", "onFailed",
