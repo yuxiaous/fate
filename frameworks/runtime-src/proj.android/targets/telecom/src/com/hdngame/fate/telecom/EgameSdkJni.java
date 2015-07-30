@@ -3,6 +3,7 @@ package com.hdngame.fate.telecom;
 import android.app.Activity;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.util.Log;
 import android.widget.Toast;
 import android.os.Handler;
 import cn.egame.terminal.paysdk.EgameExitListener;
@@ -112,13 +113,19 @@ public class EgameSdkJni {
 
     public static void moreGame() {
         System.out.println("EgameSdkJni.moreGame");
-        EgamePay.moreGame(SdkManagerJni.activity);
+
+        SdkManagerJni.activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                EgamePay.moreGame(SdkManagerJni.activity);
+            }
+        });
     }
 
     public static void exit() {
         System.out.println("EgameSdkJni.exit");
 
-        _handler.post(new Runnable() {
+        SdkManagerJni.activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 //用户退出游戏的时候调用，弹出退出确认对话框
@@ -127,8 +134,9 @@ public class EgameSdkJni {
                     public void exit() {
                         System.out.println("EgameSdkJni.exit exit");
                         //用户点击退出游戏，游戏需要处理退出逻辑
-                        android.os.Process.killProcess(android.os.Process.myPid());    //获取PID
-                        System.exit(0);   //常规java、c#的标准退出法，返回值为0代表正常退出
+//                        android.os.Process.killProcess(android.os.Process.myPid());    //获取PID
+//                        System.exit(0);   //常规java、c#的标准退出法，返回值为0代表正常退出
+                        onEgameExit();
                     }
 
                     @Override
@@ -142,5 +150,6 @@ public class EgameSdkJni {
     }
 
     public static native void onEgameChargeCallback(int result);
+    public static native void onEgameExit();
 }
 

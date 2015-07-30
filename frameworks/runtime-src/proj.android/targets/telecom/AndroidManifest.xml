@@ -83,6 +83,8 @@
         </receiver>
 
         <meta-data android:name="EGAME_CHANNEL" android:value="10000000"  />
+        <meta-data android:name="EGAME_UNINS" android:value="false" />
+
 
         <activity android:name="com.alipay.sdk.app.H5PayActivity"
                   android:screenOrientation="behind"

@@ -19,6 +19,12 @@ extern "C" {
         g_result = result;
         g_confirm = true;
     }
+
+    void Java_com_hdngame_fate_telecom_EgameSdkJni_onEgameExit(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_hdngame_fate_telecom_EgameSdkJni_onEgameExit");
+        Director::getInstance()->end();
+    }
 }
 
 static EgameSdk *instance = nullptr;
