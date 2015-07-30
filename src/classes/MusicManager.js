@@ -110,6 +110,14 @@ var MusicManager = (function () {
             this.curPlayType = 0;
             cc.audioEngine.stopMusic();
         };
+
+        this.pauseBGM = function () {
+            cc.audioEngine.pauseMusic();
+        };
+
+        this.resumeBGM = function () {
+            cc.audioEngine.resumeMusic();
+        }
         
         this.playEffectMusic = function (musicType_) {
             cc.audioEngine.playEffect(musicType_);

@@ -41,7 +41,7 @@ var BattleSystem = SystemBase.extend({
     },
 
     recoverBattle : function (obj) {
-        notification.emit(notification.event.BATTLE_RECOVER_STATE);
+        //notification.emit(notification.event.BATTLE_RECOVER_STATE);
     },
 
     battleMap: function(map_id) {

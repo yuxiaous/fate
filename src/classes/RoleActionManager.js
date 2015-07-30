@@ -499,8 +499,8 @@ var RoleActionAttack = RoleAction.extend({
             var direction = this.manager.role.direction;
 
             // pause
-            if(attr.pause) {
-                notification.emit(notification.event.GAME_PAUSE, attr.pause.time);
+            if(attr.pause.time) {
+                notification.emit(notification.event.PHYSICAL_PAUSE, attr.pause.time);
             }
 
             // quake

@@ -131,7 +131,23 @@ var SceneBase = lh.LHScene.extend({
             notification.createBinding(notification.event.BATTLE_RECOVER_STATE, function () {
                 //cc.director.resume();
                 notification.emit(notification.event.GAME_RESUME);
-            },this)
+            },this),
+
+            notification.createBinding(notification.event.GAME_PAUSE, function () {
+                LOG("game pause game scene");
+                for(var btnIdx = 1 ; btnIdx <= 5; btnIdx++){
+                    this._operator.setBtnTimingPause(btnIdx,true);
+                }
+                MusicManager.getInstance().pauseBGM();
+            },this),
+            notification.createBinding(notification.event.GAME_RESUME, function () {
+                LOG("game resume game scene");
+                for(var btnIdx = 1 ; btnIdx <= 5; btnIdx++){
+                    this._operator.setBtnTimingPause(btnIdx,false);
+                }
+                MusicManager.getInstance().resumeBGM();
+            },this),
+
         ];
 
         //this.scheduleUpdate();

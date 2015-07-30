@@ -242,6 +242,42 @@ var OperationLayer = cc.Layer.extend({
         }
     },
 
+    setBtnTimingPause : function (btnIdx_,isPause_) {
+        var btn = null;
+        switch (btnIdx_){
+            case 1 :
+                btn = this._skillButton1;
+                break;
+            case 2 :
+                btn = this._skillButton2;
+                break;
+            case  3 :
+                btn = this._skillButton3;
+                break;
+            case  4 :
+                btn = this._skillButton4;
+                break;
+            case  5 :
+                btn = this._skillButton5;
+                break;
+            default :
+                break;
+        }
+
+        if(btn){
+            if(isPause_){
+                LOG("is pause");
+                btn.pause();
+            }
+            else{
+                LOG("is resume");
+                btn.resume();
+            }
+        }
+
+
+    },
+
     setBtnMpIsNotEnough : function (btnIdx_,isEnough_) {
         switch (btnIdx_){
             case RoleAction.Type.SKILL1 :
