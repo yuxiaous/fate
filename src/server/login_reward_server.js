@@ -132,7 +132,14 @@ server.registerCallback(net_protocol_handlers.CMD_CS_GET_VIP_REWARD, function (o
             }
         }
 
+        //if(util.getChannelId() == GameChannel.Telecom){
+        //    player_server.changeGold(20000);
+        //}
+        //else{
+        //    player_server.changeGold(30000);
+        //}
         player_server.changeGold(30000);
+
 
         login_reward_server.update.push(obj);
 
