@@ -64,9 +64,9 @@ var shop_server = {
                 return false;
             }
 
-            server.send(net_protocol_handlers.CMD_SC_RECOVER_BATTLE,{
-                result : 0
-            })
+            //server.send(net_protocol_handlers.CMD_SC_RECOVER_BATTLE,{
+            //    result : 0
+            //})
         }
         else if(config.buy_type == shop_server.GoodsType.Diamond) {
             if(player_server.changeDiamond(count) == false) {
@@ -149,9 +149,9 @@ var shop_server = {
             //}
             player_server.changeSuperSkillCount(3);
 
-            server.send(net_protocol_handlers.CMD_SC_RECOVER_BATTLE,{
-                result : 0
-            })
+            //server.send(net_protocol_handlers.CMD_SC_RECOVER_BATTLE,{
+            //    result : 0
+            //})
         }
         else if(config.buy_type == shop_server.GoodsType.Tili){
             LOG("buy tili");
@@ -164,9 +164,9 @@ var shop_server = {
                 result : 0
             });
 
-            server.send(net_protocol_handlers.CMD_SC_RECOVER_BATTLE,{
-                result : 0
-            })
+            //server.send(net_protocol_handlers.CMD_SC_RECOVER_BATTLE,{
+            //    result : 0
+            //})
 
             var giftConf = configdb.item[config.buy_id];
             if(giftConf){

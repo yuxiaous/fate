@@ -23,7 +23,7 @@ var PhysicalWorld = cc.Layer.extend({
         this._super();
 
         this._bindings = [
-            notification.createBinding(notification.event.GAME_PAUSE, function(event, time) {
+            notification.createBinding(notification.event.PHYSICAL_PAUSE, function(event, time) {
                 if(time != undefined) {
                     this.pause(time);
                 }
@@ -31,9 +31,16 @@ var PhysicalWorld = cc.Layer.extend({
                     this.pause();
                 }
             }, this),
+            notification.createBinding(notification.event.PHYSICAL_RESUME, function() {
+                this.resume();
+            }, this),
+            notification.createBinding(notification.event.GAME_PAUSE, function() {
+                    this.pause();
+            }, this),
             notification.createBinding(notification.event.GAME_RESUME, function() {
                 this.resume();
             }, this),
+            
             notification.createBinding(notification.event.PHYSICAL_QUAKE, function(event, attr) {
                 if(attr && attr.intensity && attr.time) {
                     this.quake(attr.intensity, attr.time)
