@@ -426,7 +426,7 @@ For More information:
             cocos.Logging.info("Move apk to %s" % output_dir)
 
             if build_mode == "release":
-                signed_name = "%s-%s-signed-%s.apk" % (project_name, build_mode, time.strftime("%Y%m%d-%H%M%S"))
+                signed_name = "%s_%s_signed_%s.apk" % (project_name, build_mode, time.strftime("%Y%m%d_%H%M%S"))
                 apk_path = os.path.join(output_dir, signed_name)
                 if os.path.exists(apk_path):
                     os.remove(apk_path)
