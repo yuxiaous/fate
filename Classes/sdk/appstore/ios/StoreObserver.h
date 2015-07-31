@@ -11,6 +11,7 @@
  
 */
 
+#import <StoreKit/StoreKit.h>
 
 extern NSString * const IAPPurchaseNotification;
 

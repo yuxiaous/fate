@@ -53,6 +53,11 @@ UniPaySdk unipaysdk;
 EgameSdk egamesdk;
 #endif
 
+#ifdef SDK_APP_STORE
+#include "appstore/AppStoreSdk.h"
+AppStoreSdk appstoresdk;
+#endif
+
 USING_NS_CC;
 
 

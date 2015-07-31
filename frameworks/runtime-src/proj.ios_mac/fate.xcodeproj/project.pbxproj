@@ -522,6 +522,9 @@
 		DE5AD2D61B6A5602003F6331 /* appstore-120.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2CF1B6A5602003F6331 /* appstore-120.png */; };
 		DE5AD2D71B6A5602003F6331 /* appstore-144.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2D01B6A5602003F6331 /* appstore-144.png */; };
 		DE5AD2D81B6A5602003F6331 /* appstore-152.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2D11B6A5602003F6331 /* appstore-152.png */; };
+		DE5AD2E01B6A76B4003F6331 /* AppStoreSdk.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2DB1B6A76B4003F6331 /* AppStoreSdk.mm */; };
+		DE5AD2E11B6A76B4003F6331 /* StoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2DF1B6A76B4003F6331 /* StoreObserver.m */; };
+		DE5AD2E31B6A7729003F6331 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AD2E21B6A7729003F6331 /* StoreKit.framework */; };
 		DEA0AB7F1B29924900079B42 /* libLevelHelper2-API+Box2d-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF41B258A0F005B744E /* libLevelHelper2-API+Box2d-OSX.a */; };
 		DEA0AB941B2B0ADB00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
 		DEA0AB961B2B0ADB00079B42 /* script in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB911B2B0ADB00079B42 /* script */; };
@@ -1027,6 +1030,11 @@
 		DE5AD2CF1B6A5602003F6331 /* appstore-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-120.png"; path = "ios/appstore-120.png"; sourceTree = "<group>"; };
 		DE5AD2D01B6A5602003F6331 /* appstore-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-144.png"; path = "ios/appstore-144.png"; sourceTree = "<group>"; };
 		DE5AD2D11B6A5602003F6331 /* appstore-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appstore-152.png"; path = "ios/appstore-152.png"; sourceTree = "<group>"; };
+		DE5AD2DB1B6A76B4003F6331 /* AppStoreSdk.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppStoreSdk.mm; sourceTree = "<group>"; };
+		DE5AD2DC1B6A76B4003F6331 /* AppStoreSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStoreSdk.h; sourceTree = "<group>"; };
+		DE5AD2DE1B6A76B4003F6331 /* StoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreObserver.h; sourceTree = "<group>"; };
+		DE5AD2DF1B6A76B4003F6331 /* StoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreObserver.m; sourceTree = "<group>"; };
+		DE5AD2E21B6A7729003F6331 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		DEA0AB851B29948800079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../config; sourceTree = "<group>"; };
 		DEA0AB901B2B0ADB00079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../publish/config; sourceTree = "<group>"; };
 		DEA0AB911B2B0ADB00079B42 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../../../publish/script; sourceTree = "<group>"; };
@@ -1151,6 +1159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5AD2E31B6A7729003F6331 /* StoreKit.framework in Frameworks */,
 				DE5AD2581B678CF4003F6331 /* libKTLeaderboard.a in Frameworks */,
 				DE5AD2591B678CF4003F6331 /* libz.dylib in Frameworks */,
 				DE5AD25A1B678CF4003F6331 /* libktplay_plugin_sns.a in Frameworks */,
@@ -1379,6 +1388,7 @@
 		A92275401517C094001B78AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE5AD2E21B6A7729003F6331 /* StoreKit.framework */,
 				DE545DDC1B4CE3F200A91A14 /* libsqlite3.dylib */,
 				DE545DDA1B4CE3E200A91A14 /* Twitter.framework */,
 				DE545DD81B4CE3DA00A91A14 /* Social.framework */,
@@ -1507,6 +1517,7 @@
 		DE25C3D51B318E7D00A9AEC0 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
+				DE5AD2DA1B6A76B4003F6331 /* appstore */,
 				DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */,
 				DE29E12B1B3CF98F000656CA /* DeveloperSdk.h */,
 				DE5455F31B4CE20F00A91A14 /* ktplay */,
@@ -2046,6 +2057,25 @@
 				DE54BA831B4D243E00202FEA /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		DE5AD2DA1B6A76B4003F6331 /* appstore */ = {
+			isa = PBXGroup;
+			children = (
+				DE5AD2DB1B6A76B4003F6331 /* AppStoreSdk.mm */,
+				DE5AD2DC1B6A76B4003F6331 /* AppStoreSdk.h */,
+				DE5AD2DD1B6A76B4003F6331 /* ios */,
+			);
+			path = appstore;
+			sourceTree = "<group>";
+		};
+		DE5AD2DD1B6A76B4003F6331 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				DE5AD2DE1B6A76B4003F6331 /* StoreObserver.h */,
+				DE5AD2DF1B6A76B4003F6331 /* StoreObserver.m */,
+			);
+			path = ios;
 			sourceTree = "<group>";
 		};
 		DEA0AB8F1B2B0A9300079B42 /* publish */ = {
@@ -2747,6 +2777,7 @@
 				DE5AD2261B678CF4003F6331 /* TDCCAccount.mm in Sources */,
 				DE5AD2271B678CF4003F6331 /* jsb_bindings_auto.cpp in Sources */,
 				DE5AD2281B678CF4003F6331 /* ShakeAction.cpp in Sources */,
+				DE5AD2E11B6A76B4003F6331 /* StoreObserver.m in Sources */,
 				DE5AD2291B678CF4003F6331 /* PlayDisable_png.cpp in Sources */,
 				DE5AD22A1B678CF4003F6331 /* ConnectWaitLayer.cpp in Sources */,
 				DE5AD22B1B678CF4003F6331 /* Shine_png.cpp in Sources */,
@@ -2765,6 +2796,7 @@
 				DE5AD2381B678CF4003F6331 /* dbtinyxml2.cpp in Sources */,
 				DE5AD2391B678CF4003F6331 /* LHVideoPlayerImpl.m in Sources */,
 				DE5AD23A1B678CF4003F6331 /* LHVideoOverlayView.m in Sources */,
+				DE5AD2E01B6A76B4003F6331 /* AppStoreSdk.mm in Sources */,
 				DE5AD23B1B678CF4003F6331 /* GameUtils.cpp in Sources */,
 				DE5AD23C1B678CF4003F6331 /* DBCCArmature.cpp in Sources */,
 				DE5AD23D1B678CF4003F6331 /* Reachability.m in Sources */,
@@ -3155,6 +3187,7 @@
 					CHANNEL_APPSTORE,
 					SDK_TALKING_DATA_GA,
 					SDK_KTPLAY,
+					SDK_APP_STORE,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
@@ -3204,6 +3237,7 @@
 					CHANNEL_APPSTORE,
 					SDK_TALKING_DATA_GA,
 					SDK_KTPLAY,
+					SDK_APP_STORE,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";

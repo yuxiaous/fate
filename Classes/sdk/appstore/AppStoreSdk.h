@@ -14,7 +14,9 @@
 
 class AppStoreSdk : public Sdk, public SdkChargeProtocol
 {
-    
+public:
+    virtual void init() override;
+    virtual void charge(const std::string &order, const std::string &identifier) override;
 };
 
 #endif /* defined(__fate__AppStoreSdk__) */
