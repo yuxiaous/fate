@@ -59,8 +59,13 @@ var ShopSystem = SystemBase.extend({
     },
 
     onBuyGoodResult: function(obj) {
+        LOG("onBuyGoodResult");
+        //LOG(obj);
         //MessageBoxOk.show("购买成功");
-
+        if(obj.result != 0) {
+            UiEffect.showFloatLabel("购买失败！");
+            return;
+        }
 
         if(obj && obj.good_id == 101014){
 

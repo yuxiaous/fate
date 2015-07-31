@@ -42,7 +42,7 @@ static std::string g_order;
             g_order.clear();
             break;
         case IAPPurchaseFailed:
-            [self alertWithTitle:@"Purchase Status" message:purchasesNotification.message];
+            [self alertWithTitle:nil message:purchasesNotification.message];
             AppStoreSdk::getInstance()->onChargeCallback(1, g_order);
             g_order.clear();
             break;
@@ -80,7 +80,8 @@ static std::string g_order;
     
     [alert addAction:defaultAction];
     
-//    [self presentViewController:alert animated:YES completion:nil];
+    UIViewController *vc = (UIViewController*)SdkManager::viewController;
+    [vc presentViewController:alert animated:YES completion:nil];
 }
 
 @end

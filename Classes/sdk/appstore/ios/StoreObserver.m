@@ -147,7 +147,8 @@ NSString * const IAPPurchaseNotification = @"IAPPurchaseNotification";
             // The transaction failed
 			case SKPaymentTransactionStateFailed:
             {
-                self.message = [NSString stringWithFormat:@"Purchase of %@ failed.",transaction.payment.productIdentifier];
+//                self.message = [NSString stringWithFormat:@"Purchase of %@ failed.",transaction.payment.productIdentifier];
+                self.message = transaction.error.localizedDescription;
                 [self completeTransaction:transaction forStatus:IAPPurchaseFailed];
             }
             break;

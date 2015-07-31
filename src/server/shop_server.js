@@ -23,15 +23,13 @@ var shop_server = {
     onChargeCallback: function(json) {
         LOG("shop_server.onChargeCallback");
         var obj = JSON.parse(json);
-        if(obj.result == 0) {
-            this.handleOrder(obj.order);
-        }
+        this.handleOrder(obj.order, obj.result);
     },
 
     buyGood: function(good_id, good_num, order) {
         var config = ShopSystem.getConfig(good_id);
         if(config == undefined) {
-            LOG("CMD_CS_SHOP_BUY_GOODS error 1");
+            LOG("shop_server.buyGood error 1");
             server.sendError(net_error_code.ERR_SHOP_GOODS_NOT_EXIST);
             return false;
         }
@@ -206,26 +204,32 @@ var shop_server = {
         this.orders[ret.order] = ret;
         return ret;
     },
-    handleOrder: function(o) {
-        var order = this.orders[o];
-        if(order) {
-            order.status = 1;
-            this.buyGood(order.good_id, 1, order.order);
+    handleOrder: function(order, result) {
+        var info = this.orders[order];
+        if(info == undefined) {
+            LOG("Error: handleOrder info not found.");
+            return;
+        }
 
-            server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {
-                result: 0,
-                good_id: order.good_id,
-                remaining: 0,
-                order: order.order
-            });
+        if(result == 0) {
+            info.status = 1;
+            this.buyGood(info.good_id, 1, info.order);
         }
+
+        server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {
+            result: result,
+            good_id: info.good_id,
+            remaining: 0,
+            order: info.order
+        });
     },
-    checkOrder: function(o) {
-        var order = this.orders[o];
-        if(order) {
-            return (order.status == 1);
+    checkOrder: function(order) {
+        var info = this.orders[order];
+        if(info == undefined) {
+            LOG("Error: checkOrder info not found.");
+            return false;
         }
-        return false;
+        return (info.status == 1);
     }
 };
 
