@@ -25,6 +25,9 @@ var StartLayerScene = ui.GuiSceneBase.extend({
 
         var channel_id = util.getChannelId();
 
+        // 关于按钮
+        this._ui.btn_about.setVisible(channel_id == GameChannel.Telecom);
+
         // 更多游戏按钮
         this._ui.btn_more_game.setVisible(
             channel_id == GameChannel.CmccAnd ||
