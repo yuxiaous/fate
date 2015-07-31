@@ -9,6 +9,8 @@
 #include "AppStoreSdk.h"
 #import "StoreObserver.h"
 
+static std::string g_order;
+
 @interface AppStoreSdkListener : NSObject
 +(AppStoreSdkListener *)sharedInstance;
 -(void)handlePurchasesNotification:(NSNotification *)notification;
@@ -35,55 +37,66 @@
     
     switch (status)
     {
+        case IAPPurchaseSucceeded:
+            AppStoreSdk::getInstance()->onChargeCallback(0, g_order);
+            g_order.clear();
+            break;
         case IAPPurchaseFailed:
-//            [self alertWithTitle:@"Purchase Status" message:purchasesNotification.message];
+            [self alertWithTitle:@"Purchase Status" message:purchasesNotification.message];
+            AppStoreSdk::getInstance()->onChargeCallback(1, g_order);
+            g_order.clear();
             break;
             // Switch to the iOSPurchasesList view controller when receiving a successful restore notification
         case IAPRestoredSucceeded:
-        {
-//            self.segmentedControl.selectedSegmentIndex = 1;
-//            self.restoreWasCalled = YES;
-//            
-//            [self cycleFromViewController:self.currentViewController toViewController:self.purchasesList];
-//            [self.purchasesList reloadUIWithData:[self dataSourceForPurchasesUI]];
-        }
             break;
         case IAPRestoredFailed:
-//            [self alertWithTitle:@"Purchase Status" message:purchasesNotification.message];
+            [self alertWithTitle:@"Purchase Status" message:purchasesNotification.message];
             break;
             // Notify the user that downloading is about to start when receiving a download started notification
         case IAPDownloadStarted:
-        {
-//            self.hasDownloadContent = YES;
-//            [self.view addSubview:self.statusMessage];
-        }
             break;
             // Display a status message showing the download progress
         case IAPDownloadInProgress:
-        {
-//            self.hasDownloadContent = YES;
-//            NSString *title = [[StoreManager sharedInstance] titleMatchingProductIdentifier:purchasesNotification.purchasedID];
-//            NSString *displayedTitle = (title.length > 0) ? title : purchasesNotification.purchasedID;
-//            self.statusMessage.text = [NSString stringWithFormat:@" Downloading %@   %.2f%%",displayedTitle, purchasesNotification.downloadProgress];
-        }
             break;
             // Downloading is done, remove the status message
         case IAPDownloadSucceeded:
-        {
-//            self.hasDownloadContent = NO;
-//            self.statusMessage.text = @"Download complete: 100%";
-//            
-//            // Remove the message after 2 seconds
-//            [self performSelector:@selector(hideStatusMessage) withObject:nil afterDelay:2];
-        }
+            break;
+        case IAPDownloadFailed:
             break;
         default:
             break;
     }
 }
 
+-(void)alertWithTitle:(NSString *)title message:(NSString *)message
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    
+//    [self presentViewController:alert animated:YES completion:nil];
+}
+
 @end
 
+
+static AppStoreSdk *instance = nullptr;
+
+AppStoreSdk::AppStoreSdk()
+{
+    instance = this;
+}
+
+AppStoreSdk *AppStoreSdk::getInstance()
+{
+    return instance;
+}
 
 void AppStoreSdk::init()
 {
@@ -100,5 +113,6 @@ void AppStoreSdk::charge(const std::string &order, const std::string &identifier
 {
     NSString *nsIdentifier = [NSString stringWithUTF8String:identifier.c_str()];
     [[StoreObserver sharedInstance] buyWithIdentifier:nsIdentifier];
+    g_order = order;
 }
 
