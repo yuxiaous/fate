@@ -114,6 +114,7 @@ var RoleBase = PhysicalNode.extend({
 
         this._bindings = [
             notification.createBinding(notification.event.ROLE_ATTACK, this.onAttackJudgement, this),
+            notification.createBinding(notification.event.HERO_REVIVE_ATTACK,this.onAllInjure,this),
             notification.createBinding(notification.event.THROW_UPDATE, function () {
                // LOG("THROW UPDATE =" + this.throwWeaponContain.length);
 
@@ -328,10 +329,43 @@ var RoleBase = PhysicalNode.extend({
 
     invincible: function() {
         this.invincibleClock = this.invincibleTime;
+        if(this.roleType == RoleBase.RoleType.Hero){
+            var wudiEffect = dragonBones.DragonBonesHelper.buildArmatureNode("wudi");
+            wudiEffect.gotoAndPlay("wudi");
+            this.addChild(wudiEffect);
+            wudiEffect.registerMovementEventHandler(function(node, type) {
+                switch(type) {
+                    case "complete":
+                        node.removeFromParent();
+                        break;
+                    default :
+                        break;
+                }
+            });
+        }
+        else{
+            var duration = this.invincibleTime;
+            var blink = cc.blink(duration, duration / 0.2);
+            this.armatureNode.runAction(blink);
+        }
+    },
 
-        var duration = this.invincibleTime;
-        var blink = cc.blink(duration, duration / 0.2);
-        this.armatureNode.runAction(blink);
+    reviveEffect : function (func_,target_) {
+        var reviveEffect = dragonBones.DragonBonesHelper.buildArmatureNode("fuhuo");
+        reviveEffect.gotoAndPlay("fuhuo");
+        this.addChild(reviveEffect,-1);
+        this.invincibleClock = 1000;
+        reviveEffect.registerMovementEventHandler(function(node, type) {
+            switch(type) {
+                case "complete":
+                    this.invincibleClock = 0;
+                    node.removeFromParent();
+                    func_.apply(target_);
+                    break;
+                default :
+                    break;
+            }
+        });
     },
 
     playAnimation: function(name) {
@@ -360,10 +394,21 @@ var RoleBase = PhysicalNode.extend({
             throwWeapon_.weaponHitTheTarget();
         }
 
-        ////如果Role当前为远程攻击类型
-        //if(1){
-        //    notification.emit(notification.event.THROW_UPDATE);
-        //}
+        // hit feedback
+        attacker.hit(this);
+
+        // injure
+        this.injure(attacker);
+    },
+
+    onAllInjure : function (event,attacker) {
+        if(this.deathValue){
+            return;
+        }
+
+        if(attacker == this){
+            return;
+        }
 
         // hit feedback
         attacker.hit(this);
@@ -538,7 +583,9 @@ var RoleBase = PhysicalNode.extend({
             case RoleAction.Type.DIE:
                 action = new RoleActionDie();
                 break;
-
+            case RoleAction.Type.REVIVE:
+                action = new RoleActionRevive();
+                break;
             default:
                 action = new RoleAction();
                 break;

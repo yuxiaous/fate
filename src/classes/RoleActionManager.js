@@ -375,7 +375,8 @@ RoleAction.Type = {
     FLOATING_GROUND: 8,
     STAND_UP: 9,
     DIE: 10,
-    STRUCK_OUT: 11
+    STRUCK_OUT: 11,
+    REVIVE : 12
 };
 
 var RoleActionWalk = RoleAction.extend({
@@ -671,6 +672,78 @@ var RoleActionDie = RoleAction.extend({
             this.manager.role.physicalWorld.setSlowPlay(1);
         }
         this.manager.role.onDie();
+    }
+});
+
+var RoleActionRevive = RoleAction.extend({
+    onActionStart: function() {
+        this._super();
+    },
+
+    onActionEnd: function() {
+        this._super();
+
+        var role = this.manager.role;
+        notification.emit(notification.event.HERO_REVIVE_ATTACK, role);
+        role.reviveEffect(function () {
+            role.invincible();
+
+        },this);
+    },
+
+    onHitTarget: function(target) {
+        var attr = this.hit;
+        if(attr) {
+            var direction = this.manager.role.direction;
+
+            // pause
+            if(attr.pause.time) {
+                notification.emit(notification.event.PHYSICAL_PAUSE, attr.pause.time);
+            }
+
+            // quake
+            if(attr.quake) {
+                notification.emit(notification.event.PHYSICAL_QUAKE, attr.quake);
+            }
+
+            // velocity
+            if(attr.velocity) {
+                var tmpDir = target.getSpacePosition().x - this.manager.role.getSpacePosition().x ;
+
+                if(tmpDir > 0){
+                    tmpDir = 1;
+                }
+                else{
+                    tmpDir = -1;
+                }
+                var velocity = target.floatingValue ? attr.velocity.onFloating : attr.velocity.onGround;
+                target.setSpaceVelocity(velocity.x * tmpDir, 0, velocity.y);
+            }
+
+            // sound
+            if(attr.sound) {
+                MusicManager.getInstance().playEffectMusic(attr.sound);
+            }
+
+            // effect
+            if(attr.animation) {
+                var effectName = attr.animation.split('/');
+                var effectNode = dragonBones.DragonBonesHelper.buildArmatureNode(effectName[0]);
+                if(effectNode) {
+                    effectNode.setScaleX(-direction);
+                    effectNode.setPosition(0, target.roleSize.height/2);
+                    effectNode.registerMovementEventHandler(function(node, type) {
+                        if(type == "complete") {
+                            effectNode.removeFromParent();
+                        }
+                    });
+
+                    if(effectNode.gotoAndPlay(effectName[1])) {
+                        target.addChild(effectNode, 999);
+                    }
+                }
+            }
+        }
     }
 });
 
