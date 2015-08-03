@@ -443,34 +443,34 @@ var SceneBase = lh.LHScene.extend({
         var mapId = BattleSystem.instance.cur_battle_map
         var mapConf = configdb.map[mapId];
         if( mapConf && mapConf.drop_gift){
-            var  giftType = GiftSystem.instance.randomSellGiftPanel();
-            var giftId = 0;
-            switch (giftType) {
+            var revive = null;
+            switch (GiftSystem.instance.randomSellGiftPanel()) {
                 case  GiftSystem.GiftType.Vip :
-                    giftId = 101004;
+                    revive = new GiftDetailVip();
                     break;
                 case GiftSystem.GiftType.ZhiZun :
-                    giftId = 101003;
+                    revive = new GiftDetailZhiZun();
                     break;
                 case GiftSystem.GiftType.ZhuangBei :
-                    giftId = 101001;
+                    revive = new GiftDetailSuit();
                     break;
                 case GiftSystem.GiftType.WuQi :
-                    giftId = 101002;
+                    revive = new GiftDetailWeapon();
                     break;
                 default  :
-                    giftType = GiftSystem.GiftType.ZhiZun;
-                    giftId = 101003;
+                    revive = new GiftDetailZhiZun();
                     break;
             }
-            var revive = new GiftBuyDetail(giftType,giftId);
-            revive.setCloseCallback(function () {
-                var win = new BattleWinPanel();
-                win.setCloseCallback(this.onSceneFinished, this);
-                win.pop();
-            },this);
-            revive.pop();
-            UiEffect.iconOpenEffect(revive.seekWidgetByName("gift_panel"));
+            //var revive = new GiftBuyDetail(giftType,giftId);
+            if(revive) {
+                revive.setCloseCallback(function () {
+                    var win = new BattleWinPanel();
+                    win.setCloseCallback(this.onSceneFinished, this);
+                    win.pop();
+                },this);
+                revive.pop();
+                //UiEffect.iconOpenEffect(revive.seekWidgetByName("gift_panel"));
+            }
         }
         else{
             var win = new BattleWinPanel();

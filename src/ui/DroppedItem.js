@@ -56,13 +56,16 @@ var DroppedItem = ui.GuiWidgetBase.extend({
     },
 
     entranceBuyEquipSuit : function (target_,curScene_) {
-        this._dabaojianPanel = new GiftBuyDetail(GiftSystem.GiftType.WuQi, 101002, this,function () {
+        this._dabaojianPanel = new GiftDetailWeapon(true);
+        this._dabaojianPanel.setCloseCallback(function() {
             curScene_._isEnteringEquipSuit = false;
             curScene_._enterDropUi = 0;
-        });
+        }, this);
         this._dabaojianPanel.pop();
+
+
         //cc.director.pause();
-        notification.emit(notification.event.GAME_PAUSE);
+        //notification.emit(notification.event.GAME_PAUSE);
     },
 
     flyToTarget: function(target) {

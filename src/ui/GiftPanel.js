@@ -10,97 +10,35 @@ var GiftPanel = ui.GuiController.extend({
         this._super();
 
         this._ui = {
+        };
+
+        this._ui = {
             btn_1 : this.seekWidgetByName("btn_1"),
             btn_2 : this.seekWidgetByName("btn_2"),
             btn_3 : this.seekWidgetByName("btn_3"),
-            btn_4 : this.seekWidgetByName("btn_4")
-        }
-
-        _.each([this._ui.btn_1,
-                this._ui.btn_2,
-                this._ui.btn_3,
-                this._ui.btn_4], function (btn_,idx_) {
-            var btnSelectImg = btn_.setPressedActionEnabled(true);
-
-            btn_.addTouchEventListener(function (touch,event) {
-                if(event == ccui.Widget.TOUCH_ENDED){
-                    var giftType = 0;
-                    var giftId = 0;
-
-                    switch (idx_){
-                        case 0 :
-                            giftType = GiftSystem.GiftType.Vip;
-                            giftId = 101004;
-                            break;
-                        case 1 :
-                            giftType = GiftSystem.GiftType.ZhiZun;
-                            giftId = 101003;
-                            break;
-                        case 2 :
-                            giftType = GiftSystem.GiftType.ZhuangBei;
-                            giftId = 101001;
-                            break;
-                        case 3 :
-                            giftType = GiftSystem.GiftType.WuQi;
-                            giftId = 101002;
-                            break;
-                    }
-
-                    if(giftType == GiftSystem.GiftType.Vip && this.getGiftNodeBuyCount(giftType) > 0){
-                        var getPanel = new VipGetDetail();
-                        getPanel.pop();
-                        UiEffect.iconOpenEffect(getPanel.seekWidgetByName("gift_panel"));
-                    }
-                    else{
-                        var buy_panel = new GiftBuyDetail(giftType,giftId);
-                        buy_panel.pop();
-                        UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"));
-                    }
-                }
-            },this);
-
-            var lbl_time = this.seekWidgetByName("lbl_time");
-            if(lbl_time){
-                btn_.lbl_time = lbl_time;
-
-                var tmpTime = GiftSystem.instance.getGiftCountTime(GiftSystem.GiftType.ZhiZun);
-                var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
-                btn_.lbl_time.setString(String(changeStr));
-            }
-
-            if(idx_ == 1){
-                UiEffect.buttonBBB(btn_);
-            }
-            else{
-                this.addBtnEffect(btn_);
-            }
-        },this);
-
-
+            btn_4 : this.seekWidgetByName("btn_4"),
+            lbl_time: this.seekWidgetByName("lbl_time")
+        };
 
         this._bindings =[
-            notification.createBinding(notification.event.REFRESH_GIFT_INFO, function () {
-                this.refreshGiftNodeDisplay();
-            },this)
-        ]
+            notification.createBinding(notification.event.REFRESH_GIFT_INFO, this.refreshGiftNodeDisplay, this)
+        ];
+
+        this.addBtnEffect(this._ui.btn_1);
+        UiEffect.buttonBBB(this._ui.btn_2);
+        this.addBtnEffect(this._ui.btn_3);
+        this.addBtnEffect(this._ui.btn_4);
+
+        // gift time
+        this.refreshGiftTime();
+        cc.director.getScheduler().schedule(function () {
+            this.refreshGiftTime();
+        }, this, 1.0, cc.REPEAT_FOREVER, 0, false, "refresh_label");
+
 
         this.refreshGiftNodeDisplay();
 
-
         GiftSystem.instance.getGiftItemTime();
-
-        cc.director.getScheduler().schedule(function () {
-            _.each([this._ui.btn_1,
-                this._ui.btn_2,
-                this._ui.btn_3,
-                this._ui.btn_4], function (btn_,idx_) {
-                if(idx_ == 1 && btn_.lbl_time){
-                    var tmpTime = GiftSystem.instance.getGiftCountTime(GiftSystem.GiftType.ZhiZun);
-                    var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
-                    btn_.lbl_time.setString(String(changeStr));
-                }
-            },this);
-        },this,1.0,cc.REPEAT_FOREVER,0,false,"refresh_label");
     },
 
     addBtnEffect : function (btn_) {
@@ -183,86 +121,121 @@ var GiftPanel = ui.GuiController.extend({
         notification.removeBinding(this._bindings);
         this._ui = null;
         this._super();
+    },
+
+    refreshGiftTime: function() {
+        var tmpTime = GiftSystem.instance.getGiftCountTime(GiftSystem.GiftType.ZhiZun);
+        var changeStr = GiftSystem.instance.changeStringToTimeStyle(tmpTime);
+        this._ui.lbl_time.setString(String(changeStr));
+    },
+
+    _on_btn_1: function() {
+        if(this.getGiftNodeBuyCount(GiftSystem.GiftType.Vip) > 0){
+            var getPanel = new VipGetDetail();
+            getPanel.pop();
+            UiEffect.iconOpenEffect(getPanel.seekWidgetByName("gift_panel"));
+        }
+        else{
+            var buy_panel = new GiftDetailVip();
+            buy_panel.pop();
+        }
+    },
+
+    _on_btn_2: function() {
+        var buy_panel = new GiftDetailZhiZun();
+        buy_panel.pop();
+    },
+
+    _on_btn_3: function() {
+        var buy_panel = new GiftDetailSuit();
+        buy_panel.pop();
+    },
+
+    _on_btn_4: function() {
+        var buy_panel = new GiftDetailWeapon();
+        buy_panel.pop();
     }
 });
 
-var GiftBuyDetail = ui.GuiWindowBase.extend({
-    _guiFile : "ui/gift_detail_panel.json",
 
-    ctor : function (type_,giftId_,gift_target_,gift_callfunc_) {
+var GiftDetailBase = ui.GuiWindowBase.extend({
+    _guiFile : null,
+    _shop_id: 0,
+
+    ctor: function(pause_game) {
         this._super();
-
-        this._giftType = type_;
-        this._giftId = giftId_;
-        this._target = gift_target_;
-        this._callfunc = gift_callfunc_;
+        this._pause_game = pause_game;
     },
 
-
-    onEnter : function () {
+    onEnter: function() {
         this._super();
+        this._ui = {
+            lbl_price: this.seekWidgetByName("lbl_price"),
+            panel_gift: this.seekWidgetByName("gift_panel")
+        };
 
-        //this.setScale(0.8);
-
-        var gift_detail_img = "";
-        switch (this._giftType){
-            case GiftSystem.GiftType.ZhuangBei :
-                gift_detail_img = "ui_314.png";
-                break;
-            case  GiftSystem.GiftType.WuQi :
-                gift_detail_img = "ui_313.png";
-                break;
-            case GiftSystem.GiftType.ZhiZun :
-                gift_detail_img = "ui_312.png";
-                break;
-            case GiftSystem.GiftType.Vip:
-                gift_detail_img = "ui_315.png";
-                break;
+        if(util.getChannelId() == GameChannel.Telecom) {
+            this._ui.lbl_price.setVisible(false);
         }
 
-        var baseString = "images/code_ui/";
-        gift_detail_img = String(baseString+gift_detail_img);
-        //gift_title_img = String(baseString+gift_title_img);
+        if(this._shop_id != undefined) {
+            var config = ShopSystem.getConfig(this._shop_id);
+            if(config) {
+                this._ui.lbl_price.setString(this._ui.lbl_price._str_original.format(config.pay_cost));
+            }
+        }
 
-        //this._title_img = this.seekWidgetByName("item_title");
-        this._detail_img = this.seekWidgetByName("gift_panel");
-
-
-        //this._title_img.loadTexture(gift_title_img);
-        this._detail_img.loadTexture(gift_detail_img);
-
-
-        this.buy_btn = this.seekWidgetByName("btn_buy");
-
-
-        UiEffect.buttonBBB(this.buy_btn);
-
+        if(this._pause_game) {
+            notification.emit(notification.event.GAME_PAUSE);
+        }
     },
 
-    onExit : function () {
+    onExit: function() {
+        if(this._pause_game) {
+            notification.emit(notification.event.GAME_RESUME);
+        }
+        this._ui = null;
         this._super();
+    },
 
+    _on_btn_close: function() {
+        this.close();
     },
 
     _on_btn_buy : function(){
-        if(UiEffect.blockShopItemWithRMB()){
-            return
+        if(UiEffect.blockShopItemWithRMB()) {
+            return;
         }
 
-        LOG("btn buy = " + this._giftId    );
-       // GiftSystem.instance.buyGiftItem(this._giftType);
-        ShopSystem.instance.buyGood(this._giftId,1);
-        this._on_btn_close();
+        ShopSystem.instance.buyGood(this._shop_id, 1);
+        this.close();
     },
 
-    _on_btn_close : function () {
-        if(this._target && this._callfunc){
-            //cc.director.resume();
-            notification.emit(notification.event.GAME_RESUME);
-            this._callfunc(this._target);
-        }
-        this.close();
+    pop: function() {
+        this._super();
+        UiEffect.iconOpenEffect(this._ui.panel_gift);
     }
+});
+
+var GiftDetailVip = GiftDetailBase.extend({
+    _guiFile : "ui/gift_vip.json",
+    _shop_id: 101004
+});
+
+var GiftDetailZhiZun = GiftDetailBase.extend({
+    _guiFile: "ui/gift_zhizun.json",
+    _shop_id: 101003
+});
+
+var GiftDetailSuit = GiftDetailBase.extend({
+    _guiFile: "ui/gift_legend_suit.json",
+    _shop_id: 101001
+});
+
+
+var GiftDetailWeapon = GiftDetailBase.extend({
+    _guiFile: "ui/gift_legend_weapon.json",
+    _shop_id: 101002
 });
 
 
