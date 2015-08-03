@@ -334,7 +334,7 @@ var BattleLosePanel = ui.GuiWindowBase.extend({
 
     //至尊
     _on_btn_1 : function () {
-         var buy_panel = new GiftBuyDetail(GiftSystem.GiftType.ZhiZun, 101003);
+         var buy_panel = new GiftDetailZhiZun();
          buy_panel.pop();
          UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"));
     },
