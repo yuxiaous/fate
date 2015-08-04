@@ -116,12 +116,19 @@ var SceneBase = lh.LHScene.extend({
                 this._hero.roleDataManager.hp = this._hero.roleDataManager.maxHp;
                 this._hero.roleDataManager.mp = this._hero.roleDataManager.maxMp;
                 this._hero.roleActionManager.deathStatus = false;
-                this._hero.roleActionManager.playAction(RoleAction.Type.STAND_UP);
-                this._isLostBattle = false;
-                this._hero.invincible();
-                this._operator.setHide(true);
-                this.schedule(this.battleObserver);
+                //this._hero.roleActionManager.playAction(RoleAction.Type.STAND_UP);
+                LOG("PLAY REVIVE ACTION");
 
+                this._hero.roleActionManager.playAction(RoleAction.Type.REVIVE);
+                this._isLostBattle = false;
+                this.schedule(this.battleObserver);
+                this._operator.setHide(true);
+
+                //notification.emit(notification.event.HERO_REVIVE_ATTACK, this._hero);
+                //this._hero.reviveEffect(function () {
+                //    this._hero.invincible();
+                //
+                //},this);
 
             },this),
             notification.createBinding(notification.event.PLAYER_INFO, function () {
@@ -603,6 +610,7 @@ var SceneBase = lh.LHScene.extend({
                     this._bossPanel.setBoss(this._boss);
                 }
             }, this);
+
         }
 
         //this.onBeforeFightChatStart();

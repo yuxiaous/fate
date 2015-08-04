@@ -45,6 +45,28 @@ var Saber = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.FLOATING_UP, ["fukong1", "fukong2"]);
         this.addRoleAction(RoleAction.Type.FLOATING_GROUND, "luodi");
         this.addRoleAction(RoleAction.Type.STAND_UP, "qishen");
+        this.addRoleAction(RoleAction.Type.REVIVE,"qishen",{
+            attack: {
+                animation: undefined,
+                sound: "sounds/saber/atk5.mp3",
+                movement: 200
+            },
+            hit: {
+                animation: "sabar_effect/jineng5",
+                sound: "sounds/saber/hit.mp3",
+                velocity: {
+                    onGround: cc.p(500, 400),
+                    onFloating: cc.p(500, 400)
+                },
+                quake: {
+                    intensity: 15,
+                    time: 0.05
+                },
+                pause: {
+                    time: 0
+                }
+            }
+        });
         this.addRoleAction(RoleAction.Type.DIE, ["fukong1","fukong2", "luodi"]);
 
         this.addRoleAction(RoleAction.Type.ATTACK1, "gongji1", {
@@ -336,6 +358,28 @@ var Nero = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.FLOATING_UP, ["fukong1", "fukong2"]);
         this.addRoleAction(RoleAction.Type.FLOATING_GROUND, "luodi");
         this.addRoleAction(RoleAction.Type.STAND_UP, "qishen");
+        this.addRoleAction(RoleAction.Type.REVIVE,"qishen",{
+            attack: {
+                animation: undefined,
+                sound: "sounds/saber/atk5.mp3",
+                movement: 200
+            },
+            hit: {
+                animation: "sabar_effect/jineng5",
+                sound: "sounds/saber/hit.mp3",
+                velocity: {
+                    onGround: cc.p(500, 400),
+                    onFloating: cc.p(500, 400)
+                },
+                quake: {
+                    intensity: 15,
+                    time: 0.05
+                },
+                pause: {
+                    time: 0
+                }
+            }
+        });
         this.addRoleAction(RoleAction.Type.DIE, ["fukong1","fukong2", "luodi"]);
 
         this.addRoleAction(RoleAction.Type.ATTACK1, "gongji1", {
