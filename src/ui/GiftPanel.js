@@ -341,6 +341,7 @@ var EndlessSelected = ui.GuiWindowBase.extend({
 
 var BuySkillDetail = ui.GuiWindowBase.extend({
     _guiFile : "ui/buy_skill_layer.json",
+    _shop_id: 101011,
 
     ctor : function (func_,target_) {
         this._super();
@@ -352,13 +353,41 @@ var BuySkillDetail = ui.GuiWindowBase.extend({
 
     onEnter : function () {
         this._super();
+        this._ui = {
+            lbl_price_rmb: this.seekWidgetByName("lbl_price"),
+            lbl_price_diamond: this.seekWidgetByName("lbl_price_0")
+        };
 
+        var channel_id = util.getChannelId();
+        switch (channel_id) {
+            case GameChannel.Telecom:
+                this._ui.lbl_price_rmb.setVisible(false);
+                this._ui.lbl_price_diamond.setVisible(false);
+                this._ui.lbl_price = null;
+                break;
+            case GameChannel.AppStore:
+                this._ui.lbl_price_rmb.setVisible(false);
+                this._ui.lbl_price_diamond.setVisible(true);
+                this._ui.lbl_price = this._ui.lbl_price_diamond;
+                break;
+            default :
+                this._ui.lbl_price_rmb.setVisible(true);
+                this._ui.lbl_price_diamond.setVisible(false);
+                this._ui.lbl_price = this._ui.lbl_price_rmb;
+                break;
+        }
 
+        if(this._ui.lbl_price && this._shop_id) {
+            var config = ShopSystem.getConfig(this._shop_id);
+            if(config != undefined) {
+                this._ui.lbl_price.setString(this._ui.lbl_price._str_original.format(config.pay_cost));
+            }
+        }
     },
 
     onExit : function () {
+        this._ui = null;
         this._super();
-
     },
 
     _on_btn_buy : function(){
@@ -372,7 +401,7 @@ var BuySkillDetail = ui.GuiWindowBase.extend({
        // BattleSystem.instance.buySuperSkill();
 
         notification.emit(notification.event.BATTLE_STOP_STATE);
-        ShopSystem.instance.buyGood(101011, 1);
+        ShopSystem.instance.buyGood(this._shop_id);
     },
 
     _on_btn_close : function () {
