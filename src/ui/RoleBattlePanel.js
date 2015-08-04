@@ -111,7 +111,7 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
             var bottleId = 18002;
             var conf = ShopSystem.getConfig(bottleId);
             if(conf){
-                var str = "花费" + conf.pay_cost +  "元，购买" + conf.name;
+                var str = "花费{0}{1}，购买{2}".format(conf.pay_cost, ShopSystem.getPayTypeString(conf.pay_type), conf.name);
                 var msg = new MessageBoxOkCancel(str,"购买","取消");
                 msg.setOkCallback(function () {
                     //cc.director.resume();
@@ -119,7 +119,7 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
                     if(UiEffect.blockShopItemWithRMB()){
                         return
                     }
-                    ShopSystem.instance.buyGood(bottleId, 1);
+                    ShopSystem.instance.buyGood(bottleId);
                     this._on_btn_stopBattle();
                 },this);
                 msg.setCancelCallback(function () {
