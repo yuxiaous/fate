@@ -170,15 +170,31 @@ var GiftDetailBase = ui.GuiWindowBase.extend({
     onEnter: function() {
         this._super();
         this._ui = {
-            lbl_price: this.seekWidgetByName("lbl_price"),
+            lbl_price_rmb: this.seekWidgetByName("lbl_price"),
+            lbl_price_diamond: this.seekWidgetByName("lbl_price_0"),
             panel_gift: this.seekWidgetByName("gift_panel")
         };
 
-        if(util.getChannelId() == GameChannel.Telecom) {
-            this._ui.lbl_price.setVisible(false);
+        var channel_id = util.getChannelId();
+        switch (channel_id) {
+            case GameChannel.Telecom:
+                this._ui.lbl_price_rmb.setVisible(false);
+                this._ui.lbl_price_diamond.setVisible(false);
+                this._ui.lbl_price = null;
+                break;
+            case GameChannel.AppStore:
+                this._ui.lbl_price_rmb.setVisible(false);
+                this._ui.lbl_price_diamond.setVisible(true);
+                this._ui.lbl_price = this._ui.lbl_price_diamond;
+                break;
+            default :
+                this._ui.lbl_price_rmb.setVisible(true);
+                this._ui.lbl_price_diamond.setVisible(false);
+                this._ui.lbl_price = this._ui.lbl_price_rmb;
+                break;
         }
 
-        if(this._shop_id != undefined) {
+        if(this._ui.lbl_price && this._shop_id != undefined) {
             var config = ShopSystem.getConfig(this._shop_id);
             if(config) {
                 this._ui.lbl_price.setString(this._ui.lbl_price._str_original.format(config.pay_cost));
