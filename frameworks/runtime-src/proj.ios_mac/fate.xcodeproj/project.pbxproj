@@ -2423,7 +2423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ../../../\nrm -rf publish\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
+			shellScript = "cd ../../../\n#rm -rf publish\nrm -rf publish/src\nrm -rf publish/config\nrm -rf publish/script\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
 		};
 		DE25C3CB1B317BA800A9AEC0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2450,7 +2450,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ../../../\nrm -rf publish\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
+			shellScript = "cd ../../../\n#rm -rf publish\nrm -rf publish/src\nrm -rf publish/config\nrm -rf publish/script\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
 		};
 		DE5AD2A61B678CF4003F6331 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2477,7 +2477,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ../../../\nrm -rf publish\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
+			shellScript = "cd ../../../\n#rm -rf publish\nrm -rf publish/src\nrm -rf publish/config\nrm -rf publish/script\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
 		};
 		DEA0AB8E1B2B04E000079B42 /* Js Compile */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2491,7 +2491,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ../../../\nrm -rf publish\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
+			shellScript = "cd ../../../\n#rm -rf publish\nrm -rf publish/src\nrm -rf publish/config\nrm -rf publish/script\n./tools/cocos2d-console/bin/cocos jscompile -s src -d publish/src\n./tools/cocos2d-console/bin/cocos jscompile -s config -d publish/config\n./tools/cocos2d-console/bin/cocos jscompile -s frameworks/js-bindings/bindings/script -d publish/script";
 		};
 /* End PBXShellScriptBuildPhase section */
 
