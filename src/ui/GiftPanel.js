@@ -257,11 +257,10 @@ var GiftDetailWeapon = GiftDetailBase.extend({
 
 var EndlessSelected = ui.GuiWindowBase.extend({
     _guiFile : "ui/endless_select_layer.json",
+    _shop_id: 101014,
 
     ctor : function () {
         this._super();
-
-
     },
 
     onEnter : function () {
@@ -276,6 +275,7 @@ var EndlessSelected = ui.GuiWindowBase.extend({
         this._btn_challenge = this.seekWidgetByName("btn_challenge");
         this._panel_1 = this.seekWidgetByName("panel_1");
         this._chargetPosNode = this.seekWidgetByName("charge_node");
+        this._lbl_desc = this.seekWidgetByName("lbl_desc");
         //if(this._btn_buy){
         //    this._btn_buy.setVisible(false);
         //}
@@ -295,7 +295,17 @@ var EndlessSelected = ui.GuiWindowBase.extend({
                 ui.pushScene(new BattleEndlessScene(true) );
 
             },this)
-        ]
+        ];
+
+        if(this._shop_id) {
+            var config = ShopSystem.getConfig(this._shop_id);
+            if(config) {
+                this._lbl_desc.setString(this._lbl_desc._str_original.format(
+                    config.pay_cost,
+                    ShopSystem.getPayTypeString(config.pay_type)
+                ));
+            }
+        }
     },
 
     onExit : function () {
@@ -309,7 +319,7 @@ var EndlessSelected = ui.GuiWindowBase.extend({
         }
         //ui.pushScene(new BattleEndlessScene(true) );
 
-        ShopSystem.instance.buyGood(101014, 1);
+        ShopSystem.instance.buyGood(this._shop_id);
         //this.close();
     },
 
