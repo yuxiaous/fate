@@ -152,6 +152,15 @@ ShopSystem.PayType = {
 
     RMB: 101
 };
+ShopSystem.getPayTypeString = function(type) {
+    switch (type) {
+        case ShopSystem.PayType.Gold: return "金币";
+        case ShopSystem.PayType.Diamond: return "钻石";
+        case ShopSystem.PayType.RMB: return "元";
+    }
+    return "未知";
+};
+
 
 ShopSystem.GoodType = {
     Equip: 1,

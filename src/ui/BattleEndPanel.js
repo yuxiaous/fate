@@ -434,6 +434,7 @@ var EndlessBattelLosePanel = ui.GuiWindowBase.extend({
 
 var BattleRevivePanel = ui.GuiWindowBase.extend({
     _guiFile : "ui/battle_revive_layer.json",
+    _shop_id: 101013,
 
     ctor : function (curBattleType_,endlessRound_) {
         this._super();
@@ -444,12 +445,24 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
 
     onEnter : function () {
         this._super();
+        this._ui = {
+            lbl_desc: this.seekWidgetByName("lbl_desc")
+        };
 
+        var config = ShopSystem.getConfig(this._shop_id);
+        if(config) {
+            var cost = config.pay_cost;
+            var curr = ShopSystem.getPayTypeString(config.pay_type);
+            this._ui.lbl_desc.setString(this._ui.lbl_desc._str_original.format({
+                num: cost,
+                curr: curr
+            }));
+        }
     },
 
     onExit : function () {
+        this._ui = null;
         this._super();
-
     },
 
     _on_btn_buy : function(){
@@ -461,7 +474,7 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
 
         //BattleSystem.instance.sendReviveBattle();
 
-        ShopSystem.instance.buyGood(101013, 1);
+        ShopSystem.instance.buyGood(this._shop_id);
 
         this.close();
     },
