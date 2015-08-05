@@ -23,8 +23,8 @@ var ShopSystem = SystemBase.extend({
     },
 
     buyGood: function(id, num) {
-        LOG("ShopSystem.buyGood id: {0}, num: {1}".format(id, num));
         if(num == undefined) num = 1;
+        LOG("ShopSystem.buyGood id: {0}, num: {1}".format(id, num));
 
         var config = ShopSystem.getConfig(id);
         if(config == undefined) {
