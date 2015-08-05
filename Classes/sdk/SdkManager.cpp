@@ -58,6 +58,11 @@ EgameSdk egamesdk;
 AppStoreSdk appstoresdk;
 #endif
 
+#ifdef SDK_WE_REC
+#include "WeRecSDK/WeRecSdk.h"
+WeRecSdk werecsdk;
+#endif
+
 USING_NS_CC;
 
 

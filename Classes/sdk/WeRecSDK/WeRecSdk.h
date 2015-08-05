@@ -12,11 +12,17 @@
 #include <stdio.h>
 #include "Sdk.h"
 
-class WeRecSdk
+class WeRecSdk : public Sdk
 {
 public:
     WeRecSdk();
     static WeRecSdk *getInstance();
+    
+    virtual void init() override;
+    
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+    virtual bool applicationOpenURL(void *iosUIApplication, void *iosNSURL, void *iosNSString) override;
+#endif
 };
 
 #endif /* defined(__fate__WeRecSdk__) */
