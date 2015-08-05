@@ -37,27 +37,30 @@ void TalkingDataGameAnalyticsSdk::init()
     cocos2d::log("TalkingDataGameAnalyticsSdk::init");
 
     const char *appid = "59EC3DE05BB0234EA444193F4B9E0E4B";
+    const char *channel = "Develop";
 
 #if defined(CHANNEL_CMCC_MM)
-    const char *channel = "CmccMm";
+    channel = "CmccMm";
 #elif defined(CHANNEL_CMCC_AND)
-    const char *channel = "CmccAnd";
+    channel = "CmccAnd";
 #elif defined(CHANNEL_UNICOM)
-    const char *channel = "Unicom";
+    channel = "Unicom";
 #elif defined(CHANNEL_TELECOM)
-    const char *channel = "Egame";
+    channel = "Egame";
 #elif defined(CHANNEL_MZW)
-    const char *channel = "Mzw";
+    channel = "Mzw";
 #elif defined(CHANNEL_4399)
-    const char *channel = "4399";
+    channel = "4399";
 
 //=====================================================
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    const char *channel = "IosDevelop";
+    appid = "D02F09F2D8C67C240618579B2C9BF358";
+    channel = "IosDevelop";
 #elif  (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    const char *channel = "AndroidDevelop";
+    appid = "D02F09F2D8C67C240618579B2C9BF358";
+    channel = "AndroidDevelop";
 #else
-    const char *channel = "Develop";
+    appid = "D02F09F2D8C67C240618579B2C9BF358";
 #endif
 
 
