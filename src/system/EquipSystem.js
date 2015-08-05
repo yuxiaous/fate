@@ -270,3 +270,15 @@ EquipSystem.getEquipSlotUpgradeId = function(type, level) {
     return 0;
 };
 
+EquipSystem.getTopLevelShopId = function(type) {
+    switch (type) {
+        case EquipSystem.EquipSlotType.Weapon: return 101005;
+        case EquipSystem.EquipSlotType.Coat: return 101006;
+        case EquipSystem.EquipSlotType.Head: return 101007;
+        case EquipSystem.EquipSlotType.Glove: return 101008;
+        case EquipSystem.EquipSlotType.Shield: return 101009;
+        case EquipSystem.EquipSlotType.Amulet: return 101010;
+    }
+    return 0;
+};
+

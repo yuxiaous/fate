@@ -53,7 +53,8 @@ var EquipScene = ui.GuiWindowBase.extend({
             lbl_prop_2: this.seekWidgetByName("lbl_equip_prop_2"),
             lbl_price: this.seekWidgetByName("lbl_equip_price"),
             btn_leveup: this.seekWidgetByName("btn_duanzao"),
-            btn_top_level: this.seekWidgetByName("btn_top_level")
+            btn_top_level: this.seekWidgetByName("btn_top_level"),
+            lbl_top_level_price: this.seekWidgetByName("lbl_top_level_price")
         };
 
 
@@ -70,7 +71,7 @@ var EquipScene = ui.GuiWindowBase.extend({
                 }, this);
 
 
-            }, this),
+            }, this)
         ];
 
         UiEffect.buttonBBB(this._ui.btn_top_level);
@@ -178,6 +179,15 @@ var EquipScene = ui.GuiWindowBase.extend({
             this._ui.btn_leveup.setEnabled(true);
             this._ui.btn_leveup.setBright(true);
             this._ui.btn_top_level.setVisible(true);
+
+            var shop_id = EquipSystem.getTopLevelShopId(this._sel_type);
+            var shop_config = ShopSystem.getConfig(shop_id);
+            if(shop_config) {
+                this._ui.lbl_top_level_price.setString(this._ui.lbl_top_level_price._str_original.format(
+                    shop_config.pay_cost,
+                    ShopSystem.getPayTypeString(shop_config.pay_type)
+                ));
+            }
         }
         else {
             this._ui.lbl_price.setString("");
@@ -204,15 +214,7 @@ var EquipScene = ui.GuiWindowBase.extend({
     },
 
     _on_btn_top_level: function () {
-        var shop_id = 0;
-        switch (this._sel_type) {
-            case EquipSystem.EquipSlotType.Weapon: shop_id = 101005; break;
-            case EquipSystem.EquipSlotType.Coat: shop_id = 101006; break;
-            case EquipSystem.EquipSlotType.Head: shop_id = 101007; break;
-            case EquipSystem.EquipSlotType.Glove: shop_id = 101008; break;
-            case EquipSystem.EquipSlotType.Shield: shop_id = 101009; break;
-            case EquipSystem.EquipSlotType.Amulet: shop_id = 101010; break;
-        }
+        var shop_id = EquipSystem.getTopLevelShopId(this._sel_type);
         if(shop_id != 0) {
             ShopSystem.instance.buyGood(shop_id);
         }
