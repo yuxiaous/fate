@@ -162,13 +162,15 @@ BattleNorScene.initBattleSection = function (map_id_) {
             sessions.push(waves);
         }
 
-        BSection.push({
-            area : cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],640),
-            street: cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],220),
-            heroPos : cc.p(300,110),
-            warningLine : 400,
-            monsters :sessions
-        });
+        if(sessions.length > 0) {
+            BSection.push({
+                area : cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],640),
+                street: cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],220),
+                heroPos : cc.p(300,110),
+                warningLine : 400,
+                monsters :sessions
+            });
+        }
     }
 
 
