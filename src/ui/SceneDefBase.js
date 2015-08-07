@@ -130,55 +130,67 @@
             }
 
             //monster
-            var monsterData = this._sceneStatus.BSection[this._sectionIndex-1].monsters;
-
-            _.each(monsterData, function (data) {
-
-                var roleConfig = configdb.role[data.roleId];
-                var role = new Role(data.roleId);
-
-                var isBoss = false;
-                if (roleConfig.type == 1) {
-                    role.roleType = RoleBase.RoleType.Monster;
-                }
-                else if (roleConfig.type == 2) {
-                    role.roleType = RoleBase.RoleType.Boss;
-                    isBoss = true;
-                }
-
-                var pos = this.getMonsterPosWithHero(this._hero,tmpSections[this._sectionIndex -1].street);
-
-                role.setSpacePosition(pos);
-                role.setRoleAi(RoleAi.Type.XiaoGuai,{
-                    atkPer    : data.ai.atkPer,
-                    restPer   : data.ai.restPer,
-                    rangeActW : data.ai.rangeActW,
-                    rangeActH : data.ai.rangeActH,
-                    followAtk : data.ai.followAtk,
-                    isRemote  : data.ai.isRemote
-                });
-                role.turn(data.dir);
-                role.setBloodBar(isBoss,roleConfig.name);
-                role.aiData = data;
-
-                switch (role.roleType) {
-                    case RoleBase.RoleType.Monster:
-                        this._monsters.push(role);
-                        break;
-                    case RoleBase.RoleType.Boss:
-                        this._boss = role;
-                        break;
-                }
-                this._physicalWorld.addPhysicalNode(role);
-
-                if(role.roleType == RoleBase.RoleType.Boss){
-                    this._bossPanel.setBoss(this._boss);
-                }
-            }, this);
+            this._waveIndex = 0;
+            this.nextMonsterWave();
         }
 
         this.onBeforeFightChatStart();
     },
+
+     nextMonsterWave: function() {
+         this._waveIndex++;
+
+         var monsterData = this._sceneStatus.BSection[this._sectionIndex-1].monsters[this._waveIndex-1];
+         if(monsterData == undefined) {
+             return false;
+         }
+
+         _.each(monsterData, function (data) {
+
+             var roleConfig = configdb.role[data.roleId];
+             var role = new Role(data.roleId);
+
+             var isBoss = false;
+             if (roleConfig.type == 1) {
+                 role.roleType = RoleBase.RoleType.Monster;
+             }
+             else if (roleConfig.type == 2) {
+                 role.roleType = RoleBase.RoleType.Boss;
+                 isBoss = true;
+             }
+
+             var pos = this.getMonsterPosWithHero(this._hero,tmpSections[this._sectionIndex -1].street);
+
+             role.setSpacePosition(pos);
+             role.setRoleAi(RoleAi.Type.XiaoGuai,{
+                 atkPer    : data.ai.atkPer,
+                 restPer   : data.ai.restPer,
+                 rangeActW : data.ai.rangeActW,
+                 rangeActH : data.ai.rangeActH,
+                 followAtk : data.ai.followAtk,
+                 isRemote  : data.ai.isRemote
+             });
+             role.turn(data.dir);
+             role.setBloodBar(isBoss,roleConfig.name);
+             role.aiData = data;
+
+             switch (role.roleType) {
+                 case RoleBase.RoleType.Monster:
+                     this._monsters.push(role);
+                     break;
+                 case RoleBase.RoleType.Boss:
+                     this._boss = role;
+                     break;
+             }
+             this._physicalWorld.addPhysicalNode(role);
+
+             if(role.roleType == RoleBase.RoleType.Boss){
+                 this._bossPanel.setBoss(this._boss);
+             }
+         }, this);
+
+         return true;
+     },
 
     onBeforeFightChatEnd: function() {
 

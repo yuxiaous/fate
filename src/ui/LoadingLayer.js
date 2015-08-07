@@ -40,23 +40,21 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
             ////tmpScene = null;
         }
 
-        var that = this;
         if(this.BSection){
             _.each(this.BSection, function (sectionData) {
-                if(sectionData && sectionData.monsters){
-                    var monsterData = sectionData.monsters;
-                    _.each(monsterData, function (data) {
+                _.each(sectionData.monsters, function (wave) {
+                    _.each(wave, function(data) {
                         var roleConfig = configdb.role[data.roleId];
                         var modelConfig = configdb.model[roleConfig.model_id];
                         if(modelConfig){
                             var armatureStr = modelConfig.armature;
                             armatureStr = "res/armatures/" + armatureStr + "/texture.png";
                             LOG("armature str = " + armatureStr);
-                            that.addResToContent(armatureStr);
+                            this.addResToContent(armatureStr);
                         }
-                    });
-                }
-            });
+                    }, this);
+                }, this);
+            }, this);
         }
 
         if(this.chatData){

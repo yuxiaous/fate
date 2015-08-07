@@ -112,34 +112,41 @@ BattleNorScene.initChatInfo = function (map_id_) {
 BattleNorScene.initBattleSection = function (map_id_) {
     var BSection = [];
     var mapConfig = configdb.map[map_id_];
-    var prePZ_id ="peizhi_id_";
     var preScenePos = "scene_pos_";
     var preSceneLen = "scene_len_";
-    for(var i = 1; i<=4; i++){
-        var peizhi_id = mapConfig[prePZ_id+i];
-        ////test role
-        //if(1 && i == 1){
-        //    peizhi_id = 1001;
-        //}
-        if(peizhi_id){
+
+    for(var i = 1; i <= 3; ++i){
+        var sessions =[];
+
+        for(var j = 1; j <= 4; ++j) {
+            var peizhi_id = mapConfig["peizhi_id_" + i + j];
+            if(peizhi_id == undefined) {
+                continue;
+            }
+
             var peizhiConf = configdb.peizhi[peizhi_id];
-            var tmpMonster =[];
+            if(peizhiConf == undefined) {
+                continue
+            }
+
+            var waves =[];
             var preRoleId = "role_id_";
             var preRolePosx = "posx_";
             var preRolePosy = "posy_";
             var preRoleDir = "dir_";
             var preRoleAi = "aiType_";
             var preRoleDrop = "drop_id_";
-            for(var idx = 1; idx <= 6; idx++){
-                if(peizhiConf[preRoleId + idx]){
-                    var aiConfi = configdb.ai[peizhiConf[preRoleAi+idx]];
-                    LOG("-----drop id = " + peizhiConf[preRoleDrop+idx]);
-                    tmpMonster.push({
-                        roleId : peizhiConf[preRoleId + idx],
-                        posX   : peizhiConf[preRolePosx+idx],
-                        posY   : peizhiConf[preRolePosy+idx],
-                        dir    : peizhiConf[preRoleDir+idx],
-                        dropId : peizhiConf[preRoleDrop+idx],
+
+            for(var k = 1; k <= 6; ++k){
+                if(peizhiConf[preRoleId + k]){
+                    var aiConfi = configdb.ai[peizhiConf[preRoleAi+k]];
+                    //LOG("-----drop id = " + peizhiConf[preRoleDrop+k]);
+                    waves.push({
+                        roleId : peizhiConf[preRoleId + k],
+                        posX   : peizhiConf[preRolePosx+k],
+                        posY   : peizhiConf[preRolePosy+k],
+                        dir    : peizhiConf[preRoleDir+k],
+                        dropId : peizhiConf[preRoleDrop+k],
                         ai : {
                             atkPer    : aiConfi.atk_probably,
                             restPer   : aiConfi.rest_probably,
@@ -152,16 +159,22 @@ BattleNorScene.initBattleSection = function (map_id_) {
                 }
             }
 
-            BSection.push({
-                area : cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],640),
-                street: cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],220),
-                heroPos : cc.p(300,110),
-                warningLine : 400,
-                monsters :tmpMonster
-            });
+            sessions.push(waves);
         }
+
+        BSection.push({
+            area : cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],640),
+            street: cc.rect(mapConfig[preScenePos+i],0,mapConfig[preSceneLen+i],220),
+            heroPos : cc.p(300,110),
+            warningLine : 400,
+            monsters :sessions
+        });
     }
 
+
+    // sessions 场次
+    // waves 波次
+    // 每关3场次，没场次4波次，每波次6怪
     return BSection;
 };
 
