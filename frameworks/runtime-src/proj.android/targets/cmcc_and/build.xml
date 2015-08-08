@@ -68,7 +68,7 @@
     -->
     <import file="custom_rules.xml" optional="true" />
 
-    <target name="-pre-build" >
+    <target name="-pre-compile" >
         <copy todir="./">
             <fileset dir="../../../Classes/sdk/AndGame/android">
                 <include name="assets/" />
@@ -76,9 +76,7 @@
                 <include name="res/" />
             </fileset>
         </copy>
-    </target>
 
-    <target name="-pre-compile" >
         <path id="third.lib" >
             <path path="${toString:project.all.jars.path}" >
             </path>
