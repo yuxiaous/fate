@@ -75,19 +75,30 @@ def handle_event(event, tp, args):
 
             # copy inherit files
             if os.path.isdir(inherit_path):
-                shutil.copy2(os.path.join(inherit_path, "build.xml"), os.path.join(project_path, "build.xml"))
-                shutil.copy2(os.path.join(inherit_path, "AndroidManifest.xml"), os.path.join(project_path, "AndroidManifest.xml"))
-                shutil.copytree(os.path.join(inherit_path, "jni"), os.path.join(project_path, "jni"), True)
-                shutil.copytree(os.path.join(inherit_path, "res"), os.path.join(project_path, "res"), True)
-                shutil.copytree(os.path.join(inherit_path, "src"), os.path.join(project_path, "src"), True)
+                if os.path.isfile(os.path.join(inherit_path, "build.xml")):
+                    shutil.copy2(os.path.join(inherit_path, "build.xml"), os.path.join(project_path, "build.xml"))
+                if os.path.isfile(os.path.join(inherit_path, "AndroidManifest.xml")):
+                    shutil.copy2(os.path.join(inherit_path, "AndroidManifest.xml"), os.path.join(project_path, "AndroidManifest.xml"))
+                if os.path.isdir(os.path.join(inherit_path, "jni")):
+                    shutil.copytree(os.path.join(inherit_path, "jni"), os.path.join(project_path, "jni"), True)
+                if os.path.isdir(os.path.join(inherit_path, "res")):
+                    shutil.copytree(os.path.join(inherit_path, "res"), os.path.join(project_path, "res"), True)
+                if os.path.isdir(os.path.join(inherit_path, "src")):
+                    shutil.copytree(os.path.join(inherit_path, "src"), os.path.join(project_path, "src"), True)
+                pass
 
             # copy target files
             if os.path.isdir(target_path):
-                shutil.copy2(os.path.join(target_path, "build.xml"), os.path.join(project_path, "build.xml"))
-                shutil.copy2(os.path.join(target_path, "AndroidManifest.xml"), os.path.join(project_path, "AndroidManifest.xml"))
-                merge_dir(os.path.join("targets", target_name, "jni"), "jni")
-                merge_dir(os.path.join("targets", target_name, "res"), "res")
-                merge_dir(os.path.join("targets", target_name, "src"), "src")
+                if os.path.isfile(os.path.join(target_path, "build.xml")):
+                    shutil.copy2(os.path.join(target_path, "build.xml"), os.path.join(project_path, "build.xml"))
+                if os.path.isfile(os.path.join(target_path, "AndroidManifest.xml")):
+                    shutil.copy2(os.path.join(target_path, "AndroidManifest.xml"), os.path.join(project_path, "AndroidManifest.xml"))
+                if os.path.isdir(os.path.join(target_path, "jni")):
+                    merge_dir(os.path.join("targets", target_name, "jni"), "jni")
+                if os.path.isdir(os.path.join(target_path, "res")):
+                    merge_dir(os.path.join("targets", target_name, "res"), "res")
+                if os.path.isdir(os.path.join(target_path, "src")):
+                    merge_dir(os.path.join("targets", target_name, "src"), "src")
                 pass
 
             pass
