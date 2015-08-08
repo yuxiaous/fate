@@ -73,7 +73,7 @@
             <fileset dir="../../../Classes/sdk/AndGame/android">
                 <include name="assets/" />
                 <include name="libs/armeabi/" />
-                <!--<include name="res/" />-->
+                <include name="res/" />
             </fileset>
         </copy>
     </target>
