@@ -601,6 +601,25 @@ var SceneBase = lh.LHScene.extend({
             var roleConfig = configdb.role[data.roleId];
             var role = new Role(data.roleId);
 
+            // play effect
+            var effectName = "shuaguai/daiji".split('/');
+            var effectNode = dragonBones.DragonBonesHelper.buildArmatureNode(effectName[0]);
+            if(effectNode) {
+                //effectNode.registerFrameEventHandler(function(node, frameLabel) {
+                //    if(frameLabel == "emitDisappear") {
+                //        this.armatureNode.setVisible(false);
+                //    }
+                //}.bind(this));
+                effectNode.registerMovementEventHandler(function(node, type) {
+                    if(type == "complete") {
+                        effectNode.removeFromParent();
+                    }
+                }.bind(this));
+                if(effectNode.gotoAndPlay(effectName[1])) {
+                    role.addChild(effectNode, 999);
+                }
+            }
+
             var isBoss = false;
             if (roleConfig.type == 1) {
                 role.roleType = RoleBase.RoleType.Monster;
