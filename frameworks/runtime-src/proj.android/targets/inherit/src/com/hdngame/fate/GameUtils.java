@@ -10,8 +10,7 @@ import android.content.pm.Signature;
  */
 public class GameUtils {
 
-    private static int SignCode = -903721661;
-    private static boolean
+    private static int _signCode = 0;
 
     public static void checkSignature(Context context) {
         String packageName = context.getPackageName();
@@ -26,11 +25,14 @@ public class GameUtils {
         }
 
         Signature sign = pi.signatures[0];
-
-        int code = sign.hashCode();
-        System.out.println("checkSignature code: " + code);
-
-        return code == SignCode;
+        _signCode = sign.hashCode();
+//        System.out.println("checkSignature code: " + _signCode);
     }
 
+
+    public static boolean isLegalCopy() {
+        int code = -903721661;
+
+        return (_signCode == code);
+    }
 }
