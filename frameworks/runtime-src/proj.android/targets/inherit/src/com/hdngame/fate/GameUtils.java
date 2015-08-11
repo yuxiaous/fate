@@ -10,28 +10,27 @@ import android.content.pm.Signature;
  */
 public class GameUtils {
 
-    
-    public static boolean checkSignature(Context context, String packageName) {
-        PackageInfo pi = null;
+    private static int SignCode = -903721661;
+    private static boolean
 
+    public static void checkSignature(Context context) {
+        String packageName = context.getPackageName();
+//        System.out.println("checkSignature packageName: " + packageName);
+
+        PackageInfo pi = null;
         try {
             pi = context.getPackageManager().getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
         }
         catch (PackageManager.NameNotFoundException e) {
-            System.out.println("checkSignature name not found");
-            return false;
+            return;
         }
 
         Signature sign = pi.signatures[0];
-        System.out.println("checkSignature sign: " + sign.toCharsString());
 
         int code = sign.hashCode();
         System.out.println("checkSignature code: " + code);
 
-        if (code == 123) {
-            return true;
-        }
-
-        return false;
+        return code == SignCode;
     }
+
 }
