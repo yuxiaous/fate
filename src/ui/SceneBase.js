@@ -774,8 +774,9 @@ var SceneBase = lh.LHScene.extend({
 SceneBase.Type = {
     NormalType : 1,
     DefendType : 2,
-    EndlessType : 3
-}
+    EndlessType : 3,
+    GuideType: 4
+};
 
 
 var PauseLayer = ui.GuiWindowBase.extend({
