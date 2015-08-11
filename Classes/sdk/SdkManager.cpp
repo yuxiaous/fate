@@ -63,6 +63,11 @@ AppStoreSdk appstoresdk;
 WeRecSdk werecsdk;
 #endif
 
+#ifdef SDK_BAITONG
+#include "Baitong/BaitongSdk.h"
+BaitongSdk baitongsdk;
+#endif
+
 USING_NS_CC;
 
 

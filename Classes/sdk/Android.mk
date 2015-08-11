@@ -53,7 +53,8 @@ LOCAL_SRC_FILES := SdkManager.cpp \
                    mmbilling/MMSdk.cpp \
                    ktplay/KtplaySdk.cpp \
                    unipay/UniPaySdk.cpp \
-                   egame/EgameSdk.cpp
+                   egame/EgameSdk.cpp \
+                   Baitong/BaitongSdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT

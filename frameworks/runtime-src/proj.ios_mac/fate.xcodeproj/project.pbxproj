@@ -999,6 +999,8 @@
 		DE4891761B5D0B840097D3BD /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		DE4891771B5D0B840097D3BD /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		DE48917D1B5D0E9A0097D3BD /* GameUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GameUtils.mm; path = ../../../Classes/GameUtils.mm; sourceTree = "<group>"; };
+		DE50A25A1B7A200F00869019 /* BaitongSdk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaitongSdk.cpp; sourceTree = "<group>"; };
+		DE50A25B1B7A200F00869019 /* BaitongSdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaitongSdk.h; sourceTree = "<group>"; };
 		DE545DB81B4CE2FB00A91A14 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		DE545DBA1B4CE30200A91A14 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DE545DBC1B4CE31700A91A14 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -1654,6 +1656,7 @@
 		DE25C3D51B318E7D00A9AEC0 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
+				DE50A24F1B7A1FF600869019 /* Baitong */,
 				DE5AD2DA1B6A76B4003F6331 /* appstore */,
 				DE29E12A1B3CF98F000656CA /* DeveloperSdk.cpp */,
 				DE29E12B1B3CF98F000656CA /* DeveloperSdk.h */,
@@ -2015,6 +2018,15 @@
 			);
 			name = OpenUDID;
 			path = ../../../Classes/OpenUDID;
+			sourceTree = "<group>";
+		};
+		DE50A24F1B7A1FF600869019 /* Baitong */ = {
+			isa = PBXGroup;
+			children = (
+				DE50A25A1B7A200F00869019 /* BaitongSdk.cpp */,
+				DE50A25B1B7A200F00869019 /* BaitongSdk.h */,
+			);
+			path = Baitong;
 			sourceTree = "<group>";
 		};
 		DE5455F31B4CE20F00A91A14 /* ktplay */ = {

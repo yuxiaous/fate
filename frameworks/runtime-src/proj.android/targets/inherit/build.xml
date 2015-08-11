@@ -74,11 +74,26 @@
             </path>
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
+            <pathelement location="../../../Classes/sdk/Baitong/android/bdappunion_2.0_log_enabled.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
             </path>
         </path>
+
+        <!-- KTplay -->
+        <!--<copy todir="./">-->
+            <!--<fileset dir="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay">-->
+                <!--<include name="libs/armeabi/" />-->
+            <!--</fileset>-->
+        <!--</copy>-->
+
+        <!-- Baitong -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/Baitong/android">
+                <include name="libs/armeabi/" />
+            </fileset>
+        </copy>
     </target>
 
     <!-- Import the actual build file.
