@@ -57,7 +57,17 @@ var BagScene = ui.GuiWindowBase.extend({
             btn_sell: this.seekWidgetByName("btn_chushou"),
             lbl_score_change: this.seekWidgetByName("lbl_score_change"),
             sp_change_up: this.seekWidgetByName("sp_change_up"),
-            sp_change_down: this.seekWidgetByName("sp_change_down")
+            sp_change_down: this.seekWidgetByName("sp_change_down"),
+
+            lbl_prop_level: this.seekWidgetByName("lbl_prop_level"),
+            lbl_prop_exp: this.seekWidgetByName("lbl_prop_exp"),
+            lbl_prop_score: this.seekWidgetByName("lbl_prop_score"),
+            lbl_prop_hp: this.seekWidgetByName("lbl_prop_hp"),
+            lbl_prop_mp: this.seekWidgetByName("lbl_prop_mp"),
+            lbl_prop_atk: this.seekWidgetByName("lbl_prop_atk"),
+            lbl_prop_def: this.seekWidgetByName("lbl_prop_def"),
+            lbl_prop_crit: this.seekWidgetByName("lbl_prop_crit"),
+            lbl_prop_sunder: this.seekWidgetByName("lbl_prop_sunder")
         };
 
         this._bindings = [
@@ -72,9 +82,11 @@ var BagScene = ui.GuiWindowBase.extend({
                 //    }
                 //}, this);
             }, this),
-            notification.createBinding(notification.event.SKIN_INFO, this.createRoleAvatar, this)
+            notification.createBinding(notification.event.SKIN_INFO, this.createRoleAvatar, this),
+            notification.createBinding(notification.event.PLAYER_INFO, this.refreshProperty, this)
         ];
 
+        this.refreshProperty();
         this.createItemList();
         this.createRoleAvatar();
         this.refreshItemPage();
@@ -96,6 +108,32 @@ var BagScene = ui.GuiWindowBase.extend({
         this._ui = null;
 
         this._super();
+    },
+
+    refreshProperty: function() {
+        var system = PlayerSystem.instance;
+        this._ui.lbl_prop_level.setString(this._ui.lbl_prop_level._str_original.format(system.level));
+
+        var score = system.getPlayerBattleScore();
+        this._ui.lbl_prop_score.setString(this._ui.lbl_prop_score._str_original.format(score.score));
+        this._ui.lbl_prop_hp.setString(this._ui.lbl_prop_hp._str_original.format(score.hp));
+        this._ui.lbl_prop_mp.setString(this._ui.lbl_prop_mp._str_original.format(score.mp));
+        this._ui.lbl_prop_atk.setString(this._ui.lbl_prop_atk._str_original.format(score.atk));
+        this._ui.lbl_prop_def.setString(this._ui.lbl_prop_def._str_original.format(score.def));
+        this._ui.lbl_prop_crit.setString(this._ui.lbl_prop_crit._str_original.format(score.crit));
+        this._ui.lbl_prop_sunder.setString(this._ui.lbl_prop_sunder._str_original.format(score.sunder));
+
+        var level_config = configdb.levelup[system.level];
+        if(level_config) {
+            var pre_level_config = configdb.levelup[system.level-1];
+
+            var pre_exp = pre_level_config ? pre_level_config.exp : 0;
+
+            var need_exp = level_config.exp - pre_exp;
+            var cur_exp = system.exp - pre_exp;
+
+            this._ui.lbl_prop_exp.setString(this._ui.lbl_prop_exp._str_original.format(cur_exp, need_exp));
+        }
     },
 
     clearItemList: function() {
@@ -151,16 +189,16 @@ var BagScene = ui.GuiWindowBase.extend({
 
     onSelectItem: function(item) {
         this._sel_index = _.indexOf(this._ui.ctrl_items, item);
-        this.refreshSelectedItemInfo(false);
+        this.refreshSelectedItemInfo();
     },
 
     onSelectEquip: function(equip) {
         this._sel_index = -equip.slot;
-        this.refreshSelectedItemInfo(true);
+        this.refreshSelectedItemInfo();
 
     },
 
-    refreshSelectedItemInfo: function(needHIde_) {
+    refreshSelectedItemInfo: function() {
         _.each(this._ui.ctrl_items, function(item, i) {
             item.setSelected(i == this._sel_index);
         }, this);
@@ -196,19 +234,26 @@ var BagScene = ui.GuiWindowBase.extend({
             // desc
             this._ui.lbl_item_desc.setString(config.desc || "");
 
-            // use
-            if(config.type) {
-                if(config.type == ItemSystem.ItemType.Item) {
-                    this._ui.btn_use.setVisible(true);
-                    this._ui.btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
-                }
-                else {
-                    this._ui.btn_use.setVisible(false);
-                }
+            // use button
+            if(config.type == undefined || config.type == ItemSystem.ItemType.Item) {
+                this._ui.btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
+                this._ui.btn_use.setVisible(true);
+                this._ui.btn_use.setEnabled(this._sel_index >= 0);
+                this._ui.btn_use.setBright(this._sel_index >= 0);
             }
             else {
-                this._ui.btn_use.setVisible(true);
-                this._ui.btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
+                this._ui.btn_use.setVisible(false);
+            }
+
+            // sell button
+            if(this._sel_index >= 0) {
+                var enable = config.can_sale && config.price && config.price > 0;
+                this._ui.btn_sell.setEnabled(enable);
+                this._ui.btn_sell.setBright(enable);
+            }
+            else {
+                this._ui.btn_sell.setEnabled(false);
+                this._ui.btn_sell.setBright(false);
             }
 
             // score value
@@ -253,26 +298,6 @@ var BagScene = ui.GuiWindowBase.extend({
                 this._ui.lbl_score_change.setVisible(false);
                 this._ui.lbl_item_score.setString("");
             }
-
-            if(needHIde_ != undefined && needHIde_ == true){
-                this._ui.btn_use.setEnabled(false);
-                this._ui.btn_sell.setEnabled(false);
-
-                this._ui.btn_use.setBright(false);
-                this._ui.btn_sell.setBright(false);
-            }
-            else{
-                this._ui.btn_use.setEnabled(true);
-                this._ui.btn_sell.setEnabled(true);
-
-                this._ui.btn_use.setBright(true);
-                this._ui.btn_sell.setBright(true);
-            }
-
-            // sell
-            var enable = config.can_sale && config.price && config.price > 0;
-            this._ui.btn_sell.setEnabled(enable);
-            this._ui.btn_sell.setBright(enable);
 
             return;
         }
