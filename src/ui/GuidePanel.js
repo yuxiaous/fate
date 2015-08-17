@@ -46,8 +46,57 @@ var GuidePanel = ui.GuiWindowBase.extend({
             this._content_img.setContentSize(cc.size(size.width,size.height))
 
         }
+    },
+    
+    //updateBtn : function (btn_) {
+    //    var cpBtn = btn_.clone();
+    //
+    //    this.addChild(cpBtn);
+    //    cpBtn.setAnchorPoint(btn_.getAnchorPoint());
+    //    cpBtn.setPosition(btn_.convertToWorldSpace());
+    //    cpBtn.setVisible(true);
+    //
+    //    return cpBtn;
+    //},
+    
+    
+    startRefreshBtn : function (btn_) {
+        this._oriBtn = btn_;
+        this._oriBtn.setVisible(false);
+
+        if(this._cpBtn){
+            this._cpBtn.removeFromParent();
+            this._cpBtn = null;
+        }
+
+        this._cpBtn = this._oriBtn.clone();
+
+        this.addChild(this._cpBtn);
+        this._cpBtn.setVisible(true);
+
+        UiEffect.buttonBBB(this._cpBtn);
+
+        this.schedule(this.scheduleUpdateCpBtn);
+        return this._cpBtn;
+    },
+    
+    endRefreshBtn : function () {
+        this.unschedule(this.scheduleUpdateCpBtn);
+
+        this._oriBtn.setVisible(true);
+        this._cpBtn.removeFromParent();
+        this._cpBtn = null;
+    },
+
+    scheduleUpdateCpBtn : function () {
+        var pos = this._oriBtn.convertToWorldSpaceAR();
+        var anc = this._oriBtn.getAnchorPoint();
+        this._cpBtn.setPosition(pos);
+        this._cpBtn.setAnchorPoint(anc);
     }
 });
+
+
 
 
 var CaoZuoJiaoXue = ui.GuiWindowBase.extend({
