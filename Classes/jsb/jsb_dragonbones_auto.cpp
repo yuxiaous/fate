@@ -571,6 +571,25 @@ bool js_jsb_dragonbones_auto_DragonBonesHelper_buildArmatureNode(JSContext *cx, 
         args.rval().set(jsret);
         return true;
     }
+    if (argc == 2) {
+        std::string arg0;
+        bool arg1;
+        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
+        arg1 = JS::ToBoolean(args.get(1));
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_dragonbones_auto_DragonBonesHelper_buildArmatureNode : Error processing arguments");
+        dragonBones::DBCCArmatureNode* ret = DragonBonesHelper::buildArmatureNode(arg0, arg1);
+        jsval jsret = JSVAL_NULL;
+        do {
+        if (ret) {
+            js_proxy_t *jsProxy = js_get_or_create_proxy<dragonBones::DBCCArmatureNode>(cx, (dragonBones::DBCCArmatureNode*)ret);
+            jsret = OBJECT_TO_JSVAL(jsProxy->obj);
+        } else {
+            jsret = JSVAL_NULL;
+        }
+    } while (0);
+        args.rval().set(jsret);
+        return true;
+    }
     JS_ReportError(cx, "js_jsb_dragonbones_auto_DragonBonesHelper_buildArmatureNode : wrong number of arguments");
     return false;
 }

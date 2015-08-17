@@ -13,11 +13,15 @@ var ShowRole = Role.extend({
         this._walk_action = false;
     },
 
+    init: function() {
+        this.independent = true;
+        this._super();
+    },
+
     advanceTime: function(dt) {
         this._super();
 
         this.movingValue = this._walk_action;
-        dragonBones.DragonBonesHelper.advanceWorldClock(dt);
     },
 
     setWalkAction : function () {

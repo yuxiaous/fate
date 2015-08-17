@@ -157,10 +157,12 @@ dragonBones.DragonBonesHelper = {
 /**
  * @method buildArmatureNode
  * @param {String} arg0
+ * @param {bool} arg1
  * @return {dragonBones::DBCCArmatureNode}
  */
 buildArmatureNode : function (
-str 
+str, 
+bool 
 )
 {
     return dragonBones::DBCCArmatureNode;

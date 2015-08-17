@@ -5,7 +5,6 @@
 
 var RoleBase = PhysicalNode.extend({
     ctor: function(armatureName, designDirection) {
-        this._super();
         // setter
         this.roleSize = null;
         this.roleType = RoleBase.RoleType.Unknown;
@@ -18,6 +17,7 @@ var RoleBase = PhysicalNode.extend({
         this.roleType = 0;
         this.viewLength = 200;
         this.throwModelId = null;
+        this.independent = false;
 
         // status
         this.direction = 0;
@@ -43,7 +43,8 @@ var RoleBase = PhysicalNode.extend({
         this.roleActionManager = new RoleActionManager(this);
         this.roleDataManager = new RoleDataManager(this);
 
-        this.init();
+        //this.init();
+        this._super();
     },
 
     addThrowWeaponItem : function (throwItem_) {
@@ -51,7 +52,7 @@ var RoleBase = PhysicalNode.extend({
     },
 
     init: function() {
-        var armatureNode = dragonBones.DragonBonesHelper.buildArmatureNode(this.armatureName);
+        var armatureNode = dragonBones.DragonBonesHelper.buildArmatureNode(this.armatureName, this.independent);
         this.addChild(armatureNode);
 
         //if(this.roleType == RoleBase.RoleType.Boss){

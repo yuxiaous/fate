@@ -27,13 +27,19 @@ void DragonBonesHelper::removeDragonBones(const std::string &name)
     removeTextureAtlas(name);
 }
 
-DBCCArmatureNode *DragonBonesHelper::buildArmatureNode(const std::string &name)
+DBCCArmatureNode *DragonBonesHelper::buildArmatureNode(const std::string &name, bool single)
 {
     addDragonBones(name);
     
     DBCCFactory *factory = DBCCFactory::getInstance();
     DBCCArmature *armature = factory->buildArmature(name);
-    DBCCArmatureNode *node = DBCCArmatureNode::createWithWorldClock(armature);
+    DBCCArmatureNode *node = nullptr;
+    if(single) {
+        node = DBCCArmatureNode::create(armature);
+    }
+    else {
+        node = DBCCArmatureNode::createWithWorldClock(armature);
+    }
     return node;
 }
 

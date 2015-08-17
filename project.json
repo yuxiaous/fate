@@ -144,6 +144,7 @@
     "src/ui/GiftPanel.js",
     "src/ui/AboutGameLayer.js",
     "src/ui/GuidePanel.js",
+    "src/ui/SelectHeroPanel.js",
 
 
     "src/server/server.js",

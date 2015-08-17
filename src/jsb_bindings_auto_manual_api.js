@@ -7,6 +7,10 @@ lh.LHScene.prototype._ctor = function(plistLevelFile) {
     lh.LHScene.prototype.initWithContentOfFile.call(this, plistLevelFile);
 };
 
+cc.Node.prototype._ctor = function() {
+    this.init();
+};
+
 
 //// DragonBones
 //dragonBones.events = dragonBones.events || {};

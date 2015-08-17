@@ -331,41 +331,43 @@ var BagScene = ui.GuiWindowBase.extend({
     },
 
     _on_btn_change: function() {
+        var win = new SelectHeroPanel();
+        win.pop();
 
-        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
-            MessageBoxOk.show("通过第一章第六关开放");
-            return;
-        }
-
-        var player_config = configdb.player[PlayerSystem.instance.playerId];
-        if(player_config == undefined) {
-            return;
-        }
-
-        var change_id;
-        var system = SkinSystem.instance;
-        if(system.use_skin == player_config.skin_id_1) {
-            change_id = player_config.skin_id_2 || 0;
-        }
-        else {
-            change_id = player_config.skin_id_1 || 0;
-        }
-
-        var info = system.skins[change_id];
-        if(info == undefined) {
-            var box = MessageBoxOkCancel.show("未购买该套装，是否购买？");
-            box.setOkCallback(function() {
-                this.close();
-                //new ShopScene(ShopSystem.ShopType.Role)
-                ui.pushScene(new ShopScene(ShopSystem.ShopType.Role))
-            }, this);
-        }
-        else {
-            var skins = _.reject(system.skins, function(skin) {
-                return skin.skin_id == system.use_skin;
-            });
-            SkinSystem.instance.changeSkin(skins[0].skin_id);
-        }
+        //if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
+        //    MessageBoxOk.show("通过第一章第六关开放");
+        //    return;
+        //}
+        //
+        //var player_config = configdb.player[PlayerSystem.instance.playerId];
+        //if(player_config == undefined) {
+        //    return;
+        //}
+        //
+        //var change_id;
+        //var system = SkinSystem.instance;
+        //if(system.use_skin == player_config.skin_id_1) {
+        //    change_id = player_config.skin_id_2 || 0;
+        //}
+        //else {
+        //    change_id = player_config.skin_id_1 || 0;
+        //}
+        //
+        //var info = system.skins[change_id];
+        //if(info == undefined) {
+        //    var box = MessageBoxOkCancel.show("未购买该套装，是否购买？");
+        //    box.setOkCallback(function() {
+        //        this.close();
+        //        //new ShopScene(ShopSystem.ShopType.Role)
+        //        ui.pushScene(new ShopScene(ShopSystem.ShopType.Role))
+        //    }, this);
+        //}
+        //else {
+        //    var skins = _.reject(system.skins, function(skin) {
+        //        return skin.skin_id == system.use_skin;
+        //    });
+        //    SkinSystem.instance.changeSkin(skins[0].skin_id);
+        //}
     },
 
     _on_btn_close: function() {

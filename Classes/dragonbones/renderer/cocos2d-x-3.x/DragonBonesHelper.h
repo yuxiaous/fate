@@ -19,7 +19,7 @@ public:
     static bool addDragonBones(const std::string &name);
     static void removeDragonBones(const std::string &name);
     
-    static dragonBones::DBCCArmatureNode *buildArmatureNode(const std::string &name);
+    static dragonBones::DBCCArmatureNode *buildArmatureNode(const std::string &name, bool single = false);
     
     static void advanceWorldClock(float dt);
     
