@@ -67,15 +67,24 @@ SelectHeroPanel.HeroSkinCell = ui.GuiWidgetBase.extend({
             lbl_name: this.seekWidgetByName("lbl_name"),
             lbl_score: this.seekWidgetByName("lbl_score")
         };
+        this._bindings = [
+            notification.createBinding(notification.event.SKIN_INFO, this.refreshUsingStatus, this)
+        ];
+
+        var config = configdb.skin[this.skinId];
+        if(config == undefined) {
+            return;
+        }
+
+        this._ui.lbl_name.setString(config.name);
 
         this.createAvatar();
         this.refreshUsingStatus();
-
-
     },
 
     onExit: function() {
         this.clearAvatar();
+        notification.removeBinding(this._bindings);
         this._super();
     },
 
@@ -119,6 +128,56 @@ SelectHeroPanel.HeroSkinCell = ui.GuiWidgetBase.extend({
             this._ui.lbl_unused.setVisible(false);
             this._ui.lbl_locked.setVisible(true);
         }
+    },
+
+    _on_btn_touch: function() {
+        var has_used = (SkinSystem.instance.use_skin == this.skinId);
+        var has_skin = false;
+        _.each(SkinSystem.instance.skins, function(info) {
+            if(info.skin_id == this.skinId) {
+                has_skin = true;
+            }
+        }, this);
+
+        if(has_used) {
+            // do nothing
+        }
+        else if(has_skin) {
+            SkinSystem.instance.changeSkin(this.skinId);
+        }
+        else {
+            var win = new SelectHeroPanel.ConfirmWindow();
+            win.pop();
+        }
+    }
+
+});
+
+SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
+    _guiFile: "ui/select_hero_confirm.json",
+
+    ctor: function() {
+        this._super();
+    },
+
+    onEnter: function() {
+        this._super();
+    },
+
+    onExit: function() {
+        this._super();
+    },
+
+    _on_btn_cancel: function() {
+        this.close();
+    },
+
+    _on_btn_play: function() {
+
+    },
+
+    _on_btn_buy: function() {
+        ui.pushScene(new ShopScene(ShopSystem.ShopType.Role))
     }
 });
 
