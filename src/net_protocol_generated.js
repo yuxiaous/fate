@@ -5,6 +5,14 @@ var net_protocol_handlers = {};
 var _SendFunc = net.send.bind(net);
 var _BindFunc = net.registerCallback.bind(net);
 
+// @protocol 更新物品信息
+// @param {list} items, 物品信息列表
+net_protocol_handlers.CMD_SC_ITEM_INFO = 1401;
+_BindFunc(1401, function(obj) {
+	cc.assert(obj.items != undefined, "CMD_SC_ITEM_INFO.items is undefined.");
+	net_protocol_handlers.ON_CMD_SC_ITEM_INFO(obj);
+});
+
 // @protocol 战斗过程中使用道具结果
 // @param {uint32} result, 使用结果，1成功，2失败
 // @param {uint32} item_type, 1加血，2加蓝，3加血加蓝
@@ -241,13 +249,13 @@ _BindFunc(1405, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_ITEM_USE_RESULT(obj);
 });
 
-// @protocol 更新物品信息
-// @param {list} items, 物品信息列表
-net_protocol_handlers.CMD_SC_ITEM_INFO = 1401;
-_BindFunc(1401, function(obj) {
-	cc.assert(obj.items != undefined, "CMD_SC_ITEM_INFO.items is undefined.");
-	net_protocol_handlers.ON_CMD_SC_ITEM_INFO(obj);
-});
+// @protocol 装备强化（背包中）
+// @param {uint32} uid, 
+net_protocol_handlers.CMD_CS_EQUIP_STRENGTHEN_IN_BAG = 1310;
+net_protocol_handlers.SEND_CMD_CS_EQUIP_STRENGTHEN_IN_BAG = function(obj) {
+	cc.assert(obj.uid != undefined, "CMD_CS_EQUIP_STRENGTHEN_IN_BAG.uid is undefined.");
+	_SendFunc(1310, obj);
+};
 
 // @protocol 战斗结束
 // @param {uint32} result, 战斗结果, 1胜利，2失败
@@ -257,6 +265,14 @@ net_protocol_handlers.SEND_CMD_CS_BATTLE_FINISH = function(obj) {
 	cc.assert(obj.result != undefined, "CMD_CS_BATTLE_FINISH.result is undefined.");
 	cc.assert(obj.time != undefined, "CMD_CS_BATTLE_FINISH.time is undefined.");
 	_SendFunc(1503, obj);
+};
+
+// @protocol 装备强化（已装备）
+// @param {uint32} slot, 
+net_protocol_handlers.CMD_CS_EQUIP_STRENGTHEN_ON_EQUIP = 1311;
+net_protocol_handlers.SEND_CMD_CS_EQUIP_STRENGTHEN_ON_EQUIP = function(obj) {
+	cc.assert(obj.slot != undefined, "CMD_CS_EQUIP_STRENGTHEN_ON_EQUIP.slot is undefined.");
+	_SendFunc(1311, obj);
 };
 
 // @protocol 请求订单结果
@@ -453,6 +469,14 @@ net_protocol_handlers.CMD_SC_BUY_SHILIAN_FINISH = 1640;
 _BindFunc(1640, function(obj) {
 	cc.assert(obj.result != undefined, "CMD_SC_BUY_SHILIAN_FINISH.result is undefined.");
 	net_protocol_handlers.ON_CMD_SC_BUY_SHILIAN_FINISH(obj);
+});
+
+// @protocol 装备强化结果
+// @param {uint32} result, 
+net_protocol_handlers.CMD_SC_EQUIP_STRENGTHEN_RESULT = 1312;
+_BindFunc(1312, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_EQUIP_STRENGTHEN_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_EQUIP_STRENGTHEN_RESULT(obj);
 });
 
 // @protocol 领取每日VIP奖励

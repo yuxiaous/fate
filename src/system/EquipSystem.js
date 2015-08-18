@@ -216,6 +216,18 @@ EquipSystem.getEquipSlotName = function(type) {
     return "位置部位";
 };
 
+EquipSystem.getEquipPropertyType = function(slot) {
+    switch (slot) {
+        case EquipSystem.EquipSlotType.Weapon: return EquipSystem.EquipPropertyType.Atk;
+        case EquipSystem.EquipSlotType.Coat: return EquipSystem.EquipPropertyType.Def;
+        case EquipSystem.EquipSlotType.Head: return EquipSystem.EquipPropertyType.Hp;
+        case EquipSystem.EquipSlotType.Glove: return EquipSystem.EquipPropertyType.Crit;
+        case EquipSystem.EquipSlotType.Shield: return EquipSystem.EquipPropertyType.Mp;
+        case EquipSystem.EquipSlotType.Amulet: return EquipSystem.EquipPropertyType.Sunder;
+    }
+    return 0;
+};
+
 EquipSystem.getEquipProperty = function(type) {
     switch (type) {
         case EquipSystem.EquipPropertyType.Hp: return "生命值";
@@ -226,6 +238,17 @@ EquipSystem.getEquipProperty = function(type) {
         case EquipSystem.EquipPropertyType.Sunder: return "破甲值";
     }
     return "未知属性";
+};
+
+EquipSystem.getEquipPropertyKey = function(type) {
+    switch (type) {
+        case EquipSystem.EquipPropertyType.Hp: return "hp";
+        case EquipSystem.EquipPropertyType.Mp: return "mp";
+        case EquipSystem.EquipPropertyType.Atk: return "atk";
+        case EquipSystem.EquipPropertyType.Def: return "def";
+        case EquipSystem.EquipPropertyType.Crit: return "crit";
+        case EquipSystem.EquipPropertyType.Sunder: return "sunder";
+    }
 };
 
 EquipSystem.getEquipSlotUpgradeId = function(type, level) {

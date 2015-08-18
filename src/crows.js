@@ -47,12 +47,12 @@ var LOGScene = cc.Scene.extend({
         this._super();
         var winSize = cc.director.getWinSize();
 
-        var logString = "res/zui_03.png";
+        var logString = "res/logo_03.png";
         if(winSize.width < 960){
-            logString = "res/zui_01.png";
+            logString = "res/logo_01.png";
         }
         else if(winSize.width > 960 ){
-            logString = "res/zui_02.png";
+            logString = "res/logo_02.png";
         }
 
         var logoPic = cc.Sprite.create(logString);

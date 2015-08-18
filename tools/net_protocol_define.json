@@ -306,6 +306,37 @@
         ["uint32", "result", "结果 0成功"]
       ]
     },
+    "CMD_CS_EQUIP_STRENGTHEN_IN_BAG":
+    {
+      "code": 1310,
+      "type": "CS",
+      "desc": "装备强化（背包中）",
+      "schemes":
+      [
+        ["uint32", "uid", ""]
+      ]
+    },
+    "CMD_CS_EQUIP_STRENGTHEN_ON_EQUIP":
+    {
+      "code": 1311,
+      "type": "CS",
+      "desc": "装备强化（已装备）",
+      "schemes":
+      [
+        ["uint32", "slot", ""]
+      ]
+    },
+    "CMD_SC_EQUIP_STRENGTHEN_RESULT":
+    {
+      "code": 1312,
+      "type": "SC",
+      "desc": "装备强化结果",
+      "schemes":
+      [
+        ["uint32", "result", ""]
+      ]
+    },
+
 
 	"CMD_SC_ITEM_INFO":
 	{

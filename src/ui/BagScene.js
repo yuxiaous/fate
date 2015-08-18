@@ -273,7 +273,7 @@ var BagScene = ui.GuiWindowBase.extend({
 
             // strengthen button
             this._ui.btn_strengthen.setVisible(true);
-            enable = true;//config.star != undefined;
+            enable = config.star != undefined;
             this._ui.btn_strengthen.setEnabled(enable);
             this._ui.btn_strengthen.setBright(enable);
 
@@ -420,28 +420,31 @@ var BagScene = ui.GuiWindowBase.extend({
     },
 
     _on_btn_strengthen: function() {
-
-        //var config;
-        //if(this._sel_index >= 0) {
-        //    var item = this._ui.ctrl_items[this._sel_index];
-        //    info = BagSystem.instance.items[item.uid];
-        //    if(info) {
-        //        config = BagSystem.getConfig(info.id);
-        //    }
-        //}
-        //else {
-        //    var equip = _.find(this._ui.ctrl_slots, function(equip) {
-        //        return equip.slot == -this._sel_index;
-        //    }, this);
-        //    info = EquipSystem.instance.slots[equip.slot];
-        //    if(info) {
-        //        config = BagSystem.getConfig(info.id);
-        //    }
-        //}
-
-
-        var win = new StrengthenPanel();
-        win.pop();
+        var info;
+        var equip_id = 0;
+        if(this._sel_index >= 0) {
+            var item = this._ui.ctrl_items[this._sel_index];
+            info = BagSystem.instance.items[item.uid];
+            if(info) {
+                equip_id = info.id;
+            }
+        }
+        else {
+            var equip = _.find(this._ui.ctrl_slots, function(equip) {
+                return equip.slot == -this._sel_index;
+            }, this);
+            info = EquipSystem.instance.slots[equip.slot];
+            if(info) {
+                equip_id = info.id;
+            }
+        }
+        if(equip_id != 0) {
+            var win = new StrengthenPanel(equip_id);
+            win.pop();
+        }
+        else {
+            MessageBoxOk.show("粗错辣！");
+        }
     }
 });
 
