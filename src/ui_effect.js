@@ -157,7 +157,7 @@ var UiEffect = {
         particle.setAutoRemoveOnFinish(true);
         particle.setPosition(cc.p(0,0));
         particle.setDuration(1.0);
-        particle.setPositionType(cc.ParticleSystem.TYPE_RELATIVE);
+        particle.setPositionType(cc.ParticleSystem.TYPE_FREE);
         node_.addChild(particle);
         node_.particleEffect = particle;
     }

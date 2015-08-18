@@ -43,6 +43,10 @@ var ItemSystem = SystemBase.extend({
             if(obj.item_type == ItemSystem.ItemUseType.AddHpMp){    //加满血和蓝
                 target.roleDataManager.hp = target.roleDataManager.maxHp;
                 target.roleDataManager.mp = target.roleDataManager.maxMp;
+
+                UiEffect.addMpOrHpParticle(target,true);
+                UiEffect.addMpOrHpParticle(target,false);
+
                 target.invincible();
             }
             //else if(obj.item_type == BattleSystem.UseItemType.UseRevive){ //复活币

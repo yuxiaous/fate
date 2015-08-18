@@ -19,8 +19,8 @@ var GuideSystem = SystemBase.extend({
             this._curGuideInfo = obj.guide_info;
 
             _.each(this._curGuideInfo, function (info_) {
-                LOG(" GUIDE TYPE = " + info_.guideType);
-                LOG("  GUIDE STATE = " + info_.guideState);
+                //LOG(" GUIDE TYPE = " + info_.guideType);
+                //LOG("  GUIDE STATE = " + info_.guideState);
             })
         }
     },
@@ -138,30 +138,25 @@ var GuideSystem = SystemBase.extend({
 });
 
 GuideSystem.AddGuidePanel = function (btn_,guideId_) {
-    LOG("GUIDE IDX = " + guideId_);
     var sys = GuideSystem.instance;
 
     var guideConf = GuideSystem.content[guideId_];
     if(!guideConf){
-        LOG("ERROR GUIDE INDEX");
         return false;
     }
     if(guideConf.guideType != undefined){
         //判断引导是否已经执行过
         if(sys.getCurGuideTypeIsDone(guideConf.guideType)){
-            LOG("GUIDE IS DONE");
             return false;
         }
 
         //判断引导是否可以执行
         if(!sys.getCurGuideIsOpenWithMapId(guideConf.guideType)){
-            LOG("GUIDE IS not open ");
             return false;
         }
 
 
         if( sys._curGuideType != 0 && sys._curGuideType != guideConf.guideType){
-            LOG("HAD GUIDE = " + sys._curGuideType );
             return false;
         }
         else{
@@ -171,7 +166,6 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_) {
 
 
     if(!sys.getCurGuideIsOpenWithMapId(sys._curGuideType)){
-        LOG("CUR IS NOT OPEN");
        return false;
     }
 
@@ -189,24 +183,17 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_) {
     sys._GuidePanel.refreshContentImage(0,guideConf.cont_pos,guideConf.contIcon);
 
     if(btn_){
-        btn_.setGlobalZOrder(10000);
+        var cpBtn = sys._GuidePanel.startRefreshBtn(btn_);
 
-        UiEffect.buttonBBB(btn_);
-        btn_.addTouchEventListener(function (touch,event) {
+        cpBtn.addTouchEventListener(function (touch,event) {
             if(event == ccui.Widget.TOUCH_ENDED){
-                btn_.stopAllActions();
-                btn_.setScale(1.0);
-
-                btn_.setGlobalZOrder(0);
+                sys._GuidePanel.endRefreshBtn();
                 if(guideConf.next_id != 0){
                     sys._GuidePanel.removeFromParent();
-                    LOG("SYS GUIDE TPE = " + sys._curGuideType);
                     if(guideConf.next_id == -1){
                         sys.sendGuideTypeIsDone(sys._curGuideType);
                         sys._curGuideType = 0;
                     }
-
-
                     //sys._GuidePanel.setVisible(false);
                     sys._GuidePanel = null;
                 }
