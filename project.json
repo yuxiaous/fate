@@ -145,6 +145,7 @@
     "src/ui/AboutGameLayer.js",
     "src/ui/GuidePanel.js",
     "src/ui/SelectHeroPanel.js",
+    "src/ui/StrengthenPanel.js",
 
 
     "src/server/server.js",
