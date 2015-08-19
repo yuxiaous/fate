@@ -80,6 +80,26 @@
             <path refid="third.lib" >
             </path>
         </path>
+
+        <!-- TalkingDataGameAnalytics start -->
+        <!-- TalkingDataGameAnalytics end -->
+
+        <!-- KTplay start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay">
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- KTplay end -->
+
+        <!-- MM start-->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/mmbilling/android">
+                <include name="libs/armeabi/" />
+            </fileset>
+        </copy>
+        <!-- MM end-->
     </target>
 
     <!-- Import the actual build file.
