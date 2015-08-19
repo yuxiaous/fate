@@ -15,7 +15,7 @@ var BattleSystem = SystemBase.extend({
 
         this.curBattleType = SceneBase.Type.NormalType;
 
-        this.isTryType = false;
+        this.isFirstTryType = false;
     },
 
     onInit: function () {
@@ -44,7 +44,12 @@ var BattleSystem = SystemBase.extend({
                     ui.popScene();
                 }
                 else{
-                    ui.pushScene(MainScene);
+                    if(this.isFirstTryType){
+                        ui.pushScene(MainScene);
+                    }
+                    else{
+                        ui.popScene();
+                    }
                 }
             },this)
         ]
@@ -194,8 +199,15 @@ var BattleSystem = SystemBase.extend({
         notification.emit(notification.event.PLAYER_INFO);
     },
 
-    startTryBattle : function (role_) {
+    startTryBattle : function (role_,isFirstTry_) {
         this._try_role = role_;
+
+        if(isFirstTry_ != undefined && isFirstTry_){
+            this.isFirstTryType = true;
+        }
+        else{
+            this.isFirstTryType = false;
+        }
 
         BattleSystem.instance.battleMap(configdb.property[108].value);
 

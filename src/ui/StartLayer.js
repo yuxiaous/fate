@@ -58,7 +58,7 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     onEnterGame: function() {
         var hadEnterG = jsb.JsonStorage.GetInstance(LoginSystem.settingFile).getBoolForKey(LoginSystem.recordEnterGame);
         if(!hadEnterG){
-            BattleSystem.instance.startTryBattle(Nero);
+            BattleSystem.instance.startTryBattle(Nero,true);
         }
         else{
             //sdk_manager.sendSdkCommand("TalkingDataGA", "setAccountName", "Saber");
