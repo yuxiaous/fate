@@ -9,6 +9,7 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
     ctor: function(equip_id) {
         this._super();
         this._equip_id = equip_id;
+        this.canStrengthen = true;
     },
 
     onEnter: function() {
@@ -129,7 +130,32 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_strengthen: function() {
+        var config = configdb.equip[this._equip_id];
+        if(config == undefined) {
+            MessageBoxOk.show("装备配置未找到");
+            return;
+        }
 
+        this.canStrengthen = true;
+        _.each([
+            [config.qh_need_1, config.qh_num_1],
+            [config.qh_need_2, config.qh_num_2],
+            [config.qh_need_3, config.qh_num_3],
+            [config.qh_need_4, config.qh_num_4]
+        ], function(data, i) {
+            var item_id = data[0];
+            if(item_id != undefined) {
+                var num = BagSystem.instance.getItemNums(item_id);
+                var req = data[1];
+                this.canStrengthen = this.canStrengthen && (num >= req);
+            }
+        }, this);
+        if(this.canStrengthen == false) {
+            MessageBoxOk.show("强化材料不足");
+            return;
+        }
+
+        this.close();
     }
 });
 

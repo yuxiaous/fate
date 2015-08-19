@@ -422,11 +422,13 @@ var BagScene = ui.GuiWindowBase.extend({
     _on_btn_strengthen: function() {
         var info;
         var equip_id = 0;
+        var value;
         if(this._sel_index >= 0) {
             var item = this._ui.ctrl_items[this._sel_index];
             info = BagSystem.instance.items[item.uid];
             if(info) {
                 equip_id = info.id;
+                value = item.uid;
             }
         }
         else {
@@ -436,15 +438,26 @@ var BagScene = ui.GuiWindowBase.extend({
             info = EquipSystem.instance.slots[equip.slot];
             if(info) {
                 equip_id = info.id;
+                value = equip.slot;
             }
         }
-        if(equip_id != 0) {
-            var win = new StrengthenPanel(equip_id);
-            win.pop();
+        if(equip_id == 0) {
+            MessageBoxOk.show("表粗错辣！");
+            return;
         }
-        else {
-            MessageBoxOk.show("粗错辣！");
-        }
+
+        var win = new StrengthenPanel(equip_id);
+        win.setCloseCallback(function(w) {
+            if(w.canStrengthen == true) {
+                if(this._sel_index >= 0) {
+                    StrengthenSystem.instance.strengthenEquipInBag(value);
+                }
+                else {
+                    StrengthenSystem.instance.strengthenEquipOnEquip(value);
+                }
+            }
+        }, this);
+        win.pop();
     }
 });
 
