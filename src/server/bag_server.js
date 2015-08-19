@@ -120,6 +120,43 @@ var bag_server = {
             bag_server.bag_info.splice(index, 1);
         }
         return true;
+    },
+
+    reduceItem2: function(id, num) {
+        if(this.getItemNumber(id) < num) {
+            LOG("reduceItem2 error 1");
+            server.sendError(net_error_code.ERR_LESS_ITEM);
+            return false;
+        }
+
+        while(true) {
+            var info = _.findWhere(this.bag_info, {id: id});
+            if(info == undefined) {
+                LOG("reduceItem2 error 2");
+                server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+                return false;
+            }
+
+            if(info.num >= num) {
+                this.reduceItem(info.uid, num);
+                break;
+            }
+            else {
+                this.reduceItem(info.uid, info.num);
+                num -= info.num;
+            }
+        }
+
+        return true;
+    },
+
+    getItemNumber: function(id) {
+        return _.reduce(this.bag_info, function(memo, info) {
+            if(info.id == id) {
+                memo += info.num;
+            }
+            return memo ;
+        }, 0);
     }
 };
 

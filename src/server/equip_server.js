@@ -125,6 +125,26 @@ var equip_server = {
         equip_info.id = bag_info.id;
         this.update.push(equip_info);
         return true;
+    },
+
+    changeEquip: function(id) {
+        var config = configdb.equip[id];
+        if(config == undefined) {
+            LOG("changeEquip error 1");
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+            return false;
+        }
+
+        var info = _.findWhere(this.equip_info, {slot: config.slot});
+        if(info == undefined) {
+            LOG("changeEquip error 2");
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+            return false;
+        }
+
+        info.id = id;
+        this.update.push(info);
+        return true;
     }
 };
 

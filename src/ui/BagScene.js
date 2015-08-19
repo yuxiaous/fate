@@ -84,7 +84,12 @@ var BagScene = ui.GuiWindowBase.extend({
                 //}, this);
             }, this),
             notification.createBinding(notification.event.SKIN_INFO, this.createRoleAvatar, this),
-            notification.createBinding(notification.event.PLAYER_INFO, this.refreshProperty, this)
+            notification.createBinding(notification.event.PLAYER_INFO, this.refreshProperty, this),
+            notification.createBinding(notification.event.EQUIP_STRENGTHEN_RESULT, function() {
+                this.refreshProperty();
+                this.refreshItemPage();
+                this.refreshSelectedItemInfo();
+            }, this)
         ];
 
         this.refreshProperty();
@@ -619,7 +624,8 @@ BagScene.EquipSlot = ui.GuiController.extend({
         };
         this._bindings = [
             notification.createBinding(notification.event.EQUIP_EQUIP_ITEM, this.refreshEquipSlot, this),
-            notification.createBinding(notification.event.EQUIP_UNEQUIP_ITEM, this.refreshEquipSlot, this)
+            notification.createBinding(notification.event.EQUIP_UNEQUIP_ITEM, this.refreshEquipSlot, this),
+            notification.createBinding(notification.event.EQUIP_STRENGTHEN_RESULT, this.refreshEquipSlot, this)
         ];
 
         this._ui.lbl_num.setVisible(false);
