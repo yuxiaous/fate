@@ -125,6 +125,8 @@ notification.event = {
     BATTLE_RECOVER_STATE : 609,
     BATTLE_STOP_STATE : 610,
 
+    BATTLE_TRY_TYPE_END : 611,
+
 
     SKIN: 700,
     SKIN_INFO: 701,

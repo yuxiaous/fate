@@ -14,6 +14,8 @@ var BattleSystem = SystemBase.extend({
         this.needRestartBattleType = SceneBase.Type.NormalType;
 
         this.curBattleType = SceneBase.Type.NormalType;
+
+        this.isTryType = false;
     },
 
     onInit: function () {
@@ -26,12 +28,34 @@ var BattleSystem = SystemBase.extend({
 
         net_protocol_handlers.ON_CMD_SC_BATTLE_REVIVE = this.reviveFinish.bind(this);
         net_protocol_handlers.ON_CMD_SC_RECOVER_BATTLE = this.recoverBattle.bind(this);
+
+        this._bindings =[
+            notification.createBinding(notification.event.BATTLE_TRY_TYPE_END, function (event_,data_) {
+                LOG("data_ = " + data_);
+                //if(data_){
+                //
+                //}
+                //else{
+                //
+                //}
+
+                var hadEnterG = jsb.JsonStorage.GetInstance(LoginSystem.settingFile).getBoolForKey(LoginSystem.recordEnterGame);
+                if(!hadEnterG){
+                    ui.popScene();
+                }
+                else{
+                    ui.pushScene(MainScene);
+                }
+            },this)
+        ]
     },
 
     onFinalize: function () {
         this._super();
         net_protocol_handlers.ON_CMD_SC_BATTLE_MAP_RESULT = null;
         net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT = null;
+
+        notification.removeBinding(this._bindings);
     },
 
     refreshEndlessRound : function (obj) {
@@ -59,7 +83,9 @@ var BattleSystem = SystemBase.extend({
     },
     battleMapResult: function(obj) {
         this.cur_battle_map = obj.map_id;
-        notification.emit(notification.event.BATTLE_MAP_RESULT);
+
+        //notification.emit(notification.event.BATTLE_MAP_RESULT);
+        ui.pushScene(new LoadingScene());
         
         sdk_manager.sendSdkCommand("TalkingDataGA", "onBegin", "map."+String(obj.map_id));
     },
@@ -166,6 +192,34 @@ var BattleSystem = SystemBase.extend({
 
         PlayerSystem.instance.superSkillCount -= 1;
         notification.emit(notification.event.PLAYER_INFO);
+    },
+
+    startTryBattle : function (role_) {
+        this._try_role = role_;
+
+        BattleSystem.instance.battleMap(configdb.property[108].value);
+
+    },
+
+    getTryBattleHero : function () {
+      return this._try_role;
+    },
+
+    curIsTryBattle : function () {
+        if(this.cur_battle_map == configdb.property[108].value){
+            return true;
+        }
+        return false;
+    },
+
+    refreshBattleTryTypeStatus : function () {
+        if(this.curIsTryBattle()){
+            var hadEnterG = jsb.JsonStorage.GetInstance(LoginSystem.settingFile).getBoolForKey(LoginSystem.recordEnterGame);
+            if(!hadEnterG){
+                jsb.JsonStorage.GetInstance(LoginSystem.settingFile).setBoolForKey(LoginSystem.recordEnterGame,true);
+                jsb.JsonStorage.GetInstance(LoginSystem.settingFile).flush();
+            }
+        }
     }
 });
 

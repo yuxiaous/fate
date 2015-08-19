@@ -102,7 +102,6 @@ var PlayerSystem = SystemBase.extend({
     }
 });
 
-
 PlayerSystem.start = function() {
     PlayerSystem.instance = new PlayerSystem();
     if(PlayerSystem.instance) {

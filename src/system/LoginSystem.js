@@ -79,3 +79,7 @@ LoginSystem.LoginType = {
     Identifier: 2
 };
 
+LoginSystem.settingFile = "setting.json";
+LoginSystem.recordEnterGame = "hadEnterGame";
+
+

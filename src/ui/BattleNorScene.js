@@ -35,6 +35,10 @@ var BattleNorScene = SceneNormalBase.extend({
             this.status.hero = Nero;
         }
 
+        if(BattleSystem.instance.curIsTryBattle()){
+            this.status.hero = BattleSystem.instance.getTryBattleHero();
+        }
+
         this.status.stage = BattleNorScene.initStageInfo(map_id_);
         this.status.BSection = BattleNorScene.initBattleSection(map_id_);
         this.status.chatData = BattleNorScene.initChatInfo(map_id_);
@@ -188,7 +192,6 @@ BattleNorScene.initStageInfo = function (map_id_) {
         return stageConfig;
     }
     else{
-        LOG("NOT FIND STAGE INFO");
         return null;
     }
 };

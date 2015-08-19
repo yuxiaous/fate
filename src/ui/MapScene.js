@@ -229,8 +229,8 @@ var MapScene = ui.GuiSceneBase.extend({
     },
     onBattleMapResult: function() {
 
-
-        ui.pushScene(new LoadingScene());
+        //LOG("34444");
+        //ui.pushScene(new LoadingScene());
 
         //return;
         //
