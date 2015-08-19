@@ -158,7 +158,9 @@ notification.event = {
     GET_VIP_REWARD : 13004,
 
     REFRESH_GIFT_INFO : 13010,
-    RESTART_GAME : 13020
+    RESTART_GAME : 13020,
+
+    OPERATION_TRIGGER : 13100
 };
 
 

@@ -23,6 +23,12 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
 
 
         this._magicBottleLable = this.seekWidgetByName("lbl_bottle_num");
+        if(BattleSystem.instance.curIsTryBattle()){
+            this._magicBottleLable.setString(String(configdb.property[112].value));
+        }
+        else{
+            this.refreshBattleData();
+        }
 
 
         //def Label
@@ -34,7 +40,7 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         this._roundLabelPanel.setVisible(false);
         this._roundPanel.setVisible(false);
 
-        this.refreshBattleData();
+
 
         this._bindings = [
             notification.createBinding(notification.event.BATTLE_USE_ITEM_RESULT, function () {
@@ -66,15 +72,14 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
     },
 
     refreshBattleData : function () {
-        var magicBottleNum = BagSystem.instance.getItemNums(100007);
-
-        //_.reduce(BagSystem.instance.items, function(sum, item) {
-        //    if(item.id == 100007) {
-        //        magicBottleNum += item.num || 0;
-        //    }
-        //}, 0, this)
-
-        this._magicBottleLable.setString(String(magicBottleNum));
+        if(BattleSystem.instance.curIsTryBattle()){
+            var lastNum = parseInt(this._magicBottleLable.getString())
+            this._magicBottleLable.setString(String(--lastNum));
+        }
+        else{
+            var magicBottleNum = BagSystem.instance.getItemNums(100007);
+            this._magicBottleLable.setString(String(magicBottleNum));
+        }
     },
 
     setBossRound : function (isBossRound_) {
@@ -102,33 +107,44 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
                 return;
             }
 
-            BattleSystem.instance.useBattleItem({
-                itemId : 100007,
-                num : 1
-            });
+            if(BattleSystem.instance.curIsTryBattle()){
+                this.refreshBattleData();
+                ItemSystem.instance.useBottleItem();
+            }
+            else{
+                BattleSystem.instance.useBattleItem({
+                    itemId : 100007,
+                    num : 1
+                });
+            }
         }
         else{
-            var bottleId = 18002;
-            var conf = ShopSystem.getConfig(bottleId);
-            if(conf){
-                var str = "花费{0}{1}，购买{2}".format(conf.pay_cost, ShopSystem.getPayTypeString(conf.pay_type), conf.name);
-                var msg = new MessageBoxOkCancel(str,"购买","取消");
-                msg.setOkCallback(function () {
-                    //cc.director.resume();
-                    notification.emit(notification.event.GAME_RESUME);
-                    if(UiEffect.blockShopItemWithRMB()){
-                        return
-                    }
-                    ShopSystem.instance.buyGood(bottleId);
-                    this._on_btn_stopBattle();
-                },this);
-                msg.setCancelCallback(function () {
-                    //cc.director.resume();
-                    notification.emit(notification.event.GAME_RESUME);
-                });
-                msg.pop();
-                //cc.director.pause();
-                notification.emit(notification.event.GAME_PAUSE);
+            if(BattleSystem.instance.curIsTryBattle()){
+                UiEffect.showFloatLabel("血瓶已经用完");
+            }
+            else{
+                var bottleId = 18002;
+                var conf = ShopSystem.getConfig(bottleId);
+                if(conf){
+                    var str = "花费{0}{1}，购买{2}".format(conf.pay_cost, ShopSystem.getPayTypeString(conf.pay_type), conf.name);
+                    var msg = new MessageBoxOkCancel(str,"购买","取消");
+                    msg.setOkCallback(function () {
+                        //cc.director.resume();
+                        notification.emit(notification.event.GAME_RESUME);
+                        if(UiEffect.blockShopItemWithRMB()){
+                            return
+                        }
+                        ShopSystem.instance.buyGood(bottleId);
+                        this._on_btn_stopBattle();
+                    },this);
+                    msg.setCancelCallback(function () {
+                        //cc.director.resume();
+                        notification.emit(notification.event.GAME_RESUME);
+                    });
+                    msg.pop();
+                    //cc.director.pause();
+                    notification.emit(notification.event.GAME_PAUSE);
+                }
             }
         }
     },

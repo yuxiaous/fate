@@ -167,24 +167,28 @@ var RoleActionManager = cc.Class.extend({
                     this.playAction(RoleAction.Type.SKILL3);
                     break;
                 case 4:
-                    var system = PlayerSystem.instance;
-                    if(system.superSkillCount <= 0){
-                        this.skillStatus = true;
-                        var buy_panel = new BuySkillDetail(function () {
-                            //cc.director.resume();
-                            notification.emit(notification.event.GAME_RESUME);
-                            this.skillStatus = false;
-                        },this);
-                        buy_panel.pop();
-                        UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"), function () {
-                            //cc.director.pause();
-                            notification.emit(notification.event.GAME_PAUSE);
-                        },this);
-                    }
-                    else{
-                        BattleSystem.instance.useSuperSkill();
+                    if(BattleSystem.instance.curIsTryBattle()){
                         tmpSkillType = RoleAction.Type.SKILL4;
                         this.playAction(RoleAction.Type.SKILL4);
+                    }
+                    else{
+                        var system = PlayerSystem.instance;
+                        if(system.superSkillCount <= 0){
+                            this.skillStatus = true;
+                            var buy_panel = new BuySkillDetail(function () {
+                                notification.emit(notification.event.GAME_RESUME);
+                                this.skillStatus = false;
+                            },this);
+                            buy_panel.pop();
+                            UiEffect.iconOpenEffect(buy_panel.seekWidgetByName("gift_panel"), function () {
+                                notification.emit(notification.event.GAME_PAUSE);
+                            },this);
+                        }
+                        else{
+                            BattleSystem.instance.useSuperSkill();
+                            tmpSkillType = RoleAction.Type.SKILL4;
+                            this.playAction(RoleAction.Type.SKILL4);
+                        }
                     }
                     break;
                 case 5:
@@ -196,13 +200,19 @@ var RoleActionManager = cc.Class.extend({
             if(this.role.roleType == RoleBase.RoleType.Hero && tmpSkillType != 0){
                 var actionData = this.actions[tmpSkillType];
                 if(actionData){
-                    //下次修改成COMBO模式
-                    var scene = cc.director.getRunningScene();
-                    scene._operator.setBtnTimingEnable(skillId,actionData.cdTime);
+                    notification.emit(notification.event.OPERATION_TRIGGER,{
+                        ActionData : actionData,
+                        SkillId : skillId,
+                        SkillType : tmpSkillType
+                    });
 
-                    //refresh mp
-                    var curCost = SkillSystem.instance.getSkillUpMpcost(tmpSkillType);
-                    this.role.roleDataManager.mp -= curCost;
+                    ////下次修改成COMBO模式
+                    //var scene = cc.director.getRunningScene();
+                    //scene._operator.setBtnTimingEnable(skillId,actionData.cdTime);
+                    //
+                    ////refresh mp
+                    //var curCost = SkillSystem.instance.getSkillUpMpcost(tmpSkillType);
+                    //this.role.roleDataManager.mp -= curCost;
                 }
             }
             return true;

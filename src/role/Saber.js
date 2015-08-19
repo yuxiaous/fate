@@ -344,6 +344,7 @@ var Nero = RoleBase.extend({
         var score = PlayerSystem.instance.getPlayerBattleScore();
 
         if(BattleSystem.instance.curIsTryBattle()){
+            LOG("cur is try battle");
             score.hp = score.hp * configdb.property[110].value;
             score.mp = score.mp * configdb.property[111].value;
         }

@@ -102,13 +102,18 @@ var OperationLayer = cc.Layer.extend({
             curStylePos.skillBtn_3
         );
 
+        var needDisplayCount = true;
+        if(BattleSystem.instance.curIsTryBattle()){
+            needDisplayCount = false;
+        }
+
         //skill button 4
         this._skillButton4 = this.addButton(
             new cc.Sprite(this.getFP("skill3.png")),
             new cc.Sprite(this.getFP("skill3.png")),
             compoundDisableBtnSprite(this.getFP("skill3.png"),this.getFP("diableskill.png")),
             curStylePos.skillBtn_4,
-            true
+            needDisplayCount
         );
 
         //skill button 5
@@ -118,6 +123,36 @@ var OperationLayer = cc.Layer.extend({
             compoundDisableBtnSprite(this.getFP("skill5.png"),this.getFP("diableskill.png")),
             curStylePos.skillBtn_5
         );
+    },
+
+    onEnter : function () {
+        this._super();
+
+        this._bindings = [
+            notification.createBinding(notification.event.OPERATION_TRIGGER, function (event_,data_) {
+                var tmpData = data_;
+                var scene = cc.director.getRunningScene();
+                var curHero = scene._hero;
+
+                var cdTime = tmpData.ActionData.cdTime;
+
+                if(BattleSystem.instance.curIsTryBattle() && tmpData.SkillType == RoleAction.Type.SKILL4){
+                    cdTime = configdb.property[109].value;
+                }
+
+                scene._operator.setBtnTimingEnable(tmpData.SkillId,cdTime);
+
+                //refresh mp
+                var curCost = SkillSystem.instance.getSkillUpMpcost(tmpData.SkillType);
+                curHero.roleDataManager.mp -= curCost;
+            },this)
+        ]
+    },
+
+    onExit : function () {
+
+        notification.removeBinding(this._bindings);
+        this._super();
     },
 
     getFP: function(name_){

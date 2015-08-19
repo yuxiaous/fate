@@ -173,7 +173,7 @@ SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
     },
 
     _on_btn_play: function() {
-
+        BattleSystem.instance.startTryBattle(Nero);
     },
 
     _on_btn_buy: function() {

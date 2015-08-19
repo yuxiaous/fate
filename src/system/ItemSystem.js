@@ -41,13 +41,14 @@ var ItemSystem = SystemBase.extend({
         if(obj.result == 0){
             var target = cc.director.getRunningScene()._hero;
             if(obj.item_type == ItemSystem.ItemUseType.AddHpMp){    //加满血和蓝
-                target.roleDataManager.hp = target.roleDataManager.maxHp;
-                target.roleDataManager.mp = target.roleDataManager.maxMp;
-
-                UiEffect.addMpOrHpParticle(target,true);
-                UiEffect.addMpOrHpParticle(target,false);
-
-                target.invincible();
+                //target.roleDataManager.hp = target.roleDataManager.maxHp;
+                //target.roleDataManager.mp = target.roleDataManager.maxMp;
+                //
+                //UiEffect.addMpOrHpParticle(target,true);
+                //UiEffect.addMpOrHpParticle(target,false);
+                //
+                //target.invincible();
+                this.useBottleItem();
             }
             //else if(obj.item_type == BattleSystem.UseItemType.UseRevive){ //复活币
             //    target.roleDataManager.hp = target.roleDataManager.maxHp;
@@ -55,7 +56,20 @@ var ItemSystem = SystemBase.extend({
             //}
             notification.emit(notification.event.BATTLE_USE_ITEM_RESULT,obj.item_type);
         }
+    },
+    
+    useBottleItem : function () {
+        var target = cc.director.getRunningScene()._hero;
+        target.roleDataManager.hp = target.roleDataManager.maxHp;
+        target.roleDataManager.mp = target.roleDataManager.maxMp;
+
+        UiEffect.addMpOrHpParticle(target,true);
+        UiEffect.addMpOrHpParticle(target,false);
+
+        target.invincible();
     }
+    
+    
 });
 
 
