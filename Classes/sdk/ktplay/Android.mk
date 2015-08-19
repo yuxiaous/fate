@@ -1,0 +1,28 @@
+LOCAL_PATH := $(call my-dir)
+
+KTPLAY_LIBRARIES_PATH := Platform/Android/KTPlaySDK/KTPlay/libs/armeabi
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := KTPlay
+LOCAL_SRC_FILES := $(KTPLAY_LIBRARIES_PATH)/libKTPlay.so
+LOCAL_MODULE_FILENAME := libKTPlay
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := KTAccountmanager
+LOCAL_SRC_FILES := $(KTPLAY_LIBRARIES_PATH)/libKTAccountmanager.so
+LOCAL_MODULE_FILENAME := libKTAccountmanager
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := KTFriendship
+LOCAL_SRC_FILES := $(KTPLAY_LIBRARIES_PATH)/libKTFriendship.so
+LOCAL_MODULE_FILENAME := libKTFriendship
+include $(PREBUILT_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := KTLeaderboard
+LOCAL_SRC_FILES := $(KTPLAY_LIBRARIES_PATH)/libKTLeaderboard.so
+LOCAL_MODULE_FILENAME := libKTLeaderboard
+include $(PREBUILT_SHARED_LIBRARY)
+
