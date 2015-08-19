@@ -70,8 +70,7 @@
 
     <target name="-pre-compile" >
         <path id="third.lib" >
-            <path path="${toString:project.all.jars.path}" >
-            </path>
+            <path path="${toString:project.all.jars.path}" />
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
             <pathelement location="../../../Classes/sdk/Baitong/android/bdappunion_2.0_log_enabled.jar" />
@@ -81,19 +80,25 @@
             </path>
         </path>
 
-        <!-- KTplay -->
-        <!--<copy todir="./">-->
-            <!--<fileset dir="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay">-->
-                <!--<include name="libs/armeabi/" />-->
-            <!--</fileset>-->
-        <!--</copy>-->
+        <!-- TalkingDataGameAnalytics start -->
+        <!-- TalkingDataGameAnalytics end -->
 
-        <!-- Baitong -->
+        <!-- KTplay start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay">
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- KTplay end -->
+
+        <!-- Baitong start -->
         <copy todir="./">
             <fileset dir="../../../Classes/sdk/Baitong/android">
                 <include name="libs/armeabi/" />
             </fileset>
         </copy>
+        <!-- Baitong end -->
     </target>
 
     <!-- Import the actual build file.
