@@ -9,7 +9,6 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
     ctor: function(equip_id) {
         this._super();
         this._equip_id = equip_id;
-        this.canStrengthen = true;
     },
 
     onEnter: function() {
@@ -126,6 +125,7 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_close: function() {
+        this.canStrengthen = false;
         this.close();
     },
 
@@ -136,7 +136,7 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
             return;
         }
 
-        this.canStrengthen = true;
+        var can = true;
         _.each([
             [config.qh_need_1, config.qh_num_1],
             [config.qh_need_2, config.qh_num_2],
@@ -147,14 +147,15 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
             if(item_id != undefined) {
                 var num = BagSystem.instance.getItemNums(item_id);
                 var req = data[1];
-                this.canStrengthen = this.canStrengthen && (num >= req);
+                can = can && (num >= req);
             }
         }, this);
-        if(this.canStrengthen == false) {
+        if(can == false) {
             MessageBoxOk.show("强化材料不足");
             return;
         }
 
+        this.canStrengthen = can;
         this.close();
     }
 });
