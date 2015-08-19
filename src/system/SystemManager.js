@@ -31,6 +31,7 @@ var SystemManager = {
         addSubSystem(RewardSystem);
         addSubSystem(GiftSystem);
         addSubSystem(GuideSystem);
+        addSubSystem(StrengthenSystem);
     },
 
     end: function() {

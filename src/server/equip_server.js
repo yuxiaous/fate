@@ -6,12 +6,12 @@
 var equip_server = {
     start: function() {
         this.equip_info = database.checkout("equip_info", [
-            { slot: 1, level: 1, id: 200101 }, // 部位，等级，装备
-            { slot: 2, level: 1, id: 200201 },
-            { slot: 3, level: 1, id: 200301 },
-            { slot: 4, level: 1, id: 200401 },
-            { slot: 5, level: 1, id: 200501 },
-            { slot: 6, level: 1, id: 200601 }
+            { slot: 1, level: 1, id: configdb.property[102].value }, // 部位，等级，装备
+            { slot: 2, level: 1, id: configdb.property[105].value },
+            { slot: 3, level: 1, id: configdb.property[103].value },
+            { slot: 4, level: 1, id: configdb.property[106].value },
+            { slot: 5, level: 1, id: configdb.property[104].value },
+            { slot: 6, level: 1, id: configdb.property[107].value }
         ]);
 
         this.update = [];
@@ -124,6 +124,26 @@ var equip_server = {
 
         equip_info.id = bag_info.id;
         this.update.push(equip_info);
+        return true;
+    },
+
+    changeEquip: function(id) {
+        var config = configdb.equip[id];
+        if(config == undefined) {
+            LOG("changeEquip error 1");
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+            return false;
+        }
+
+        var info = _.findWhere(this.equip_info, {slot: config.slot});
+        if(info == undefined) {
+            LOG("changeEquip error 2");
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+            return false;
+        }
+
+        info.id = id;
+        this.update.push(info);
         return true;
     }
 };

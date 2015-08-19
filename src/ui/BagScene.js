@@ -55,6 +55,7 @@ var BagScene = ui.GuiWindowBase.extend({
             lbl_item_desc: this.seekWidgetByName("lbl_item_desc"),
             btn_use: this.seekWidgetByName("btn_use"),
             btn_sell: this.seekWidgetByName("btn_chushou"),
+            btn_strengthen: this.seekWidgetByName("btn_strengthen"),
             lbl_score_change: this.seekWidgetByName("lbl_score_change"),
             sp_change_up: this.seekWidgetByName("sp_change_up"),
             sp_change_down: this.seekWidgetByName("sp_change_down"),
@@ -83,7 +84,12 @@ var BagScene = ui.GuiWindowBase.extend({
                 //}, this);
             }, this),
             notification.createBinding(notification.event.SKIN_INFO, this.createRoleAvatar, this),
-            notification.createBinding(notification.event.PLAYER_INFO, this.refreshProperty, this)
+            notification.createBinding(notification.event.PLAYER_INFO, this.refreshProperty, this),
+            notification.createBinding(notification.event.EQUIP_STRENGTHEN_RESULT, function() {
+                this.refreshProperty();
+                this.refreshItemPage();
+                this.refreshSelectedItemInfo();
+            }, this)
         ];
 
         this.refreshProperty();
@@ -224,30 +230,44 @@ var BagScene = ui.GuiWindowBase.extend({
                 config = BagSystem.getConfig(info.id);
             }
         }
+
+        this._ui.lbl_item_name.setVisible(false);
+        this._ui.lbl_item_price.setVisible(false);
+        this._ui.lbl_item_score.setVisible(false);
+        this._ui.lbl_item_desc.setVisible(false);
+        this._ui.lbl_score_change.setVisible(false);
+        this._ui.btn_sell.setVisible(false);
+        this._ui.btn_use.setVisible(false);
+        this._ui.btn_strengthen.setVisible(false);
+
         if(config) {
+            var enable;
+
             // name
+            this._ui.lbl_item_name.setVisible(true);
             this._ui.lbl_item_name.setString(config.name || "");
 
             // price
+            this._ui.lbl_item_price.setVisible(true);
             this._ui.lbl_item_price.setString(this._ui.lbl_item_price._str_original.format(config.price || ""));
 
             // desc
+            this._ui.lbl_item_desc.setVisible(true);
             this._ui.lbl_item_desc.setString(config.desc || "");
 
             // use button
             if(config.type == undefined || config.type == ItemSystem.ItemType.Item) {
                 this._ui.btn_use.setTitleText(BagSystem.getItemUseMethodName(info.id));
                 this._ui.btn_use.setVisible(true);
-                this._ui.btn_use.setEnabled(this._sel_index >= 0);
-                this._ui.btn_use.setBright(this._sel_index >= 0);
-            }
-            else {
-                this._ui.btn_use.setVisible(false);
+                enable = this._sel_index >= 0;
+                this._ui.btn_use.setEnabled(enable);
+                this._ui.btn_use.setBright(enable);
             }
 
             // sell button
+            this._ui.btn_sell.setVisible(true);
             if(this._sel_index >= 0) {
-                var enable = config.can_sale && config.price && config.price > 0;
+                enable = config.can_sale && config.price && config.price > 0;
                 this._ui.btn_sell.setEnabled(enable);
                 this._ui.btn_sell.setBright(enable);
             }
@@ -256,6 +276,12 @@ var BagScene = ui.GuiWindowBase.extend({
                 this._ui.btn_sell.setBright(false);
             }
 
+            // strengthen button
+            this._ui.btn_strengthen.setVisible(true);
+            enable = config.star != undefined;
+            this._ui.btn_strengthen.setEnabled(enable);
+            this._ui.btn_strengthen.setBright(enable);
+
             // score value
             if(config.type == undefined) {
                 var score = Formula.calculateBattleScore(config.hp, config.mp,
@@ -263,6 +289,7 @@ var BagScene = ui.GuiWindowBase.extend({
                     config.crit, config.sunder);
 
                 // score
+                this._ui.lbl_item_score.setVisible(true);
                 this._ui.lbl_item_score.setString(this._ui.lbl_item_score._str_original.format(score));
 
                 // change value
@@ -294,22 +321,8 @@ var BagScene = ui.GuiWindowBase.extend({
                 this._ui.lbl_score_change.setVisible(true);
                 this._ui.lbl_score_change.setString(String(score));
             }
-            else {
-                this._ui.lbl_score_change.setVisible(false);
-                this._ui.lbl_item_score.setString("");
-            }
-
-            return;
         }
 
-        this._ui.lbl_item_name.setString("");
-        this._ui.lbl_item_price.setString("");
-        this._ui.lbl_item_score.setString("");
-        this._ui.lbl_item_desc.setString("");
-        //this._ui.btn_use.setVisible(false);
-        //this._ui.btn_sell.setEnabled(false);
-        //this._ui.btn_sell.setBright(false);
-        this._ui.lbl_score_change.setVisible(false);
     },
 
     clearRoleAvatar: function() {
@@ -409,6 +422,47 @@ var BagScene = ui.GuiWindowBase.extend({
     _on_btn_prop: function() {
         var win = new RoleProperty();
         win.pop();
+    },
+
+    _on_btn_strengthen: function() {
+        var info;
+        var equip_id = 0;
+        var value;
+        if(this._sel_index >= 0) {
+            var item = this._ui.ctrl_items[this._sel_index];
+            info = BagSystem.instance.items[item.uid];
+            if(info) {
+                equip_id = info.id;
+                value = item.uid;
+            }
+        }
+        else {
+            var equip = _.find(this._ui.ctrl_slots, function(equip) {
+                return equip.slot == -this._sel_index;
+            }, this);
+            info = EquipSystem.instance.slots[equip.slot];
+            if(info) {
+                equip_id = info.id;
+                value = equip.slot;
+            }
+        }
+        if(equip_id == 0) {
+            MessageBoxOk.show("表粗错辣！");
+            return;
+        }
+
+        var win = new StrengthenPanel(equip_id);
+        win.setCloseCallback(function(w) {
+            if(w.canStrengthen == true) {
+                if(this._sel_index >= 0) {
+                    StrengthenSystem.instance.strengthenEquipInBag(value);
+                }
+                else {
+                    StrengthenSystem.instance.strengthenEquipOnEquip(value);
+                }
+            }
+        }, this);
+        win.pop();
     }
 });
 
@@ -464,7 +518,9 @@ BagScene.ItemSlot = ui.GuiController.extend({
             sp_icon: this.seekWidgetByName("sp_icon"),
             lbl_num: this.seekWidgetByName("lbl_num"),
             img_sel: this.seekWidgetByName("img_sel"),
-            btn_touch: this.seekWidgetByName("btn_bg")
+            btn_touch: this.seekWidgetByName("btn_bg"),
+            sp_star: this.seekWidgetByName("sp_star"),
+            lbl_star: this.seekWidgetByName("lbl_star")
         };
         this.setUid(this.uid);
         this.setSelected(false);
@@ -479,6 +535,7 @@ BagScene.ItemSlot = ui.GuiController.extend({
         this.uid = uid;
         this._ui.lbl_num.setVisible(false);
         this._ui.sp_icon.setVisible(false);
+        this._ui.sp_star.setVisible(false);
 
         var info = BagSystem.instance.items[uid];
         if(info == undefined) {
@@ -500,6 +557,12 @@ BagScene.ItemSlot = ui.GuiController.extend({
         if(info.num > 1) {
             this._ui.lbl_num.setVisible(true);
             this._ui.lbl_num.setString(String(info.num));
+        }
+
+        // star
+        if(config.star != undefined) {
+            this._ui.sp_star.setVisible(true);
+            this._ui.lbl_star.setString(String(config.star));
         }
     },
 
@@ -555,11 +618,14 @@ BagScene.EquipSlot = ui.GuiController.extend({
             sp_icon: this.seekWidgetByName("sp_icon"),
             lbl_num: this.seekWidgetByName("lbl_num"),
             img_sel: this.seekWidgetByName("img_sel"),
-            btn_touch: this.seekWidgetByName("btn_bg")
+            btn_touch: this.seekWidgetByName("btn_bg"),
+            sp_star: this.seekWidgetByName("sp_star"),
+            lbl_star: this.seekWidgetByName("lbl_star")
         };
         this._bindings = [
             notification.createBinding(notification.event.EQUIP_EQUIP_ITEM, this.refreshEquipSlot, this),
-            notification.createBinding(notification.event.EQUIP_UNEQUIP_ITEM, this.refreshEquipSlot, this)
+            notification.createBinding(notification.event.EQUIP_UNEQUIP_ITEM, this.refreshEquipSlot, this),
+            notification.createBinding(notification.event.EQUIP_STRENGTHEN_RESULT, this.refreshEquipSlot, this)
         ];
 
         this._ui.lbl_num.setVisible(false);
@@ -576,6 +642,7 @@ BagScene.EquipSlot = ui.GuiController.extend({
 
     refreshEquipSlot: function() {
         this._ui.sp_icon.setVisible(false);
+        this._ui.sp_star.setVisible(false);
 
         var info = EquipSystem.instance.slots[this.slot];
         if(info == undefined) {
@@ -587,9 +654,16 @@ BagScene.EquipSlot = ui.GuiController.extend({
             return;
         }
 
+        // icon
         if(config.icon) {
             this._ui.sp_icon.setVisible(true);
             this._ui.sp_icon.setTexture(config.icon);
+        }
+
+        // star
+        if(config.star != undefined) {
+            this._ui.sp_star.setVisible(true);
+            this._ui.lbl_star.setString(String(config.star));
         }
     },
 

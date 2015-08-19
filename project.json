@@ -77,6 +77,7 @@
     "src/system/RewardSystem.js",
     "src/system/GiftSystem.js",
     "src/system/GuideSystem.js",
+    "src/system/StrengthenSystem.js",
 
     "src/classes/BattleSceneManager.js",
     "src/classes/PhysicalWorld.js",
@@ -145,6 +146,7 @@
     "src/ui/AboutGameLayer.js",
     "src/ui/GuidePanel.js",
     "src/ui/SelectHeroPanel.js",
+    "src/ui/StrengthenPanel.js",
 
 
     "src/server/server.js",
@@ -164,6 +166,7 @@
     "src/server/skin_server.js",
     "src/server/operator_server.js",
     "src/server/gift_server.js",
-    "src/server/guide_server.js"
+    "src/server/guide_server.js",
+    "src/server/strengthen_server.js"
   ]
 }
