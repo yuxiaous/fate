@@ -68,22 +68,9 @@
     -->
     <import file="custom_rules.xml" optional="true" />
 
+    <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
+
     <target name="-pre-compile" >
-        <copy todir="./">
-            <fileset dir="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay">
-                <include name="libs/armeabi/" />
-                <include name="res/" />
-            </fileset>
-        </copy>
-
-        <copy todir="./">
-            <fileset dir="../../../Classes/sdk/AndGame/android">
-                <include name="assets/" />
-                <include name="libs/armeabi/" />
-                <include name="res/" />
-            </fileset>
-        </copy>
-
         <path id="third.lib" >
             <path path="${toString:project.all.jars.path}" >
             </path>
@@ -94,9 +81,30 @@
             <path refid="third.lib" >
             </path>
         </path>
+
+        <!-- TalkingDataGameAnalytics start -->
+        <!-- TalkingDataGameAnalytics end -->
+
+        <!-- KTplay start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay">
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- KTplay end -->
+
+        <!-- AndGame start-->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/AndGame/android">
+                <include name="assets/" />
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- AndGame end-->
     </target>
 
-    <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
 
     <!-- Import the actual build file.
 
