@@ -86,6 +86,30 @@
         </path>
     </target>
 
+    <target name="-pre-build">
+        <!-- TalkingDataGameAnalytics start -->
+        <!-- TalkingDataGameAnalytics end -->
+
+        <!-- KTplay start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay">
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- KTplay end -->
+
+        <!-- UniPay start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/unipay/android">
+                <include name="assets/" />
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- UniPay end -->
+    </target>
+
     <!-- Import the actual build file.
 
          To customize existing targets, there are two options:
