@@ -68,8 +68,6 @@
     -->
     <import file="custom_rules.xml" optional="true" />
 
-    <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
-
     <target name="-pre-compile" >
         <path id="third.lib" >
             <path path="${toString:project.all.jars.path}" >
@@ -81,7 +79,11 @@
             <path refid="third.lib" >
             </path>
         </path>
+    </target>
 
+    <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
+
+    <target name="-pre-build">
         <!-- TalkingDataGameAnalytics start -->
         <!-- TalkingDataGameAnalytics end -->
 

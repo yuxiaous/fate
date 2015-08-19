@@ -79,7 +79,9 @@
             <path refid="third.lib" >
             </path>
         </path>
+    </target>
 
+    <target name="-pre-build">
         <!-- TalkingDataGameAnalytics start -->
         <!-- TalkingDataGameAnalytics end -->
 
