@@ -387,9 +387,14 @@ var SceneBase = lh.LHScene.extend({
     onBattleEnd: function() {
         this.unschedule(this.battleObserver);
         if(this._isLostBattle){
-            // show revive window
-            var revive = new BattleRevivePanel(this._curSceneType,this._sectionIndex);
-            revive.pop();
+            if(BattleSystem.instance.curIsTryBattle()){
+                notification.emit(notification.event.BATTLE_TRY_TYPE_END,false);
+            }
+            else{
+                // show revive window
+                var revive = new BattleRevivePanel(this._curSceneType,this._sectionIndex);
+                revive.pop();
+            }
         }
         else{
             this.onAfterFightChatStart();
@@ -437,7 +442,12 @@ var SceneBase = lh.LHScene.extend({
     },
 
     battleFinish : function () {
-        BattleSystem.instance.battleFinish(true);
+        if(BattleSystem.instance.curIsTryBattle()){
+            notification.emit(notification.event.BATTLE_TRY_TYPE_END,true);
+        }
+        else{
+            BattleSystem.instance.battleFinish(true);
+        }
     },
 
     showFinishPanel : function () {
@@ -510,6 +520,10 @@ var SceneBase = lh.LHScene.extend({
         cc.audioEngine.stopAllEffects();
         this.clearStreet();
         this._sectionIndex++;
+        if(this._sectionIndex > 1){
+            BattleSystem.instance.refreshBattleTryTypeStatus();
+        }
+
         var tmpSections = this._sceneStatus.BSection;
         if(this._sectionIndex <= this._sectionAmount) {
             if (this._sectionIndex == this._sectionAmount) {

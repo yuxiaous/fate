@@ -24,6 +24,12 @@ var Saber = RoleBase.extend({
 
         var score = PlayerSystem.instance.getPlayerBattleScore();
 
+
+        if(BattleSystem.instance.curIsTryBattle()){
+            score.hp = score.hp * configdb.property[110].value;
+            score.mp = score.mp * configdb.property[111].value;
+        }
+
         this.setRoleData({
             hp: score.hp,
             mp: score.mp,
@@ -336,6 +342,11 @@ var Nero = RoleBase.extend({
         }
 
         var score = PlayerSystem.instance.getPlayerBattleScore();
+
+        if(BattleSystem.instance.curIsTryBattle()){
+            score.hp = score.hp * configdb.property[110].value;
+            score.mp = score.mp * configdb.property[111].value;
+        }
 
         this.setRoleData({
             hp: score.hp,

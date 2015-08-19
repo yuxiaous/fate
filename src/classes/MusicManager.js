@@ -11,7 +11,8 @@ var MusicManager = (function () {
         BGM_OPEN = "background_music_is_open_key";
         EFF_OPEN = "effect_music_is_open_key";
 
-        FATE_SETTING = "setting.json";
+        //FATE_SETTING = "setting.json";
+        FATE_SETTING = LoginSystem.settingFile;
 
         this.curPlayType = 0;
 
@@ -42,7 +43,7 @@ var MusicManager = (function () {
         this.setBackgroundVolumn = function(volume_){
             //cc.sys.localStorage.setItem(BGM_KEY,String(volumn_));
 
-            jsb.JsonStorage.GetInstance(FATE_SETTING).setDoubleForKey(BGM_KEY,volume_)
+            jsb.JsonStorage.GetInstance(FATE_SETTING).setDoubleForKey(BGM_KEY,volume_);
             jsb.JsonStorage.GetInstance(FATE_SETTING).flush();
         };
 

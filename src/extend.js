@@ -48,4 +48,4 @@ Object.prototype.Clone = function(){
     objClone.toString = this.toString;
     objClone.valueOf = this.valueOf;
     return objClone;
-}
+};

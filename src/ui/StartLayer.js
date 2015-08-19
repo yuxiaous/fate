@@ -5,7 +5,6 @@
 
 var StartLayerScene = ui.GuiSceneBase.extend({
     _guiFile: "ui/begin.json",
-
     ctor: function() {
         this._super();
     },
@@ -57,8 +56,14 @@ var StartLayerScene = ui.GuiSceneBase.extend({
     },
 
     onEnterGame: function() {
-        //sdk_manager.sendSdkCommand("TalkingDataGA", "setAccountName", "Saber");
-        this.pushScene(MainScene);
+        var hadEnterG = jsb.JsonStorage.GetInstance(LoginSystem.settingFile).getBoolForKey(LoginSystem.recordEnterGame);
+        if(!hadEnterG){
+            BattleSystem.instance.startTryBattle(Nero);
+        }
+        else{
+            //sdk_manager.sendSdkCommand("TalkingDataGA", "setAccountName", "Saber");
+            this.pushScene(MainScene);
+        }
     },
 
     _on_btn_enter: function() {
