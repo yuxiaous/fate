@@ -81,15 +81,15 @@
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
 
             <!-- mm -->
-            <pathelement location="../../../Classes/sdk/egame/android/libs/mmsmsbilling1.5.0.jar" />
+            <pathelement location="../../../Classes/sdk/egame/mix/libs/mmsmsbilling1.5.0.jar" />
 
             <!-- unipay -->
-            <pathelement location="../../../Classes/sdk/egame/android/libs/Multimode_UniPay_base.jar" />
+            <pathelement location="../../../Classes/sdk/egame/mix/libs/Multimode_UniPay_base.jar" />
 
             <!-- alipay -->
-            <pathelement location="../../../Classes/sdk/egame/android/libs/alipaysdk.jar" />
-            <pathelement location="../../../Classes/sdk/egame/android/libs/MobileSecSdk.jar" />
-            <pathelement location="../../../Classes/sdk/egame/android/libs/utdid4all-1.0.4.jar" />
+            <pathelement location="../../../Classes/sdk/egame/alipay/libs/alipaysdk.jar" />
+            <pathelement location="../../../Classes/sdk/egame/alipay/libs/MobileSecSdk.jar" />
+            <pathelement location="../../../Classes/sdk/egame/alipay/libs/utdid4all-1.0.4.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -114,6 +114,11 @@
         <copy todir="./">
             <fileset dir="../../../Classes/sdk/egame/android">
                 <include name="assets/" />
+                <include name="libs/armeabi/" />
+            </fileset>
+        </copy>
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/egame/mix">
                 <include name="libs/armeabi/" />
             </fileset>
         </copy>
