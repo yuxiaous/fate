@@ -1,0 +1,10 @@
+<activity android:name="com.alipay.sdk.app.H5PayActivity" 
+android:screenOrientation="behind" 
+android:configChanges="orientation|keyboardHidden|navigation" 
+android:exported="false"> 
+</activity>
+<activity android:name="com.alipay.sdk.auth.AuthActivity" 
+android:screenOrientation="behind" a
+ndroid:configChanges="orientation|keyboardHidden|navigation" 
+android:exported="false"> 
+</activity>
