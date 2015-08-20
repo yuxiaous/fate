@@ -82,6 +82,8 @@
 
             <!-- mm -->
             <pathelement location="../../../Classes/sdk/egame/android/libs/mmsmsbilling1.5.0.jar" />
+
+            <!-- unipay -->
             <pathelement location="../../../Classes/sdk/egame/android/libs/Multimode_UniPay_base.jar" />
 
             <!-- alipay -->
