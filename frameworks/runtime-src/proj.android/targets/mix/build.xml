@@ -73,7 +73,14 @@
             <path path="${toString:project.all.jars.path}" />
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
+
+            <!-- mm -->
             <pathelement location="../../../Classes/sdk/mmbilling/android/mmbilling.3.1.7.jar" />
+
+            <!-- egame -->
+            <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -101,6 +108,15 @@
             </fileset>
         </copy>
         <!-- MM end-->
+
+        <!-- EGame start-->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/egame/android">
+                <include name="assets/" />
+                <include name="libs/armeabi/" />
+            </fileset>
+        </copy>
+        <!-- EGame end-->
     </target>
 
     <!-- Import the actual build file.

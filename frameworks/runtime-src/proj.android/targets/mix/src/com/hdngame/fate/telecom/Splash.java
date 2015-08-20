@@ -3,7 +3,7 @@ package com.hdngame.fate.telecom;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import com.fate.dev.R;
+import com.hdngame.fate.mix.R;
 import android.os.Handler;
 import org.cocos2dx.javascript.AppActivity;
 

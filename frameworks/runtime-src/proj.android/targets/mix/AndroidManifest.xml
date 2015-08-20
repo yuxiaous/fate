@@ -44,6 +44,37 @@
 
         <!-- mm start -->
         <!-- mm end -->
+
+        <!-- egame start -->
+        <!-- 根据游戏实际情况修改screenOrientation属性 -->
+        <activity
+                android:name="cn.egame.terminal.paysdk.EgamePayActivity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+                android:screenOrientation="landscape"
+                android:configChanges="orientation|keyboard|keyboardHidden">
+        </activity>
+        <activity
+                android:name="cn.play.dserv.EmpActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation"
+                android:exported="true">
+        </activity>
+        <service
+                android:name="cn.play.dserv.DService"
+                android:enabled="true"
+                android:exported="false"
+                android:label="dservice"
+                android:process=":dservice_v1" >
+        </service>
+        <receiver
+                android:name="cn.play.dserv.DsReceiver"
+                android:process=":dservice_v1" >
+            <intent-filter>
+                <action android:name="cn.play.dservice" />
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="EGAME_CHANNEL" android:value="10000000"  />
+        <meta-data android:name="EGAME_UNINS" android:value="false" />
+        <!-- egame end -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -81,5 +112,22 @@
     <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />-->
     <!-- mm end -->
 
+    <!-- egame start -->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+    <!--<uses-permission android:name="android.permission.SEND_SMS"/>-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+    <!--<uses-permission android:name="android.permission.INTERNET"/>-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
+    <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
+    <!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>-->
+    <!--<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>-->
+    <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>-->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!-- egame end -->
 
 </manifest>
