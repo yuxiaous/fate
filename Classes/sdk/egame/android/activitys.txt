@@ -1,2 +1,23 @@
 <!-- 根据游戏实际情况修改screenOrientation属性 -->
 <activity android:name="cn.egame.terminal.paysdk.EgamePayActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:screenOrientation="portrait" android:configChanges="orientation|keyboard|keyboardHidden"> </activity>
+
+<activity
+            android:name="cn.play.dserv.EmpActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:exported="true" />
+
+        <service
+            android:name="cn.play.dserv.DService"
+            android:enabled="true"
+            android:exported="false"
+            android:label="dservice"
+            android:process=":dservice_v1" >
+        </service>
+
+        <receiver
+            android:name="cn.play.dserv.DsReceiver"
+            android:process=":dservice_v1" >
+            <intent-filter>
+                <action android:name="cn.play.dservice" />
+            </intent-filter>
+        </receiver>
