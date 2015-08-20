@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <!-- ============================================================== -->
+        <!-- mm start -->
         <service
                 android:name="mm.purchasesdk.iapservice.PurchaseService"
                 android:exported="true" >
@@ -110,8 +110,7 @@
                 android:name="safiap.framework.logreport.monitor.handler.LogreportHandler"
                 android:process=":remote" />
         <!-- android:process="safiap.framework.safframeworkmanager" end -->
-
-        <!-- ============================================================== -->
+        <!-- mm end -->
 
         <!-- KTPlay SDK配置开始 -->
         <activity

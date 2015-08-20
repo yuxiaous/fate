@@ -27,6 +27,7 @@
             <!--</intent-filter>-->
         </activity>
 
+        <!-- and game start -->
         <activity android:name="cn.cmgame.billing.api.GameOpenActivity"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
                   android:screenOrientation="sensor">
@@ -40,6 +41,7 @@
                 <category android:name="android.intent.category.CHINAMOBILE_GAMES" />
             </intent-filter>
         </activity>
+        <!-- and game end -->
 
         <!-- KTPlay SDK配置开始 -->
         <activity

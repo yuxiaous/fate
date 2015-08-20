@@ -41,6 +41,9 @@
                 android:value="GP"
                 />
         <!-- KTPlay SDK配置结束 -->
+
+        <!-- mm start -->
+        <!-- mm end -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -67,4 +70,16 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <!-- KTPlay SDK 权限配置结束 -->
+
+    <!-- mm start -->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />-->
+    <!-- mm end -->
+
+
 </manifest>
