@@ -16,10 +16,16 @@ var IconWidget = ui.GuiController.extend({
         this._ui = {
             sp_icon: this.seekWidgetByName("sp_icon"),
             lbl_num: this.seekWidgetByName("lbl_num"),
-            img_sel: this.seekWidgetByName("img_sel")
+            img_sel: this.seekWidgetByName("img_sel"),
+            btn_touch: this.seekWidgetByName("btn_bg"),
+            sp_star: this.seekWidgetByName("sp_star"),
+            lbl_star: this.seekWidgetByName("lbl_star")
         };
 
         this._ui.img_sel.setVisible(false);
+        this._ui.lbl_num.setVisible(false);
+        this._ui.btn_touch.setEnabled(false);
+        this._ui.sp_star.setVisible(false);
 
         this.refreshIcon();
     },
@@ -37,6 +43,10 @@ var IconWidget = ui.GuiController.extend({
     },
 
     refreshIcon: function() {
+        this._ui.sp_icon.setVisible(false);
+        this._ui.sp_star.setVisible(false);
+        this._ui.lbl_num.setVisible(false);
+
         if(this.id == 0 || this.type == 0) {
             return;
         }
@@ -59,14 +69,28 @@ var IconWidget = ui.GuiController.extend({
             return;
         }
 
-        this._ui.sp_icon.setTexture(config.icon);
-
-        this._ui.lbl_num.setVisible(this.num > 1);
-        if(this.num >= 10000 && this.num % 10000 == 0) {
-            this._ui.lbl_num.setString(String(Math.floor(this.num/10000)) + "万");
+        // icon
+        if(config.icon) {
+            this._ui.sp_icon.setVisible(true);
+            this._ui.sp_icon.setTexture(config.icon);
         }
-        else {
-            this._ui.lbl_num.setString(String(this.num));
+
+        // star
+        if(config.star != undefined) {
+            this._ui.sp_star.setVisible(true);
+            this._ui.lbl_star.setString(String(config.star));
+        }
+
+        // number
+        if(this._num > 1) {
+            this._ui.lbl_num.setVisible(true);
+
+            if(this.num >= 10000 && this.num % 10000 == 0) {
+                this._ui.lbl_num.setString(String(Math.floor(this.num/10000)) + "万");
+            }
+            else {
+                this._ui.lbl_num.setString(String(this.num));
+            }
         }
     },
 
