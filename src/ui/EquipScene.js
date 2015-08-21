@@ -305,56 +305,24 @@ EquipScene.EquipCell = ui.GuiWidgetBase.extend({
     }
 });
 
-EquipScene.EquipIcon = ui.GuiController.extend({
+EquipScene.EquipIcon = EquipIconWidget.extend({
     ctor: function(slot) {
-        this._super();
         this.slot = slot;
-    },
-
-    onEnter: function() {
-        this._super();
-        this._ui = {
-            sp_icon: this.seekWidgetByName("sp_icon"),
-            lbl_num: this.seekWidgetByName("lbl_num"),
-            img_sel: this.seekWidgetByName("img_sel"),
-            btn_icon : this.seekWidgetByName("btn_bg")
-        };
-
-        this._ui.lbl_num.setVisible(false);
-        this._ui.img_sel.setVisible(false);
-
-        this.refreshEquipIcon();
-
-        this._ui.btn_icon.setSwallowTouches(false);
-    },
-
-    onExit: function() {
-        this._ui = null;
-        this._super();
+        this._super(this.getEquipIdBySlot());
     },
 
     setSlotType: function(slot) {
         this.slot = slot;
-        this.refreshEquipIcon();
+        this.setEquipId(this.getEquipIdBySlot());
     },
 
-    refreshEquipIcon: function() {
-        this._ui.sp_icon.setVisible(false);
-
+    getEquipIdBySlot: function() {
         var info = EquipSystem.instance.slots[this.slot];
         if(info == undefined) {
-            return;
+            return 0;
         }
 
-        var config = configdb.equip[info.id];
-        if(config == undefined) {
-            return;
-        }
-
-        if(config.icon) {
-            this._ui.sp_icon.setVisible(true);
-            this._ui.sp_icon.setTexture(config.icon);
-        }
+        return info.id;
     }
 });
 

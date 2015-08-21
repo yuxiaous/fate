@@ -136,6 +136,11 @@ var EquipIconWidget = ui.GuiController.extend({
             this._ui.sp_star.setVisible(true);
             this._ui.lbl_star.setString(String(config.star));
         }
+    },
+
+    setEquipId: function(id) {
+        this._equip_id = id || 0;
+        this.refreshIcon();
     }
 });
 
