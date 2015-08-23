@@ -40,7 +40,9 @@ var BattleNorScene = SceneNormalBase.extend({
         }
 
         this.status.stage = BattleNorScene.initStageInfo(map_id_);
-        this.status.BSection = BattleNorScene.initBattleSection(map_id_);
+        var sectionData = BattleNorScene.initBattleSection(map_id_);
+        this.status.BSection = sectionData.section;
+        this.status.maxMonster = sectionData.monsterCount;
         this.status.chatData = BattleNorScene.initChatInfo(map_id_);
     },
 
@@ -119,6 +121,8 @@ BattleNorScene.initBattleSection = function (map_id_) {
     var preScenePos = "scene_pos_";
     var preSceneLen = "scene_len_";
 
+    var maxMonster = 0;
+
     for(var i = 1; i <= 3; ++i){
         var sessions =[];
 
@@ -145,6 +149,7 @@ BattleNorScene.initBattleSection = function (map_id_) {
                 if(peizhiConf[preRoleId + k]){
                     var aiConfi = configdb.ai[peizhiConf[preRoleAi+k]];
                     //LOG("-----drop id = " + peizhiConf[preRoleDrop+k]);
+                    maxMonster += 1;
                     waves.push({
                         roleId : peizhiConf[preRoleId + k],
                         posX   : peizhiConf[preRolePosx+k],
@@ -158,7 +163,8 @@ BattleNorScene.initBattleSection = function (map_id_) {
                             rangeActH : aiConfi.range_act_height,
                             followAtk : aiConfi.follow_atk,
                             isRemote  : aiConfi.isRemote
-                        }
+                        },
+                        idx : maxMonster
                     })
                 }
             }
@@ -177,11 +183,13 @@ BattleNorScene.initBattleSection = function (map_id_) {
         }
     }
 
-
     // sessions 场次
     // waves 波次
     // 每关3场次，没场次4波次，每波次6怪
-    return BSection;
+    return {
+        section : BSection,
+        monsterCount : maxMonster
+    };
 };
 
 BattleNorScene.initStageInfo = function (map_id_) {

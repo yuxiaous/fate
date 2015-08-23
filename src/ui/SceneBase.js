@@ -154,6 +154,13 @@ var SceneBase = lh.LHScene.extend({
                 }
                 MusicManager.getInstance().resumeBGM();
             },this),
+            notification.createBinding(notification.event.BATTLE_END, function () {
+                _.each(this._items, function(item) {
+                    if(item._dropType == DroppedItem.DropType.ItemType){
+                        item.flyToTarget(this._hero);
+                    }
+                }, this);
+            },this)
 
         ];
 
@@ -210,15 +217,14 @@ var SceneBase = lh.LHScene.extend({
                 var heroPos = hero.getSpacePosition();
                 var itemPos = item.getPosition();
                 var pickRadius = cc.p(150, 150);
-
                 if (Math.abs(heroPos.x - itemPos.x) <= pickRadius.x &&
                     Math.abs(heroPos.y - itemPos.y) <= pickRadius.y) {
-                   if(item._dropItemType == DroppedItem.ItemType.BloodType ||
-                        item._dropItemType == DroppedItem.ItemType.MagicType){
+                   if(item._dropType == DroppedItem.DropType.ItemType){
                         item.flyToTarget(hero);
                     }
                 }
-                if(GiftSystem.instance.getGiftBuyNumWith(GiftSystem.GiftType.WuQi) <= 0 && item._dropItemType == DroppedItem.ItemType.ItemType && !this._isEnteringEquipSuit && this._enterDropUi >= 60) {
+
+                if(GiftSystem.instance.getGiftBuyNumWith(GiftSystem.GiftType.WuQi) <= 0 && item._dropType == DroppedItem.DropType.DaBaoJianType && !this._isEnteringEquipSuit && this._enterDropUi >= 60) {
                     var enterRadius = cc.p(70, 100);
                     if (Math.abs(heroPos.x - itemPos.x) <= enterRadius.x && Math.abs(heroPos.y - itemPos.y) <= enterRadius.y) {
                         this._isEnteringEquipSuit = true;
@@ -287,7 +293,7 @@ var SceneBase = lh.LHScene.extend({
             type == RoleBase.RoleType.Boss) {
             if( GiftSystem.instance.getGiftBuyNumWith(GiftSystem.GiftType.WuQi) <= 0 && role.dropId != undefined){
                 var dropId = role.dropId || 101002;
-                var dropType = DroppedItem.ItemType.ItemType;
+                var dropType = DroppedItem.DropType.DaBaoJianType;
                 var dropItem = new DroppedItem(dropId,dropType);
                 var pos = role.getSpacePosition();
 
@@ -304,17 +310,36 @@ var SceneBase = lh.LHScene.extend({
                 return;
             }
 
-            if(this._curSceneType != SceneBase.Type.EndlessType && cc.random0To1() * 100 > 40){
-                var itemId = 100005;
-                var dropType = DroppedItem.ItemType.BloodType;
-                if(cc.random0To1() * 100 > 50){
-                    itemId = 100006;
-                    dropType = DroppedItem.ItemType.MagicType;
+            //if(this._curSceneType != SceneBase.Type.EndlessType && cc.random0To1() * 100 > 40){
+            //    var itemId = 100005;
+            //    var dropType = DroppedItem.ItemType.BloodType;
+            //    if(cc.random0To1() * 100 > 50){
+            //        itemId = 100006;
+            //        dropType = DroppedItem.ItemType.MagicType;
+            //    }
+            //    var item = new DroppedItem(itemId,dropType);
+            //    var pos = role.getSpacePosition();
+            //    item.setPosition(pos.x, pos.y);
+            //    this.addItem(item);
+            //}
+
+            if(this._curSceneType == SceneBase.Type.EndlessType){
+                return;
+            }
+
+            if(BattleSystem.instance.curIsTryBattle()){
+                return;
+            }
+
+            var dropItemInfo_ =  BattleSystem.instance.getCurDropItemData(this._sceneStatus.maxMonster,role.idx);
+
+            if(dropItemInfo_.item_id){
+                for(var idx = 0 ; idx < dropItemInfo_.item_num; idx++){
+                    var dropItem = new DroppedItem(parseInt(dropItemInfo_.item_id),DroppedItem.DropType.ItemType );
+                    var pos = BattleSystem.instance.randomDropItemPos(role,dropItemInfo_.item_num);
+                    dropItem.setPosition(pos);
+                    this.addItem(dropItem);
                 }
-                var item = new DroppedItem(itemId,dropType);
-                var pos = role.getSpacePosition();
-                item.setPosition(pos.x, pos.y);
-                this.addItem(item);
             }
         }
     },
@@ -655,6 +680,7 @@ var SceneBase = lh.LHScene.extend({
             role.turn(data.dir);
             role.aiData = data;
             role.dropId = data.dropId;
+            role.idx = data.idx;
             role.setBloodBar(isBoss,roleConfig.name);
 
             switch (role.roleType) {
@@ -760,6 +786,7 @@ var SceneBase = lh.LHScene.extend({
 
     onAfterFightChatStart : function () {
         if(this._isLastSection) {
+            notification.emit(notification.event.BATTLE_END);
             if(this._sceneStatus.chatData.afterFight.length > 0){
                 var dialog = new DialogPanel(this._sceneStatus.chatData.afterFight);
                 this._frontUi.addChild(dialog);

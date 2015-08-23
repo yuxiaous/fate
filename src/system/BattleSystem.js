@@ -16,6 +16,11 @@ var BattleSystem = SystemBase.extend({
         this.curBattleType = SceneBase.Type.NormalType;
 
         this.isFirstTryType = false;
+
+        this.needDropItems = [];
+        this.randomDropInfo = {};
+
+        this._curMapDropItems = [];
     },
 
     onInit: function () {
@@ -61,6 +66,10 @@ var BattleSystem = SystemBase.extend({
         net_protocol_handlers.ON_CMD_SC_BATTLE_FINISH_RESULT = null;
 
         notification.removeBinding(this._bindings);
+
+        this.needDropItems = null;
+        this.randomDropInfo = null;
+        this._curMapDropItems = null;
     },
 
     refreshEndlessRound : function (obj) {
@@ -89,10 +98,112 @@ var BattleSystem = SystemBase.extend({
     battleMapResult: function(obj) {
         this.cur_battle_map = obj.map_id;
 
+        this._curMapDropItems.length = 0;
+        this.needDropItems = this._curLevelNeedDropData();
+
         //notification.emit(notification.event.BATTLE_MAP_RESULT);
         ui.pushScene(new LoadingScene());
         
         sdk_manager.sendSdkCommand("TalkingDataGA", "onBegin", "map."+String(obj.map_id));
+    },
+
+    getCurDropItemData : function (roleAllCount_,roleIDx_) {
+
+        //function randDropInfoFunc(allDropCount_,allRoleCount_){
+        //
+        //
+        //}
+        //
+        //if(this.randomDropInfo == null){
+        //    var tmpCount = 0;
+        //    _.forEach(this.needDropItems, function (dropItem_) {
+        //        if(dropItem_){
+        //            tmpCount += dropItem_.item_num;
+        //        }
+        //    },this);
+        //    if(tmpCount != 0){
+        //        this.randomDropInfo = randDropInfoFunc(tmpCount,roleAllCount_);
+        //    }
+        //}
+        var dropItemInfo_ = {};
+        var hadDropItem = false;
+
+
+        _.forEach(this.needDropItems, function (dropItem_) {
+            if(hadDropItem == false && roleIDx_ > roleAllCount_/ 2){
+                if( dropItem_ && dropItem_.used == 0){
+                    dropItem_.used = 1;
+                    hadDropItem = true;
+                    dropItemInfo_.item_id = dropItem_.item_id;
+                    dropItemInfo_.item_num = dropItem_.item_num;
+                }
+            }
+        },this);
+
+        if(hadDropItem == false){
+            _.forEach(this.needDropItems, function (dropItem_) {
+                    if(hadDropItem == false && dropItem_ && this.judgeRandomPro(dropItem_.drop_pro)){
+                        hadDropItem = true;
+                        dropItemInfo_.item_id = dropItem_.item_id;
+                        dropItemInfo_.item_num = dropItem_.drop_base;
+                    }
+            },this);
+        }
+
+        this._curMapDropItems.push(dropItemInfo_);
+
+        return dropItemInfo_;
+    },
+
+    _curLevelNeedDropData : function () {
+        var dropItems = [];
+        var tmpData = this._parseLevelDropData(this.cur_battle_map);
+
+        _.forEach(tmpData, function (dropItem) {
+            if(dropItem){
+                dropItems.push({
+                    item_id : dropItem.drop_item_id,
+                    item_num : dropItem.drop_base,
+                    drop_base : dropItem.drop_pro_base,
+                    drop_pro : dropItem.drop_item_pro,
+                    used : 0
+                });
+            }
+        },this);
+
+        return dropItems;
+    },
+
+    _parseLevelDropData : function (mapId_) {
+        var dropItems = [];
+        var config = configdb.map[mapId_];
+        if(config == undefined){
+            return dropItems;
+        }
+
+        var drop_id_str_pre = "drop_item_";
+        var drop_base_str_pre = "drop_base_";
+        var drop_pro_base_str_pre = "drop_pro_base_";
+        var drop_item_pro_str_pre = "drop_item_pro_";
+
+        var dropNum = 4;
+        for(var idx = 1; idx <= dropNum ; idx++){
+            var drop_id_str = drop_id_str_pre + idx;
+            if(config[drop_id_str]){
+                var drop_base_str = drop_base_str_pre + idx;
+                var drop_pro_base_str = drop_pro_base_str_pre + idx;
+                var drop_item_pro_str = drop_item_pro_str_pre + idx;
+
+                dropItems.push({
+                    drop_item_id  : config[drop_id_str],
+                    drop_base     : config[drop_base_str],
+                    drop_pro_base : config[drop_pro_base_str],
+                    drop_item_pro : config[drop_item_pro_str]
+                })
+            }
+        }
+
+        return dropItems;
     },
 
     battleFinish: function(isWin) {
@@ -232,6 +343,70 @@ var BattleSystem = SystemBase.extend({
                 jsb.JsonStorage.GetInstance(LoginSystem.settingFile).flush();
             }
         }
+    },
+    
+    randomDropItem : function (roleAllCount_,roleIdx_) {
+        var dropItems = [];
+
+
+        for(var idx = 1 ; idx <= 4; idx++){
+            var itemId = 120001;
+            dropItems.push(itemId);
+        }
+
+        return dropItems;
+    },
+    
+    randomDropItemPos : function (role_,itemCount_) {
+        var pos = cc.p(0,0);
+        var rolePos = role_.getSpacePosition();
+
+        var mapRect = MapSystem.instance.getGameMapRect();
+
+        var randomLength = 50 + itemCount_ * 20;
+
+        pos.x = _.random(randomLength);
+        pos.y = _.random(randomLength/2);
+
+        if(_.random(10) > 5){
+            pos.x *= -1;
+        }
+
+        if(_.random(10) > 5){
+            pos.y *= -1;
+        }
+
+        pos = cc.pAdd(pos,rolePos);
+
+        if(pos.x > mapRect.width){
+            var tmpValue = pos.x - mapRect.width;
+            pos.x =  mapRect.width - tmpValue;
+        }
+
+        if(pos.x < 0){
+            pos.x *= -1;
+        }
+
+        if(pos.y > mapRect.height){
+            pos.y = mapRect.height - _.random(10);
+        }
+
+        if(pos.y < 0){
+            pos.y *= -1;
+        }
+
+        return pos;
+    },
+
+    //概率 万分比
+    judgeRandomPro : function (pro_value_) {
+        LOG("pro _ value = " + pro_value_);
+        //return true;
+        var tmpRandValue = _.random(10000);
+        if(pro_value_ >= tmpRandValue){
+            return true;
+        }
+        return false;
     }
 });
 

@@ -333,7 +333,7 @@ var RoleBase = PhysicalNode.extend({
         if(this.roleType == RoleBase.RoleType.Hero){
             var wudiEffect = dragonBones.DragonBonesHelper.buildArmatureNode("wudi");
             wudiEffect.gotoAndPlay("wudi");
-            this.addChild(wudiEffect);
+            this.armatureNode.addChild(wudiEffect);
             wudiEffect.registerMovementEventHandler(function(node, type) {
                 switch(type) {
                     case "complete":

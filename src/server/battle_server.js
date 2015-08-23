@@ -73,6 +73,16 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
         bag_server.addItem(config.gain_item_id_2, 1)
     }
 
+    // drop item
+    var dropItems = BattleSystem.instance._curMapDropItems;
+    _.forEach(dropItems, function (dropItem_) {
+        if(dropItem_){
+            LOG("server dropItem id = " + dropItem_.item_id);
+            LOG("server dropitem num = " + dropItem_.item_num);
+            bag_server.addItem(dropItem_.item_id,dropItem_.item_num);
+        }
+    },this);
+
     // result
     var reward = {};
     reward.exp = config.gain_exp;
