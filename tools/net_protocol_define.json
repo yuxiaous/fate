@@ -196,7 +196,7 @@
 		"desc": "升级技能",
 		"schemes":
 		[
-			["uint32", "skill_id", "技能id"]
+			["uint32", "skill_idx", "技能索引"]
 		]
 	},
 	"CMD_SC_SKILL_UP_RESULT":
