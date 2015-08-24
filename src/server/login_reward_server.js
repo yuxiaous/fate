@@ -91,6 +91,9 @@ server.registerCallback(net_protocol_handlers.CMD_CS_GET_REWARD, function (obj) 
             else if(curRewardInfo.type == 2){
                 player_server.changeDiamond(curRewardInfo.num);
             }
+            else if(curRewardInfo.type == 3){
+                bag_server.addItem(curRewardInfo.itemid,curRewardInfo.num);
+            }
         }
 
         login_reward_server.update.push(obj);

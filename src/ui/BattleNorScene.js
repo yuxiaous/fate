@@ -34,6 +34,11 @@ var BattleNorScene = SceneNormalBase.extend({
         else if(skin == 102){
             this.status.hero = Nero;
         }
+        else{
+            this.status.hero = Archer;
+        }
+        this.status.hero = Archer;
+        LOG("archer archer");
 
         if(BattleSystem.instance.curIsTryBattle()){
             this.status.hero = BattleSystem.instance.getTryBattleHero();
