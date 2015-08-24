@@ -191,6 +191,7 @@ SkillScene.SkillCell = ui.GuiWidgetBase.extend({
         this._super();
         this._ui = {
             sp_icon: this.seekWidgetByName("sp_icon"),
+            sp_lock: this.seekWidgetByName("sp_lock"),
             lbl_name: this.seekWidgetByName("lbl_name"),
             lbl_level: this.seekWidgetByName("lbl_level"),
             img_sel: this.seekWidgetByName("img_sel"),
@@ -200,6 +201,7 @@ SkillScene.SkillCell = ui.GuiWidgetBase.extend({
             notification.createBinding(notification.event.SKILL_INFO, this.refreshSkillInfo, this)
         ];
 
+        this._ui.sp_lock.setVisible(false);
         this.refreshSkillInfo();
     },
 
@@ -230,6 +232,14 @@ SkillScene.SkillCell = ui.GuiWidgetBase.extend({
             // level
             this._ui.lbl_level.setString(this._ui.lbl_level._str_original.format(info.level));
         }
+
+        // lock
+        var req_level = 1;
+        switch (info.index) {
+            case 1: req_level = configdb.property[113].value; break;
+            case 2: req_level = configdb.property[114].value; break;
+        }
+        this._ui.sp_lock.setVisible(req_level > PlayerSystem.instance.level);
     },
 
     setSelected: function(val) {
