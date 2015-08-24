@@ -38,6 +38,10 @@ var SkinSystem = SystemBase.extend({
 
     onChangeSkinResult: function(obj) {
         notification.emit(notification.event.SKIN_CHANGE_RESULT);
+    },
+
+    hasPurchased: function(skin_id) {
+        return this.skins[skin_id] != undefined;
     }
 });
 

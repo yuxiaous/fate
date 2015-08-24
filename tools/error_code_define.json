@@ -3,6 +3,7 @@
 	[102, "ERR_LESS_DIAMOND", "钻石不足"],
     [103, "ERR_LESS_ITEM", "物品数量不足"],
     [104, "ERR_LESS_ACTION","行动力不足"],
+    [105, "ERR_LESS_LEVEL", "等级不足"],
 
     [201, "ERR_CONFIG_NOT_EXIST", "配置无法找到"],
     [202, "ERR_TOP_LEVEL", "已到最高等级"],

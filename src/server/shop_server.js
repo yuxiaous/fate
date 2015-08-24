@@ -34,6 +34,12 @@ var shop_server = {
             return false;
         }
 
+        // check
+        if(config.cond_type == 1 && config.cond_value > player_server.player_info.level) {
+            server.sendError(net_error_code.ERR_LESS_LEVEL);
+            return false;
+        }
+
         // pay
         var cost = config.pay_cost * good_num;
         switch (config.pay_type) {

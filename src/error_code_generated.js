@@ -26,6 +26,12 @@ net_error_code[104] = {
 	desc: "行动力不足"
 };
 
+net_error_code.ERR_LESS_LEVEL = 105;
+net_error_code[105] = {
+	code: 105,
+	desc: "等级不足"
+};
+
 net_error_code.ERR_CONFIG_NOT_EXIST = 201;
 net_error_code[201] = {
 	code: 201,

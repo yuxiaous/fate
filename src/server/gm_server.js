@@ -24,6 +24,7 @@ var gm_server = {
             case "ai": this.parseAddItem(list); break;
             case "ae": this.parseAddEquip(list); break;
             case "om": this.parseOpenMap(list); break;
+            case "exp": this.parseAddExp(list); break;
         }
     },
 
@@ -92,6 +93,12 @@ var gm_server = {
         }, this);
 
         map_server.openMap(open);
+    },
+
+    parseAddExp: function(list) {
+        var exp = Number(list[1]);
+
+        player_server.changeExp(exp);
     }
 };
 
