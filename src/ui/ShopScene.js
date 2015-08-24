@@ -199,12 +199,7 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
         }
         else if(config.buy_type == ShopSystem.GoodType.Skin) {
             this._ui.icon.setIcon(config.buy_id, IconWidget.Type.Skin, config.buy_count);
-
-            if(SkinSystem.instance.hasPurchased(config.buy_id)){
-                this._ui.btn_buy.setEnabled(false);
-                this._ui.btn_buy.setBright(false);
-                this._ui.btn_buy.setTitleText("已购买");
-            }
+            this.refreshBtnBuy();
         }
         else if(config.buy_id) {
             this._ui.icon.setIcon(config.buy_id, IconWidget.Type.Item, config.buy_count);
@@ -272,7 +267,7 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
             return;
         }
         if(config.buy_type == ShopSystem.GoodType.Skin) {
-            if(SkinSystem.instance.skins[102] != undefined ){
+            if(SkinSystem.instance.hasPurchased(config.buy_id)){
                 this._ui.btn_buy.setEnabled(false);
                 this._ui.btn_buy.setBright(false);
                 this._ui.btn_buy.setTitleText("已购买");
