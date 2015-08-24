@@ -348,7 +348,6 @@ var BattleSystem = SystemBase.extend({
     randomDropItem : function (roleAllCount_,roleIdx_) {
         var dropItems = [];
 
-
         for(var idx = 1 ; idx <= 4; idx++){
             var itemId = 120001;
             dropItems.push(itemId);

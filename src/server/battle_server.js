@@ -77,9 +77,15 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
     var dropItems = BattleSystem.instance._curMapDropItems;
     _.forEach(dropItems, function (dropItem_) {
         if(dropItem_){
-            LOG("server dropItem id = " + dropItem_.item_id);
-            LOG("server dropitem num = " + dropItem_.item_num);
-            bag_server.addItem(dropItem_.item_id,dropItem_.item_num);
+            var dropItemConfig = configdb.item[dropItem_.item_id];
+            if(dropItemConfig){
+                if(dropItemConfig.goldtype == DroppedItem.ItemType.GoldType){
+                    player_server.changeGold(dropItem_.item_num);
+                }
+                else{
+                    bag_server.addItem(dropItem_.item_id,dropItem_.item_num);
+                }
+            }
         }
     },this);
 
