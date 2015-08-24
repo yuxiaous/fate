@@ -152,7 +152,7 @@ SelectHeroPanel.HeroSkinCell = ui.GuiWidgetBase.extend({
             SkinSystem.instance.changeSkin(this.skinId);
         }
         else {
-            var win = new SelectHeroPanel.ConfirmWindow();
+            var win = new SelectHeroPanel.ConfirmWindow(this.skinId);
             win.pop();
         }
     }
@@ -162,16 +162,41 @@ SelectHeroPanel.HeroSkinCell = ui.GuiWidgetBase.extend({
 SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
     _guiFile: "ui/select_hero_confirm.json",
 
-    ctor: function() {
+    ctor: function(skin_id) {
         this._super();
+        this._skin_id = skin_id;
     },
 
     onEnter: function() {
         this._super();
+        this._ui = {
+            lbl_content: this.seekWidgetByName("lbl_content")
+        };
+
+        this.refreshContent();
     },
 
     onExit: function() {
+        this._ui = null;
         this._super();
+    },
+
+    refreshContent: function() {
+        var config = configdb.skin[this._skin_id];
+        if(config == undefined) {
+            return;
+        }
+
+        config = configdb.shop[config.shop_id];
+        if(config == undefined) {
+            return;
+        }
+
+        this._ui.lbl_content.setString(this._ui.lbl_content._str_original.format({
+            num: config.pay_cost,
+            curr: ShopSystem.getPayTypeString(config.pay_type),
+            what: config.name
+        }));
     },
 
     _on_btn_cancel: function() {
@@ -180,10 +205,12 @@ SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
 
     _on_btn_play: function() {
         BattleSystem.instance.startTryBattle(Nero);
+        this.close();
     },
 
     _on_btn_buy: function() {
-        ui.pushScene(new ShopScene(ShopSystem.ShopType.Role))
+        ui.pushScene(new ShopScene(ShopSystem.ShopType.Role));
+        this.close();
     }
 });
 
