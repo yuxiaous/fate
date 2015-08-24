@@ -67,7 +67,8 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
             this._ui.lbl_equip_name[1].setString(next_config.name);
         }
         else {
-            this._ui.lbl_equip_name[1].setVisible(false);
+            //this._ui.lbl_equip_name[1].setVisible(false);
+            this._ui.lbl_equip_name[1].setString("已到最高等级");
         }
 
         // equip property
