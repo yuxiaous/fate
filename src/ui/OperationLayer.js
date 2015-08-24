@@ -222,6 +222,15 @@ var OperationLayer = cc.Layer.extend({
                 btnCountDown(this._skillButton2,times_);
                 break;
             case  3 :
+                //if(PlayerSystem.instance.level < 100){
+                //    LOG("player system instance = " + PlayerSystem.instance.level);
+                //
+                //    btnDisableWithLevel(this._skillButton3);
+                //}
+                //else{
+                //    LOG("888888");
+                //
+                //}
                 btnCountDown(this._skillButton3,times_);
                 break;
             case  4 :
@@ -259,7 +268,10 @@ var OperationLayer = cc.Layer.extend({
                 if(tmpTime == 0){
                     btn_.unschedule(refreshLabelAnthor);
                     btn_.isCounting = false;
-                    if(that._curIsHide) btn_.setIsEnable(true);
+                    if(that._curIsHide){
+                        LOG("222222");
+                        btn_.setIsEnable(true);
+                    }
                     covPro.setPercentage(100);
                     btn_.removeChildByTag(100);
                 }
@@ -275,6 +287,44 @@ var OperationLayer = cc.Layer.extend({
 
             btn_.schedule(refreshLabelAnthor,0.1);
         }
+
+        function btnDisableWithLevel(btn_){
+            LOG("1234123412341234");
+            var covPro = btn_.btnSkinned.getDisabledSprite().coverProgress;
+            btn_.setIsEnable(false);
+            covPro.setPercentage(100);
+            covPro.setVisible(true);
+        }
+
+    },
+
+    setBtnDisableWithLevel : function (btnIdx_) {
+        switch (btnIdx_){
+            case RoleAction.Type.SKILL1  :
+                btnDisableWithLevel(this._skillButton1);
+                break;
+            case RoleAction.Type.SKILL2  :
+                btnDisableWithLevel(this._skillButton2);
+                break;
+            case  RoleAction.Type.SKILL3  :
+                btnDisableWithLevel(this._skillButton3);
+                break;
+            case  RoleAction.Type.SKILL4  :
+                btnDisableWithLevel(this._skillButton4);
+                break;
+            case  RoleAction.Type.SKILL5  :
+                btnDisableWithLevel(this._skillButton5);
+                break;
+            default :
+                break;
+        }
+
+        function btnDisableWithLevel(btn_){
+            var covPro = btn_.btnSkinned.getDisabledSprite().coverProgress;
+            btn_.setIsEnable(false);
+            covPro.setPercentage(100);
+        }
+
     },
 
     setBtnTimingPause : function (btnIdx_,isPause_) {

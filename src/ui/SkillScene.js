@@ -98,7 +98,7 @@ var SkillScene = ui.GuiWindowBase.extend({
         }, this);
 
         // info
-        var info = SkillSystem.instance.skills[this._sel_skill_id];
+        var info = _.findWhere(SkillSystem.instance.skills, {skill_id: this._sel_skill_id});
         if(info == undefined) {
             return;
         }
@@ -162,7 +162,10 @@ var SkillScene = ui.GuiWindowBase.extend({
     },
 
     _on_btn_qianghua: function() {
-        SkillSystem.instance.requestSkillLevelUp(this._sel_skill_id);
+        var info = _.findWhere(SkillSystem.instance.skills, {skill_id: this._sel_skill_id});
+        if(info != undefined) {
+            SkillSystem.instance.requestSkillLevelUp(info.index);
+        }
     }
 });
 
@@ -197,7 +200,7 @@ SkillScene.SkillCell = ui.GuiWidgetBase.extend({
     },
 
     refreshSkillInfo: function() {
-        var info = SkillSystem.instance.skills[this.skillId];
+        var info = _.findWhere(SkillSystem.instance.skills, {skill_id: this.skillId});
         if(info == undefined) {
             return;
         }

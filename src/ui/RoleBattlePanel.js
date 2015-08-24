@@ -276,10 +276,7 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
                 RoleAction.Type.SKILL4,
                 RoleAction.Type.SKILL5],
                 function (skillType_) {
-                    //var actionData = actions[skillType_];
-
                     var curCost = SkillSystem.instance.getSkillUpMpcost(skillType_);
-                    //LOG("cur cost = " + curCost);
                     var scene = cc.director.getRunningScene();
                     var isEnoughMp = true;
 
@@ -287,6 +284,17 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
                         isEnoughMp = false;
                     }
                     scene._operator.setBtnMpIsNotEnough(skillType_,isEnoughMp);
+
+                    if(skillType_ == RoleAction.Type.SKILL2 ){
+                        if(PlayerSystem.instance.level < configdb.property[113].value){
+                            scene._operator.setBtnDisableWithLevel(skillType_);
+                        }
+                    }
+                    else if(skillType_ == RoleAction.Type.SKILL3){
+                        if(PlayerSystem.instance.level < configdb.property[114].value){
+                            scene._operator.setBtnDisableWithLevel(skillType_);
+                        }
+                    }
                 }
         )
     }

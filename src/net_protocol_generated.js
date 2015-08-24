@@ -398,10 +398,10 @@ net_protocol_handlers.SEND_CMD_CS_LOGIN_WITH_USER_PASS = function(obj) {
 };
 
 // @protocol 升级技能
-// @param {uint32} skill_id, 技能id
+// @param {uint32} skill_idx, 技能索引
 net_protocol_handlers.CMD_CS_SKILL_UP = 1202;
 net_protocol_handlers.SEND_CMD_CS_SKILL_UP = function(obj) {
-	cc.assert(obj.skill_id != undefined, "CMD_CS_SKILL_UP.skill_id is undefined.");
+	cc.assert(obj.skill_idx != undefined, "CMD_CS_SKILL_UP.skill_idx is undefined.");
 	_SendFunc(1202, obj);
 };
 

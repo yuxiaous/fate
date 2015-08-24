@@ -23,15 +23,15 @@ var SkillSystem = SystemBase.extend({
 
     onSkillInfo: function(obj) {
         _.each(obj.skills, function(skill) {
-            this.skills[skill.skill_id] = skill;
+            this.skills[skill.index] = skill;
         }, this);
 
         notification.emit(notification.event.SKILL_INFO);
     },
 
-    requestSkillLevelUp: function(id) {
+    requestSkillLevelUp: function(idx) {
         net_protocol_handlers.SEND_CMD_CS_SKILL_UP({
-            skill_id: id
+            skill_idx: idx
         });
     },
 
@@ -77,7 +77,7 @@ var SkillSystem = SystemBase.extend({
     getSkillUpMpcost : function(skill_type_){
         var conf = this.getSkillUpConfig(skill_type_);
         if(conf){
-            return conf.cost_mp;;
+            return conf.cost_mp;
         }
         return 0;
     },

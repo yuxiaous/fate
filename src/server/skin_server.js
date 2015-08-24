@@ -29,6 +29,15 @@ var skin_server = {
                 skins: this.update,
                 use_skin: this.skin_info.use_skin
             });
+            switch (this.update_use_skin) {
+                case 101:
+                case 102:
+                    skill_server.changeToSaber();
+                    break;
+                case 103:
+                    skill_server.changeToArcher();
+                    break;
+            }
             this.update = [];
             this.update_use_skin = 0;
         }
