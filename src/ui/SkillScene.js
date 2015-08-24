@@ -164,6 +164,16 @@ var SkillScene = ui.GuiWindowBase.extend({
     _on_btn_qianghua: function() {
         var info = _.findWhere(SkillSystem.instance.skills, {skill_id: this._sel_skill_id});
         if(info != undefined) {
+            var req_level = 1;
+            switch (info.index) {
+                case 1: req_level = configdb.property[113].value; break;
+                case 2: req_level = configdb.property[114].value; break;
+            }
+            if(req_level > PlayerSystem.instance.level) {
+                MessageBoxOk.show("该技能在{0}级后开启".format(req_level));
+                return;
+            }
+
             SkillSystem.instance.requestSkillLevelUp(info.index);
         }
     }
