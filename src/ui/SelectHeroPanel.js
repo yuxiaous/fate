@@ -78,6 +78,12 @@ SelectHeroPanel.HeroSkinCell = ui.GuiWidgetBase.extend({
 
         this._ui.lbl_name.setString(config.name);
 
+        // score
+        var score = PlayerSystem.instance.getPlayerBattleScore(this.skinId);
+        if(score) {
+            this._ui.lbl_score.setString(this._ui.lbl_score._str_original.format(score.score));
+        }
+
         this.createAvatar();
         this.refreshUsingStatus();
     },

@@ -89,7 +89,8 @@ var BagScene = ui.GuiWindowBase.extend({
                 this.refreshProperty();
                 this.refreshItemPage();
                 this.refreshSelectedItemInfo();
-            }, this)
+            }, this),
+            notification.createBinding(notification.event.SKIN_INFO, this.refreshProperty, this)
         ];
 
         this.refreshProperty();

@@ -49,18 +49,40 @@ var PlayerSystem = SystemBase.extend({
         notification.emit(notification.event.PLAYER_INFO);
     },
 
-    getPlayerBattleScore: function() {
+    getPlayerBattleScore: function(skin_id) {
         var ret = {hp: 0, mp: 0, atk: 0, def: 0, crit: 0, sunder: 0, score: 0};
 
-        var config = configdb.levelup[this.level];
+        if(skin_id == undefined) {
+            skin_id = SkinSystem.instance.use_skin;
+        }
+        var config = configdb.skin[skin_id];
+        if(config == undefined) {
+            return ret;
+        }
+
+        config = configdb.role[config.role_id];
+        if(config == undefined) {
+            return ret;
+        }
         if(config) {
-            ret.hp = config.hp || 0;
-            ret.mp = config.mp || 0;
-            ret.atk = config.atk || 0;
-            ret.def = config.def || 0;
-            ret.crit = config.crit || 0;
-            ret.sunder = config.sunder || 0;
-            ret.critPro = config.crit_pro || 0;
+            ret.hp += config.ext_hp || 0;
+            ret.mp += config.ext_mp || 0;
+            ret.atk += config.ext_atk || 0;
+            ret.def += config.ext_def || 0;
+            ret.crit += config.ext_crit || 0;
+            ret.sunder += config.ext_sunder || 0;
+            ret.critPro += config.crit_pro || 0;
+        }
+
+        config = configdb.levelup[this.level];
+        if(config) {
+            ret.hp += config.hp || 0;
+            ret.mp += config.mp || 0;
+            ret.atk += config.atk || 0;
+            ret.def += config.def || 0;
+            ret.crit += config.crit || 0;
+            ret.sunder += config.sunder || 0;
+            ret.critPro += config.crit_pro || 0;
             ret.score = Formula.calculateBattleScore(ret.hp, ret.mp, ret.atk, ret.def, ret.crit, ret.sunder);
         }
 
