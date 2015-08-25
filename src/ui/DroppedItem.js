@@ -129,6 +129,8 @@ var DroppedItem = ui.GuiWidgetBase.extend({
 
         if(this._itemFlyAction == null) {
 
+
+
             var endPos = MapSystem.instance.getGameMapPos();
             var winSize = cc.director.getWinSize();
             endPos = cc.p(- endPos.x + 90,winSize.height - 90);
@@ -139,6 +141,7 @@ var DroppedItem = ui.GuiWidgetBase.extend({
                         this.itemShadow.removeFromParent();
                         this.itemShadow = null;
                     }
+                    MusicManager.getInstance().playEffectMusic("sounds/getdropitem.mp3");
                 },this),
                 cc.moveTo(0.3, endPos),
                 cc.callFunc(function() {
@@ -167,6 +170,8 @@ var DroppedItem = ui.GuiWidgetBase.extend({
                     notification.emit(notification.event.ITEM_DISAPPEAR, this);
                 }, this)
             ));
+
+
         }
     }
 });
