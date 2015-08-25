@@ -143,57 +143,45 @@ var SceneEndlessBase = SceneBase.extend({
             }
 
             //monster
-            this._waveIndex = 0;
-            this.nextMonsterWave();
+            var monsterData = this._sceneStatus.BSection[this._sectionIndex-1].monsters;
+
+            _.each(monsterData, function (data) {
+                var roleConfig = configdb.role[data.roleId];
+                var role = new Role(data.roleId);
+                role.setRoleData({
+                    hp:                data.hpValue,
+                    atk:               data.atkValue,
+                    crit_probability : data.crit_pro,
+                    crit :             data.crit
+                });
+
+                // if (roleConfig.type == 1) {
+                role.roleType = RoleBase.RoleType.Monster;
+                // }
+
+                var pos = this.getMonsterPosWithHero(this._hero,tmpSections[this._sectionIndex -1].street);
+                var isRemote = 0;
+                if(roleConfig.throw_model_id != undefined){
+                    isRemote = 1;
+                }
+                role.setSpacePosition(pos);
+                role.setRoleAi(RoleAi.Type.XiaoGuai,{
+                    atkPer    : data.ai.atkPer,
+                    restPer   : data.ai.restPer,
+                    rangeActW : data.ai.rangeActW,
+                    rangeActH : data.ai.rangeActH,
+                    followAtk : data.ai.followAtk,
+                    isRemote  : isRemote
+                });
+                role.setBloodBar();
+                role.aiData = data;
+                this._monsters.push(role);
+                this._physicalWorld.addPhysicalNode(role);
+            }, this);
         }
 
 
         this.onBeforeFightChatStart();
-    },
-
-    nextMonsterWave: function() {
-        this._waveIndex++;
-
-        var monsterData = this._sceneStatus.BSection[this._sectionIndex-1].monsters[this._waveIndex-1];
-        if(monsterData == undefined) {
-            return false;
-        }
-
-        _.each(monsterData, function (data) {
-            var roleConfig = configdb.role[data.roleId];
-            var role = new Role(data.roleId);
-            role.setRoleData({
-                hp:                data.hpValue,
-                atk:               data.atkValue,
-                crit_probability : data.crit_pro,
-                crit :             data.crit
-            });
-
-            // if (roleConfig.type == 1) {
-            role.roleType = RoleBase.RoleType.Monster;
-            // }
-
-            var pos = this.getMonsterPosWithHero(this._hero,tmpSections[this._sectionIndex -1].street);
-            var isRemote = 0;
-            if(roleConfig.throw_model_id != undefined){
-                isRemote = 1;
-            }
-            role.setSpacePosition(pos);
-            role.setRoleAi(RoleAi.Type.XiaoGuai,{
-                atkPer    : data.ai.atkPer,
-                restPer   : data.ai.restPer,
-                rangeActW : data.ai.rangeActW,
-                rangeActH : data.ai.rangeActH,
-                followAtk : data.ai.followAtk,
-                isRemote  : isRemote
-            });
-            role.setBloodBar();
-            role.aiData = data;
-            this._monsters.push(role);
-            this._physicalWorld.addPhysicalNode(role);
-        }, this);
-
-        return true;
     },
 
     onBeforeFightChatEnd: function() {
