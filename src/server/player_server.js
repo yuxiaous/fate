@@ -129,6 +129,10 @@ var player_server = {
             }
             break;
         }
+
+        if(this.player_info.level >= configdb.property[115].value) {
+            skin_server.addSkin(103);
+        }
     },
     changeSuperSkillCount : function (val) {
         if(val == undefined || val == 0){
