@@ -859,7 +859,7 @@ var Archer = RoleBase.extend({
             attack: {
                 //animation: undefined,
                 skill_sound: "sounds/saber/skill_2.mp3",
-                movement: 600
+                movement: 750
             },
             hit: {
                 animation: "sabar_effect/jineng6",
