@@ -346,6 +346,17 @@ var BattleSystem = SystemBase.extend({
       return this._try_role;
     },
 
+    getTryBattleHeroSkin : function () {
+        var skin_ = 101;
+        if(this._try_role == Archer){
+            skin_ = 103;
+        }
+        else if(this._try_role == Nero){
+            skin_ = 102;
+        }
+        return skin_;
+    },
+
     curIsTryBattle : function () {
         if(this.cur_battle_map == configdb.property[108].value){
             return true;

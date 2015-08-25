@@ -29,24 +29,45 @@ var SkillEffectLayer = ui.GuiWindowBase.extend({
             }
         },this);
 
-        this._skillStrings =[];
-        _.each(["res/images/ui/ui_262.png",
+        var rolePicName = "res/images/ui/ui_139.png";
+        var effectBgStr = "res/images/ui/ui_258.png";
+
+        var effectFont = ["res/images/ui/ui_262.png",
             "res/images/ui/ui_263.png",
             "res/images/ui/ui_264.png",
             "res/images/ui/ui_265.png",
             "res/images/ui/ui_266.png",
-            "res/images/ui/ui_267.png"],function (str_) {
-                this._skillStrings.push(str_);
-        },this);
+            "res/images/ui/ui_267.png"];
 
-        var rolePicName = "res/images/ui/ui_139.png";
         var skin = SkinSystem.instance.use_skin;
+
+        if(BattleSystem.instance.curIsTryBattle()){
+            skin = BattleSystem.instance.getTryBattleHeroSkin();
+        }
+
         if(skin == 101){
             rolePicName = "res/images/ui/ui_139.png";
         }
         else if(skin == 102){
             rolePicName = "res/images/ui/ui_256.png";
         }
+        else if(skin == 103){
+            rolePicName = "res/images/code_ui/zui_102.png";
+            effectBgStr = "res/images/code_ui/ui_389.png";
+            effectFont = ["res/images/code_ui/ui_384.png",
+                "res/images/code_ui/ui_385.png",
+                "res/images/code_ui/ui_386.png",
+                "res/images/code_ui/ui_387.png",
+                "res/images/code_ui/ui_388.png"];
+        }
+
+        this._bg.loadTexture(effectBgStr);
+
+        this._skillStrings =[];
+        _.each(effectFont,function (str_) {
+            this._skillStrings.push(str_);
+        },this);
+
         var rolePic = cc.Sprite.create(rolePicName);
         rolePic.setPosition(cc.p(0,0));
         rolePic.setAnchorPoint(cc.p(0,0));
