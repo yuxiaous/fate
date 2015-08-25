@@ -170,7 +170,8 @@ SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
     onEnter: function() {
         this._super();
         this._ui = {
-            lbl_content: this.seekWidgetByName("lbl_content")
+            lbl_content: this.seekWidgetByName("lbl_content"),
+            lbl_content_2: this.seekWidgetByName("lbl_content_2")
         };
 
         this.refreshContent();
@@ -182,6 +183,9 @@ SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
     },
 
     refreshContent: function() {
+        this._ui.lbl_content.setVisible(false);
+        this._ui.lbl_content_2.setVisible(false);
+
         var config = configdb.skin[this._skin_id];
         if(config == undefined) {
             return;
@@ -192,11 +196,23 @@ SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
             return;
         }
 
-        this._ui.lbl_content.setString(this._ui.lbl_content._str_original.format({
-            num: config.pay_cost,
-            curr: ShopSystem.getPayTypeString(config.pay_type),
-            what: config.name
-        }));
+        if(this._skin_id == 103) {
+            this._ui.lbl_content_2.setVisible(true);
+            this._ui.lbl_content_2.setString(this._ui.lbl_content_2._str_original.format({
+                lv: configdb.property[115].value,
+                num: config.pay_cost,
+                curr: ShopSystem.getPayTypeString(config.pay_type),
+                what: config.name
+            }));
+        }
+        else {
+            this._ui.lbl_content.setVisible(true);
+            this._ui.lbl_content.setString(this._ui.lbl_content._str_original.format({
+                num: config.pay_cost,
+                curr: ShopSystem.getPayTypeString(config.pay_type),
+                what: config.name
+            }));
+        }
     },
 
     _on_btn_cancel: function() {
