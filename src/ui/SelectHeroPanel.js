@@ -187,7 +187,7 @@ SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
             return;
         }
 
-        config = configdb.shop[config.shop_id];
+        config = ShopSystem.getConfig(config.shop_id);
         if(config == undefined) {
             return;
         }
