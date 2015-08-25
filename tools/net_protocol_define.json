@@ -333,7 +333,8 @@
       "desc": "装备强化结果",
       "schemes":
       [
-        ["uint32", "result", ""]
+        ["uint32", "result", ""],
+        ["uint32", "equip_id", "强化后的装备id"]
       ]
     },
 

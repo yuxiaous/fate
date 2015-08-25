@@ -31,7 +31,7 @@ var StrengthenSystem = SystemBase.extend({
     },
 
     onStrengthenEquipResult: function(obj) {
-        notification.emit(notification.event.EQUIP_STRENGTHEN_RESULT);
+        notification.emit(notification.event.EQUIP_STRENGTHEN_RESULT, obj.equip_id);
     }
 });
 

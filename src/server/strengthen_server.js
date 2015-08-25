@@ -168,6 +168,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_EQUIP_STRENGTHEN_ON_EQUIP, 
 
     // result
     server.send(net_protocol_handlers.CMD_SC_EQUIP_STRENGTHEN_RESULT, {
-        result: 0
+        result: 0,
+        equip_id: config.qh_next
     });
 });

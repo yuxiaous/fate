@@ -34,6 +34,37 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
             ]
         };
 
+        this._bindings = [
+            notification.createBinding(notification.event.EQUIP_STRENGTHEN_RESULT, function(event, equip_id) {
+                this._equip_id = equip_id;
+                this.createInfo();
+            }, this)
+        ];
+
+        this.createInfo();
+    },
+
+    onExit: function() {
+        this.clearInfo();
+        notification.removeBinding(this._bindings);
+        this._ui = null;
+        this._super();
+    },
+
+    clearInfo: function() {
+        _.each(this._ui.ctrl_equips, function(ctrl) {
+            ctrl.setWidget(null);
+        });
+        _.each(this._ui.ctrl_needs, function(ctrl) {
+            ctrl.setWidget(null);
+        });
+        this._ui.ctrl_equips.length = 0;
+        this._ui.ctrl_needs.length = 0;
+    },
+
+    createInfo: function() {
+        this.clearInfo();
+
         var config = configdb.equip[this._equip_id];
         if(config == undefined) {
             return;
@@ -114,19 +145,7 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
         }, this);
     },
 
-    onExit: function() {
-        _.each(this._ui.ctrl_equips, function(ctrl) {
-            ctrl.setWidget(null);
-        });
-        _.each(this._ui.ctrl_needs, function(ctrl) {
-            ctrl.setWidget(null);
-        });
-        this._ui = null;
-        this._super();
-    },
-
     _on_btn_close: function() {
-        this.canStrengthen = false;
         this.close();
     },
 
@@ -156,8 +175,17 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
             return;
         }
 
-        this.canStrengthen = can;
-        this.close();
+        if(this._strengthenCallback) {
+            this._strengthenCallback(this);
+        }
+    },
+
+    setStrengthenCallback: function(selector, target) {
+        if(target === undefined)
+            this._strengthenCallback = selector;
+        else
+            this._strengthenCallback = selector.bind(target);
+
     }
 });
 

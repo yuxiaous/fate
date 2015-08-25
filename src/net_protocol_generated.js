@@ -473,9 +473,11 @@ _BindFunc(1640, function(obj) {
 
 // @protocol 装备强化结果
 // @param {uint32} result, 
+// @param {uint32} equip_id, 强化后的装备id
 net_protocol_handlers.CMD_SC_EQUIP_STRENGTHEN_RESULT = 1312;
 _BindFunc(1312, function(obj) {
 	cc.assert(obj.result != undefined, "CMD_SC_EQUIP_STRENGTHEN_RESULT.result is undefined.");
+	cc.assert(obj.equip_id != undefined, "CMD_SC_EQUIP_STRENGTHEN_RESULT.equip_id is undefined.");
 	net_protocol_handlers.ON_CMD_SC_EQUIP_STRENGTHEN_RESULT(obj);
 });
 

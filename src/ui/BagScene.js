@@ -453,14 +453,12 @@ var BagScene = ui.GuiWindowBase.extend({
         }
 
         var win = new StrengthenPanel(equip_id);
-        win.setCloseCallback(function(w) {
-            if(w.canStrengthen == true) {
-                if(this._sel_index >= 0) {
-                    StrengthenSystem.instance.strengthenEquipInBag(value);
-                }
-                else {
-                    StrengthenSystem.instance.strengthenEquipOnEquip(value);
-                }
+        win.setStrengthenCallback(function(w) {
+            if(this._sel_index >= 0) {
+                StrengthenSystem.instance.strengthenEquipInBag(value);
+            }
+            else {
+                StrengthenSystem.instance.strengthenEquipOnEquip(value);
             }
         }, this);
         win.pop();
