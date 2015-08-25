@@ -37,12 +37,10 @@ var BattleNorScene = SceneNormalBase.extend({
         else if(skin == 103){
             this.status.hero = Archer;
         }
-        //this.status.hero = Archer;
-        //LOG("archer archer");
 
-        if(BattleSystem.instance.curIsTryBattle()){
-            this.status.hero = BattleSystem.instance.getTryBattleHero();
-        }
+        //if(BattleSystem.instance.curIsTryBattle()){
+        //    this.status.hero = BattleSystem.instance.getTryBattleHero();
+        //}
 
         this.status.stage = BattleNorScene.initStageInfo(map_id_);
         var sectionData = BattleNorScene.initBattleSection(map_id_);

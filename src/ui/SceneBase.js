@@ -581,6 +581,11 @@ var SceneBase = lh.LHScene.extend({
                 if(MapSystem.instance.max_map_id == 104){
                     hero_id = Nero;
                 }
+
+                if(BattleSystem.instance.curIsTryBattle()){
+                    hero_id = BattleSystem.instance.getTryBattleHero();
+                }
+
                 var hero = hero_id instanceof Object ? new hero_id() : new Role(hero_id);
                 hero.roleType = RoleBase.RoleType.Hero;
                 hero.turn(RoleBase.Direction.Right);
