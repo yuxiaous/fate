@@ -684,7 +684,7 @@ var Archer = RoleBase.extend({
             sound: "sounds/saber/walk.mp3"
         });
         this.addRoleAction(RoleAction.Type.INJURE, "shouji", {
-            sound: "sounds/saber/injure.mp3"
+            sound: "sounds/archer/injure.mp3"
         });
         this.addRoleAction(RoleAction.Type.FLOATING_UP, ["fukong1", "fukong2"]);
         this.addRoleAction(RoleAction.Type.FLOATING_GROUND, "luodi");

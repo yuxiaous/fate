@@ -237,13 +237,15 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
                     //})
 
                     this._rewardItems[i].setTouchCallback(function () {
+                        LOG("xxx");
                         if(this._allDetailITEM != null){
+                            LOG("yyyyy");
                             this._allDetailITEM.removeFromParent();
                         }
+                        LOG("zzzz");
                         this._allDetailITEM = new EquipDetailPanel(item.item_id);
                         this._allDetailITEM.setPosition(cc.p(0,rewardItemNode.getContentSize().height));
                         rewardItemNode.addChild(this._allDetailITEM);
-
                     },this);
                 }
             },this);
@@ -573,7 +575,8 @@ var EquipDetailPanel = ui.GuiWindowBase.extend({
             lbl_item_desc: this.seekWidgetByName("lbl_item_desc"),
             sp_change_up: this.seekWidgetByName("sp_change_up"),
             sp_change_down: this.seekWidgetByName("sp_change_down"),
-            lbl_item_score: this.seekWidgetByName("lbl_item_score")
+            lbl_item_score: this.seekWidgetByName("lbl_item_score"),
+            lbl_score_change : this.seekWidgetByName("lbl_score_change")
         }
 
         var itemType = BagSystem.getConfigType(this._curItemID);
@@ -628,7 +631,6 @@ var EquipDetailPanel = ui.GuiWindowBase.extend({
                 this._ui.lbl_score_change.setVisible(false);
                 this._ui.lbl_item_score.setString("");
             }
-
         }
     },
 
