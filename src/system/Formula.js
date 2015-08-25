@@ -34,7 +34,8 @@ var Formula = {
         var config = configdb.formula[104];
         if(config){
             return ( config.a0
-            + (config.a1 * atk * config.a2 * sunder)
+            + config.a1 * atk
+            + config.a2 * sunder
             - config.a3 * def ) * (_.random(1- config.a4,1 + config.a4))
         }
         return 0;
@@ -50,8 +51,7 @@ var Formula = {
         var config = configdb.formula[105];
         if(config){
             return (config.a0
-            + config.a1 * atk
-            + config.a2 * skillAdd
+            + (config.a1 * atk * config.a2 * skillAdd)
             + config.a3 * sunder
             - config.a4 * def) * (_.random(1-config.a5, 1+config.a5))
         }
