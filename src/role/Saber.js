@@ -833,7 +833,7 @@ var Archer = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL1, "jineng1", {
             attack: {
                 //animation: undefined,
-                skill_sound: "sounds/saber/skill_1.mp3",
+                skill_sound: "sounds/archer/skill_1.mp3",
                 movement: 300
             },
             hit: {
@@ -858,7 +858,7 @@ var Archer = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL2, "jineng2", {
             attack: {
                 //animation: undefined,
-                skill_sound: "sounds/saber/skill_2.mp3",
+                skill_sound: "sounds/archer/skill_2.mp3",
                 movement: 750
             },
             hit: {
@@ -883,7 +883,7 @@ var Archer = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL3, "jineng3", {
             attack: {
                 //animation: undefined,
-                skill_sound: "sounds/saber/skill_3.mp3",
+                skill_sound: "sounds/archer/skill_3.mp3",
                 movement: 300
             },
             hit: {
