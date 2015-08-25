@@ -716,7 +716,7 @@ var Archer = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.ATTACK1, "gongji1", {
             attack: {
                 animation: undefined,
-                sound: "sounds/saber/atk1.mp3",
+                sound: "sounds/archer/atk1.mp3",
                 movement: 50
             },
             hit: {
@@ -744,7 +744,7 @@ var Archer = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.ATTACK2, "gongji2", {
             attack: {
                 animation: undefined,
-                sound: "sounds/saber/atk2.mp3",
+                sound: "sounds/archer/atk2.mp3",
                 movement: 50
             },
             hit: {
@@ -766,7 +766,7 @@ var Archer = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.ATTACK3, "gongji3", {
             attack: {
                 animation: undefined,
-                sound: "sounds/saber/atk3.mp3",
+                sound: "sounds/archer/atk3.mp3",
                 movement: 150
             },
             hit: {
@@ -788,7 +788,7 @@ var Archer = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.ATTACK4, "gongji4", {
             attack: {
                 animation: undefined,
-                sound: "sounds/saber/atk4.mp3",
+                sound: "sounds/archer/atk4.mp3",
                 movement: 50
             },
             hit: {
@@ -810,7 +810,7 @@ var Archer = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.ATTACK5, "gongji5", {
             attack: {
                 animation: undefined,
-                sound: "sounds/saber/atk5.mp3",
+                sound: "sounds/archer/atk5.mp3",
                 movement: 200
             },
             hit: {
