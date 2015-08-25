@@ -146,7 +146,8 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
                 "ProjectNode_2",
                 "ProjectNode_3",
                 "ProjectNode_4"], function (str_) {
-            var _item = new ShopScene.Good.Icon(0);
+            //var _item = new ShopScene.Good.Icon(0);
+             var _item =  new IconWidget();
             _item.setWidget(this.seekWidgetByName(str_));
             this._rewardItems.push(_item);
             _item.setVisible(false);
@@ -202,33 +203,48 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         _.each(this._rewardItems, function (item_,i) {
             if(item_){
                 item_.setVisible(false);
-
-
             }
         },this);
         if(reward.items && reward.items.length) {
-            LOG("REWARD ITEMS = " + reward.items.length);
             _.each(reward.items, function (item, i) {
                 if(item.item_id) {
                     LOG("ITEM ID = " + item.item_id) ;
-                    this._rewardItems[i].setItemId(item.item_id);
+                    var itemType = BagSystem.getConfigType(item.item_id);
+
+                    if(itemType == BagSystem.ConfigType.Equip){
+                        itemType = IconWidget.Type.Equip;
+                    }
+                    else if(itemType == BagSystem.ConfigType.Item){
+                        itemType =  IconWidget.Type.Item;
+                    }
+
+                    this._rewardItems[i].setIcon(item.item_id,itemType,item.item_num);
                     this._rewardItems[i].setVisible(true);
 
-                    var rewardItemNode = this._rewardItems[i]._ui.btn_bg;
+                    var rewardItemNode = this._rewardItems[i]._ui.btn_touch;
 
-                    rewardItemNode.setTouchEnabled(true);
-                    rewardItemNode.addTouchEventListener(function (touch, event) {
-                        if(event == ccui.Widget.TOUCH_ENDED){
-                            LOG("TOUCH END");
-                            if(this._allDetailITEM != null){
-                                this._allDetailITEM.removeFromParent();
-                            }
-                            this._allDetailITEM = new EquipDetailPanel(item.item_id);
-                            this._allDetailITEM.setPosition(cc.p(0,rewardItemNode.getContentSize().height));
-                            rewardItemNode.addChild(this._allDetailITEM);
-                            //detailPanel.pop();
+                    //rewardItemNode.setTouchEnabled(true);
+                    //rewardItemNode.addTouchEventListener(function (touch, event) {
+                    //    LOG("1111111");
+                    //    if(event == ccui.Widget.TOUCH_ENDED){
+                    //        if(this._allDetailITEM != null){
+                    //            this._allDetailITEM.removeFromParent();
+                    //        }
+                    //        this._allDetailITEM = new EquipDetailPanel(item.item_id);
+                    //        this._allDetailITEM.setPosition(cc.p(0,rewardItemNode.getContentSize().height));
+                    //        rewardItemNode.addChild(this._allDetailITEM);
+                    //    }
+                    //})
+
+                    this._rewardItems[i].setTouchCallback(function () {
+                        if(this._allDetailITEM != null){
+                            this._allDetailITEM.removeFromParent();
                         }
-                    })
+                        this._allDetailITEM = new EquipDetailPanel(item.item_id);
+                        this._allDetailITEM.setPosition(cc.p(0,rewardItemNode.getContentSize().height));
+                        rewardItemNode.addChild(this._allDetailITEM);
+
+                    },this);
                 }
             },this);
         }
@@ -466,8 +482,6 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy : function(){
-
-        LOG("buy action");
         if(UiEffect.blockShopItemWithRMB()){
             return;
         }
@@ -560,6 +574,13 @@ var EquipDetailPanel = ui.GuiWindowBase.extend({
             sp_change_up: this.seekWidgetByName("sp_change_up"),
             sp_change_down: this.seekWidgetByName("sp_change_down"),
             lbl_item_score: this.seekWidgetByName("lbl_item_score")
+        }
+
+        var itemType = BagSystem.getConfigType(this._curItemID);
+        if(itemType == BagSystem.ConfigType.Item){
+            this._ui.lbl_item_score.setVisible(false);
+            this._ui.sp_change_up.setVisible(false);
+            this._ui.sp_change_down.setVisible(false);
         }
 
         var config = BagSystem.getConfig(this._curItemID);

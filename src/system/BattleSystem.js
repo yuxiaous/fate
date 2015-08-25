@@ -149,10 +149,28 @@ var BattleSystem = SystemBase.extend({
                     }
             },this);
         }
+        
 
-        this._curMapDropItems.push(dropItemInfo_);
+        //this._curMapDropItems.push(dropItemInfo_);
+        this._refreshCurMapDropItems(dropItemInfo_);
 
         return dropItemInfo_;
+    },
+
+    _refreshCurMapDropItems : function (itemInfo_) {
+
+        var hadSame = false;
+        _.forEach(this._curMapDropItems, function (info_) {
+            if(info_.item_id == itemInfo_.item_id){
+                hadSame = true;
+                info_.item_num += itemInfo_.item_num;
+            }
+        },this);
+
+        if( hadSame == false){
+            this._curMapDropItems.push(itemInfo_);
+        }
+
     },
 
     _curLevelNeedDropData : function () {

@@ -73,26 +73,12 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
         bag_server.addItem(config.gain_item_id_2, 1)
     }
 
-    // drop item
-    var dropItems = BattleSystem.instance._curMapDropItems;
-    _.forEach(dropItems, function (dropItem_) {
-        if(dropItem_){
-            var dropItemConfig = configdb.item[dropItem_.item_id];
-            if(dropItemConfig){
-                if(dropItemConfig.goldtype == DroppedItem.ItemType.GoldType){
-                    player_server.changeGold(dropItem_.item_num);
-                }
-                else{
-                    bag_server.addItem(dropItem_.item_id,dropItem_.item_num);
-                }
-            }
-        }
-    },this);
 
     // result
     var reward = {};
     reward.exp = config.gain_exp;
     reward.gold = config.gain_gold;
+    reward.items = [];
     if( is_first_battle) {
         reward.diamond = config.gain_diamond;
         reward.items = [
@@ -106,6 +92,28 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
             }
         ];
     }
+
+    // drop item
+    var dropItems = BattleSystem.instance._curMapDropItems;
+    _.forEach(dropItems, function (dropItem_) {
+        if(dropItem_){
+            var dropItemConfig = configdb.item[dropItem_.item_id];
+            if(dropItemConfig){
+                if(dropItemConfig.goldtype == DroppedItem.ItemType.GoldType){
+                    player_server.changeGold(dropItem_.item_num);
+                }
+                else{
+                    bag_server.addItem(dropItem_.item_id,dropItem_.item_num);
+
+                    reward.items.push({
+                        item_id : dropItem_.item_id,
+                        item_num : dropItem_.item_num
+                    });
+                }
+            }
+        }
+    },this);
+
     server.send(net_protocol_handlers.CMD_SC_BATTLE_FINISH_RESULT, {
         result : 1,
         map_id: battle_server.cur_battle_map,

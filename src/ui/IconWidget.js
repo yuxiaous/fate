@@ -101,6 +101,7 @@ var IconWidget = ui.GuiController.extend({
     },
 
     setTouchCallback: function(selector, target) {
+        this._ui.btn_touch.setEnabled(true);
         if(target === undefined)
             this._touchCallback = selector;
         else
