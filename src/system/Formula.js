@@ -34,8 +34,7 @@ var Formula = {
         var config = configdb.formula[104];
         if(config){
             return ( config.a0
-            + config.a1 * atk
-            + config.a2 * sunder
+            + (config.a1 * atk * config.a2 * sunder)
             - config.a3 * def ) * (_.random(1- config.a4,1 + config.a4))
         }
         return 0;
