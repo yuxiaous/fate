@@ -220,7 +220,15 @@ SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
     },
 
     _on_btn_play: function() {
-        BattleSystem.instance.startTryBattle(Nero);
+        var tmpHero = Saber;
+        if(this._skin_id == 102){
+            tmpHero = Nero;
+        }
+        else if(this._skin_id == 103){
+            tmpHero = Archer;
+        }
+
+        BattleSystem.instance.startTryBattle(tmpHero);
         this.close();
     },
 
