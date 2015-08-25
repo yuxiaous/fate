@@ -195,7 +195,8 @@ SkillScene.SkillCell = ui.GuiWidgetBase.extend({
             lbl_name: this.seekWidgetByName("lbl_name"),
             lbl_level: this.seekWidgetByName("lbl_level"),
             img_sel: this.seekWidgetByName("img_sel"),
-            btn_touch: this.seekWidgetByName("btn_touch")
+            btn_touch: this.seekWidgetByName("btn_touch"),
+            lbl_lock: this.seekWidgetByName("lbl_lock")
         };
         this._bindings = [
             notification.createBinding(notification.event.SKILL_INFO, this.refreshSkillInfo, this)
@@ -239,7 +240,10 @@ SkillScene.SkillCell = ui.GuiWidgetBase.extend({
             case 1: req_level = configdb.property[113].value; break;
             case 2: req_level = configdb.property[114].value; break;
         }
-        this._ui.sp_lock.setVisible(req_level > PlayerSystem.instance.level);
+        if(req_level > PlayerSystem.instance.level) {
+            this._ui.sp_lock.setVisible(true);
+            this._ui.lbl_lock.setString(this._ui.lbl_lock._str_original.format(req_level));
+        }
     },
 
     setSelected: function(val) {
