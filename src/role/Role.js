@@ -7,6 +7,8 @@ var Role = RoleBase.extend({
     ctor: function(id) {
         //LOG("ROLE CTOR");
         //LOG("ROLE BASE ID = "+ id);
+
+
         var roleConfig = configdb.role[id];
         if(roleConfig == undefined) {
             LOG("Error: role id {0} is not exist!!!".format(id));
@@ -19,6 +21,9 @@ var Role = RoleBase.extend({
             LOG("role id {0}".format(id));
             return;
         }
+
+        this._modelId = id;
+
         // super
         var designDirection = modelConfig.direction == 1 ? RoleBase.Direction.Left : RoleBase.Direction.Right;
         this._super(modelConfig.armature, designDirection);

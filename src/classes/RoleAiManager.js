@@ -404,7 +404,9 @@ var XiaoGuaiAi = RoleAi.extend({
             this._atkWeight = this._atkWeightInit;
 
             //TODO 之后需要完善成根据BOSS CD 来决定是否释放技能
-            if(this.manager.role.roleType == RoleBase.RoleType.Boss &&  cc.random0To1() > 0.4 ){
+            if(this.manager.role.roleType == RoleBase.RoleType.Boss
+                && this.manager.role._modelId == 206
+                &&  cc.random0To1() > 0.4 ){
                 this._skillAttack = true;
             }
             else{

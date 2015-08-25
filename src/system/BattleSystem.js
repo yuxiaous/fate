@@ -475,6 +475,8 @@ BattleSystem.getAtkActualValue = function (atk_role_,def_role_) {
         var tmpScale = configdb.property[117].value;
         tmpScale = tmpScale / 100;
         ATK_atkV *= tmpScale;
+        LOG(" tmpScale = " + tmpScale);
+
     }
     var  damageValue = Formula.calculateNormalAttack(ATK_atkV,ATK_sunderV,DEF_defV);
 
