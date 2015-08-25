@@ -470,6 +470,12 @@ BattleSystem.getAtkActualValue = function (atk_role_,def_role_) {
     var ATK_crit    = atk_role_.roleDataManager.crit;
     var ATK_critPro = atk_role_.roleDataManager.critPro;
     var DEF_defV    = def_role_.roleDataManager.def;
+
+    if(atk_role_.roleAiManager.ai._skillAttack){
+        var tmpScale = configdb.property[117].value;
+        tmpScale = tmpScale / 100;
+        ATK_atkV *= tmpScale;
+    }
     var  damageValue = Formula.calculateNormalAttack(ATK_atkV,ATK_sunderV,DEF_defV);
 
     //技能加成
