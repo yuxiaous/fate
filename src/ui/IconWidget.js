@@ -7,7 +7,7 @@ var IconWidget = ui.GuiController.extend({
     ctor: function(id, type, num) {
         this._super();
         this.id = id || 0;
-        this.type = type || 0;
+        this.type = type || IconWidget.Type.Item;
         this.num = num || 0;
     },
 
@@ -95,7 +95,16 @@ var IconWidget = ui.GuiController.extend({
     },
 
     _on_btn_bg: function() {
+        if(this._touchCallback) {
+            this._touchCallback(this);
+        }
+    },
 
+    setTouchCallback: function(selector, target) {
+        if(target === undefined)
+            this._touchCallback = selector;
+        else
+            this._touchCallback = selector.bind(target);
     }
 });
 
