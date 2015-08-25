@@ -134,6 +134,7 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
             var label = this._ui.lbl_need[i];
             if(data[0]) {
                 var num = BagSystem.instance.getItemNums(data[0]);
+                label.setVisible(true);
                 label.setString(label._str_original.format(num, data[1]));
                 if(num < data[1]) {
                     label.setColor(cc.RED);
