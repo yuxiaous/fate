@@ -36,46 +36,47 @@ var DroppedItem = ui.GuiWidgetBase.extend({
             return;
         }
 
-        var playString = "bai";
-        var drgonStr = "cailiao";
-
-        switch (this._ItemType){
-            case DroppedItem.ItemType.GoldType :
-                playString = "daiji";
-                drgonStr = "jinbi"
-                break;
-            case  DroppedItem.ItemType.WhiteType :
-                playString = "bai";
-                break;
-
-            case  DroppedItem.ItemType.GreenType :
-                playString = "lv";
-                break;
-            case  DroppedItem.ItemType.PurpleType :
-                playString = "zi";
-                break;
-            case  DroppedItem.ItemType.OrangeType :
-                playString = "cheng";
-                break;
-        }
-
-        this._drop_ani =  dragonBones.DragonBonesHelper.buildArmatureNode(drgonStr);
-        this._drop_ani.gotoAndPlay(playString);
-        this._drop_ani.setPosition(0,0);
-        this._drop_ani.setAnchorPoint(0.5,0.5);
-        this.addChild(this._drop_ani);
-
         //// icon
         //if(config.icon){
         //    this._img_icon.loadTexture(config.icon);
         //}
 
-        if(this._dropType == DroppedItem.ItemType.DaBaoJianType){
+        if(this._dropType == DroppedItem.DropType.DaBaoJianType){
             var dabaojian = dragonBones.DragonBonesHelper.buildArmatureNode("dabaojian");
             dabaojian.gotoAndPlay("daiji");
             this.addChild(dabaojian);
         }
         else{
+
+            var playString = "bai";
+            var drgonStr = "cailiao";
+
+            switch (this._ItemType){
+                case DroppedItem.ItemType.GoldType :
+                    playString = "daiji";
+                    drgonStr = "jinbi"
+                    break;
+                case  DroppedItem.ItemType.WhiteType :
+                    playString = "bai";
+                    break;
+
+                case  DroppedItem.ItemType.GreenType :
+                    playString = "lv";
+                    break;
+                case  DroppedItem.ItemType.PurpleType :
+                    playString = "zi";
+                    break;
+                case  DroppedItem.ItemType.OrangeType :
+                    playString = "cheng";
+                    break;
+            }
+
+            this._drop_ani =  dragonBones.DragonBonesHelper.buildArmatureNode(drgonStr);
+            this._drop_ani.gotoAndPlay(playString);
+            this._drop_ani.setPosition(0,0);
+            this._drop_ani.setAnchorPoint(0.5,0.5);
+            this.addChild(this._drop_ani);
+
             this._iconShakeAction = this._drop_ani.runAction(cc.repeatForever(cc.sequence(
                 cc.moveBy(0.5, cc.p(0, 10)),
                 cc.moveBy(0.5, cc.p(0, -10))

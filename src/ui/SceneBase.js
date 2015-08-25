@@ -291,7 +291,7 @@ var SceneBase = lh.LHScene.extend({
         var type = role.roleType;
         if(type == RoleBase.RoleType.Monster ||
             type == RoleBase.RoleType.Boss) {
-            if( GiftSystem.instance.getGiftBuyNumWith(GiftSystem.GiftType.WuQi) <= 0 && role.dropId != undefined){
+            if(GiftSystem.instance.getGiftBuyNumWith(GiftSystem.GiftType.WuQi) <= 0 && role.dropId != undefined){
                 var dropId = role.dropId || 101002;
                 var dropType = DroppedItem.DropType.DaBaoJianType;
                 var dropItem = new DroppedItem(dropId,dropType);
