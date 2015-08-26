@@ -5,8 +5,8 @@
 
 var Role = RoleBase.extend({
     ctor: function(id) {
-        //LOG("ROLE CTOR");
-        //LOG("ROLE BASE ID = "+ id);
+        LOG("ROLE CTOR");
+        LOG("ROLE BASE ID = "+ id);
 
 
         var roleConfig = configdb.role[id];
@@ -22,7 +22,7 @@ var Role = RoleBase.extend({
             return;
         }
 
-        this._modelId = id;
+        this._modelId = roleConfig.model_id;
 
         // super
         var designDirection = modelConfig.direction == 1 ? RoleBase.Direction.Left : RoleBase.Direction.Right;
