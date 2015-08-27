@@ -308,7 +308,8 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
 
         var originData = this._role.roleDataManager;
 
-        if(originData.hp < originData.maxHp){
+        var tmpPro = configdb.property[118].value / 100;
+        if(originData.hp < originData.maxHp * tmpPro){
             notification.emit(notification.event.BATTLE_ALERT_PANEL,true);
         }
         else{
