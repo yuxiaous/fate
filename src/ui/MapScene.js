@@ -288,6 +288,9 @@ MapScene.MapCell = ui.GuiWidgetBase.extend({
             lbl_name: this.seekWidgetByName("lbl_name"),
             lbl_level: this.seekWidgetByName("lbl_level"),
             lbl_score: this.seekWidgetByName("lbl_score"),
+            sp_drop_1: this.seekWidgetByName("sp_drop_1"),
+            sp_drop_2: this.seekWidgetByName("sp_drop_2"),
+            sp_drop_3: this.seekWidgetByName("sp_drop_3"),
 
             img_sel: this.seekWidgetByName("img_sel"),
             btn_touch: this.seekWidgetByName("btn_touch"),
@@ -343,7 +346,26 @@ MapScene.MapCell = ui.GuiWidgetBase.extend({
             return;
         }
 
-        this._ui.sp_icon.setTexture(val ? config.icon : config.icon_gray);
+        _.each([
+            [this._ui.sp_drop_1, config.drop_item_1],
+            [this._ui.sp_drop_2, config.drop_item_2],
+            [this._ui.sp_drop_3, config.drop_item_3]
+        ], function(data) {
+            var widget = data[0];
+            var drop_id = data[1];
+            widget.setVisible(false);
+            if(this.open && drop_id) {
+                var conf = configdb.item[drop_id];
+                if(conf == undefined) {
+                    return;
+                }
+
+                widget.setVisible(true);
+                widget.setTexture(conf.icon);
+            }
+        }, this);
+
+        this._ui.sp_icon.setTexture(this.open ? config.icon : config.icon_gray);
     },
 
     setSelected: function(val) {

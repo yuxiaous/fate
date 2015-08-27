@@ -37,6 +37,8 @@ var SkillScene = ui.GuiWindowBase.extend({
             lbl_name_2: this.seekWidgetByName("lbl_skill_name_2"),
             lbl_level_1: this.seekWidgetByName("lbl_skill_level_1"),
             lbl_level_2: this.seekWidgetByName("lbl_skill_level_2"),
+            lbl_req_1: this.seekWidgetByName("lbl_skill_req_1"),
+            lbl_req_2: this.seekWidgetByName("lbl_skill_req_2"),
             lbl_desc_1: this.seekWidgetByName("lbl_skill_desc_1"),
             lbl_desc_2: this.seekWidgetByName("lbl_skill_desc_2"),
             lbl_price: this.seekWidgetByName("lbl_skill_price"),
@@ -126,6 +128,9 @@ var SkillScene = ui.GuiWindowBase.extend({
         // level
         this._ui.lbl_level_1.setString(this._ui.lbl_level_1._str_original.format(skillup_config.level));
 
+        // request level
+        this._ui.lbl_req_1.setString(this._ui.lbl_req_1._str_original.format(skillup_config.req_level));
+
         // desc
         this._ui.lbl_desc_1.setString(skillup_config.desc);
 
@@ -141,6 +146,15 @@ var SkillScene = ui.GuiWindowBase.extend({
             // level
             this._ui.lbl_level_2.setString(this._ui.lbl_level_2._str_original.format(skillup_config.level));
 
+            // request level
+            this._ui.lbl_req_2.setString(this._ui.lbl_req_2._str_original.format(skillup_config.req_level));
+            if(skillup_config.req_level > PlayerSystem.instance.level) {
+                this._ui.lbl_req_2.setColor(cc.RED);
+            }
+            else {
+                this._ui.lbl_req_2.setColor(this._ui.lbl_req_2._color_original);
+            }
+
             // desc
             this._ui.lbl_desc_2.setString(skillup_config.desc);
 
@@ -150,6 +164,7 @@ var SkillScene = ui.GuiWindowBase.extend({
         else {
             this._ui.lbl_price.setString("");
             this._ui.lbl_level_2.setString("");
+            this._ui.lbl_req_2.setString("");
             this._ui.lbl_desc_2.setString("已到最高等级");
             this._ui.btn_leveup.setEnabled(false);
             this._ui.btn_leveup.setBright(false);
