@@ -96,9 +96,6 @@ var GuidePanel = ui.GuiWindowBase.extend({
     }
 });
 
-
-
-
 var CaoZuoJiaoXue = ui.GuiWindowBase.extend({
     _guiFile : "ui/caozuo_jiaoxue.json",
 
@@ -129,3 +126,61 @@ var CaoZuoJiaoXue = ui.GuiWindowBase.extend({
     }
 });
 
+var SkillGuidePanel = ui.GuiWindowBase.extend({
+    _guiFile : "ui/skill_guide.json",
+
+    ctor : function (skill_type_,selector, target) {
+        this._super();
+
+        this._skill_idx = skill_type_;
+
+        this._touchCallback = selector;
+        this._target = target;
+
+    },
+
+    onEnter : function () {
+        this._super();
+
+        this._arrow_img = this.seekWidgetByName("skill_des");
+        this.bgPanel = this.seekWidgetByName("bg_panel");
+
+
+        var idxStr = "images/code_ui/ui_390.png";
+        switch (this._skill_idx){
+            case RoleAction.Type.SKILL1 :
+                idxStr = "images/code_ui/ui_391.png";
+                break;
+            case  RoleAction.Type.SKILL2 :
+                idxStr = "images/code_ui/ui_392.png";
+                break;
+            case  RoleAction.Type.SKILL3 :
+                idxStr = "images/code_ui/ui_393.png";
+                break;
+            case  RoleAction.Type.SKILL4 :
+                idxStr = "images/code_ui/ui_390.png";
+                break;
+            case  RoleAction.Type.SKILL5 :
+                idxStr = "images/code_ui/ui_390.png";
+                break;
+        }
+
+        this._arrow_img.loadTexture(idxStr);
+
+        this.bgPanel.addTouchEventListener(function (touch,event) {
+            if(event == ccui.Widget.TOUCH_ENDED){
+                LOG("touch end");
+                this._touchCallback.apply(this._target);
+            }
+        },this);
+
+    },
+
+    onExit : function () {
+        this._content_img = null;
+        this.bgPanel = null;
+
+
+        this._super();
+    }
+});

@@ -81,31 +81,31 @@ var SkillEffectLayer = ui.GuiWindowBase.extend({
             cc.CallFunc.create(function () {
                 _.each(this._skillLabelNode, function (skill_pic_,idx_) {
                     var skillName = cc.Sprite.create(this._skillStrings[idx_]);
+                    if(skillName){
+                        var pos = skill_pic_.convertToWorldSpace();
+                        skillName.setPosition(cc.p(pos.x,pos.y + 100));
 
-                    var pos = skill_pic_.convertToWorldSpace();
-                    skillName.setPosition(cc.p(pos.x,pos.y + 100));
+                        skillName.skillValue = 2.2;
+                        if(idx_ > 1){
+                            skillName.skillValue = 2.0;
+                        }
+                        cc.director.getRunningScene().addChild(skillName);
+                        this._skillNameCont.push(skillName);
+                        skillName.setScale(10.0);
+                        skillName.setVisible(false);
 
-                    skillName.skillValue = 2.2;
-                    if(idx_ > 1){
-                        skillName.skillValue = 2.0;
+                        skillName.runAction(cc.Sequence.create(
+                            cc.DelayTime.create(idx_ * 0.1),
+                            cc.CallFunc.create(function () {
+                                skillName.setVisible(true);
+                                skillName.setOpacity(0);
+                                skillName.runAction(cc.Spawn.create(
+                                    cc.FadeIn.create(0.2),
+                                    cc.ScaleTo.create(0.2,skillName.skillValue)
+                                ))
+                            },this)
+                        ));
                     }
-                    cc.director.getRunningScene().addChild(skillName);
-                    this._skillNameCont.push(skillName);
-                    skillName.setScale(10.0);
-                    skillName.setVisible(false);
-
-                    skillName.runAction(cc.Sequence.create(
-                        cc.DelayTime.create(idx_ * 0.1),
-                        cc.CallFunc.create(function () {
-                            skillName.setVisible(true);
-                            skillName.setOpacity(0);
-                            skillName.runAction(cc.Spawn.create(
-                                cc.FadeIn.create(0.2),
-                                cc.ScaleTo.create(0.2,skillName.skillValue)
-                            ))
-                        },this)
-                    ));
-
                 },this);
             },this),
             cc.DelayTime.create(0.2),

@@ -156,7 +156,6 @@ var OperationLayer = cc.Layer.extend({
                 var curHero = scene._hero;
 
                 var cdTime = tmpData.ActionData.cdTime;
-
                 if(BattleSystem.instance.curIsTryBattle() && tmpData.SkillType == RoleAction.Type.SKILL4){
                     cdTime = configdb.property[109].value;
                 }
@@ -166,6 +165,18 @@ var OperationLayer = cc.Layer.extend({
                 //refresh mp
                 var curCost = SkillSystem.instance.getSkillUpMpcost(tmpData.SkillType);
                 curHero.roleDataManager.mp -= curCost;
+
+                if( GuideSystem.instance.getSkillIsNotGuided(tmpData.SkillType)){
+
+                    var skillGuide = new SkillGuidePanel(tmpData.SkillType, function () {
+                        skillGuide.close();
+                        notification.emit(notification.event.GAME_RESUME);
+                    },this);
+
+                    notification.emit(notification.event.GAME_PAUSE);
+                    skillGuide.pop();
+                }
+
             },this)
         ]
     },

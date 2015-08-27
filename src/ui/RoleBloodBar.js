@@ -42,9 +42,7 @@ var RoleBloodBar = ui.GuiWidgetBase.extend({
 });
 
 RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
-    LOG(" --- start --final value = " + finalValue_);
     finalValue_ = Math.floor(finalValue_);
-    LOG("--- end -- final value = " + finalValue_);
 
     var everyChangeValue = 0.5;
     if(changeValue_){
@@ -54,11 +52,6 @@ RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
     var isIncreace = false;
 
     if(finalValue_ > curValue_){
-
-        LOG("finalValue = "+ finalValue_);
-        LOG("cur value = " + curValue_);
-
-        LOG("is increace is true");
         isIncreace = true;
     }
     else if(finalValue_ == curValue_){
@@ -88,8 +81,6 @@ RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
         else{
             nextPer = curPer - everyChangeValue;
         }
-        LOG("next per = " + nextPer);
-
         loadNode_.setPercent(nextPer);
     }
     loadNode_.schedule(updateBloodBarFunc,1/15);

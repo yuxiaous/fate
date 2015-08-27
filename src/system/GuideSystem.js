@@ -134,6 +134,35 @@ var GuideSystem = SystemBase.extend({
         else{
             return false;
         }
+    },
+
+    getSkillIsNotGuided : function (skill_id) {
+        var idx = 0;
+        switch (skill_id){
+            case RoleAction.Type.SKILL1 :
+                idx = 0;
+                break;
+            case  RoleAction.Type.SKILL2 :
+                idx = 1;
+                break;
+            case  RoleAction.Type.SKILL3 :
+                idx = 2;
+                break;
+            case  RoleAction.Type.SKILL4 :
+                idx = 3;
+                break;
+            case  RoleAction.Type.SKILL5 :
+                idx = 4;
+                break;
+        }
+        LOG("Guide  des = " + GuideSystem.SkillDes[idx]);
+        var isGuided = jsb.JsonStorage.GetInstance(LoginSystem.settingFile).getBoolForKey(GuideSystem.SkillDes[idx]);
+        if(!isGuided){
+            jsb.JsonStorage.GetInstance(LoginSystem.settingFile).setBoolForKey(GuideSystem.SkillDes[idx],true);
+            jsb.JsonStorage.GetInstance(LoginSystem.settingFile).flush();
+            return true;
+        }
+        return false;
     }
 });
 
@@ -203,6 +232,14 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_) {
 
     return true;
 }
+
+GuideSystem.SkillDes = [
+     "skill_des_1",
+     "skill_des_2",
+     "skill_des_3",
+     "skill_des_4",
+     "skill_des_5"
+];
 
 GuideSystem.Type = {
     enterGameGuide : 1,
