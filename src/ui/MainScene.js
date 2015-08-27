@@ -8,6 +8,7 @@ var MainScene = ui.GuiSceneBase.extend({
 
     ctor: function() {
         this._super();
+        PlayerSystem.instance.showPlayerScoreChange();
     },
 
     onEnter: function() {

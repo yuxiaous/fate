@@ -121,7 +121,7 @@ CombatForcesEffect.createForcesEffect = function (value_,target_) {
     var self = target_;
     if(self){
         var tmpCombatF = new CombatForcesEffect(value_);
-        self.addChild(tmpCombatF);
+        self.addChild(tmpCombatF, 100000);
         tmpCombatF.playCombatForcesEffect();
     }
 };

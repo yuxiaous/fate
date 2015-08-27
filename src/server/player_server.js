@@ -148,6 +148,12 @@ var player_server = {
         this.player_info.superSkillCount += val;
         this.update.superSkillCount = this.player_info.superSkillCount;
         return true;
+    },
+
+    changeScore: function() {
+        server.send(net_protocol_handlers.CMD_SC_PLAYER_SCORE_CHANGE, {
+            score: 0
+        });
     }
 };
 

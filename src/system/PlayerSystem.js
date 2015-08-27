@@ -121,6 +121,21 @@ var PlayerSystem = SystemBase.extend({
         }
 
         return ret;
+    },
+
+    showPlayerScoreChange: function() {
+        LOG("showPlayerScoreChange")
+        var last = this.lastScore;
+        var now = this.getPlayerBattleScore();
+        LOG(last)
+        LOG(now)
+        if(last) {
+            var change = now.score - last.score;
+            if(change != 0) {
+                CombatForcesEffect.createForcesEffect(change, cc.director.getRunningScene());
+            }
+        }
+        this.lastScore = now;
     }
 });
 

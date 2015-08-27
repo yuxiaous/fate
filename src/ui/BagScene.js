@@ -90,7 +90,8 @@ var BagScene = ui.GuiWindowBase.extend({
                 this.refreshItemPage();
                 this.refreshSelectedItemInfo();
             }, this),
-            notification.createBinding(notification.event.SKIN_INFO, this.refreshProperty, this)
+            notification.createBinding(notification.event.SKIN_INFO, this.refreshProperty, this),
+            notification.createBinding(notification.event.EQUIP_SLOT_INFO, this.refreshProperty, this)
         ];
 
         this.refreshProperty();
@@ -141,6 +142,8 @@ var BagScene = ui.GuiWindowBase.extend({
 
             this._ui.lbl_prop_exp.setString(this._ui.lbl_prop_exp._str_original.format(cur_exp, need_exp));
         }
+
+        PlayerSystem.instance.showPlayerScoreChange();
     },
 
     clearItemList: function() {
