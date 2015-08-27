@@ -86,12 +86,14 @@ server.registerCallback(net_protocol_handlers.CMD_CS_EQUIP_STRENGTHEN_IN_BAG, fu
     }, this);
 
     // change equip
-    bag_server.reduceItem(uid, 1);
-    bag_server.addItem(config.qh_next, 1);
+    //bag_server.reduceItem(uid, 1);
+    //bag_server.addItem(config.qh_next, 1);
+    bag_server.changeItem(uid, config.qh_next, 1);
 
     // result
     server.send(net_protocol_handlers.CMD_SC_EQUIP_STRENGTHEN_RESULT, {
-        result: 0
+        result: 0,
+        equip_id: config.qh_next
     });
 });
 

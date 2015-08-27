@@ -39,6 +39,8 @@ var bag_server = {
     },
 
     addItem: function(id, num) {
+        if(num == undefined) num = 1;
+
         var config = BagSystem.getConfig(id);
         if(config == undefined) {
             return false;
@@ -147,6 +149,19 @@ var bag_server = {
             }
         }
 
+        return true;
+    },
+
+    changeItem: function(uid, id, num) {
+        if(num == undefined) num = 1;
+
+        var info = _.findWhere(this.bag_info, {uid: uid});
+        if(info == undefined) {
+            return false;
+        }
+
+        info.id = id;
+        info.num = num;
         return true;
     },
 
