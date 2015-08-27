@@ -259,14 +259,8 @@ var RoleBase = PhysicalNode.extend({
         if( damageValue <= 0){
             damageValue = 1;
         }
-
-        LOG("000 --- = " + this.roleDataManager.hp);
-
-        LOG("123--- = " + damageValue);
-
         var hp = this.roleDataManager.hp - damageValue;
         this.roleDataManager.hp = hp < 0 ? 0 : hp;
-        LOG("234--- = " + this.roleDataManager.hp);
 
         DamageWorld.createDamage(damageValue,this,this.roleSize, damageData.isCrit);
 
@@ -530,6 +524,7 @@ var RoleBase = PhysicalNode.extend({
                 this._roleTitle.setColor(cc.color(255,241,0));
                 this._roleTitle.setPosition(cc.p(0,this.roleSize.height));
                 this.addChild(this._roleTitle);
+                this._roleTitle.setVisible(false);
             }
         }
         else{
