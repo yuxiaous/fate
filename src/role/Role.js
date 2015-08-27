@@ -69,6 +69,11 @@ var Role = RoleBase.extend({
             this.iconName = roleConfig.head_icon;
         }
 
+        //role name
+        if(roleConfig.name != undefined){
+            this.bossName = roleConfig.name;
+        }
+
         this.setRoleData({
             hp: roleConfig.hp_value,
             mp: roleConfig.mp_value,

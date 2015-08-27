@@ -13,6 +13,11 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
     onEnter : function () {
         this._super();
 
+        this._alertPanel = this.seekWidgetByName("alertPanel");
+        this._alertPanel.setVisible(false);
+
+        this._btn_bloodBottle = this.seekWidgetByName("btn_bloodBottle");
+
         this.bossP = this.seekWidgetByName("bossPanel");
         this._bossPanel = new BattleUILayer.BossPanel();
         this._bossPanel.setWidget(this.bossP);
@@ -29,7 +34,6 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         else{
             this.refreshBattleData();
         }
-
 
         //def Label
         this._roundPanel =  this.seekWidgetByName("roundPanel");
@@ -51,6 +55,28 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
             }, this),
             notification.createBinding(notification.event.BATTLE_STOP_STATE, function () {
                 this._on_btn_stopBattle();
+            },this),
+
+            notification.createBinding(notification.event.BATTLE_ALERT_PANEL, function (event,data) {
+                if(data){
+                    if(this._alertPanel.isVisible() == false){
+
+                        UiEffect.buttonBBB(this._btn_bloodBottle);
+
+                        this._alertPanel.setVisible(true);
+                        this._alertPanel.runAction(cc.RepeatForever.create(
+                            cc.Sequence.create(
+                                cc.FadeTo.create(0.5,100),
+                                cc.FadeTo.create(0.5,255)
+                            )));
+                    }
+                }
+                else{
+                    this._btn_bloodBottle.stopAllActions();
+
+                    this._alertPanel.stopAllActions();
+                    this._alertPanel.setVisible(false);
+                }
             },this)
         ];
     },
@@ -282,6 +308,13 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
 
         var originData = this._role.roleDataManager;
 
+        if(originData.hp < originData.maxHp){
+            notification.emit(notification.event.BATTLE_ALERT_PANEL,true);
+        }
+        else{
+            notification.emit(notification.event.BATTLE_ALERT_PANEL,false);
+        }
+
         // hp
         var percentHP = originData.hp / originData.maxHp * 100;
         this._progress_hp.setPercent(percentHP);
@@ -344,6 +377,8 @@ BattleUILayer.BossPanel = ui.GuiController.extend({
         this._progress_hp = this.seekWidgetByName("loading_hp");
         this._progress_hp_droping = this.seekWidgetByName("loading_hp_droping");
 
+        this._boss_name = this.seekWidgetByName("bossName");
+
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.refresh);
     },
 
@@ -364,6 +399,7 @@ BattleUILayer.BossPanel = ui.GuiController.extend({
         if(this._bossIcon && this._boss.iconName){
             this._bossIcon.initWithFile(this._boss.iconName);
         }
+        this._boss_name.setString(this._boss.bossName);
     },
 
     refresh : function () {

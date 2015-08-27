@@ -128,6 +128,7 @@ notification.event = {
 
     BATTLE_TRY_TYPE_END : 611,
     BATTLE_END : 612,
+    BATTLE_ALERT_PANEL : 613,
 
 
     SKIN: 700,
