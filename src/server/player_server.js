@@ -87,10 +87,13 @@ var player_server = {
             server.sendError(net_error_code.ERR_LESS_GOLD);
             return false;
         }
-        this.update = this.update || {};
 
         this.player_info.gold += val;
-        this.update.gold = this.player_info.gold;
+        server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO, {
+            player: {
+                gold: this.player_info.gold
+            }
+        });
         return true;
     },
     changeDiamond: function(val) {
