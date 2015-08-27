@@ -260,12 +260,17 @@ var RoleBase = PhysicalNode.extend({
             damageValue = 1;
         }
 
+        LOG("000 --- = " + this.roleDataManager.hp);
+
+        LOG("123--- = " + damageValue);
+
         var hp = this.roleDataManager.hp - damageValue;
         this.roleDataManager.hp = hp < 0 ? 0 : hp;
+        LOG("234--- = " + this.roleDataManager.hp);
 
         DamageWorld.createDamage(damageValue,this,this.roleSize, damageData.isCrit);
 
-        this.updateBloodBar();
+        this.refreshBloodBar();
 
         // this.injuredToRed();
         if(hp <= 0){
@@ -536,9 +541,13 @@ var RoleBase = PhysicalNode.extend({
         }
     },
 
-    updateBloodBar : function () {
+    refreshBloodBar : function () {
       if(this._bloodBar){
-          this._bloodBar.refreshBloodBarPer(this.roleDataManager.maxHp, this.roleDataManager.hp);
+          var changeFast = false;
+          if(this.roleType = RoleBase.RoleType.Monster){
+              changeFast = true;
+          }
+          this._bloodBar.refreshBloodBarPer(this.roleDataManager.maxHp, this.roleDataManager.hp,changeFast);
       }
     },
 

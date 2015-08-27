@@ -20,32 +20,34 @@ var RoleBloodBar = ui.GuiWidgetBase.extend({
         this.refreshBloodBarPer(this._maxValue, this._curValue);
     },
 
-    updateBloodBar : function () {
-    },
 
     onExit: function() {
         this._bloodBarPro = null;
         this._super();
     },
 
-    refreshBloodBarPer : function(maxValue_,curValue_){
+    refreshBloodBarPer : function(maxValue_,curValue_,changeValue_){
         this._maxValue = maxValue_;
         this._curValue = curValue_;
 
+        var cValue_ = 5;
+
+        //if(changeValue_ != undefined && changeValue_ == true){
+        //    cValue_ = 8;
+        //}
+
         var tmpPercent = this._curValue / this._maxValue * 100;
-        RoleBloodBar.setPercentChangeTo(Math.floor(tmpPercent),this._bloodBarPro,5);
+        RoleBloodBar.setPercentChangeTo(tmpPercent,this._bloodBarPro,cValue_);
     }
 });
 
 RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
     finalValue_ = Math.floor(finalValue_);
+    var everyChangeValue = 1;
 
-    var everyChangeValue = 0.5;
-    if(changeValue_){
-        everyChangeValue = changeValue_;
-    }
     var curValue_ = loadNode_.getPercent();
     var isIncreace = false;
+
     if(finalValue_ > curValue_){
         isIncreace = true;
     }
@@ -53,21 +55,22 @@ RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
         return;
     }
 
-    function updateBloodBar(){
-        var curIsDone = false;
+    if(changeValue_){
+        everyChangeValue = (curValue_ - finalValue_) / changeValue_;
+    }
 
+    function updateBloodBarFunc(){
+        var curIsDone = false;
         if(isIncreace && loadNode_.getPercent() >= finalValue_){
             curIsDone = true;
         }
         if(!isIncreace && loadNode_.getPercent() <= finalValue_){
             curIsDone = true;
         }
-
         if(curIsDone){
-            loadNode_.unschedule(updateBloodBar);
+            loadNode_.unschedule(updateBloodBarFunc);
             return;
         }
-
         var curPer = loadNode_.getPercent();
         var nextPer = 0;
         if(isIncreace){
@@ -78,6 +81,7 @@ RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
         }
         loadNode_.setPercent(nextPer);
     }
-    loadNode_.schedule(updateBloodBar,1/15);
+
+    loadNode_.schedule(updateBloodBarFunc,1/15);
 }
 
