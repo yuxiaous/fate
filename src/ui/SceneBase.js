@@ -471,6 +471,7 @@ var SceneBase = lh.LHScene.extend({
             notification.emit(notification.event.BATTLE_TRY_TYPE_END,true);
         }
         else{
+            notification.emit(notification.event.BATTLE_END);
             BattleSystem.instance.battleFinish(true);
         }
     },
@@ -578,9 +579,9 @@ var SceneBase = lh.LHScene.extend({
             if (this._hero == null) {
                 var hero_id = this._sceneStatus.hero;
 
-                if(MapSystem.instance.max_map_id == 104){
-                    hero_id = Nero;
-                }
+                //if(MapSystem.instance.max_map_id == 104){
+                //    hero_id = Nero;
+                //}
 
                 if(BattleSystem.instance.curIsTryBattle()){
                     hero_id = BattleSystem.instance.getTryBattleHero();
@@ -791,7 +792,7 @@ var SceneBase = lh.LHScene.extend({
 
     onAfterFightChatStart : function () {
         if(this._isLastSection) {
-            notification.emit(notification.event.BATTLE_END);
+
             if(this._sceneStatus.chatData.afterFight.length > 0){
                 var dialog = new DialogPanel(this._sceneStatus.chatData.afterFight);
                 this._frontUi.addChild(dialog);

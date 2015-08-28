@@ -15,6 +15,7 @@ var BagScene = ui.GuiWindowBase.extend({
 
     onEnter: function() {
         this._super();
+        //this._tmpItem = null;
         this._ui = {
             lbl_player_name: this.seekWidgetByName("lbl_player_name"),
             node_avatar: this.seekWidgetByName("Node_avatar"),
@@ -25,11 +26,15 @@ var BagScene = ui.GuiWindowBase.extend({
                 [EquipSystem.EquipSlotType.Glove, "ProjectNode_4"],
                 [EquipSystem.EquipSlotType.Shield, "ProjectNode_5"],
                 [EquipSystem.EquipSlotType.Amulet, "ProjectNode_6"]
-            ], function(slots, data){
+            ], function(slots, data, i){
                 var ctrl = new BagScene.EquipSlot(data[0]);
-                ctrl.setWidget(this.seekWidgetByName(data[1]));
+                var wid = this.seekWidgetByName(data[1]);
+                ctrl.setWidget(wid);
                 ctrl.setSelectCallback(this.onSelectEquip, this);
                 slots.push(ctrl);
+                if(i == 0){
+                    this.weaponWidget = ctrl;
+                }
                 return slots;
             }, [], this),
 
@@ -71,6 +76,8 @@ var BagScene = ui.GuiWindowBase.extend({
             lbl_prop_sunder: this.seekWidgetByName("lbl_prop_sunder")
         };
 
+
+
         this._bindings = [
             notification.createBinding(notification.event.ITEM_INFO, this.refreshItemPage, this),
             notification.createBinding(notification.event.EQUIP_PROPERTY_CHANGE, function () {
@@ -91,7 +98,11 @@ var BagScene = ui.GuiWindowBase.extend({
                 this.refreshSelectedItemInfo();
             }, this),
             notification.createBinding(notification.event.SKIN_INFO, this.refreshProperty, this),
-            notification.createBinding(notification.event.EQUIP_SLOT_INFO, this.refreshProperty, this)
+            notification.createBinding(notification.event.EQUIP_SLOT_INFO, this.refreshProperty, this),
+            notification.createBinding(notification.event.GUIDE_UPDATE, function () {
+                LOG("208 208 --- ");
+                GuideSystem.AddGuidePanel(this._ui.btn_use,208);
+            },this)
         ];
 
         this.refreshProperty();
@@ -99,7 +110,11 @@ var BagScene = ui.GuiWindowBase.extend({
         this.createRoleAvatar();
         this.refreshItemPage();
 
-        GuideSystem.AddGuidePanel(this._ui.btn_use,104);
+        GuideSystem.AddGuidePanel(this._ui.btn_strengthen,104);
+
+       //var spIcon = this.weaponWidget.getSpIcon();
+       //GuideSystem.AddGuidePanel(spIcon,205);
+
     },
 
     onExit: function() {
@@ -326,7 +341,6 @@ var BagScene = ui.GuiWindowBase.extend({
                 this._ui.lbl_score_change.setString(String(score));
             }
         }
-
     },
 
     clearRoleAvatar: function() {
@@ -465,6 +479,10 @@ var BagScene = ui.GuiWindowBase.extend({
             }
         }, this);
         win.pop();
+
+
+        LOG("btn strengthen");
+
     }
 });
 
@@ -660,6 +678,7 @@ BagScene.EquipSlot = ui.GuiController.extend({
         if(config.icon) {
             this._ui.sp_icon.setVisible(true);
             this._ui.sp_icon.setTexture(config.icon);
+
         }
 
         // star
@@ -672,6 +691,10 @@ BagScene.EquipSlot = ui.GuiController.extend({
     setSelected: function(val) {
         this._ui.img_sel.setVisible(val);
         this._ui.btn_touch.setEnabled(!val);
+    },
+
+    getSpIcon : function () {
+      return this._ui.sp_icon;
     },
 
     setSelectCallback: function (selector, target) {

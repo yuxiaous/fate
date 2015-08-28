@@ -41,7 +41,7 @@ var MainScene = ui.GuiSceneBase.extend({
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_bag"),103);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_skill"),106);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_equip"),109);
-        GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_shop"),112);
+        //GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_shop"),112);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_shop"),121);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_map"),101);
 

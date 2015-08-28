@@ -159,6 +159,8 @@ var BattleSystem = SystemBase.extend({
 
     _refreshCurMapDropItems : function (itemInfo_) {
 
+        LOG("item info ---= " + itemInfo_.item_id);
+
         var hadSame = false;
         _.forEach(this._curMapDropItems, function (info_) {
             if(info_.item_id == itemInfo_.item_id){

@@ -208,7 +208,6 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         if(reward.items && reward.items.length) {
             _.each(reward.items, function (item, i) {
                 if(item.item_id) {
-                    LOG("ITEM ID = " + item.item_id) ;
                     var itemType = BagSystem.getConfigType(item.item_id);
 
                     if(itemType == BagSystem.ConfigType.Equip){
@@ -217,36 +216,21 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
                     else if(itemType == BagSystem.ConfigType.Item){
                         itemType =  IconWidget.Type.Item;
                     }
-
                     this._rewardItems[i].setIcon(item.item_id,itemType,item.item_num);
                     this._rewardItems[i].setVisible(true);
-
                     var rewardItemNode = this._rewardItems[i]._ui.btn_touch;
 
-                    //rewardItemNode.setTouchEnabled(true);
-                    //rewardItemNode.addTouchEventListener(function (touch, event) {
-                    //    LOG("1111111");
-                    //    if(event == ccui.Widget.TOUCH_ENDED){
-                    //        if(this._allDetailITEM != null){
-                    //            this._allDetailITEM.removeFromParent();
-                    //        }
-                    //        this._allDetailITEM = new EquipDetailPanel(item.item_id);
-                    //        this._allDetailITEM.setPosition(cc.p(0,rewardItemNode.getContentSize().height));
-                    //        rewardItemNode.addChild(this._allDetailITEM);
-                    //    }
-                    //})
-
+                    var that = this;
                     this._rewardItems[i].setTouchCallback(function () {
-                        LOG("xxx");
-                        if(this._allDetailITEM != null){
-                            LOG("yyyyy");
-                            this._allDetailITEM.removeFromParent();
+                        if(that._allDetailITEM != null){
+                            that._allDetailITEM.removeFromParent();
+                            that._allDetailITEM = null;
                         }
-                        LOG("zzzz");
-                        this._allDetailITEM = new EquipDetailPanel(item.item_id);
-                        this._allDetailITEM.setPosition(cc.p(0,rewardItemNode.getContentSize().height));
-                        rewardItemNode.addChild(this._allDetailITEM);
-                    },this);
+                        that._allDetailITEM = new EquipDetailPanel(item.item_id);
+                        that._allDetailITEM._claimed = false;
+                        that._allDetailITEM.setPosition(cc.p(0,rewardItemNode.getContentSize().height));
+                        rewardItemNode.addChild(that._allDetailITEM);
+                    });
                 }
             },this);
         }
@@ -559,7 +543,7 @@ var BattleWinGiftPanel = ui.GuiWindowBase.extend({
 });
 
 var EquipDetailPanel = ui.GuiWindowBase.extend({
-    _guiFile: "ui/equip_detail_panel.json",
+    _guiFile: "ui/equip_detail.json",
 
     ctor: function(equipId_) {
         this._super();
@@ -576,7 +560,8 @@ var EquipDetailPanel = ui.GuiWindowBase.extend({
             sp_change_up: this.seekWidgetByName("sp_change_up"),
             sp_change_down: this.seekWidgetByName("sp_change_down"),
             lbl_item_score: this.seekWidgetByName("lbl_item_score"),
-            lbl_score_change : this.seekWidgetByName("lbl_score_change")
+            lbl_score_change : this.seekWidgetByName("lbl_score_change"),
+            panel : this.seekWidgetByName("panel")
         }
 
         var itemType = BagSystem.getConfigType(this._curItemID);
@@ -632,13 +617,23 @@ var EquipDetailPanel = ui.GuiWindowBase.extend({
                 this._ui.lbl_item_score.setString("");
             }
         }
+
+        //this._ui.panel.setTouchEnabled(true);
+        //
+        //this._ui.panel.addTouchEventListener(function (touch,event) {
+        //    LOG("1111");
+        //
+        //    this.removeFromParent();
+        //
+        //
+        //},this)
     },
 
     onExit : function(){
 
         this._ui = null;
-        this._super();
 
+        this._super();
     },
 
     refreshSelectedItemInfo: function() {

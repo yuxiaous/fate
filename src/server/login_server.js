@@ -102,7 +102,8 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
 
     //guide index init
     server.send(net_protocol_handlers.CMD_SC_UPDATE_GUIDE_INFO,{
-        guide_info : guide_server.guide_info
+        guide_id : guide_server.guideData.curGuideId,
+        guide_info : guide_server.guideData.guide_info
     })
 
     //更新当天是否更新了VIP功能

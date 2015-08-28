@@ -71,9 +71,9 @@ var MapScene = ui.GuiSceneBase.extend({
         }
 
         if(this._sel_map_id == 201){
-           if(GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),111)){
-               GmSystem.instance.sendCommand("ar 1 27000");
-            }
+           //if(GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_back"),111)){
+           //    GmSystem.instance.sendCommand("ar 1 27000");
+           // }
         }
 
         if(this._sel_map_id == 103){

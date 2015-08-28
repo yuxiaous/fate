@@ -100,7 +100,8 @@ var ShopScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_back: function() {
-        this.popScene();
+        ui.replaceScene(MainScene);
+        //this.popScene();
     },
 
     refreshShopTabStatus: function() {
@@ -248,9 +249,9 @@ ShopScene.Good = ui.GuiWidgetBase.extend({
                 break;
         }
 
-        if(GuideSystem.instance._curGuideType == GuideSystem.Type.shangdian && this._good_id == 12103){
-            GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_buy"),113);
-        }
+        //if(GuideSystem.instance._curGuideType == GuideSystem.Type.shangdian && this._good_id == 12103){
+        //    GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_buy"),113);
+        //}
 
         if(GuideSystem.instance._curGuideType == GuideSystem.Type.xueping && this._good_id == 18000){
             GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_buy"),122);

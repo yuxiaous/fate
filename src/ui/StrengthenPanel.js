@@ -31,8 +31,14 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
                 this.seekWidgetByName("lbl_need_2"),
                 this.seekWidgetByName("lbl_need_3"),
                 this.seekWidgetByName("lbl_need_4")
-            ]
+            ],
+            btn_strengthen : this.seekWidgetByName("btn_strengthen"),
+            btn_close : this.seekWidgetByName("btn_close")
         };
+
+        GuideSystem.AddGuidePanel(this._ui.btn_strengthen,205);
+        //GuideSystem.AddGuidePanel(this._ui.btn_strengthen,206);
+        //GuideSystem.AddGuidePanel(this._ui.btn_close,207);
 
         this._bindings = [
             notification.createBinding(notification.event.EQUIP_STRENGTHEN_RESULT, function(event, equip_id) {
@@ -179,6 +185,8 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
         if(this._strengthenCallback) {
             this._strengthenCallback(this);
         }
+
+        GuideSystem.AddGuidePanel(this._ui.btn_close,207);
     },
 
     setStrengthenCallback: function(selector, target) {

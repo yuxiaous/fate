@@ -39,6 +39,14 @@ _BindFunc(1203, function(obj) {
 	net_protocol_handlers.ON_CMD_SC_SKILL_UP_RESULT(obj);
 });
 
+// @protocol 保存当前引导ID
+// @param {uint32} guide_id, 引导ID
+net_protocol_handlers.CMD_CS_CURRENT_GUIDE_ID = 1651;
+net_protocol_handlers.SEND_CMD_CS_CURRENT_GUIDE_ID = function(obj) {
+	cc.assert(obj.guide_id != undefined, "CMD_CS_CURRENT_GUIDE_ID.guide_id is undefined.");
+	_SendFunc(1651, obj);
+};
+
 // @protocol 每日VIP奖励是否领取
 // @param {uint32} get_done, 0 没有领取
 net_protocol_handlers.CMD_SC_VIP_IS_GET_INFO = 1630;
@@ -324,9 +332,11 @@ net_protocol_handlers.SEND_CMD_CS_USE_BATTLE_ITEM = function(obj) {
 };
 
 // @protocol 更新引导数据
-// @param {list} guide_info, 礼包各种类型对应的购买数量
+// @param {uint32} guide_id, 当前引导所在ID
+// @param {list} guide_info, 引导各种类型对应的购买数量
 net_protocol_handlers.CMD_SC_UPDATE_GUIDE_INFO = 1621;
 _BindFunc(1621, function(obj) {
+	cc.assert(obj.guide_id != undefined, "CMD_SC_UPDATE_GUIDE_INFO.guide_id is undefined.");
 	cc.assert(obj.guide_info != undefined, "CMD_SC_UPDATE_GUIDE_INFO.guide_info is undefined.");
 	net_protocol_handlers.ON_CMD_SC_UPDATE_GUIDE_INFO(obj);
 });

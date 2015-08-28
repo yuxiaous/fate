@@ -98,7 +98,9 @@ var OperationLayer = cc.Layer.extend({
             new cc.Sprite(this.getFP(skill_1_str)),
             new cc.Sprite(this.getFP(skill_1_str)),
             compoundDisableBtnSprite(this.getFP(skill_1_str),this.getFP("diableskill.png")),
-            curStylePos.skillBtn_1
+            curStylePos.skillBtn_1,
+            false,
+            1
         );
 
         // skill button 2
@@ -108,7 +110,9 @@ var OperationLayer = cc.Layer.extend({
             new cc.Sprite(this.getFP(skill_2_str)),
             new cc.Sprite(this.getFP(skill_2_str)),
             compoundDisableBtnSprite(this.getFP(skill_2_str),this.getFP("diableskill.png")),
-            curStylePos.skillBtn_2
+            curStylePos.skillBtn_2,
+            false,
+            2
         );
 
         // skill button 3
@@ -118,7 +122,9 @@ var OperationLayer = cc.Layer.extend({
             new cc.Sprite(this.getFP(skill_3_str)),
             new cc.Sprite(this.getFP(skill_3_str)),
             compoundDisableBtnSprite(this.getFP(skill_3_str),this.getFP("diableskill.png")),
-            curStylePos.skillBtn_3
+            curStylePos.skillBtn_3,
+            false,
+            3
         );
 
         var needDisplayCount = true;
@@ -134,7 +140,8 @@ var OperationLayer = cc.Layer.extend({
             new cc.Sprite(this.getFP(skill_4_str)),
             compoundDisableBtnSprite(this.getFP(skill_4_str),this.getFP("diableskill.png")),
             curStylePos.skillBtn_4,
-            needDisplayCount
+            needDisplayCount,
+            4
         );
 
         //skill button 5
@@ -142,7 +149,9 @@ var OperationLayer = cc.Layer.extend({
             new cc.Sprite(this.getFP("skill5.png")),
             new cc.Sprite(this.getFP("skill5.png")),
             compoundDisableBtnSprite(this.getFP("skill5.png"),this.getFP("diableskill.png")),
-            curStylePos.skillBtn_5
+            curStylePos.skillBtn_5,
+            false,
+            5
         );
     },
 
@@ -439,7 +448,7 @@ var OperationLayer = cc.Layer.extend({
         return joystick;
     },
 
-    addButton: function(sp1, sp2, sp3, pos,needUseCount_) {
+    addButton: function(sp1, sp2, sp3, pos,needUseCount_,skill_idx_) {
         if(sp1 == null)
             return null;
 
@@ -472,10 +481,28 @@ var OperationLayer = cc.Layer.extend({
         button.releaseCountLabel.setVisible(button.needUseCount);
         button.fontBg.setVisible(button.needUseCount);
 
-        var lockBg = cc.Sprite.create("images/icon/skill/skill_lock.png");
+        var lockBg = ccui.ImageView.create("images/icon/skill/skill_lock.png");
         button.addChild(lockBg);
         lockBg.setVisible(false);
         button.lockIcon = lockBg;
+
+        if(skill_idx_!= undefined){
+            var num = 0;
+            if(skill_idx_ == 2){
+                num = configdb.property[113].value;
+            }
+            else if(skill_idx_ == 3){
+                num = configdb.property[114].value;
+            }
+            var strLock = "等级 " + num + "开启";
+        }
+
+        lockBg.setTouchEnabled(true);
+        lockBg.addTouchEventListener(function (touch,event) {
+            if(event == ccui.Widget.TOUCH_ENDED){
+                UiEffect.showFloatLabel(strLock);
+            }
+        });
 
 
         return button;

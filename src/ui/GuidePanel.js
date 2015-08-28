@@ -34,17 +34,17 @@ var GuidePanel = ui.GuiWindowBase.extend({
     refreshContentImage : function (pos_,endPos_,iconStr_) {
         this._content_img.setPosition(endPos_);
         if(iconStr_ != undefined){
+            this._content_img.setVisible(true);
 
             var spr = cc.Sprite.create(iconStr_);
             spr.retain();
             var size = spr.getContentSize();
-            LOG("SIZE W = " + size.width);
-            LOG("SIZE W = " + size.height);
             this._content_img.loadTexture(iconStr_);
             var orgPos = this._content_img.getPosition();
-            
             this._content_img.setContentSize(cc.size(size.width,size.height))
-
+        }
+        else{
+            this._content_img.setVisible(false);
         }
     },
     
@@ -161,7 +161,7 @@ var SkillGuidePanel = ui.GuiWindowBase.extend({
                 idxStr = "images/code_ui/ui_390.png";
                 break;
             case  RoleAction.Type.SKILL5 :
-                idxStr = "images/code_ui/ui_390.png";
+                idxStr = "images/code_ui/ui_398.png";
                 break;
         }
 

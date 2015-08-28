@@ -656,7 +656,8 @@
     "desc": "更新引导数据",
     "schemes":
     [
-      ["list", "guide_info", "礼包各种类型对应的购买数量",
+      ["uint32","guide_id","当前引导所在ID"],
+      ["list", "guide_info", "引导各种类型对应的购买数量",
         [
           ["uint32", "guideType", "引导类型"],
           ["uint32", "guideState", "引导是否通过"]
@@ -783,6 +784,17 @@
     "schemes":
     [
       ["uint32","result","0"]
+    ]
+  },
+
+  "CMD_CS_CURRENT_GUIDE_ID" :
+  {
+    "code" : 1651,
+    "type" : "CS",
+    "desc" : "保存当前引导ID",
+    "schemes":
+    [
+      ["uint32","guide_id","引导ID"]
     ]
   }
 }

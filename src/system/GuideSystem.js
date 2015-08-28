@@ -6,6 +6,7 @@ var GuideSystem = SystemBase.extend({
 
         this._GuidePanel = null;
         this._curGuideType = 0;
+        this._curGuideId = 0;
     },
 
     onInit: function () {
@@ -15,13 +16,19 @@ var GuideSystem = SystemBase.extend({
     },
 
     refreshGuideInfo : function (obj) {
+        LOG("refres guide info");
+        LOG(obj);
+
         if(obj && obj.guide_info != undefined){
             this._curGuideInfo = obj.guide_info;
+            this._curGuideId = obj.guide_id;
 
             _.each(this._curGuideInfo, function (info_) {
-                //LOG(" GUIDE TYPE = " + info_.guideType);
-                //LOG("  GUIDE STATE = " + info_.guideState);
+                LOG(" GUIDE TYPE = " + info_.guideType);
+                LOG("  GUIDE STATE = " + info_.guideState);
             })
+
+            LOG("cur guide id = " + obj.guide_id);
         }
     },
 
@@ -38,6 +45,15 @@ var GuideSystem = SystemBase.extend({
     sendGuideTypeIsDone : function (guide_type_) {
         net_protocol_handlers.SEND_CMD_CS_CURRENT_GUIDE_DONE({
             guideType : guide_type_
+        });
+    },
+
+    sendGuideId : function (id_) {
+        this._curGuideId = id_;
+        LOG("----- send guide id = " + this._curGuideId);
+
+        net_protocol_handlers.SEND_CMD_CS_CURRENT_GUIDE_ID({
+            guide_id : this._curGuideId
         });
     },
 
@@ -166,24 +182,42 @@ var GuideSystem = SystemBase.extend({
     }
 });
 
-GuideSystem.AddGuidePanel = function (btn_,guideId_) {
+GuideSystem.AddGuidePanel = function (btn_,guideId_,topDisplay_) {
     var sys = GuideSystem.instance;
 
     var guideConf = GuideSystem.content[guideId_];
     if(!guideConf){
         return false;
     }
+
+    LOG("guideid = " + guideId_);
+    LOG("cur guide id = " + sys._curGuideId);
+
+    if(sys._curGuideId == -1 || sys._curGuideId == 0){
+
+    }
+    else{
+        if(guideId_ != sys._curGuideId){
+            LOG("xxxx");
+            return;
+        }
+    }
+
+    //if(sys._curGuideId != -1 && sys._curGuideId != 0 && guideId_ != sys._curGuideId){
+    //    LOG("xxxx");
+    //
+    //    return;
+    //}
+
     if(guideConf.guideType != undefined){
         //判断引导是否已经执行过
         if(sys.getCurGuideTypeIsDone(guideConf.guideType)){
             return false;
         }
-
         //判断引导是否可以执行
         if(!sys.getCurGuideIsOpenWithMapId(guideConf.guideType)){
             return false;
         }
-
 
         if( sys._curGuideType != 0 && sys._curGuideType != guideConf.guideType){
             return false;
@@ -193,19 +227,14 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_) {
         }
     }
 
-
     if(!sys.getCurGuideIsOpenWithMapId(sys._curGuideType)){
        return false;
     }
-
-
-
     if(sys._GuidePanel == null){
         sys._GuidePanel = new GuidePanel();
         var curScene = cc.director.getRunningScene();
         curScene.addChild(sys._GuidePanel,100000,100000);
     }
-
     sys._GuidePanel.setVisible(true);
 
     sys._GuidePanel.refreshArrowImage(guideConf.rotate,cc.p(0,0),guideConf.arr_pos);
@@ -213,18 +242,24 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_) {
 
     if(btn_){
         var cpBtn = sys._GuidePanel.startRefreshBtn(btn_);
-
         cpBtn.addTouchEventListener(function (touch,event) {
             if(event == ccui.Widget.TOUCH_ENDED){
                 sys._GuidePanel.endRefreshBtn();
                 if(guideConf.next_id != 0){
+                    sys.sendGuideId(sys._curGuideId);
+
                     sys._GuidePanel.removeFromParent();
                     if(guideConf.next_id == -1){
                         sys.sendGuideTypeIsDone(sys._curGuideType);
                         sys._curGuideType = 0;
                     }
-                    //sys._GuidePanel.setVisible(false);
+
                     sys._GuidePanel = null;
+
+                    //TODO 临时使用，发完版本得重新修改
+                    if(guideConf.cur_id == 207){
+                        notification.emit(notification.event.GUIDE_UPDATE);
+                    }
                 }
             }
         })
@@ -284,7 +319,7 @@ GuideSystem.content = {
     "103" : {
         guideType : GuideSystem.Type.zhuangbei,
         contIcon : "images/code_ui/ui_346.png",
-        cur_id: 102,
+        cur_id: 103,
         next_id: 104,
 
         rotate: 180,
@@ -294,8 +329,53 @@ GuideSystem.content = {
 
     "104" : {
         guideType : GuideSystem.Type.zhuangbei,
+        contIcon : "images/code_ui/ui_395.png",
+        cur_id: 104,
+        next_id: 205,
+
+        rotate: 180,
+        arr_pos: cc.p(570, 280),
+        cont_pos: cc.p(500, 380)
+    },
+
+    // new guide
+    "205" : {
+        guideType : GuideSystem.Type.zhuangbei,
+        contIcon : "images/code_ui/ui_396.png",
+        cur_id: 205,
+        next_id: 207,
+
+        rotate: 90,
+        arr_pos: cc.p(600, 200),
+        cont_pos: cc.p(300, 200)
+    },
+    //
+    //"206" : {
+    //    guideType : GuideSystem.Type.zhuangbei,
+    //    contIcon : "images/code_ui/ui_396.png",
+    //    cur_id: 206,
+    //    next_id: 207,
+    //
+    //    rotate: 90,
+    //    arr_pos: cc.p(845, 280),
+    //    cont_pos: cc.p(845, 380)
+    //},
+
+    "207" : {
+        guideType : GuideSystem.Type.zhuangbei,
+        //contIcon : "images/code_ui/ui_347.png",
+        cur_id: 207,
+        next_id: 208,
+
+        rotate: -90,
+        arr_pos: cc.p(830, 450),
+        cont_pos: cc.p(845, 380)
+    },
+
+    "208" : {
+        guideType : GuideSystem.Type.zhuangbei,
         contIcon : "images/code_ui/ui_347.png",
-        cur_id: 102,
+        cur_id: 208,
         next_id: -1,
 
         rotate: 90,
@@ -376,39 +456,39 @@ GuideSystem.content = {
 
     //引导去商店购买
 
-    "111" : {
-        guideType : GuideSystem.Type.shangdian,
-        contIcon : "images/code_ui/ui_352.png",
-        isStart : true,
-        cur_id: 111,
-        next_id: 112,
-
-        rotate: 100,
-        arr_pos: cc.p(90, 140),
-        cont_pos: cc.p(275, 240)
-    },
-
-    "112" : {
-        guideType : GuideSystem.Type.shangdian,
-        contIcon : "images/code_ui/ui_353.png",
-        cur_id: 112,
-        next_id: 113,
-
-        rotate: 120,
-        arr_pos: cc.p(460, 250),
-        cont_pos: cc.p(565, 330)
-    },
-
-    "113" : {
-        guideType : GuideSystem.Type.shangdian,
-        contIcon : "images/code_ui/ui_354.png",
-        cur_id: 113,
-        next_id: -1,
-
-        rotate: 0,
-        arr_pos: cc.p(520, 440),
-        cont_pos: cc.p(480, 355)
-    },
+    //"111" : {
+    //    guideType : GuideSystem.Type.shangdian,
+    //    contIcon : "images/code_ui/ui_352.png",
+    //    isStart : true,
+    //    cur_id: 111,
+    //    next_id: 112,
+    //
+    //    rotate: 100,
+    //    arr_pos: cc.p(90, 140),
+    //    cont_pos: cc.p(275, 240)
+    //},
+    //
+    //"112" : {
+    //    guideType : GuideSystem.Type.shangdian,
+    //    contIcon : "images/code_ui/ui_353.png",
+    //    cur_id: 112,
+    //    next_id: 113,
+    //
+    //    rotate: 120,
+    //    arr_pos: cc.p(460, 250),
+    //    cont_pos: cc.p(565, 330)
+    //},
+    //
+    //"113" : {
+    //    guideType : GuideSystem.Type.shangdian,
+    //    contIcon : "images/code_ui/ui_354.png",
+    //    cur_id: 113,
+    //    next_id: -1,
+    //
+    //    rotate: 0,
+    //    arr_pos: cc.p(520, 440),
+    //    cont_pos: cc.p(480, 355)
+    //},
 
     //引导去商店购买
 

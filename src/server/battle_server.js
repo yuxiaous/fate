@@ -27,7 +27,8 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_MAP, function(obj) {
     //player_server.player_info.action -=2;
     //player_server.update
 
-    if(player_server.changeAction(2) == false){
+    var tmpAct = configdb.property[119].value;
+    if(player_server.changeAction(tmpAct) == false){
         return;
     }
 

@@ -82,7 +82,7 @@ var IconWidget = ui.GuiController.extend({
         }
 
         // number
-        if(this._num > 1) {
+        if(this.num > 1) {
             this._ui.lbl_num.setVisible(true);
 
             if(this.num >= 10000 && this.num % 10000 == 0) {
@@ -95,18 +95,30 @@ var IconWidget = ui.GuiController.extend({
     },
 
     _on_btn_bg: function() {
+        LOG("9999999");
+
         if(this._touchCallback) {
+            LOG("on btn bg");
+
             this._touchCallback(this);
         }
     },
 
     setTouchCallback: function(selector, target) {
+        LOG("set touch call back");
         this._ui.btn_touch.setEnabled(true);
         if(target === undefined)
             this._touchCallback = selector;
         else
             this._touchCallback = selector.bind(target);
+    },
+    
+    setTouchBeganAndEndCallBack : function () {
+
+
     }
+    
+    
 });
 
 IconWidget.Type = {
