@@ -45,9 +45,6 @@ RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
     finalValue_ = Math.floor(finalValue_);
 
     var everyChangeValue = 0.5;
-    if(changeValue_){
-        everyChangeValue = changeValue_;
-    }
     var curValue_ = loadNode_.getPercent();
     var isIncreace = false;
 
@@ -56,6 +53,10 @@ RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
     }
     else if(finalValue_ == curValue_){
         return;
+    }
+
+    if(changeValue_){
+        everyChangeValue = (curValue_ - finalValue_) / changeValue_;
     }
 
     function updateBloodBarFunc(){
