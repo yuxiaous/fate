@@ -160,6 +160,25 @@ var UiEffect = {
         particle.setPositionType(cc.ParticleSystem.TYPE_FREE);
         node_.addChild(particle);
         node_.particleEffect = particle;
+    },
+
+    addSkillUpdateEffect : function (parNode_) {
+        var tmpStr = "res/images/code_ui/ui_";
+        var vin_ani = new cc.Sprite(tmpStr + "199.png");
+        var tmpSize = parNode_.getContentSize();
+        vin_ani.setPosition(tmpSize.width/2,tmpSize.height/2);
+        parNode_.addChild(vin_ani);
+
+        var animFrames = [];
+        for(var i = 1; i <= 8; i++){
+            var strName = tmpStr + (199+i) + ".png";
+            var size = cc.Sprite(strName).getContentSize();
+            var frame = cc.SpriteFrame.create(strName,cc.rect(0,0,size.width,size.height));
+            animFrames.push(frame);
+        }
+        var animation = new cc.Animation(animFrames,0.1,1);
+        var animationAction = new cc.Animate(animation);
+        vin_ani.runAction(animationAction);
     }
 
 }

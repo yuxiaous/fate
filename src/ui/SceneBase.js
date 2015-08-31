@@ -390,6 +390,9 @@ var SceneBase = lh.LHScene.extend({
     onBattleStart: function() {
         this._battleUiLayer.setVisible(true);
         this._operator.setHide(true);
+
+        this._operator.setSkillBtnOpenEffect();
+
         //if(this._sectionIndex == 1){
         //    //var actionData = this._hero.roleActionManager.actions[RoleAction.Type.SKILL4];
         //    //this._operator.setBtnTimingEnable(4,actionData.cdTime);

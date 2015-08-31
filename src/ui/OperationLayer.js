@@ -364,6 +364,8 @@ var OperationLayer = cc.Layer.extend({
             covPro.setPercentage(100);
 
             btn_.lockIcon.setVisible(true);
+
+            btn_.btnSkinned.setVisible(false);
         }
 
     },
@@ -429,6 +431,62 @@ var OperationLayer = cc.Layer.extend({
                 btn_.setIsEnable(isE_);
             }
         }
+    },
+
+    setSkillBtnOpenEffect : function () {
+
+        function btnOpenEffect(btn_,hadLastEffect_){
+            var waitTime = 0.5;
+            if(hadLastEffect_){
+                waitTime = 1.0;
+            }
+
+            var btnSkin = btn_.btnSkinned;
+            var pos = btnSkin.getPosition();
+            var sinSize = cc.director.getWinSize();
+            var startPos = cc.p(60,sinSize.height - 60);
+
+
+            btnSkin.setPosition(startPos);
+            btnSkin.setVisible(true);
+
+            btnSkin.runAction(cc.Sequence.create(
+                cc.DelayTime.create(waitTime),
+                cc.MoveTo.create(1.0,pos),
+                cc.CallFunc.create(function(){
+                    UiEffect.addSkillUpdateEffect(btnSkin);
+                })
+            ));
+        }
+
+        var curSkillIsOpen = false;
+        var roleLevel = PlayerSystem.instance.level;
+
+        var isOpened = jsb.JsonStorage.GetInstance(LoginSystem.settingFile).getBoolForKey(GuideSystem.SkillOpen.SKILL_2);
+        if(roleLevel >= configdb.property[113].value && isOpened == false){
+            jsb.JsonStorage.GetInstance(LoginSystem.settingFile).setBoolForKey(GuideSystem.SkillOpen.SKILL_2,true);
+            jsb.JsonStorage.GetInstance(LoginSystem.settingFile).flush();
+
+            btnOpenEffect(this._skillButton2,curSkillIsOpen);
+
+            curSkillIsOpen = true;
+        }
+
+        isOpened = jsb.JsonStorage.GetInstance(LoginSystem.settingFile).getBoolForKey(GuideSystem.SkillOpen.SKILL_3);
+
+        if(roleLevel >= configdb.property[114].value && isOpened == false){
+            jsb.JsonStorage.GetInstance(LoginSystem.settingFile).setBoolForKey(GuideSystem.SkillOpen.SKILL_3,true);
+            jsb.JsonStorage.GetInstance(LoginSystem.settingFile).flush();
+
+            btnOpenEffect(this._skillButton3,curSkillIsOpen);
+
+        }
+
+
+
+
+
+
     },
 
     addJoystick: function(sp1, sp2, sp3, sp4, pos, area) {

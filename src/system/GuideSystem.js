@@ -276,6 +276,11 @@ GuideSystem.SkillDes = [
      "skill_des_5"
 ];
 
+GuideSystem.SkillOpen = {
+    SKILL_2 : "skill_open_2",
+    SKILL_3 :"skill_open_3"
+};
+
 GuideSystem.Type = {
     enterGameGuide : 1,
     zhuangbei : 2,
