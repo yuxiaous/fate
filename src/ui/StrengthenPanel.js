@@ -119,7 +119,7 @@ var StrengthenPanel = ui.GuiWindowBase.extend({
         }
 
         // need gold
-        this._ui.lbl_cost.setString(this._ui.lbl_cost._str_original.format(config.qh_gold));
+        this._ui.lbl_cost.setString(this._ui.lbl_cost._str_original.format(config.qh_gold || 0));
 
         // current gold
         this._ui.lbl_gold.setString(this._ui.lbl_gold._str_original.format(PlayerSystem.instance.gold));
