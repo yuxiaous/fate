@@ -95,7 +95,7 @@ var SceneBase = lh.LHScene.extend({
             notification.createBinding(notification.event.BATTLE_FINISH_RESULT, this.showFinishPanel, this),
             notification.createBinding(notification.event.BATTLE_ADD_SKILL_EFFECT, function () {
                 if(!that._street.skillEL){
-                    var skillEL = new SkillEffectLayer(that)
+                    var skillEL = new SkillEffectLayer(that);
                     var mapPos = MapSystem.instance.getGameMapPos();
                     var maprect = MapSystem.instance.getGameMapRect();
                     var pos = cc.p(- mapPos.x + maprect.x,0);
@@ -226,7 +226,10 @@ var SceneBase = lh.LHScene.extend({
 
                 if(GiftSystem.instance.getGiftBuyNumWith(GiftSystem.GiftType.WuQi) <= 0 && item._dropType == DroppedItem.DropType.DaBaoJianType && !this._isEnteringEquipSuit && this._enterDropUi >= 60) {
                     var enterRadius = cc.p(70, 100);
-                    if (Math.abs(heroPos.x - itemPos.x) <= enterRadius.x && Math.abs(heroPos.y - itemPos.y) <= enterRadius.y) {
+                    if (Math.abs(heroPos.x - itemPos.x) <= enterRadius.x
+                        && Math.abs(heroPos.y - itemPos.y) <= enterRadius.y
+                        && this._street.skillEL == null) {
+
                         this._isEnteringEquipSuit = true;
                         item.entranceBuyEquipSuit(hero, this);
                     }

@@ -175,15 +175,13 @@ var OperationLayer = cc.Layer.extend({
                 var curCost = SkillSystem.instance.getSkillUpMpcost(tmpData.SkillType);
                 curHero.roleDataManager.mp -= curCost;
 
-                if( GuideSystem.instance.getSkillIsNotGuided(tmpData.SkillType)){
-
+                if( GuideSystem.instance.getSkillIsNotGuided(tmpData.SkillType) && BattleSystem.instance.curIsTryBattle() ){
                     var skillGuide = new SkillGuidePanel(tmpData.SkillType, function () {
-                        skillGuide.close();
                         notification.emit(notification.event.GAME_RESUME);
+                        skillGuide.close();
                     },this);
-
-                    notification.emit(notification.event.GAME_PAUSE);
                     skillGuide.pop();
+                    notification.emit(notification.event.GAME_PAUSE);
                 }
 
             },this)
