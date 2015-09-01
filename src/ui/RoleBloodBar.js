@@ -56,9 +56,11 @@ RoleBloodBar.setPercentChangeTo = function(finalValue_,loadNode_,changeValue_){
         return;
     }
 
+    var tmpValue = 5;
     if(changeValue_){
-        everyChangeValue = (curValue_ - finalValue_) / changeValue_;
+        tmpValue = changeValue_;
     }
+    everyChangeValue = (curValue_ - finalValue_) / tmpValue;
 
     function updateBloodBarFunc(){
         var curIsDone = false;
