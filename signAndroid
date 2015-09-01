@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd tools/signer
+perl signer-mac.pl -k ../../frameworks/runtime-src/proj.android/fate.keystore -p1 pass@123456 -a fate.keystore -p2 pass@123456 -s ../../publish/android/encrypted -d ../../publish/android/signed
+cd ../..

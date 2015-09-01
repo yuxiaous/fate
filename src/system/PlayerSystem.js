@@ -124,11 +124,8 @@ var PlayerSystem = SystemBase.extend({
     },
 
     showPlayerScoreChange: function() {
-        LOG("showPlayerScoreChange")
         var last = this.lastScore;
         var now = this.getPlayerBattleScore();
-        LOG(last)
-        LOG(now)
         if(last) {
             var change = now.score - last.score;
             if(change != 0) {
