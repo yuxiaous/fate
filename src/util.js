@@ -109,7 +109,7 @@ var util = {
 
         overTime = Math.floor(overTime/1000);
 
-        var evertRecover = 8 * 60;
+        var evertRecover = configdb.property[120].value;
 
         var ret = Math.floor( overTime / evertRecover)
         if( ret <= 0){
