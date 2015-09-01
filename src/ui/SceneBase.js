@@ -142,16 +142,18 @@ var SceneBase = lh.LHScene.extend({
 
             notification.createBinding(notification.event.GAME_PAUSE, function () {
                 LOG("game pause game scene");
-                for(var btnIdx = 1 ; btnIdx <= 5; btnIdx++){
-                    this._operator.setBtnTimingPause(btnIdx,true);
-                }
+                //for(var btnIdx = 1 ; btnIdx <= 5; btnIdx++){
+                //    this._operator.setBtnTimingPause(btnIdx,true);
+                //}
+                BattleSystem.instance._isStop = true;
                 MusicManager.getInstance().pauseBGM();
             },this),
             notification.createBinding(notification.event.GAME_RESUME, function () {
                 LOG("game resume game scene");
-                for(var btnIdx = 1 ; btnIdx <= 5; btnIdx++){
-                    this._operator.setBtnTimingPause(btnIdx,false);
-                }
+                //for(var btnIdx = 1 ; btnIdx <= 5; btnIdx++){
+                //    this._operator.setBtnTimingPause(btnIdx,false);
+                //}
+                BattleSystem.instance._isStop = false;
                 MusicManager.getInstance().resumeBGM();
             },this),
             notification.createBinding(notification.event.BATTLE_END, function () {

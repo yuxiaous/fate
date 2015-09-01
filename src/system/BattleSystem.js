@@ -21,6 +21,8 @@ var BattleSystem = SystemBase.extend({
         this.randomDropInfo = {};
 
         this._curMapDropItems = [];
+
+        this._isStop = false;
     },
 
     onInit: function () {
