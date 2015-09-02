@@ -140,20 +140,14 @@ var BattleSystem = SystemBase.extend({
         this._refreshCurMapDropItems(dropItemInfo_);
 
 
+
         dropItemInfo_ = this._parseLargeNumDropItems(dropItemInfo_);
 
         return dropItemInfo_;
     },
 
     _parseLargeNumDropItems : function (dropItemInfo_) {
-        //var returnInfo = {
-        //    allNum : 0,
-        //    largeNum : 0,
-        //    smallNum : 0,
-        //    id : 0
-        //}
-
-        var largeItemNum = dropItemInfo_.item_num / 10;
+        var largeItemNum = Math.floor(dropItemInfo_.item_num / 10) ;
         var smallItemNum = dropItemInfo_.item_num % 10;
 
         return {
@@ -162,13 +156,6 @@ var BattleSystem = SystemBase.extend({
             largeNum : largeItemNum,
             item_id : dropItemInfo_.item_id
         };
-
-        //returnInfo.allNum = largeItemNum + smallItemNum;
-        //returnInfo.smallNum = smallItemNum;
-        //returnInfo.largeNum = largeItemNum;
-        //returnInfo.id = dropItemInfo_.item_id;
-        //
-        //return returnInfo;
     },
 
     _refreshCurMapDropItems : function (itemInfo_) {
