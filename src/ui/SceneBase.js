@@ -338,14 +338,38 @@ var SceneBase = lh.LHScene.extend({
 
             var dropItemInfo_ =  BattleSystem.instance.getCurDropItemData(this._sceneStatus.maxMonster,role.idx);
 
+            //if(dropItemInfo_.item_id){
+            //    for(var idx = 0 ; idx < dropItemInfo_.item_num; idx++){
+            //        var dropItem = new DroppedItem(parseInt(dropItemInfo_.item_id),DroppedItem.DropType.ItemType );
+            //        var pos = BattleSystem.instance.randomDropItemPos(role,dropItemInfo_.item_num);
+            //        dropItem.setPosition(pos);
+            //        this.addItem(dropItem);
+            //    }
+            //}
+
             if(dropItemInfo_.item_id){
-                for(var idx = 0 ; idx < dropItemInfo_.item_num; idx++){
-                    var dropItem = new DroppedItem(parseInt(dropItemInfo_.item_id),DroppedItem.DropType.ItemType );
-                    var pos = BattleSystem.instance.randomDropItemPos(role,dropItemInfo_.item_num);
-                    dropItem.setPosition(pos);
-                    this.addItem(dropItem);
-                }
+                var that = this;
+                function addItemFunc(itemId_,itemNum_, isLarge_,allNum_){
+                    for(var idx = 0 ; idx < itemNum_; idx++){
+                        var dropItem = new DroppedItem(parseInt(itemId_),DroppedItem.DropType.ItemType );
+                        var pos = BattleSystem.instance.randomDropItemPos(role,allNum_);
+                        dropItem.setPosition(pos);
+                        if(isLarge_){
+                            dropItem.setScale(1.5);
+                        }
+                        that.addItem(dropItem);
+                    }
+                };
+
+                 if(dropItemInfo_.largeNum > 0){
+                    addItemFunc(dropItemInfo_.item_id,dropItemInfo_.largeNum,true,dropItemInfo_.allNum);
+                 }
+
+                 if(dropItemInfo_.smallNum > 0){
+                     addItemFunc(dropItemInfo_.item_id,dropItemInfo_.smallNum,false,dropItemInfo_.allNum);
+                 }
             }
+
         }
     },
     
