@@ -68,6 +68,11 @@ WeRecSdk werecsdk;
 BaitongSdk baitongsdk;
 #endif
 
+#ifdef SDK_QH360
+#include "360/Qh360Sdk.h"
+Qh360Sdk qh360sdk;
+#endif
+
 USING_NS_CC;
 
 
