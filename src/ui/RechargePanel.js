@@ -130,7 +130,7 @@ var RechargeItem = ui.GuiController.extend({
             this._ui.persentedBg.setVisible(true);
             LOG("on sale = " + config.on_sale);
 
-            var persentedValue = parseFloat( (config.buy_count / 10000) * (1 - config.on_sale/10) );
+            var persentedValue = parseFloat( (config.pay_cost ) * (1-config.on_sale/10) );
 
             LOG("persented value = " + persentedValue);
             this._ui.persentedLabel.setString(this._ui.persentedLabel._str_original.format(persentedValue.toFixed(1)));
