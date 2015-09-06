@@ -57,7 +57,7 @@ void Qh360Sdk::login()
     cocos2d::log("Qh360Sdk::login");
 
     JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "login", "()V")) {
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "doSdkLogin", "()V")) {
         minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
     }
 }
