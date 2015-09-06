@@ -1,5 +1,5 @@
 [
-	[101, "ERR_LESS_GOLD", "金币不足"],
+	[101, "ERR_LESS_GOLD", "金币不足，是否前往购买金币"],
 	[102, "ERR_LESS_DIAMOND", "钻石不足"],
     [103, "ERR_LESS_ITEM", "物品数量不足"],
     [104, "ERR_LESS_ACTION","行动力不足"],

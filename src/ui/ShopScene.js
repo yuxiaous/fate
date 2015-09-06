@@ -39,6 +39,12 @@ var ShopScene = ui.GuiSceneBase.extend({
             lbl_girl_say: this.seekWidgetByName("lbl_girl_say")
         };
 
+
+
+        if(util.getChannelId() == GameChannel.Qh360 || util.getChannelId() == GameChannel.TencentMidas){
+            this._ui.tab_charge.setVisible(false);
+        }
+
         this._bindings = [
             notification.createBinding(notification.event.SHOP_BUY_RESULT, function (event,info) {
                 if(info && info.good_id == 18000){
