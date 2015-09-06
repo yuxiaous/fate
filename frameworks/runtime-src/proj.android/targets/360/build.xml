@@ -74,6 +74,10 @@
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
             <!--<pathelement location="../../../Classes/sdk/Baitong/android/bdappunion_2.0_log_enabled.jar" />-->
+
+            <!-- 360 -->
+            <pathelement location="../../../Classes/sdk/360/android/libs/360SDK.jar" />
+            <pathelement location="../../../Classes/sdk/360/android/libs/android-support-v4.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -101,6 +105,14 @@
             <!--</fileset>-->
         <!--</copy>-->
         <!-- Baitong end -->
+
+        <!-- 360 start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/360/android">
+                <include name="assets/" />
+            </fileset>
+        </copy>
+        <!-- 360 end -->
     </target>
 
     <!-- Import the actual build file.
