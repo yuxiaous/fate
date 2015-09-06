@@ -209,7 +209,8 @@ var MainScene = ui.GuiSceneBase.extend({
 
     _on_btn_back: function() {
         LoginSystem.instance.logout();
-        this.popScene();
+        //this.popScene();
+        ui.replaceScene(StartLayerScene);
     },
 
     _on_btn_map: function() {

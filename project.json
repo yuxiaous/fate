@@ -147,7 +147,7 @@
     "src/ui/GuidePanel.js",
     "src/ui/SelectHeroPanel.js",
     "src/ui/StrengthenPanel.js",
-
+    "src/ui/RechargePanel.js",
 
     "src/server/server.js",
     "src/server/database.js",

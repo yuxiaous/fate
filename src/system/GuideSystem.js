@@ -39,7 +39,7 @@ var GuideSystem = SystemBase.extend({
         //this._GuidePanel.removeFromParent();
         //this._GuidePanel = null;
 
-        net_protocol_handlers.ON_CMD_SC_BUY_GIFT_RESULT = null;
+        net_protocol_handlers.ON_CMD_SC_UPDATE_GUIDE_INFO = null;
     },
 
     sendGuideTypeIsDone : function (guide_type_) {

@@ -110,23 +110,6 @@ var BattleSystem = SystemBase.extend({
     },
 
     getCurDropItemData : function (roleAllCount_,roleIDx_) {
-
-        //function randDropInfoFunc(allDropCount_,allRoleCount_){
-        //
-        //
-        //}
-        //
-        //if(this.randomDropInfo == null){
-        //    var tmpCount = 0;
-        //    _.forEach(this.needDropItems, function (dropItem_) {
-        //        if(dropItem_){
-        //            tmpCount += dropItem_.item_num;
-        //        }
-        //    },this);
-        //    if(tmpCount != 0){
-        //        this.randomDropInfo = randDropInfoFunc(tmpCount,roleAllCount_);
-        //    }
-        //}
         var dropItemInfo_ = {};
         var hadDropItem = false;
 
@@ -156,7 +139,23 @@ var BattleSystem = SystemBase.extend({
         //this._curMapDropItems.push(dropItemInfo_);
         this._refreshCurMapDropItems(dropItemInfo_);
 
+
+
+        dropItemInfo_ = this._parseLargeNumDropItems(dropItemInfo_);
+
         return dropItemInfo_;
+    },
+
+    _parseLargeNumDropItems : function (dropItemInfo_) {
+        var largeItemNum = Math.floor(dropItemInfo_.item_num / 10) ;
+        var smallItemNum = dropItemInfo_.item_num % 10;
+
+        return {
+            allNum : largeItemNum + smallItemNum,
+            smallNum : smallItemNum,
+            largeNum : largeItemNum,
+            item_id : dropItemInfo_.item_id
+        };
     },
 
     _refreshCurMapDropItems : function (itemInfo_) {

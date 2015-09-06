@@ -38,7 +38,13 @@ var GiftPanel = ui.GuiController.extend({
 
         this.refreshGiftNodeDisplay();
 
-        GiftSystem.instance.getGiftItemTime();
+        this._ui.btn_2.runAction(cc.Sequence.create(
+            cc.DelayTime.create(5),
+            cc.CallFunc.create(function () {
+                GiftSystem.instance.getGiftItemTime();
+            },this)
+        ));
+        //GiftSystem.instance.getGiftItemTime();
     },
 
     addBtnEffect : function (btn_) {
