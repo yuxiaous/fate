@@ -5,7 +5,7 @@ var net_error_code = {};
 net_error_code.ERR_LESS_GOLD = 101;
 net_error_code[101] = {
 	code: 101,
-	desc: "金币不足"
+	desc: "金币不足，是否前往购买金币"
 };
 
 net_error_code.ERR_LESS_DIAMOND = 102;

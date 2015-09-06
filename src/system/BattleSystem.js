@@ -147,8 +147,13 @@ var BattleSystem = SystemBase.extend({
     },
 
     _parseLargeNumDropItems : function (dropItemInfo_) {
-        var largeItemNum = Math.floor(dropItemInfo_.item_num / 10) ;
-        var smallItemNum = dropItemInfo_.item_num % 10;
+
+        var bigIconValue = 7;
+        var largeItemNum = Math.floor(dropItemInfo_.item_num / bigIconValue) ;
+        var smallItemNum = dropItemInfo_.item_num % bigIconValue;
+        //LOG("drop item info .item_num = " + dropItemInfo_.item_num);
+        //LOG("large Item Num = " + largeItemNum);
+        //LOG("small item num = " + smallItemNum);
 
         return {
             allNum : largeItemNum + smallItemNum,

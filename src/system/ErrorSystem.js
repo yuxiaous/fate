@@ -21,7 +21,13 @@ var ErrorSystem = SystemBase.extend({
     onErrorMessage: function(obj) {
         var error = net_error_code[obj.code];
         if(error) {
-            MessageBoxOk.show(error.desc);
+            //MessageBoxOk.show(error.desc);
+            var mesWin = new MessageBoxOkCancel(error.desc,"购买");
+            mesWin.setOkCallback(function () {
+                var rechargeGold = new RechargePanel();
+                rechargeGold.pop();
+            },this);
+            mesWin.pop();
         }
     }
 });
