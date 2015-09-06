@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="sdk_social_pay_demo_online" default="help">
+
+    <!-- keystore -->
+    <property name="key.store" value="${keystore-file}" />
+    <property name="key.store.password" value="${keystore-pass}" />
+    <property name="key.alias" value="${keyalias}" />
+    <property name="key.alias.password" value="${keypass}" />
+    <!-- 未使用包含internal API android.jar的sdk路径配置 -->
+    <property name="sdk.dir" value="${android-original-sdk-all-dir}" />
+    <!-- 目标API -->
+    <property name="target" value="android-17" />
+    <!-- 以上引用的property由父ant调用传递 -->
+
+    <!-- Import the actual build file.
+
+         To customize existing targets, there are two options:
+         - Customize only one target:
+             - copy/paste the target into this file, *before* the
+               <import> task.
+             - customize it to your needs.
+         - Customize the whole content of build.xml
+             - copy/paste the content of the rules files (minus the top node)
+               into this file, replacing the <import> task.
+             - customize to your needs.
+
+         ***********************
+         ****** IMPORTANT ******
+         ***********************
+         In all cases you must update the value of version-tag below to read 'custom' instead of an integer,
+         in order to avoid having your file be overridden by tools such as "android update project"
+    -->
+    <!-- version-tag: 1 -->
+    <import file="${sdk.dir}/tools/ant/build.xml" />
+
+</project>

@@ -1,0 +1,436 @@
+社交带支付SDK版本升级说明：
+升级说明主要给出SDK文件的增删改记录，SDK逻辑上的变化，和Manifest配置的变动。
+只适用于接入过旧版本社交带支付SDK的游戏升级SDK的情况。旧版本的SDK不能低于1.0.4(240）。
+只适用于社交带支付类型的SDK。
+
+建议进行文件更新时，直接删除所有旧版本的SDK相关的文件，然后把新的SDK包中的文件放到工程中。这样不容遗漏文件，也不用关心下面说明中的文件变化记录，重点关注SDK逻辑上的变化，和manifest的变化，并参照文档和demo源代码。
+
+------------------------------------------------------------------------------------------------------------------
+1.1.8(400) -> 1.1.8(402)
+
+一、更新文件
+libs/360SDK.jar
+
+二、新增文件：
+assets/360sdk_res/res_402_1.dat
+assets/360sdk_res/res_402_2.dat
+assets/360sdk_res/res_402_3.dat
+assets/360sdk_res/res_402_4.dat
+assets/360sdk_res/res_402_5.dat
+assets/360sdk_res/res_402_7.dat
+
+三、删除文件：
+assets/360sdk_res/res_400_1.dat
+assets/360sdk_res/res_400_2.dat
+assets/360sdk_res/res_400_3.dat
+assets/360sdk_res/res_400_4.dat
+assets/360sdk_res/res_400_5.dat
+assets/360sdk_res/res_400_7.dat
+
+
+1.1.6(304) -> 1.1.8(400)
+一、更新文件
+libs/360SDK.jar
+
+二、新增文件
+assets/360sdk_res/res_400_2.dat
+assets/360sdk_res/res_400_1.dat
+assets/so/armeabi/libplugin_phone.so
+assets/360sdk_res/res_400_3.dat
+assets/360sdk_res/res_400_4.dat
+assets/360sdk_res/res_400_5.dat
+assets/360sdk_res/res_400_7.dat
+demo-src/assets/so/x86/pp_encrypt
+assets/so/armeabi-v7a/libplugin_phone.so
+assets/so/x86
+assets/so/x86/libframeso.so
+assets/so/x86/libplugin_phone.so
+assets/so/x86/libskb.so
+assets/so/x86/pp_encrypt
+assets/so/x86/safekeyboard.lib
+
+三、删除文件
+assets/360sdk_res/res_304_2.dat
+assets/360sdk_res/res_304_3.dat
+assets/360sdk_res/res_304_4.dat
+assets/360sdk_res/res_304_5.dat
+assets/360sdk_res/res_304_7.dat
+assets/360sdk_res/res_304_1.dat
+
+四、Manifest文件变化，具体修改内容，参见demo代码中的manifest
+新增权限：
+<uses-permission android:name="android.webkit.permission.PLUGIN" />
+<!-- 系统账户操作权限 -->
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+<uses-permission android:name="android.permission.USE_CREDENTIALS" />
+<!-- 系统设置操作权限 -->
+<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+<uses-permission android:name="android.permission.READ_SETTINGS" />
+
+组件配置变化：
+<activity
+    android:name="com.qihoo.gamecenter.sdk.activity.ContainerActivity"
+    android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode|layoutDirection"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+    android:exported="true">
+</activity>
+
+新增组件：
+<!-- 微信支付界面-->
+<activity
+    android:name="com.iapppay.pay.channel.weixinpay.WeixinWapPayActivity"
+    android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+    android:theme="@android:style/Theme.Translucent" />
+<activity
+    android:name="com.junnet.heepay.ui.activity.WelcomeActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:excludeFromRecents="true"
+    android:screenOrientation="behind"
+    android:theme="@android:style/Theme.Dialog"
+    android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+<activity
+    android:name="com.junnet.heepay.ui.activity.WechatPaymentActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:excludeFromRecents="true"
+    android:screenOrientation="behind"
+    android:theme="@android:style/Theme.Dialog"
+    android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+<activity
+    android:name="com.ipaynow.plugin.activity.PayMethodActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:exported="false"
+    android:screenOrientation="behind"
+    android:theme="@android:style/Theme.Dialog" />
+<activity
+    android:name="com.ipaynow.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:screenOrientation="behind"
+    android:theme="@android:style/Theme.NoDisplay" />
+    
+<!-- qiku组件 start -->
+<activity
+    android:name="com.coolcloud.uac.android.plug.view.LoginActivity"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+</activity>
+<activity
+    android:name="com.coolcloud.uac.android.api.view.AssistActivity"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+</activity>
+<activity
+    android:name="com.coolcloud.uac.android.api.view.AuthenticateActivity"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+</activity>
+<activity
+    android:name="com.coolcloud.uac.android.api.view.FindpwdActivity"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+</activity>
+<activity
+    android:name="com.coolcloud.uac.android.api.view.LoginActivity"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+</activity>
+<activity
+    android:name="com.coolcloud.uac.android.api.view.OAuth2Activity"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+</activity>
+<activity
+    android:name="com.coolcloud.uac.android.api.view.RegisterActivity"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+</activity>
+<!-- qiku组件 end -->
+
+
+1.1.6(302) -> 1.1.6(304)
+一、更新文件
+libs/360SDK.jar
+
+二、新增文件：
+assets/360sdk_res/res_304_1.dat
+assets/360sdk_res/res_304_2.dat
+assets/360sdk_res/res_304_3.dat
+assets/360sdk_res/res_304_4.dat
+assets/360sdk_res/res_304_5.dat
+assets/360sdk_res/res_304_7.dat
+
+三、删除文件：
+assets/360sdk_res/res_302_1.dat
+assets/360sdk_res/res_302_2.dat
+assets/360sdk_res/res_302_3.dat
+assets/360sdk_res/res_302_4.dat
+assets/360sdk_res/res_302_5.dat
+assets/360sdk_res/res_302_7.dat
+
+1.1.6(300) -> 1.1.6(302)
+一、更新文件
+libs/360SDK.jar
+
+二、新增文件：
+assets/360sdk_res/res_302_1.dat
+assets/360sdk_res/res_302_2.dat
+assets/360sdk_res/res_302_3.dat
+assets/360sdk_res/res_302_4.dat
+assets/360sdk_res/res_302_5.dat
+assets/360sdk_res/res_302_7.dat
+
+三、删除文件：
+assets/360sdk_res/res_300_1.dat
+assets/360sdk_res/res_300_2.dat
+assets/360sdk_res/res_300_3.dat
+assets/360sdk_res/res_300_4.dat
+assets/360sdk_res/res_300_5.dat
+assets/360sdk_res/res_300_7.dat
+
+
+1.1.4(290) -> 1.1.6(300)：
+一、更新文件：
+libs/360SDK.jar
+assets/so/armeabi/libframeso.so
+assets/so/armeabi-v7a/libframeso.so
+
+二、新增文件：
+assets/so/armeabi/libskb.so
+assets/so/armeabi-v7a/libskb.so
+assets/360sdk_res/res_300_1.dat
+assets/360sdk_res/res_300_2.dat
+assets/360sdk_res/res_300_3.dat
+assets/360sdk_res/res_300_4.dat
+assets/360sdk_res/res_300_5.dat
+assets/360sdk_res/res_300_7.dat
+
+三、删除文件：
+assets/360sdk_res/res_290_1.dat
+assets/360sdk_res/res_290_2.dat
+assets/360sdk_res/res_290_3.dat
+assets/360sdk_res/res_290_4.dat
+assets/360sdk_res/res_290_5.dat
+assets/360sdk_res/res_290_7.dat
+
+
+1.1.2(280) -> 1.1.4(290) :
+一、更新文件：
+libs/360SDK.jar
+
+二、新增文件：
+assets/360sdk_res/res_290_1.dat
+assets/360sdk_res/res_290_2.dat
+assets/360sdk_res/res_290_3.dat
+assets/360sdk_res/res_290_4.dat
+assets/360sdk_res/res_290_5.dat
+assets/360sdk_res/res_290_7.dat
+
+三、删除文件：
+assets/360sdk_res/res_280_1.dat
+assets/360sdk_res/res_280_2.dat
+assets/360sdk_res/res_280_3.dat
+assets/360sdk_res/res_280_4.dat
+assets/360sdk_res/res_280_5.dat
+assets/360sdk_res/res_280_7.dat
+
+四、逻辑变化：
+1、登录接口返回数据格式有变化。只有access_token信息，因此需要修改登陆接口回调回来后，数据处理得逻辑。具体内容见文档。
+2、新增一个非必接的“获取社交初始化信息”的接口，如果游戏需要知道本次登录后玩家的新增好友、分享奖励等相关信息，可以使用该接口。具体内容见文档。
+3、新版本SDK中的微信appid支持从服务端配置，所以关于.wxapi.WXEntryActivity的配置，除非游戏打算永远不用微信分享，否则建议加上这个配置项，并将demo中WXEntryActivity的代码放到对应的位置。详见接入文档中的说明。
+
+
+1.1.0（270） -> 1.1.2（280）：
+一、更新文件：
+libs/360SDK.jar
+WXEntryActivity.java(位于demo的源码工程中，如果要使用SDK的微信分享，需要该文件)
+
+二、新增文件：
+demo-src/assets/360sdk_res/res_280_1.dat
+demo-src/assets/360sdk_res/res_280_2.dat
+demo-src/assets/360sdk_res/res_280_3.dat
+demo-src/assets/360sdk_res/res_280_4.dat
+demo-src/assets/360sdk_res/res_280_5.dat
+demo-src/assets/360sdk_res/res_280_7.dat
+
+三、删除文件：
+assets/360sdk_res/res_270_1.dat
+assets/360sdk_res/res_270_2.dat
+assets/360sdk_res/res_270_3.dat
+assets/360sdk_res/res_270_4.dat
+assets/360sdk_res/res_270_5.dat
+assets/360sdk_res/res_270_7.dat
+libs/UpdateLib_2.0.5.jar
+四、Manifest文件变化，具体修改内容，参见demo代码中的manifest：
+读取短信权限可以从Manifest中去掉，SDK不使用了。<uses-permission android:name="android.permission.READ_SMS" />
+<!-- ContainerActivity在manifest文件中的配置有变化，必须更新，加上属性android:exported="true" -->
+<activity
+    android:name="com.qihoo.gamecenter.sdk.activity.ContainerActivity"
+    android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+    android:exported="true" >
+</activity>
+
+
+1.0.8（262） -> 1.1.0(270)：
+一、更新文件：
+libs/360SDK.jar
+
+二、新增文件：
+assets/360sdk_res/res_270_1.dat
+assets/360sdk_res/res_270_2.dat
+assets/360sdk_res/res_270_3.dat
+assets/360sdk_res/res_270_4.dat
+assets/360sdk_res/res_270_5.dat
+assets/360sdk_res/res_270_7.dat
+
+三、删除文件：
+assets/360sdk_res/res1.dat
+assets/360sdk_res/res2.dat
+assets/360sdk_res/res3.dat
+assets/360sdk_res/res4.dat
+assets/360sdk_res/res5.dat
+assets/360sdk_res/res6.dat
+assets/360sdk_res/res7.dat   
+
+四、Manifest文件变化，具体修改内容，参见demo代码中的manifest：： 
+<!-- ContainerActivity在manifest文件中的配置有变化，必须更新，去掉exported属性 -->
+<activity
+    android:name="com.qihoo.gamecenter.sdk.activity.ContainerActivity"
+    android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+</activity>
+
+<!-- 删除以下组件，否则SDK会报错 -->
+<activity
+    android:name="com.qihoo.gamecenter.sdk.suspend.personal.PersonalActivity"
+    android:windowSoftInputMode="adjustPan"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+    android:screenOrientation="portrait"  >
+      <intent-filter>
+        <action android:name="" />
+      </intent-filter>
+</activity>
+<receiver
+    android:name="com.qihoo.gamecenter.sdk.suspend.local.QBootReceiver"
+    android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+    <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+    </intent-filter>
+</receiver>
+<service
+    android:name="com.qihoo.gamecenter.sdk.suspend.remote.QRemoteService"
+    android:exported="true"
+    android:process=":QSuspendRemote" >
+    <intent-filter>
+        <action android:name="com.qihoo.gamecenter.sdk.suspend.service.action.remote" />
+    </intent-filter>
+</service>
+<service
+    android:name="com.qihoo.gamecenter.sdk.suspend.local.QLocalService"
+    android:exported="false" >
+    <intent-filter>
+        <action android:name="com.qihoo.gamecenter.sdk.suspend.local.QLocalService" />
+    </intent-filter>
+</service>
+<!-- 删除部分end -->
+
+------------------------------------------------------------------------------------------------------------------
+
+1.0.8(260) -> 1.0.8(262)：
+一、更新文件：
+libs/360SDK.jar
+
+------------------------------------------------------------------------------------------------------------------
+
+1.0.6（252） -> 1.0.8(260):
+一、更新文件：
+libs/360SDK.jar
+assets/360sdk_res/res6.dat
+assets/360sdk_res/res5.dat
+assets/360sdk_res/res4.dat
+assets/360sdk_res/res3.dat
+
+二、Manifest文件变化，具体修改内容，参见demo代码中的manifest：
+<!-- 个人中心activity 必须添加 -->
+<activity
+    android:name="com.qihoo.gamecenter.sdk.suspend.personal.PersonalActivity"
+    android:windowSoftInputMode="adjustPan"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+    android:screenOrientation="portrait"  >
+      <intent-filter>
+        <action android:name="" />
+      </intent-filter>
+</activity>
+
+------------------------------------------------------------------------------------------------------------------
+
+1.0.6（250） -> 1.0.6(252):
+一、更新文件：
+libs/360SDK.jar
+
+------------------------------------------------------------------------------------------------------------------
+
+1.0.4（244） -> 1.0.6(250):
+一、更新文件：
+assets/360sdk_res/res1.dat
+assets/360sdk_res/res3.dat
+assets/360sdk_res/res4.dat
+libs/360SDK.jar
+
+二、新增文件：
+assets/360sdk_res/res7.dat
+assets/so/armeabi/libframeso.so
+assets/so/armeabi-v7a/libframeso.so
+assets/so/mips/libframeso.so
+assets/so/x86/libframeso.so
+
+三、逻辑变化：
+新增可选参数ProtocolKeys.UI_BACKGROUND_PICTURE_IN_ASSERTS，指定assets中的图片路径，作为背景图，该参数适合任何SDK中有UI界面的接口
+新增统一的分享接口，去掉微博分享接口,支持分享加好友的逻辑。
+支持实名注册和防沉迷查询的调用。
+支付接口会返回errCode标识登录状态失效，详见SdkUserBaseActivity类的mPayCallback实现。
+
+四、Manifest文件变化，具体修改内容，参见demo代码中的manifest：
+<!-- 微信分享需要这个权限，不接入微信可以忽略 -->
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+
+<!--alipay sdk begin 支付接口相关必须加上-->
+<activity
+    android:name="com.alipay.sdk.app.H5PayActivity"
+    android:screenOrientation="portrait" >
+</activity>
+<!--alipay sdk end -->
+<!-- 推送服务相关配置有修改，必须更新 -->
+<service
+    android:name="com.qihoo.psdk.local.QLocalService"
+    android:exported="true"
+    android:process=":QLocal" >
+    <intent-filter>
+        <action android:name="com.qihoo.psdk.service.action.local" />
+    </intent-filter>
+</service>
+
+<!-- 微信SDK 微信分享相关，如果不接入微信分享，可以忽略 -->
+<!-- 微信相关的activity，如果游戏接入微信分享需要在游戏工程内实现这个activity，请直接使用demo中的代码实现，并放在游戏的工程的对应路径下。 -->
+<activity
+    android:name=".wxapi.WXEntryActivity"
+    android:label="@string/demo_app_name"
+    android:theme="@android:style/Theme.Translucent.NoTitleBar"
+    android:exported="true" />
+
+<!-- 从微信开放平台申请的appid，游戏需要去申请自己的appid -->
+<meta-data
+    android:name="QHOPENSDK_WEIXIN_APPID"
+    android:value="wx02faa6a503e262e5" >
+</meta-data>
+<!-- 微信SDK end -->
+
+------------------------------------------------------------------------------------------------------------------
+
+1.0.4(242) -> 1.0.4(244):
+一、更新文件：
+libs/360SDK.jar
+assets/360sdk_res/res6.dat
+
+-------------------------------------------------------------------------------------------------------------------
+
+1.0.4（240) -> 1.0.4(242):
+一、更新文件：
+libs/360SDK.jar
+
+二、逻辑变化：
+登录接口会返回access_token，游戏需要用access_token获取一次360帐号的信息，会包含qid（360帐号唯一标识）。详见demo代码中SdkUserBaseActivity类的mLoginCallback成员的实现。    

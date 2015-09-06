@@ -1,0 +1,75 @@
+# view AndroidManifest.xml #generated:117
+-keep class com.alipay.sdk.app.H5PayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:226
+-keep class com.coolcloud.uac.android.api.view.AssistActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:230
+-keep class com.coolcloud.uac.android.api.view.AuthenticateActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:234
+-keep class com.coolcloud.uac.android.api.view.FindpwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:238
+-keep class com.coolcloud.uac.android.api.view.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:242
+-keep class com.coolcloud.uac.android.api.view.OAuth2Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:246
+-keep class com.coolcloud.uac.android.api.view.RegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:222
+-keep class com.coolcloud.uac.android.plug.view.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:124
+-keep class com.iapppay.pay.channel.weixinpay.WeixinWapPayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:142
+-keep class com.ipaynow.plugin.activity.PayMethodActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:148
+-keep class com.ipaynow.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:135
+-keep class com.junnet.heepay.ui.activity.WechatPaymentActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:128
+-keep class com.junnet.heepay.ui.activity.WelcomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:100
+-keep class com.qihoo.gamecenter.sdk.activity.ContainerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:88
+-keep class com.qihoo.gamecenter.sdk.demosp.activity.FlowTestLoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:94
+-keep class com.qihoo.gamecenter.sdk.demosp.activity.FlowTestPayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:82
+-keep class com.qihoo.gamecenter.sdk.demosp.activity.LandscapeSdkUserActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:75
+-keep class com.qihoo.gamecenter.sdk.demosp.activity.PortraitSdkUserActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:64
+-keep class com.qihoo.gamecenter.sdk.demosp.activity.SdkMainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:208
+-keep class com.qihoo.gamecenter.sdk.demosp.wxapi.WXEntryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:181
+-keep class com.qihoo.psdk.app.QStatActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:170
+-keep class com.qihoo.psdk.local.QBootReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:195
+-keep class com.qihoo.psdk.local.QLocalService { <init>(...); }
+
+# view AndroidManifest.xml #generated:187
+-keep class com.qihoo.psdk.remote.QRemoteService { <init>(...); }
+
+# view AndroidManifest.xml #generated:109
+-keep class com.qihoopp.qcoinpay.QcoinActivity { <init>(...); }
+

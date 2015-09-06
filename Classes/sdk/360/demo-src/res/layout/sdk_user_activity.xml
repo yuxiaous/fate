@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/sdk_ver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="@string/uninitiated"
+                android:textColor="@color/demo_base_info" />
+
+            <TextView
+                android:id="@+id/channel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="@string/uninitiated"
+                android:textColor="@color/demo_base_info" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/login_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="60dp"
+            android:layout_margin="5dp"
+            android:hint="@string/unlogin"
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="登录选项" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*"
+                    android:padding="3dip"
+                     >
+
+                    <TableRow
+                        android:id="@+id/tableRow1"
+                        android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                          >
+
+                        <CheckBox
+                            android:id="@+id/isHideWellcome"
+                            android:layout_width="1dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="隐藏欢迎界面"
+                            android:textColor="#000000" />
+
+                        <CheckBox
+                            android:id="@+id/isShowClose"
+                            android:layout_width="1dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="显示关闭按钮"
+                            android:textColor="#000000" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <CheckBox
+                            android:id="@+id/isSupportOffline"
+                            android:layout_width="1dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="支持离线"
+                            android:textColor="#000000" />
+
+                        <CheckBox
+                            android:id="@+id/isShowSwitchButton"
+                            android:layout_width="1dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="显示账号切换按钮"
+                            android:textColor="#000000" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <CheckBox
+                            android:id="@+id/isAutoLoginHideUI"
+                            android:layout_width="1dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="静默自动登录"
+                            android:textColor="#000000" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <CheckBox
+                            android:id="@+id/isShowDlgOnFailedAutoLogin"
+                            android:layout_width="wrap_content"
+                             android:layout_span="2"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="静默自动登录失败后显示界面"
+                            android:textColor="#000000" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow5"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content" >
+
+                         <CheckBox
+                             android:id="@+id/isDebugSocialShare"
+                        android:layout_width="wrap_content"
+                             android:layout_span="2"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="left"
+                             android:text="社交分享debug开关"
+                             android:textColor="#000000" />
+
+                     </TableRow>
+
+                     <TableRow
+                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <EditText
+                             android:id="@+id/bgAssetsPicturePath"
+                             android:layout_span="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                             android:textColor="@android:color/black"
+                             android:textColorHint="#ff999999"
+                             android:hint="Assets中的登录背景图片"/>
+                     </TableRow>
+                     <TableRow
+                         android:id="@+id/tableRow6"
+                         android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                         <EditText
+                             android:id="@+id/bgPictruePath"
+                            android:layout_span="2"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:textColor="@android:color/black"
+                             android:textColorHint="#ff999999"
+                             android:hint="登录背景图片"/>
+                    </TableRow>
+
+                    <TableRow
+                          android:id="@+id/tableRow7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <Button
+                            android:id="@+id/btn_login_choose"
+                            style="@style/demo_btn"
+                              android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                              android:text="登录"
+                    		android:textColor="@android:color/black"
+                              />
+
+                        <Button
+                            android:id="@+id/btn_switch_account"
+                            style="@style/demo_btn"
+                              android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                              android:text="切换账号"
+		                    android:textColor="@android:color/black"
+                               />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- payment -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="支付" />
+
+                <CheckBox
+                    android:id="@+id/isPayFixed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="定额支付"
+                    android:textColor="@android:color/black"/>
+
+                <Button
+                    android:id="@+id/btn_pay"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="支付" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <!-- 离线模式登录 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+            <!-- 获取社交模块初始化信息 -->
+            <LinearLayout style="@style/demo_layout" >
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="获取社交模块初始化信息"
+                    android:textColor="@android:color/black" />
+
+                <Button
+                    android:id="@+id/btn_social_module_init"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="获取" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 邀请好友 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="@string/invite_friend" />
+
+                <EditText
+                    android:id="@+id/edit_invite_nick"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="对方昵称"
+                    android:selectAllOnFocus="true"
+                    android:textColorHint="#ff999999"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/edit_invite_phone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="phone"
+                    android:selectAllOnFocus="true"
+                    android:textColorHint="#ff999999"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/edit_invite_qid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="qid"
+                    android:selectAllOnFocus="true"
+                    android:textColorHint="#ff999999"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/edit_invite_sms"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/yaoqing"
+                    android:selectAllOnFocus="true"
+                    android:textColorHint="#ff999999"
+                    android:textColor="@android:color/black" />
+
+                <Button
+                    android:id="@+id/btn_invite_friend_batch"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="@string/invite_friend_btntxt" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 上传积分 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="@string/upload_score" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                    	android:textColor="@android:color/black"
+                        android:text="score：" />
+
+                    <EditText
+                        android:id="@+id/edit_upload_score"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:selectAllOnFocus="true"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                    	android:textColor="@android:color/black"
+                        android:text="topnid：" />
+
+                    <EditText
+                        android:id="@+id/edit_score_topnid"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:selectAllOnFocus="true"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_upload_score"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="@string/upload_score_btntxt" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 获取游戏中好友排行榜 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="@string/get_game_top_friend" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+	                    android:textColor="@android:color/black"
+                        android:text="start:" />
+
+                    <EditText
+                        android:id="@+id/edit_getgamefrient_top_start"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:selectAllOnFocus="true"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+	                    android:textColor="@android:color/black"
+                        android:text="count: " />
+
+                    <EditText
+                        android:id="@+id/edit_getgamefrient_top_count"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="大于或等于20"
+                        android:inputType="number"
+                        android:selectAllOnFocus="true"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+	                    android:textColor="@android:color/black"
+                        android:text="topnid: " />
+
+                    <EditText
+                        android:id="@+id/edit_getgamefrient_topnid"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:selectAllOnFocus="true"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+	                    android:textColor="@android:color/black"
+                        android:text="orderby: " />
+
+                    <EditText
+                        android:id="@+id/edit_getgamefrient_orderby"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:selectAllOnFocus="true"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_get_game_top_friend"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="@string/get_game_top_friend_btntxt" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 获取游戏中的排行榜 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="获取游戏全球排名" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+	                    android:textColor="@android:color/black"
+                        android:text="topnid: " />
+
+                    <EditText
+                        android:id="@+id/edit_getgame_topnid"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:selectAllOnFocus="true"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+	                    android:textColor="@android:color/black"
+                        android:text="orderby: " />
+
+                    <EditText
+                        android:id="@+id/edit_getgame_orderby"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:selectAllOnFocus="true"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_get_game_top"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="@string/get_game_top_btntxt" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="@string/get_contact_content" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+	                    android:textColor="@android:color/black"
+                        android:text="start:" />
+
+                    <EditText
+                        android:id="@+id/edit_getcontact_start"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:selectAllOnFocus="true"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+	                    android:textColor="@android:color/black"
+                        android:text="count: " />
+
+                    <EditText
+                        android:id="@+id/edit_getcontact_count"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="20"
+                        android:inputType="number"
+                        android:selectAllOnFocus="true"
+                        android:text="20"
+                        android:textColorHint="#ff999999"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_get_contact_content"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="@string/get_game_friend_btntxt" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <!-- 分享 -->
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="分享游戏" />
+
+                <Button
+                    android:id="@+id/btn_share"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="分享" />
+            </LinearLayout>
+
+            <!-- 注销登录 -->
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColorHint="#ff999999"
+                    android:text="注销登录" />
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="注销" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="sdk邀请好友" />
+
+                <EditText
+                    android:id="@+id/et_invite_msg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="邀请信息"
+                    android:textColorHint="#ff999999"
+                    android:textColor="@android:color/black" />
+
+                <Button
+                    android:id="@+id/btn_invite_friend_by_sdk"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="邀请" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="显示好友排行" />
+
+                <EditText
+                    android:id="@+id/et_rank_id"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#ff999999"
+                    android:hint="排行榜id"/>
+
+                <Button
+                    android:id="@+id/btn_display_rank"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="显示" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="获取个人信息" />
+
+                <EditText
+                    android:id="@+id/et_get_user_info"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="用户QID"
+                    android:textColorHint="#ff999999"
+                    android:textColor="@android:color/black" />
+
+                <Button
+                    android:id="@+id/btn_get_user_info"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="显示" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="进入论坛" />
+
+                <Button
+                    android:id="@+id/btn_bbs"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="进入" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="退出接口" />
+
+                <Button
+                    android:id="@+id/btn_quit"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="退出" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="实名注册" />
+
+                <Button
+                    android:id="@+id/btn_realnamereg"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="注册" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/demo_layout" >
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="防沉迷" />
+
+                <Button
+                    android:id="@+id/btn_antAddiction"
+                    style="@style/demo_btn"
+                    android:textColor="@android:color/black"
+                    android:text="查询" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
