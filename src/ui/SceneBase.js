@@ -355,7 +355,10 @@ var SceneBase = lh.LHScene.extend({
                         var pos = BattleSystem.instance.randomDropItemPos(role,allNum_);
                         dropItem.setPosition(pos);
                         if(isLarge_){
-                            dropItem.setScale(1.5);
+                            dropItem.setScale(1.2);
+                        }
+                        else{
+                            dropItem.setScale(0.8);
                         }
                         that.addItem(dropItem);
                     }
