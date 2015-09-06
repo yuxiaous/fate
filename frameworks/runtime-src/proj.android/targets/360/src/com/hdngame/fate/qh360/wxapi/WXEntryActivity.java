@@ -1,4 +1,4 @@
-package com.hdngame.fate.wxapi;
+package com.hdngame.fate.qh360.wxapi;
 
 import com.qihoo.gamecenter.sdk.matrix.Matrix;
 import com.qihoo.gamecenter.sdk.protocols.ProtocolConfigs;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">命运长夜(单机版)</string>
+
+    <!-- 提示用户信息 -->
+    <string name="get_token_title">获取Access Token</string>
+    <string name="get_token_message">正在请求应用服务器,请稍候……</string>
+    <string name="get_user_title">获取Qihoo UserInfo</string>
+    <string name="get_user_message">正在请求应用服务器,请稍候……</string>
+    <string name="get_code_fail">从登录注册或切换账号界面返回，未获取Authorization Code</string>
+    <string name="get_token_fail">未获取Access Token</string>
+    <string name="get_user_fail">未从获取Qihoo UserInfo</string>
+    <string name="back_from_pay">从支付界面返回，请访问您的应用服务器查询结果</string>
+    <string name="enter_safe_env_failed">进入安全支付失败</string>
+    <string name="entering_safe_pay">正在进入安全支付…</string>
+</resources>
