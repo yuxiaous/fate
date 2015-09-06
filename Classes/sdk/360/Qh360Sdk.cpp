@@ -32,6 +32,16 @@ void Qh360Sdk::activityOnCreate()
     }
 }
 
+void Qh360Sdk::activityOnDestroy()
+{
+    cocos2d::log("Qh360Sdk::activityOnDestroy");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "destroy", "()V")) {
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+    }
+}
+
 void Qh360Sdk::init()
 {
 //    cocos2d::log("Qh360Sdk::init");

@@ -267,6 +267,13 @@ void SdkManager::activityOnResume()
     }
 }
 
+void SdkManager::activityOnDestroy()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnDestroy();
+    }
+}
+
 extern "C" {
     void Java_com_hdngame_fate_SdkManagerJni_setAppActivity(JNIEnv *env, jobject thiz, jobject activity)
     {
@@ -290,6 +297,12 @@ extern "C" {
     {
         cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnResume");
         SdkManager::activityOnResume();
+    }
+
+    void Java_com_hdngame_fate_SdkManagerJni_activityOnDestroy(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnDestroy");
+        SdkManager::activityOnDestroy();
     }
 }
 #endif

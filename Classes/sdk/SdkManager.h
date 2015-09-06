@@ -63,6 +63,7 @@ public:
     static void activityOnCreate();
     static void activityOnPause();
     static void activityOnResume();
+    static void activityOnDestroy();
 #endif
 };
 

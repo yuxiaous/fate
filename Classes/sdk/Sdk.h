@@ -41,6 +41,7 @@ public:
     virtual void activityOnCreate() {}
     virtual void activityOnPause() {}
     virtual void activityOnResume() {}
+    virtual void activityOnDestroy() {}
 #endif
 };
 
