@@ -122,6 +122,10 @@ ShopSystem.getShopPlatformId = function() {
             return 6;
         case GameChannel.Unicom:
             return 5;
+        case GameChannel.Qh360:
+            return 7;
+        case GameChannel.TencentMidas:
+            return 8;
         default :
             return 1;
     }

@@ -33,6 +33,10 @@ int GameUtils::getChannelId()
     return 6;
 #elif defined(CHANNEL_4399)
     return 7;
+#elif defined(CHANNEL_360)
+    return 8;
+#elif defined(CHANNEL_TENCENT_MIDAS) //应用宝
+    return 9;
 #endif
     
     return 0;

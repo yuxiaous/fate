@@ -136,7 +136,9 @@ var GameChannel = {
     Telecom: 4,
     Unicom: 5,
     Mzw: 6,
-    "4399": 7
+    "4399": 7,
+    Qh360: 8,
+    TencentMidas: 9 //腾讯应用宝
 };
 
 var LOG = util.log;
