@@ -74,6 +74,12 @@
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
             <!--<pathelement location="../../../Classes/sdk/Baitong/android/bdappunion_2.0_log_enabled.jar" />-->
+
+            <!-- tencent midas -->
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/MidasPlugin1.5.0c.jar" />
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/mqqopenpay.jar" />
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/libammsdk.jar" />
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/wlogin_sdk.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -101,6 +107,16 @@
             <!--</fileset>-->
         <!--</copy>-->
         <!-- Baitong end -->
+
+        <!-- tencent midas start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/TencentMidas/android">
+                <include name="assets/" />
+                <!--<include name="libs/armeabi/" />-->
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- tencent midas end -->
     </target>
 
     <!-- Import the actual build file.

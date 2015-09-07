@@ -248,6 +248,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="MidasPlugin1.5.0c">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/TencentMidas/android/libs/MidasPlugin1.5.0c.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="mmbilling.3.1.7">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/mmbilling/android/mmbilling.3.1.7.jar!/" />
