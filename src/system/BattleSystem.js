@@ -94,11 +94,11 @@ var BattleSystem = SystemBase.extend({
                 MessageBoxOk.show("体力不足");
                 return true;
             }
-        }
 
-        if(util.isLite() && map_id >= 301) {
-            MessageBoxOk.show("该游戏为试玩版，请支持正版，谢谢！");
-            return;
+            if(util.isLite() && map_id >= 301) {
+                MessageBoxOk.show("该游戏为试玩版，请支持正版，谢谢！");
+                return;
+            }
         }
 
         if(map_id) {
