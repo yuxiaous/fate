@@ -26,11 +26,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_MAP, function(obj) {
 
     //player_server.player_info.action -=2;
     //player_server.update
-
-
-
-    if(BattleSystem.instance.curIsTryBattle()){
-
+    if(BattleSystem.instance.curIsTryBattle(obj.map_id)){
     }
     else{
         var tmpAct = configdb.property[119].value;
