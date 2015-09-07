@@ -89,6 +89,7 @@ var player_server = {
         }
 
         this.player_info.gold += val;
+        database.commit("player_info", this.player_info);
         server.send(net_protocol_handlers.CMD_CS_PLAYER_INFO, {
             player: {
                 gold: this.player_info.gold
