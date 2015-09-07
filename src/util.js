@@ -129,7 +129,7 @@ var util = {
     },
 
     isLite: function() {
-        return false;
+        return true;
     }
 };
 

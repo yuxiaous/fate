@@ -107,8 +107,7 @@ var ResourcePanel = ui.GuiController.extend({
                 }
                 break;
             case ResourcePanel.Type.Gold:
-                var rechargeGold = new RechargePanel();
-                rechargeGold.pop();
+                ShopSystem.instance.changeToRechargeGold();
                 break;
             case ResourcePanel.Type.Diamond:
                 if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){

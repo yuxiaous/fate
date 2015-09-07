@@ -36,8 +36,6 @@ var gift_server = {
     },
 
     updateGiftDate : function (gift_type) {
-        LOG("update gift date");
-        //this.gift_info[obj.gift_type -1].buy_num += 1;
         switch (gift_type){
             case gift_server.GiftType.ZhuangBei:
                 gift_server.gift_info[0].buy_num += 1;

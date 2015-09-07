@@ -52,7 +52,11 @@ var ShopScene = ui.GuiSceneBase.extend({
                     this.createGoodsList();
                     this._ui.list_goods.jumpToTop();
                 }
-            }.bind(this))
+            }.bind(this)),
+            //notification.createBinding(notification.event.CHANGE_TO_CHARGE_PANEL, function () {
+            //    LOG("change to charge");
+            //    this._on_btn_tab_4();
+            //},this)
         ];
 
         this.refreshShopTabStatus();
