@@ -117,4 +117,11 @@ public class AppActivity extends Cocos2dxActivity{
         super.onResume();
         SdkManagerJni.activityOnResume();
     }
+
+    @Override
+    protected void onDestroy() {
+        System.out.println("AppActivity.onDestroy");
+        super.onDestroy();
+        SdkManagerJni.activityOnDestroy();
+    }
 }

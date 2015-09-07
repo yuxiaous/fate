@@ -100,7 +100,6 @@ var BagScene = ui.GuiWindowBase.extend({
             notification.createBinding(notification.event.SKIN_INFO, this.refreshProperty, this),
             notification.createBinding(notification.event.EQUIP_SLOT_INFO, this.refreshProperty, this),
             notification.createBinding(notification.event.GUIDE_UPDATE, function () {
-                LOG("208 208 --- ");
                 GuideSystem.AddGuidePanel(this._ui.btn_use,208);
             },this)
         ];
@@ -111,10 +110,17 @@ var BagScene = ui.GuiWindowBase.extend({
         this.refreshItemPage();
 
         GuideSystem.AddGuidePanel(this._ui.btn_strengthen,104);
+        if(GuideSystem.instance.getCurrentHadGuide()){
+            _.each(this._ui.ctrl_items, function(ctrl) {
+                var info = BagSystem.instance.items[ctrl.uid];
+                if(info && info.id == 200102) {
+                    this.onSelectItem(ctrl);
+                }
+            }, this);
+        }
 
        //var spIcon = this.weaponWidget.getSpIcon();
        //GuideSystem.AddGuidePanel(spIcon,205);
-
     },
 
     onExit: function() {

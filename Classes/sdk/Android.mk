@@ -18,7 +18,8 @@ LOCAL_SRC_FILES := SdkManager.cpp \
                    unipay/UniPaySdk.cpp \
                    egame/EgameSdk.cpp \
                    Baitong/BaitongSdk.cpp \
-                   360/Qh360Sdk.cpp
+                   360/Qh360Sdk.cpp \
+                   TencentMidas/TencentMidasSdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT

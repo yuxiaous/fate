@@ -148,7 +148,7 @@
         <!-- 微信SDK -->
         <!-- 微信相关的activity，如果游戏接入微信分享需要在游戏工程内实现这个activity，请直接使用demo中的代码实现，并放在游戏的工程的对应路径下。 -->
         <activity
-                android:name="com.hdngame.fate.wxapi.WXEntryActivity"
+                android:name="com.hdngame.fate.qh360.wxapi.WXEntryActivity"
                 android:exported="true"
                 android:label="@string/app_name"
                 android:theme="@android:style/Theme.Translucent.NoTitleBar" />

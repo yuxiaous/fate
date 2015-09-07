@@ -105,7 +105,7 @@ void KtplaySdk::init()
 
 void KtplaySdk::login()
 {
-    showLoginView();
+//    showLoginView();
 }
 
 void KtplaySdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)

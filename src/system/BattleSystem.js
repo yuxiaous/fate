@@ -85,9 +85,15 @@ var BattleSystem = SystemBase.extend({
     },
 
     battleMap: function(map_id) {
-        if(PlayerSystem.instance.action < 2){
-            MessageBoxOk.show("体力不足");
-            return true;
+
+        if(this.curIsTryBattle(map_id)){
+
+        }
+        else{
+            if(PlayerSystem.instance.action < 2){
+                MessageBoxOk.show("体力不足");
+                return true;
+            }
         }
 
         if(map_id) {
@@ -95,7 +101,6 @@ var BattleSystem = SystemBase.extend({
                 map_id: map_id
             });
         }
-        //return false;
     },
     battleMapResult: function(obj) {
         this.cur_battle_map = obj.map_id;
@@ -365,7 +370,11 @@ var BattleSystem = SystemBase.extend({
         return skin_;
     },
 
-    curIsTryBattle : function () {
+    curIsTryBattle : function (mapId_) {
+        if(mapId_ != undefined && mapId_ == configdb.property[108].value){
+            return true;
+        }
+
         if(this.cur_battle_map == configdb.property[108].value){
             return true;
         }
