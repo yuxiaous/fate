@@ -14,10 +14,21 @@ var shop_server = {
             //    status: 0
             //}
         };
+
+        this.shop_info = database.checkout("shop_info", [
+        ]);
+        this.update = [];
     },
 
     end: function() {
 
+    },
+
+    sync: function() {
+        if(this.update.length > 0) {
+            database.commit("shop_info", this.shop_info);
+            this.update = [];
+        }
     },
 
     onChargeCallback: function(json) {
@@ -65,6 +76,11 @@ var shop_server = {
 
         // gain
         var count = config.buy_count * good_num;
+
+        if(config.sale_count != 0 && config.sale_count > this.getHistoryBuyInfo(good_id)){
+            count = config.buy_count * (1 + config.on_sale /10) * good_num;
+        }
+
         if(config.buy_type == shop_server.GoodsType.Equip || config.buy_type == shop_server.GoodsType.Item) {
             if(bag_server.addItem(config.buy_id, count) == false) {
                 return false;
@@ -224,12 +240,56 @@ var shop_server = {
             this.buyGood(info.good_id, 1, info.order);
         }
 
+        shop_server.updateHistoryBuyInfo(info.good_id,1);
+
         server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {
             result: result,
             good_id: info.good_id,
             remaining: 0,
             order: info.order
         });
+    },
+
+    sendHistoryBuyInfo : function () {
+         server.send(net_protocol_handlers.CMD_SC_SHOP_HISTORY_BUY_INFO,{
+             history_buy_info : this.shop_info
+         });
+    },
+
+    updateHistoryBuyInfo : function (item_id,buy_num) {
+        var tmpNum = 1;
+        if(buy_num != undefined){
+            tmpNum = buy_num;
+        }
+        var hadChange = false;
+        _.forEach(this.shop_info, function (itemInfo_) {
+            if(itemInfo_ && itemInfo_.item_id == item_id){
+                itemInfo_.buy_num += tmpNum;
+            }
+        },this);
+
+        if(!hadChange){
+            this.shop_info.push({
+                item_id : item_id,
+                buy_num : tmpNum
+            });
+        }
+        this.update.push({
+            refresh : true
+        });
+
+        this.sendHistoryBuyInfo();
+    },
+
+    getHistoryBuyInfo : function (good_id) {
+        var buy_num = 0;
+        _.forEach(this.shop_info, function (itemInfo_) {
+            if(itemInfo_ && itemInfo_.item_id == good_id){
+                buy_num = itemInfo_.buy_num;
+            }
+        },this);
+
+        return buy_num;
     },
     checkOrder: function(order) {
         var info = this.orders[order];
@@ -262,10 +322,11 @@ shop_server.PayType = {
 };
 
 server.registerCallback(net_protocol_handlers.CMD_CS_SHOP_BUY_GOODS, function(obj) {
-    LOG("CMD_CS_SHOP_BUY_GOODS");
     if(shop_server.buyGood(obj.good_id, obj.count) == false) {
         return;
     }
+
+    shop_server.updateHistoryBuyInfo(obj.good_id,obj.count);
 
     server.send(net_protocol_handlers.CMD_SC_SHOP_BUY_RESULT, {
         result: 0,

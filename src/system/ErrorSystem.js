@@ -21,13 +21,16 @@ var ErrorSystem = SystemBase.extend({
     onErrorMessage: function(obj) {
         var error = net_error_code[obj.code];
         if(error) {
-            //MessageBoxOk.show(error.desc);
-            var mesWin = new MessageBoxOkCancel(error.desc,"购买");
-            mesWin.setOkCallback(function () {
-                var rechargeGold = new RechargePanel();
-                rechargeGold.pop();
-            },this);
-            mesWin.pop();
+            if(obj.code == net_error_code.ERR_LESS_GOLD){
+                var mesWin = new MessageBoxOkCancel(error.desc,"购买");
+                mesWin.setOkCallback(function () {
+                   ShopSystem.instance.changeToRechargeGold();
+                },this);
+                mesWin.pop();
+            }
+            else{
+                MessageBoxOk.show(error.desc);
+            }
         }
     }
 });

@@ -174,6 +174,23 @@
 		]
 	},
 
+
+    "CMD_SC_SHOP_HISTORY_BUY_INFO" :
+    {
+      "code" : 1105,
+      "type" : "SC",
+      "desc" : "商城购买统计购买次数",
+      "schemes" :
+      [
+        ["list", "history_buy_info", "购买对应的购买次数",
+          [
+            ["uint32", "item_id", "购买物品ID"],
+            ["uint32", "buy_num", "历时物品购买的数量"]
+          ]
+        ]
+      ]
+    },
+
 	"CMD_SC_SKILL_INFO":
 	{
 		"code": 1201,

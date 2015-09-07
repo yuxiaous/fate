@@ -88,6 +88,10 @@ var RechargeItem = ui.GuiController.extend({
             persentedBg : this.seekWidgetByName("bg_persented")
         }
 
+        this._bindings = [
+            notification.createBinding(notification.event.SHOP_UPDATE_HISTORY_BUYINFO, this.refreshItemInfo, this)
+        ];
+
     },
 
     refreshItemInfo : function () {
@@ -103,38 +107,46 @@ var RechargeItem = ui.GuiController.extend({
         this._ui.itemIcon.loadTexture(iconStrContainer[this.item_idx]);
 
         var config = ShopSystem.getConfig(this.item_id);
-        this._ui.bgPanel.setTouchEnabled(true);
 
-        this._ui.bgPanel.addTouchEventListener(function (touch,event) {
-            if(event == ccui.Widget.TOUCH_BEGAN){
-                this._ui.bgPanel.setScale(1.1);
+        if(config){
+            this._ui.bgPanel.setTouchEnabled(true);
+
+            this._ui.bgPanel.addTouchEventListener(function (touch,event) {
+                if(event == ccui.Widget.TOUCH_BEGAN){
+                    this._ui.bgPanel.setScale(1.1);
+                }
+                else if(event == ccui.Widget.TOUCH_MOVED){
+                    this._ui.bgPanel.setScale(1.0);
+                }
+                else if(event == ccui.Widget.TOUCH_ENDED){
+                    this._ui.bgPanel.setScale(1.0);
+
+                    ShopSystem.instance.buyGood(this.item_id, 1);
+                }
+            },this)
+
+            //var getValue = parseFloat( (config.buy_count ) * (1 + config.on_sale/10) );
+            this._ui.getLabel.setString(this._ui.getLabel._str_original.format(config.buy_count/10000));
+
+            this._ui.payLabel.setString(this._ui.payLabel._str_original.format(config.pay_cost));
+
+            if(config.on_sale == 0){
+                this._ui.persentedBg.setVisible(false);
             }
-            else if(event == ccui.Widget.TOUCH_MOVED){
-                this._ui.bgPanel.setScale(1.0);
+            else{
+                if(config.sale_count > ShopSystem.instance.getHistoryBuyInfo(this.item_id)){
+                    this._ui.persentedBg.setVisible(true);
+                    var persentedValue = parseFloat( (config.buy_count / 10000 ) * (config.on_sale/10) );
+                    this._ui.persentedLabel.setString(this._ui.persentedLabel._str_original.format(persentedValue.toFixed(1)));
+                }
+                else{
+                    this._ui.persentedBg.setVisible(false);
+                }
+
             }
-            else if(event == ccui.Widget.TOUCH_ENDED){
-                this._ui.bgPanel.setScale(1.0);
-
-                ShopSystem.instance.buyGood(this.item_id, 1);
-            }
-        },this)
-
-        this._ui.getLabel.setString(this._ui.getLabel._str_original.format(config.buy_count/10000));
-
-        this._ui.payLabel.setString(this._ui.payLabel._str_original.format(config.pay_cost));
-
-        if(config.on_sale == 0){
-            this._ui.persentedBg.setVisible(false);
         }
-        else{
-            this._ui.persentedBg.setVisible(true);
-            LOG("on sale = " + config.on_sale);
 
-            var persentedValue = parseFloat( (config.pay_cost ) * (1-config.on_sale/10) );
 
-            LOG("persented value = " + persentedValue);
-            this._ui.persentedLabel.setString(this._ui.persentedLabel._str_original.format(persentedValue.toFixed(1)));
-        }
     },
 
     setItemDataInfo : function (item_id_,item_idx_) {
@@ -147,6 +159,7 @@ var RechargeItem = ui.GuiController.extend({
     onExit : function () {
 
         this._ui = null;
+        notification.removeBinding(this._bindings);
         this._super();
     }
 });

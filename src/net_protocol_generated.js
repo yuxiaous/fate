@@ -227,6 +227,14 @@ net_protocol_handlers.SEND_CMD_CS_ENDLESS_BATTLE_END = function(obj) {
 	_SendFunc(1622, obj);
 };
 
+// @protocol 商城购买统计购买次数
+// @param {list} history_buy_info, 购买对应的购买次数
+net_protocol_handlers.CMD_SC_SHOP_HISTORY_BUY_INFO = 1105;
+_BindFunc(1105, function(obj) {
+	cc.assert(obj.history_buy_info != undefined, "CMD_SC_SHOP_HISTORY_BUY_INFO.history_buy_info is undefined.");
+	net_protocol_handlers.ON_CMD_SC_SHOP_HISTORY_BUY_INFO(obj);
+});
+
 // @protocol 初始化进度
 // @param {uint32} percent, 初始化百分比
 net_protocol_handlers.CMD_SC_INIT_PROGRESS = 507;

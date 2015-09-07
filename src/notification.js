@@ -98,6 +98,8 @@ notification.event = {
 
     SHOP: 200,
     SHOP_BUY_RESULT: 201,
+    CHANGE_TO_CHARGE_PANEL : 202,
+    SHOP_UPDATE_HISTORY_BUYINFO : 203,
 
     SKILL: 300,
     SKILL_INFO: 301,

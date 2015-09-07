@@ -6,6 +6,8 @@
 var ShopSystem = SystemBase.extend({
     ctor: function () {
         this._super();
+
+        this._historyBuyInfo  = [];
     },
 
     onInit: function () {
@@ -13,6 +15,7 @@ var ShopSystem = SystemBase.extend({
         net_protocol_handlers.ON_CMD_SC_SHOP_BUY_RESULT = this.onBuyGoodResult.bind(this);
         net_protocol_handlers.ON_CMD_SC_SHOP_ORDER_RESULT = this.onOrderResult.bind(this);
         net_protocol_handlers.ON_CMD_SC_BUY_SHILIAN_FINISH = this.onBuyShiLianResult.bind(this);
+        net_protocol_handlers.ON_CMD_SC_SHOP_HISTORY_BUY_INFO = this.onShopHistoryInfo.bind(this);
     },
 
     onFinalize: function () {
@@ -20,6 +23,8 @@ var ShopSystem = SystemBase.extend({
         net_protocol_handlers.ON_CMD_SC_SHOP_BUY_RESULT = null;
         net_protocol_handlers.ON_CMD_SC_SHOP_ORDER_RESULT = null;
         net_protocol_handlers.ON_CMD_SC_BUY_SHILIAN_FINISH = null;
+        net_protocol_handlers.ON_CMD_SC_SHOP_HISTORY_BUY_INFO = null;
+        this._historyBuyInfo = null;
     },
 
     buyGood: function(id, num) {
@@ -103,6 +108,55 @@ var ShopSystem = SystemBase.extend({
                 virtualCurrencyAmount: 0,
                 paymentType: ""
             }));
+    },
+
+    onShopHistoryInfo : function (obj) {
+        LOG("---=========");
+        LOG(obj);
+        _.forEach(this._historyBuyInfo, function (info_) {
+            LOG("item id = " + info_.item_id +", buy_num = " + info_.buy_num);
+        });
+
+        //if(obj && obj.history_buy_info){
+        //    this._historyBuyInfo.concat(obj.history_buy_info);
+        //
+        //}
+
+        this._historyBuyInfo = obj.history_buy_info;
+
+        _.forEach(this._historyBuyInfo, function (info_) {
+            LOG("item id = " + info_.item_id +", buy_num = " + info_.buy_num);
+        });
+
+        notification.emit(notification.event.SHOP_UPDATE_HISTORY_BUYINFO);
+    },
+
+    getHistoryBuyInfo : function (good_id) {
+        var buy_num = 0;
+        _.forEach(this._historyBuyInfo, function (itemInfo_) {
+            if(itemInfo_ && itemInfo_.item_id == good_id){
+                buy_num = itemInfo_.buy_num;
+            }
+        },this);
+
+        return buy_num;
+    },
+
+    changeToRechargeGold : function () {
+        //var rechargeGold = new RechargePanel();
+        //rechargeGold.pop();
+        //return;
+        if(util.getChannelId() == GameChannel.Qh360 || util.getChannelId() == GameChannel.TencentMidas){
+            var rechargeGold = new RechargePanel();
+            rechargeGold.pop();
+        }
+        else{
+           var sce = ui.pushScene(ShopScene);
+            sce._on_btn_tab_4();
+            //LOG("---- btn 4");
+            //notification.emit(notification.event.CHANGE_TO_CHARGE_PANEL);
+        }
+
     }
 });
 

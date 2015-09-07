@@ -268,6 +268,16 @@ GuideSystem.AddGuidePanel = function (btn_,guideId_,topDisplay_) {
     return true;
 }
 
+GuideSystem.JudgeStrSaveValue = function (str_) {
+    var tmpValue = jsb.JsonStorage.GetInstance(LoginSystem.settingFile).getBoolForKey(str_);
+    if(!tmpValue){
+        jsb.JsonStorage.GetInstance(LoginSystem.settingFile).setBoolForKey(str_,true);
+        jsb.JsonStorage.GetInstance(LoginSystem.settingFile).flush();
+        return false;
+    }
+    return true;
+}
+
 GuideSystem.SkillDes = [
      "skill_des_1",
      "skill_des_2",

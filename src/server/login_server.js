@@ -111,6 +111,9 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
         get_done :login_reward_server.getCurDailyVipIsGetDone()
     })
 
+    //更新商店购买物品的次数
+    shop_server.sendHistoryBuyInfo();
+
     server.send(net_protocol_handlers.CMD_SC_INIT_END);
 });
 
