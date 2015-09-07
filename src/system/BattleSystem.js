@@ -96,6 +96,11 @@ var BattleSystem = SystemBase.extend({
             }
         }
 
+        if(util.isLite() && map_id >= 301) {
+            MessageBoxOk.show("该游戏为试玩版，请支持正版，谢谢！");
+            return;
+        }
+
         if(map_id) {
             net_protocol_handlers.SEND_CMD_CS_BATTLE_MAP({
                 map_id: map_id

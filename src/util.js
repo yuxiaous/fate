@@ -126,6 +126,10 @@ var util = {
 
     getUdid: function() {
         return jsb.GameUtils.getUdid();
+    },
+
+    isLite: function() {
+        return false;
     }
 };
 
