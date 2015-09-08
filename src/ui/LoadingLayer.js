@@ -139,9 +139,21 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
         //ramdon avatar
 
         if(this.loadBar){
-            this._avater = new ShowRole(1101);
+            var randomRole = _.random(1,3);
+            var roleId = 1201;
+            if(randomRole == 1){
+                roleId = 1101;
+            }
+            else if(randomRole == 2){
+                roleId = 1201;
+            }
+            else{
+                roleId = 1001;
+            }
+
+            this._avater = new ShowRole(roleId);
             this._avater.setWalkAction();
-            this._avater.setScale(0.8);
+            this._avater.setScale(0.6);
             this._avater.setPosition(cc.p(0,30));
             this.loadBar.addChild(this._avater);
 
