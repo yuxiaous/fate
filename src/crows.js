@@ -17,11 +17,16 @@ crows.start = function() {
 
     MusicManager.getInstance().setBackgroundVolumn(0.5);
     MusicManager.getInstance().setEffectVolume(0.5);
+    
+    switch (util.getChannelId()) {
+        case GameChannel.AppStore:
+            ui.pushScene(StartLayerScene);
+            break;
 
-    ui.pushScene(LOGScene);
-
-    //ui.pushScene(StartLayerScene);
-
+        default:
+            ui.pushScene(LOGScene);
+            break;
+    }
 };
 
 crows.quit = function() {
