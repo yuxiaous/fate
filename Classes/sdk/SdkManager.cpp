@@ -73,6 +73,11 @@ BaitongSdk baitongsdk;
 Qh360Sdk qh360sdk;
 #endif
 
+#ifdef SDK_TENCENT_MIDAS
+#include "TencentMidas/TencentMidasSdk.h"
+TencentMidasSdk tencentmidassdk;
+#endif
+
 USING_NS_CC;
 
 

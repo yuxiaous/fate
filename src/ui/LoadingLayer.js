@@ -153,7 +153,7 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
 
             this._avater = new ShowRole(roleId);
             this._avater.setWalkAction();
-            this._avater.setScale(0.6);
+            this._avater.setScale(0.4);
             this._avater.setPosition(cc.p(0,30));
             this.loadBar.addChild(this._avater);
 

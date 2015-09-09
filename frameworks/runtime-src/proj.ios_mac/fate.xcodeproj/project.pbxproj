@@ -3354,9 +3354,7 @@
 					"$(inherited)",
 					CHANNEL_APPSTORE,
 					SDK_TALKING_DATA_GA,
-					SDK_KTPLAY,
 					SDK_APP_STORE,
-					SDK_WE_REC,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Classes/protobuf-lite";
@@ -3407,7 +3405,6 @@
 					"$(inherited)",
 					CHANNEL_APPSTORE,
 					SDK_TALKING_DATA_GA,
-					SDK_KTPLAY,
 					SDK_APP_STORE,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;

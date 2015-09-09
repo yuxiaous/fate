@@ -32,5 +32,11 @@
     <orderEntry type="library" name="360SDK" level="project" />
     <orderEntry type="library" name="android-support-v4" level="project" />
     <orderEntry type="library" name="MidasPlugin1.5.0c" level="project" />
+    <orderEntry type="library" name="wlogin_sdk" level="project" />
+    <orderEntry type="library" name="libammsdk" level="project" />
+    <orderEntry type="library" name="mqqopenpay" level="project" />
+    <orderEntry type="library" name="mid-sdk-2.10" level="project" />
+    <orderEntry type="library" name="Xg_sdk_2.37" level="project" />
+    <orderEntry type="library" name="android-support-v4 (2)" level="project" />
   </component>
 </module>
