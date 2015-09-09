@@ -302,13 +302,13 @@ var SceneBase = lh.LHScene.extend({
                 var dropItem = new DroppedItem(dropId,dropType);
                 var pos = role.getSpacePosition();
 
-                var size = this._physicalWorld.getContentSize();
+                var size = MapSystem.instance.getGameMapRect();
                 var tmpValue = 0;
-                if(pos.x >= size.width - 200){
-                    tmpValue - 200;
+                if(pos.x >= size.width - 300){
+                    tmpValue = - 300;
                 }
-                else if(pos.x <= 100){
-                    tmpValue = 100;
+                else if(pos.x <= 300){
+                    tmpValue = 300;
                 }
                 dropItem.setPosition(pos.x + tmpValue,pos.y);
                 this.addItem(dropItem);
