@@ -111,7 +111,7 @@ var util = {
 
         var evertRecover = configdb.property[120].value;
 
-        var ret = Math.floor( overTime / evertRecover)
+        var ret = Math.floor( overTime / evertRecover);
         if( ret <= 0){
             return 0;
         }
@@ -129,7 +129,7 @@ var util = {
     },
 
     isLite: function() {
-        return true;
+        return false;
     }
 };
 
