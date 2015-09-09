@@ -233,8 +233,7 @@ SelectHeroPanel.ConfirmWindow = ui.GuiWindowBase.extend({
     },
 
     _on_btn_buy: function() {
-        //ui.pushScene(new ShopScene(ShopSystem.ShopType.Role));
-        ui.replaceScene(new ShopScene(ShopSystem.ShopType.Role));
+        ui.pushScene(new ShopScene(ShopSystem.ShopType.Role));
         this.close();
     }
 });

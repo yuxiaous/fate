@@ -80,16 +80,6 @@ var BagScene = ui.GuiWindowBase.extend({
 
         this._bindings = [
             notification.createBinding(notification.event.ITEM_INFO, this.refreshItemPage, this),
-            notification.createBinding(notification.event.EQUIP_PROPERTY_CHANGE, function () {
-                var curScore = PlayerSystem.instance.getPlayerBattleScore().score;
-                CombatForcesEffect.createForcesEffect(curScore - this._last_score,this)
-                this._last_score = PlayerSystem.instance.getPlayerBattleScore().score;
-                //_.each(this._ui.ctrl_items, function(item, i) {
-                //    if(i == this._sel_index){
-                //        item.setRaiseEffect();
-                //    }
-                //}, this);
-            }, this),
             notification.createBinding(notification.event.SKIN_INFO, this.createRoleAvatar, this),
             notification.createBinding(notification.event.PLAYER_INFO, this.refreshProperty, this),
             notification.createBinding(notification.event.EQUIP_STRENGTHEN_RESULT, function() {
@@ -164,7 +154,9 @@ var BagScene = ui.GuiWindowBase.extend({
             this._ui.lbl_prop_exp.setString(this._ui.lbl_prop_exp._str_original.format(cur_exp, need_exp));
         }
 
-        PlayerSystem.instance.showPlayerScoreChange();
+        this.scheduleOnce(function() {
+            PlayerSystem.instance.showPlayerScoreChange();
+        });
     },
 
     clearItemList: function() {
