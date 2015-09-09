@@ -86,7 +86,7 @@ var IconWidget = ui.GuiController.extend({
             this._ui.lbl_num.setVisible(true);
 
             if(this.num >= 10000 && this.num % 10000 == 0) {
-                this._ui.lbl_num.setString(String(Math.floor(this.num/10000)) + "万");
+                this._ui.lbl_num.setString(String(Math.floor(this.num/10000)) + "w");
             }
             else {
                 this._ui.lbl_num.setString(String(this.num));
