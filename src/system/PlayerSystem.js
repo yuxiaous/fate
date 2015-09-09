@@ -50,7 +50,7 @@ var PlayerSystem = SystemBase.extend({
     },
 
     getPlayerBattleScore: function(skin_id) {
-        var ret = {hp: 0, mp: 0, atk: 0, def: 0, crit: 0, sunder: 0, score: 0};
+        var ret = {hp: 0, mp: 0, atk: 0, def: 0, crit: 0 , critPro : 0, sunder: 0, score: 0};
 
         if(skin_id == undefined) {
             skin_id = SkinSystem.instance.use_skin;
@@ -71,7 +71,7 @@ var PlayerSystem = SystemBase.extend({
             ret.def += config.ext_def || 0;
             ret.crit += config.ext_crit || 0;
             ret.sunder += config.ext_sunder || 0;
-            ret.critPro += config.crit_pro || 0;
+            ret.critPro += config.crit_probability || 0;
         }
 
         config = configdb.levelup[this.level];
