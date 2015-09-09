@@ -39,7 +39,9 @@ void TalkingDataGameAnalyticsSdk::init()
     const char *appid = "59EC3DE05BB0234EA444193F4B9E0E4B";
     const char *channel = "Develop";
 
-#if defined(CHANNEL_CMCC_MM)
+#if defined(CHANNEL_APPSTORE)
+    channel = "AppStore";
+#elif defined(CHANNEL_CMCC_MM)
     channel = "CmccMm";
 #elif defined(CHANNEL_CMCC_AND)
     channel = "CmccAnd";
@@ -53,8 +55,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "4399";
 #elif defined(CHANNEL_360)
     channel = "360";
-//#elif defined(CHANNEL_TENCENT_MIDAS)
-//    channel = "TencentMidas";
+//#elif defined(CHANNEL_TENCENT_QQ)
+//    channel = "TencentQq";
 
 //=====================================================
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
