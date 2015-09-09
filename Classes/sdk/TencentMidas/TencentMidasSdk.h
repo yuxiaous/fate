@@ -10,7 +10,7 @@ public:
     TencentMidasSdk();
     static TencentMidasSdk *getInstance();
 
-//    virtual void init() override;
+    virtual void init() override;
 //    virtual void update(float dt) override;
 //    virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
 //
