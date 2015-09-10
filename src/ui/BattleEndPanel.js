@@ -473,7 +473,7 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
         }
 
         if(BattleSystem.instance.buyBattleRevive(this._shop_id)){
-            notification.emit(notification.event.GAME_PAUSE);
+           // notification.emit(notification.event.GAME_PAUSE);
             this.close();
         }
 

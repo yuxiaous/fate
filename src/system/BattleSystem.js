@@ -112,9 +112,12 @@ var BattleSystem = SystemBase.extend({
 
         this._curMapDropItems.length = 0;
         this.needDropItems = this._curLevelNeedDropData();
-
-        //notification.emit(notification.event.BATTLE_MAP_RESULT);
+        
         ui.pushScene(new LoadingScene());
+
+        //var scene = new BattleNorScene(obj.map_id);
+        ////ui.replaceScene(scene);
+        //ui.pushScene(scene);
         
         sdk_manager.sendSdkCommand("TalkingDataGA", "onBegin", "map."+String(obj.map_id));
     },

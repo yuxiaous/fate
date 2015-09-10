@@ -21,11 +21,11 @@ var LoadingScene = ui.GuiSceneBase.extend({
                 if(mapConfig ){
                     if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
                         var scene = new BattleNorScene(sel_map_id);
-                        ui.replaceScene(scene);
+                        ui.pushScene(scene);
                     }
                     else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
                         var scene = new BattleDefScene(sel_map_id);
-                        ui.replaceScene(scene);
+                        ui.pushScene(scene);
                     }
                 }
                 else{
