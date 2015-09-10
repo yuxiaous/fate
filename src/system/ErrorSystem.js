@@ -21,7 +21,7 @@ var ErrorSystem = SystemBase.extend({
     onErrorMessage: function(obj) {
         var error = net_error_code[obj.code];
         if(error) {
-            if(obj.code == net_error_code.ERR_LESS_GOLD){
+            if(obj.code == net_error_code.ERR_LESS_GOLD || obj.code == net_error_code.ERR_LESS_DIAMOND){
                 var mesWin = new MessageBoxOkCancel(error.desc,"购买");
                 mesWin.setOkCallback(function () {
                    ShopSystem.instance.changeToRechargeGold();

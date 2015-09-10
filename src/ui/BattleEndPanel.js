@@ -472,11 +472,15 @@ var BattleRevivePanel = ui.GuiWindowBase.extend({
             return;
         }
 
-        //BattleSystem.instance.sendReviveBattle();
+        if(BattleSystem.instance.buyBattleRevive(this._shop_id)){
+            notification.emit(notification.event.GAME_PAUSE);
+            this.close();
+        }
 
-        ShopSystem.instance.buyGood(this._shop_id);
-
-        this.close();
+        //notification.emit(notification.event.GAME_PAUSE);
+        //ShopSystem.instance.buyGood(this._shop_id);
+        //
+        //this.close();
     },
 
     _on_btn_close : function () {

@@ -11,7 +11,7 @@ net_error_code[101] = {
 net_error_code.ERR_LESS_DIAMOND = 102;
 net_error_code[102] = {
 	code: 102,
-	desc: "钻石不足"
+	desc: "钻石不足,是否前往购买钻石"
 };
 
 net_error_code.ERR_LESS_ITEM = 103;

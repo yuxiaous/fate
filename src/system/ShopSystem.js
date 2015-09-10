@@ -143,17 +143,17 @@ var ShopSystem = SystemBase.extend({
     },
 
     changeToRechargeGold : function () {
-        //var rechargeGold = new RechargePanel();
-        //rechargeGold.pop();
-        //return;
         if(util.getChannelId() == GameChannel.Qh360 || util.getChannelId() == GameChannel.TencentMidas){
             var rechargeGold = new RechargePanel();
             rechargeGold.pop();
         }
+        else if(util.getChannelId() == GameChannel.AppStore){
+            var rechargeGold = new RechargePanel(true);
+            rechargeGold.pop();
+        }
         else{
-           var sce = ui.pushScene(ShopScene);
-            sce._on_btn_tab_4();
-            //LOG("---- btn 4");
+            //var sce = ui.pushScene(ShopScene);
+            //sce._on_btn_tab_4();
             //notification.emit(notification.event.CHANGE_TO_CHARGE_PANEL);
         }
 

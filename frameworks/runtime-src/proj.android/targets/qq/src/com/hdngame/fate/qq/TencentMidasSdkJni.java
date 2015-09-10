@@ -1,4 +1,4 @@
-package com.hdngame.fate.midas;
+package com.hdngame.fate.qq;
 
 import android.util.Log;
 import android.widget.Toast;
@@ -39,34 +39,6 @@ public class TencentMidasSdkJni {
     public static native String getSessionType();
     public static native String getPf();
     public static native String getPfKey();
-
-//    public static void setLaunchType(int launchType) {
-//        TencentMidasSdkJni.launchType = launchType;
-//    }
-//    public static void setAppSecretKey(String appSecretKey) {
-//        TencentMidasSdkJni.appSecretKey = appSecretKey;
-//    }
-//    public static void setOfferId(String offerId) {
-//        TencentMidasSdkJni.offerId = offerId;
-//    }
-//    public static void setUserId(String userId) {
-//        TencentMidasSdkJni.userId = userId;
-//    }
-//    public static void setUserKey(String userKey) {
-//        TencentMidasSdkJni.userKey = userKey;
-//    }
-//    public static void setSessionId(String sessionId) {
-//        TencentMidasSdkJni.sessionId = sessionId;
-//    }
-//    public static void setSessionType(String sessionType) {
-//        TencentMidasSdkJni.sessionType = sessionType;
-//    }
-//    public static void setPf(String pf) {
-//        TencentMidasSdkJni.pf = pf;
-//    }
-//    public static void setPfKey(String pfKey) {
-//        TencentMidasSdkJni.pfKey = pfKey;
-//    }
 
     private static String getMidasPluginVersion() {
         return APMidasPayAPI.getMidasPluginVersion();

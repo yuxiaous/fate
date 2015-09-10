@@ -336,6 +336,37 @@ var BattleSystem = SystemBase.extend({
             player_id : 101
         });
     },
+
+    buyBattleRevive : function (buyId_) {
+        LOG("buy i d= " + buyId_);
+        var config = ShopSystem.getConfig(buyId_);
+        if(config == undefined) {
+            return false;
+        }
+
+        if(config.pay_type == ShopSystem.PayType.RMB) {
+
+        }
+        else if(config.pay_type == ShopSystem.PayType.Diamond) {
+            var ownDiamond = PlayerSystem.instance.diamond;
+            if(config.pay_cost > ownDiamond){
+                var  error = net_error_code[102];
+                var mesWin = new MessageBoxOkCancel(error.desc,"购买");
+                mesWin.setOkCallback(function () {
+                    ShopSystem.instance.changeToRechargeGold();
+                },this);
+                mesWin.pop();
+
+                return false;
+            }
+        }
+        else if(config.pay_type == ShopSystem.PayType.Gold){
+
+        }
+
+        ShopSystem.instance.buyGood(buyId_);
+        return true;
+    },
     
     useSuperSkill : function () {
         net_protocol_handlers.SEND_CMD_CS_USE_SUPER_SKILL({

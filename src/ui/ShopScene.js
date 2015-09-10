@@ -110,7 +110,6 @@ var ShopScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_back: function() {
-        //ui.replaceScene(MainScene);
         this.popScene();
     },
 

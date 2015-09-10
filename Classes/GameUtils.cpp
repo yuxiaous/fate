@@ -35,7 +35,7 @@ int GameUtils::getChannelId()
     return 7;
 #elif defined(CHANNEL_360)
     return 8;
-#elif defined(CHANNEL_TENCENT_MIDAS) //应用宝
+#elif defined(CHANNEL_TENCENT_QQ) //应用宝
     return 9;
 #endif
     
