@@ -27,7 +27,7 @@ var SelectHeroPanel = ui.GuiWindowBase.extend({
     },
 
     clearHeroList: function() {
-        _.each(this._ui.cell_hero, function(cell) {
+        _.each(this._ui.cell_heros, function(cell) {
 
         }, this);
         this._ui.cell_heros.length = 0;

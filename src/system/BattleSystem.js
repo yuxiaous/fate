@@ -356,7 +356,7 @@ var BattleSystem = SystemBase.extend({
                 var  error = net_error_code[102];
                 var mesWin = new MessageBoxOkCancel(error.desc,"购买");
                 mesWin.setOkCallback(function () {
-                    ShopSystem.instance.changeToRechargeGold();
+                    RechargePanel.show();
                 },this);
                 mesWin.pop();
 

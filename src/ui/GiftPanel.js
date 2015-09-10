@@ -251,7 +251,19 @@ var GiftDetailZhiZun = GiftDetailBase.extend({
 
 var GiftDetailSuit = GiftDetailBase.extend({
     _guiFile: "ui/gift_legend_suit.json",
-    _shop_id: 101001
+    _shop_id: 101001,
+
+    onEnter: function() {
+        this._super();
+        
+        var channel_id = util.getChannelId();
+        if(channel_id == GameChannel.AppStore) {
+            this._ui.sp_sale_2 = this.seekWidgetByName("sp_sale_2");
+            this._ui.sp_sale_5 = this.seekWidgetByName("sp_sale_5");
+            this._ui.sp_sale_2.setVisible(false);
+            this._ui.sp_sale_5.setVisible(true);
+        }
+    }
 });
 
 

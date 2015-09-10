@@ -218,3 +218,11 @@ var RechargeItem = ui.GuiController.extend({
         this._super();
     }
 });
+
+RechargePanel.show = function() {
+    var channel_id = util.getChannelId();
+    var allGold = (channel_id == GameChannel.Qh360) || (channel_id == GameChannel.TencentMidas);
+    var rechargeGold = new RechargePanel(!allGold);
+    rechargeGold.pop();
+};
+
