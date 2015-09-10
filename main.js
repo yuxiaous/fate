@@ -73,7 +73,7 @@ cc.game.onStart = function(){
 
 cc.game.onAfterPause = function() {
     cc.log("cc.game.onAfterPause");
-    player_server.flush();
+    //player_server.flush();
     crows.pause();
 };
 
