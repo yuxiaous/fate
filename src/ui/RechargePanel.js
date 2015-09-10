@@ -16,6 +16,7 @@ var RechargePanel = ui.GuiWindowBase.extend({
 
         this._ui = {
             goldLabel : this.seekWidgetByName("lbl_gold"),
+            diamondLabel : this.seekWidgetByName("lbl_diamond"),
             bgPanel : this.seekWidgetByName("bg_panel")
         };
 
@@ -58,8 +59,8 @@ var RechargePanel = ui.GuiWindowBase.extend({
     },
 
     refreshGoldLabel : function () {
-
         this._ui.goldLabel.setString(PlayerSystem.instance.gold);
+        this._ui.diamondLabel.setString(PlayerSystem.instance.diamond);
     },
 
     onExit : function(){
@@ -144,15 +145,15 @@ var RechargeItem = ui.GuiController.extend({
                 }
             },this)
 
-            //var getValue = parseFloat( (config.buy_count ) * (1 + config.on_sale/10) );
-            this._ui.getLabel.setString(this._ui.getLabel._str_original.format(config.buy_count/10000));
-
-
             if(config.pay_type == ShopSystem.PayType.RMB){
+                this._ui.getLabel.setString(config.buy_count);
+
                 this._ui.diamondIcon.setVisible(false);
                 this._ui.payLabel.setString(this._ui.payLabel._str_original.format(config.pay_cost));
             }
             else if(config.pay_type == ShopSystem.PayType.Diamond){
+                this._ui.getLabel.setString(this._ui.getLabel._str_original.format(config.buy_count/10000));
+
                 this._ui.diamondIcon.setVisible(true);
                 this._ui.payLabel.setString(config.pay_cost);
             }

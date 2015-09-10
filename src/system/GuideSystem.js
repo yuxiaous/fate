@@ -516,7 +516,7 @@ GuideSystem.content = {
 
         rotate: 100,
         arr_pos: cc.p(90, 140),
-        cont_pos: cc.p(275, 240)
+        cont_pos: cc.p(275, 220)
     },
 
     "121" : {
