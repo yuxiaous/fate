@@ -148,7 +148,8 @@ NSString * const IAPPurchaseNotification = @"IAPPurchaseNotification";
 			case SKPaymentTransactionStateFailed:
             {
 //                self.message = [NSString stringWithFormat:@"Purchase of %@ failed.",transaction.payment.productIdentifier];
-                self.message = transaction.error.localizedDescription;
+//                self.message = transaction.error.localizedDescription;
+                self.message = @"充值失败";
                 [self completeTransaction:transaction forStatus:IAPPurchaseFailed];
             }
             break;
@@ -250,7 +251,7 @@ NSString * const IAPPurchaseNotification = @"IAPPurchaseNotification";
 {
     self.status = status;
     //Do not send any notifications when the user cancels the purchase
-    if (transaction.error.code != SKErrorPaymentCancelled)
+//    if (transaction.error.code != SKErrorPaymentCancelled)
     {
         // Notify the user
         [[NSNotificationCenter defaultCenter] postNotificationName:IAPPurchaseNotification object:self];

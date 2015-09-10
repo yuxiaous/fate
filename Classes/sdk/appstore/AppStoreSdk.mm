@@ -112,8 +112,10 @@ void AppStoreSdk::init()
 
 void AppStoreSdk::charge(const std::string &order, const std::string &identifier)
 {
-    NSString *nsIdentifier = [NSString stringWithUTF8String:identifier.c_str()];
-    [[StoreObserver sharedInstance] buyWithIdentifier:nsIdentifier];
-    g_order = order;
+    if(g_order.empty()) {
+        NSString *nsIdentifier = [NSString stringWithUTF8String:identifier.c_str()];
+        [[StoreObserver sharedInstance] buyWithIdentifier:nsIdentifier];
+        g_order = order;
+    }
 }
 
