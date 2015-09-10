@@ -107,14 +107,8 @@ var ResourcePanel = ui.GuiController.extend({
                 }
                 break;
             case ResourcePanel.Type.Gold:
-                ShopSystem.instance.changeToRechargeGold();
-                break;
             case ResourcePanel.Type.Diamond:
-                if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
-                    MessageBoxOk.show("通过第一章第二关开放");
-                    return;
-                }
-                ui.pushScene(new ShopScene(ShopSystem.ShopType.Charge));
+                RechargePanel.show();
                 break;
         }
     }
