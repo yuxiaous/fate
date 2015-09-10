@@ -146,7 +146,7 @@ var RechargeItem = ui.GuiController.extend({
             },this)
 
             if(config.pay_type == ShopSystem.PayType.RMB){
-                this._ui.getLabel.setString(config.buy_count);
+                this._ui.getLabel.setString(config.buy_count+"钻石");
 
                 this._ui.diamondIcon.setVisible(false);
                 this._ui.payLabel.setString(this._ui.payLabel._str_original.format(config.pay_cost));
