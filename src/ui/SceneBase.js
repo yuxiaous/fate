@@ -142,17 +142,11 @@ var SceneBase = lh.LHScene.extend({
 
             notification.createBinding(notification.event.GAME_PAUSE, function () {
                 LOG("game pause game scene");
-                //for(var btnIdx = 1 ; btnIdx <= 5; btnIdx++){
-                //    this._operator.setBtnTimingPause(btnIdx,true);
-                //}
                 BattleSystem.instance._isStop = true;
                 MusicManager.getInstance().pauseBGM();
             },this),
             notification.createBinding(notification.event.GAME_RESUME, function () {
                 LOG("game resume game scene");
-                //for(var btnIdx = 1 ; btnIdx <= 5; btnIdx++){
-                //    this._operator.setBtnTimingPause(btnIdx,false);
-                //}
                 BattleSystem.instance._isStop = false;
                 MusicManager.getInstance().resumeBGM();
             },this),
@@ -189,6 +183,9 @@ var SceneBase = lh.LHScene.extend({
     //},
 
     onExit : function () {
+
+        this._hero = null;
+        this._boss = null;
         this._camera = null;
         this._gameWorld = null;
         this._backUi = null;
@@ -877,13 +874,11 @@ var PauseLayer = ui.GuiWindowBase.extend({
     },
 
     _on_btn_restart : function () {
-        //cc.director.resume();
         notification.emit(notification.event.GAME_RESUME);
         this.close();
     },
 
     _on_btn_back : function () {
-        //cc.director.resume();
         notification.emit(notification.event.GAME_RESUME);
         ui.popScene();
 

@@ -4,6 +4,8 @@ var LoadingScene = ui.GuiSceneBase.extend({
     ctor: function () {
         this._super();
 
+
+        LOG("loading scene ctor");
     },
 
     onEnter : function(){
@@ -21,11 +23,11 @@ var LoadingScene = ui.GuiSceneBase.extend({
                 if(mapConfig ){
                     if(mapConfig.map_type == BattleSystem.BattleType.NormalType){
                         var scene = new BattleNorScene(sel_map_id);
-                        ui.pushScene(scene);
+                        ui.replaceScene(scene);
                     }
                     else if(mapConfig.map_type == BattleSystem.BattleType.DefendType){
                         var scene = new BattleDefScene(sel_map_id);
-                        ui.pushScene(scene);
+                        ui.replaceScene(scene);
                     }
                 }
                 else{

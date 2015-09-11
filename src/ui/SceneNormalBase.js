@@ -31,11 +31,13 @@ var SceneNormalBase = SceneBase.extend({
                 }
             }
         }
-        if(this._boss) {
+        if(this._boss && this._hero) {
             setMonsterTarget(this._boss, this._hero);
         }
-        _.each(this._monsters, function(monster) {
-            setMonsterTarget(monster, this._hero);
-        }, this);
+        if(this._monsters && this._hero){
+            _.each(this._monsters, function(monster) {
+                setMonsterTarget(monster, this._hero);
+            }, this);
+        }
     }
 });
