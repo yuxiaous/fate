@@ -78,27 +78,39 @@ var OperationLayer = cc.Layer.extend({
         );
         sprite.setScale(1.2);
 
+        var isArcher = false;
+        var skin = SkinSystem.instance.use_skin;
+         if(skin == 103){
+            isArcher = true;
+        }
+
         // skill button 1
+        var skill_1_str = "skill1.png";
+        if(isArcher) skill_1_str = "skill1_1.png";
         this._skillButton1 = this.addButton(
-            new cc.Sprite(this.getFP("skill1.png")),
-            new cc.Sprite(this.getFP("skill1.png")),
-            compoundDisableBtnSprite(this.getFP("skill1.png"),this.getFP("diableskill.png")),
+            new cc.Sprite(this.getFP(skill_1_str)),
+            new cc.Sprite(this.getFP(skill_1_str)),
+            compoundDisableBtnSprite(this.getFP(skill_1_str),this.getFP("diableskill.png")),
             curStylePos.skillBtn_1
         );
 
         // skill button 2
+        var skill_2_str = "skill4.png";
+        if(isArcher) skill_2_str = "skill4_1.png";
         this._skillButton2 = this.addButton(
-            new cc.Sprite(this.getFP("skill4.png")),
-            new cc.Sprite(this.getFP("skill4.png")),
-            compoundDisableBtnSprite(this.getFP("skill4.png"),this.getFP("diableskill.png")),
+            new cc.Sprite(this.getFP(skill_2_str)),
+            new cc.Sprite(this.getFP(skill_2_str)),
+            compoundDisableBtnSprite(this.getFP(skill_2_str),this.getFP("diableskill.png")),
             curStylePos.skillBtn_2
         );
 
         // skill button 3
+        var skill_3_str = "skill2.png";
+        if(isArcher) skill_3_str = "skill2_1.png";
         this._skillButton3 = this.addButton(
-            new cc.Sprite(this.getFP("skill2.png")),
-            new cc.Sprite(this.getFP("skill2.png")),
-            compoundDisableBtnSprite(this.getFP("skill2.png"),this.getFP("diableskill.png")),
+            new cc.Sprite(this.getFP(skill_3_str)),
+            new cc.Sprite(this.getFP(skill_3_str)),
+            compoundDisableBtnSprite(this.getFP(skill_3_str),this.getFP("diableskill.png")),
             curStylePos.skillBtn_3
         );
 
@@ -108,10 +120,12 @@ var OperationLayer = cc.Layer.extend({
         }
 
         //skill button 4
+        var skill_4_str = "skill3.png";
+        if(isArcher) skill_4_str = "skill3_1.png";
         this._skillButton4 = this.addButton(
-            new cc.Sprite(this.getFP("skill3.png")),
-            new cc.Sprite(this.getFP("skill3.png")),
-            compoundDisableBtnSprite(this.getFP("skill3.png"),this.getFP("diableskill.png")),
+            new cc.Sprite(this.getFP(skill_4_str)),
+            new cc.Sprite(this.getFP(skill_4_str)),
+            compoundDisableBtnSprite(this.getFP(skill_4_str),this.getFP("diableskill.png")),
             curStylePos.skillBtn_4,
             needDisplayCount
         );
@@ -269,7 +283,6 @@ var OperationLayer = cc.Layer.extend({
                     btn_.unschedule(refreshLabelAnthor);
                     btn_.isCounting = false;
                     if(that._curIsHide){
-                        LOG("222222");
                         btn_.setIsEnable(true);
                     }
                     covPro.setPercentage(100);
@@ -289,7 +302,6 @@ var OperationLayer = cc.Layer.extend({
         }
 
         function btnDisableWithLevel(btn_){
-            LOG("1234123412341234");
             var covPro = btn_.btnSkinned.getDisabledSprite().coverProgress;
             btn_.setIsEnable(false);
             covPro.setPercentage(100);
@@ -323,6 +335,8 @@ var OperationLayer = cc.Layer.extend({
             var covPro = btn_.btnSkinned.getDisabledSprite().coverProgress;
             btn_.setIsEnable(false);
             covPro.setPercentage(100);
+
+            btn_.lockIcon.setVisible(true);
         }
 
     },
@@ -439,6 +453,11 @@ var OperationLayer = cc.Layer.extend({
         button.needUseCount = needUseCount_;
         button.releaseCountLabel.setVisible(button.needUseCount);
         button.fontBg.setVisible(button.needUseCount);
+
+        var lockBg = cc.Sprite.create("images/icon/skill/skill_lock.png");
+        button.addChild(lockBg);
+        lockBg.setVisible(false);
+        button.lockIcon = lockBg;
 
 
         return button;

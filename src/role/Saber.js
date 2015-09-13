@@ -908,7 +908,7 @@ var Archer = RoleBase.extend({
         this.addRoleAction(RoleAction.Type.SKILL4, "jineng4", {
             attack: {
                 //animation: undefined,
-                skill_sound: "sounds/saber/skill_4.mp3",
+                skill_sound: "sounds/archer/skill_4.mp3",
                 movement: 300
             },
             hit: {

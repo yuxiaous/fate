@@ -221,6 +221,17 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
         else if(skin == 103){
             str = "images/code_ui/zui_53.png";
         }
+
+        if(BattleSystem.instance.curIsTryBattle()){
+            var tmpHero = BattleSystem.instance.getTryBattleHero()
+            if(tmpHero == Archer){
+                str = "images/code_ui/zui_53.png";
+            }
+            else if(tmpHero == Nero){
+                str = "images/code_ui/zui_51.png";
+            }
+        }
+
         this._role_head.loadTexture(str);
 
 
@@ -301,15 +312,18 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
                     }
                     scene._operator.setBtnMpIsNotEnough(skillType_,isEnoughMp);
 
-                    if(skillType_ == RoleAction.Type.SKILL2 ){
-                        if(PlayerSystem.instance.level < configdb.property[113].value){
-                            scene._operator.setBtnDisableWithLevel(skillType_);
+                    if(!BattleSystem.instance.curIsTryBattle()) {
+                        if (skillType_ == RoleAction.Type.SKILL2) {
+                            if (PlayerSystem.instance.level < configdb.property[113].value) {
+                                scene._operator.setBtnDisableWithLevel(skillType_);
+                            }
                         }
-                    }
-                    else if(skillType_ == RoleAction.Type.SKILL3){
-                        if(PlayerSystem.instance.level < configdb.property[114].value){
-                            scene._operator.setBtnDisableWithLevel(skillType_);
+                        else if (skillType_ == RoleAction.Type.SKILL3) {
+                            if (PlayerSystem.instance.level < configdb.property[114].value) {
+                                scene._operator.setBtnDisableWithLevel(skillType_);
+                            }
                         }
+
                     }
                 }
         )
