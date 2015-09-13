@@ -32,6 +32,9 @@ var BattleDefScene = SceneDefBase.extend({
         else if(skin == 102){
             this.status.hero = Nero;
         }
+        else if(skin == 103){
+            this.status.hero = Archer;
+        }
         this.status.stage = BattleNorScene.initStageInfo(map_id_);
         this.status.BSection = BattleNorScene.initBattleSection(map_id_);
         this.status.chatData = BattleNorScene.initChatInfo(map_id_);

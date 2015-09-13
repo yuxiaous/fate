@@ -208,6 +208,22 @@ BattleUILayer.RolePanel = ui.GuiController.extend({
         this._progress_mp = this.seekWidgetByName("loading_mp");
         this._progress_mp_droping = this.seekWidgetByName("loading_mp_droping");
 
+        this._role_head = this.seekWidgetByName("role_head");
+
+        var skin = SkinSystem.instance.use_skin;
+        var str = "images/code_ui/zui_51.png";
+        if(skin == 101){
+            str = "images/code_ui/zui_52.png";
+        }
+        else if(skin == 102){
+            str = "images/code_ui/zui_51.png";
+        }
+        else if(skin == 103){
+            str = "images/code_ui/zui_53.png";
+        }
+        this._role_head.loadTexture(str);
+
+
 
         this._lbl_hp = this.seekWidgetByName("lbl_hp");
         this._lbl_mp = this.seekWidgetByName("lbl_mp");

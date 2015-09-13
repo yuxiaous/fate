@@ -69,6 +69,9 @@ var LoadingBattleLayer = ui.GuiWindowBase.extend({
         else if(skin == 102){
             tmpHero = new Nero();
         }
+        else if(skin == 103){
+            tmpHero = new Archer();
+        }
 
         if(true){
             var armStr = tmpHero.armatureName;

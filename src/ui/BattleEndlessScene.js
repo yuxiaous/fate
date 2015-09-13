@@ -33,6 +33,9 @@ var BattleEndlessScene = SceneEndlessBase.extend({
         else if(skin == 102){
             this.status.hero = Nero;
         }
+        else if(skin == 103){
+            this.status.hero = Archer;
+        }
         
         //this.status.stage = BattleEndlessScene.initStageInfo();
         this.status.stage = this.tmpStageInfo;
