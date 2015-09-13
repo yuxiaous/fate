@@ -84,6 +84,13 @@ var OperationLayer = cc.Layer.extend({
             isArcher = true;
         }
 
+        if(BattleSystem.instance.curIsTryBattle()){
+            var tmpHero = BattleSystem.instance.getTryBattleHero()
+            if(tmpHero == Archer ){
+                isArcher = true;
+            }
+        }
+
         // skill button 1
         var skill_1_str = "skill1.png";
         if(isArcher) skill_1_str = "skill1_1.png";
