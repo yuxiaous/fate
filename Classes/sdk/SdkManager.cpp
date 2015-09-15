@@ -23,6 +23,11 @@ TalkingDataGameAnalyticsSdk talkingdatagameanalyticssdk;
 DeveloperSdk developersdk;
 #endif
 
+#ifdef SDK_MIX
+#include "MixSdk.h"
+MixSdk mixsdk;
+#endif
+
 #ifdef SDK_YMTX_RECORD
 #include "YMTXSdk.h"
 YMTXSdk ymtxsdk;

@@ -71,7 +71,10 @@
     <target name="-pre-compile" >
         <path id="third.lib" >
             <path path="${toString:project.all.jars.path}" />
+            <!-- Talking Data-->
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
+
+            <!-- KTPlay -->
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
 
             <!-- mm -->
@@ -81,12 +84,18 @@
             <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
+
+            <!-- unipay -->
+            <pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
             </path>
         </path>
     </target>
+
+    <!-- AndGame -->
+    <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
 
     <target name="-pre-build">
         <!-- TalkingDataGameAnalytics start -->
@@ -109,6 +118,16 @@
         </copy>
         <!-- MM end-->
 
+        <!-- AndGame start-->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/AndGame/android">
+                <include name="assets/" />
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- AndGame end-->
+
         <!-- EGame start-->
         <copy todir="./">
             <fileset dir="../../../Classes/sdk/egame/android">
@@ -117,6 +136,16 @@
             </fileset>
         </copy>
         <!-- EGame end-->
+
+        <!-- UniPay start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/unipay/android">
+                <include name="assets/" />
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- UniPay end -->
     </target>
 
     <!-- Import the actual build file.

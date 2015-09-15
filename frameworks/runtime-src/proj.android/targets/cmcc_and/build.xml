@@ -81,6 +81,7 @@
         </path>
     </target>
 
+    <!-- AndGame -->
     <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
 
     <target name="-pre-build">

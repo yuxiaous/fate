@@ -45,6 +45,9 @@
         <!-- mm start -->
         <!-- mm end -->
 
+        <!-- andgame start -->
+        <!-- andgame end -->
+
         <!-- egame start -->
         <!-- 根据游戏实际情况修改screenOrientation属性 -->
         <activity
@@ -75,6 +78,19 @@
         <meta-data android:name="EGAME_CHANNEL" android:value="10000000"  />
         <meta-data android:name="EGAME_UNINS" android:value="false" />
         <!-- egame end -->
+
+        <!-- unipay start -->
+        <meta-data android:name="wostore_billing_otherpay" android:value="false"/>
+        <meta-data android:name="wostore_billing_chinaunicom" android:value="true"/>
+        <meta-data android:name="wostore_billing_chinamobile" android:value="false" />
+        <meta-data android:name="wostore_billing_chinatele" android:value="false" />
+
+        <service android:name="com.unicom.wostore.unipay.paysecurity.SecurityServiceFramework">
+            <intent-filter>
+                <action android:name="com.hdngame.fate.mix.unicom.wostore.unipay.securityserviceframework" />
+            </intent-filter>
+        </service>
+        <!-- unipay end -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -112,6 +128,17 @@
     <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />-->
     <!-- mm end -->
 
+    <!-- andgame start -->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.SEND_SMS" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!--<uses-permission android:name="android.permission.READ_CONTACTS" />-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- andgame end -->
+
     <!-- egame start -->
     <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
     <!--<uses-permission android:name="android.permission.SEND_SMS"/>-->
@@ -129,5 +156,15 @@
     <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>-->
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <!-- egame end -->
+
+    <!-- unipay start -->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+    <!--<uses-permission android:name="android.permission.INTERNET"/>-->
+    <!--<uses-permission android:name="android.permission.SEND_SMS"/>-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!-- unipay end -->
 
 </manifest>

@@ -10,8 +10,9 @@ LOCAL_ARM_MODE := arm
 
 LOCAL_SRC_FILES := SdkManager.cpp \
                    Sdk.cpp \
-                   TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.cpp \
                    DeveloperSdk.cpp \
+                   MixSdk.cpp \
+                   TalkingDataGameAnalytics/TalkingDataGameAnalyticsSdk.cpp \
                    AndGame/AndGameSdk.cpp \
                    mmbilling/MMSdk.cpp \
                    ktplay/KtplaySdk.cpp \
