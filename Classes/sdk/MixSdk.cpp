@@ -1,15 +1,29 @@
 #include "MixSdk.h"
+#include "GameUtils.h"
 
-
-static MixSdk *instance = nullptr;
 
 MixSdk::MixSdk()
 {
-    instance = this;
+
 }
 
-MixSdk *MixSdk::getInstance()
+void MixSdk::activityOnCreate()
 {
-    return instance;
+    int sim = GameUtils::getSimOperator();
+    cocos2d::log("MixSdk::activityOnCreate sim: %d", sim);
 }
 
+void MixSdk::activityOnPause()
+{
+
+}
+
+void MixSdk::activityOnResume()
+{
+
+}
+
+void MixSdk::activityOnDestroy()
+{
+
+}

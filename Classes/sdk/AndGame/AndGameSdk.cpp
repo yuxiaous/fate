@@ -24,6 +24,20 @@ extern "C" {
 //        AndGameSdk::getInstance()->onChargeCallback(result, order.c_str());
     }
 
+    void AndGameSdk_init()
+    {
+        cocos2d::log("AndGameSdk::init");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+
+        bool enable = AndGameSdk::isMusicEnabled();
+        JsonStorage *storage = JsonStorage::GetInstance("setting.json");
+        storage->setBoolForKey("background_music_is_open_key", enable);
+        storage->setBoolForKey("effect_music_is_open_key", enable);
+    }
 }
 
 
@@ -42,17 +56,7 @@ AndGameSdk *AndGameSdk::getInstance()
 
 void AndGameSdk::init()
 {
-    cocos2d::log("AndGameSdk::init");
-
-    JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-    }
-
-    bool enable = isMusicEnabled();
-    JsonStorage *storage = JsonStorage::GetInstance("setting.json");
-    storage->setBoolForKey("background_music_is_open_key", enable);
-    storage->setBoolForKey("effect_music_is_open_key", enable);
+    AndGameSdk_init();
 }
 
 void AndGameSdk::update(float dt)

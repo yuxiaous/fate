@@ -174,7 +174,8 @@ void js_jsb_bindings_auto_GameUtils_finalize(JSContext *cx, JSObject *obj);
 void js_register_jsb_bindings_auto_GameUtils(JSContext *cx, JS::HandleObject global);
 void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj);
 bool js_jsb_bindings_auto_GameUtils_getChannelId(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_bindings_auto_GameUtils_call(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_jsb_bindings_auto_GameUtils_isLegalCopy(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_jsb_bindings_auto_GameUtils_getSimOperator(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_GameUtils_getUdid(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
 

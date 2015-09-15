@@ -68,9 +68,6 @@ public class AppActivity extends Cocos2dxActivity{
         hostIPAdress = getHostIpAddress();
         androidId = Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
-        // check signature
-        GameUtils.checkSignature(this);
-
         // sdk manager
         SdkManagerJni.activity = this;
         SdkManagerJni.setAppActivity(this);

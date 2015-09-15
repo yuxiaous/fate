@@ -8,6 +8,7 @@
 
 #include "GameUtils.h"
 #include "ScriptingCore.h"
+#include "sdk/SdkManager.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "platform/android/jni/JniHelper.h"
@@ -55,16 +56,38 @@ std::string GameUtils::getUdid()
     return "hdngame";
 }
 
-std::string GameUtils::call(const std::string &clazz, const std::string &method, const std::string &param)
+bool GameUtils::isLegalCopy()
 {
-//    JS::HandleValueArray args;
-//    JS::MutableHandleValue retVal;
-//    
-//    ScriptingCore *sc = ScriptingCore::getInstance();
-//    sc->executeFunctionWithOwner(null, "", args, retVal);
-    
-    
-    return std::string();
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    int code = -903721661;
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo,
+                                       "com/hdngame/fate/GameUtils",
+                                       "getSignatureCode",
+                                       "(Landroid/content/Context;)I")) {
+        int jSignatureCode = minfo.env->CallStaticIntMethod(minfo.classID, minfo.methodID, SdkManager::appActivity);
+        return jSignatureCode == code;
+    }
+#endif
+
+    return false;
+}
+
+int GameUtils::getSimOperator()
+{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo,
+                                       "com/hdngame/fate/GameUtils",
+                                       "getSimOperator",
+                                       "(Landroid/content/Context;)I")) {
+        int jSimOperatorId = minfo.env->CallStaticIntMethod(minfo.classID, minfo.methodID, SdkManager::appActivity);
+        return jSimOperatorId;
+    }
+#endif
+
+    return 0;
 }
 
 

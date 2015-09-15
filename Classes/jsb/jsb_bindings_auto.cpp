@@ -3002,25 +3002,31 @@ bool js_jsb_bindings_auto_GameUtils_getChannelId(JSContext *cx, uint32_t argc, j
     return false;
 }
 
-bool js_jsb_bindings_auto_GameUtils_call(JSContext *cx, uint32_t argc, jsval *vp)
+bool js_jsb_bindings_auto_GameUtils_isLegalCopy(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    if (argc == 3) {
-        std::string arg0;
-        std::string arg1;
-        std::string arg2;
-        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
-        ok &= jsval_to_std_string(cx, args.get(1), &arg1);
-        ok &= jsval_to_std_string(cx, args.get(2), &arg2);
-        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_GameUtils_call : Error processing arguments");
-        std::string ret = GameUtils::call(arg0, arg1, arg2);
+    if (argc == 0) {
+        bool ret = GameUtils::isLegalCopy();
         jsval jsret = JSVAL_NULL;
-        jsret = std_string_to_jsval(cx, ret);
+        jsret = BOOLEAN_TO_JSVAL(ret);
         args.rval().set(jsret);
         return true;
     }
-    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_call : wrong number of arguments");
+    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_isLegalCopy : wrong number of arguments");
+    return false;
+}
+
+bool js_jsb_bindings_auto_GameUtils_getSimOperator(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        int ret = GameUtils::getSimOperator();
+        jsval jsret = JSVAL_NULL;
+        jsret = int32_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_getSimOperator : wrong number of arguments");
     return false;
 }
 
@@ -3068,7 +3074,8 @@ void js_register_jsb_bindings_auto_GameUtils(JSContext *cx, JS::HandleObject glo
 
     static JSFunctionSpec st_funcs[] = {
         JS_FN("getChannelId", js_jsb_bindings_auto_GameUtils_getChannelId, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("call", js_jsb_bindings_auto_GameUtils_call, 3, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("isLegalCopy", js_jsb_bindings_auto_GameUtils_isLegalCopy, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getSimOperator", js_jsb_bindings_auto_GameUtils_getSimOperator, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getUdid", js_jsb_bindings_auto_GameUtils_getUdid, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };

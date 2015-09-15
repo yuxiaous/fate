@@ -17,8 +17,8 @@ class GameUtils
 public:
     static int getChannelId();
     static std::string getUdid();
-    
-    static std::string call(const std::string &clazz, const std::string &method, const std::string &param);
+    static bool isLegalCopy();
+    static int getSimOperator();
     
 #ifndef SKIP_BY_AUTO_BINDINGS
     static void split(const std::string &s, const std::string &delim, std::vector<std::string> &ret);

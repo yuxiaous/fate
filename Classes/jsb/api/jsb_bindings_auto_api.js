@@ -1135,19 +1135,23 @@ getChannelId : function (
 },
 
 /**
- * @method call
- * @param {String} arg0
- * @param {String} arg1
- * @param {String} arg2
- * @return {String}
+ * @method isLegalCopy
+ * @return {bool}
  */
-call : function (
-str, 
-str, 
-str 
+isLegalCopy : function (
 )
 {
-    return ;
+    return false;
+},
+
+/**
+ * @method getSimOperator
+ * @return {int}
+ */
+getSimOperator : function (
+)
+{
+    return 0;
 },
 
 /**
