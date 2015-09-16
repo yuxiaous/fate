@@ -170,12 +170,7 @@ void SdkManager::charge(const std::string &order, const std::string &identifier)
 
 void SdkManager::setChargeCallback(const std::function<void(char *param)> &callback)
 {
-    for(Sdk *sdk : _sdks) {
-        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
-        if(charge) {
-            charge->setChargeCallback(callback);
-        }
-    }
+    SdkChargeProtocol::_chargeCallback = callback;
 }
 
 

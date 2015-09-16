@@ -24,6 +24,9 @@ Sdk::~Sdk()
     SdkManager::removeSdk(this);
 }
 
+
+std::function<void(char*)> SdkChargeProtocol::_chargeCallback = nullptr;
+
 void SdkChargeProtocol::onChargeCallback(int result, const std::string &order) {
     if(_chargeCallback) {
         rapidjson::Document json;
@@ -47,7 +50,5 @@ void SdkChargeProtocol::onChargeCallback(int result, const std::string &order) {
             _chargeCallback((char*)buffer.GetString());
         }
     }
-    
-//    SdkManager::onChargeResult(result, order);
 }
 

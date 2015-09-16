@@ -5,10 +5,13 @@
 #include "Sdk.h"
 
 
-class MixSdk : public Sdk
+class MixSdk : public Sdk, public SdkChargeProtocol
 {
 public:
     MixSdk();
+
+    virtual void charge(const std::string &order, const std::string &identifier) override;
+    virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
@@ -17,6 +20,14 @@ public:
     virtual void activityOnResume() override;
     virtual void activityOnDestroy() override;
 #endif
+
+private:
+    enum SimType {
+        CMCC = 1,
+        UNICOM = 2,
+        TELECOM = 3
+    };
+    int _simType;
 };
 
 #endif /* defined(__MixSdk__) */

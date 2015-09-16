@@ -78,15 +78,18 @@
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
 
             <!-- mm -->
-            <pathelement location="../../../Classes/sdk/mmbilling/android/mmbilling.3.1.7.jar" />
+            <!--<pathelement location="../../../Classes/sdk/mmbilling/android/mmbilling.3.1.7.jar" />-->
 
             <!-- egame -->
-            <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
-            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
-            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
+            <!--<pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />-->
+            <!--<pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />-->
+            <!--<pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />-->
 
             <!-- unipay -->
-            <pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />
+            <!--<pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />-->
+
+            <!-- and game -->
+            <!--<pathelement location="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />-->
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -111,41 +114,41 @@
         <!-- KTplay end -->
 
         <!-- MM start-->
-        <copy todir="./">
-            <fileset dir="../../../Classes/sdk/mmbilling/android">
-                <include name="libs/armeabi/" />
-            </fileset>
-        </copy>
+        <!--<copy todir="./">-->
+            <!--<fileset dir="../../../Classes/sdk/mmbilling/android">-->
+                <!--<include name="libs/armeabi/" />-->
+            <!--</fileset>-->
+        <!--</copy>-->
         <!-- MM end-->
 
-        <!-- AndGame start-->
-        <copy todir="./">
-            <fileset dir="../../../Classes/sdk/AndGame/android">
-                <include name="assets/" />
-                <include name="libs/armeabi/" />
-                <include name="res/" />
-            </fileset>
-        </copy>
-        <!-- AndGame end-->
-
         <!-- EGame start-->
-        <copy todir="./">
-            <fileset dir="../../../Classes/sdk/egame/android">
-                <include name="assets/" />
-                <include name="libs/armeabi/" />
-            </fileset>
-        </copy>
+        <!--<copy todir="./">-->
+            <!--<fileset dir="../../../Classes/sdk/egame/android">-->
+                <!--<include name="assets/" />-->
+                <!--<include name="libs/armeabi/" />-->
+            <!--</fileset>-->
+        <!--</copy>-->
         <!-- EGame end-->
 
         <!-- UniPay start -->
-        <copy todir="./">
-            <fileset dir="../../../Classes/sdk/unipay/android">
-                <include name="assets/" />
-                <include name="libs/armeabi/" />
-                <include name="res/" />
-            </fileset>
-        </copy>
+        <!--<copy todir="./">-->
+            <!--<fileset dir="../../../Classes/sdk/unipay/android">-->
+                <!--<include name="assets/" />-->
+                <!--<include name="libs/armeabi/" />-->
+                <!--<include name="res/" />-->
+            <!--</fileset>-->
+        <!--</copy>-->
         <!-- UniPay end -->
+
+        <!-- AndGame start-->
+        <!--<copy todir="./">-->
+            <!--<fileset dir="../../../Classes/sdk/AndGame/android">-->
+                <!--<include name="assets/" />-->
+                <!--<include name="libs/armeabi/" />-->
+                <!--<include name="res/" />-->
+            <!--</fileset>-->
+        <!--</copy>-->
+        <!-- AndGame end-->
     </target>
 
     <!-- Import the actual build file.

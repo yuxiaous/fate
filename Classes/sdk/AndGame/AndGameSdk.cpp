@@ -10,33 +10,42 @@ using namespace cocos2d;
 #define  CLASS_NAME "com/hdngame/fate/andgame/AndGameSdkJni"
 
 
-static std::string g_order;
-static int g_result = 0;
-
 extern "C" {
 
     void Java_com_hdngame_fate_andgame_AndGameSdkJni_onAndChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
     {
         cocos2d::log("Java_com_hdngame_fate_andgame_AndGameSdkJni_onAndChargeCallback");
-        g_order = JniHelper::jstring2string(jorder);
-        g_result = result;
-//        std::string order = JniHelper::jstring2string(jorder);
-//        AndGameSdk::getInstance()->onChargeCallback(result, order.c_str());
+
+        std::string order = JniHelper::jstring2string(jorder);
+        Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+            AndGameSdk::onChargeCallback(result, order.c_str());
+        });
     }
 
     void AndGameSdk_init()
     {
-        cocos2d::log("AndGameSdk::init");
+        cocos2d::log("AndGameSdk_init");
 
         JniMethodInfo minfo;
         if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
             minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
         }
+    }
 
-        bool enable = AndGameSdk::isMusicEnabled();
-        JsonStorage *storage = JsonStorage::GetInstance("setting.json");
-        storage->setBoolForKey("background_music_is_open_key", enable);
-        storage->setBoolForKey("effect_music_is_open_key", enable);
+    void AndGameSdk_charge(const std::string &order, const std::string &identifier)
+    {
+        cocos2d::log("AndGameSdk_charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
+
+        if(order.empty() || identifier.empty()) {
+            return;
+        }
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "charge", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+            jstring jorder = minfo.env->NewStringUTF(order.c_str());
+            jstring jidentifier = minfo.env->NewStringUTF(identifier.c_str());
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier);
+        }
     }
 }
 
@@ -57,31 +66,16 @@ AndGameSdk *AndGameSdk::getInstance()
 void AndGameSdk::init()
 {
     AndGameSdk_init();
-}
 
-void AndGameSdk::update(float dt)
-{
-    if(!g_order.empty()) {
-        onChargeCallback(g_result, g_order.c_str());
-        g_result = 0;
-        g_order.clear();
-    }
+    bool enable = isMusicEnabled();
+    JsonStorage *storage = JsonStorage::GetInstance("setting.json");
+    storage->setBoolForKey("background_music_is_open_key", enable);
+    storage->setBoolForKey("effect_music_is_open_key", enable);
 }
 
 void AndGameSdk::charge(const std::string &order, const std::string &identifier)
 {
-    cocos2d::log("AndGameSdk::charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
-
-    if(order.empty() || identifier.empty()) {
-        return;
-    }
-
-    JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "charge", "(Ljava/lang/String;Ljava/lang/String;)V")) {
-        jstring jorder = minfo.env->NewStringUTF(order.c_str());
-        jstring jidentifier = minfo.env->NewStringUTF(identifier.c_str());
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier);
-    }
+    AndGameSdk_charge(order, identifier);
 }
 
 void AndGameSdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)

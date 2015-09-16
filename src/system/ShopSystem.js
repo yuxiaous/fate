@@ -149,23 +149,33 @@ ShopSystem.getShopPlatformId = function() {
     switch (channel_id) {
         case GameChannel.AppStore:
             return 2;
-        case GameChannel.CmccAnd:
-            return 4;
         case GameChannel.CmccMm:
         case GameChannel.Mzw:
         case GameChannel['4399']:
             return 3;
-        case GameChannel.Telecom:
-            return 6;
+        case GameChannel.CmccAnd:
+            return 4;
         case GameChannel.Unicom:
             return 5;
+        case GameChannel.Telecom:
+            return 6;
         case GameChannel.Qh360:
             return 7;
         case GameChannel.TencentMidas:
             return 8;
-        default :
-            return 1;
+        case GameChannel.Mix:
+            var sim_operator = util.getSimOperator();
+            switch (sim_operator) {
+                case SimOperator.CMCC:
+                    return 4;
+                case SimOperator.UNICOM:
+                    return 5;
+                case SimOperator.TLELCOM:
+                    return 6;
+            }
+            break;
     }
+    return 1;
 };
 
 ShopSystem.getConfig = function(good_id) {

@@ -38,6 +38,8 @@ int GameUtils::getChannelId()
     return 8;
 #elif defined(CHANNEL_TENCENT_QQ) //应用宝
     return 9;
+#elif defined(CHANNEL_MIX)
+    return 10;
 #endif
     
     return 0;

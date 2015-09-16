@@ -1,8 +1,5 @@
 package com.hdngame.fate.mix;
 
-import android.app.Application;
-
-import com.hdngame.fate.SdkManagerJni;
 import org.cocos2dx.javascript.AppApplication;
 
 /**
@@ -10,7 +7,10 @@ import org.cocos2dx.javascript.AppApplication;
  */
 public class MixApplication extends AppApplication {
     public void onCreate() {
+        System.out.println("MixApplication.onCreate");
+
         super.onCreate();
+        System.loadLibrary("megjb");
     }
 }
 

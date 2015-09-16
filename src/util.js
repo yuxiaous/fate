@@ -128,6 +128,10 @@ var util = {
         return jsb.GameUtils.getUdid();
     },
 
+    getSimOperator: function() {
+        return jsb.GameUtils.getSimOperator();
+    },
+
     isLite: function() {
         return false;
     }
@@ -142,7 +146,14 @@ var GameChannel = {
     Mzw: 6,
     "4399": 7,
     Qh360: 8,
-    TencentMidas: 9 //腾讯应用宝
+    TencentMidas: 9, //腾讯应用宝
+    Mix: 10
+};
+
+var SimOperator = {
+    CMCC: 1,
+    UNICOM: 2,
+    TLELCOM: 3
 };
 
 var LOG = util.log;

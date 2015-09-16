@@ -57,17 +57,14 @@ public:
 
 class SdkChargeProtocol
 {
+    friend SdkManager;
 public:
     virtual void charge(const std::string &order, const std::string &identifier) {}
     
-    void setChargeCallback(const std::function<void(char *param)> &cb) {_chargeCallback = cb;}
-    void onChargeCallback(int result, const std::string &order);
+    static void onChargeCallback(int result, const std::string &order);
     
-protected:
-    SdkChargeProtocol() : _chargeCallback(nullptr) {};
-    virtual ~SdkChargeProtocol() {}
-    
-    std::function<void(char*)> _chargeCallback;
+private:
+    static std::function<void(char*)> _chargeCallback;
 };
 
 #endif /* defined(__crows__Sdk__) */

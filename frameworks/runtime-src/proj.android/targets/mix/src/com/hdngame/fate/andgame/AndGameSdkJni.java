@@ -2,6 +2,7 @@ package com.hdngame.fate.andgame;
 
 import android.net.Uri;
 import android.widget.Toast;
+import android.os.Handler;
 
 import com.hdngame.fate.SdkManagerJni;
 
@@ -20,15 +21,26 @@ public class AndGameSdkJni {
 	}
 
 	private static String _order = "";
+	private static String _identifier = "";
+	private static Handler _handler = new Handler();
 
 	public static void charge(String order, String identifier) {
-		System.out.println("AndGameSdkJni.charge");
+		System.out.println("AndGameSdkJni.charge 1");
 		
 		if(_order.length() == 0) {
 	        System.out.println(order+":"+identifier);
 
 	        _order = order;
-	        GameInterface.doBilling(SdkManagerJni.activity, true, true, identifier, null, payCallback);
+			_identifier = identifier;
+//	        GameInterface.doBilling(SdkManagerJni.activity, true, true, identifier, null, payCallback);
+
+			_handler.post(new Runnable() {
+				@Override
+				public void run() {
+					System.out.println("AndGameSdkJni.charge 2");
+					GameInterface.doBilling(SdkManagerJni.activity, true, true, _identifier, null, payCallback);
+				}
+			});
 		}
     }
 
@@ -63,6 +75,7 @@ public class AndGameSdkJni {
 			int result = (resultCode == BillingResult.SUCCESS) ? 0 : 1;
 			onAndChargeCallback(result, _order);
 			_order = "";
+			_identifier = "";
 		}
 	}
 
