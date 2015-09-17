@@ -27,6 +27,13 @@
             </intent-filter>
         </activity>
 
+        <!-- and game start -->
+        <activity android:name="cn.cmgame.billing.api.GameOpenActivity"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:screenOrientation="sensor">
+        </activity>
+        <!-- and game end -->
+
         <!-- KTPlay SDK配置开始 -->
         <activity
                 android:name="com.ktplay.activity.GetPhotoActivity"
@@ -41,56 +48,6 @@
                 android:value="GP"
                 />
         <!-- KTPlay SDK配置结束 -->
-
-        <!-- mm start -->
-        <!-- mm end -->
-
-        <!-- andgame start -->
-        <!-- andgame end -->
-
-        <!-- egame start -->
-        <!-- 根据游戏实际情况修改screenOrientation属性 -->
-        <!--<activity-->
-                <!--android:name="cn.egame.terminal.paysdk.EgamePayActivity"-->
-                <!--android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"-->
-                <!--android:screenOrientation="landscape"-->
-                <!--android:configChanges="orientation|keyboard|keyboardHidden">-->
-        <!--</activity>-->
-        <!--<activity-->
-                <!--android:name="cn.play.dserv.EmpActivity"-->
-                <!--android:configChanges="keyboard|keyboardHidden|orientation"-->
-                <!--android:exported="true">-->
-        <!--</activity>-->
-        <!--<service-->
-                <!--android:name="cn.play.dserv.DService"-->
-                <!--android:enabled="true"-->
-                <!--android:exported="false"-->
-                <!--android:label="dservice"-->
-                <!--android:process=":dservice_v1" >-->
-        <!--</service>-->
-        <!--<receiver-->
-                <!--android:name="cn.play.dserv.DsReceiver"-->
-                <!--android:process=":dservice_v1" >-->
-            <!--<intent-filter>-->
-                <!--<action android:name="cn.play.dservice" />-->
-            <!--</intent-filter>-->
-        <!--</receiver>-->
-        <!--<meta-data android:name="EGAME_CHANNEL" android:value="10000000"  />-->
-        <!--<meta-data android:name="EGAME_UNINS" android:value="false" />-->
-        <!-- egame end -->
-
-        <!-- unipay start -->
-        <!--<meta-data android:name="wostore_billing_otherpay" android:value="false"/>-->
-        <!--<meta-data android:name="wostore_billing_chinaunicom" android:value="true"/>-->
-        <!--<meta-data android:name="wostore_billing_chinamobile" android:value="false" />-->
-        <!--<meta-data android:name="wostore_billing_chinatele" android:value="false" />-->
-
-        <!--<service android:name="com.unicom.wostore.unipay.paysecurity.SecurityServiceFramework">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.hdngame.fate.mix.unicom.wostore.unipay.securityserviceframework" />-->
-            <!--</intent-filter>-->
-        <!--</service>-->
-        <!-- unipay end -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -100,71 +57,19 @@
                       android:xlargeScreens="true"/>
 					  
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>  
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>  
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>  
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>  
-    
-  	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
- 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
- 	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
- 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
- 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
- 	<uses-permission android:name="android.permission.GET_TASKS"/>
-
-    <!-- KTPlay SDK 权限配置开始 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <!-- KTPlay SDK 权限配置结束 -->
-
-    <!-- mm start -->
-    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
-    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
-    <!--<uses-permission android:name="android.permission.SEND_SMS" />-->
-    <!--<uses-permission android:name="android.permission.INTERNET" />-->
-    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
-    <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />-->
-    <!-- mm end -->
-
-    <!-- andgame start -->
-    <!--<uses-permission android:name="android.permission.INTERNET" />-->
-    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
-    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
-    <!--<uses-permission android:name="android.permission.READ_CONTACTS" />-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!-- andgame end -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <!-- egame start -->
-    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.SEND_SMS"/>-->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
-    <!--<uses-permission android:name="android.permission.INTERNET"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>-->
-    <!--<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>-->
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
-    <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>-->
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <!-- egame end -->
-
-    <!-- unipay start -->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
-    <!--<uses-permission android:name="android.permission.INTERNET"/>-->
-    <!--<uses-permission android:name="android.permission.SEND_SMS"/>-->
-    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
-    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
-    <!-- unipay end -->
-
-</manifest>
+</manifest> 

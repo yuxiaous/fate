@@ -112,43 +112,6 @@
             </fileset>
         </copy>
         <!-- KTplay end -->
-
-        <!-- MM start-->
-        <!--<copy todir="./">-->
-            <!--<fileset dir="../../../Classes/sdk/mmbilling/android">-->
-                <!--<include name="libs/armeabi/" />-->
-            <!--</fileset>-->
-        <!--</copy>-->
-        <!-- MM end-->
-
-        <!-- EGame start-->
-        <!--<copy todir="./">-->
-            <!--<fileset dir="../../../Classes/sdk/egame/android">-->
-                <!--<include name="assets/" />-->
-                <!--<include name="libs/armeabi/" />-->
-            <!--</fileset>-->
-        <!--</copy>-->
-        <!-- EGame end-->
-
-        <!-- UniPay start -->
-        <!--<copy todir="./">-->
-            <!--<fileset dir="../../../Classes/sdk/unipay/android">-->
-                <!--<include name="assets/" />-->
-                <!--<include name="libs/armeabi/" />-->
-                <!--<include name="res/" />-->
-            <!--</fileset>-->
-        <!--</copy>-->
-        <!-- UniPay end -->
-
-        <!-- AndGame start-->
-        <!--<copy todir="./">-->
-            <!--<fileset dir="../../../Classes/sdk/AndGame/android">-->
-                <!--<include name="assets/" />-->
-                <!--<include name="libs/armeabi/" />-->
-                <!--<include name="res/" />-->
-            <!--</fileset>-->
-        <!--</copy>-->
-        <!-- AndGame end-->
     </target>
 
     <!-- Import the actual build file.

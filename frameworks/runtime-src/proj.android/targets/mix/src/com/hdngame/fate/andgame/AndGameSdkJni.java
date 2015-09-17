@@ -32,7 +32,7 @@ public class AndGameSdkJni {
 
 	        _order = order;
 			_identifier = identifier;
-//	        GameInterface.doBilling(SdkManagerJni.activity, true, true, identifier, null, payCallback);
+//	        GameInterface.doBilling(SdkManagerJni.activity, true, true, _identifier, null, payCallback);
 
 			_handler.post(new Runnable() {
 				@Override
