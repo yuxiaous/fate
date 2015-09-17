@@ -22,7 +22,10 @@ public:
     static void showMoreGames();
     static void doScreenShotShare();
 
-private:
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+public:
+    virtual void activityOnCreate() override;
+#endif
 };
 
 #endif /* defined(__AndGameSdk__) */

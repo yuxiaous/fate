@@ -65,6 +65,10 @@ AndGameSdk *AndGameSdk::getInstance()
 
 void AndGameSdk::init()
 {
+}
+
+void AndGameSdk::activityOnCreate()
+{
     AndGameSdk_init();
 
     bool enable = isMusicEnabled();
