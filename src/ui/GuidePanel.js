@@ -167,12 +167,20 @@ var SkillGuidePanel = ui.GuiWindowBase.extend({
 
         this._arrow_img.loadTexture(idxStr);
 
-        this.bgPanel.addTouchEventListener(function (touch,event) {
-            if(event == ccui.Widget.TOUCH_ENDED){
-                LOG("touch end");
-                this._touchCallback.apply(this._target);
-            }
-        },this);
+
+        this.bgPanel.runAction(cc.Sequence.create(
+            cc.DelayTime.create(0.5),
+            cc.CallFunc.create(function () {
+                this.bgPanel.addTouchEventListener(function (touch,event) {
+                    if(event == ccui.Widget.TOUCH_ENDED){
+                        LOG("touch end");
+                        this._touchCallback.apply(this._target);
+                    }
+                },this);
+            },this)
+        ));
+
+
 
     },
 
@@ -180,6 +188,8 @@ var SkillGuidePanel = ui.GuiWindowBase.extend({
         this._content_img = null;
         this.bgPanel = null;
 
+        this._touchCallback = null;
+        this._target = null;
 
         this._super();
     }
