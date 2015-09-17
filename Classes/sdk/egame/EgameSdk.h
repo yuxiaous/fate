@@ -10,13 +10,11 @@ class EgameSdk : public Sdk, public SdkChargeProtocol
 public:
     EgameSdk();
     static EgameSdk *getInstance();
-    virtual void update(float dt) override;
     virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
-
     virtual void charge(const std::string &order, const std::string &identifier) override;
 
-    void moreGame();
-    void exit();
+    static void moreGame();
+    static void exit();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:

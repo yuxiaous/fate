@@ -44,16 +44,20 @@ public class EgameSdkJni {
     }
 
     private static String  _alias = "";
+    private static String _order = "";
     private static Handler _handler = new Handler();
 
-    public static void pay(String alias) {
-        System.out.println("EgameSdkJni.pay 1, alias: " + alias);
+    public static void pay(String order, String alias) {
+        System.out.println("EgameSdkJni.pay 1");
+        System.out.println(order + ":" + alias);
+
+        _order = order;
         _alias = alias;
 
         _handler.post(new Runnable() {
             @Override
             public void run() {
-                System.out.println("EgameSdkJni.pay 2, alias: " + _alias);
+                System.out.println("EgameSdkJni.pay 2");
 
                 HashMap payParam = new HashMap();
                 payParam.put(EgamePay.PAY_PARAMS_KEY_TOOLS_ALIAS, _alias);
@@ -71,7 +75,9 @@ public class EgameSdkJni {
             System.out.println("支付成功");
             Toast.makeText(SdkManagerJni.activity, "支付成功", Toast.LENGTH_SHORT).show();
 
-            onEgameChargeCallback(0);
+            onEgameChargeCallback(0, _order);
+            _alias = "";
+            _order = "";
         }
 
         @Override
@@ -149,7 +155,7 @@ public class EgameSdkJni {
         });
     }
 
-    public static native void onEgameChargeCallback(int result);
+    public static native void onEgameChargeCallback(int result, String order);
     public static native void onEgameExit();
 }
 
