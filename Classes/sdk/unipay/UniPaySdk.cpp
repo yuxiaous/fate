@@ -7,18 +7,43 @@ using namespace cocos2d;
 #define  CLASS_NAME "com/hdngame/fate/unicom/UniPaySdkJni"
 
 
-static std::string g_order;
-static int g_result;
-static bool g_confirm = false;
-
 extern "C" {
 
-    void Java_com_hdngame_fate_unicom_UniPaySdkJni_onUniPayChargeCallback(JNIEnv *env, jobject thiz, jint result)
+    void Java_com_hdngame_fate_unicom_UniPaySdkJni_onUniPayChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
     {
         cocos2d::log("Java_com_hdn_fate_unicom_UniPaySdkJni_onUniPayChargeCallback");
-        g_result = result;
-        g_confirm = true;
-//        UniPaySdk::getInstance()->onChargeCallback(result, g_order);
+
+        std::string order = JniHelper::jstring2string(jorder);
+        Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+            SdkChargeProtocol::onChargeCallback(result, order.c_str());
+        });
+    }
+
+    void UniPaySdk_init()
+    {
+        cocos2d::log("UniPaySdk_init");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+    }
+
+    void UniPaySdk_charge(const std::string &order, const std::string &identifier)
+    {
+        cocos2d::log("UniPaySdk_charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
+
+        if(order.empty() || identifier.empty()) {
+            SdkChargeProtocol::onChargeCallback(1, order);
+            return;
+        }
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+            jstring jorder = minfo.env->NewStringUTF(order.c_str());
+            jstring jidentifier = minfo.env->NewStringUTF(identifier.c_str());
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier);
+        }
     }
 }
 
@@ -36,38 +61,19 @@ UniPaySdk *UniPaySdk::getInstance()
     return instance;
 }
 
+void UniPaySdk::activityOnCreate()
+{
+
+}
+
 void UniPaySdk::init()
 {
 
 }
 
-void UniPaySdk::update(float dt)
-{
-    if(g_confirm) {
-        onChargeCallback(g_result, g_order.c_str());
-        g_result = 0;
-        g_order.clear();
-        g_confirm = false;
-    }
-}
-
 void UniPaySdk::charge(const std::string &order, const std::string &identifier)
 {
-    cocos2d::log("UniPaySdk::charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
-
-    if(order.empty() || identifier.empty()) {
-        onChargeCallback(1, order);
-        return;
-    }
-
-    g_order = order;
-
-    JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;)V")) {
-        jstring jidentifier = minfo.env->NewStringUTF(identifier.c_str());
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jidentifier);
-        minfo.env->DeleteLocalRef(jidentifier);
-    }
+    UniPaySdk_charge(order, identifier);
 }
 
 void UniPaySdk::activityOnPause()

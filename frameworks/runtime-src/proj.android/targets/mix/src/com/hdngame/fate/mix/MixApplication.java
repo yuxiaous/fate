@@ -1,5 +1,6 @@
 package com.hdngame.fate.mix;
 
+import com.hdngame.fate.unicom.UniPaySdkJni;
 import org.cocos2dx.javascript.AppApplication;
 
 /**
@@ -11,6 +12,7 @@ public class MixApplication extends AppApplication {
 
         super.onCreate();
         System.loadLibrary("megjb");
+        UniPaySdkJni.init();
     }
 }
 

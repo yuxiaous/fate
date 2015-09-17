@@ -27,13 +27,6 @@
             </intent-filter>
         </activity>
 
-        <!-- and game start -->
-        <activity android:name="cn.cmgame.billing.api.GameOpenActivity"
-                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-                  android:screenOrientation="sensor">
-        </activity>
-        <!-- and game end -->
-
         <!-- KTPlay SDK配置开始 -->
         <activity
                 android:name="com.ktplay.activity.GetPhotoActivity"
@@ -48,6 +41,37 @@
                 android:value="GP"
                 />
         <!-- KTPlay SDK配置结束 -->
+
+        <!-- and game start -->
+        <activity android:name="cn.cmgame.billing.api.GameOpenActivity"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:screenOrientation="sensor">
+        </activity>
+        <!-- and game end -->
+
+        <!-- unipay start -->
+        <meta-data android:name="wostore_billing_otherpay" android:value="false"/>
+        <meta-data android:name="wostore_billing_chinaunicom" android:value="true"/>
+        <meta-data android:name="wostore_billing_chinamobile"  android:value="false" />
+        <meta-data android:name="wostore_billing_chinatele"  android:value="false" />
+
+        <service android:name="com.unicom.wostore.unipay.paysecurity.SecurityServiceFramework">
+            <intent-filter>
+                <action android:name="com.hdngame.fate.mix.unicom.wostore.unipay.securityserviceframework" />
+            </intent-filter>
+        </service>
+
+        <activity
+                android:name="com.unicom.dcLoader.welcomeview"
+                android:label="@string/app_name"
+                android:screenOrientation="sensor"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                android:configChanges="keyboardHidden|screenSize|navigation|orientation"
+                >
+
+            <meta-data android:name="UNICOM_DIST_ACTIVITY" android:value="org.cocos2dx.javascript.AppActivity"/>
+        </activity>
+        <!-- unipay end -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -71,5 +95,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
 
 </manifest> 

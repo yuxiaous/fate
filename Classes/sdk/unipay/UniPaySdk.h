@@ -14,12 +14,12 @@ public:
 
     virtual void init() override;
     virtual void charge(const std::string &order, const std::string &identifier) override;
-    virtual void update(float dt);
 
-    void moreGame();
+    static void moreGame();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
+    virtual void activityOnCreate() override;
     virtual void activityOnPause() override;
     virtual void activityOnResume() override;
 #endif

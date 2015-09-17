@@ -86,10 +86,7 @@
             <!--<pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />-->
 
             <!-- unipay -->
-            <!--<pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />-->
-
-            <!-- and game -->
-            <!--<pathelement location="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />-->
+            <pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

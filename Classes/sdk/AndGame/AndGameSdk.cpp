@@ -18,7 +18,7 @@ extern "C" {
 
         std::string order = JniHelper::jstring2string(jorder);
         Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
-            AndGameSdk::onChargeCallback(result, order.c_str());
+            SdkChargeProtocol::onChargeCallback(result, order.c_str());
         });
     }
 

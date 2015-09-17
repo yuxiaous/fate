@@ -5,6 +5,7 @@
 extern "C" {
     extern void AndGameSdk_init();
     extern void AndGameSdk_charge(const std::string &order, const std::string &identifier);
+    extern void UniPaySdk_charge(const std::string &order, const std::string &identifier);
 }
 
 MixSdk::MixSdk()
@@ -59,6 +60,7 @@ void MixSdk::charge(const std::string &order, const std::string &identifier)
                 break;
 
             case UNICOM:
+                UniPaySdk_charge(order, identifier);
                 break;
 
             case TELECOM:
