@@ -6,6 +6,8 @@ extern "C" {
     extern void AndGameSdk_init();
     extern void AndGameSdk_charge(const std::string &order, const std::string &identifier);
     extern void UniPaySdk_charge(const std::string &order, const std::string &identifier);
+    extern void EgameSdk_init();
+    extern void EgameSdk_charge(const std::string &order, const std::string &identifier);
 }
 
 MixSdk::MixSdk()
@@ -19,20 +21,9 @@ void MixSdk::activityOnCreate()
     cocos2d::log("MixSdk::activityOnCreate");
 
     _simType = GameUtils::getSimOperator();
-    switch(_simType) {
-        case CMCC: // 移动
-            cocos2d::log("移动");
-            AndGameSdk_init();
-            break;
-        case UNICOM: // 联通
-            cocos2d::log("联通");
-            break;
-        case TELECOM: // 电信
-            cocos2d::log("电信");
-            break;
-        default:
-            break;
-    }
+
+    AndGameSdk_init();
+    EgameSdk_init();
 }
 
 void MixSdk::activityOnPause()
@@ -64,6 +55,7 @@ void MixSdk::charge(const std::string &order, const std::string &identifier)
                 break;
 
             case TELECOM:
+                EgameSdk_charge(order, identifier);
                 break;
         }
 }

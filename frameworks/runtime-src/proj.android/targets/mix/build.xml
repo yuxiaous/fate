@@ -81,9 +81,9 @@
             <!--<pathelement location="../../../Classes/sdk/mmbilling/android/mmbilling.3.1.7.jar" />-->
 
             <!-- egame -->
-            <!--<pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />-->
-            <!--<pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />-->
-            <!--<pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />-->
+            <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
 
             <!-- unipay -->
             <pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />
