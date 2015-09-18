@@ -1,4 +1,4 @@
-package com.hdngame.fate.mix;
+package com.hdngame.fate;
 
 import com.hdngame.fate.unicom.UniPaySdkJni;
 import org.cocos2dx.javascript.AppApplication;

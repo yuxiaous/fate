@@ -1,14 +1,8 @@
 #include "MixSdk.h"
 #include "GameUtils.h"
 #include "AndGame/AndGameSdk.h"
-
-extern "C" {
-    extern void AndGameSdk_init();
-    extern void AndGameSdk_charge(const std::string &order, const std::string &identifier);
-    extern void UniPaySdk_charge(const std::string &order, const std::string &identifier);
-    extern void EgameSdk_init();
-    extern void EgameSdk_charge(const std::string &order, const std::string &identifier);
-}
+#include "unipay/UniPaySdk.h"
+#include "egame/EgameSdk.h"
 
 MixSdk::MixSdk()
 : _simType(0)

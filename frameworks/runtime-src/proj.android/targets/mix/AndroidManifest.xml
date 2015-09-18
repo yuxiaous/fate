@@ -10,7 +10,7 @@
 
     <application android:label="@string/app_name"
                  android:icon="@drawable/icon"
-                 android:name="com.hdngame.fate.mix.MixApplication">
+                 android:name="com.hdngame.fate.MixApplication">
 
         <!-- Tell NativeActivity the name of our .so -->
         <meta-data android:name="android.app.lib_name" android:value="cocos2djs" />

@@ -4,6 +4,12 @@
 #include "Sdk.h"
 #include "cocos2d.h"
 
+
+extern "C" {
+    void AndGameSdk_init();
+    void AndGameSdk_charge(const std::string &order, const std::string &identifier);
+}
+
 class AndGameSdk : public Sdk, public SdkChargeProtocol
 {
 public:

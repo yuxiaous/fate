@@ -6,6 +6,11 @@
 #include "cocos2d.h"
 
 
+extern "C" {
+    void UniPaySdk_init();
+    void UniPaySdk_charge(const std::string &order, const std::string &identifier);
+}
+
 class UniPaySdk : public Sdk, public SdkChargeProtocol
 {
 public:
