@@ -97,9 +97,12 @@
     <target name="-pre-build">
         <!-- src start -->
         <copy todir="src">
-            <fileset dir="targets/cmcc_and/src" includes="com/hdngame/fate/andgame/AndGameSdkJni.java" />
-            <fileset dir="targets/unicom/src" includes="com/hdngame/fate/unicom/UniPaySdkJni.java" />
-            <fileset dir="targets/telecom/src" includes="com/hdngame/fate/telecom/EgameSdkJni.java" />
+            <fileset dir="java">
+                <include name="com/hdngame/fate/MixApplication.java" />
+                <include name="com/hdngame/fate/andgame/AndGameSdkJni.java" />
+                <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />
+                <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
+            </fileset>
         </copy>
         <!-- src end -->
 
