@@ -34,19 +34,19 @@ void MixSdk::charge(const std::string &order, const std::string &identifier)
 {
     cocos2d::log("MixSdk::charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
 
-        switch(_simType) {
-            case CMCC:
-                AndGameSdk_charge(order, identifier);
-                break;
+    switch(_simType) {
+        case CMCC:
+            AndGameSdk_charge(order, identifier);
+            break;
 
-            case UNICOM:
-                UniPaySdk_charge(order, identifier);
-                break;
+        case UNICOM:
+            UniPaySdk_charge(order, identifier);
+            break;
 
-            case TELECOM:
-                EgameSdk_charge(order, identifier);
-                break;
-        }
+        case TELECOM:
+            EgameSdk_charge(order, identifier);
+            break;
+    }
 }
 
 void MixSdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
