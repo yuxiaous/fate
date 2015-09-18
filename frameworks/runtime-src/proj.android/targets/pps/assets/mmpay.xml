@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Please don’t modify this XML data, any modify will make chinamobie in app payment not work-->
+<!--下述XML结构体不能修改，如修改则将影响计费逻辑-->
+<data>
+  <ProgramId>5QZzPzRhnx0=</ProgramId>
+  <APPID>57XTQTMMbx9kh4dTH7bqpg==</APPID>
+  <AppName>fBbJGF2sFmV7DfRJaTdBtdew+92IMmsy7tlnYWRzRUQ=</AppName>
+  <Provider>lr+MKQimItIQSpVaVq6R+w==</Provider>
+  <ChannelCode>nzo7+D4xlJY=</ChannelCode>
+  <Files>
+    <File name="Vg5EuxX7jIbJ3QHPbN2HBQ==" size="9GV/XJke3iQ=" value="/StcUmBBiwCdIawj+7tuauGIkKn2NTR8+GeDShWd0n0="/>
+  </Files>
+  <Products>
+    <ProductInfo>
+      <paycode>FWwVG9Rv4Ko=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="jFSBJRM86HLoBMFbWBKwaw=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="F5nKzcffyYw="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>AP6lP3+hLOA=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="Mz0NEsK6z3foBMFbWBKwaw=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="xyjIECDTIKc="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>qrO2KCDIbHI=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="Tz0VL6190dogpPGUDjMOWW8NpOAPlkwp"/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="OvLmWl/G31c="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>wc4TktdBa/w=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="G64LP8/vSK9LFLyAv/rimQ=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="OvLmWl/G31c="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>LUZ/jhR24SE=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="HQQMY97OwFiWAzw3IszgAQ=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="BrjHJ/X2YL8="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>mUZwb9pEDjI=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="wE/DuLr5jn2UKPHsvSeSCg=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="xAiJGVeQD/s="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>2Qbs0TWy5f4=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="O1J7Xirg4EqklzICwUYp3g=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="OvLmWl/G31c="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>bRHWOFgXSrw=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="3ySzMuzgRbQrHe7hldF5vg=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="Eaw4wrFj3wo="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>MHS5H2Ti7Rk=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="yPTczQqP4Cw="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="xAiJGVeQD/s="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>OrmffvTI8bE=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="LpQZIM7JFZckdC55AMLqqie1qQTU9Og/"/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="BMZp9jODYjo="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>4sh1S40nnFQ=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="yLJG3MgNg+/8jp49yo+vRye1qQTU9Og/"/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="OvLmWl/G31c="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>Won6j+AfBzM=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="hymQmLC3EixAY6dsESNpYA=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="tVeRwtajFYo="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>kvyuX47j8wU=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="QuXG7jDwVTrQa9ddISCJSQ=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="Eaw4wrFj3wo="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>lS4UIrmBhUo=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="bPpkWt91mTc="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="BrjHJ/X2YL8="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>Oqf0b3Hr/wA=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="eb/dtGAS7Nu04HlxDitSjQ=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="gMRmdVZbvEI="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>tg+CrcoTfKY=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="XJdO+HL2vmpRAhP7uvSLYQ=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="BrjHJ/X2YL8="/>
+      </Items>
+    </ProductInfo>
+    <ProductInfo>
+      <paycode>6U0cABzlzw4=</paycode>
+      <Items>
+        <Item id="lfQ/oOCO06E=" name="UvqmI2+TWw4=" value="PiN2Jal64ZDAKduT125LhA=="/>
+        <Item id="AlrwU6rcLXccFymdZySbRQ==" name="RVqxd07UBR0=" value="BrjHJ/X2YL8="/>
+      </Items>
+    </ProductInfo>
+  </Products>
+  <aliasName>
+    <alias name="hMN3y2DAvxc=" paycode="FWwVG9Rv4Ko="/>
+    <alias name="hERkS9U+7dA=" paycode="AP6lP3+hLOA="/>
+    <alias name="vDUbs4igPm0=" paycode="qrO2KCDIbHI="/>
+    <alias name="HaVF9iNa+U8=" paycode="wc4TktdBa/w="/>
+    <alias name="ZFHYUHDi1/k=" paycode="LUZ/jhR24SE="/>
+    <alias name="UOAiD9Mb2Ic=" paycode="mUZwb9pEDjI="/>
+    <alias name="PIsViNtfOnY=" paycode="2Qbs0TWy5f4="/>
+    <alias name="R7s2auuqZYo=" paycode="bRHWOFgXSrw="/>
+    <alias name="TNVniNLVnQg=" paycode="MHS5H2Ti7Rk="/>
+    <alias name="ZPO2Zt8jkFg=" paycode="OrmffvTI8bE="/>
+    <alias name="Z4ohZF8uABg=" paycode="4sh1S40nnFQ="/>
+    <alias name="Lk6mJ1nsFhg=" paycode="Won6j+AfBzM="/>
+    <alias name="aTlxDmgb2kk=" paycode="kvyuX47j8wU="/>
+    <alias name="w0KTlI8Hgpo=" paycode="lS4UIrmBhUo="/>
+    <alias name="hAXus3in6IE=" paycode="Oqf0b3Hr/wA="/>
+    <alias name="AKfvOWUS+IU=" paycode="tg+CrcoTfKY="/>
+    <alias name="Z+/XjpfP3pk=" paycode="6U0cABzlzw4="/>
+  </aliasName>
+  <Mark>9689A00B0A9CBD4BEAAA7F80483009AC</Mark>
+  <!--上述XML结构体不能修改，如修改则将影响计费逻辑-->
+  <!--Please don’t modify this XML data, any modify will make chinamobie in app payment not work-->
+  <aliasChannel>
+    <alias name="80001026" putchannel="772"/>
+    <alias name="测试渠道1" putchannel="171"/>
+    <alias name="测试渠道2" putchannel="172"/>
+    <alias name="0" putchannel="211"/>
+    <alias name="80001001" putchannel="731"/>
+    <alias name="80001013" putchannel="771"/>
+    <alias name="80011046" putchannel="1791"/>
+    <alias name="80011059" putchannel="1792"/>
+    <alias name="80011052" putchannel="1793"/>
+    <alias name="80001020" putchannel="1762"/>
+    <alias name="80001002" putchannel="751"/>
+    <alias name="80001005" putchannel="752"/>
+    <alias name="80001006" putchannel="753"/>
+    <alias name="80001017" putchannel="754"/>
+    <alias name="80001018" putchannel="755"/>
+    <alias name="80001024" putchannel="757"/>
+    <alias name="80001025" putchannel="758"/>
+    <alias name="dd" putchannel="1771"/>
+    <alias name="aa" putchannel="1772"/>
+    <alias name="80011044" putchannel="1831"/>
+    <alias name="80011042" putchannel="1812"/>
+    <alias name="80011047" putchannel="1813"/>
+    <alias name="80011063" putchannel="1814"/>
+    <alias name="80011065" putchannel="1815"/>
+    <alias name="80001009" putchannel="1756"/>
+    <alias name="12345" putchannel="711"/>
+    <alias name="80001021" putchannel="756"/>
+    <alias name="80001028" putchannel="1764"/>
+    <alias name="80001030" putchannel="1766"/>
+    <alias name="80001039" putchannel="1767"/>
+    <alias name="80001040" putchannel="1768"/>
+    <alias name="80001041" putchannel="1769"/>
+    <alias name="80011068" putchannel="1811"/>
+    <alias name="xc001" putchannel="1851"/>
+    <alias name="xc002" putchannel="1852"/>
+    <alias name="xc003" putchannel="1853"/>
+    <alias name="xc004" putchannel="1854"/>
+    <alias name="xc005" putchannel="1855"/>
+    <alias name="xc006" putchannel="1856"/>
+    <alias name="xc007" putchannel="1857"/>
+    <alias name="xc008" putchannel="1858"/>
+    <alias name="xc009" putchannel="1859"/>
+    <alias name="xc010" putchannel="1860"/>
+    <alias name="xc011" putchannel="1861"/>
+    <alias name="xc012" putchannel="1862"/>
+    <alias name="xc013" putchannel="1863"/>
+    <alias name="xc014" putchannel="1864"/>
+    <alias name="xc015" putchannel="1865"/>
+    <alias name="xc016" putchannel="1866"/>
+    <alias name="xc017" putchannel="1867"/>
+    <alias name="xc018" putchannel="1868"/>
+    <alias name="xc019" putchannel="1869"/>
+    <alias name="xc020" putchannel="1870"/>
+    <alias name="xc021" putchannel="1871"/>
+    <alias name="80001003" putchannel="1752"/>
+    <alias name="80001004" putchannel="1753"/>
+    <alias name="80001023" putchannel="1763"/>
+    <alias name="80001029" putchannel="1765"/>
+    <alias name="80001002" putchannel="1751"/>
+    <alias name="80001007" putchannel="1754"/>
+    <alias name="80001008" putchannel="1755"/>
+    <alias name="80001010" putchannel="1757"/>
+    <alias name="80001014" putchannel="1758"/>
+    <alias name="80001015" putchannel="1759"/>
+    <alias name="80001016" putchannel="1760"/>
+    <alias name="80001019" putchannel="1761"/>
+    <alias name="移动MM" putchannel="191"/>
+    <alias name="80001027" putchannel="773"/>
+    <alias name="xc022" putchannel="1872"/>
+    <alias name="xc024" putchannel="1874"/>
+    <alias name="xc030" putchannel="1880"/>
+    <alias name="xc031" putchannel="1881"/>
+    <alias name="xc033" putchannel="1883"/>
+    <alias name="xc034" putchannel="1884"/>
+    <alias name="xc036" putchannel="1886"/>
+    <alias name="xc038" putchannel="1888"/>
+    <alias name="xc039" putchannel="1889"/>
+    <alias name="xc041" putchannel="1891"/>
+    <alias name="xc042" putchannel="1892"/>
+    <alias name="xc045" putchannel="1895"/>
+    <alias name="xc046" putchannel="1896"/>
+    <alias name="xc048" putchannel="1898"/>
+    <alias name="xc049" putchannel="1899"/>
+    <alias name="xc053" putchannel="1903"/>
+    <alias name="xc055" putchannel="1905"/>
+    <alias name="xc057" putchannel="1907"/>
+    <alias name="xc059" putchannel="1909"/>
+    <alias name="xc060" putchannel="1910"/>
+    <alias name="xc065" putchannel="1915"/>
+    <alias name="xc066" putchannel="1916"/>
+    <alias name="xc067" putchannel="1917"/>
+    <alias name="xc080" putchannel="1930"/>
+    <alias name="xc083" putchannel="1933"/>
+    <alias name="xc084" putchannel="1934"/>
+    <alias name="xc085" putchannel="1935"/>
+    <alias name="xc087" putchannel="1937"/>
+    <alias name="xc090" putchannel="1940"/>
+    <alias name="xc091" putchannel="1941"/>
+    <alias name="xc092" putchannel="1942"/>
+    <alias name="xc094" putchannel="1944"/>
+    <alias name="xc095" putchannel="1945"/>
+    <alias name="xc096" putchannel="1946"/>
+    <alias name="xc097" putchannel="1947"/>
+    <alias name="xc098" putchannel="1948"/>
+    <alias name="xc099" putchannel="1949"/>
+    <alias name="xc100" putchannel="1950"/>
+    <alias name="xc101" putchannel="1951"/>
+    <alias name="xc102" putchannel="1952"/>
+    <alias name="xc103" putchannel="1953"/>
+    <alias name="xc111" putchannel="1961"/>
+    <alias name="xc114" putchannel="1964"/>
+    <alias name="xc116" putchannel="1966"/>
+    <alias name="xc117" putchannel="1967"/>
+    <alias name="xc127" putchannel="1977"/>
+    <alias name="xc163" putchannel="2013"/>
+    <alias name="xc164" putchannel="2014"/>
+    <alias name="xc188" putchannel="2038"/>
+    <alias name="xc189" putchannel="2039"/>
+    <alias name="xc198" putchannel="2048"/>
+    <alias name="xc199" putchannel="2049"/>
+    <alias name="xc093" putchannel="1943"/>
+    <alias name="xc112" putchannel="1962"/>
+    <alias name="xc113" putchannel="1963"/>
+    <alias name="xc115" putchannel="1965"/>
+    <alias name="xc158" putchannel="2008"/>
+    <alias name="xc178" putchannel="2028"/>
+    <alias name="xc180" putchannel="2030"/>
+    <alias name="xc181" putchannel="2031"/>
+    <alias name="xc182" putchannel="2032"/>
+    <alias name="xc183" putchannel="2033"/>
+    <alias name="xc184" putchannel="2034"/>
+    <alias name="xc191" putchannel="2041"/>
+    <alias name="xc192" putchannel="2042"/>
+    <alias name="xc195" putchannel="2045"/>
+    <alias name="xc027" putchannel="1877"/>
+    <alias name="xc043" putchannel="1893"/>
+    <alias name="xc069" putchannel="1919"/>
+    <alias name="xc070" putchannel="1920"/>
+    <alias name="xc071" putchannel="1921"/>
+    <alias name="xc074" putchannel="1924"/>
+    <alias name="xc075" putchannel="1925"/>
+    <alias name="xc076" putchannel="1926"/>
+    <alias name="xc077" putchannel="1927"/>
+    <alias name="xc078" putchannel="1928"/>
+    <alias name="xc079" putchannel="1929"/>
+    <alias name="xc081" putchannel="1931"/>
+    <alias name="xc082" putchannel="1932"/>
+    <alias name="xc129" putchannel="1979"/>
+    <alias name="xc130" putchannel="1980"/>
+    <alias name="xc131" putchannel="1981"/>
+    <alias name="xc132" putchannel="1982"/>
+    <alias name="xc135" putchannel="1985"/>
+    <alias name="xc165" putchannel="2015"/>
+    <alias name="xc170" putchannel="2020"/>
+    <alias name="xc185" putchannel="2035"/>
+    <alias name="xc187" putchannel="2037"/>
+    <alias name="xc190" putchannel="2040"/>
+    <alias name="xc023" putchannel="1873"/>
+    <alias name="xc032" putchannel="1882"/>
+    <alias name="xc047" putchannel="1897"/>
+    <alias name="xc050" putchannel="1900"/>
+    <alias name="xc051" putchannel="1901"/>
+    <alias name="xc052" putchannel="1902"/>
+    <alias name="xc054" putchannel="1904"/>
+    <alias name="xc056" putchannel="1906"/>
+    <alias name="xc058" putchannel="1908"/>
+    <alias name="xc061" putchannel="1911"/>
+    <alias name="xc062" putchannel="1912"/>
+    <alias name="xc063" putchannel="1913"/>
+    <alias name="xc064" putchannel="1914"/>
+    <alias name="xc068" putchannel="1918"/>
+    <alias name="xc072" putchannel="1922"/>
+    <alias name="xc073" putchannel="1923"/>
+    <alias name="xc088" putchannel="1938"/>
+    <alias name="xc089" putchannel="1939"/>
+    <alias name="xc104" putchannel="1954"/>
+    <alias name="xc105" putchannel="1955"/>
+    <alias name="xc106" putchannel="1956"/>
+    <alias name="xc107" putchannel="1957"/>
+    <alias name="xc108" putchannel="1958"/>
+    <alias name="xc109" putchannel="1959"/>
+    <alias name="xc110" putchannel="1960"/>
+    <alias name="xc118" putchannel="1968"/>
+    <alias name="xc119" putchannel="1969"/>
+    <alias name="xc120" putchannel="1970"/>
+    <alias name="xc121" putchannel="1971"/>
+    <alias name="xc122" putchannel="1972"/>
+    <alias name="xc123" putchannel="1973"/>
+    <alias name="xc128" putchannel="1978"/>
+    <alias name="xc141" putchannel="1991"/>
+    <alias name="xc142" putchannel="1992"/>
+    <alias name="xc143" putchannel="1993"/>
+    <alias name="xc144" putchannel="1994"/>
+    <alias name="xc145" putchannel="1995"/>
+    <alias name="xc147" putchannel="1997"/>
+    <alias name="xc154" putchannel="2004"/>
+    <alias name="xc156" putchannel="2006"/>
+    <alias name="xc161" putchannel="2011"/>
+    <alias name="xc162" putchannel="2012"/>
+    <alias name="xc166" putchannel="2016"/>
+    <alias name="xc167" putchannel="2017"/>
+    <alias name="xc168" putchannel="2018"/>
+    <alias name="xc169" putchannel="2019"/>
+    <alias name="xc171" putchannel="2021"/>
+    <alias name="xc172" putchannel="2022"/>
+    <alias name="xc173" putchannel="2023"/>
+    <alias name="xc174" putchannel="2024"/>
+    <alias name="xc176" putchannel="2026"/>
+    <alias name="xc177" putchannel="2027"/>
+    <alias name="xc179" putchannel="2029"/>
+    <alias name="xc186" putchannel="2036"/>
+    <alias name="xc029" putchannel="1879"/>
+    <alias name="xc086" putchannel="1936"/>
+    <alias name="xc134" putchannel="1984"/>
+    <alias name="xc136" putchannel="1986"/>
+    <alias name="xc138" putchannel="1988"/>
+    <alias name="xc140" putchannel="1990"/>
+    <alias name="xc148" putchannel="1998"/>
+    <alias name="xc149" putchannel="1999"/>
+    <alias name="xc150" putchannel="2000"/>
+    <alias name="xc151" putchannel="2001"/>
+    <alias name="xc152" putchannel="2002"/>
+    <alias name="xc155" putchannel="2005"/>
+    <alias name="xc157" putchannel="2007"/>
+    <alias name="xc160" putchannel="2010"/>
+    <alias name="xc193" putchannel="2043"/>
+    <alias name="xc194" putchannel="2044"/>
+    <alias name="xc196" putchannel="2046"/>
+    <alias name="xc025" putchannel="1875"/>
+    <alias name="xc026" putchannel="1876"/>
+    <alias name="xc028" putchannel="1878"/>
+    <alias name="xc035" putchannel="1885"/>
+    <alias name="xc037" putchannel="1887"/>
+    <alias name="xc040" putchannel="1890"/>
+    <alias name="xc044" putchannel="1894"/>
+    <alias name="xc124" putchannel="1974"/>
+    <alias name="xc125" putchannel="1975"/>
+    <alias name="xc126" putchannel="1976"/>
+    <alias name="xc137" putchannel="1987"/>
+    <alias name="xc139" putchannel="1989"/>
+    <alias name="xc175" putchannel="2025"/>
+    <alias name="xc197" putchannel="2047"/>
+    <alias name="xc200" putchannel="2050"/>
+    <alias name="xc133" putchannel="1983"/>
+    <alias name="xc146" putchannel="1996"/>
+    <alias name="xc153" putchannel="2003"/>
+    <alias name="xc159" putchannel="2009"/>
+  </aliasChannel>
+</data>

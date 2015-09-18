@@ -40,6 +40,8 @@ int GameUtils::getChannelId()
     return 9;
 #elif defined(CHANNEL_MIX)
     return 10;
+#elif defined(CHANNEL_PPS)
+    return 11;
 #endif
     
     return 0;

@@ -164,6 +164,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.TencentMidas:
             return 8;
         case GameChannel.Mix:
+        case GameChannel.Pps:
             var sim_operator = util.getSimOperator();
             switch (sim_operator) {
                 case SimOperator.CMCC:
