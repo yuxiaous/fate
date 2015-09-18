@@ -22,17 +22,12 @@ void MixSdk::activityOnCreate()
 
 void MixSdk::activityOnPause()
 {
-
+    UniPaySdk_onPause();
 }
 
 void MixSdk::activityOnResume()
 {
-
-}
-
-void MixSdk::activityOnDestroy()
-{
-
+    UniPaySdk_onResume();
 }
 
 void MixSdk::charge(const std::string &order, const std::string &identifier)

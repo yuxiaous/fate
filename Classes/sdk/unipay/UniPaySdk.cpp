@@ -45,6 +45,36 @@ extern "C" {
             minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier);
         }
     }
+
+    void UniPaySdk_onPause()
+    {
+        cocos2d::log("UniPaySdk_onPause");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "onPause", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+    }
+
+    void UniPaySdk_onResume()
+    {
+        cocos2d::log("UniPaySdk_onResume");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "onResume", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+    }
+
+    void UniPaySdk_moreGame()
+    {
+        cocos2d::log("UniPaySdk_moreGame");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "moreGame", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+    }
 }
 
 
@@ -78,31 +108,16 @@ void UniPaySdk::charge(const std::string &order, const std::string &identifier)
 
 void UniPaySdk::activityOnPause()
 {
-    cocos2d::log("UniPaySdk::activityOnPause");
-
-    JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "onPause", "()V")) {
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-    }
+    UniPaySdk_onPause();
 }
 
 void UniPaySdk::activityOnResume()
 {
-    cocos2d::log("UniPaySdk::activityOnResume");
-
-    JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "onResume", "()V")) {
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-    }
+    UniPaySdk_onResume();
 }
 
 void UniPaySdk::moreGame()
 {
-    cocos2d::log("UniPaySdk::moreGame");
-
-    JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "moreGame", "()V")) {
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-    }
+    UniPaySdk_moreGame();
 }
 

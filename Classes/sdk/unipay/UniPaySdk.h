@@ -9,6 +9,9 @@
 extern "C" {
     void UniPaySdk_init();
     void UniPaySdk_charge(const std::string &order, const std::string &identifier);
+    void UniPaySdk_onPause();
+    void UniPaySdk_onResume();
+    void UniPaySdk_moreGame();
 }
 
 class UniPaySdk : public Sdk, public SdkChargeProtocol
