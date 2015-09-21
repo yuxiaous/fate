@@ -159,7 +159,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 //        cocos2d::log("check signature code %d", code);
         int checks[] = {
             -903721661, // release
-            1981852604 // yuxiao debug
+            1981852604, // yuxiao debug
+            961438612 // shilei debug
         };
         
         bool isLegalCopy = false;
