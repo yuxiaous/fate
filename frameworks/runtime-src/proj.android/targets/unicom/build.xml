@@ -88,6 +88,15 @@
     </target>
 
     <target name="-pre-build">
+        <!-- src start -->
+        <copy todir="src">
+            <fileset dir="java">
+                <include name="com/hdngame/fate/unicom/UniComApplication.java" />
+                <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />
+            </fileset>
+        </copy>
+        <!-- src end -->
+
         <!-- TalkingDataGameAnalytics start -->
         <!-- TalkingDataGameAnalytics end -->
 
