@@ -98,6 +98,15 @@
     </target>
 
     <target name="-pre-build">
+        <!-- src start -->
+        <copy todir="src">
+            <fileset dir="java">
+                <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
+                <include name="com/hdngame/fate/telecom/Splash.java" />
+            </fileset>
+        </copy>
+        <!-- src end -->
+
         <!-- TalkingDataGameAnalytics start -->
         <!-- TalkingDataGameAnalytics end -->
 
