@@ -57,7 +57,7 @@
 
         <service android:name="com.unicom.wostore.unipay.paysecurity.SecurityServiceFramework">
             <intent-filter>
-                <action android:name="com.hdngame.fate.mix.unicom.wostore.unipay.securityserviceframework" />
+                <action android:name="com.hdngame.fate.unicom.wostore.unipay.securityserviceframework" />
             </intent-filter>
         </service>
 
