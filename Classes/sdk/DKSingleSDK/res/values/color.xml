@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <drawable name="tab_button_normal">#ffffff</drawable>
+    <drawable name="tab_button_pressed">#333333</drawable>
+	<color name="dk_competition_title">#313131</color>
+	<color name="dk_gold">#b89766</color>
+	<color name="dk_listview_item_chess_line">#E8ECED</color>
+	<color name="dk_listview_item_chess_text_num">#B6181A</color>
+	<color name="dk_chess_viewrank_text_color">#111111</color>
+	<color name="dk_chess_rankdate_text_color">#898989</color>
+	<color name="dk_chess_getaward_text_color">#B6181A</color>
+	<color name="dk_transparent">#00000000</color>
+	<color name="dk_color_b61b1a">#B61B1A</color>
+    <color name="dk_color_666666">#666666</color>
+    <color name="dk_color_999999">#999999</color>
+    <color name="dk_color_eaeaea">#EAEAEA</color>
+    <color name="dk_color_b93031">#B93031</color>
+    <color name="dk_color_e0e0e0">#E0E0E0</color>
+    <color name="dk_color_333333">#333333</color>
+    <color name="dk_color_c9c2bf">#C9C2BF</color>
+    <color name="dk_color_d70305">#D70305</color>
+     <color name="dk_color_ffffff">#FFFFFF</color>
+    <color name="dk_color_d70306">#D70306</color>
+    <color name="dk_color_ff44dd">#FF44DD</color>	
+    <color name="dk_color_ff4400">#FF4400</color>
+    <color name="dk_color_454545">#454545</color>
+    <color name="dk_color_A2745B">#A2745B</color>
+    <color name="dk_color_000000">#000000</color>
+    <!-- quickpay start -->
+        <color name="dk_gamesdk_white">#FFFFFF</color>
+        <color name="dk_gamesdk_black">#000000</color>
+        <color name="dk_gamesdk_orange">#FF6600</color>
+        <color name="dk_gamesdk_yellow">#932D00</color>
+        <color name="dk_gamesdk_gray">#DBDBDB</color>
+        <color name="dk_bg">#f5f5f5</color>
+        <color name="dk_color_cc3300">#cc3300</color>
+        <color name="dk_color_d0d0d0">#D0D0D0</color>
+        <color name="dk_color_c0c1c2">#c0c1c2</color>
+        <color name="dk_color_2764af">#2764af</color>
+        <color name="dk_color_5c5c5c">#5c5c5c</color>
+        <color name="dk_color_838383">#838383</color>
+        <color name="dk_color_fdf2db">#fdf2db</color>
+        <color name="dk_color_0066cc">#0066cc</color>
+        <color name="dk_color_ff3300">#ff3300</color>
+        <color name="dk_color_f6f6f6">#F6F6F6</color>
+        <color name="dk_color_9c9c9c">#9c9c9c</color>
+        <color name="dk_color_e38c04">#e38c04</color>
+        <color name="dk_color_61B11F">#61B11F</color>
+        <color name="dk_color_fd711d">#fd711d</color>
+        <color name="dk_color_ff6e04">#ff6e04</color>
+        <color name="dk_color_CEF6FE">#CEF6FE</color>
+    <!-- quickpay end -->
+    <color name="dk_color_recharge_title">#F98905</color>
+</resources>
