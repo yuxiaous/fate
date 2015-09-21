@@ -85,6 +85,15 @@
     <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
 
     <target name="-pre-build">
+        <!-- src start -->
+        <copy todir="src">
+            <fileset dir="java">
+                <include name="com/hdngame/fate/andgame/AndGameSdkJni.java" />
+                <include name="com/hdngame/fate/andgame/CmgameApplication.java" />
+            </fileset>
+        </copy>
+        <!-- src end -->
+
         <!-- TalkingDataGameAnalytics start -->
         <!-- TalkingDataGameAnalytics end -->
 
