@@ -81,6 +81,16 @@
         </path>
     </target>
 
+    <target name="-pre-build">
+        <!-- src start -->
+        <copy todir="src">
+            <fileset dir="java">
+                <include name="com/hdngame/fate/yijie/YijieApplication.java" />
+            </fileset>
+        </copy>
+        <!-- src end -->
+    </target>
+
     <!-- Import the actual build file.
 
          To customize existing targets, there are two options:
