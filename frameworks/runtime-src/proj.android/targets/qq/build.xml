@@ -88,6 +88,14 @@
     </target>
 
     <target name="-pre-build">
+        <!-- src start -->
+        <copy todir="src">
+            <fileset dir="java">
+                <include name="com/hdngame/fate/qq/TencentMidasSdkJni.java" />
+            </fileset>
+        </copy>
+        <!-- src end -->
+
         <!-- TalkingDataGameAnalytics start -->
         <!-- TalkingDataGameAnalytics end -->
 
