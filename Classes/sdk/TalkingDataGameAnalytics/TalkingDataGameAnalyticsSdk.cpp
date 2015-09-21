@@ -57,6 +57,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "pps";
 #elif defined(CHANNEL_SOHUWAN)
     channel = "sohuwan";
+#elif defined(CHANNEL_YOUKU)
+    channel = "youku";
 //#elif defined(CHANNEL_360)
 //    channel = "360";
 //#elif defined(CHANNEL_TENCENT_QQ)

@@ -149,7 +149,8 @@ var GameChannel = {
     TencentMidas: 9, //腾讯应用宝
     Mix: 10,
     Pps: 11,
-    SohuWan: 12
+    SohuWan: 12,
+    Youku: 13
 };
 
 var SimOperator = {
