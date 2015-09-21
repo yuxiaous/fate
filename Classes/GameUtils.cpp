@@ -42,6 +42,8 @@ int GameUtils::getChannelId()
     return 10;
 #elif defined(CHANNEL_PPS)
     return 11;
+#elif defined(CHANNEL_SOHUWAN)
+    return 12;
 #endif
     
     return 0;
