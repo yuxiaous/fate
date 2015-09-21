@@ -37,6 +37,7 @@
 #include "ConfigParser.h"
 
 #include "SdkManager.h"
+#include "GameUtils.h"
 
 //#include "IOSUtil.h"
 
@@ -150,6 +151,26 @@ bool AppDelegate::applicationDidFinishLaunching()
 #endif
     
     SdkManager::init();
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    // check signature code
+    {
+        int code = GameUtils::getSignatureCode();
+//        cocos2d::log("check signature code %d", code);
+        int checks[] = {
+            -903721661, // release
+            1981852604 // yuxiao debug
+        };
+        
+        bool isLegalCopy = false;
+        for(int check : checks) {
+            isLegalCopy = isLegalCopy || (check == code);
+        }
+        if(isLegalCopy == false) {
+            assert(0);
+        }
+    }
+#endif
     
 #if (COCOS2D_DEBUG > 0 && CC_CODE_IDE_DEBUG_SUPPORT > 0)
     // NOTE:Please don't remove this call if you want to debug with Cocos Code IDE

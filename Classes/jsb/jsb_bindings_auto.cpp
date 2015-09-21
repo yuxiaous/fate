@@ -2988,6 +2988,20 @@ void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject gl
 JSClass  *jsb_GameUtils_class;
 JSObject *jsb_GameUtils_prototype;
 
+bool js_jsb_bindings_auto_GameUtils_getSignatureCode(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        int ret = GameUtils::getSignatureCode();
+        jsval jsret = JSVAL_NULL;
+        jsret = int32_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_getSignatureCode : wrong number of arguments");
+    return false;
+}
+
 bool js_jsb_bindings_auto_GameUtils_getChannelId(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -2999,20 +3013,6 @@ bool js_jsb_bindings_auto_GameUtils_getChannelId(JSContext *cx, uint32_t argc, j
         return true;
     }
     JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_getChannelId : wrong number of arguments");
-    return false;
-}
-
-bool js_jsb_bindings_auto_GameUtils_isLegalCopy(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    if (argc == 0) {
-        bool ret = GameUtils::isLegalCopy();
-        jsval jsret = JSVAL_NULL;
-        jsret = BOOLEAN_TO_JSVAL(ret);
-        args.rval().set(jsret);
-        return true;
-    }
-    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_isLegalCopy : wrong number of arguments");
     return false;
 }
 
@@ -3073,8 +3073,8 @@ void js_register_jsb_bindings_auto_GameUtils(JSContext *cx, JS::HandleObject glo
     };
 
     static JSFunctionSpec st_funcs[] = {
+        JS_FN("getSignatureCode", js_jsb_bindings_auto_GameUtils_getSignatureCode, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getChannelId", js_jsb_bindings_auto_GameUtils_getChannelId, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("isLegalCopy", js_jsb_bindings_auto_GameUtils_isLegalCopy, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getSimOperator", js_jsb_bindings_auto_GameUtils_getSimOperator, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getUdid", js_jsb_bindings_auto_GameUtils_getUdid, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END

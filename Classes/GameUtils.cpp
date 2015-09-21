@@ -64,22 +64,20 @@ std::string GameUtils::getUdid()
     return "hdngame";
 }
 
-bool GameUtils::isLegalCopy()
+int GameUtils::getSignatureCode()
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    int code = -903721661;
-
     JniMethodInfo minfo;
     if (JniHelper::getStaticMethodInfo(minfo,
                                        "com/hdngame/fate/GameUtils",
                                        "getSignatureCode",
                                        "(Landroid/content/Context;)I")) {
         int jSignatureCode = minfo.env->CallStaticIntMethod(minfo.classID, minfo.methodID, SdkManager::appActivity);
-        return jSignatureCode == code;
+        return jSignatureCode;
     }
 #endif
 
-    return false;
+    return 0;
 }
 
 int GameUtils::getSimOperator()

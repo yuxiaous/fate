@@ -17,7 +17,7 @@ class GameUtils
 public:
     static int getChannelId();
     static std::string getUdid();
-    static bool isLegalCopy();
+    static int getSignatureCode();
     static int getSimOperator();
     
 #ifndef SKIP_BY_AUTO_BINDINGS

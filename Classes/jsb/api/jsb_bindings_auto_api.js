@@ -1125,6 +1125,16 @@ func
 jsb.GameUtils = {
 
 /**
+ * @method getSignatureCode
+ * @return {int}
+ */
+getSignatureCode : function (
+)
+{
+    return 0;
+},
+
+/**
  * @method getChannelId
  * @return {int}
  */
@@ -1132,16 +1142,6 @@ getChannelId : function (
 )
 {
     return 0;
-},
-
-/**
- * @method isLegalCopy
- * @return {bool}
- */
-isLegalCopy : function (
-)
-{
-    return false;
 },
 
 /**
