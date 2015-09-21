@@ -86,6 +86,9 @@
             <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
+
+            <!-- 品宣 -->
+            <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/DKSingleSDK1_4_5.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -157,6 +160,14 @@
             </fileset>
         </copy>
         <!-- EGame end-->
+
+        <!-- 品宣 start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/DKSingleSDK/android">
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- 品宣 end -->
     </target>
 
     <!-- Import the actual build file.
