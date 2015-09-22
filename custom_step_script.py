@@ -107,6 +107,8 @@ def handle_event(event, tp, args):
             pass
 
         if event == "post-ndk-build":
+            if os.path.isdir(inherit_path):
+                merge_dir(os.path.join("targets", "inherit", "libs"), "libs")
             if os.path.isdir(target_path):
                 merge_dir(os.path.join("targets", target_name, "libs"), "libs")
             pass
@@ -115,6 +117,8 @@ def handle_event(event, tp, args):
             pass
 
         if event == "post-copy-assets":
+            if os.path.isdir(inherit_path):
+                merge_dir(os.path.join("targets", "inherit", "assets"), "assets")
             if os.path.isdir(target_path):
                 merge_dir(os.path.join("targets", target_name, "assets"), "assets")
             pass
