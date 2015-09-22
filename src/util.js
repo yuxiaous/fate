@@ -153,7 +153,8 @@ var GameChannel = {
     Youku: 13,
     Baidu91: 14,
     BaiduTieba: 15,
-    BaiduShoujizhushou: 16
+    BaiduShoujizhushou: 16,
+    BaiduDuoku: 17
 };
 
 var SimOperator = {

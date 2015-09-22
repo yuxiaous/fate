@@ -52,6 +52,8 @@ int GameUtils::getChannelId()
     return 15;
 #elif defined(CHANNEL_BAIDU_SHOUJIZHUSHOU)
     return 16;
+#elif defined(CHANNEL_BAIDU_DUOKU)
+    return 17;
 #endif
     
     return 0;

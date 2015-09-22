@@ -65,6 +65,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "BaiduTieba";
 #elif defined(CHANNEL_BAIDU_SHOUJIZHUSHOU)
     channel = "BaiduShoujizhushou";
+#elif defined(CHANNEL_BAIDU_DUOKU)
+    channel = "BaiduDuoku";
 //#elif defined(CHANNEL_360)
 //    channel = "360";
 //#elif defined(CHANNEL_TENCENT_QQ)
