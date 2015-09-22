@@ -89,6 +89,7 @@
 
             <!-- 品宣 -->
             <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/DKSingleSDK1_4_5.jar" />
+            <!--<pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/pushservice-4.5.1.8.jar" />-->
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -107,6 +108,7 @@
                 <include name="com/hdngame/fate/andgame/AndGameSdkJni.java" />
                 <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />
                 <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
+                <include name="com/hdngame/fate/dksingle/DKSingleSdkJni.java" />
             </fileset>
         </copy>
         <!-- src end -->
@@ -165,6 +167,7 @@
         <copy todir="./">
             <fileset dir="../../../Classes/sdk/DKSingleSDK/android">
                 <include name="res/" />
+                <include name="libs/armeabi/" />
             </fileset>
         </copy>
         <!-- 品宣 end -->

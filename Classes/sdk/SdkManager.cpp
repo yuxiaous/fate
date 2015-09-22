@@ -83,6 +83,11 @@ Qh360Sdk qh360sdk;
 TencentMidasSdk tencentmidassdk;
 #endif
 
+#ifdef SDK_DKSINGLE
+#include "DKSingleSDK/DKSingleSdk.h"
+DKSingleSdk dksinglesdk;
+#endif
+
 USING_NS_CC;
 
 

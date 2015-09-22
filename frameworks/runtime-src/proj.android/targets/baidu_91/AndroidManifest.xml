@@ -108,12 +108,16 @@
         <!-- dksdk_appsecret表示从开发者平台申请的APPSECRET，一定要填写正确 -->
         <meta-data android:name="dksdk_appsecret" android:value="KSCAVGHfRaNY23yeYAl95U5nVbgRdvAF" />
         <!-- dksdk_channel表示渠道,请开发者向我方运营索要需要推广的渠道号 -->
-        <meta-data android:name="dksdk_channel" android:value="渠道号ID" />
+        <meta-data android:name="dksdk_channel" android:value="13744" />
         <!-- dksdk_ver表示sdk版本,此版本为145 -->
         <meta-data android:name="dksdk_ver" android:value="145"/>
 
-        <!-- 基础配置 -->
-        <!-- Activity屏幕方向要同代码中设置一致 -->
+        <activity
+                android:name="com.duoku.platform.single.ui.DKContainerActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:theme="@style/DK.Theme.NoBackGround.NoAnimation"
+                android:screenOrientation="landscape">
+        </activity>
         <activity
                 android:name="com.duoku.platform.single.ui.DKStartDownloadActivity"
                 android:configChanges="orientation|keyboardHidden"
@@ -123,90 +127,8 @@
                 android:name="com.duoku.platform.single.ui.DKLotteryDrawActivity"
                 android:configChanges="orientation|keyboardHidden|navigation"
                 android:theme="@style/DK.Theme.NoBackGround.NoAnimation"
-                android:screenOrientation="landscape" />
-        <receiver
-                android:name="com.duoku.platform.single.receiver.PushMessageReceiver">
-            <intent-filter android:priority="2147483647">
-                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
-                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
-                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
-            </intent-filter>
-        </receiver>
-        <receiver
-                android:name="com.baidu.android.pushservice.PushServiceReceiver"
-                android:process=":bdservice_v1">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
-                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
-                <action android:name="android.intent.action.MEDIA_MOUNTED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-                <action android:name="com.baidu.android.pushservice.action.frontia.user" />
-            </intent-filter>
-        </receiver>
-        <receiver
-                android:name="com.baidu.android.pushservice.RegistrationReceiver"
-                android:process=":bdservice_v1">
-            <intent-filter>
-                <action android:name="com.baidu.android.pushservice.action.METHOD" />
-                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
-        <service
-                android:name="com.baidu.android.pushservice.PushService"
-                android:exported="true"
-                android:process=":bdservice_v1" >
-            <intent-filter>
-                <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />
-            </intent-filter>
-        </service>
-        <service android:name="com.baidu.android.pushservice.CommandService" android:exported="true" />
-        <receiver
-                android:name="com.duoku.platform.single.receiver.DKSingleDownloadReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
-                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.duoku.platform.single.receiver.DKSingleAppReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
-        <service android:name="com.duoku.platform.single.gameplus.service.GPDownloadService"
-                 android:process="com.baidu.platform.gameplus.service"
-                 android:enabled="true"
-                 android:exported="true">
-            <intent-filter>
-                <action android:name="com.baidu.platform.gameplus.service" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
-        <service android:name="com.duoku.platform.single.gameplus.install.GPSilentInstallService"/>
-        <receiver android:name="com.duoku.platform.single.gameplus.broadcast.GPNotificaionReceiver">
-            <intent-filter>
-                <action android:name="baidu.platform.gameplus.intent.action.CANCLE_NOTIFICATION"/>
-                <action android:name="baidu.platform.gameplus.intent.action.DO_NOTIFICATION_CLICK"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REPLACED" />
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.duoku.platform.single.gameplus.broadcast.GPInstallPackageReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED"/>
-            </intent-filter>
-        </receiver>
+                android:screenOrientation="landscape">
+        </activity>
         <!-- 品宣 end -->
     </application>
 
