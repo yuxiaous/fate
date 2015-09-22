@@ -151,7 +151,8 @@ var GameChannel = {
     Pps: 11,
     SohuWan: 12,
     Youku: 13,
-    Baidu91: 14
+    Baidu91: 14,
+    BaiduTieba: 15
 };
 
 var SimOperator = {

@@ -48,6 +48,8 @@ int GameUtils::getChannelId()
     return 13;
 #elif defined(CHANNEL_BAIDU_91)
     return 14;
+#elif defined(CHANNEL_BAIDU_TIEBA)
+    return 15;
 #endif
     
     return 0;
