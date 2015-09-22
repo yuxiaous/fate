@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">命运长夜(单机版)</string>
-    <string name="sf_class_name">org.cocos2dx.javascript.AppActivity</string>
-</resources>
