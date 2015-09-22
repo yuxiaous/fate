@@ -38,5 +38,6 @@
     <orderEntry type="library" name="mid-sdk-2.10" level="project" />
     <orderEntry type="library" name="Xg_sdk_2.37" level="project" />
     <orderEntry type="library" name="android-support-v4 (2)" level="project" />
+    <orderEntry type="library" name="DKSingleSDK1_4_5" level="project" />
   </component>
 </module>
