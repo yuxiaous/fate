@@ -17,9 +17,16 @@ var RechargePanel = ui.GuiWindowBase.extend({
         this._ui = {
             goldLabel : this.seekWidgetByName("lbl_gold"),
             diamondLabel : this.seekWidgetByName("lbl_diamond"),
-            bgPanel : this.seekWidgetByName("bg_panel")
+            bgPanel : this.seekWidgetByName("bg_panel"),
+
+            goldPanel : this.seekWidgetByName("gold_panel"),
+            diamondPanel : this.seekWidgetByName("diamond_panel")
         };
 
+        this._ui.diamondPanel.setVisible(false);
+        if(util.getChannelId() == GameChannel.AppStore){
+            this._ui.diamondPanel.setVisible(true);
+        }
 
         this._itemContainer = [];
         _.forEach(["ProjectNode_1",
