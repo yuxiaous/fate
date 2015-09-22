@@ -86,6 +86,9 @@ var StartLayerScene = ui.GuiSceneBase.extend({
                 sdk_manager.sendSdkCommand("Egame", "exit", "");
                 break;
             case GameChannel.Baidu91:
+            case GameChannel.BaiduTieba:
+            case GameChannel.BaiduShoujizhushou:
+            case GameChannel.BaiduDuoku:
                 sdk_manager.sendSdkCommand("DKSingle", "exit", "");
                 break;
             default:

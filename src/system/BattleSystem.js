@@ -52,7 +52,7 @@ var BattleSystem = SystemBase.extend({
                 }
                 else{
                     if(this.isFirstTryType){
-                        ui.pushScene(MainScene);
+                        ui.replaceScene(MainScene);
                     }
                     else{
                         ui.popScene();
