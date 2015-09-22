@@ -313,6 +313,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="pushservice-4.5.1.8">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/DKSingleSDK/android/libs/pushservice-4.5.1.8.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="utdid4all-1.0.4">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/unipay/android/libs/utdid4all-1.0.4.jar!/" />
