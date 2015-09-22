@@ -169,6 +169,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.Youku:
         case GameChannel.Baidu91:
         case GameChannel.BaiduTieba:
+        case GameChannel.BaiduShoujizhushou:
             var sim_operator = util.getSimOperator();
             switch (sim_operator) {
                 case SimOperator.CMCC:
