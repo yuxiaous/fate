@@ -87,9 +87,14 @@
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
 
-            <!-- 品宣 -->
+            <!-- 百度品宣 -->
             <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/DKSingleSDK1_4_5.jar" />
-            <!--<pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/pushservice-4.5.1.8.jar" />-->
+            <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/need_lib.jar" />
+            <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/dk_game_sdk_1_1.jar" />
+            <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/android_api_game_1_1.jar" />
+            <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/pushservice-4.5.1.8.jar" />
+            <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/android-support-v4.jar" />
+            <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/universal-image-loader-1.9.2.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -163,11 +168,11 @@
         </copy>
         <!-- EGame end-->
 
-        <!-- 品宣 start -->
+        <!-- 百度品宣 start -->
         <copy todir="./">
             <fileset dir="../../../Classes/sdk/DKSingleSDK/android">
                 <include name="res/" />
-                <include name="libs/armeabi/" />
+                <!--<include name="libs/armeabi/" />-->
             </fileset>
         </copy>
         <!-- 品宣 end -->

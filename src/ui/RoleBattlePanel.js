@@ -117,6 +117,8 @@ var BattleUILayer = ui.GuiWidgetBase.extend({
         var pausePanel = new PauseLayer();
         pausePanel.pop();
         notification.emit(notification.event.GAME_PAUSE);
+
+        sdk_manager.sendSdkCommand("DKSingle", "pause", "");
     },
 
     _on_btn_bloodBottle : function () {

@@ -8,15 +8,16 @@
 class DKSingleSdk : public Sdk
 {
 public:
-    virtual void init() override;
+    virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
 
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
     virtual void activityOnCreate() override;
-//    virtual void activityOnPause() override;
-//    virtual void activityOnResume() override;
+    virtual void activityOnPause() override;
+    virtual void activityOnResume() override;
 #endif
 };
 
 #endif /* defined(__DKSingleSDK__) */
+

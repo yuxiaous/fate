@@ -85,6 +85,9 @@ var StartLayerScene = ui.GuiSceneBase.extend({
             case GameChannel.Telecom:
                 sdk_manager.sendSdkCommand("Egame", "exit", "");
                 break;
+            case GameChannel.Baidu91:
+                sdk_manager.sendSdkCommand("DKSingle", "exit", "");
+                break;
             default:
                 MessageBoxOkCancel.show("确定退出游戏？").setOkCallback(function() {
                     cc.director.end();
