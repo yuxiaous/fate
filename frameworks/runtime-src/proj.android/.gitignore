@@ -9,6 +9,7 @@ local.properties
 /target
 /build.xml
 /AndroidManifest.xml
+/project.properties
 /jni
 /res
 /src

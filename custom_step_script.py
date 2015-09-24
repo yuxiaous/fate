@@ -66,6 +66,8 @@ def handle_event(event, tp, args):
                 os.remove(os.path.join(project_path, "build.xml"))
             if os.path.isfile(os.path.join(project_path, "AndroidManifest.xml")):
                 os.remove(os.path.join(project_path, "AndroidManifest.xml"))
+            if os.path.isfile(os.path.join(project_path, "project.properties")):
+                os.remove(os.path.join(project_path, "project.properties"))
             if os.path.isdir(os.path.join(project_path, "jni")):
                 shutil.rmtree(os.path.join(project_path, "jni"))
             if os.path.isdir(os.path.join(project_path, "res")):
@@ -79,6 +81,8 @@ def handle_event(event, tp, args):
                     shutil.copy2(os.path.join(inherit_path, "build.xml"), os.path.join(project_path, "build.xml"))
                 if os.path.isfile(os.path.join(inherit_path, "AndroidManifest.xml")):
                     shutil.copy2(os.path.join(inherit_path, "AndroidManifest.xml"), os.path.join(project_path, "AndroidManifest.xml"))
+                if os.path.isfile(os.path.join(inherit_path, "project.properties")):
+                    shutil.copy2(os.path.join(inherit_path, "project.properties"), os.path.join(project_path, "project.properties"))
                 if os.path.isdir(os.path.join(inherit_path, "jni")):
                     shutil.copytree(os.path.join(inherit_path, "jni"), os.path.join(project_path, "jni"), True)
                 if os.path.isdir(os.path.join(inherit_path, "res")):
@@ -93,6 +97,8 @@ def handle_event(event, tp, args):
                     shutil.copy2(os.path.join(target_path, "build.xml"), os.path.join(project_path, "build.xml"))
                 if os.path.isfile(os.path.join(target_path, "AndroidManifest.xml")):
                     shutil.copy2(os.path.join(target_path, "AndroidManifest.xml"), os.path.join(project_path, "AndroidManifest.xml"))
+                if os.path.isfile(os.path.join(target_path, "project.properties")):
+                    shutil.copy2(os.path.join(target_path, "project.properties"), os.path.join(project_path, "project.properties"))
                 if os.path.isdir(os.path.join(target_path, "jni")):
                     merge_dir(os.path.join("targets", target_name, "jni"), "jni")
                 if os.path.isdir(os.path.join(target_path, "res")):
