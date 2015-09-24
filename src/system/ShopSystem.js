@@ -151,7 +151,6 @@ ShopSystem.getShopPlatformId = function() {
             return 2;
         case GameChannel.CmccMm:
         case GameChannel.Mzw:
-        case GameChannel['4399']:
             return 3;
         case GameChannel.CmccAnd:
             return 4;
@@ -172,6 +171,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.BaiduShoujizhushou:
         case GameChannel.BaiduDuoku:
         case GameChannel.Kuwo:
+        case GameChannel.M4399:
             var sim_operator = util.getSimOperator();
             switch (sim_operator) {
                 case SimOperator.CMCC:
