@@ -120,14 +120,6 @@
 		D454520C156E22BD00887EB5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D454520B156E22BD00887EB5 /* libz.dylib */; };
 		D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4545215156E28EF00887EB5 /* AppDelegate.cpp */; };
 		D6B061241803AB9F0077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B061231803AB9F0077942B /* CoreMotion.framework */; };
-		DE1C4A8F1B71E49500E289E6 /* libWeRec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4A7C1B71E49500E289E6 /* libWeRec.a */; };
-		DE1C4A911B71E49500E289E6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4A801B71E49500E289E6 /* TencentOpenApi_IOS_Bundle.bundle */; };
-		DE1C4A921B71E49500E289E6 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4A821B71E49500E289E6 /* libWeChatSDK.a */; };
-		DE1C4A931B71E49500E289E6 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4A861B71E49500E289E6 /* libWeiboSDK.a */; };
-		DE1C4A941B71E49500E289E6 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4A871B71E49500E289E6 /* WeiboSDK.bundle */; };
-		DE1C4A951B71E49500E289E6 /* werec_share_default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4A891B71E49500E289E6 /* werec_share_default_icon.png */; };
-		DE1C4A961B71E49500E289E6 /* WeRecResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE1C4A8C1B71E49500E289E6 /* WeRecResources.bundle */; };
-		DE1C4A971B71E49500E289E6 /* WeRecShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4A8E1B71E49500E289E6 /* WeRecShareManager.m */; };
 		DE1C4A9A1B72085D00E289E6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4A991B72085D00E289E6 /* libz.dylib */; };
 		DE1C4A9C1B72089B00E289E6 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4A9B1B72089B00E289E6 /* libc++.dylib */; };
 		DE1C4A9E1B7208BC00E289E6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4A9D1B7208BC00E289E6 /* AudioToolbox.framework */; };
@@ -138,7 +130,6 @@
 		DE1C4AA81B72094600E289E6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4AA71B72094600E289E6 /* AVFoundation.framework */; };
 		DE1C4AAA1B72095C00E289E6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4AA91B72095C00E289E6 /* Security.framework */; };
 		DE1C4AAC1B72097500E289E6 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4AAB1B72097500E289E6 /* CoreImage.framework */; };
-		DE1C4AAD1B7209CD00E289E6 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4A7F1B71E49500E289E6 /* TencentOpenAPI.framework */; };
 		DE1C4AAF1B720F2800E289E6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4AAE1B720F2800E289E6 /* Accounts.framework */; };
 		DE1C4AB11B720F4500E289E6 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4AB01B720F4500E289E6 /* CoreText.framework */; };
 		DE1C4AB31B720F5700E289E6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4AB21B720F5700E289E6 /* MessageUI.framework */; };
@@ -160,7 +151,6 @@
 		DE1C4AD31B7210B400E289E6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1C4AD21B7210B400E289E6 /* Social.framework */; };
 		DE1C4AD41B7210CE00E289E6 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */; };
 		DE1C4AD51B7210D700E289E6 /* libjsbindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C037820918BF76AF00FE4F13 /* libjsbindings iOS.a */; };
-		DE1C4AD81B7212CA00E289E6 /* WeRecSdk.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4AD61B7212CA00E289E6 /* WeRecSdk.mm */; };
 		DE25C3621B317BA800A9AEC0 /* once.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3E12D1CA1957FB18002FF0FD /* once.cc */; };
 		DE25C3631B317BA800A9AEC0 /* Portrait_png.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C00FD4AD1938628E00C6382D /* Portrait_png.cpp */; };
 		DE25C3641B317BA800A9AEC0 /* PlayCG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEE61B25955E005B744E /* PlayCG.cpp */; };
@@ -422,12 +412,9 @@
 		DE5AD20A1B678CF4003F6331 /* BaseDataParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE2D1B25955D005B744E /* BaseDataParser.cpp */; };
 		DE5AD20B1B678CF4003F6331 /* Landscape_png.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C00FD4AA1938628E00C6382D /* Landscape_png.cpp */; };
 		DE5AD20C1B678CF4003F6331 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4545215156E28EF00887EB5 /* AppDelegate.cpp */; };
-		DE5AD20D1B678CF4003F6331 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA771B4D243E00202FEA /* NSData+Base64.m */; };
 		DE5AD20E1B678CF4003F6331 /* DragonBonesHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE471B25955D005B744E /* DragonBonesHelper.cpp */; };
 		DE5AD20F1B678CF4003F6331 /* Armature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE051B25955C005B744E /* Armature.cpp */; };
 		DE5AD2101B678CF4003F6331 /* Runtime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C00FD4AF1938628E00C6382D /* Runtime.cpp */; };
-		DE5AD2111B678CF4003F6331 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA791B4D243E00202FEA /* OAuth+Additions.m */; };
-		DE5AD2121B678CF4003F6331 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA7B1B4D243E00202FEA /* OAuthCore.m */; };
 		DE5AD2131B678CF4003F6331 /* SneakyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF81B25955E005B744E /* SneakyButton.cpp */; };
 		DE5AD2141B678CF4003F6331 /* FileServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABCA93C519E65B1C007FB844 /* FileServer.cpp */; };
 		DE5AD2151B678CF4003F6331 /* message_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3E12D1BC1957FB18002FF0FD /* message_lite.cc */; };
@@ -453,13 +440,10 @@
 		DE5AD2291B678CF4003F6331 /* PlayDisable_png.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C00FD4AB1938628E00C6382D /* PlayDisable_png.cpp */; };
 		DE5AD22A1B678CF4003F6331 /* ConnectWaitLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABCA93CD19E6712A007FB844 /* ConnectWaitLayer.cpp */; };
 		DE5AD22B1B678CF4003F6331 /* Shine_png.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C00FD4B11938628E00C6382D /* Shine_png.cpp */; };
-		DE5AD22C1B678CF4003F6331 /* KtplaySdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE545DEB1B4CE90E00A91A14 /* KtplaySdk.cpp */; };
 		DE5AD22D1B678CF4003F6331 /* wire_format_lite.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3E12D1D21957FB18002FF0FD /* wire_format_lite.cc */; };
 		DE5AD22E1B678CF4003F6331 /* XMLDataParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE331B25955D005B744E /* XMLDataParser.cpp */; };
 		DE5AD22F1B678CF4003F6331 /* AnimationState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EDFD1B25955C005B744E /* AnimationState.cpp */; };
 		DE5AD2301B678CF4003F6331 /* Slot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE0B1B25955C005B744E /* Slot.cpp */; };
-		DE5AD2311B678CF4003F6331 /* CAEAGLLayer+RetainedBacking.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA701B4D243E00202FEA /* CAEAGLLayer+RetainedBacking.m */; };
-		DE5AD2321B678CF4003F6331 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA7E1B4D243E00202FEA /* OpenUDID.m */; };
 		DE5AD2331B678CF4003F6331 /* TDCCTalkingDataGA.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE29E1461B3D75BE000656CA /* TDCCTalkingDataGA.mm */; };
 		DE5AD2341B678CF4003F6331 /* ConstValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE2F1B25955D005B744E /* ConstValues.cpp */; };
 		DE5AD2351B678CF4003F6331 /* jsb_levelhelper_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE5E1B25955D005B744E /* jsb_levelhelper_auto.cpp */; };
@@ -470,7 +454,6 @@
 		DE5AD23A1B678CF4003F6331 /* LHVideoOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEA1B25955E005B744E /* LHVideoOverlayView.m */; };
 		DE5AD23B1B678CF4003F6331 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
 		DE5AD23C1B678CF4003F6331 /* DBCCArmature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE391B25955D005B744E /* DBCCArmature.cpp */; };
-		DE5AD23D1B678CF4003F6331 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA831B4D243E00202FEA /* Reachability.m */; };
 		DE5AD23E1B678CF4003F6331 /* DBCCFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE3E1B25955D005B744E /* DBCCFactory.cpp */; };
 		DE5AD23F1B678CF4003F6331 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D4AB817EBB2AB00697056 /* main.m */; };
 		DE5AD2401B678CF4003F6331 /* TDCCMission.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE29E1451B3D75BE000656CA /* TDCCMission.mm */; };
@@ -480,7 +463,6 @@
 		DE5AD2441B678CF4003F6331 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C033B522191B36AE00D06937 /* VisibleRect.cpp */; };
 		DE5AD2451B678CF4003F6331 /* LHVideoPlayerImplCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEF01B25955E005B744E /* LHVideoPlayerImplCpp.mm */; };
 		DE5AD2461B678CF4003F6331 /* generated_message_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3E12D1B11957FB18002FF0FD /* generated_message_util.cc */; };
-		DE5AD2471B678CF4003F6331 /* KtplaySdk.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE545DF51B4D05EE00A91A14 /* KtplaySdk.mm */; };
 		DE5AD2481B678CF4003F6331 /* TimelineState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE001B25955C005B744E /* TimelineState.cpp */; };
 		DE5AD2491B678CF4003F6331 /* EventData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE101B25955C005B744E /* EventData.cpp */; };
 		DE5AD24A1B678CF4003F6331 /* jsb_bindings_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE36EE5A1B25955D005B744E /* jsb_bindings_manual.cpp */; };
@@ -491,35 +473,21 @@
 		DE5AD24F1B678CF4003F6331 /* coded_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3E12D1B41957FB18002FF0FD /* coded_stream.cc */; };
 		DE5AD2501B678CF4003F6331 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 509D4AAC17EBB2AB00697056 /* AppController.mm */; };
 		DE5AD2511B678CF4003F6331 /* LHVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36EEEC1B25955E005B744E /* LHVideoPlayer.m */; };
-		DE5AD2521B678CF4003F6331 /* KTPlayApplicationUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA731B4D243E00202FEA /* KTPlayApplicationUtils.mm */; };
 		DE5AD2531B678CF4003F6331 /* Runtime_ios-mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = C026DCC818928A2400B3EDE8 /* Runtime_ios-mac.mm */; };
-		DE5AD2541B678CF4003F6331 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DE54BA7F1B4D243E00202FEA /* README.md */; };
 		DE5AD2551B678CF4003F6331 /* ConsoleCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9079D219E931D80033128B /* ConsoleCommand.cpp */; };
-		DE5AD2581B678CF4003F6331 /* libKTLeaderboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA5C1B4D243E00202FEA /* libKTLeaderboard.a */; };
-		DE5AD25A1B678CF4003F6331 /* libktplay_plugin_sns.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA5F1B4D243E00202FEA /* libktplay_plugin_sns.a */; };
-		DE5AD2611B678CF4003F6331 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA6B1B4D243E00202FEA /* libAFNetworking.a */; };
-		DE5AD2621B678CF4003F6331 /* libKTFriendship.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA591B4D243E00202FEA /* libKTFriendship.a */; };
-		DE5AD2641B678CF4003F6331 /* libktplay_plugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA5E1B4D243E00202FEA /* libktplay_plugin.a */; };
 		DE5AD2761B678CF4003F6331 /* libLevelHelper2-API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF01B258A0F005B744E /* libLevelHelper2-API.a */; };
-		DE5AD2771B678CF4003F6331 /* libKTAccountManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA521B4D243E00202FEA /* libKTAccountManager.a */; };
-		DE5AD27F1B678CF4003F6331 /* libKTPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE54BA561B4D243E00202FEA /* libKTPlay.a */; };
 		DE5AD2811B678CF4003F6331 /* libTalkingDataGA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE29E1411B3D75BE000656CA /* libTalkingDataGA.a */; };
 		DE5AD2831B678CF4003F6331 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275451517C094001B78AA /* OpenAL.framework */; };
 		DE5AD28A1B678CF4003F6331 /* script in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB911B2B0ADB00079B42 /* script */; };
 		DE5AD28B1B678CF4003F6331 /* project.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A081B18C9DF05005C6854 /* project.json */; };
-		DE5AD28C1B678CF4003F6331 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA6C1B4D243E00202FEA /* LICENSE */; };
 		DE5AD28D1B678CF4003F6331 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A6BF21418C9DB5900FB0E1C /* main.js */; };
-		DE5AD28E1B678CF4003F6331 /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA811B4D243E00202FEA /* LICENCE.txt */; };
 		DE5AD28F1B678CF4003F6331 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AAE17EBB2AB00697056 /* Default.png */; };
 		DE5AD2901B678CF4003F6331 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = C05D1C161923467600B808A4 /* config.json */; };
 		DE5AD2931B678CF4003F6331 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
 		DE5AD2981B678CF4003F6331 /* res in Resources */ = {isa = PBXBuildFile; fileRef = C0799CB518BAE62000E9C828 /* res */; };
-		DE5AD29A1B678CF4003F6331 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA751B4D243E00202FEA /* LICENSE */; };
-		DE5AD29B1B678CF4003F6331 /* ktlogin.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA501B4D243E00202FEA /* ktlogin.bundle */; };
 		DE5AD29C1B678CF4003F6331 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
 		DE5AD29E1B678CF4003F6331 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AAD17EBB2AB00697056 /* Default-568h@2x.png */; };
 		DE5AD29F1B678CF4003F6331 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 509D4AAF17EBB2AB00697056 /* Default@2x.png */; };
-		DE5AD2A11B678CF4003F6331 /* ktplay.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE54BA541B4D243E00202FEA /* ktplay.bundle */; };
 		DE5AD2D21B6A5602003F6331 /* appstore-57.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2CB1B6A5602003F6331 /* appstore-57.png */; };
 		DE5AD2D31B6A5602003F6331 /* appstore-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2CC1B6A5602003F6331 /* appstore-72.png */; };
 		DE5AD2D41B6A5602003F6331 /* appstore-76.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AD2CD1B6A5602003F6331 /* appstore-76.png */; };
@@ -1245,20 +1213,9 @@
 				DE1C4A9E1B7208BC00E289E6 /* AudioToolbox.framework in Frameworks */,
 				DE1C4A9C1B72089B00E289E6 /* libc++.dylib in Frameworks */,
 				DE1C4A9A1B72085D00E289E6 /* libz.dylib in Frameworks */,
-				DE5AD2581B678CF4003F6331 /* libKTLeaderboard.a in Frameworks */,
-				DE5AD25A1B678CF4003F6331 /* libktplay_plugin_sns.a in Frameworks */,
-				DE1C4AAD1B7209CD00E289E6 /* TencentOpenAPI.framework in Frameworks */,
-				DE5AD2611B678CF4003F6331 /* libAFNetworking.a in Frameworks */,
-				DE5AD2621B678CF4003F6331 /* libKTFriendship.a in Frameworks */,
-				DE1C4A931B71E49500E289E6 /* libWeiboSDK.a in Frameworks */,
-				DE5AD2641B678CF4003F6331 /* libktplay_plugin.a in Frameworks */,
-				DE1C4A921B71E49500E289E6 /* libWeChatSDK.a in Frameworks */,
 				DE5AD2761B678CF4003F6331 /* libLevelHelper2-API.a in Frameworks */,
-				DE5AD2771B678CF4003F6331 /* libKTAccountManager.a in Frameworks */,
-				DE5AD27F1B678CF4003F6331 /* libKTPlay.a in Frameworks */,
 				DE5AD2811B678CF4003F6331 /* libTalkingDataGA.a in Frameworks */,
 				DE5AD2831B678CF4003F6331 /* OpenAL.framework in Frameworks */,
-				DE1C4A8F1B71E49500E289E6 /* libWeRec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2532,10 +2489,7 @@
 			files = (
 				DE5AD28A1B678CF4003F6331 /* script in Resources */,
 				DE5AD28B1B678CF4003F6331 /* project.json in Resources */,
-				DE1C4A951B71E49500E289E6 /* werec_share_default_icon.png in Resources */,
-				DE5AD28C1B678CF4003F6331 /* LICENSE in Resources */,
 				DE5AD28D1B678CF4003F6331 /* main.js in Resources */,
-				DE5AD28E1B678CF4003F6331 /* LICENCE.txt in Resources */,
 				DE5AD28F1B678CF4003F6331 /* Default.png in Resources */,
 				DE5AD2901B678CF4003F6331 /* config.json in Resources */,
 				DE5AD2D31B6A5602003F6331 /* appstore-72.png in Resources */,
@@ -2544,19 +2498,13 @@
 				DE5AD2D61B6A5602003F6331 /* appstore-120.png in Resources */,
 				DE5AD2D41B6A5602003F6331 /* appstore-76.png in Resources */,
 				DE5AD2D21B6A5602003F6331 /* appstore-57.png in Resources */,
-				DE1C4A961B71E49500E289E6 /* WeRecResources.bundle in Resources */,
 				DE5AD2D81B6A5602003F6331 /* appstore-152.png in Resources */,
-				DE1C4A911B71E49500E289E6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
-				DE5AD29A1B678CF4003F6331 /* LICENSE in Resources */,
 				DE5AD2D51B6A5602003F6331 /* appstore-114.png in Resources */,
-				DE5AD29B1B678CF4003F6331 /* ktlogin.bundle in Resources */,
 				DE5AD29C1B678CF4003F6331 /* config in Resources */,
 				DE5AD29E1B678CF4003F6331 /* Default-568h@2x.png in Resources */,
 				DE5AD29F1B678CF4003F6331 /* Default@2x.png in Resources */,
 				DE5692841BA02B7800FBE423 /* Default-Landscape.png in Resources */,
-				DE5AD2A11B678CF4003F6331 /* ktplay.bundle in Resources */,
 				DE5AD2D71B6A5602003F6331 /* appstore-144.png in Resources */,
-				DE1C4A941B71E49500E289E6 /* WeiboSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2914,12 +2862,9 @@
 				DE5AD20A1B678CF4003F6331 /* BaseDataParser.cpp in Sources */,
 				DE5AD20B1B678CF4003F6331 /* Landscape_png.cpp in Sources */,
 				DE5AD20C1B678CF4003F6331 /* AppDelegate.cpp in Sources */,
-				DE5AD20D1B678CF4003F6331 /* NSData+Base64.m in Sources */,
 				DE5AD20E1B678CF4003F6331 /* DragonBonesHelper.cpp in Sources */,
 				DE5AD20F1B678CF4003F6331 /* Armature.cpp in Sources */,
 				DE5AD2101B678CF4003F6331 /* Runtime.cpp in Sources */,
-				DE5AD2111B678CF4003F6331 /* OAuth+Additions.m in Sources */,
-				DE5AD2121B678CF4003F6331 /* OAuthCore.m in Sources */,
 				DE5AD2131B678CF4003F6331 /* SneakyButton.cpp in Sources */,
 				DE5AD2141B678CF4003F6331 /* FileServer.cpp in Sources */,
 				DE5AD2151B678CF4003F6331 /* message_lite.cc in Sources */,
@@ -2946,13 +2891,10 @@
 				DE5AD2291B678CF4003F6331 /* PlayDisable_png.cpp in Sources */,
 				DE5AD22A1B678CF4003F6331 /* ConnectWaitLayer.cpp in Sources */,
 				DE5AD22B1B678CF4003F6331 /* Shine_png.cpp in Sources */,
-				DE5AD22C1B678CF4003F6331 /* KtplaySdk.cpp in Sources */,
 				DE5AD22D1B678CF4003F6331 /* wire_format_lite.cc in Sources */,
 				DE5AD22E1B678CF4003F6331 /* XMLDataParser.cpp in Sources */,
 				DE5AD22F1B678CF4003F6331 /* AnimationState.cpp in Sources */,
 				DE5AD2301B678CF4003F6331 /* Slot.cpp in Sources */,
-				DE5AD2311B678CF4003F6331 /* CAEAGLLayer+RetainedBacking.m in Sources */,
-				DE5AD2321B678CF4003F6331 /* OpenUDID.m in Sources */,
 				DE5AD2331B678CF4003F6331 /* TDCCTalkingDataGA.mm in Sources */,
 				DE5AD2341B678CF4003F6331 /* ConstValues.cpp in Sources */,
 				DE5AD2351B678CF4003F6331 /* jsb_levelhelper_auto.cpp in Sources */,
@@ -2962,21 +2904,17 @@
 				DE5AD2391B678CF4003F6331 /* LHVideoPlayerImpl.m in Sources */,
 				DE5AD23A1B678CF4003F6331 /* LHVideoOverlayView.m in Sources */,
 				DE5AD2E01B6A76B4003F6331 /* AppStoreSdk.mm in Sources */,
-				DE1C4A971B71E49500E289E6 /* WeRecShareManager.m in Sources */,
 				DE5AD23B1B678CF4003F6331 /* GameUtils.cpp in Sources */,
 				DE5AD23C1B678CF4003F6331 /* DBCCArmature.cpp in Sources */,
-				DE5AD23D1B678CF4003F6331 /* Reachability.m in Sources */,
 				DE5AD23E1B678CF4003F6331 /* DBCCFactory.cpp in Sources */,
 				DE5AD23F1B678CF4003F6331 /* main.m in Sources */,
 				DE5AD2401B678CF4003F6331 /* TDCCMission.mm in Sources */,
 				DE5AD2411B678CF4003F6331 /* stringprintf.cc in Sources */,
 				DE5AD2421B678CF4003F6331 /* Object.cpp in Sources */,
 				DE5AD2431B678CF4003F6331 /* common.cc in Sources */,
-				DE1C4AD81B7212CA00E289E6 /* WeRecSdk.mm in Sources */,
 				DE5AD2441B678CF4003F6331 /* VisibleRect.cpp in Sources */,
 				DE5AD2451B678CF4003F6331 /* LHVideoPlayerImplCpp.mm in Sources */,
 				DE5AD2461B678CF4003F6331 /* generated_message_util.cc in Sources */,
-				DE5AD2471B678CF4003F6331 /* KtplaySdk.mm in Sources */,
 				DE5AD2481B678CF4003F6331 /* TimelineState.cpp in Sources */,
 				DE5AD2491B678CF4003F6331 /* EventData.cpp in Sources */,
 				DE5AD24A1B678CF4003F6331 /* jsb_bindings_manual.cpp in Sources */,
@@ -2987,9 +2925,7 @@
 				DE5AD24F1B678CF4003F6331 /* coded_stream.cc in Sources */,
 				DE5AD2501B678CF4003F6331 /* AppController.mm in Sources */,
 				DE5AD2511B678CF4003F6331 /* LHVideoPlayer.m in Sources */,
-				DE5AD2521B678CF4003F6331 /* KTPlayApplicationUtils.mm in Sources */,
 				DE5AD2531B678CF4003F6331 /* Runtime_ios-mac.mm in Sources */,
-				DE5AD2541B678CF4003F6331 /* README.md in Sources */,
 				DE5AD2551B678CF4003F6331 /* ConsoleCommand.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3211,7 +3147,7 @@
 					"-ObjC",
 					"-lxml2",
 				);
-				PROVISIONING_PROFILE = "cd444907-f81d-4baf-bc5e-df658bcfebdf";
+				PROVISIONING_PROFILE = "d6685ace-f7c6-4157-a253-e5ed4c1a78e0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
@@ -3259,7 +3195,7 @@
 					"-ObjC",
 					"-lxml2",
 				);
-				PROVISIONING_PROFILE = "fcc3bee0-23f7-48a4-8e88-69155de58939";
+				PROVISIONING_PROFILE = "663e8ae4-2c50-4597-87e6-85b7478cc8c4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
