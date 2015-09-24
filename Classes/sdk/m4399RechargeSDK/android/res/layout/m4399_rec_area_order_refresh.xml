@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/m4399_rec_order_refresh_area"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/m4399_rec_return_btn_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/m4399_rec_paddingRight"
+    android:paddingRight="@dimen/m4399_rec_paddingRight" >
+
+    <ImageView
+        android:id="@+id/iv_order_refresh_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:src="@drawable/m4399_rec_refresh_order_area_bg" />
+
+    <TextView
+        android:id="@+id/tv_order_refresh"
+        android:layout_width="36sp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:text="@string/m4399_rec_refresh"
+        android:textColor="@color/m4399_rec_color_refresh_text"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pop_window_list"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/m4399_ope_pop_bg"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/pop_window_list_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="3dp"
+        android:drawableTop="@drawable/m4399_ope_pop_user_selector"
+        android:gravity="center_horizontal"
+        android:minWidth="60dp"
+        android:padding="5dp"
+        android:text="@string/m4399_ope_pop_user"
+        android:textColor="@android:color/white"
+        android:textSize="11sp" />
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/m4399_ope_pop_line" />
+
+    <TextView
+        android:id="@+id/pop_window_list_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="3dp"
+        android:drawableTop="@drawable/m4399_ope_pop_circle_selector"
+        android:gravity="center_horizontal"
+        android:minWidth="60dp"
+        android:padding="5dp"
+        android:text="@string/m4399_ope_pop_circle"
+        android:textColor="@android:color/white"
+        android:textSize="11sp" />
+    <ImageView
+        android:id="@+id/pop_window_line"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/m4399_ope_pop_line" />
+    
+    <TextView
+        android:id="@+id/pop_window_list_hide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="3dp"
+        android:drawableTop="@drawable/m4399_ope_pop_hide_selector"
+        android:gravity="center_horizontal"
+        android:minWidth="60dp"
+        android:padding="5dp"
+        android:text="@string/m4399_ope_pop_hide"
+        android:textColor="@android:color/white"
+        android:textSize="11sp" />
+
+</LinearLayout>
