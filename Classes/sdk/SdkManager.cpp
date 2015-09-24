@@ -88,6 +88,11 @@ TencentMidasSdk tencentmidassdk;
 DKSingleSdk dksinglesdk;
 #endif
 
+#ifdef SDK_KUWO_LOGIN
+#include "KuwoLoginSdk/KuwoLoginSdk.h"
+KuwoLoginSdk kuwologinsdk;
+#endif
+
 USING_NS_CC;
 
 

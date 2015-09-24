@@ -21,7 +21,8 @@ LOCAL_SRC_FILES := SdkManager.cpp \
                    Baitong/BaitongSdk.cpp \
                    360/Qh360Sdk.cpp \
                    TencentMidas/TencentMidasSdk.cpp \
-                   DKSingleSDK/DKSingleSdk.cpp
+                   DKSingleSDK/DKSingleSdk.cpp \
+                   KuwoLoginSdk/KuwoLoginSdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT
