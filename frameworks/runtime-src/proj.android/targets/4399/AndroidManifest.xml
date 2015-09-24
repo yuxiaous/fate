@@ -99,6 +99,19 @@
         <meta-data android:name="EGAME_CHANNEL" android:value="80010088"  />
         <meta-data android:name="EGAME_UNINS" android:value="false" />
         <!-- egame end -->
+
+        <!-- 4399 start -->
+        <!-- For 4399 Recharge SDK -->
+        <activity
+                android:name="cn.m4399.recharge.ui.activity.RechargeActivity"
+                android:launchMode="singleTask"
+                android:configChanges="orientation|screenSize|keyboardHidden"
+                android:theme="@style/m4399ActivityTheme" />
+
+        <!-- 以下为第三方支付SDK Activity&Service配置 -->
+        <activity android:name="com.alipay.sdk.app.H5PayActivity"
+                  android:screenOrientation="landscape"/>
+        <!-- 4399 end -->
     </application>
 
     <supports-screens android:anyDensity="true"

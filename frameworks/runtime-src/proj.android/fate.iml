@@ -41,5 +41,7 @@
     <orderEntry type="library" name="DKSingleSDK1_4_5" level="project" />
     <orderEntry type="library" name="pushservice-4.5.1.8" level="project" />
     <orderEntry type="library" name="kuwo_mobile_login_sdk" level="project" />
+    <orderEntry type="library" name="m4399SingleOperateSDK" level="project" />
+    <orderEntry type="library" name="m4399SingleRechargeSDK" level="project" />
   </component>
 </module>

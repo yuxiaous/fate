@@ -22,7 +22,8 @@ LOCAL_SRC_FILES := SdkManager.cpp \
                    360/Qh360Sdk.cpp \
                    TencentMidas/TencentMidasSdk.cpp \
                    DKSingleSDK/DKSingleSdk.cpp \
-                   KuwoLoginSdk/KuwoLoginSdk.cpp
+                   KuwoLoginSdk/KuwoLoginSdk.cpp \
+                   m4399RechargeSDK/M4399RechargeSdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT

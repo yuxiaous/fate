@@ -93,6 +93,11 @@ DKSingleSdk dksinglesdk;
 KuwoLoginSdk kuwologinsdk;
 #endif
 
+#ifdef SDK_M4399_RECHARGE
+#include "m4399RechargeSDK/M4399RechargeSdk.h"
+M4399RechargeSdk m4399rechargesdk;
+#endif
+
 USING_NS_CC;
 
 

@@ -104,6 +104,7 @@
                 <include name="com/hdngame/fate/andgame/AndGameSdkJni.java" />
                 <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />
                 <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
+                <include name="com/hdngame/fate/m4399/M4399RechargeSdkJni.java" />
             </fileset>
         </copy>
         <!-- src end -->

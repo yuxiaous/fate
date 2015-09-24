@@ -276,6 +276,20 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="m4399SingleOperateSDK">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/m4399RechargeSDK/android/libs/m4399SingleOperateSDK.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="m4399SingleRechargeSDK">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/m4399RechargeSDK/android/libs/m4399SingleRechargeSDK.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="mid-sdk-2.10">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/TencentMidas/android/libs/mid-sdk-2.10.jar!/" />
