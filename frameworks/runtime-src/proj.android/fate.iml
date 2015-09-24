@@ -40,5 +40,6 @@
     <orderEntry type="library" name="android-support-v4 (2)" level="project" />
     <orderEntry type="library" name="DKSingleSDK1_4_5" level="project" />
     <orderEntry type="library" name="pushservice-4.5.1.8" level="project" />
+    <orderEntry type="library" name="kuwo_mobile_login_sdk" level="project" />
   </component>
 </module>

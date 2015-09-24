@@ -99,6 +99,10 @@
         <meta-data android:name="EGAME_CHANNEL" android:value="80010272"  />
         <meta-data android:name="EGAME_UNINS" android:value="false" />
         <!-- egame end -->
+
+        <!-- kuwo start -->
+        <service android:name="cn.kuwo.login.stat.StatService" />
+        <!-- kuwo end -->
     </application>
 
     <supports-screens android:anyDensity="true"

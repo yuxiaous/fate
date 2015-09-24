@@ -86,6 +86,9 @@
             <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
+
+            <!-- kuwo -->
+            <pathelement location="../../../Classes/sdk/KuwoLoginSdk/android/kuwo_mobile_login_sdk.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

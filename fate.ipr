@@ -262,6 +262,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="kuwo_mobile_login_sdk">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/KuwoLoginSdk/android/kuwo_mobile_login_sdk.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="libammsdk">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/TencentMidas/android/libs/libammsdk.jar!/" />
