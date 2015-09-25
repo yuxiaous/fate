@@ -12,6 +12,7 @@
 #include "json/filestream.h"
 #include "json/prettywriter.h"
 #include "json/stringbuffer.h"
+#include "GameUtils.h"
 
 
 Sdk::Sdk()
@@ -50,5 +51,25 @@ void SdkChargeProtocol::onChargeCallback(int result, const std::string &order) {
             _chargeCallback((char*)buffer.GetString());
         }
     }
+}
+
+std::string SdkChargeProtocol::getChargeIdentifier(const std::string &key)
+{
+    const GameUtils::ConfigGetter getter = GameUtils::getConfigGetter();
+    if(getter == nullptr) {
+        return std::string();
+    }
+    
+    const char *configstr = getter("shop", key.c_str());
+    
+    rapidjson::Document json;
+    json.Parse<0>(configstr);
+    rapidjson::Value jidentifier;
+    jidentifier = json["platform_good_id"];
+    if(jidentifier.IsString() == false) {
+        return std::string();
+    }
+    
+    return jidentifier.GetString();
 }
 

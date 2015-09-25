@@ -21,6 +21,11 @@ public:
     static int getSimOperator();
     
 #ifndef SKIP_BY_AUTO_BINDINGS
+    typedef std::function<const char* (const char*, const char*)> ConfigGetter;
+    static ConfigGetter _configGetter;
+    static void setConfigGetter(const ConfigGetter &getter);
+    static const ConfigGetter &getConfigGetter();
+    
     static void split(const std::string &s, const std::string &delim, std::vector<std::string> &ret);
 #endif
     

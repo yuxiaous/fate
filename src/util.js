@@ -120,6 +120,20 @@ var util = {
         }
     },
 
+    getConfigJson: function(name, key) {
+        var config;
+        if(name == "shop") {
+            config = ShopSystem.getConfig(key);
+        }
+        else {
+            config = configdb[name][key];
+        }
+        if(config != undefined) {
+            return JSON.stringify(config);
+        }
+        return "{}";
+    },
+
     getChannelId: function() {
         return jsb.GameUtils.getChannelId();
     },
@@ -179,4 +193,6 @@ var GET_STRING = function(value) {
 
     return util.str(value);
 };
+
+jsb.GameUtils.prototype.setConfigGetter(util.getConfigJson);
 

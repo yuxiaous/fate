@@ -97,7 +97,7 @@ var ShopSystem = SystemBase.extend({
         if(config == undefined) {
             return;
         }
-        sdk_manager.charge(obj.order, config.platform_good_id);
+        sdk_manager.charge(obj.order, obj.good_id);
 
         sdk_manager.sendSdkCommand("TalkingDataGA", "onChargeRequest",
             "{order},{iapId},{currencyAmount},{currencyType},{virtualCurrencyAmount},{paymentType}".format({

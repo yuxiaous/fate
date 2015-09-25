@@ -63,6 +63,8 @@ public:
     
     static void onChargeCallback(int result, const std::string &order);
     
+    static std::string getChargeIdentifier(const std::string &key);
+    
 private:
     static std::function<void(char*)> _chargeCallback;
 };

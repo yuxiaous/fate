@@ -138,4 +138,14 @@ void GameUtils::split(const std::string &s, const std::string &delim, std::vecto
     }
 }
 
+GameUtils::ConfigGetter GameUtils::_configGetter = nullptr;
 
+void GameUtils::setConfigGetter(const ConfigGetter &getter)
+{
+    _configGetter = getter;
+}
+
+const GameUtils::ConfigGetter &GameUtils::getConfigGetter()
+{
+    return _configGetter;
+}

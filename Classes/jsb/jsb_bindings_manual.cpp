@@ -7,10 +7,10 @@
 //
 
 #include "jsb_bindings_manual.h"
+#include "jsb_bindings_auto.hpp"
 #include "jsb_levelhelper_auto.hpp"
 #include "LevelHelper2API.h"
-#include "jsb_bindings_auto.hpp"
-//#include "RoleBaseNode.h"
+#include "GameUtils.h"
 
 // LevelHelper
 static bool js_levelhelper_LHScene_ctor(JSContext *cx, uint32_t argc, jsval *vp)
@@ -32,51 +32,56 @@ static bool js_levelhelper_LHScene_ctor(JSContext *cx, uint32_t argc, jsval *vp)
 
 void register_all_jsb_levelhelper_manual(JSContext *cx, JS::HandleObject global)
 {
-//    JS_DefineFunction(cx, jsb_LHScene_prototype, "ctor", js_levelhelper_LHScene_ctor, 0, JSPROP_ENUMERATE | JSPROP_PERMANENT);
-    
     JS_DefineFunction(cx, JS::RootedObject(cx, jsb_LHScene_prototype), "ctor", js_levelhelper_LHScene_ctor, 1, JSPROP_ENUMERATE | JSPROP_PERMANENT);
 }
 
+// GameUtils
+static bool js_GameUtils_setConfigGetter(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    if (argc == 1) {
+        GameUtils::ConfigGetter arg0;
+        do {
+            if(JS_TypeOfValue(cx, args.get(0)) == JSTYPE_FUNCTION)
+            {
+                std::shared_ptr<JSFunctionWrapper> func(new JSFunctionWrapper(cx, args.thisv().toObjectOrNull(), args.get(0)));
+                auto lambda = [=](const char* larg0, const char* larg1) -> const char* {
+                    JSB_AUTOCOMPARTMENT_WITH_GLOBAL_OBJCET
+                    jsval largv[2];
+                    largv[0] = c_string_to_jsval(cx, larg0);
+                    largv[1] = c_string_to_jsval(cx, larg1);
+                    JS::RootedValue rval(cx);
+                    bool ok = func->invoke(2, &largv[0], &rval);
+                    if (!ok && JS_IsExceptionPending(cx)) {
+                        JS_ReportPendingException(cx);
+                    }
+                    
+                    const char *ret;
+                    jsval_to_charptr(cx, rval, &ret);
+                    return ret;
+                };
+                arg0 = lambda;
+            }
+            else
+            {
+                arg0 = nullptr;
+            }
+        } while(0);
+        
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_SdkManager_setChargeCallback : Error processing arguments");
+        GameUtils::setConfigGetter(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_SdkManager_setChargeCallback : wrong number of arguments");
+    return false;
+}
 
-// bindings
-//static bool js_RoleBaseNode_ctor(JSContext *cx, uint32_t argc, jsval *vp)
-//{
-//    jsval *argv = JS_ARGV(cx, vp);
-//    JSObject *obj = JS_THIS_OBJECT(cx, vp);
-//    RoleBaseNode *nobj = new (std::nothrow) RoleBaseNode();
-//    if (nobj) {
-//        nobj->autorelease();
-//    }
-//    js_proxy_t* p = jsb_new_proxy(nobj, obj);
-//    JS_AddNamedObjectRoot(cx, &p->obj, "RoleBaseNode");
-//    bool isFound = false;
-//    if (JS_HasProperty(cx, obj, "_ctor", &isFound) && isFound)
-//        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", argc, argv);
-//    JS_SET_RVAL(cx, vp, JSVAL_VOID);
-//    return true;
-//}
-
-//static bool js_PhysicalNode_ctor(JSContext *cx, uint32_t argc, jsval *vp)
-//{
-//    jsval *argv = JS_ARGV(cx, vp);
-//    JSObject *obj = JS_THIS_OBJECT(cx, vp);
-//    PhysicalNode *nobj = new (std::nothrow) PhysicalNode();
-//    if (nobj) {
-//        nobj->autorelease();
-//    }
-//    js_proxy_t* p = jsb_new_proxy(nobj, obj);
-//    JS_AddNamedObjectRoot(cx, &p->obj, "PhysicalNode");
-//    bool isFound = false;
-//    if (JS_HasProperty(cx, obj, "_ctor", &isFound) && isFound)
-//        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", argc, argv);
-//    JS_SET_RVAL(cx, vp, JSVAL_VOID);
-//    return true;
-//}
 
 void register_all_jsb_bindings_manual(JSContext *cx, JS::HandleObject global)
 {
-//    JS_DefineFunction(cx, jsb_RoleBaseNode_prototype, "ctor", js_RoleBaseNode_ctor, 0, JSPROP_ENUMERATE | JSPROP_PERMANENT);
-//    JS_DefineFunction(cx, jsb_PhysicalNode_prototype, "ctor", js_PhysicalNode_ctor, 0, JSPROP_ENUMERATE | JSPROP_PERMANENT);
+    JS_DefineFunction(cx, JS::RootedObject(cx, jsb_GameUtils_prototype), "setConfigGetter", js_GameUtils_setConfigGetter, 1, JSPROP_ENUMERATE | JSPROP_PERMANENT);
 }
 
 

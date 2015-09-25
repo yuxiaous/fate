@@ -26,8 +26,10 @@ DeveloperSdk *DeveloperSdk::getInstance()
     return instance;
 }
 
-void DeveloperSdk::charge(const std::string &order, const std::string &identifier)
+void DeveloperSdk::charge(const std::string &order, const std::string &key)
 {
+    std::string identifier = getChargeIdentifier(key);
+    
     onChargeCallback(0, order);
 }
 
