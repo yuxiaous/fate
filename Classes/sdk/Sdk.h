@@ -59,10 +59,9 @@ class SdkChargeProtocol
 {
     friend SdkManager;
 public:
-    virtual void charge(const std::string &order, const std::string &identifier) {}
+    virtual void charge(const std::string &order, const std::string &key) {}
     
     static void onChargeCallback(int result, const std::string &order);
-    
     static std::string getChargeIdentifier(const std::string &key);
     
 private:

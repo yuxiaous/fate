@@ -72,7 +72,7 @@ void Qh360Sdk::login()
     }
 }
 
-void Qh360Sdk::charge(const std::string &order, const std::string &identifier)
+void Qh360Sdk::charge(const std::string &order, const std::string &key)
 {
-
+    std::string identifier = getChargeIdentifier(key);
 }

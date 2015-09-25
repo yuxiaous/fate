@@ -173,12 +173,12 @@ void SdkManager::login()
 }
 
 // ChargeProtocol
-void SdkManager::charge(const std::string &order, const std::string &identifier)
+void SdkManager::charge(const std::string &order, const std::string &key)
 {
     for(Sdk *sdk : _sdks) {
         SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
         if(charge) {
-            charge->charge(order, identifier);
+            charge->charge(order, key);
         }
     }
 }

@@ -30,8 +30,9 @@ void MixSdk::activityOnResume()
     UniPaySdk_onResume();
 }
 
-void MixSdk::charge(const std::string &order, const std::string &identifier)
+void MixSdk::charge(const std::string &order, const std::string &key)
 {
+    std::string identifier = getChargeIdentifier(key);
     cocos2d::log("MixSdk::charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
 
     switch(_simType) {

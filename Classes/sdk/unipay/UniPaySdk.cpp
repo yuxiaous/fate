@@ -101,8 +101,9 @@ void UniPaySdk::init()
 
 }
 
-void UniPaySdk::charge(const std::string &order, const std::string &identifier)
+void UniPaySdk::charge(const std::string &order, const std::string &key)
 {
+    std::string identifier = getChargeIdentifier(key);
     UniPaySdk_charge(order, identifier);
 }
 

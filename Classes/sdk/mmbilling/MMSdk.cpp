@@ -81,10 +81,11 @@ void MMSdk::activityOnCreate()
     }
 }
 
-void MMSdk::charge(const std::string &order, const std::string &identifier)
+void MMSdk::charge(const std::string &order, const std::string &key)
 {
     cocos2d::log("MMSdk::charge");
 
+    std::string identifier = getChargeIdentifier(key);
     if(order.empty() || identifier.empty()) {
         onChargeCallback(1, order);
         return;

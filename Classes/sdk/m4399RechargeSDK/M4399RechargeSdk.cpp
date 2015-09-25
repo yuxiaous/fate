@@ -52,8 +52,9 @@ void M4399RechargeSdk::activityOnDestroy()
     M4399RechargeSdk_destroy();
 }
 
-void M4399RechargeSdk::charge(const std::string &order, const std::string &identifier)
+void M4399RechargeSdk::charge(const std::string &order, const std::string &key)
 {
+    std::string identifier = getChargeIdentifier(key);
     M4399RechargeSdk_charge("1", "就哦的从");
 }
 

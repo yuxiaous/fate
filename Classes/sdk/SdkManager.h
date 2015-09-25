@@ -30,7 +30,7 @@ public:
     static void login();
     
     // ChargeProtocol
-    static void charge(const std::string &order, const std::string &identifier);
+    static void charge(const std::string &order, const std::string &key);
     static void setChargeCallback(const std::function<void(char *param)> &callback);
     
 private:

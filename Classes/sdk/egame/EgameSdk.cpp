@@ -69,8 +69,9 @@ void EgameSdk::activityOnCreate()
     EgameSdk_init();
 }
 
-void EgameSdk::charge(const std::string &order, const std::string &identifier)
+void EgameSdk::charge(const std::string &order, const std::string &key)
 {
+    std::string identifier = getChargeIdentifier(key);
     EgameSdk_charge(order, identifier);
 }
 
