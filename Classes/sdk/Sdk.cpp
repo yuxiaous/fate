@@ -53,17 +53,25 @@ void SdkChargeProtocol::onChargeCallback(int result, const std::string &order) {
     }
 }
 
-std::string SdkChargeProtocol::getChargeIdentifier(const std::string &key)
+std::string SdkChargeProtocol::getShopConfig(const std::string &key)
 {
     const GameUtils::ConfigGetter getter = GameUtils::getConfigGetter();
     if(getter == nullptr) {
         return std::string();
     }
     
-    const char *configstr = getter("shop", key.c_str());
+    return getter("shop", key.c_str());
+}
+
+std::string SdkChargeProtocol::getChargeIdentifier(const std::string &key)
+{
+    std::string configstr = getShopConfig(key);
+    if(configstr.empty()) {
+        return std::string();
+    }
     
     rapidjson::Document json;
-    json.Parse<0>(configstr);
+    json.Parse<0>(configstr.c_str());
     rapidjson::Value jidentifier;
     jidentifier = json["platform_good_id"];
     if(jidentifier.IsString() == false) {

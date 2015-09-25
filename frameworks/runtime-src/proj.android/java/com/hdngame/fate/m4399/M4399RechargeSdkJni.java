@@ -7,6 +7,7 @@ import cn.m4399.operate.SingleOperateCenter;
 import cn.m4399.recharge.RechargeOrder;
 import com.hdngame.fate.SdkManagerJni;
 
+import java.lang.String;
 import java.lang.System;
 
 /**
@@ -73,15 +74,15 @@ public class M4399RechargeSdkJni {
         });
     }
 
-    //je充值金额：是整数字符串，4399充值中心仅支持整数金额充值，最小充值金额1元，最大不超过50000元。
-    //productName商品名称：最长不超过8个字符。 如果传入商品名，充值中心将直接显示改商品名称，
-    //如果充值金额大于下单时传入的je时，将显示商品名+XXX游戏币，相关游戏币的兑换比例在接入时提供给运营人员配置。
-    //如果未传入商品名，则直接显示XXX游戏币。
-    public static void charge(String je, String productName) {
+    public static void charge(String order, String name, int cost) {
         System.out.println("M4399RechargeSdkJni.charge");
-        System.out.println(je + ":" + productName);
+        System.out.println(order + ":" + name + ":" + cost);
 
-        SingleOperateCenter.getInstance().recharge(SdkManagerJni.activity, je, productName);
+        //je充值金额：是整数字符串，4399充值中心仅支持整数金额充值，最小充值金额1元，最大不超过50000元。
+        //productName商品名称：最长不超过8个字符。 如果传入商品名，充值中心将直接显示改商品名称，
+        //如果充值金额大于下单时传入的je时，将显示商品名+XXX游戏币，相关游戏币的兑换比例在接入时提供给运营人员配置。
+        //如果未传入商品名，则直接显示XXX游戏币。
+        SingleOperateCenter.getInstance().recharge(SdkManagerJni.activity, String.valueOf(cost), name);
     }
 
     public static void destroy() {
