@@ -30,11 +30,26 @@ extern "C" {
             minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jcost, jname);
         }
     }
+
+    void M4399RechargeSdk_destroy()
+    {
+        cocos2d::log("M4399RechargeSdk_destroy");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "destroy", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jcost, jname);
+        }
+    }
 }
 
 void M4399RechargeSdk::activityOnCreate()
 {
     M4399RechargeSdk_init("107217", "测试游戏");
+}
+
+void M4399RechargeSdk::activityOnDestroy()
+{
+    M4399RechargeSdk_destroy();
 }
 
 void M4399RechargeSdk::charge(const std::string &order, const std::string &identifier)

@@ -14,8 +14,7 @@ public:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
     virtual void activityOnCreate() override;
-//    virtual void activityOnPause() override;
-//    virtual void activityOnResume() override;
+    virtual void activityOnDestroy() override;
 #endif
 };
 
