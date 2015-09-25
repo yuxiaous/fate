@@ -59,6 +59,16 @@ extern "C" {
         M4399RechargeSdk_charge(order, jname.GetString(), jcost.GetInt());
     }
 
+    void Java_com_hdngame_fate_m4399_M4399RechargeSdkJni_onM4399ChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+    {
+        cocos2d::log("Java_com_hdngame_fate_m4399_M4399RechargeSdkJni_onM4399ChargeCallback");
+
+        std::string order = JniHelper::jstring2string(jorder);
+        Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+            SdkChargeProtocol::onChargeCallback(result, order.c_str());
+        });
+    }
+
     void M4399RechargeSdk_destroy()
     {
         cocos2d::log("M4399RechargeSdk_destroy");
