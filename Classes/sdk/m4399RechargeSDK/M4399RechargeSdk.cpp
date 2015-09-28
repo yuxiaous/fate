@@ -7,6 +7,7 @@
 #include "json/filestream.h"
 #include "json/prettywriter.h"
 #include "json/stringbuffer.h"
+#include "GameUtils.h"
 using namespace cocos2d;
 
 #define  CLASS_NAME "com/hdngame/fate/m4399/M4399RechargeSdkJni"
@@ -36,27 +37,14 @@ extern "C" {
         }
     }
 
-    void M4399RechargeSdk_charge2(const std::string &order, const std::string &key)
+    void M4399RechargeSdk_charge2(const std::string &order, const std::string &identifier)
     {
-        std::string configstr = SdkChargeProtocol::getShopConfig(key);
-        if(configstr.empty()) {
-            return;
+        std::vector<std::string> params;
+        GameUtils::split(identifier, ",", params);
+
+        if(params.size() == 2) {
+            M4399RechargeSdk_charge(order, params[0], atoi(params[1].c_str()));
         }
-
-        rapidjson::Document json;
-        json.Parse<0>(configstr.c_str());
-
-        rapidjson::Value jcost;
-        jcost = json["pay_cost"];
-
-        rapidjson::Value jname;
-        jname = json["name"];
-
-        if(!jcost.IsInt() || !jname.IsString()) {
-            return;
-        }
-
-        M4399RechargeSdk_charge(order, jname.GetString(), jcost.GetInt());
     }
 
     void Java_com_hdngame_fate_m4399_M4399RechargeSdkJni_onM4399ChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
@@ -90,8 +78,8 @@ void M4399RechargeSdk::activityOnDestroy()
     M4399RechargeSdk_destroy();
 }
 
-void M4399RechargeSdk::charge(const std::string &order, const std::string &key)
+void M4399RechargeSdk::charge(const std::string &order, const std::string &identifier)
 {
-    M4399RechargeSdk_charge2(order, key);
+    M4399RechargeSdk_charge2(order, identifier);
 }
 

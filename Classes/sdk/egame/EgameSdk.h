@@ -17,7 +17,7 @@ public:
     EgameSdk();
     static EgameSdk *getInstance();
     virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
-    virtual void charge(const std::string &order, const std::string &key) override;
+    virtual void charge(const std::string &order, const std::string &identifier) override;
 
     static void moreGame();
     static void exit();

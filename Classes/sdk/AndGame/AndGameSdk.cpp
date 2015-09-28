@@ -77,9 +77,8 @@ void AndGameSdk::activityOnCreate()
     storage->setBoolForKey("effect_music_is_open_key", enable);
 }
 
-void AndGameSdk::charge(const std::string &order, const std::string &key)
+void AndGameSdk::charge(const std::string &order, const std::string &identifier)
 {
-    std::string identifier = getChargeIdentifier(key);
     AndGameSdk_charge(order, identifier);
 }
 

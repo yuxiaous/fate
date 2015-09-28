@@ -97,7 +97,7 @@ var ShopSystem = SystemBase.extend({
         if(config == undefined) {
             return;
         }
-        sdk_manager.charge(obj.order, obj.good_id);
+        sdk_manager.charge(obj.order, config.platform_good_id);
 
         sdk_manager.sendSdkCommand("TalkingDataGA", "onChargeRequest",
             "{order},{iapId},{currencyAmount},{currencyType},{virtualCurrencyAmount},{paymentType}".format({
@@ -146,22 +146,23 @@ var ShopSystem = SystemBase.extend({
 
 ShopSystem.getShopPlatformId = function() {
     var channel_id = util.getChannelId();
+    var sim_operator = util.getSimOperator();
     switch (channel_id) {
         case GameChannel.AppStore:
-            return 2;
+            return [2];
         case GameChannel.CmccMm:
         case GameChannel.Mzw:
-            return 3;
+            return [3];
         case GameChannel.CmccAnd:
-            return 4;
+            return [4];
         case GameChannel.Unicom:
-            return 5;
+            return [5];
         case GameChannel.Telecom:
-            return 6;
+            return [6];
         case GameChannel.Qh360:
-            return 7;
+            return [7];
         case GameChannel.TencentMidas:
-            return 8;
+            return [8];
         case GameChannel.Mix:
         case GameChannel.Pps:
         case GameChannel.SohuWan:
@@ -171,29 +172,40 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.BaiduShoujizhushou:
         case GameChannel.BaiduDuoku:
         case GameChannel.Kuwo:
-        case GameChannel.M4399:
-            var sim_operator = util.getSimOperator();
             switch (sim_operator) {
                 case SimOperator.CMCC:
-                    return 4;
+                    return [4];
                 case SimOperator.UNICOM:
-                    return 5;
+                    return [5];
                 case SimOperator.TLELCOM:
-                    return 6;
+                    return [6];
+            }
+            break;
+        case GameChannel.M4399:
+            switch (sim_operator) {
+                case SimOperator.CMCC:
+                    return [4, 11];
+                case SimOperator.UNICOM:
+                    return [5, 11];
+                case SimOperator.TLELCOM:
+                    return [6, 11];
             }
             break;
     }
-    return 1;
+    return [1];
 };
 
 ShopSystem.getConfig = function(good_id) {
     var config = configdb.shop[good_id];
     if(config != undefined) {
-        var platform_id = ShopSystem.getShopPlatformId();
-        var config2 = config[platform_id];
-        if(config2 != undefined) {
-            config = config2;
-        }
+        _.some(ShopSystem.getShopPlatformId(), function(id) {
+            var config2 = config[id];
+            if(config2 != undefined) {
+                config = config2;
+                return true;
+            }
+            return false;
+        });
     }
     return config;
 };

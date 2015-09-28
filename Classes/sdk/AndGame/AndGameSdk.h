@@ -21,7 +21,7 @@ public:
     virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
 
     // SdkChargeProtocol
-    virtual void charge(const std::string &order, const std::string &key) override;
+    virtual void charge(const std::string &order, const std::string &identifier) override;
 
     static bool isMusicEnabled();
     static void exit();

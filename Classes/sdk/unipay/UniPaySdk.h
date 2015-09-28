@@ -21,7 +21,7 @@ public:
     static UniPaySdk *getInstance();
 
     virtual void init() override;
-    virtual void charge(const std::string &order, const std::string &key) override;
+    virtual void charge(const std::string &order, const std::string &identifier) override;
 
     static void moreGame();
 

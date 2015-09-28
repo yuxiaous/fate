@@ -9,7 +9,7 @@
 class M4399RechargeSdk : public Sdk, public SdkChargeProtocol
 {
 public:
-    virtual void charge(const std::string &order, const std::string &key) override;
+    virtual void charge(const std::string &order, const std::string &identifier) override;
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:

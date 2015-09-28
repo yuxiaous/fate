@@ -20,7 +20,7 @@ public:
     static DeveloperSdk *getInstance();
     
     // SdkChargeProtocol
-    virtual void charge(const std::string &order, const std::string &key) override;
+    virtual void charge(const std::string &order, const std::string &identifier) override;
 };
 
 #endif /* defined(__fate__DeveloperSdk__) */
