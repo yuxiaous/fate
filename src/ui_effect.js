@@ -108,7 +108,10 @@ var UiEffect = {
     },
 
     blockShopItemWithRMB : function () {
-        return false;
+        if(util.isLite() == false) {
+            return false;
+        }
+
         //所有RMB购买的先屏蔽
         var label = cc.LabelTTF.create("功能暂未开启，敬请期待 !")
         var winSize = cc.director.getWinSize();
