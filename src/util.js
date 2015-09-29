@@ -180,7 +180,7 @@ var GameChannel = {
     Anzhi : 26,
     Meitu : 27,
     Yyh : 28,
-    Dl : 29,
+    Dangle : 29,
     Sx : 30,
     XyAnzhuo: 31
 };

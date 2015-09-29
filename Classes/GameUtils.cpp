@@ -76,7 +76,7 @@ int GameUtils::getChannelId()
     return 27;
 #elif defined(CHANNEL_YYH)
     return 28;
-#elif defined(CHANNEL_DL)
+#elif defined(CHANNEL_DANGLE)
     return 29;
 #elif defined(CHANNEL_SX)
     return 30;
