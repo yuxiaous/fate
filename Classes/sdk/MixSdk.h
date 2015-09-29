@@ -20,13 +20,6 @@ public:
     virtual void activityOnResume() override;
     virtual void activityOnDestroy() override;
 #endif
-
-private:
-    enum SimType {
-        CMCC = 1,
-        UNICOM = 2,
-        TELECOM = 3
-    };
 };
 
 #endif /* defined(__MixSdk__) */

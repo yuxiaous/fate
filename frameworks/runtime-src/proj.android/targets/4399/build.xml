@@ -86,6 +86,14 @@
             <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
+
+            <!-- m4399 -->
+            <pathelement location="../../../Classes/sdk/m4399RechargeSDK/android/libs/m4399SingleOperateSDK.jar" />
+            <pathelement location="../../../Classes/sdk/m4399RechargeSDK/android/libs/m4399SingleRechargeSDK.jar" />
+            <pathelement location="../../../Classes/sdk/m4399RechargeSDK/android/libs/android-support-v13.jar" />
+            <pathelement location="../../../Classes/sdk/m4399RechargeSDK/android/libs/alipaysdk.jar" />
+            <pathelement location="../../../Classes/sdk/m4399RechargeSDK/android/libs/alipaysecsdk.jar" />
+            <pathelement location="../../../Classes/sdk/m4399RechargeSDK/android/libs/alipayutdid.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -158,6 +166,15 @@
             </fileset>
         </copy>
         <!-- EGame end-->
+
+        <!-- m4399 start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/m4399RechargeSDK/android">
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- m4399 end -->
     </target>
 
     <!-- Import the actual build file.
