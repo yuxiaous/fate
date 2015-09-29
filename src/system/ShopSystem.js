@@ -153,6 +153,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.CmccMm:
             return [3];
         case GameChannel.CmccAnd:
+        case GameChannel.XyAnzhuo:
             return [4];
         case GameChannel.Unicom:
             return [5];

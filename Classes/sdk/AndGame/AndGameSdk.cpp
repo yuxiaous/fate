@@ -72,6 +72,9 @@ void AndGameSdk::activityOnCreate()
     AndGameSdk_init();
 
     bool enable = isMusicEnabled();
+#ifdef CHANNEL_XY_ANZHUO
+    enable = true;
+#endif
     JsonStorage *storage = JsonStorage::GetInstance("setting.json");
     storage->setBoolForKey("background_music_is_open_key", enable);
     storage->setBoolForKey("effect_music_is_open_key", enable);

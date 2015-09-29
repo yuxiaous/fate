@@ -73,6 +73,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "Ttyx";
 #elif defined(CHANNEL_7k7k)
     channel = "7k7k"
+#elif defined(CHANNEL_XY_ANZHUO)
+    channel = "XyAnzhuo";
 
 //#elif defined(CHANNEL_360)
 //    channel = "360";

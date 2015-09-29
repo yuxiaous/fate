@@ -171,7 +171,8 @@ var GameChannel = {
     BaiduDuoku: 17,
     Kuwo: 18,
     Ttyx: 19,
-    Sevenk : 20
+    Sevenk : 20,
+    XyAnzhuo: 21
 };
 
 var SimOperator = {
