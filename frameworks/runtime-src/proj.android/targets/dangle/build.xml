@@ -80,8 +80,8 @@
             <!-- unipay -->
             <!--<pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />-->
 
-            <pathelement location="targets/dl/offline1441965582048_00018754_20150914/Multimode_UniPay_base.jar" />
-            <pathelement location="targets/dl/offline1441965582048_00018754_20150914/Multimode_UniPay_payinfo.jar" />
+            <pathelement location="targets/dangle/offline1441965582048_00018754_20150914/Multimode_UniPay_base.jar" />
+            <pathelement location="targets/dangle/offline1441965582048_00018754_20150914/Multimode_UniPay_payinfo.jar" />
 
 
             <!-- egame -->

@@ -79,8 +79,8 @@
 
             <!-- unipay -->
             <!--<pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />-->
-            <pathelement location="targets/ylt/offline1441965582048_00025169_20150914/Multimode_UniPay_base.jar" />
-            <pathelement location="targets/ylt/offline1441965582048_00025169_20150914/Multimode_UniPay_payinfo.jar" />
+            <pathelement location="targets/youletang/offline1441965582048_00025169_20150914/Multimode_UniPay_base.jar" />
+            <pathelement location="targets/youletang/offline1441965582048_00025169_20150914/Multimode_UniPay_payinfo.jar" />
 
             <!-- egame -->
             <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
