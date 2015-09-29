@@ -4,8 +4,11 @@
 #include "unipay/UniPaySdk.h"
 #include "egame/EgameSdk.h"
 
+//#ifdef MIX_M4399_RECHARGE
+//#include "m4399RechargeSDK/M4399RechargeSdk.h"
+//#endif
+
 MixSdk::MixSdk()
-: _simType(0)
 {
 
 }
@@ -14,10 +17,12 @@ void MixSdk::activityOnCreate()
 {
     cocos2d::log("MixSdk::activityOnCreate");
 
-    _simType = GameUtils::getSimOperator();
-
     AndGameSdk_init();
     EgameSdk_init();
+
+//#ifdef MIX_M4399_RECHARGE
+//    M4399RechargeSdk_init();
+//#endif
 }
 
 void MixSdk::activityOnPause()
@@ -30,11 +35,19 @@ void MixSdk::activityOnResume()
     UniPaySdk_onResume();
 }
 
+void MixSdk::activityOnDestroy()
+{
+//#ifdef MIX_M4399_RECHARGE
+//    M4399RechargeSdk_destroy();
+//#endif
+}
+
 void MixSdk::charge(const std::string &order, const std::string &identifier)
 {
     cocos2d::log("MixSdk::charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
 
-    switch(_simType) {
+    int sim = GameUtils::getSimOperator();
+    switch(sim) {
         case CMCC:
             AndGameSdk_charge(order, identifier);
             break;

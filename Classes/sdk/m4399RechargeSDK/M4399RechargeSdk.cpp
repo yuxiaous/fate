@@ -13,9 +13,12 @@ using namespace cocos2d;
 #define  CLASS_NAME "com/hdngame/fate/m4399/M4399RechargeSdkJni"
 
 extern "C" {
-    void M4399RechargeSdk_init(const std::string &gameKey, const std::string &gameName)
+    void M4399RechargeSdk_init()
     {
         cocos2d::log("M4399RechargeSdk_init");
+
+        std::string gameKey = "107217";
+        std::string gameName = "测试游戏";
 
         JniMethodInfo minfo;
         if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "(Ljava/lang/String;Ljava/lang/String;)V")) {
@@ -70,7 +73,7 @@ extern "C" {
 
 void M4399RechargeSdk::activityOnCreate()
 {
-    M4399RechargeSdk_init("107217", "测试游戏");
+    M4399RechargeSdk_init();
 }
 
 void M4399RechargeSdk::activityOnDestroy()

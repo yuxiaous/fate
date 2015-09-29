@@ -6,6 +6,14 @@
 #include "cocos2d.h"
 
 
+extern "C" {
+    void M4399RechargeSdk_init();
+    void M4399RechargeSdk_charge(const std::string &order, const std::string &name, int cost);
+    void M4399RechargeSdk_charge2(const std::string &order, const std::string &identifier);
+    void M4399RechargeSdk_destroy();
+}
+
+
 class M4399RechargeSdk : public Sdk, public SdkChargeProtocol
 {
 public:

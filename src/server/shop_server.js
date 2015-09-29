@@ -219,8 +219,9 @@ var shop_server = {
     },
 
     genOrder: function(good_id) {
+        var config = ShopSystem.getConfig(good_id);
         var ret = {
-            order: Math.uuid(15),
+            order: Math.uuid(15) + "-" + config.platform_id,
             good_id: good_id,
             status: 0
         };

@@ -18,6 +18,7 @@ public:
     virtual void activityOnCreate() override;
     virtual void activityOnPause() override;
     virtual void activityOnResume() override;
+    virtual void activityOnDestroy() override;
 #endif
 
 private:
@@ -26,7 +27,6 @@ private:
         UNICOM = 2,
         TELECOM = 3
     };
-    int _simType;
 };
 
 #endif /* defined(__MixSdk__) */
