@@ -171,7 +171,17 @@ var GameChannel = {
     BaiduDuoku: 17,
     Kuwo: 18,
     Ttyx: 19,
-    Sevenk : 20
+    Sevenk : 20,
+    Letvs : 21,
+    Ylt : 22,
+    Feiliu : 23,
+    Htc : 24,
+    Yyc : 25,
+    Anzhi : 26,
+    Meitu : 27,
+    Yyh : 28,
+    Dl : 29,
+    Sx : 30
 };
 
 var SimOperator = {
