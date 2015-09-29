@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.hdngame.fate.SevenK"
+      package="com.hdngame.fate.sevenk"
       android:versionCode="2"
       android:versionName="1.1"
       android:installLocation="auto">
@@ -57,7 +57,7 @@
 
         <service android:name="com.unicom.wostore.unipay.paysecurity.SecurityServiceFramework">
             <intent-filter>
-                <action android:name="com.hdngame.fate.SevenK.unicom.wostore.unipay.securityserviceframework" />
+                <action android:name="com.hdngame.fate.sevenk.unicom.wostore.unipay.securityserviceframework" />
             </intent-filter>
         </service>
 
