@@ -70,7 +70,7 @@ void TalkingDataGameAnalyticsSdk::init()
 #elif defined(CHANNEL_KUWO)
     channel = "Kuwo";
 #elif defined(CHANNEL_TTYX)
-    channel = "Ttyx";
+    channel = "TianTianYouXi";
 #elif defined(CHANNEL_7k7k)
     channel = "7k7k";
 #elif defined(CHANNEL_LETVS)
