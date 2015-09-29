@@ -68,7 +68,7 @@ int GameUtils::getChannelId()
     return 23;
 #elif defined(CHANNEL_HTC)
     return 24;
-#elif defined(CHANNEL_YYC)
+#elif defined(CHANNEL_YOUYOUCUN)
     return 25;
 #elif defined(CHANNEL_ANZHI)
     return 26;

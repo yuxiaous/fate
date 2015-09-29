@@ -176,7 +176,7 @@ var GameChannel = {
     Ylt : 22,
     Feiliu : 23,
     Htc : 24,
-    Yyc : 25,
+    Youyoucun : 25,
     Anzhi : 26,
     Meitu : 27,
     Yyh : 28,
