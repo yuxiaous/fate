@@ -60,8 +60,28 @@ int GameUtils::getChannelId()
     return 19;
 #elif defined(CHANNEL_7K7K)
     return 20;
-#elif defined(CHANNEL_XY_ANZHUO)
+#elif defined(CHANNEL_LETVS)
     return 21;
+#elif defined(CHANNEL_YLT)
+    return 22;
+#elif defined(CHANNEL_FEILIU)
+    return 23;
+#elif defined(CHANNEL_HTC)
+    return 24;
+#elif defined(CHANNEL_YYC)
+    return 25;
+#elif defined(CHANNEL_ANZHI)
+    return 26;
+#elif defined(CHANNEL_MEITU)
+    return 27;
+#elif defined(CHANNEL_YYH)
+    return 28;
+#elif defined(CHANNEL_DL)
+    return 29;
+#elif defined(CHANNEL_SX)
+    return 30;
+#elif defined(CHANNEL_XY_ANZHUO)
+    return 31;
 #endif
     
     return 0;

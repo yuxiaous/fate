@@ -172,7 +172,17 @@ var GameChannel = {
     Kuwo: 18,
     Ttyx: 19,
     Sevenk : 20,
-    XyAnzhuo: 21
+    Letvs : 21,
+    Ylt : 22,
+    Feiliu : 23,
+    Htc : 24,
+    Yyc : 25,
+    Anzhi : 26,
+    Meitu : 27,
+    Yyh : 28,
+    Dl : 29,
+    Sx : 30,
+    XyAnzhuo: 31
 };
 
 var SimOperator = {
