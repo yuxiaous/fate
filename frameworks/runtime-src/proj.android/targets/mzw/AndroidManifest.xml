@@ -10,7 +10,7 @@
 
     <application android:label="@string/app_name"
                  android:icon="@drawable/icon"
-                 android:name="org.cocos2dx.javascript.AppApplication">
+                 android:name="com.hdngame.fate.MixApplication">
 
         <!-- Tell NativeActivity the name of our .so -->
         <meta-data android:name="android.app.lib_name" android:value="cocos2djs" />
@@ -27,92 +27,6 @@
             </intent-filter>
         </activity>
 
-        <!-- ============================================================== -->
-        <service
-                android:name="mm.purchasesdk.iapservice.PurchaseService"
-                android:exported="true" >
-
-            <!-- android:process="mm.iapServices" > -->
-            <intent-filter android:priority="313" >
-                <action android:name="com.hdngame.fate.mm.purchaseservice.BIND" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
-        <!-- android:excludeFromRecents="true" -->
-        <!-- android:launchMode="singleInstance" -->
-        <activity
-                android:name="mm.purchasesdk.iapservice.BillingLayoutActivity"
-                android:configChanges="orientation|keyboardHidden"
-                android:theme="@android:style/Theme.Translucent" >
-            <intent-filter android:priority="313" >
-                <action android:name="com.hdngame.fate.mm.com.mmiap.activity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <!-- android:process="safiap.framework.safframeworkmanager" begin -->
-        <service
-                android:name="safiap.framework.SafFrameworkManager"
-                android:exported="true"
-                android:process="safiap.framework" >
-            <intent-filter android:priority="633" >
-
-                <!-- ID for services declared in AIDL -->
-                <action android:name="safiap.framework.sdk.ISAFFramework" />
-            </intent-filter>
-            <intent-filter android:priority="633" >
-
-                <!-- ID for services declared in AIDL -->
-                <action android:name="safiap.framework.ACTION_START_DOWNLOAD" />
-            </intent-filter>
-            <intent-filter android:priority="633" >
-
-                <!-- ID for services declared in AIDL -->
-                <action android:name="safiap.framework.ACTION_CHECK_UPDATE" />
-            </intent-filter>
-        </service>
-        <!-- receivers -->
-        <receiver android:name="safiap.framework.CheckUpdateReceiver" >
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_CANCEL_NOTIFICATION" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.GET_SHARED_DATA" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_SET_TIMER" />
-            </intent-filter>
-        </receiver>
-
-        <activity
-                android:name="safiap.framework.ui.UpdateHintActivity"
-                android:configChanges="orientation"
-                android:excludeFromRecents="true"
-                android:launchMode="singleInstance"
-                android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_TO_INSTALL" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_TO_INSTALL_IAP" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_NETWORK_ERROR_IAP" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_NETWORK_ERROR_FRAMEWORK" />
-            </intent-filter>
-        </activity>
-
-        <service
-                android:name="safiap.framework.logreport.monitor.handler.LogreportHandler"
-                android:process=":remote" />
-        <!-- android:process="safiap.framework.safframeworkmanager" end -->
-
-        <!-- ============================================================== -->
-
         <!-- KTPlay SDK配置开始 -->
         <activity
                 android:name="com.ktplay.activity.GetPhotoActivity"
@@ -128,6 +42,63 @@
                 />
         <!-- KTPlay SDK配置结束 -->
 
+        <!-- and game start -->
+        <activity android:name="cn.cmgame.billing.api.GameOpenActivity"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:screenOrientation="sensor">
+        </activity>
+        <!-- and game end -->
+
+        <!-- unipay start -->
+        <meta-data android:name="wostore_billing_otherpay" android:value="false"/>
+        <meta-data android:name="wostore_billing_chinaunicom" android:value="true"/>
+        <meta-data android:name="wostore_billing_chinamobile"  android:value="false" />
+        <meta-data android:name="wostore_billing_chinatele"  android:value="false" />
+
+        <service android:name="com.unicom.wostore.unipay.paysecurity.SecurityServiceFramework">
+            <intent-filter>
+                <action android:name="com.hdngame.fate.mzw.unicom.wostore.unipay.securityserviceframework" />
+            </intent-filter>
+        </service>
+
+        <activity
+                android:name="com.unicom.dcLoader.welcomeview"
+                android:label="@string/app_name"
+                android:screenOrientation="sensor"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                android:configChanges="keyboardHidden|screenSize|navigation|orientation"
+                >
+
+            <meta-data android:name="UNICOM_DIST_ACTIVITY" android:value="org.cocos2dx.javascript.AppActivity"/>
+        </activity>
+        <!-- unipay end -->
+
+        <!-- egame start -->
+        <activity
+                android:name="cn.egame.terminal.paysdk.EgamePayActivity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+                android:screenOrientation="landscape"
+                android:configChanges="orientation|keyboard|keyboardHidden" />
+        <activity
+                android:name="cn.play.dserv.EmpActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation"
+                android:exported="true" />
+        <service
+                android:name="cn.play.dserv.DService"
+                android:enabled="true"
+                android:exported="false"
+                android:label="dservice"
+                android:process=":dservice_v1" />
+        <receiver
+                android:name="cn.play.dserv.DsReceiver"
+                android:process=":dservice_v1" >
+            <intent-filter>
+                <action android:name="cn.play.dservice" />
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="EGAME_CHANNEL" android:value="80010079"  />
+        <meta-data android:name="EGAME_UNINS" android:value="false" />
+        <!-- egame end -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -137,24 +108,24 @@
                       android:xlargeScreens="true"/>
 					  
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>  
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>  
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>  
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>  
-    
-  	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
- 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-    <!--talking data-->
- 	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
- 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
- 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
- 	<uses-permission android:name="android.permission.GET_TASKS"/>
-
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.SEND_SMS" />
-
-    <!-- KTPlay SDK 权限配置开始 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <!-- KTPlay SDK 权限配置结束 -->
-</manifest>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+</manifest> 
