@@ -82,6 +82,8 @@ int GameUtils::getChannelId()
     return 30;
 #elif defined(CHANNEL_XY_ANZHUO)
     return 31;
+#elif defined(CHANNEL_WANDOUJIA)
+    return 32;
 #endif
     
     return 0;

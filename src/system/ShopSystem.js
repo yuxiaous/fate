@@ -185,6 +185,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.Sanxing:
         case GameChannel.Kuwo:
         case GameChannel.Mzw:
+        case GameChannel.Wandoujia:
             switch (sim_operator) {
                 case SimOperator.CMCC:
                     return [4];

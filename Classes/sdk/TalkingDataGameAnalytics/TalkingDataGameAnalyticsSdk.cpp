@@ -95,6 +95,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "SanXing";
 #elif defined(CHANNEL_XY_ANZHUO)
     channel = "XyAnZhuo";
+#elif defined(CHANNEL_WANDOUJIA)
+    channel = "WanDouJia";
     
 //#elif defined(CHANNEL_360)
 //    channel = "360";

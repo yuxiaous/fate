@@ -182,7 +182,8 @@ var GameChannel = {
     Yingyonghui : 28,
     Dangle : 29,
     Sanxing : 30,
-    XyAnzhuo: 31
+    XyAnzhuo: 31,
+    Wandoujia: 32
 };
 
 var SimOperator = {
