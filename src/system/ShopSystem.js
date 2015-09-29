@@ -180,7 +180,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.Youyoucun:
         case GameChannel.Anzhi:
         case GameChannel.Meitu:
-        case GameChannel.Yyh:
+        case GameChannel.Yingyonghui:
         case GameChannel.Dangle:
         case GameChannel.Sanxing:
         case GameChannel.Kuwo:

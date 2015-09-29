@@ -179,7 +179,7 @@ var GameChannel = {
     Youyoucun : 25,
     Anzhi : 26,
     Meitu : 27,
-    Yyh : 28,
+    Yingyonghui : 28,
     Dangle : 29,
     Sanxing : 30,
     XyAnzhuo: 31

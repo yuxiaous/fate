@@ -82,19 +82,19 @@ void TalkingDataGameAnalyticsSdk::init()
 #elif defined(CHANNEL_HTC)
     channel = "Htc";
 #elif defined(CHANNEL_YOUYOUCUN)
-    channel = "Youyoucun";
+    channel = "YouYouCun";
 #elif defined(CHANNEL_ANZHI)
     channel = "Anzhi";
 #elif defined(CHANNEL_MEITU)
     channel = "Meitu";
-#elif defined(CHANNEL_YYH)
-    channel = "Yyh";
+#elif defined(CHANNEL_YINGYONGHUI)
+    channel = "YingYongHui";
 #elif defined(CHANNEL_DANGLE)
-    channel = "Dangle";
+    channel = "DangLe";
 #elif defined(CHANNEL_SANXING)
-    channel = "Sanxing";
+    channel = "SanXing";
 #elif defined(CHANNEL_XY_ANZHUO)
-    channel = "XyAnzhuo";
+    channel = "XyAnZhuo";
     
 //#elif defined(CHANNEL_360)
 //    channel = "360";
