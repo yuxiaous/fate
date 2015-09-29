@@ -174,7 +174,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.Ttyx:
         case GameChannel.Sevenk:
         case GameChannel.Letvs:
-        case GameChannel.Ylt:
+        case GameChannel.Youletang:
         case GameChannel.Feiliu:
         case GameChannel.Htc:
         case GameChannel.Youyoucun:

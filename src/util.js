@@ -173,7 +173,7 @@ var GameChannel = {
     Ttyx: 19,
     Sevenk : 20,
     Letvs : 21,
-    Ylt : 22,
+    Youletang : 22,
     Feiliu : 23,
     Htc : 24,
     Youyoucun : 25,

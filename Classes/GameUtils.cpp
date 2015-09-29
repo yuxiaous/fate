@@ -62,7 +62,7 @@ int GameUtils::getChannelId()
     return 20;
 #elif defined(CHANNEL_LETVS)
     return 21;
-#elif defined(CHANNEL_YLT)
+#elif defined(CHANNEL_YOULETANG)
     return 22;
 #elif defined(CHANNEL_FEILIU)
     return 23;

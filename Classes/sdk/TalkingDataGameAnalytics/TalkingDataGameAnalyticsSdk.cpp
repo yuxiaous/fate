@@ -75,16 +75,16 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "7k7k";
 #elif defined(CHANNEL_LETVS)
     channel = "Letvs";
-#elif defined(CHANNEL_YLT)
-    channel = "Ylt";
+#elif defined(CHANNEL_YOULETANG)
+    channel = "YouLeTang";
 #elif defined(CHANNEL_FEILIU)
-    channel = "Feiliu";
+    channel = "FeiLiu";
 #elif defined(CHANNEL_HTC)
     channel = "Htc";
 #elif defined(CHANNEL_YOUYOUCUN)
     channel = "YouYouCun";
 #elif defined(CHANNEL_ANZHI)
-    channel = "Anzhi";
+    channel = "AnZhi";
 #elif defined(CHANNEL_MEITU)
     channel = "Meitu";
 #elif defined(CHANNEL_YINGYONGHUI)
