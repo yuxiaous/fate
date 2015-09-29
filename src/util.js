@@ -169,7 +169,9 @@ var GameChannel = {
     BaiduTieba: 15,
     BaiduShoujizhushou: 16,
     BaiduDuoku: 17,
-    Kuwo: 18
+    Kuwo: 18,
+    Ttyx: 19,
+    Sevenk : 20
 };
 
 var SimOperator = {
