@@ -57,7 +57,9 @@ int GameUtils::getChannelId()
 #elif defined(CHANNEL_KUWO)
     return 18;
 #elif defined(CHANNEL_TTYX)
-        return 19;
+    return 19;
+#elif defined(CHANNEL_7K7K)
+    return 20
 #endif
     
     return 0;

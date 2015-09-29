@@ -71,6 +71,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "Kuwo";
 #elif defined(CHANNEL_TTYX)
     channel = "Ttyx";
+#elif defined(CHANNEL_7k7k)
+    channel = "7k7k"
 
 //#elif defined(CHANNEL_360)
 //    channel = "360";
