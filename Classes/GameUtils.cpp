@@ -54,8 +54,10 @@ int GameUtils::getChannelId()
     return 16;
 #elif defined(CHANNEL_BAIDU_DUOKU)
     return 17;
-#elfi defined(CHANNEL_KUWO)
+#elif defined(CHANNEL_KUWO)
     return 18;
+#elif defined(CHANNEL_TTYX)
+        return 19;
 #endif
     
     return 0;
