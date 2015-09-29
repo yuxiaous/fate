@@ -182,7 +182,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.Meitu:
         case GameChannel.Yyh:
         case GameChannel.Dangle:
-        case GameChannel.Sx:
+        case GameChannel.Sanxing:
         case GameChannel.Kuwo:
         case GameChannel.Mzw:
             switch (sim_operator) {

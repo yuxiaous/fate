@@ -181,7 +181,7 @@ var GameChannel = {
     Meitu : 27,
     Yyh : 28,
     Dangle : 29,
-    Sx : 30,
+    Sanxing : 30,
     XyAnzhuo: 31
 };
 
