@@ -189,7 +189,8 @@ var GameChannel = {
     SouGou7 : 35,
     SouGou8 : 36,
     SouGou9 : 37,
-    SouGou11 : 38
+    SouGou11 : 38,
+    Meizu: 39
 };
 
 var SimOperator = {

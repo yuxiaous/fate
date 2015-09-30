@@ -96,6 +96,8 @@ int GameUtils::getChannelId()
     return 37;
 #elif defined(CHANNEL_SOUGOU_11)
     return 38;
+#elif defined(CHANNEL_MEIZU)
+    return 39;
 #endif
     
     return 0;

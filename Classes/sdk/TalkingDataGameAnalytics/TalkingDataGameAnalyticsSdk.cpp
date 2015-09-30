@@ -109,6 +109,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "SouGou9";
 #elif defined(CHANNEL_SOUGOU11)
     channel = "SouGou11";
+#elif defined(CHANNEL_MEIZU)
+    channel = "Meizu";
 //#elif defined(CHANNEL_360)
 //    channel = "360";
 //#elif defined(CHANNEL_TENCENT_QQ)
