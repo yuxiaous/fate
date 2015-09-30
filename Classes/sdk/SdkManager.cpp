@@ -98,6 +98,11 @@ KuwoLoginSdk kuwologinsdk;
 M4399RechargeSdk m4399rechargesdk;
 #endif
 
+#ifdef SDK_UGP
+#include "ugpsdk/UgpSdk.h"
+UgpSdk ugpsdk;
+#endif
+
 USING_NS_CC;
 
 

@@ -193,7 +193,6 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.SouGou11:
         case GameChannel.Meizu:
         case GameChannel.Wandoujia:
-        case GameChannel.Uc:
             switch (sim_operator) {
                 case SimOperator.CMCC:
                     return [4];
@@ -211,6 +210,16 @@ ShopSystem.getShopPlatformId = function() {
                     return [5, 11];
                 case SimOperator.TLELCOM:
                     return [6, 11];
+            }
+            break;
+        case GameChannel.Uc:
+            switch (sim_operator) {
+                case SimOperator.CMCC:
+                    return [4, 9];
+                case SimOperator.UNICOM:
+                    return [5, 9];
+                case SimOperator.TLELCOM:
+                    return [6, 9];
             }
             break;
     }
