@@ -1,4 +1,4 @@
-package com.hdngame.fate.telecom;
+package com.hdngame.fate;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import java.lang.Runnable;
 /**
  * Created by yuxiao on 15/7/30.
  */
-public class Splash extends Activity {
+public class SplashActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +20,9 @@ public class Splash extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Splash.this, AppActivity.class);
-                Splash.this.startActivity(intent);
-                Splash.this.finish();
+                Intent intent = new Intent(SplashActivity.this, AppActivity.class);
+                SplashActivity.this.startActivity(intent);
+                SplashActivity.this.finish();
             }
         }, 2000);
     }

@@ -102,7 +102,7 @@
         <copy todir="src">
             <fileset dir="java">
                 <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
-                <include name="com/hdngame/fate/telecom/Splash.java" />
+                <include name="com/hdngame/fate/SplashActivity.java" />
             </fileset>
         </copy>
         <!-- src end -->
