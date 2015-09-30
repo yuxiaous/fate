@@ -84,6 +84,18 @@ int GameUtils::getChannelId()
     return 31;
 #elif defined(CHANNEL_WANDOUJIA)
     return 32;
+#elif defined(CHANNEL_SOUGOU_5)
+    return 33;
+#elif defined(CHANNEL_SOUGOU_6)
+    return 34;
+#elif defined(CHANNEL_SOUGOU_7)
+    return 35;
+#elif defined(CHANNEL_SOUGOU_8)
+    return 36;
+#elif defined(CHANNEL_SOUGOU_9)
+    return 37;
+#elif defined(CHANNEL_SOUGOU_11)
+    return 38;
 #endif
     
     return 0;
