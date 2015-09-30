@@ -97,7 +97,18 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "XyAnZhuo";
 #elif defined(CHANNEL_WANDOUJIA)
     channel = "WanDouJia";
-    
+#elif defined(CHANNEL_SOUGOU5)
+    channel = "SouGou5";
+#elif defined(CHANNEL_SOUGOU6)
+    channel = "SouGou6";
+#elif defined(CHANNEL_SOUGOU7)
+    channel = "SouGou7";
+#elif defined(CHANNEL_SOUGOU8)
+    channel = "SouGou8";
+#elif defined(CHANNEL_SOUGOU9)
+    channel = "SouGou9";
+#elif defined(CHANNEL_SOUGOU11)
+    channel = "SouGou11";
 //#elif defined(CHANNEL_360)
 //    channel = "360";
 //#elif defined(CHANNEL_TENCENT_QQ)

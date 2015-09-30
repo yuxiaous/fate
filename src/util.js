@@ -183,7 +183,13 @@ var GameChannel = {
     Dangle : 29,
     Sanxing : 30,
     XyAnzhuo: 31,
-    Wandoujia: 32
+    Wandoujia: 32,
+    SouGou5 : 33,
+    SouGou6 : 34,
+    SouGou7 : 35,
+    SouGou8 : 36,
+    SouGou9 : 37,
+    SouGou11 : 38
 };
 
 var SimOperator = {
