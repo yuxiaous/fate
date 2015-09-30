@@ -108,6 +108,7 @@
                 <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />
                 <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
                 <include name="com/hdngame/fate/kuwo/KuwoLoginSdkJni.java" />
+                <include name="com/hdngame/fate/SplashActivity.java" />
             </fileset>
         </copy>
         <!-- src end -->

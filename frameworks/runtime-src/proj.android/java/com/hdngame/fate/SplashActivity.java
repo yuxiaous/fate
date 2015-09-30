@@ -3,7 +3,6 @@ package com.hdngame.fate;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import com.fate.dev.R;
 import android.os.Handler;
 import org.cocos2dx.javascript.AppActivity;
 
@@ -16,7 +15,11 @@ public class SplashActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
+
+        String packageName = this.getPackageName();
+        int layoutID = this.getResources().getIdentifier("splash", "layout", packageName);
+        setContentView(layoutID);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
