@@ -6,16 +6,23 @@
 #include "cocos2d.h"
 
 
-extern "C" {
-}
-
 class UgpSdk : public Sdk, public SdkChargeProtocol
 {
 public:
+    virtual void charge(const std::string &order, const std::string &identifier) override;
+
+    static void exit();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:
     virtual void activityOnCreate() override;
+    virtual void activityOnPause() override;
+    virtual void activityOnResume() override;
+    virtual void activityOnDestroy() override;
+	virtual void activityOnStart() override;
+	virtual void activityOnRestart() override;
+	virtual void activityOnStop() override;
+	virtual void activityOnNewIntent(void *intent) override;
 #endif
 };
 

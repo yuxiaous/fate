@@ -26,6 +26,7 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.javascript;
 
+import android.content.Intent;
 import android.provider.Settings;
 import com.hdngame.fate.GameUtils;
 import org.cocos2dx.lib.Cocos2dxActivity;
@@ -39,6 +40,7 @@ import android.view.WindowManager;
 
 import com.hdngame.fate.SdkManagerJni;
 
+import java.lang.Override;
 import java.lang.String;
 
 
@@ -120,5 +122,33 @@ public class AppActivity extends Cocos2dxActivity{
         System.out.println("AppActivity.onDestroy");
         super.onDestroy();
         SdkManagerJni.activityOnDestroy();
+    }
+
+    @Override
+    protected void onStart() {
+        System.out.println("AppActivity.onStart");
+        super.onStart();
+        SdkManagerJni.activityOnStart();
+    }
+
+    @Override
+    protected void onRestart() {
+        System.out.println("AppActivity.onRestart");
+        super.onRestart();
+        SdkManagerJni.activityOnRestart();
+    }
+
+    @Override
+    protected void onStop() {
+        System.out.println("AppActivity.onStop");
+        super.onStop();
+        SdkManagerJni.activityOnStop();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        System.out.println("AppActivity.onNewIntent");
+        super.onNewIntent(intent);
+        SdkManagerJni.activityOnNewIntent(intent);
     }
 }
