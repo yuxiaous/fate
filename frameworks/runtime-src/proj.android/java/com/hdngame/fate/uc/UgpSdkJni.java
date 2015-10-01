@@ -16,6 +16,7 @@ import cn.uc.paysdk.face.commons.SDKCallbackListener;
 import cn.uc.paysdk.face.commons.SDKError;
 import cn.uc.paysdk.face.commons.SDKProtocolKeys;
 import cn.uc.paysdk.face.commons.SDKStatus;
+import com.hdngame.fate.GameUtils;
 import com.hdngame.fate.SdkManagerJni;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -163,18 +164,31 @@ public class UgpSdkJni {
         }
     };
 
-    public static void pay(String order, String paycode) {
+    public static void pay(String order, String paycode, String jconfig) {
         System.out.println("UgpSdkJni.pay");
         System.out.println(order + ":" + paycode);
 
+        String appName = GameUtils.getApplicationName(SdkManagerJni.activity);
+        String amount;
+        String productName;
+        try {
+            JSONObject config = new JSONObject(jconfig);
+            amount = String.valueOf(config.getInt("pay_cost"));
+            productName = config.getString("name");
+        }
+        catch (JSONException ex) {
+            ex.printStackTrace();
+            return;
+        }
+        System.out.println(appName + ":" + amount + ":" + productName);
+
         // 调起SDK支付界面
         Intent payIntent = new Intent();
-        payIntent.putExtra(SDKProtocolKeys.APP_NAME, "命运长夜测试");
-        payIntent.putExtra(SDKProtocolKeys.AMOUNT, "5"); // 计费点价格
-        payIntent.putExtra(SDKProtocolKeys.PRODUCT_NAME, "product_name1");
+        payIntent.putExtra(SDKProtocolKeys.APP_NAME, appName);
+        payIntent.putExtra(SDKProtocolKeys.AMOUNT, amount); // 计费点价格
+        payIntent.putExtra(SDKProtocolKeys.PRODUCT_NAME, productName);
         payIntent.putExtra(SDKProtocolKeys.CP_ORDER_ID, order);
         payIntent.putExtra(SDKProtocolKeys.PAY_CODE, paycode);
-        payIntent.putExtra(SDKProtocolKeys.ATTACH_INFO, "ATTACHINFOtest");
         payIntent.putExtra(SDKProtocolKeys.DEBUG_MODE, true);
 
         try {

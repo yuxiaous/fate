@@ -2,6 +2,7 @@
 #include "platform/android/jni/JniHelper.h"
 #include "platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
 #include <jni.h>
+#include "GameUtils.h"
 using namespace cocos2d;
 
 #define  CLASS_NAME "com/hdngame/fate/uc/UgpSdkJni"
@@ -25,16 +26,16 @@ void UgpSdk::charge(const std::string &order, const std::string &identifier)
 {
     cocos2d::log("UgpSdk::charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
 
-    if(order.empty() || identifier.empty()) {
-        SdkChargeProtocol::onChargeCallback(1, order);
-        return;
-    }
+    std::vector<std::string> ret;
+    GameUtils::split(order, "-", ret);
+    std::string config = getShopConfig(ret[0]);
 
     JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")) {
         jstring jorder = minfo.env->NewStringUTF(order.c_str());
         jstring jidentifier = minfo.env->NewStringUTF(identifier.c_str());
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier);
+        jstring jconfig = minfo.env->NewStringUTF(config.c_str());
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier, jconfig);
     }
 }
 
