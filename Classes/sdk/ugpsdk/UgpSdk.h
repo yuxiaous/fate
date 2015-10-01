@@ -10,6 +10,7 @@ class UgpSdk : public Sdk, public SdkChargeProtocol
 {
 public:
     virtual void charge(const std::string &order, const std::string &identifier) override;
+    virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
 
     static void exit();
 

@@ -129,3 +129,13 @@ void UgpSdk::activityOnNewIntent(void *intent)
     }
 }
 
+void UgpSdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
+{
+//    if(clazz != "UgpSdk"){
+//        return;
+//    }
+
+    if(method == "exit") {
+        exit();
+    }
+}

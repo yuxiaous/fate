@@ -93,6 +93,7 @@ var StartLayerScene = ui.GuiSceneBase.extend({
                 break;
             default:
                 MessageBoxOkCancel.show("确定退出游戏？").setOkCallback(function() {
+                    sdk_manager.sendSdkCommand("", "exit", "");
                     cc.director.end();
                 });
                 break;
