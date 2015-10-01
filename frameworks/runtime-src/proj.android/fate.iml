@@ -43,5 +43,7 @@
     <orderEntry type="library" name="kuwo_mobile_login_sdk" level="project" />
     <orderEntry type="library" name="m4399SingleOperateSDK" level="project" />
     <orderEntry type="library" name="m4399SingleRechargeSDK" level="project" />
+    <orderEntry type="library" name="UCGameSaSdk-1.3.0" level="project" />
+    <orderEntry type="library" name="ugpsdk-jy-v3.3.0-release" level="project" />
   </component>
 </module>

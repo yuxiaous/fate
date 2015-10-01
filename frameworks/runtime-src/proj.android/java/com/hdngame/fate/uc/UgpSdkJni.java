@@ -9,11 +9,16 @@ import cn.uc.gamesdk.sa.iface.open.SDKConst;
 import cn.uc.gamesdk.sa.iface.open.UCCallbackListener;
 import cn.uc.gamesdk.sa.iface.open.UCGameSDKStatusCode;
 import cn.uc.paysdk.SDKCore;
+import cn.uc.paysdk.face.commons.*;
+import cn.uc.paysdk.face.commons.PayResponse;
 import cn.uc.paysdk.face.commons.Response;
 import cn.uc.paysdk.face.commons.SDKCallbackListener;
 import cn.uc.paysdk.face.commons.SDKError;
 import cn.uc.paysdk.face.commons.SDKProtocolKeys;
+import cn.uc.paysdk.face.commons.SDKStatus;
 import com.hdngame.fate.SdkManagerJni;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.Override;
 import java.lang.String;
@@ -23,6 +28,7 @@ import java.lang.SuppressWarnings;
  * Created by yuxiao on 15/9/30.
  */
 public class UgpSdkJni {
+
     public static void init() {
         System.out.println("UgpSdkJni.init");
 
@@ -31,8 +37,6 @@ public class UgpSdkJni {
 
         try {
             Bundle payInitData = new Bundle();
-//            payInitData.putString(SDKProtocolKeys.APP_ID, "300008973569");
-//            payInitData.putString(SDKProtocolKeys.APP_KEY, "044B0F69808C6151552A90ACF757A323");
             UCGameSdk.defaultSdk().init(SdkManagerJni.activity, payInitData);
         }
         catch (Exception e) {
@@ -40,21 +44,52 @@ public class UgpSdkJni {
         }
     }
 
+    final static UCCallbackListener<String> sdkInitListener = new UCCallbackListener<String>() {
+
+        int callbackCode;
+        String callbackMessage;
+
+        @Override
+        public void callback(int statuscode, String msg) {
+            callbackCode = statuscode;
+            callbackMessage = msg;
+            System.out.println("sdkInitListener.callback");
+            System.out.println(callbackMessage + ":" + callbackCode);
+
+            SdkManagerJni.activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    switch (callbackCode) {
+                        case UCGameSDKStatusCode.SUCCESS: {
+//                            Toast.makeText(SdkManagerJni.activity, callbackMessage, Toast.LENGTH_LONG).show();
+                        }
+                        break;
+
+                        default: {
+                            Toast.makeText(SdkManagerJni.activity, callbackMessage, Toast.LENGTH_LONG).show();
+                        }
+                        break;
+                    }
+                }
+            });
+        }
+    };
 
     final static SDKCallbackListener payInitListener = new SDKCallbackListener() {
         @SuppressWarnings("unused")
         @Override
         public void onSuccessful(int statusCode, Response response) {
             System.out.println("payInitListener.onSuccessful");
+            System.out.println(statusCode + ":" +response.getMessage());
 
             int responseType = response.getType();
-
             if (responseType == Response.LISTENER_TYPE_INIT) {
+                System.out.println("LISTENER_TYPE_INIT");
                 // 用于处理初始化消息
-                Toast.makeText(SdkManagerJni.activity, "支付初始化成功啦!", Toast.LENGTH_LONG).show();
+//                Toast.makeText(SdkManagerJni.activity, "支付初始化成功啦!", Toast.LENGTH_LONG).show();
             }
             else if (responseType == Response.LISTENER_TYPE_PAY) {
-                // 用于处理历史订单的响应确认消息
+                System.out.println("LISTENER_TYPE_PAY");
                 /**
                  * 当为支付回调时，必须响应消息设置setMessage 必须及时响应，不要进行耗时操作，否则会导致线程阻塞
                  * 相关异步操作可以在handler中进行，另起工作者线程 设置为
@@ -65,76 +100,66 @@ public class UgpSdkJni {
                 response.setMessage(Response.OPERATE_SUCCESS_MSG);
                 // #########################!!!!!!!!!!!!!!!!!!!!!!!!!############################
 
-//                try {
-//                    JSONObject data = new JSONObject(response.getData());
-//                    String orderId = data.getString(PayResponse.CP_ORDER_ID); // CP订单号
-//                    String tradeId = data.getString(PayResponse.TRADE_ID); // 交易号
-//                    String payMoney = data.getString(PayResponse.PAY_MONEY); // 支付金额
-//                    String payType = data.getString(PayResponse.PAY_TYPE); // 支付类型
-//                    // [207:支付宝快捷支付]
-//                    String orderStatus = data.getString(PayResponse.ORDER_STATUS); // 订单状态
-//                    // [00:成功][01:失败]
-//                    String orderFinishTime = data.getString(PayResponse.ORDER_FINISH_TIME); // 订单完成时间
-//                    String productName = data.getString(PayResponse.PRO_NAME);// 道具名称
-//                    String extendInfo = data.optString(PayResponse.EXT_INFO); // 商品扩展信息
-//                    String attachInfo = data.optString(PayResponse.ATTACH_INFO); // 附加透传信息
-//                }
-//                catch (JSONException ex) {
-//                    ex.printStackTrace();
-//                }
+                try {
+                    JSONObject data = new JSONObject(response.getData());
+
+                    String orderId = data.getString(PayResponse.CP_ORDER_ID); // CP订单号
+                    System.out.println("orderId:" + orderId);
+
+                    String tradeId = data.getString(PayResponse.TRADE_ID); // 交易号
+                    System.out.println("tradeId:" + tradeId);
+
+                    String payMoney = data.getString(PayResponse.PAY_MONEY); // 支付金额
+                    System.out.println("payMoney:" + payMoney);
+
+                    String payType = data.getString(PayResponse.PAY_TYPE); // 支付类型 [207:支付宝快捷支付]
+                    System.out.println("payType:" + payType);
+
+                    String orderStatus = data.getString(PayResponse.ORDER_STATUS); // 订单状态 [00:成功][01:失败]
+                    System.out.println("orderStatus:" + orderStatus);
+
+                    String orderFinishTime = data.getString(PayResponse.ORDER_FINISH_TIME); // 订单完成时间
+                    System.out.println("orderFinishTime:" + orderFinishTime);
+
+                    String productName = data.getString(PayResponse.PRO_NAME);// 道具名称
+                    System.out.println("productName:" + productName);
+
+                    String extendInfo = data.optString(PayResponse.EXT_INFO); // 商品扩展信息
+                    System.out.println("extendInfo:" + extendInfo);
+
+                    String attachInfo = data.optString(PayResponse.ATTACH_INFO); // 附加透传信息
+                    System.out.println("attachInfo:" + attachInfo);
+                }
+                catch (JSONException ex) {
+                    ex.printStackTrace();
+                }
             }
         }
+
+        public int errorCode;
+        public String errorMessage;
 
         @Override
         public void onErrorResponse(SDKError error) {
-            System.out.println("payInitListener.onErrorResponse");
             // 失败,该回调是在子线程中调用，UI操作需转到UI线程执行
+            errorCode = error.getCode();
+            errorMessage = error.getMessage();
+            System.out.println("payInitListener.onErrorResponse");
+            System.out.println(errorMessage + ":" + errorCode);
 
-            String msg = error.getMessage();
-            System.out.println(msg);
-
-//            if (TextUtils.isEmpty(msg)) {
-//                msg = "SDK occur error!";
-//            }
-//            Message message = new Message();
-//            message.what = HANDLER_SHOW_ERRORDIALOG;
-//            message.obj = msg;
-//            handler.sendMessage(message);
-        }
-    };
-
-    final static UCCallbackListener<String> sdkInitListener = new UCCallbackListener<String>() {
-        @Override
-        public void callback(int statuscode, String msg) {
-            System.out.println("sdkInitListener.callback");
-            System.out.println(msg);
-
-            switch (statuscode) {
-                case UCGameSDKStatusCode.SUCCESS: {
-//                    firstTime = false;
-//                    Message message = new Message();
-//                    message.what = FlashMsg.HANDLER_END_LOGO_MSG1;
-//                    handler.sendMessageDelayed(message, 3000);
+            SdkManagerJni.activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    switch (errorCode) {
+                        case SDKStatus.ERROR_CODE_PAY_FAIL:
+                            Toast.makeText(SdkManagerJni.activity, "支付失败", Toast.LENGTH_LONG).show();
+                            break;
+                        default:
+                            Toast.makeText(SdkManagerJni.activity, errorMessage, Toast.LENGTH_LONG).show();
+                            break;
+                    }
                 }
-                break;
-
-                default: {
-//                    if (TextUtils.isEmpty(msg)) {
-//                        msg = "SDK occur error!";
-//                    }
-//                    Message message = new Message();
-//                    message.what = HANDLER_SHOW_ERRORDIALOG;
-//                    message.obj = msg;
-//                    handler.sendMessage(message);
-//                    if (firstTime) {
-//                        firstTime = false;
-//                        message = new Message();
-//                        message.what = FlashMsg.HANDLER_END_LOGO_MSG1;
-//                        handler.sendMessageDelayed(message, 3000);
-//                    }
-                }
-                break;
-            }
+            });
         }
     };
 
@@ -145,74 +170,20 @@ public class UgpSdkJni {
         // 调起SDK支付界面
         Intent payIntent = new Intent();
         payIntent.putExtra(SDKProtocolKeys.APP_NAME, "命运长夜测试");
-        payIntent.putExtra(SDKProtocolKeys.CP_ORDER_ID, order);
+        payIntent.putExtra(SDKProtocolKeys.AMOUNT, "5"); // 计费点价格
         payIntent.putExtra(SDKProtocolKeys.PRODUCT_NAME, "product_name1");
-        payIntent.putExtra(SDKProtocolKeys.AMOUNT, "2"); // 计费点价格
-        // 如果需要设置服务端通知，可以在此设置订单的通知地址
-        // payIntent.putExtra(SDKProtocolKeys.NOTIFY_URL,"http://10.1.84.183/receiveNotify.jsp");
+        payIntent.putExtra(SDKProtocolKeys.CP_ORDER_ID, order);
+        payIntent.putExtra(SDKProtocolKeys.PAY_CODE, paycode);
+        payIntent.putExtra(SDKProtocolKeys.ATTACH_INFO, "ATTACHINFOtest");
         payIntent.putExtra(SDKProtocolKeys.DEBUG_MODE, true);
-        //payIntent.putExtra(SDKProtocolKeys.ATTACH_INFO, "ATTACHINFOtest");
-        //如果支持运营商sdk短代支付，那么需要先判断用户手机号，然后传入相对应的paycode
-        payIntent.putExtra(SDKProtocolKeys.PAY_CODE, paycode); // demo现在是写死的paycode，实际需要cp传计费点
 
         try {
-            SDKCore.pay(SdkManagerJni.activity, payIntent, payCallback);
+            SDKCore.pay(SdkManagerJni.activity, payIntent, payInitListener);
         }
         catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-
-    final static SDKCallbackListener payCallback = new SDKCallbackListener() {
-        @Override
-        public void onSuccessful(int status, Response response) {
-            System.out.println("payCallback.onSuccessful");
-            int responseType = response.getType();
-
-            if (responseType == Response.LISTENER_TYPE_INIT) {
-//                firstTime = false;
-//                Message msg = new Message();
-//                msg.what = FlashMsg.HANDLER_END_LOGO_MSG1;
-//                handler.sendMessageDelayed(msg, 3000);
-            }
-            else if(responseType == Response.LISTENER_TYPE_PAY) {
-				/*重要：CP必须设置确认结果，告诉CP是否成功收到，不然SDK会不断回调通知CP*/
-                response.setMessage(Response.OPERATE_SUCCESS_MSG);
-                /*重要：CP必须设置确认结果，告诉CP是否成功收到，不然SDK会不断回调通知CP*/
-
-//                Message msg = new Message();
-//                msg.what = HANDLER_SDK_CALLBACK;
-//                String s = response.getData();
-//                if (s != null) {
-//                    msg.obj = response.getData();
-//                }
-//                msg.arg1 = response.getStatus();
-//                handler.sendMessage(msg);
-            }
-        }
-
-        @Override
-        public void onErrorResponse(SDKError error) {
-            System.out.println("payCallback.onErrorResponse");
-
-            String errorMsg = error.getMessage();
-            System.out.println(errorMsg);
-
-
-//            if (TextUtils.isEmpty(errorMsg))
-//                errorMsg = "SDK occur error!";
-//            Message msg = new Message();
-//            msg.what = HANDLER_SHOW_ERRORDIALOG;
-//            msg.obj = errorMsg;
-//            handler.sendMessage(msg);
-//            if (firstTime) {
-//                firstTime = false;
-//                msg = new Message();
-//                msg.what = FlashMsg.HANDLER_END_LOGO_MSG1;
-//                handler.sendMessageDelayed(msg, 3000);
-//            }
-        }
-    };
 
     public static void exit() {
         System.out.println("UgpSdkJni.exit");

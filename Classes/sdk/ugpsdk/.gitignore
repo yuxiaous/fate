@@ -2,3 +2,4 @@ android/bin
 android/gen
 android/local.properties
 android/build.xml
+android/proguard-project.txt
