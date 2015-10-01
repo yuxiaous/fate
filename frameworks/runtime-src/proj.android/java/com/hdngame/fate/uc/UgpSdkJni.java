@@ -130,6 +130,8 @@ public class UgpSdkJni {
 
                     String attachInfo = data.optString(PayResponse.ATTACH_INFO); // 附加透传信息
                     System.out.println("attachInfo:" + attachInfo);
+
+                    onUgpSdkChargeCallback(0, orderId);
                 }
                 catch (JSONException ex) {
                     ex.printStackTrace();
@@ -198,6 +200,8 @@ public class UgpSdkJni {
             ex.printStackTrace();
         }
     }
+
+    public static native void onUgpSdkChargeCallback(int result, String order);
 
     public static void exit() {
         System.out.println("UgpSdkJni.exit");

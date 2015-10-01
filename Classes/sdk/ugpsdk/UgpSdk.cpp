@@ -7,7 +7,17 @@ using namespace cocos2d;
 
 #define  CLASS_NAME "com/hdngame/fate/uc/UgpSdkJni"
 
+extern "C" {
+    void Java_com_hdngame_fate_uc_UgpSdkJni_onUgpSdkChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+    {
+        cocos2d::log("Java_com_hdngame_fate_uc_UgpSdkJni_onUgpSdkChargeCallback");
 
+        std::string order = JniHelper::jstring2string(jorder);
+        Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+            SdkChargeProtocol::onChargeCallback(result, order.c_str());
+        });
+    }
+}
 
 void UgpSdk::activityOnCreate()
 {
