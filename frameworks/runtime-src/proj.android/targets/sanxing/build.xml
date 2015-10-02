@@ -101,6 +101,8 @@
         <!-- src start -->
         <copy todir="src">
             <fileset dir="java">
+                <include name="com/hdngame/fate/GameUtils.java" />
+                <include name="com/hdngame/fate/SdkManagerJni.java" />
                 <include name="com/hdngame/fate/MixApplication.java" />
                 <include name="com/hdngame/fate/andgame/AndGameSdkJni.java" />
                 <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />

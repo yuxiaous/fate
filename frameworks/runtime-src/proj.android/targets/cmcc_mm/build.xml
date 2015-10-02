@@ -86,6 +86,8 @@
         <!-- src start -->
         <copy todir="src">
             <fileset dir="java">
+                <include name="com/hdngame/fate/GameUtils.java" />
+                <include name="com/hdngame/fate/SdkManagerJni.java" />
                 <include name="com/hdngame/fate/mm/IAPHandler.java" />
                 <include name="com/hdngame/fate/mm/IAPListener.java" />
                 <include name="com/hdngame/fate/mm/MMSdkJni.java" />
