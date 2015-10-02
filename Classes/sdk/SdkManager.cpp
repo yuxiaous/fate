@@ -103,6 +103,11 @@ M4399RechargeSdk m4399rechargesdk;
 UgpSdk ugpsdk;
 #endif
 
+#ifdef SDK_QIKUPAY
+#include "coolpad/QiKuPaySdk.h"
+QiKuPaySdk qikupaysdk;
+#endif
+
 USING_NS_CC;
 
 

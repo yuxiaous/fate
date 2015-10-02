@@ -45,5 +45,6 @@
     <orderEntry type="library" name="m4399SingleRechargeSDK" level="project" />
     <orderEntry type="library" name="UCGameSaSdk-1.3.0" level="project" />
     <orderEntry type="library" name="ugpsdk-jy-v3.3.0-release" level="project" />
+    <orderEntry type="library" name="qikupay_v2.0_9.16" level="project" />
   </component>
 </module>

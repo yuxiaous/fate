@@ -24,7 +24,8 @@ LOCAL_SRC_FILES := SdkManager.cpp \
                    DKSingleSDK/DKSingleSdk.cpp \
                    KuwoLoginSdk/KuwoLoginSdk.cpp \
                    m4399RechargeSDK/M4399RechargeSdk.cpp \
-                   ugpsdk/UgpSdk.cpp
+                   ugpsdk/UgpSdk.cpp \
+                   coolpad/QiKuPaySdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT
