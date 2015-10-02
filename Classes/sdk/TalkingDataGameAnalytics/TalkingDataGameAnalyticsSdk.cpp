@@ -113,6 +113,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "Meizu";
 #elif defined(CHANNEL_UC)
     channel = "Uc";
+#elif defined(CHANNEL_COOLPAD)
+    channel = "Coolpad";
 //#elif defined(CHANNEL_360)
 //    channel = "360";
 //#elif defined(CHANNEL_TENCENT_QQ)

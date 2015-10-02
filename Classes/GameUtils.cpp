@@ -100,6 +100,8 @@ int GameUtils::getChannelId()
     return 39;
 #elif defined(CHANNEL_UC)
     return 40;
+#elif defined(CHANNEL_COOLPAD)
+    return 41;
 #endif
     
     return 0;
