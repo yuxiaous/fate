@@ -5,6 +5,10 @@
 #include "Sdk.h"
 #include "cocos2d.h"
 
+extern "C" {
+    void QiKuPaySdk_init();
+    void QiKuPaySdk_pay(const std::string &order, const std::string &identifier);
+}
 
 class QiKuPaySdk : public Sdk
 {
