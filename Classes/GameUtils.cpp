@@ -102,6 +102,8 @@ int GameUtils::getChannelId()
     return 40;
 #elif defined(CHANNEL_COOLPAD)
     return 41;
+#elif defined(CHANNEL_OPPO)
+    return 42;
 #endif
     
     return 0;

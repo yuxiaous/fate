@@ -192,7 +192,8 @@ var GameChannel = {
     SouGou11 : 38,
     Meizu: 39,
     Uc: 40,
-    Coolpad: 41
+    Coolpad: 41,
+    Oppo: 42
 };
 
 var SimOperator = {
