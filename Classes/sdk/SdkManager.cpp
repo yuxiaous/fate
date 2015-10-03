@@ -108,6 +108,11 @@ UgpSdk ugpsdk;
 QiKuPaySdk qikupaysdk;
 #endif
 
+#ifdef SDK_MI_GAMECENTER
+#include "MiGameCenterSDK/MiGameCenterSdk.h"
+MiGameCenterSdk migamecentersdk;
+#endif
+
 USING_NS_CC;
 
 
