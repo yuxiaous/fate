@@ -195,7 +195,8 @@ var GameChannel = {
     Coolpad: 41,
     Oppo: 42,
     Huawei: 43,
-    JinLi: 44
+    JinLi: 44,
+    Vivo: 45
 };
 
 var SimOperator = {

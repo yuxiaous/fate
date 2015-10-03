@@ -108,6 +108,8 @@ int GameUtils::getChannelId()
     return 43;
 #elif defined(CHANNEL_JINLI)
     return 44;
+#elif defined(CHANNEL_VIVO)
+    return 45;
 #endif
     
     return 0;
