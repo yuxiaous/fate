@@ -103,6 +103,14 @@
             </fileset>
         </copy>
         <!-- KTplay end -->
+
+        <!-- mi start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/MiGameCenterSDK/android">
+                <include name="assets/" />
+            </fileset>
+        </copy>
+        <!-- mi end -->
     </target>
 
     <!-- Import the actual build file.

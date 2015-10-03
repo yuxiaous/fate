@@ -67,4 +67,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <!-- KTPlay SDK 权限配置结束 -->
+
+    <!-- mi -->
+    <!--<uses-permission android:name="android.permission.GET_TASKS"  />-->
+    <uses-permission android:name="com.xiaomi.sdk.permission.PAYMENT" />
 </manifest>

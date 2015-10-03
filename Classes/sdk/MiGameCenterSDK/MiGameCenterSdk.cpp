@@ -20,5 +20,10 @@ void MiGameCenterSdk::activityOnCreate()
 void MiGameCenterSdk::charge(const std::string &order, const std::string &identifier)
 {
     cocos2d::log("MiGameCenterSdk::charge");
+
+    JniMethodInfo minfo;
+    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "()V")) {
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+    }
 }
 
