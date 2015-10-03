@@ -119,6 +119,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "Oppo";
 #elif defined(CHANNEL_HUAWEI)
     channel = "Huawei";
+#elif defined(CHANNEL_JINLI)
+    channel = "JinLi";
 //#elif defined(CHANNEL_360)
 //    channel = "360";
 //#elif defined(CHANNEL_TENCENT_QQ)

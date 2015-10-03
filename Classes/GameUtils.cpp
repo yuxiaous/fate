@@ -106,6 +106,8 @@ int GameUtils::getChannelId()
     return 42;
 #elif defined(CHANNEL_HUAWEI)
     return 43;
+#elif defined(CHANNEL_JINLI)
+    return 44;
 #endif
     
     return 0;

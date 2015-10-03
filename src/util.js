@@ -194,7 +194,8 @@ var GameChannel = {
     Uc: 40,
     Coolpad: 41,
     Oppo: 42,
-    Huawei: 43
+    Huawei: 43,
+    JinLi: 44
 };
 
 var SimOperator = {
