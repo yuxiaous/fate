@@ -198,6 +198,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.JinLi:
         case GameChannel.Vivo:
         case GameChannel.LenovoLeShangDian:
+        case GameChannel.LenovoYouXiZhongXin:
             switch (sim_operator) {
                 case SimOperator.CMCC:
                     return [4];

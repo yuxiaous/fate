@@ -112,6 +112,8 @@ int GameUtils::getChannelId()
     return 45;
 #elif defined(CHANNEL_LENOVO_LESHANGDIAN)
     return 46;
+#elif defined(CHANNEL_LENOVO_YOUXIZHONGXIN)
+    return 47;
 #endif
     
     return 0;

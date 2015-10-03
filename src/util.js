@@ -197,7 +197,8 @@ var GameChannel = {
     Huawei: 43,
     JinLi: 44,
     Vivo: 45,
-    LenovoLeShangDian: 46
+    LenovoLeShangDian: 46,
+    LenovoYouXiZhongXin: 47
 };
 
 var SimOperator = {
