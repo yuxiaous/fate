@@ -194,6 +194,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.Meizu:
         case GameChannel.Wandoujia:
         case GameChannel.Oppo:
+        case GameChannel.Huawei:
             switch (sim_operator) {
                 case SimOperator.CMCC:
                     return [4];

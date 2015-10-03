@@ -193,7 +193,8 @@ var GameChannel = {
     Meizu: 39,
     Uc: 40,
     Coolpad: 41,
-    Oppo: 42
+    Oppo: 42,
+    Huawei: 43
 };
 
 var SimOperator = {

@@ -104,6 +104,8 @@ int GameUtils::getChannelId()
     return 41;
 #elif defined(CHANNEL_OPPO)
     return 42;
+#elif defined(CHANNEL_HUAWEI)
+    return 43;
 #endif
     
     return 0;
