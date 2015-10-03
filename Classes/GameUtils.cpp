@@ -110,6 +110,8 @@ int GameUtils::getChannelId()
     return 44;
 #elif defined(CHANNEL_VIVO)
     return 45;
+#elif defined(CHANNEL_LENOVO_LESHANGDIAN)
+    return 46;
 #endif
     
     return 0;

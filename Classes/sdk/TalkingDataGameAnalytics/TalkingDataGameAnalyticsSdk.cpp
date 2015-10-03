@@ -123,6 +123,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "JinLi";
 #elif defined(CHANNEL_VIVO)
     channel = "Vivo";
+#elif defined(CHANNEL_LENOVO_LESHANGDIAN)
+    channel = "Lenovo_LeShangDian";
 //#elif defined(CHANNEL_360)
 //    channel = "360";
 //#elif defined(CHANNEL_TENCENT_QQ)

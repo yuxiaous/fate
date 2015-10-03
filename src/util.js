@@ -196,7 +196,8 @@ var GameChannel = {
     Oppo: 42,
     Huawei: 43,
     JinLi: 44,
-    Vivo: 45
+    Vivo: 45,
+    LenovoLeShangDian: 46
 };
 
 var SimOperator = {
