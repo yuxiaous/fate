@@ -31,7 +31,7 @@ void MiGameCenterSdk::activityOnCreate()
 
 void MiGameCenterSdk::charge(const std::string &order, const std::string &identifier)
 {
-    cocos2d::log("MiGameCenterSdk::charge: %s, identifier: %s", order.c_str(), identifier.c_str()");
+    cocos2d::log("MiGameCenterSdk::charge: %s, identifier: %s", order.c_str(), identifier.c_str());
 
     JniMethodInfo minfo;
     if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;Ljava/lang/String;)V")) {

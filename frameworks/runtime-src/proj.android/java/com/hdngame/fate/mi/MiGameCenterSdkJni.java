@@ -8,8 +8,10 @@ import com.xiaomi.gamecenter.sdk.MiCommplatform;
 import com.xiaomi.gamecenter.sdk.MiErrorCode;
 import com.xiaomi.gamecenter.sdk.OnLoginProcessListener;
 import com.xiaomi.gamecenter.sdk.OnPayProcessListener;
+import com.xiaomi.gamecenter.sdk.entry.*;
 import com.xiaomi.gamecenter.sdk.entry.MiAccountInfo;
 import com.xiaomi.gamecenter.sdk.entry.MiAppInfo;
+import com.xiaomi.gamecenter.sdk.entry.MiAppType;
 import com.xiaomi.gamecenter.sdk.entry.MiBuyInfo;
 import com.xiaomi.gamecenter.sdk.entry.MiBuyInfoOffline;
 
@@ -28,7 +30,8 @@ public class MiGameCenterSdkJni {
 
         MiAppInfo appInfo = new MiAppInfo();
         appInfo.setAppId( "2882303761517390705" );
-        appInfo.setAppKey( "5311739039705" );
+        appInfo.setAppKey("5311739039705");
+        appInfo.setAppType(MiAppType.offline);
         MiCommplatform.Init(SdkManagerJni.activity, appInfo);
     }
 
