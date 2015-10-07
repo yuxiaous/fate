@@ -14,6 +14,7 @@ import com.xiaomi.gamecenter.sdk.entry.MiBuyInfo;
 import com.xiaomi.gamecenter.sdk.entry.MiBuyInfoOffline;
 
 import java.lang.Override;
+import java.lang.String;
 import java.lang.System;
 import java.util.UUID;
 
@@ -32,9 +33,14 @@ public class MiGameCenterSdkJni {
     }
 
     private static MiAccountInfo miAccountInfo = null;
+    private static String order = "";
+    private static String info = "";
 
-    public static void pay() {
+    public static void pay(String order, String info) {
         System.out.println("MiGameCenterSdkJni.pay");
+
+        MiGameCenterSdkJni.order = order;
+        MiGameCenterSdkJni.info = info;
 
         if(miAccountInfo == null) {
             MiCommplatform.getInstance().miLogin(SdkManagerJni.activity, new OnLoginProcessListener() {
@@ -73,17 +79,17 @@ public class MiGameCenterSdkJni {
     };
 
     private static void doPay() {
-//        MiBuyInfo miBuyInfo = new MiBuyInfo();
-//        miBuyInfo.setCpOrderId( UUID.randomUUID().toString() );
-//        miBuyInfo.setCpUserInfo("xxxx透传参数");
-//        miBuyInfo.setAmount(5);
-//        MiCommplatform.getInstance().miUniPay(SdkManagerJni.activity, miBuyInfo,
+        MiBuyInfo miBuyInfo = new MiBuyInfo();
+        miBuyInfo.setCpOrderId( UUID.randomUUID().toString() );
+        miBuyInfo.setCpUserInfo("xxxx透传参数");
+        miBuyInfo.setAmount(1);
+        MiCommplatform.getInstance().miUniPay(SdkManagerJni.activity, miBuyInfo,
 
-        MiBuyInfoOffline offline = new MiBuyInfoOffline();
-        offline.setCpOrderId(UUID.randomUUID().toString() );//订单号唯一(不为空)
-        offline.setProductCode("com.demo_1");//商品代码,开发者 申请获得(不为空)
-        offline.setCount(1);//购买数量 (商品数量最大 9999,最小 1)(不为空)
-        MiCommplatform.getInstance ().miUniPayOffline(SdkManagerJni.activity, offline,
+//        MiBuyInfoOffline offline = new MiBuyInfoOffline();
+//        offline.setCpOrderId(UUID.randomUUID().toString() );//订单号唯一(不为空)
+//        offline.setProductCode("com.demo_1");//商品代码,开发者 申请获得(不为空)
+//        offline.setCount(1);//购买数量 (商品数量最大 9999,最小 1)(不为空)
+//        MiCommplatform.getInstance ().miUniPayOffline(SdkManagerJni.activity, offline,
                 new OnPayProcessListener() {
                     @Override
                     public void finishPayProcess(int code) {
@@ -99,6 +105,7 @@ public class MiGameCenterSdkJni {
             switch( msg.what ) {
                 case MiErrorCode.MI_XIAOMI_GAMECENTER_SUCCESS:
                     //购买成功 ,请处理发货
+                    onMiGameChargeCallback(0, order);
                     break;
                 case MiErrorCode.MI_XIAOMI_GAMECENTER_ERROR_PAY_CANCEL:
                     //取消购买
@@ -115,4 +122,6 @@ public class MiGameCenterSdkJni {
             }
         }
     };
+
+    public static native void onMiGameChargeCallback(int result, String order);
 }
