@@ -26,19 +26,30 @@ public class QiKuPaySdkJni {
         QiKuPay.payInit(SdkManagerJni.activity, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE, QiKuPaySdkJni.appId);
     }
 
+    private static String _order = "";
+    private static String _info = "";
+
     public static void pay(String order, String info) {
         System.out.println("QiKuPaySdkJni.pay");
         System.out.println(order + ":" + info);
 
-        PayParams parms = new PayParams();
-        parms.setAppId(appId);
-        parms.setAppKey(appKey);
-        parms.setWaresid(String.valueOf(1));
-        parms.setCpOrder(order);
-        parms.setCpPrivate("cp private info!!");
-        parms.setPrice(100);
+        _order = order;
+        _info = info;
 
-        QiKuPay.startPay(SdkManagerJni.activity, parms, null, iPayResultCallback);
+        SdkManagerJni.activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                PayParams parms = new PayParams();
+                parms.setAppId(appId);
+                parms.setAppKey(appKey);
+                parms.setWaresid(String.valueOf(1));
+                parms.setCpOrder(_order);
+                parms.setCpPrivate("cp private info!!");
+                parms.setPrice(100);
+
+                QiKuPay.startPay(SdkManagerJni.activity, parms, null, iPayResultCallback);
+            }
+        });
     }
 
     final static CallBackToCPInterface iPayResultCallback = new CallBackToCPInterface() {
