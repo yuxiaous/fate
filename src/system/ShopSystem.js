@@ -161,6 +161,8 @@ ShopSystem.getShopPlatformId = function() {
             return [6];
         case GameChannel.Qh360:
             return [7];
+        case GameChannel.XiaoMi:
+            return [12];
         case GameChannel.Mix:
         case GameChannel.Pps:
         case GameChannel.SohuWan:
