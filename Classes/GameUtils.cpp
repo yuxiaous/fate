@@ -36,7 +36,7 @@ int GameUtils::getChannelId()
     return 7;
 #elif defined(CHANNEL_360)
     return 8;
-#elif defined(CHANNEL_TENCENT_QQ) //应用宝
+#elif defined(CHANNEL_TENCENT_YINGYONGBAO) //应用宝
     return 9;
 #elif defined(CHANNEL_MIX)
     return 10;

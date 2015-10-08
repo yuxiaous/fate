@@ -129,8 +129,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "Lenovo_YouXiZhongXin";
 //#elif defined(CHANNEL_360)
 //    channel = "360";
-//#elif defined(CHANNEL_TENCENT_QQ)
-//    channel = "TencentQq";
+#elif defined(CHANNEL_TENCENT_YINGYONGBAO)
+    channel = "TencentYingYongBao";
 
 //=====================================================
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="fate_qq" default="debug">
+<project name="fate_tencent_yyb" default="debug">
 
     <!-- The local.properties file is created and updated by the 'android' tool.
          It contains the path to the SDK. It should *NOT* be checked into
@@ -71,15 +71,21 @@
     <target name="-pre-compile" >
         <path id="third.lib" >
             <path path="${toString:project.all.jars.path}" />
+            <!-- Talking Data-->
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
-            <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
-            <!--<pathelement location="../../../Classes/sdk/Baitong/android/bdappunion_2.0_log_enabled.jar" />-->
 
-            <!-- tencent midas -->
-            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/MidasPlugin1.5.0c.jar" />
-            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/mqqopenpay.jar" />
-            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/libammsdk.jar" />
-            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/wlogin_sdk.jar" />
+            <!-- KTPlay -->
+            <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
+
+            <!-- unipay -->
+            <!--<pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />-->
+            <pathelement location="targets/tencent_yyb/offline1441965582048_00021652_20150911/Multimode_UniPay_base.jar" />
+            <pathelement location="targets/tencent_yyb/offline1441965582048_00021652_20150911/Multimode_UniPay_payinfo.jar" />
+
+            <!-- egame -->
+            <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -87,13 +93,20 @@
         </path>
     </target>
 
+    <!-- AndGame -->
+    <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
+
     <target name="-pre-build">
         <!-- src start -->
         <copy todir="src">
             <fileset dir="java">
                 <include name="com/hdngame/fate/GameUtils.java" />
                 <include name="com/hdngame/fate/SdkManagerJni.java" />
-                <include name="com/hdngame/fate/qq/TencentMidasSdkJni.java" />
+                <include name="com/hdngame/fate/MixApplication.java" />
+                <include name="com/hdngame/fate/andgame/AndGameSdkJni.java" />
+                <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />
+                <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
+                <!--<include name="com/hdngame/fate/telecom/TencentMidasSdkJni.java" />-->
             </fileset>
         </copy>
         <!-- src end -->
@@ -110,23 +123,43 @@
         </copy>
         <!-- KTplay end -->
 
-        <!-- Baitong start -->
-        <!--<copy todir="./">-->
-            <!--<fileset dir="../../../Classes/sdk/Baitong/android">-->
-                <!--<include name="libs/armeabi/" />-->
-            <!--</fileset>-->
-        <!--</copy>-->
-        <!-- Baitong end -->
-
-        <!-- tencent midas start -->
+        <!-- and game start -->
         <copy todir="./">
-            <fileset dir="../../../Classes/sdk/TencentMidas/android">
-                <include name="assets/" />
-                <!--<include name="libs/armeabi/" />-->
+            <fileset dir="../../../Classes/sdk/AndGame/android">
+                <include name="assets/AndGame.Sdk.Lib_20130_4E4DB8F73D48429B0A74BED2D59DC7A8.dat" />
+                <include name="assets/c_data_store.dat" />
+                <include name="assets/Charge.xml" />
+                <include name="assets/CMGC/" />
+                <include name="assets/Config.xml" />
+                <include name="assets/ConsumeCodeInfo.xml" />
+                <include name="assets/d_data_store.dat" />
+                <include name="assets/libmegbpp_02.02.13_00.so" />
+                <include name="libs/armeabi/libmegjb.so" />
                 <include name="res/" />
             </fileset>
         </copy>
-        <!-- tencent midas end -->
+        <!-- and game end -->
+
+        <!-- UniPay start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/unipay/android">
+                <include name="assets/unicom_base/" />
+                <include name="libs/armeabi/libsmsprotocol.so" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- UniPay end -->
+
+        <!-- EGame start-->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/egame/android">
+                <include name="assets/egame/" />
+                <include name="assets/egame_ds.dat" />
+                <include name="libs/armeabi/libdserv.so" />
+                <include name="libs/armeabi/libegamepay_dr2.so" />
+            </fileset>
+        </copy>
+        <!-- EGame end-->
     </target>
 
     <!-- Import the actual build file.

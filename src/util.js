@@ -160,7 +160,7 @@ var GameChannel = {
     Mzw: 6,
     M4399: 7,
     Qh360: 8,
-    TencentMidas: 9, //腾讯应用宝
+    TencentYingYongBao: 9, //腾讯应用宝
     Mix: 10,
     Pps: 11,
     SohuWan: 12,
