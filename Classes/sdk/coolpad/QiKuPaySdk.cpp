@@ -13,20 +13,18 @@ using namespace cocos2d;
 //appkey：3afe83772cbe4e508e80de3f0edc3db3
 
 extern "C" {
-    jstring Java_com_hdngame_fate_coolpad_QiKuPaySdkJni_getAppId(JNIEnv *env, jobject thiz) {
-        return env->NewStringUTF("5000001964");
-    }
-    jstring Java_com_hdngame_fate_coolpad_QiKuPaySdkJni_getAppKey(JNIEnv *env, jobject thiz) {
-        return env->NewStringUTF("3afe83772cbe4e508e80de3f0edc3db3");
-    }
-
     void QiKuPaySdk_init()
     {
         cocos2d::log("QiKuPaySdk_init");
 
+        std::string appid = "5000001964";
+        std::string appkey = "3afe83772cbe4e508e80de3f0edc3db3";
+
         JniMethodInfo minfo;
-        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
-            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+            jstring jappid = minfo.env->NewStringUTF(appid.c_str());
+            jstring jappkey = minfo.env->NewStringUTF(appkey.c_str());
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jappid, jappkey);
         }
     }
 

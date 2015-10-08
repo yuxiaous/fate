@@ -14,14 +14,16 @@ import java.lang.System;
  */
 public class QiKuPaySdkJni {
 
-    public static native String getAppId();
-    public static native String getAppKey();
+    public static String appId = "";
+    public static String appKey = "";
 
-    public static void init() {
+    public static void init(String appId, String appKey) {
         System.out.println("QiKuPaySdkJni.init");
 
-        String appid = getAppId();
-        QiKuPay.payInit(SdkManagerJni.activity, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE, appid);
+        QiKuPaySdkJni.appId = appId;
+        QiKuPaySdkJni.appKey = appKey;
+
+        QiKuPay.payInit(SdkManagerJni.activity, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE, QiKuPaySdkJni.appId);
     }
 
     public static void pay(String order, String info) {
@@ -29,12 +31,12 @@ public class QiKuPaySdkJni {
         System.out.println(order + ":" + info);
 
         PayParams parms = new PayParams();
-        parms.setAppId(getAppId());
-        parms.setAppKey(getAppKey());
+        parms.setAppId(appId);
+        parms.setAppKey(appKey);
         parms.setWaresid(String.valueOf(1));
         parms.setCpOrder(order);
         parms.setCpPrivate("cp private info!!");
-        parms.setPrice(123);
+        parms.setPrice(100);
 
         QiKuPay.startPay(SdkManagerJni.activity, parms, null, iPayResultCallback);
     }
