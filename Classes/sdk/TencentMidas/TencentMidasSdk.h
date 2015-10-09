@@ -6,6 +6,7 @@
 
 extern "C" {
     void TencentMidasSdk_init();
+    void TencentMidasSdk_pay(const std::string &order, const std::string &identifier);
 }
 
 class TencentMidasSdk : public Sdk, public SdkChargeProtocol
