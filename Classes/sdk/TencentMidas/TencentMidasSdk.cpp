@@ -11,13 +11,6 @@ using namespace cocos2d;
 #define  CLASS_NAME "com/hdngame/fate/qq/TencentMidasSdkJni"
 
 extern "C" {
-    bool Java_com_hdngame_fate_qq_TencentMidasSdkJni_isDebugMode(JNIEnv *env, jobject thiz) {
-#if COCOS2D_DEBUG > 0
-        return true;
-#endif
-        return false;
-    }
-
     void TencentMidasSdk_init()
     {
         cocos2d::log("TencentMidasSdk_init");
@@ -52,6 +45,16 @@ extern "C" {
             int price = atoi(params[1].c_str());
             minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jname, price);
         }
+    }
+
+    void Java_com_hdngame_fate_qq_TencentMidasSdkJni_onTencentMidasChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+    {
+        cocos2d::log("Java_com_hdngame_fate_qq_TencentMidasSdkJni_onTencentMidasChargeCallback");
+
+        std::string order = JniHelper::jstring2string(jorder);
+        Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+            SdkChargeProtocol::onChargeCallback(result, order.c_str());
+        });
     }
 }
 

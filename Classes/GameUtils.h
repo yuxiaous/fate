@@ -20,6 +20,9 @@ public:
     static int getSignatureCode();
     static int getSimOperator();
     
+    static bool isDebugMode();
+    static bool isReleaseMode();
+    
 #ifndef SKIP_BY_AUTO_BINDINGS
     typedef std::function<const char* (const char*, const char*)> ConfigGetter;
     static ConfigGetter _configGetter;

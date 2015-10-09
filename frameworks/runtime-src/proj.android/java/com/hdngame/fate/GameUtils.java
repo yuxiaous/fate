@@ -63,4 +63,7 @@ public class GameUtils {
         String applicationName = (String)packageManager.getApplicationLabel(applicationInfo);
         return applicationName;
     }
+
+    public static native boolean isDebugMode();
+    public static native boolean isReleaseMode();
 }

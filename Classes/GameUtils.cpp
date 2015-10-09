@@ -167,7 +167,31 @@ int GameUtils::getSimOperator()
 }
 
 
+bool GameUtils::isDebugMode()
+{
+#if COCOS2D_DEBUG > 0
+    return true;
+#else
+    return false;
+#endif
+}
+
+bool GameUtils::isReleaseMode()
+{
+    return !isDebugMode();
+}
+
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+extern "C" {
+    bool Java_com_hdngame_fate_GameUtils_isDebugMode(JNIEnv *env, jobject thiz) {
+        return GameUtils::isDebugMode();
+    }
+    bool Java_com_hdngame_fate_GameUtils_isReleaseMode(JNIEnv *env, jobject thiz) {
+        return GameUtils::isReleaseMode();
+    }
+}
+
 std::string GameUtils::getUdidWithAndroid()
 {
     JniMethodInfo minfo;

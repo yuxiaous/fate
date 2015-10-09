@@ -2,6 +2,7 @@ package com.hdngame.fate.qq;
 
 import android.util.Log;
 import android.widget.Toast;
+import com.hdngame.fate.GameUtils;
 import com.hdngame.fate.SdkManagerJni;
 import com.tencent.midas.api.APMidasPayAPI;
 import com.tencent.midas.api.APMidasResponse;
@@ -24,8 +25,6 @@ import java.util.Map;
  * Created by yuxiao on 15/9/7.
  */
 public class TencentMidasSdkJni {
-
-    public static native boolean isDebugMode();
 
     public static String offerId = "";
     public static String appKey = "";
@@ -67,7 +66,7 @@ public class TencentMidasSdkJni {
 
         APMidasPayAPI.init(SdkManagerJni.activity, request);
 
-        if(isDebugMode()) {
+        if(GameUtils.isDebugMode()) {
             System.out.println("debug");
             APMidasPayAPI.setEnv(APMidasPayAPI.ENV_TEST);
             APMidasPayAPI.setLogEnable(true);
@@ -162,15 +161,21 @@ public class TencentMidasSdkJni {
         @Override
         public void MidasPayCallBack(APMidasResponse responseInfo)
         {
-            Toast.makeText(SdkManagerJni.activity, "支付回调", Toast.LENGTH_LONG).show();
-            APLog.i("MidasPayCallBack", "resultCode:" + responseInfo.resultCode);
-            APLog.i("MidasPayCallBack", "resultMsg:" + responseInfo.resultMsg);
-            APLog.i("MidasPayCallBack", "realSaveNum:" + responseInfo.realSaveNum);
-            APLog.i("MidasPayCallBack", "payChannel:" + responseInfo.payChannel);
-            APLog.i("MidasPayCallBack", "payState:" + responseInfo.payState);
-            APLog.i("MidasPayCallBack", "provideState:" + responseInfo.provideState);
+//            Toast.makeText(SdkManagerJni.activity, "支付回调", Toast.LENGTH_LONG).show();
+            System.out.println("payCallBack APMidasResponse.resultCode:" + responseInfo.resultCode);
+            System.out.println("payCallBack APMidasResponse.resultMsg:" + responseInfo.resultMsg);
+            System.out.println("payCallBack APMidasResponse.realSaveNum:" + responseInfo.realSaveNum);
+            System.out.println("payCallBack APMidasResponse.payChannel:" + responseInfo.payChannel);
+            System.out.println("payCallBack APMidasResponse.payState:" + responseInfo.payState);
+            System.out.println("payCallBack APMidasResponse.provideState:" + responseInfo.provideState);
+
+            if(responseInfo.resultCode == APMidasResponse.PAYRESULT_SUCC) {
+                // 支付流程成功
+                onTencentMidasChargeCallback(0, _order);
+            }
         }
     };
+    public static native void onTencentMidasChargeCallback(int result, String order);
 
     //游戏客户端下单，获取物品信息
     private static String getClientProdcutId(String name, int price)
