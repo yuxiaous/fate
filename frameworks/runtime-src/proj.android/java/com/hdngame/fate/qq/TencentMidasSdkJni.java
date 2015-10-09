@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import java.lang.Override;
 import java.lang.String;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -110,7 +111,7 @@ public class TencentMidasSdkJni {
                 request.isCanChange = false; //false数量不可改，true 数量用户可以修改
 
                 request.tokenType = APMidasGoodsRequest.GETTOKENTYPE_CLIENT;
-                request.prodcutId = getClientProdcutId(launchPayClient_name, launchPayClient_price);
+                request.prodcutId = getClientProdcutId(_name, _price);
 
                 APMidasPayAPI.launchPay(SdkManagerJni.activity, request, payCallBack);
             }
@@ -201,7 +202,7 @@ public class TencentMidasSdkJni {
         urlEncodeParams.put("appmode", appMode);
         urlEncodeParams.put("goodsmeta",goodsMeta);
         urlEncodeParams.put("app_metadata", appTransferData);
-        urlEncodeParams.put("sig", encodeBySHA(str));
+        urlEncodeParams.put("sig", SHA1(str));
 
         return  mapToString(urlEncodeParams);
     }
@@ -218,30 +219,28 @@ public class TencentMidasSdkJni {
         }
         return strBuff.toString();
     }
-    private static String encodeBySHA(String str)
-    {
-        try
-        {
-            MessageDigest md = MessageDigest.getInstance("SHA-1");
-            md.update(str.getBytes("UTF-8"));
-            byte[] result = md.digest();
-            StringBuffer sb = new StringBuffer();
-            for (byte b : result)
-            {
-                int i = b & 0xff;
-                if (i < 0xf)
-                {
-                    sb.append(0);
-                }
-                sb.append(Integer.toHexString(i));
-            }
-            String str2=sb.toString().toUpperCase();
 
-            return str2;
-        }catch(Exception e)
-        {
-            return "";
+    public static String SHA1(String decript) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            digest.update(decript.getBytes());
+            byte messageDigest[] = digest.digest();
+            // Create Hex String
+            StringBuffer hexString = new StringBuffer();
+            // 字节数组转换为 十六进制 数
+            for (int i = 0; i < messageDigest.length; i++) {
+                String shaHex = Integer.toHexString(messageDigest[i] & 0xFF);
+                if (shaHex.length() < 2) {
+                    hexString.append(0);
+                }
+                hexString.append(shaHex);
+            }
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
+        return "";
     }
 
 }

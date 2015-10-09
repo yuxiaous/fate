@@ -22,8 +22,8 @@ extern "C" {
     {
         cocos2d::log("TencentMidasSdk_init");
 
-        std::string offerid = "1450000766";
-        std::string appkey = "YdjqtZmAJTWrG8R4NhkRXPqaaWNEt9al";
+        std::string offerid = "1450004328";
+        std::string appkey = "OrLiuwhyCCFyPskaNF5Q8BzFboPmryNU";
 
         JniMethodInfo minfo;
         if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "(Ljava/lang/String;Ljava/lang/String;)V")) {

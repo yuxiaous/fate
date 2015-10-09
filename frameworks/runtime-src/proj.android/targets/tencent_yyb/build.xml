@@ -89,6 +89,7 @@
 
             <!-- qq -->
             <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/android-support-v4.jar" />
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/libammsdk.jar" />
             <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/mid-sdk-2.10.jar" />
             <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/MidasPlugin1.5.0e.jar" />
             <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/mqqopenpay.jar" />
