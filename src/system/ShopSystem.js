@@ -241,6 +241,7 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.TencentYingYongBao:
         case GameChannel.TencentHuaweiYouXiZhongXing:
         case GameChannel.TencentHuaweiYingYongShiChang:
+        case GameChannel.TencentLiuLanQi:
             switch (sim_operator) {
                 case SimOperator.CMCC:
                     return [4, 8];
