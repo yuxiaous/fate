@@ -133,6 +133,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "TencentYingYongBao";
 #elif defined(CHANNEL_TENCENT_HUAWEI_YOUXIZHONGXING)
     channel = "TencentHuaweiYouXiZhongXing";
+#elif defined(CHANNEL_TENCENT_HUAWEI_YINGYONGSHICHANG)
+    channel = "TencentHuaweiYingYongShiChang";
 #elif defined(CHANNEL_XIAOMI)
     channel = "XiaoMi";
 

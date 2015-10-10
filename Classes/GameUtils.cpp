@@ -118,6 +118,8 @@ int GameUtils::getChannelId()
     return 48;
 #elif defined(CHANNEL_TENCENT_HUAWEI_YOUXIZHONGXING)
     return 49;
+#elif defined(CHANNEL_TENCENT_HUAWEI_YINGYONGSHICHANG)
+    return 50;
 #endif
     
     return 0;

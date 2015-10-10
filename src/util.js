@@ -200,7 +200,8 @@ var GameChannel = {
     LenovoLeShangDian: 46,
     LenovoYouXiZhongXin: 47,
     XiaoMi: 48,
-    TencentHuaweiYouXiZhongXing: 49
+    TencentHuaweiYouXiZhongXing: 49,
+    TencentHuaweiYingYongShiChang: 50
 };
 
 var SimOperator = {
