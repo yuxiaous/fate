@@ -42,6 +42,10 @@ public:
     virtual void activityOnPause() {}
     virtual void activityOnResume() {}
     virtual void activityOnDestroy() {}
+	virtual void activityOnStart() {}
+	virtual void activityOnRestart() {}
+	virtual void activityOnStop() {}
+	virtual void activityOnNewIntent(void *intent) {}
 #endif
 };
 
@@ -59,7 +63,7 @@ class SdkChargeProtocol
 {
     friend SdkManager;
 public:
-    virtual void charge(const std::string &order, const std::string &key) {}
+    virtual void charge(const std::string &order, const std::string &identifier) {}
     
     static void onChargeCallback(int result, const std::string &order);
     

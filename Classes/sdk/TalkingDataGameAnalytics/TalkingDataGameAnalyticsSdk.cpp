@@ -97,11 +97,40 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "XyAnZhuo";
 #elif defined(CHANNEL_WANDOUJIA)
     channel = "WanDouJia";
-    
+#elif defined(CHANNEL_SOUGOU5)
+    channel = "SouGou5";
+#elif defined(CHANNEL_SOUGOU6)
+    channel = "SouGou6";
+#elif defined(CHANNEL_SOUGOU7)
+    channel = "SouGou7";
+#elif defined(CHANNEL_SOUGOU8)
+    channel = "SouGou8";
+#elif defined(CHANNEL_SOUGOU9)
+    channel = "SouGou9";
+#elif defined(CHANNEL_SOUGOU11)
+    channel = "SouGou11";
+#elif defined(CHANNEL_MEIZU)
+    channel = "Meizu";
+#elif defined(CHANNEL_UC)
+    channel = "Uc";
+#elif defined(CHANNEL_COOLPAD)
+    channel = "Coolpad";
+#elif defined(CHANNEL_OPPO)
+    channel = "Oppo";
+#elif defined(CHANNEL_HUAWEI)
+    channel = "Huawei";
+#elif defined(CHANNEL_JINLI)
+    channel = "JinLi";
+#elif defined(CHANNEL_VIVO)
+    channel = "Vivo";
+#elif defined(CHANNEL_LENOVO_LESHANGDIAN)
+    channel = "Lenovo_LeShangDian";
+#elif defined(CHANNEL_LENOVO_YOUXIZHONGXIN)
+    channel = "Lenovo_YouXiZhongXin";
 //#elif defined(CHANNEL_360)
 //    channel = "360";
-//#elif defined(CHANNEL_TENCENT_QQ)
-//    channel = "TencentQq";
+#elif defined(CHANNEL_TENCENT_YINGYONGBAO)
+    channel = "TencentYingYongBao";
 
 //=====================================================
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)

@@ -185,7 +185,21 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.Sanxing:
         case GameChannel.Kuwo:
         case GameChannel.Mzw:
+        case GameChannel.SouGou5:
+        case GameChannel.SouGou6:
+        case GameChannel.SouGou7:
+        case GameChannel.SouGou8:
+        case GameChannel.SouGou9:
+        case GameChannel.SouGou11:
+        case GameChannel.Meizu:
         case GameChannel.Wandoujia:
+        case GameChannel.Oppo:
+        case GameChannel.Huawei:
+        case GameChannel.JinLi:
+        case GameChannel.Vivo:
+        case GameChannel.LenovoLeShangDian:
+        case GameChannel.LenovoYouXiZhongXin:
+        case GameChannel.TencentYingYongBao:
             switch (sim_operator) {
                 case SimOperator.CMCC:
                     return [4];
@@ -203,6 +217,26 @@ ShopSystem.getShopPlatformId = function() {
                     return [5, 11];
                 case SimOperator.TLELCOM:
                     return [6, 11];
+            }
+            break;
+        case GameChannel.Uc:
+            switch (sim_operator) {
+                case SimOperator.CMCC:
+                    return [4, 9];
+                case SimOperator.UNICOM:
+                    return [5, 9];
+                case SimOperator.TLELCOM:
+                    return [6, 9];
+            }
+            break;
+        case GameChannel.Coolpad:
+            switch (sim_operator) {
+                case SimOperator.CMCC:
+                    return [4, 10];
+                case SimOperator.UNICOM:
+                    return [5, 10];
+                case SimOperator.TLELCOM:
+                    return [6, 10];
             }
             break;
     }

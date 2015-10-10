@@ -160,7 +160,7 @@ var GameChannel = {
     Mzw: 6,
     M4399: 7,
     Qh360: 8,
-    TencentMidas: 9, //腾讯应用宝
+    TencentYingYongBao: 9, //腾讯应用宝
     Mix: 10,
     Pps: 11,
     SohuWan: 12,
@@ -183,7 +183,22 @@ var GameChannel = {
     Dangle : 29,
     Sanxing : 30,
     XyAnzhuo: 31,
-    Wandoujia: 32
+    Wandoujia: 32,
+    SouGou5 : 33,
+    SouGou6 : 34,
+    SouGou7 : 35,
+    SouGou8 : 36,
+    SouGou9 : 37,
+    SouGou11 : 38,
+    Meizu: 39,
+    Uc: 40,
+    Coolpad: 41,
+    Oppo: 42,
+    Huawei: 43,
+    JinLi: 44,
+    Vivo: 45,
+    LenovoLeShangDian: 46,
+    LenovoYouXiZhongXin: 47
 };
 
 var SimOperator = {

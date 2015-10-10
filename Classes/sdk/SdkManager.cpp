@@ -98,6 +98,21 @@ KuwoLoginSdk kuwologinsdk;
 M4399RechargeSdk m4399rechargesdk;
 #endif
 
+#ifdef SDK_UGP
+#include "ugpsdk/UgpSdk.h"
+UgpSdk ugpsdk;
+#endif
+
+#ifdef SDK_COOLPAD_QIKUPAY
+#include "coolpad/QiKuPaySdk.h"
+QiKuPaySdk qikupaysdk;
+#endif
+
+#ifdef SDK_MI_GAMECENTER
+#include "MiGameCenterSDK/MiGameCenterSdk.h"
+MiGameCenterSdk migamecentersdk;
+#endif
+
 USING_NS_CC;
 
 
@@ -294,6 +309,34 @@ void SdkManager::activityOnDestroy()
     }
 }
 
+void SdkManager::activityOnStart()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnStart();
+    }
+}
+
+void SdkManager::activityOnRestart()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnRestart();
+    }
+}
+
+void SdkManager::activityOnStop()
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnStop();
+    }
+}
+
+void SdkManager::activityOnNewIntent(void *intent)
+{
+    for(Sdk *sdk : _sdks) {
+        sdk->activityOnNewIntent(intent);
+    }
+}
+
 extern "C" {
     void Java_com_hdngame_fate_SdkManagerJni_setAppActivity(JNIEnv *env, jobject thiz, jobject activity)
     {
@@ -323,6 +366,31 @@ extern "C" {
     {
         cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnDestroy");
         SdkManager::activityOnDestroy();
+    }
+
+    void Java_com_hdngame_fate_SdkManagerJni_activityOnStart(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnStart");
+        SdkManager::activityOnStart();
+    }
+
+    void Java_com_hdngame_fate_SdkManagerJni_activityOnRestart(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnRestart");
+        SdkManager::activityOnRestart();
+    }
+
+    void Java_com_hdngame_fate_SdkManagerJni_activityOnStop(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnStop");
+        SdkManager::activityOnStop();
+    }
+
+    void Java_com_hdngame_fate_SdkManagerJni_activityOnNewIntent(JNIEnv *env, jobject thiz, jobject jintent)
+    {
+        cocos2d::log("Java_com_hdngame_fate_SdkManagerJni_activityOnNewIntent");
+        void *intent = (void*)env->NewLocalRef(jintent);
+        SdkManager::activityOnNewIntent(intent);
     }
 }
 #endif

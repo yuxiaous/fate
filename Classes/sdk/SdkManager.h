@@ -64,6 +64,10 @@ public:
     static void activityOnPause();
     static void activityOnResume();
     static void activityOnDestroy();
+	static void activityOnStart();
+	static void activityOnRestart();
+	static void activityOnStop();
+	static void activityOnNewIntent(void *intent);
 #endif
 };
 

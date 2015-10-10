@@ -36,7 +36,7 @@ int GameUtils::getChannelId()
     return 7;
 #elif defined(CHANNEL_360)
     return 8;
-#elif defined(CHANNEL_TENCENT_QQ) //应用宝
+#elif defined(CHANNEL_TENCENT_YINGYONGBAO) //应用宝
     return 9;
 #elif defined(CHANNEL_MIX)
     return 10;
@@ -84,6 +84,36 @@ int GameUtils::getChannelId()
     return 31;
 #elif defined(CHANNEL_WANDOUJIA)
     return 32;
+#elif defined(CHANNEL_SOUGOU_5)
+    return 33;
+#elif defined(CHANNEL_SOUGOU_6)
+    return 34;
+#elif defined(CHANNEL_SOUGOU_7)
+    return 35;
+#elif defined(CHANNEL_SOUGOU_8)
+    return 36;
+#elif defined(CHANNEL_SOUGOU_9)
+    return 37;
+#elif defined(CHANNEL_SOUGOU_11)
+    return 38;
+#elif defined(CHANNEL_MEIZU)
+    return 39;
+#elif defined(CHANNEL_UC)
+    return 40;
+#elif defined(CHANNEL_COOLPAD)
+    return 41;
+#elif defined(CHANNEL_OPPO)
+    return 42;
+#elif defined(CHANNEL_HUAWEI)
+    return 43;
+#elif defined(CHANNEL_JINLI)
+    return 44;
+#elif defined(CHANNEL_VIVO)
+    return 45;
+#elif defined(CHANNEL_LENOVO_LESHANGDIAN)
+    return 46;
+#elif defined(CHANNEL_LENOVO_YOUXIZHONGXIN)
+    return 47;
 #endif
     
     return 0;

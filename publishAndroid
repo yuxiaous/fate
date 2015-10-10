@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#echo $#
+
+if [ $# == 0 ] ;then
+    targets=`ls frameworks/runtime-src/proj.android/targets`
+else
+    targets=$@
+fi
+
+for target in $targets
+do
+    echo "publish target $target"
+    ./packAndroid -t $target -m release
+done
+

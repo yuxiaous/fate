@@ -9,6 +9,10 @@
 #include "m4399RechargeSDK/M4399RechargeSdk.h"
 #endif
 
+#ifdef MIX_COOLPAD_QIKUPAY
+#include "coolpad/QiKuPaySdk.h"
+#endif
+
 MixSdk::MixSdk()
 {
 
@@ -23,6 +27,10 @@ void MixSdk::activityOnCreate()
 
 #ifdef MIX_M4399_RECHARGE
     M4399RechargeSdk_init();
+#endif
+
+#ifdef MIX_COOLPAD_QIKUPAY
+    QiKuPaySdk_init();
 #endif
 }
 
@@ -57,6 +65,9 @@ void MixSdk::charge(const std::string &order, const std::string &identifier)
         case 6: EgameSdk_charge(order, identifier); break;
 #ifdef MIX_M4399_RECHARGE
         case 11: M4399RechargeSdk_charge2(order, identifier); break;
+#endif
+#ifdef MIX_COOLPAD_QIKUPAY
+        case 10: QiKuPaySdk_pay(order, identifier); break;
 #endif
     }
 }

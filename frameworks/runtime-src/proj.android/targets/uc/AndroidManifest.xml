@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.hdngame.fate.uc"
+      android:versionCode="2"
+      android:versionName="1.1"
+      android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="9"/>
+    <uses-feature android:glEsVersion="0x00020000" />
+
+    <application android:label="@string/app_name"
+                 android:icon="@drawable/icon"
+                 android:name="com.hdngame.fate.uc.UcApplication">
+
+        <!-- Tell NativeActivity the name of our .so -->
+        <meta-data android:name="android.app.lib_name" android:value="cocos2djs" />
+
+        <activity android:name="org.cocos2dx.javascript.AppActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:configChanges="orientation">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- KTPlay SDK配置开始 -->
+        <activity
+                android:name="com.ktplay.activity.GetPhotoActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:screenOrientation="user"
+                android:theme="@android:style/Theme.Translucent"
+                android:windowSoftInputMode="adjustPan|adjustUnspecified" >
+        </activity>
+
+        <meta-data android:name="KTPLAY_CHANNELID" android:value="GP" />
+        <!-- KTPlay SDK配置结束 -->
+
+        <!-- uc start -->
+        <!-- UC支付SDK声明 -->
+        <activity
+                android:name="cn.uc.paysdk.SDKActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                android:launchMode="singleTask"
+                android:windowSoftInputMode="adjustPan|stateAlwaysHidden|adjustResize" >
+        </activity>
+        <service android:name="cn.uc.paysdk.service.SDKService" />
+
+        <activity android:name="cn.uc.gamesdk.sa.activity.ProxyActivity"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                  android:windowSoftInputMode="adjustResize" >
+
+            <!-- android:theme="@android:style/Theme.Translucent" -->
+            <intent-filter>
+                <action android:name="cn.uc.gamesdk.sdkweb" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- End of UC支付SDK声明 -->
+
+        <!-- 支付宝声明 -->
+        <activity
+                android:name="com.alipay.sdk.app.H5PayActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:exported="false"
+                android:screenOrientation="behind" >
+        </activity>
+        <activity
+                android:name="com.alipay.sdk.auth.AuthActivity"
+                android:configChanges="orientation|keyboardHidden|navigation"
+                android:exported="false"
+                android:screenOrientation="behind" >
+        </activity>
+
+        <!-- now 微信SDK支付相关添加开始 -->
+        <activity
+                android:name="com.ipaynow.plugin.activity.PayMethodActivity"
+                android:theme="@android:style/Theme.Dialog"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:exported="false"
+            android:screenOrientation="unspecified">
+        </activity>
+        <activity android:name="com.ipaynow.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity"
+                  android:theme="@android:style/Theme.NoDisplay"
+                  android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+        <!-- now 微信SDK支付相关添加结束 -->
+
+        <!-- 中国电信SDK支付相關添加开始 -->
+        <!-- 中国电信渠道号 :需要根据实际修改-->
+        <meta-data android:name="EGAME_CHANNEL" android:value="80011044" />
+        <meta-data android:name="EGAME_UNINS" android:value="false" />
+        <activity
+                android:name="cn.egame.terminal.paysdk.EgamePayActivity"
+                android:configChanges="orientation|keyboard|keyboardHidden"
+                android:screenOrientation="landscape"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+                android:name="cn.play.dserv.EmpActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation"
+                android:exported="true" />
+        <service
+                android:name="cn.play.dserv.DService"
+                android:enabled="true"
+                android:exported="false"
+                android:label="dservice"
+                android:process=":dservice_v1" >
+        </service>
+        <receiver
+                android:name="cn.play.dserv.DsReceiver"
+                android:process=":dservice_v1" >
+            <intent-filter>
+                <action android:name="cn.play.dservice" />
+            </intent-filter>
+        </receiver>
+        <!-- 中国电信SDK支付相關添加结束 -->
+
+        <!-- 中国联通SDK支付相關添加开始 -->
+        <service android:name="com.unicom.wostore.unipay.paysecurity.SecurityServiceFramework">
+            <intent-filter>
+                <action android:name="com.hdngame.fate.uc.unicom.wostore.unipay.securityserviceframework" />
+            </intent-filter>
+        </service>
+        <meta-data android:name="wostore_billing_otherpay" android:value="false"/>
+        <meta-data android:name="wostore_billing_chinaunicom" android:value="true"/>
+        <meta-data android:name="wostore_billing_chinamobile"  android:value="false" />
+        <meta-data android:name="wostore_billing_chinatele"  android:value="false" />
+        <!-- 中国联通SDK支付相關添加结束 -->
+
+        <!-- 游戏基地开始 -->
+        <activity android:name="cn.cmgame.billing.api.GameOpenActivity"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:screenOrientation="sensor">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.CHINAMOBILE_OMS_GAME" />-->
+                <!--<category android:name="android.intent.category.CHINAMOBILE_GAMES" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <!-- 游戏基地结束 -->
+
+        <!-- uc end -->
+    </application>
+
+    <supports-screens android:anyDensity="true"
+                      android:smallScreens="true"
+                      android:normalScreens="true"
+                      android:largeScreens="true"
+                      android:xlargeScreens="true"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <!-- uc -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.webkit.permission.PLUGIN" />
+    <!-- 运营商SDK权限添加开始 -->
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <!-- 运营商SDK权限添加結束 -->
+
+
+</manifest> 
