@@ -199,7 +199,8 @@ var GameChannel = {
     Vivo: 45,
     LenovoLeShangDian: 46,
     LenovoYouXiZhongXin: 47,
-    XiaoMi: 48
+    XiaoMi: 48,
+    TencentHuaweiYouXiZhongXing: 49
 };
 
 var SimOperator = {
