@@ -229,7 +229,6 @@ ShopSystem.getShopPlatformId = function() {
             }
             break;
         case GameChannel.Coolpad:
-            return [10];
             switch (sim_operator) {
                 case SimOperator.CMCC:
                     return [4, 10];
