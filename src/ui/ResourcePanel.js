@@ -109,7 +109,7 @@ var ResourcePanel = ui.GuiController.extend({
             case ResourcePanel.Type.Gold:
             case ResourcePanel.Type.Diamond:
                 if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
-                    MessageBoxOk.show("通过第一章第三关开放");
+                    MessageBoxOk.show("通过第一章第二关开放");
                     return;
                 }
                 RechargePanel.show();
