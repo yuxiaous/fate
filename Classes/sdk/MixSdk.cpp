@@ -17,6 +17,10 @@
 #include "TencentMidas/TencentMidasSdk.h"
 #endif
 
+#ifdef MIX_360
+#include "360/Qh360Sdk.h"
+#endif
+
 MixSdk::MixSdk()
 {
 
@@ -39,6 +43,10 @@ void MixSdk::activityOnCreate()
 
 #ifdef MIX_TENCENT_MIDAS
     TencentMidasSdk_init();
+#endif
+
+#ifdef MIX_360
+    Qh360Sdk_init();
 #endif
 }
 
@@ -79,6 +87,9 @@ void MixSdk::charge(const std::string &order, const std::string &identifier)
 #endif
 #ifdef MIX_TENCENT_MIDAS
         case 8: TencentMidasSdk_pay(order, identifier); break;
+#endif
+#ifdef MIX_360
+        case 7: Qh360Sdk_pay(); break;
 #endif
     }
 }

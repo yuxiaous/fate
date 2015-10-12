@@ -99,6 +99,108 @@
         <meta-data android:name="EGAME_CHANNEL" android:value="80011046"  />
         <meta-data android:name="EGAME_UNINS" android:value="false" />
         <!-- egame end -->
+
+        <!-- 360 start -->
+        <meta-data
+                android:name="QHOPENSDK_APPID"
+                android:value="201696301" >
+        </meta-data>
+        <meta-data
+                android:name="QHOPENSDK_APPKEY"
+                android:value="08158bf9f09b919790a63f10c381be52" >
+        </meta-data>
+        <meta-data
+                android:name="QHOPENSDK_PRIVATEKEY"
+                android:value="dd09f2d209a268973d55a29d7f7961a4" >
+        </meta-data>
+        <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
+        <activity
+                android:name="com.qihoo.gamecenter.sdk.activity.ContainerActivity"
+                android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode|layoutDirection"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                android:exported="true">
+        </activity>
+        <!-- payment activities begin -->
+        <!-- 添加360SDK必需的activity：com.qihoopp.qcoinpay.QcoinActivity -->
+        <activity
+                android:name="com.qihoopp.qcoinpay.QcoinActivity"
+                android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+        <!-- alipay sdk begin -->
+        <activity
+                android:name="com.alipay.sdk.app.H5PayActivity"
+                android:screenOrientation="portrait" >
+        </activity>
+        <!-- alipay sdk end -->
+        <!-- 微信支付界面-->
+        <activity
+                android:name="com.iapppay.pay.channel.weixinpay.WeixinWapPayActivity"
+                android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+                android:theme="@android:style/Theme.Translucent" />
+        <activity
+                android:name="com.junnet.heepay.ui.activity.WelcomeActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:excludeFromRecents="true"
+                android:screenOrientation="behind"
+                android:theme="@android:style/Theme.Dialog"
+                android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+                android:name="com.junnet.heepay.ui.activity.WechatPaymentActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:excludeFromRecents="true"
+                android:screenOrientation="behind"
+                android:theme="@android:style/Theme.Dialog"
+                android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+                android:name="com.ipaynow.plugin.activity.PayMethodActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:exported="false"
+                android:screenOrientation="behind"
+                android:theme="@android:style/Theme.Dialog" />
+        <activity
+                android:name="com.ipaynow.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:screenOrientation="behind"
+                android:theme="@android:style/Theme.NoDisplay" />
+        <!-- payment activities end -->
+        <!-- 如下是360游戏实时推送SDK必要声明，不可修改 -->
+        <receiver
+                android:name="com.qihoo.psdk.local.QBootReceiver"
+                android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+                android:name="com.qihoo.psdk.app.QStatActivity"
+                android:launchMode="singleInstance"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <service
+                android:name="com.qihoo.psdk.remote.QRemoteService"
+                android:exported="true"
+                android:process=":QRemote" >
+            <intent-filter>
+                <action android:name="com.qihoo.psdk.service.action.remote" />
+            </intent-filter>
+        </service>
+        <service
+                android:name="com.qihoo.psdk.local.QLocalService"
+                android:exported="true"
+                android:process=":QLocal" >
+            <intent-filter>
+                <action android:name="com.qihoo.psdk.service.action.local" />
+            </intent-filter>
+        </service>
+        <!-- 推送SDK end -->
+        <!-- 360 end -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -127,5 +229,17 @@
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <!-- 360 -->
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.webkit.permission.PLUGIN" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
 
 </manifest> 
