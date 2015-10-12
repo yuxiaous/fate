@@ -8,6 +8,7 @@ extern "C" {
     void Qh360Sdk_init();
     void Qh360Sdk_charge(const std::string &order, const std::string &identifier);
     void Qh360Sdk_destroy();
+    void Qh360Sdk_quit();
 }
 
 class Qh360Sdk : public Sdk, public SdkChargeProtocol

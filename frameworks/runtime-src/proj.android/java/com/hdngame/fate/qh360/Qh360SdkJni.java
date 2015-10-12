@@ -31,7 +31,6 @@ public class Qh360SdkJni {
 
     public static void init() {
         System.out.println("Qh360SdkJni.init");
-
         Matrix.init(SdkManagerJni.activity);
     }
 
@@ -168,7 +167,7 @@ public class Qh360SdkJni {
 
         Matrix.invokeActivity(SdkManagerJni.activity, intent, mPayCallback);
     }
-    protected static IDispatcherCallback mPayCallback = new IDispatcherCallback() {
+    final static IDispatcherCallback mPayCallback = new IDispatcherCallback() {
         @Override
         public void onFinished(String resp) {
             System.out.println("Qh360SdkJni.mPayCallback, data is " + resp);
@@ -200,56 +199,43 @@ public class Qh360SdkJni {
 
 
     public static void destroy() {
+        System.out.println("Qh360SdkJni.destroy");
         Matrix.destroy(SdkManagerJni.activity);
     }
 
-//    protected static void doSdkQuit(boolean isLandScape) {
-//
-//        Bundle bundle = new Bundle();
-//
-//        // 界面相关参数，360SDK界面是否以横屏显示。
-//        bundle.putBoolean(ProtocolKeys.IS_SCREEN_ORIENTATION_LANDSCAPE, isLandScape);
-//
-//        // 必需参数，使用360SDK的退出模块。
-//        bundle.putInt(ProtocolKeys.FUNCTION_CODE, ProtocolConfigs.FUNC_CODE_QUIT);
-//
-//        // 可选参数，登录界面的背景图片路径，必须是本地图片路径
-//        bundle.putString(ProtocolKeys.UI_BACKGROUND_PICTRUE, "");
-//
-//        Intent intent = new Intent(SdkManagerJni.activity, ContainerActivity.class);
-//        intent.putExtras(bundle);
-//
-//        Matrix.invokeActivity(SdkManagerJni.activity, intent, mQuitCallback);
-//    }
-//
-//    // 退出的回调
-//    private static IDispatcherCallback mQuitCallback = new IDispatcherCallback() {
-//
-//        @Override
-//        public void onFinished(String data) {
-////            Log.d(TAG, "mQuitCallback, data is " + data);
-//            JSONObject json;
-//            try {
-//                json = new JSONObject(data);
-//                int which = json.optInt("which", -1);
-//                String label = json.optString("label");
-//
-//                Toast.makeText(SdkManagerJni.activity,
-//                        "按钮标识：" + which + "，按钮描述:" + label, Toast.LENGTH_LONG)
-//                        .show();
-//
-//                switch (which) {
-//                    case 0: // 用户关闭退出界面
-//                        return;
-//                    default:// 退出游戏
-////                        finish();
-//                        return;
-//                }
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//    };
-//
+    public static void doSdkQuit() {
+        System.out.println("Qh360SdkJni.doSdkQuit");
+
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(ProtocolKeys.IS_SCREEN_ORIENTATION_LANDSCAPE, true);
+        bundle.putInt(ProtocolKeys.FUNCTION_CODE, ProtocolConfigs.FUNC_CODE_QUIT);
+
+        Intent intent = new Intent(SdkManagerJni.activity, ContainerActivity.class);
+        intent.putExtras(bundle);
+
+        Matrix.invokeActivity(SdkManagerJni.activity, intent, mQuitCallback);
+    }
+    final static IDispatcherCallback mQuitCallback = new IDispatcherCallback() {
+        @Override
+        public void onFinished(String data) {
+            System.out.println("Qh360SdkJni.mQuitCallback:" + data);
+
+            try {
+                JSONObject json = new JSONObject(data);
+                int which = json.optInt("which", -1);
+                switch (which) {
+                    case 0: // 用户关闭退出界面
+                        return;
+                    default:// 退出游戏
+                        onQh360Exit();
+                        return;
+                }
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    };
+    public static native void onQh360Exit();
+
 }

@@ -65,6 +65,9 @@ void MixSdk::activityOnDestroy()
 #ifdef MIX_M4399_RECHARGE
     M4399RechargeSdk_destroy();
 #endif
+#ifdef MIX_360
+    Qh360Sdk_destroy();
+#endif
 }
 
 void MixSdk::charge(const std::string &order, const std::string &identifier)
@@ -97,5 +100,13 @@ void MixSdk::charge(const std::string &order, const std::string &identifier)
 void MixSdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
 {
     cocos2d::log("MixSdk::sdkCommand %s %s %s", clazz.c_str(), method.c_str(), param.c_str());
+
+#ifdef MIX_360
+    if(clazz == "Qh360"){
+        if(method == "exit") {
+            Qh360Sdk_quit();
+        }
+    }
+#endif
 }
 

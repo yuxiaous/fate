@@ -65,6 +65,22 @@ extern "C" {
             minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
         }
     }
+
+    void Qh360Sdk_quit()
+    {
+        cocos2d::log("Qh360Sdk_quit");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "doSdkQuit", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+    }
+
+    void Java_com_hdngame_fate_qh360_Qh360SdkJni_onQh360Exit(JNIEnv *env, jobject thiz)
+    {
+        cocos2d::log("Java_com_hdngame_fate_qh360_Qh360SdkJni_onQh360Exit");
+        Director::getInstance()->end();
+    }
 }
 
 void Qh360Sdk::activityOnCreate()
