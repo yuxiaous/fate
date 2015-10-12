@@ -29,26 +29,6 @@ extern "C" {
       }
     }
 
-    void Qh360Sdk_destroy()
-    {
-        cocos2d::log("Qh360Sdk_destroy");
-
-        JniMethodInfo minfo;
-        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "destroy", "()V")) {
-            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-        }
-    }
-
-    void Qh360Sdk_login()
-    {
-        cocos2d::log("Qh360Sdk_login");
-
-        JniMethodInfo minfo;
-        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "doSdkLogin", "()V")) {
-            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-        }
-    }
-
     void Qh360Sdk_charge(const std::string &order, const std::string &identifier)
     {
         cocos2d::log("Qh360Sdk_charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
@@ -65,6 +45,26 @@ extern "C" {
              minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier);
          }
     }
+
+    void Java_com_hdngame_fate_qh360_Qh360SdkJni_onQh360ChargeCallback(JNIEnv *env, jobject thiz, jint result, jstring jorder)
+    {
+        cocos2d::log("qh360_Qh360SdkJni_onQh360ChargeCallback");
+
+        std::string order = JniHelper::jstring2string(jorder);
+        Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]{
+            SdkChargeProtocol::onChargeCallback(result, order.c_str());
+        });
+    }
+
+    void Qh360Sdk_destroy()
+    {
+        cocos2d::log("Qh360Sdk_destroy");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "destroy", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+    }
 }
 
 void Qh360Sdk::activityOnCreate()
@@ -77,12 +77,7 @@ void Qh360Sdk::activityOnDestroy()
     Qh360Sdk_destroy();
 }
 
-void Qh360Sdk::login()
-{
-    Qh360Sdk_login();
-}
-
 void Qh360Sdk::charge(const std::string &order, const std::string &identifier)
 {
-
+    Qh360Sdk_charge(order, identifier);
 }

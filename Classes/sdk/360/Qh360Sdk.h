@@ -6,15 +6,13 @@
 
 extern "C" {
     void Qh360Sdk_init();
-    void Qh360Sdk_destroy();
-    void Qh360Sdk_login();
     void Qh360Sdk_charge(const std::string &order, const std::string &identifier);
+    void Qh360Sdk_destroy();
 }
 
-class Qh360Sdk : public Sdk, public SdkAccountProtocol, public SdkChargeProtocol
+class Qh360Sdk : public Sdk, public SdkChargeProtocol
 {
 public:
-    virtual void login() override;
     virtual void charge(const std::string &order, const std::string &identifier) override;
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
