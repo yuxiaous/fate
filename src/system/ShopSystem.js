@@ -147,6 +147,18 @@ var ShopSystem = SystemBase.extend({
 ShopSystem.getShopPlatformId = function() {
     var channel_id = util.getChannelId();
     var sim_operator = util.getSimOperator();
+    var sim_platform_id = (function(sim) {
+        switch (sim) {
+            case SimOperator.CMCC:
+                return 4;
+            case SimOperator.UNICOM:
+                return 5;
+            case SimOperator.TLELCOM:
+                return 6;
+        }
+        return 0;
+    } (sim_operator));
+
     switch (channel_id) {
         case GameChannel.AppStore:
             return [2];
@@ -159,8 +171,6 @@ ShopSystem.getShopPlatformId = function() {
             return [5];
         case GameChannel.Telecom:
             return [6];
-        case GameChannel.Qh360:
-            return [7];
         case GameChannel.XiaoMi:
             return [12];
         case GameChannel.Mix:
@@ -199,58 +209,21 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.Vivo:
         case GameChannel.LenovoLeShangDian:
         case GameChannel.LenovoYouXiZhongXin:
-            switch (sim_operator) {
-                case SimOperator.CMCC:
-                    return [4];
-                case SimOperator.UNICOM:
-                    return [5];
-                case SimOperator.TLELCOM:
-                    return [6];
-            }
-            break;
-        case GameChannel.M4399:
-            switch (sim_operator) {
-                case SimOperator.CMCC:
-                    return [4, 11];
-                case SimOperator.UNICOM:
-                    return [5, 11];
-                case SimOperator.TLELCOM:
-                    return [6, 11];
-            }
-            break;
-        case GameChannel.Uc:
-            switch (sim_operator) {
-                case SimOperator.CMCC:
-                    return [4, 9];
-                case SimOperator.UNICOM:
-                    return [5, 9];
-                case SimOperator.TLELCOM:
-                    return [6, 9];
-            }
-            break;
-        case GameChannel.Coolpad:
-            switch (sim_operator) {
-                case SimOperator.CMCC:
-                    return [4, 10];
-                case SimOperator.UNICOM:
-                    return [5, 10];
-                case SimOperator.TLELCOM:
-                    return [6, 10];
-            }
-            break;
+            return [sim_platform_id];
+        case GameChannel.Qh360:
+            return [7];
+            return [sim_platform_id, 7];
         case GameChannel.TencentYingYongBao:
         case GameChannel.TencentHuaweiYouXiZhongXing:
         case GameChannel.TencentHuaweiYingYongShiChang:
         case GameChannel.TencentLiuLanQi:
-            switch (sim_operator) {
-                case SimOperator.CMCC:
-                    return [4, 8];
-                case SimOperator.UNICOM:
-                    return [5, 8];
-                case SimOperator.TLELCOM:
-                    return [6, 8];
-            }
-            break;
+            return [sim_platform_id, 8];
+        case GameChannel.Uc:
+            return [sim_platform_id, 9];
+        case GameChannel.Coolpad:
+            return [sim_platform_id, 10];
+        case GameChannel.M4399:
+            return [sim_platform_id, 11];
     }
     return [1];
 };

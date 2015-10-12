@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="fate_sougou_1" default="debug">
+<project name="fate_sougou_11" default="debug">
 
     <!-- The local.properties file is created and updated by the 'android' tool.
          It contains the path to the SDK. It should *NOT* be checked into
@@ -79,8 +79,8 @@
 
             <!-- unipay -->
             <!--<pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />-->
-            <pathelement location="targets/sougou_1/offline1441965582048_00018733_20150914/Multimode_UniPay_base.jar" />
-            <pathelement location="targets/sougou_1/offline1441965582048_00018733_20150914/Multimode_UniPay_payinfo.jar" />
+            <pathelement location="targets/sougou_11/offline1441965582048_00018733_20150914/Multimode_UniPay_base.jar" />
+            <pathelement location="targets/sougou_11/offline1441965582048_00018733_20150914/Multimode_UniPay_payinfo.jar" />
             <!-- egame -->
             <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />

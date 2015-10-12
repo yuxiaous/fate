@@ -127,8 +127,8 @@ void TalkingDataGameAnalyticsSdk::init()
     channel = "Lenovo_LeShangDian";
 #elif defined(CHANNEL_LENOVO_YOUXIZHONGXIN)
     channel = "Lenovo_YouXiZhongXin";
-//#elif defined(CHANNEL_360)
-//    channel = "360";
+#elif defined(CHANNEL_360)
+    channel = "360";
 #elif defined(CHANNEL_TENCENT_YINGYONGBAO)
     channel = "TencentYingYongBao";
 #elif defined(CHANNEL_TENCENT_HUAWEI_YOUXIZHONGXING)
