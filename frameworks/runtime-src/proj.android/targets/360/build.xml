@@ -118,8 +118,8 @@
                 <!--<include name="com/hdngame/fate/qh360/utils/QihooUserInfo.java" />-->
                 <!--<include name="com/hdngame/fate/qh360/utils/QihooUserInfoListener.java" />-->
                 <!--<include name="com/hdngame/fate/qh360/utils/QihooUserInfoTask.java" />-->
-                <!--<include name="com/hdngame/fate/qh360/utils/SdkHttpListener.java" />-->
-                <!--<include name="com/hdngame/fate/qh360/utils/SdkHttpTask.java" />-->
+                <include name="com/hdngame/fate/qh360/utils/SdkHttpListener.java" />
+                <include name="com/hdngame/fate/qh360/utils/SdkHttpTask.java" />
                 <!--<include name="com/hdngame/fate/qh360/utils/Utils.java" />-->
                 <!--<include name="com/hdngame/fate/qh360/wxapi/WXEntryActivity.java" />-->
             </fileset>

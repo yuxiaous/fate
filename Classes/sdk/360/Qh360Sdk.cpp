@@ -49,9 +49,21 @@ extern "C" {
         }
     }
 
-    void Qh360Sdk_pay()
+    void Qh360Sdk_charge(const std::string &order, const std::string &identifier)
     {
-        Qh360Sdk_login();
+        cocos2d::log("Qh360Sdk_charge order: %s, identifier: %s", order.c_str(), identifier.c_str());
+
+//         if(order.empty() || identifier.empty()) {
+//             SdkChargeProtocol::onChargeCallback(1, order);
+//             return;
+//         }
+
+         JniMethodInfo minfo;
+         if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+             jstring jorder = minfo.env->NewStringUTF(order.c_str());
+             jstring jidentifier = minfo.env->NewStringUTF(identifier.c_str());
+             minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier);
+         }
     }
 }
 

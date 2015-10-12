@@ -89,7 +89,7 @@ void MixSdk::charge(const std::string &order, const std::string &identifier)
         case 8: TencentMidasSdk_pay(order, identifier); break;
 #endif
 #ifdef MIX_360
-        case 7: Qh360Sdk_pay(); break;
+        case 7: Qh360Sdk_charge(order, identifier); break;
 #endif
     }
 }

@@ -11,14 +11,18 @@ import android.os.Bundle;
 import com.hdngame.fate.GameUtils;
 import com.hdngame.fate.SdkManagerJni;
 //import com.hdngame.fate.qh360.payment.Constants;
-//import com.hdngame.fate.qh360.utils.*;
+import com.hdngame.fate.qh360.utils.*;
 //import com.hdngame.fate.qh360.payment.QihooPayInfo;
+import com.hdngame.fate.qh360.utils.SdkHttpTask;
 import com.qihoo.gamecenter.sdk.matrix.Matrix;
 import com.qihoo.gamecenter.sdk.activity.ContainerActivity;
 import com.qihoo.gamecenter.sdk.protocols.ProtocolConfigs;
 import com.qihoo.gamecenter.sdk.protocols.ProtocolKeys;
 import com.qihoo.gamecenter.sdk.common.IDispatcherCallback;
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.lang.String;
 
 /**
  * Created by yuxiao on 15/9/6.
@@ -42,240 +46,166 @@ public class Qh360SdkJni {
                 intent.putExtra(ProtocolKeys.FUNCTION_CODE, ProtocolConfigs.FUNC_CODE_LOGIN);
                 intent.putExtra(ProtocolKeys.IS_SCREEN_ORIENTATION_LANDSCAPE, true);
                 intent.putExtra(ProtocolKeys.IS_LOGIN_SHOW_CLOSE_ICON, true);
-                intent.putExtra(ProtocolKeys.IS_SUPPORT_OFFLINE, true);
-                intent.putExtra(ProtocolKeys.IS_SHOW_AUTOLOGIN_SWITCH, true);
-                intent.putExtra(ProtocolKeys.IS_HIDE_WELLCOME, false);
-//        intent.putExtra(ProtocolKeys.UI_BACKGROUND_PICTRUE, getUiBackgroundPicPath());
-//        intent.putExtra(ProtocolKeys.UI_BACKGROUND_PICTURE_IN_ASSERTS, getUiBackgroundPathInAssets());
-                intent.putExtra(ProtocolKeys.IS_AUTOLOGIN_NOUI, false);
+                intent.putExtra(ProtocolKeys.IS_SUPPORT_OFFLINE, false);
+                intent.putExtra(ProtocolKeys.IS_SHOW_AUTOLOGIN_SWITCH, false);
+                intent.putExtra(ProtocolKeys.IS_HIDE_WELLCOME, true);
+                intent.putExtra(ProtocolKeys.IS_AUTOLOGIN_NOUI, true);
                 intent.putExtra(ProtocolKeys.IS_SHOW_LOGINDLG_ONFAILED_AUTOLOGIN, true);
 
-                if(GameUtils.isDebugMode()) {
+                if (GameUtils.isDebugMode()) {
+                    System.out.println("debug");
                     intent.putExtra(ProtocolKeys.IS_SOCIAL_SHARE_DEBUG, true);
                 }
 
-                Matrix.execute(SdkManagerJni.activity, new Intent(), mLoginCallback);
+                Matrix.execute(SdkManagerJni.activity, intent, mLoginCallback);
             }
         });
     }
-
-    final static IDispatcherCallback mLoginCallbackSupportOffline = new IDispatcherCallback() {
-        @Override
-        public void onFinished(String data) {
-            System.out.println("Qh360SdkJni.mLoginCallbackSupportOffline " + data);
-
-            if (isCancelLogin(data)) {
-                return;
-            }
-
-            try {
-                JSONObject joRes = new JSONObject(data);
-                JSONObject joData = joRes.getJSONObject("data");
-                String mode = joData.optString("mode", "");
-                if (!TextUtils.isEmpty(mode) && mode.equals("offline")) {
-                    Toast.makeText(SdkManagerJni.activity, "login success in offline mode", Toast.LENGTH_SHORT).show();
-//                    mIsInOffline = true;
-
-                    // 显示一下登录结果
-                    Toast.makeText(SdkManagerJni.activity, data, Toast.LENGTH_LONG).show();
-                } else {
-//                    mLoginCallback.onFinished(data);
-                }
-            } catch (Exception e) {
-                Log.e(TAG, "mLoginCallbackSupportOffline exception", e);
-            }
-
-        }
-    };
-
-
-//    protected String mAccessToken = null;
 
     // 登录、注册的回调
     final static IDispatcherCallback mLoginCallback = new IDispatcherCallback() {
 
         @Override
-        public void onFinished(String data) {
-            System.out.println("Qh360SdkJni.mLoginCallback " + data);
+        public void onFinished(String resp) {
+            System.out.println("Qh360SdkJni.mLoginCallback " + resp);
 
-            // press back
-            if (isCancelLogin(data)) {
-                return;
+            try {
+                JSONObject joResp = new JSONObject(resp);
+                int errno = joResp.optInt("errno", -1);
+                if(errno == -1) {
+                    String errmsg = joResp.optString("errmsg");
+                    Toast.makeText(SdkManagerJni.activity, errmsg, Toast.LENGTH_LONG).show();
+                }
+                else {
+                    JSONObject joData = joResp.getJSONObject("data");
+                    String accessToken = joData.getString("access_token");
+                    if(!TextUtils.isEmpty(accessToken)) {
+                        System.out.println("Qh360SdkJni.mLoginCallback success, token: " + accessToken);
+                        getUserInfo(accessToken);
+                    }
+                }
             }
-            // 显示一下登录结果
-            Toast.makeText(SdkManagerJni.activity, data, Toast.LENGTH_LONG).show();
-//            mIsInOffline = false;
-//            mQihooUserInfo = null;
-
-            // 解析access_token
-//            mAccessToken = parseAccessTokenFromLoginResult(data);
-
-//            if (!TextUtils.isEmpty(mAccessToken)) {
-//                // 需要去应用的服务器获取用access_token获取一下带qid的用户信息
-////                getUserInfo();
-//            } else {
-//                Toast.makeText(SdkManagerJni.activity, "get access_token failed!", Toast.LENGTH_LONG).show();
-//            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     };
 
 
-//    private static void getUserInfo() {
-//        final QihooUserInfoTask mUserInfoTask = QihooUserInfoTask.newInstance();
-//
-//        // 提示用户进度
-//        final ProgressDialog progress = ProgressUtil.show(SdkManagerJni.activity,
-//                R.string.get_user_title,
-//                R.string.get_user_message,
-//                new DialogInterface.OnCancelListener() {
-//                    @Override
-//                    public void onCancel(DialogInterface dialog) {
-//                        if (mUserInfoTask != null) {
-//                            mUserInfoTask.doCancel();
-//                        }
-//                    }
-//                });
-//
-//        // 请求应用服务器，用AccessToken换取UserInfo
-//        mUserInfoTask.doRequest(SdkManagerJni.activity,
-//                mAccessToken,
-//                Matrix.getAppKey(SdkManagerJni.activity),
-//                new QihooUserInfoListener() {
-//
-//                    @Override
-//                    public void onGotUserInfo(QihooUserInfo userInfo) {
-//                        progress.dismiss();
-//                        if (null == userInfo || !userInfo.isValid()) {
-//                            Toast.makeText(SdkManagerJni.activity, "从应用服务器获取用户信息失败", Toast.LENGTH_LONG).show();
-//                        } else {
-////                            SdkUserBaseActivity.this.onGotUserInfo(userInfo);
-//                        }
-//                    }
-//                });
-//    }
+    private static SdkHttpTask sSdkHttpTask = null;
+    private static String sUserId = null;
+    private static String sUserName = null;
+    private static void getUserInfo(String token) {
+        System.out.println("Qh360SdkJni.getUserInfo token:" + token);
 
+        String server = "https://openapi.360.cn/user/me.json";
+        String url = String.format("%s?access_token=%s&fields=%s", server, token, "id,name");
+        System.out.println("Qh360SdkJni.getUserInfo url:" + url);
 
-    private static boolean isCancelLogin(String data) {
-        try {
-            JSONObject joData = new JSONObject(data);
-            int errno = joData.optInt("errno", -1);
-            if (-1 == errno) {
-                Toast.makeText(SdkManagerJni.activity, data, Toast.LENGTH_LONG).show();
-                return true;
+        // 如果存在，取消上一次请求
+        if (sSdkHttpTask != null) {
+            sSdkHttpTask.cancel(true);
+        }
+
+        sSdkHttpTask = new SdkHttpTask(SdkManagerJni.activity);
+        sSdkHttpTask.doGet(new SdkHttpListener() {
+            @Override
+            public void onResponse(String response) {
+                System.out.println("sSdkHttpTask.onResponse:" + response);
+                sSdkHttpTask = null;
+
+                try {
+                    JSONObject joResp = new JSONObject(response);
+                    sUserId = joResp.optString("id");
+                    sUserName = joResp.optString("name");
+
+                    doSdkPay(_order, _identifier);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
+            @Override
+            public void onCancelled() {
+                System.out.println("sSdkHttpTask.onCancelled");
+                sSdkHttpTask = null;
+            }
+        }, url);
     }
 
-//    public static void doSdkSwitchAccount() {
-//        System.out.println("Qh360SdkJni.doSdkSwitchAccount");
-//
-//        SdkManagerJni.activity.runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent intent = getSwitchAccountIntent();
-//                IDispatcherCallback callback = mAccountSwitchCallback;
-//                if (_isSupportOffline) {
-//                    callback = mAccountSwitchSupportOfflineCB;
-//                }
-//                Matrix.invokeActivity(SdkManagerJni.activity, intent, callback);
-//            }
-//        });
-//    }
+    private static String _order = null;
+    private static String _identifier = null;
+    public static void pay(String order, String identifier) {
+        System.out.println("Qh360SdkJni.pay");
+        System.out.println(order + ":" + identifier);
 
-//    protected void doSdkPay(QihooUserInfo usrinfo) {
-//        System.out.println("Qh360SdkJni.doSdkPay");
-//
-//        if (!checkLoginInfo(usrinfo)) {
-//            return;
-//        }
-//
-//        if(!isAccessTokenValid) {
-//            Toast.makeText(SdkManagerJni.activity, R.string.access_token_invalid, Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//        if(!isQTValid) {
-//            Toast.makeText(SdkManagerJni.activity, R.string.qt_invalid, Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//
-//        // 支付基础参数
-//        QihooPayInfo payInfo = getQihooPayInfo(_isPayFixed);
-//        Intent intent = getPayIntent(payInfo);
-//
-//        // 必需参数，使用360SDK的支付模块。
-//        intent.putExtra(ProtocolKeys.FUNCTION_CODE, ProtocolConfigs.FUNC_CODE_PAY);
-//
-//        // 启动接口
-//        Matrix.invokeActivity(SdkManagerJni.activity, intent, mPayCallback);
-//    }
+        _order = order;
+        _identifier = identifier;
 
 
+        doSdkLogin();
+    }
+
+    public static void doSdkPay(String order, String identifier) {
+        System.out.println("Qh360SdkJni.doSdkPay");
+        System.out.println(order + ":" + identifier);
 
 
-    // 切换账号的回调
-//    private static IDispatcherCallback mAccountSwitchCallback = new IDispatcherCallback() {
-//
-//        @Override
-//        public void onFinished(String data) {
-//            // press back
-//            if (isCancelLogin(data)) {
-//                return;
-//            }
-//
-//            // 显示一下登录结果
-//            Toast.makeText(SdkManagerJni.activity, data, Toast.LENGTH_LONG).show();
-//
-////            Log.d(TAG, "mAccountSwitchCallback, data is " + data);
-//            // 解析access_token
-//            mAccessToken = parseAccessTokenFromLoginResult(data);
-//
-//            if (!TextUtils.isEmpty(mAccessToken)) {
-//                // 需要去应用的服务器获取用access_token获取一下带qid的用户信息
-//                getUserInfo();
-//            } else {
-//                Toast.makeText(SdkManagerJni.activity, "get access_token failed!", Toast.LENGTH_LONG).show();
-//            }
-//        }
-//    };
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(ProtocolKeys.IS_SCREEN_ORIENTATION_LANDSCAPE, true);
+        bundle.putString(ProtocolKeys.QIHOO_USER_ID, sUserId); //???
+        bundle.putString(ProtocolKeys.AMOUNT, "100");
+        bundle.putString(ProtocolKeys.PRODUCT_NAME, "商品名称");
+        bundle.putString(ProtocolKeys.PRODUCT_ID, "商品id");
 
-    // 支持离线模式的切换账号的回调
-//    private static IDispatcherCallback mAccountSwitchSupportOfflineCB = new IDispatcherCallback() {
-//
-//        @Override
-//        public void onFinished(String data) {
-//            // press back
-//            if (isCancelLogin(data)) {
-//                return;
-//            }
-//            // 显示一下登录结果
-//            Toast.makeText(SdkManagerJni.activity, data, Toast.LENGTH_LONG).show();
-////            Log.d(TAG, "mAccountSwitchSupportOfflineCB, data is " + data);
-//            // 解析access_token
-//            mAccessToken = parseAccessTokenFromLoginResult(data);
-//
-//            if (!TextUtils.isEmpty(mAccessToken)) {
-//                // 登录结果直接返回的userinfo中没有qid，需要去应用的服务器获取用access_token获取一下带qid的用户信息
-//                getUserInfo();
-//            } else {
-//                Toast.makeText(SdkManagerJni.activity, "get access_token failed!", Toast.LENGTH_LONG).show();
-//            }
-//        }
-//    };
+        // 必需参数，应用方提供的支付结果通知uri，最大255字符。360服务器将把支付接口回调给该uri，具体协议请查看文档中，支付结果通知接口–应用服务器提供接口。
+        bundle.putString(ProtocolKeys.NOTIFY_URI, "https://openapi.360.cn/status.html");
+
+        // 必需参数，游戏或应用名称，最大16中文字。
+        bundle.putString(ProtocolKeys.APP_NAME, "命运长夜");
+
+        // 必需参数，应用内的用户名，如游戏角色名。 若应用内绑定360账号和应用账号，则可用360用户名，最大16中文字。（充值不分区服，
+        // 充到统一的用户账户，各区服角色均可使用）。
+        bundle.putString(ProtocolKeys.APP_USER_NAME, sUserName);
+
+        // 必需参数，应用内的用户id。
+        // 若应用内绑定360账号和应用账号，充值不分区服，充到统一的用户账户，各区服角色均可使用，则可用360用户ID最大32字符。
+        bundle.putString(ProtocolKeys.APP_USER_ID, sUserId);
+
+        // 可选参数，应用扩展信息1，原样返回，最大255字符。
+//        bundle.putString(ProtocolKeys.APP_EXT_1, pay.getAppExt1());
+
+        // 可选参数，应用扩展信息2，原样返回，最大255字符。
+//        bundle.putString(ProtocolKeys.APP_EXT_2, pay.getAppExt2());
+
+        // 可选参数，应用订单号，应用内必须唯一，最大32字符。
+        bundle.putString(ProtocolKeys.APP_ORDER_ID, order);
+
+        // 必需参数，使用360SDK的支付模块。
+        bundle.putInt(ProtocolKeys.FUNCTION_CODE, ProtocolConfigs.FUNC_CODE_PAY);
+
+        Intent intent = new Intent(SdkManagerJni.activity, ContainerActivity.class);
+        intent.putExtra(ProtocolKeys.FUNCTION_CODE, ProtocolConfigs.FUNC_CODE_PAY);
+        intent.putExtras(bundle);
+
+
+
+
+        // 启动接口
+        Matrix.invokeActivity(SdkManagerJni.activity, intent, mPayCallback);
+    }
+
 
     // 支付的回调
-//    protected static IDispatcherCallback mPayCallback = new IDispatcherCallback() {
-//
-//        @Override
-//        public void onFinished(String data) {
-////            Log.d(TAG, "mPayCallback, data is " + data);
-//            if(TextUtils.isEmpty(data)) {
-//                return;
-//            }
-//
+    protected static IDispatcherCallback mPayCallback = new IDispatcherCallback() {
+
+        @Override
+        public void onFinished(String data) {
+            Log.d(TAG, "Qh360SdkJni.mPayCallback, data is " + data);
+            if(TextUtils.isEmpty(data)) {
+                return;
+            }
+
 //            boolean isCallbackParseOk = false;
 //            JSONObject jsonRes;
 //            try {
@@ -318,47 +248,9 @@ public class Qh360SdkJni {
 //            if (!isCallbackParseOk) {
 //                Toast.makeText(SdkManagerJni.activity, SdkManagerJni.activity.getString(R.string.data_format_error), Toast.LENGTH_LONG).show();
 //            }
-//        }
-//    };
+        }
+    };
 
-
-//    private static Intent getSwitchAccountIntent() {
-//
-//        Intent intent = new Intent(SdkManagerJni.activity, ContainerActivity.class);
-//
-//        // 必需参数，使用360SDK的切换账号模块。
-//        intent.putExtra(ProtocolKeys.FUNCTION_CODE, ProtocolConfigs.FUNC_CODE_SWITCH_ACCOUNT);
-//
-//        // 必须参数，360SDK界面是否以横屏显示。
-//        intent.putExtra(ProtocolKeys.IS_SCREEN_ORIENTATION_LANDSCAPE, _isLandScape);
-//
-//        //是否显示关闭按钮
-//        intent.putExtra(ProtocolKeys.IS_LOGIN_SHOW_CLOSE_ICON, _isShowClose);
-//
-//        // 可选参数，是否支持离线模式，默认值为false
-//        intent.putExtra(ProtocolKeys.IS_SUPPORT_OFFLINE, _isSupportOffline);
-//
-//        // 可选参数，是否隐藏欢迎界面
-//        intent.putExtra(ProtocolKeys.IS_HIDE_WELLCOME, _isHideWellcome);
-//
-//        /*
-//         * 指定界面背景（可选参数）：
-//         *  1.ProtocolKeys.UI_BACKGROUND_PICTRUE 使用的系统路径，如/sdcard/1.png
-//         *  2.ProtocolKeys.UI_BACKGROUND_PICTURE_IN_ASSERTS 使用的assest中的图片资源，
-//         *    如传入bg.png字符串，就会在assets目录下加载这个指定的文件
-//         *  3.图片大小不要超过5M，尺寸不要超过1280x720
-//         */
-//        // 可选参数，登录界面的背景图片路径，必须是本地图片路径
-//        // 可选参数，登录界面的背景图片路径，必须是本地图片路径
-////        intent.putExtra(ProtocolKeys.UI_BACKGROUND_PICTRUE, getUiBackgroundPicPath());
-//        // 可选参数，指定assets中的图片路径，作为背景图
-////        intent.putExtra(ProtocolKeys.UI_BACKGROUND_PICTURE_IN_ASSERTS, getUiBackgroundPathInAssets());
-//
-//        // 测试参数，发布时要去掉
-//        intent.putExtra(ProtocolKeys.IS_SOCIAL_SHARE_DEBUG, _isDebugSocialShare);
-//
-//        return intent;
-//    }
 
 //    protected Intent getPayIntent(QihooPayInfo pay) {
 //        Bundle bundle = new Bundle();
