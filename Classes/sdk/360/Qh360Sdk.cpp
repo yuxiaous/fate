@@ -9,67 +9,65 @@ using namespace cocos2d;
 
 #define  CLASS_NAME "com/hdngame/fate/qh360/Qh360SdkJni"
 
+//appid：202702226
+//appkey：f819ef3f4489f310beece90d28060c20
+//appsecret：bc7fcc8a6b0e4403091a2f772141e0b5
+//
+//http://yunpan.cn/cdIDC4LhUa9v2  访问密码 66dd
+//自检工具
+//http://yunpan.cn/cd7aTX5RCK5ng  访问密码 b381
 
-static Qh360Sdk *instance = nullptr;
 
-Qh360Sdk::Qh360Sdk()
-{
-    instance = this;
-}
+extern "C" {
+    void Qh360Sdk_init()
+    {
+        cocos2d::log("Qh360Sdk_init");
 
-Qh360Sdk *Qh360Sdk::getInstance()
-{
-    return instance;
+      JniMethodInfo minfo;
+      if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
+          minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+      }
+    }
+
+    void Qh360Sdk_destroy()
+    {
+        cocos2d::log("Qh360Sdk_destroy");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "destroy", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+    }
+
+    void Qh360Sdk_login()
+    {
+        cocos2d::log("Qh360Sdk_login");
+
+        JniMethodInfo minfo;
+        if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "doSdkLogin", "()V")) {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+    }
+
+    void Qh360Sdk_pay()
+    {
+        Qh360Sdk_login();
+    }
 }
 
 void Qh360Sdk::activityOnCreate()
 {
-    cocos2d::log("Qh360Sdk::activityOnCreate");
-
-    JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-    }
+    Qh360Sdk_init();
 }
 
 void Qh360Sdk::activityOnDestroy()
 {
-    cocos2d::log("Qh360Sdk::activityOnDestroy");
-
-    JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "destroy", "()V")) {
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-    }
-}
-
-void Qh360Sdk::init()
-{
-//    cocos2d::log("Qh360Sdk::init");
-//
-//    JniMethodInfo minfo;
-//    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "()V")) {
-//        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-//    }
-}
-
-void Qh360Sdk::update(float dt)
-{
-
-}
-
-void Qh360Sdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
-{
-
+    Qh360Sdk_destroy();
 }
 
 void Qh360Sdk::login()
 {
-    cocos2d::log("Qh360Sdk::login");
-
-    JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "doSdkLogin", "()V")) {
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
-    }
+    Qh360Sdk_login();
 }
 
 void Qh360Sdk::charge(const std::string &order, const std::string &identifier)

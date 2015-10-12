@@ -71,9 +71,21 @@
     <target name="-pre-compile" >
         <path id="third.lib" >
             <path path="${toString:project.all.jars.path}" />
+            <!-- Talking Data-->
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
+
+            <!-- KTPlay -->
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
-            <!--<pathelement location="../../../Classes/sdk/Baitong/android/bdappunion_2.0_log_enabled.jar" />-->
+
+            <!-- unipay -->
+            <!--<pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />-->
+            <pathelement location="targets/360/offline1441965582048_00018594_20150911/Multimode_UniPay_base.jar" />
+            <pathelement location="targets/360/offline1441965582048_00018594_20150911/Multimode_UniPay_payinfo.jar" />
+
+            <!-- egame -->
+            <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
+            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
 
             <!-- 360 -->
             <pathelement location="../../../Classes/sdk/360/android/libs/360SDK.jar" />
@@ -85,23 +97,31 @@
         </path>
     </target>
 
+    <!-- AndGame -->
+    <property name="java.compiler.classpath" value="../../../Classes/sdk/AndGame/android/runtime/CMBilling.jar" />
+
     <target name="-pre-build">
         <!-- src start -->
         <copy todir="src">
             <fileset dir="java">
                 <include name="com/hdngame/fate/GameUtils.java" />
                 <include name="com/hdngame/fate/SdkManagerJni.java" />
+                <include name="com/hdngame/fate/MixApplication.java" />
+                <include name="com/hdngame/fate/andgame/AndGameSdkJni.java" />
+                <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />
+                <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
+
                 <include name="com/hdngame/fate/qh360/Qh360SdkJni.java" />
-                <include name="com/hdngame/fate/qh360/payment/Constants.java" />
-                <include name="com/hdngame/fate/qh360/payment/QihooPayInfo.java" />
-                <include name="com/hdngame/fate/qh360/utils/ProgressUtil.java" />
-                <include name="com/hdngame/fate/qh360/utils/QihooUserInfo.java" />
-                <include name="com/hdngame/fate/qh360/utils/QihooUserInfoListener.java" />
-                <include name="com/hdngame/fate/qh360/utils/QihooUserInfoTask.java" />
-                <include name="com/hdngame/fate/qh360/utils/SdkHttpListener.java" />
-                <include name="com/hdngame/fate/qh360/utils/SdkHttpTask.java" />
-                <include name="com/hdngame/fate/qh360/utils/Utils.java" />
-                <include name="com/hdngame/fate/qh360/wxapi/WXEntryActivity.java" />
+                <!--<include name="com/hdngame/fate/qh360/payment/Constants.java" />-->
+                <!--<include name="com/hdngame/fate/qh360/payment/QihooPayInfo.java" />-->
+                <!--<include name="com/hdngame/fate/qh360/utils/ProgressUtil.java" />-->
+                <!--<include name="com/hdngame/fate/qh360/utils/QihooUserInfo.java" />-->
+                <!--<include name="com/hdngame/fate/qh360/utils/QihooUserInfoListener.java" />-->
+                <!--<include name="com/hdngame/fate/qh360/utils/QihooUserInfoTask.java" />-->
+                <!--<include name="com/hdngame/fate/qh360/utils/SdkHttpListener.java" />-->
+                <!--<include name="com/hdngame/fate/qh360/utils/SdkHttpTask.java" />-->
+                <!--<include name="com/hdngame/fate/qh360/utils/Utils.java" />-->
+                <!--<include name="com/hdngame/fate/qh360/wxapi/WXEntryActivity.java" />-->
             </fileset>
         </copy>
         <!-- src end -->
@@ -118,21 +138,51 @@
         </copy>
         <!-- KTplay end -->
 
-        <!-- Baitong start -->
-        <!--<copy todir="./">-->
-            <!--<fileset dir="../../../Classes/sdk/Baitong/android">-->
-                <!--<include name="libs/armeabi/" />-->
-            <!--</fileset>-->
-        <!--</copy>-->
-        <!-- Baitong end -->
+        <!-- and game start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/AndGame/android">
+                <include name="assets/AndGame.Sdk.Lib_20130_4E4DB8F73D48429B0A74BED2D59DC7A8.dat" />
+                <include name="assets/c_data_store.dat" />
+                <include name="assets/Charge.xml" />
+                <include name="assets/CMGC/" />
+                <include name="assets/Config.xml" />
+                <include name="assets/ConsumeCodeInfo.xml" />
+                <include name="assets/d_data_store.dat" />
+                <include name="assets/libmegbpp_02.02.13_00.so" />
+                <include name="libs/armeabi/libmegjb.so" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- and game end -->
 
-        <!-- 360 start -->
+        <!-- UniPay start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/unipay/android">
+                <include name="assets/unicom_base/" />
+                <include name="libs/armeabi/libsmsprotocol.so" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- UniPay end -->
+
+        <!-- EGame start-->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/egame/android">
+                <include name="assets/egame/" />
+                <include name="assets/egame_ds.dat" />
+                <include name="libs/armeabi/libdserv.so" />
+                <include name="libs/armeabi/libegamepay_dr2.so" />
+            </fileset>
+        </copy>
+        <!-- EGame end-->
+
+        <!-- 360 start-->
         <copy todir="./">
             <fileset dir="../../../Classes/sdk/360/android">
                 <include name="assets/" />
             </fileset>
         </copy>
-        <!-- 360 end -->
+        <!-- 360 end-->
     </target>
 
     <!-- Import the actual build file.

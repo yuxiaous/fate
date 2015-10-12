@@ -269,13 +269,6 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="libammsdk">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/Classes/sdk/TencentMidas/android/libs/libammsdk.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="m4399SingleOperateSDK">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/m4399RechargeSDK/android/libs/m4399SingleOperateSDK.jar!/" />
@@ -297,9 +290,9 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="MidasPlugin1.5.0c">
+    <library name="MidasPlugin1.5.0e">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/Classes/sdk/TencentMidas/android/libs/MidasPlugin1.5.0c.jar!/" />
+        <root url="jar://$PROJECT_DIR$/Classes/sdk/TencentMidas/android/libs/MidasPlugin1.5.0e.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -379,13 +372,6 @@
     <library name="wlogin_sdk">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/Classes/sdk/TencentMidas/android/libs/wlogin_sdk.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="Xg_sdk_2.37">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/Classes/sdk/TencentMidas/android/libs/Xg_sdk_2.37.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />

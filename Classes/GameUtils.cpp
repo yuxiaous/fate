@@ -114,6 +114,14 @@ int GameUtils::getChannelId()
     return 46;
 #elif defined(CHANNEL_LENOVO_YOUXIZHONGXIN)
     return 47;
+#elif defined(CHANNEL_XIAOMI)
+    return 48;
+#elif defined(CHANNEL_TENCENT_HUAWEI_YOUXIZHONGXING)
+    return 49;
+#elif defined(CHANNEL_TENCENT_HUAWEI_YINGYONGSHICHANG)
+    return 50;
+#elif defined(CHANNEL_TENCENT_LIULANQI)
+    return 51;
 #endif
     
     return 0;
@@ -165,7 +173,31 @@ int GameUtils::getSimOperator()
 }
 
 
+bool GameUtils::isDebugMode()
+{
+#if COCOS2D_DEBUG > 0
+    return true;
+#else
+    return false;
+#endif
+}
+
+bool GameUtils::isReleaseMode()
+{
+    return !isDebugMode();
+}
+
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+extern "C" {
+    bool Java_com_hdngame_fate_GameUtils_isDebugMode(JNIEnv *env, jobject thiz) {
+        return GameUtils::isDebugMode();
+    }
+    bool Java_com_hdngame_fate_GameUtils_isReleaseMode(JNIEnv *env, jobject thiz) {
+        return GameUtils::isReleaseMode();
+    }
+}
+
 std::string GameUtils::getUdidWithAndroid()
 {
     JniMethodInfo minfo;

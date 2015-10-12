@@ -263,7 +263,7 @@ var MainScene = ui.GuiSceneBase.extend({
 
     _on_btn_shop: function() {
         if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
-            MessageBoxOk.show("通过第一章第三关开放");
+            MessageBoxOk.show("通过第一章第二关开放");
             return;
         }
         this.pushScene(ShopScene);

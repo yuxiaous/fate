@@ -41,6 +41,7 @@ public class MiGameCenterSdkJni {
 
     public static void pay(String order, String info) {
         System.out.println("MiGameCenterSdkJni.pay");
+        System.out.println(order + ":" + info);
 
         MiGameCenterSdkJni.order = order;
         MiGameCenterSdkJni.info = info;
@@ -68,7 +69,7 @@ public class MiGameCenterSdkJni {
         public void handleMessage( Message msg ) {
             switch( msg.what ) {
                 case MiErrorCode.MI_XIAOMI_GAMECENTER_SUCCESS:
-                    Toast.makeText(SdkManagerJni.activity, "登录成功", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SdkManagerJni.activity, "登录成功", Toast.LENGTH_SHORT).show();
                     doPay();
                     break;
                 case MiErrorCode.MI_XIAOMI_GAMECENTER_ERROR_ACTION_EXECUTED:
@@ -82,17 +83,11 @@ public class MiGameCenterSdkJni {
     };
 
     private static void doPay() {
-        MiBuyInfo miBuyInfo = new MiBuyInfo();
-        miBuyInfo.setCpOrderId( UUID.randomUUID().toString() );
-        miBuyInfo.setCpUserInfo("xxxx透传参数");
-        miBuyInfo.setAmount(1);
-        MiCommplatform.getInstance().miUniPay(SdkManagerJni.activity, miBuyInfo,
-
-//        MiBuyInfoOffline offline = new MiBuyInfoOffline();
-//        offline.setCpOrderId(UUID.randomUUID().toString() );//订单号唯一(不为空)
-//        offline.setProductCode("com.demo_1");//商品代码,开发者 申请获得(不为空)
-//        offline.setCount(1);//购买数量 (商品数量最大 9999,最小 1)(不为空)
-//        MiCommplatform.getInstance ().miUniPayOffline(SdkManagerJni.activity, offline,
+        MiBuyInfoOffline offline = new MiBuyInfoOffline();
+        offline.setCpOrderId(MiGameCenterSdkJni.order);//订单号唯一(不为空)
+        offline.setProductCode(MiGameCenterSdkJni.info);//商品代码,开发者 申请获得(不为空)
+        offline.setCount(1);//购买数量 (商品数量最大 9999,最小 1)(不为空)
+        MiCommplatform.getInstance ().miUniPayOffline(SdkManagerJni.activity, offline,
                 new OnPayProcessListener() {
                     @Override
                     public void finishPayProcess(int code) {

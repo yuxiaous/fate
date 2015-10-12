@@ -4,22 +4,18 @@
 #include "Sdk.h"
 #include "cocos2d.h"
 
+extern "C" {
+    void Qh360Sdk_init();
+    void Qh360Sdk_destroy();
+    void Qh360Sdk_login();
+    void Qh360Sdk_pay();
+}
+
 class Qh360Sdk : public Sdk, public SdkAccountProtocol, public SdkChargeProtocol
 {
 public:
-    Qh360Sdk();
-    static Qh360Sdk *getInstance();
-
-    virtual void init() override;
-    virtual void update(float dt) override;
-    virtual void sdkCommand(const std::string &clazz, const std::string &method, const std::string &param) override;
-
-    // SdkAccountProtocol
     virtual void login() override;
-
-    // SdkChargeProtocol
     virtual void charge(const std::string &order, const std::string &identifier) override;
-
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 public:

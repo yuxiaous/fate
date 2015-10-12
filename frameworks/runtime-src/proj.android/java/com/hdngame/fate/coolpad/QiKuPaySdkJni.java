@@ -14,52 +14,62 @@ import java.lang.System;
  */
 public class QiKuPaySdkJni {
 
-    public static native String getAppId();
-    public static native String getAppKey();
+    public static String _appId = "";
+    public static String _appKey = "";
 
-    public static void init() {
+    public static void init(String appId, String appKey) {
         System.out.println("QiKuPaySdkJni.init");
 
-        String appid = getAppId();
-        QiKuPay.payInit(SdkManagerJni.activity, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE, appid);
+        _appId = appId;
+        _appKey = appKey;
+
+        QiKuPay.payInit(SdkManagerJni.activity, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE, _appId);
     }
 
-    public static void pay(String order, String info) {
+    private static String _order = "";
+    private static String _waresid = "";
+    private static int _price = 0;
+
+    public static void pay(String order, String waresid, int price) {
         System.out.println("QiKuPaySdkJni.pay");
-        System.out.println(order + ":" + info);
+        System.out.println(order + ":" + waresid + ":" + price);
 
-        PayParams parms = new PayParams();
-        parms.setAppId(getAppId());
-        parms.setAppKey(getAppKey());
-        parms.setWaresid(String.valueOf(1));
-        parms.setCpOrder(order);
-        parms.setCpPrivate("cp private info!!");
-        parms.setPrice(123);
+        _order = order;
+        _waresid = waresid;
+        _price = price;
 
-        QiKuPay.startPay(SdkManagerJni.activity, parms, null, iPayResultCallback);
+        SdkManagerJni.activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                PayParams parms = new PayParams();
+                parms.setAppId(_appId);
+                parms.setAppKey(_appKey);
+                parms.setWaresid(_waresid);
+                parms.setCpOrder(_order);
+                parms.setPrice(_price);
+
+                QiKuPay.startPay(SdkManagerJni.activity, parms, null, iPayResultCallback);
+            }
+        });
     }
 
     final static CallBackToCPInterface iPayResultCallback = new CallBackToCPInterface() {
         @Override
-        public void paySuccess(String result, String resultCode) {
+        public void paySuccess(String resultInfo, String resultCode) {
             System.out.println("iPayResultCallback.paySuccess");
-            System.out.println(result + ":" + resultCode);
-            /*Toast.makeText(TestActivity.this,
-              "CP reciver  result: " + result,
-              1).show();*/
-//            sendMessage(PAY_SUCCESS,null);
-//            Log.e("coolpay", " cp  paySuccess !! ");
+            System.out.println(resultInfo + ":" + resultCode);
+
+            onQiKuPayChargeCallback(0, _order);
         }
 
         @Override
-        public void payFail(String result, String resultCode) {
+        public void payFail(String resultInfo, String resultCode) {
             System.out.println("iPayResultCallback.payFail");
-            System.out.println(result + ":" + resultCode);
-           /* Toast.makeText(TestActivity.this,
-              "CP reciver  result: " + result,
-              1).show();*/
-//            sendMessage(PAY_FAIL,null);
-//            Log.e("coolpay", " cp  payFaile !! ");
+            System.out.println(resultInfo + ":" + resultCode);
+
+            onQiKuPayChargeCallback(1, _order);
         }
     };
+
+    public static native void onQiKuPayChargeCallback(int result, String order);
 }

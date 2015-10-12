@@ -1,14 +1,8 @@
 var RechargePanel = ui.GuiWindowBase.extend({
     _guiFile : "ui/rechargeLayer.json",
 
-    ctor : function(goldAndDiamond_){
+    ctor : function(){
         this._super();
-
-        this._goldAndDiamond = false;
-        if(goldAndDiamond_ != undefined){
-            this._goldAndDiamond = goldAndDiamond_;
-        }
-
     },
 
     onEnter : function(){
@@ -29,16 +23,18 @@ var RechargePanel = ui.GuiWindowBase.extend({
         }
 
         this._itemContainer = [];
-        _.forEach(["ProjectNode_1",
+        _.forEach([
+            "ProjectNode_1",
             "ProjectNode_2",
             "ProjectNode_3",
             "ProjectNode_4",
             "ProjectNode_5",
             "ProjectNode_6",
             "ProjectNode_7",
-            "ProjectNode_8"], function (nodeStr_,idx) {
+            "ProjectNode_8"
+        ], function (nodeStr_,idx) {
             var widgetNode_ = this.seekWidgetByName(nodeStr_);
-            var itemPanel = new RechargeItem(this._goldAndDiamond);
+            var itemPanel = new RechargeItem();
             itemPanel.setWidget(widgetNode_);
             this._itemContainer.push(itemPanel);
             itemPanel.setVisible(false);
@@ -83,13 +79,11 @@ var RechargePanel = ui.GuiWindowBase.extend({
 });
 
 var RechargeItem = ui.GuiController.extend({
-    ctor : function (goldAndDiamond_) {
+    ctor : function () {
         this._super();
 
         this.item_id = 0;
         this.item_idx = 0;
-
-        this._goldAndDiamond = goldAndDiamond_;
     },
 
     onEnter : function(){
@@ -103,7 +97,7 @@ var RechargeItem = ui.GuiController.extend({
             itemIcon : this.seekWidgetByName("item_icon"),
             persentedBg : this.seekWidgetByName("bg_persented"),
             diamondIcon : this.seekWidgetByName("diamond_icon")
-        }
+        };
 
         this._bindings = [
             notification.createBinding(notification.event.SHOP_UPDATE_HISTORY_BUYINFO, this.refreshItemInfo, this)
@@ -112,27 +106,26 @@ var RechargeItem = ui.GuiController.extend({
     },
 
     refreshItemInfo : function () {
-        var iconStrContainer = ["images/code_ui/ui_416.png",
+        var goldIconStrContainer = [
+            "images/code_ui/ui_416.png",
             "images/code_ui/ui_417.png",
             "images/code_ui/ui_418.png",
             "images/code_ui/ui_419.png",
             "images/code_ui/ui_420.png",
             "images/code_ui/ui_421.png",
             "images/code_ui/ui_422.png",
-            "images/code_ui/ui_423.png",];
+            "images/code_ui/ui_423.png"];
 
-        if(this._goldAndDiamond){
-            iconStrContainer = ["images/code_ui/ui_420.png",
-                "images/code_ui/ui_421.png",
-                "images/code_ui/ui_422.png",
-                "images/code_ui/ui_423.png",
-                "images/code_ui/ui_436.png",
-                "images/code_ui/ui_437.png",
-                "images/code_ui/ui_438.png",
-                "images/code_ui/ui_439.png",];
-        }
+        var diamodIconStrContainer = [
+            "images/code_ui/ui_420.png",
+            "images/code_ui/ui_421.png",
+            "images/code_ui/ui_422.png",
+            "images/code_ui/ui_423.png",
+            "images/code_ui/ui_436.png",
+            "images/code_ui/ui_437.png",
+            "images/code_ui/ui_438.png",
+            "images/code_ui/ui_439.png"];
 
-        this._ui.itemIcon.loadTexture(iconStrContainer[this.item_idx]);
 
         var config = ShopSystem.getConfig(this.item_id);
 
@@ -150,17 +143,38 @@ var RechargeItem = ui.GuiController.extend({
 
                     this.buyGoldOrDiamond(this.item_id);
                 }
-            },this)
+            },this);
+
+            var item_idx = 0;
+            switch (this.item_id) {
+                case '15001':
+                case '16001': item_idx = 0; break;
+                case '15002':
+                case '16002': item_idx = 1; break;
+                case '15003':
+                case '16003': item_idx = 2; break;
+                case '15004':
+                case '16004': item_idx = 3; break;
+                case '16006': item_idx = 4; break;
+                case '16007': item_idx = 5; break;
+                case '16008': item_idx = 6; break;
+                case '16009': item_idx = 7; break;
+            }
+
+            if(config.buy_type == ShopSystem.GoodType.Gold) {
+                this._ui.itemIcon.loadTexture(goldIconStrContainer[item_idx]);
+                this._ui.getLabel.setString(this._ui.getLabel._str_original.format(config.buy_count/10000));
+            }
+            else if(config.buy_type == ShopSystem.GoodType.Diamond) {
+                this._ui.itemIcon.loadTexture(diamodIconStrContainer[item_idx]);
+                this._ui.getLabel.setString(config.buy_count+"钻石");
+            }
 
             if(config.pay_type == ShopSystem.PayType.RMB){
-                this._ui.getLabel.setString(config.buy_count+"钻石");
-
                 this._ui.diamondIcon.setVisible(false);
                 this._ui.payLabel.setString(this._ui.payLabel._str_original.format(config.pay_cost));
             }
             else if(config.pay_type == ShopSystem.PayType.Diamond){
-                this._ui.getLabel.setString(this._ui.getLabel._str_original.format(config.buy_count/10000));
-
                 this._ui.diamondIcon.setVisible(true);
                 this._ui.payLabel.setString(config.pay_cost);
             }
@@ -171,7 +185,8 @@ var RechargeItem = ui.GuiController.extend({
             else{
                 if(config.sale_count > ShopSystem.instance.getHistoryBuyInfo(this.item_id)){
                     this._ui.persentedBg.setVisible(true);
-                    var persentedValue = parseFloat( (config.buy_count / 10000 ) * (config.on_sale/10) );
+                    var org_value = 10 * (config.buy_count / 10000 ) / (20 - config.on_sale);
+                    var persentedValue = parseFloat( (config.buy_count/10000) - org_value );
                     this._ui.persentedLabel.setString(this._ui.persentedLabel._str_original.format(persentedValue.toFixed(1)));
                 }
                 else{
@@ -227,9 +242,7 @@ var RechargeItem = ui.GuiController.extend({
 });
 
 RechargePanel.show = function() {
-    var channel_id = util.getChannelId();
-    var allGold = (channel_id == GameChannel.Qh360) || (channel_id == GameChannel.TencentMidas);
-    var rechargeGold = new RechargePanel(!allGold);
+    var rechargeGold = new RechargePanel();
     rechargeGold.pop();
 };
 

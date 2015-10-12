@@ -9,6 +9,7 @@ var SceneBase = lh.LHScene.extend({
             sceneName = "scenes/" + sceneName + ".lhplist";
         }
         this._super(sceneName);
+        LOG(sceneName);
 
         this._hero = null;
         this._boss = null;

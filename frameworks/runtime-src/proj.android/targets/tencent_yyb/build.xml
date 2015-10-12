@@ -86,6 +86,16 @@
             <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
+
+            <!-- qq -->
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/android-support-v4.jar" />
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/libammsdk.jar" />
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/mid-sdk-2.10.jar" />
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/MidasPlugin1.5.0e.jar" />
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/mqqopenpay.jar" />
+            <!--<pathelement location="../../../Classes/sdk/TencentMidas/android/libs/MSDK_Android_2.8.0a.jar" />-->
+            <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/wlogin_sdk.jar" />
+            <!--<pathelement location="../../../Classes/sdk/TencentMidas/android/libs/Xg_sdk_2.37.jar" />-->
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -106,7 +116,7 @@
                 <include name="com/hdngame/fate/andgame/AndGameSdkJni.java" />
                 <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />
                 <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
-                <!--<include name="com/hdngame/fate/telecom/TencentMidasSdkJni.java" />-->
+                <include name="com/hdngame/fate/qq/TencentMidasSdkJni.java" />
             </fileset>
         </copy>
         <!-- src end -->
@@ -160,6 +170,16 @@
             </fileset>
         </copy>
         <!-- EGame end-->
+
+        <!-- qq start -->
+        <copy todir="./">
+            <fileset dir="../../../Classes/sdk/TencentMidas/android">
+                <include name="assets/" />
+                <include name="libs/armeabi/" />
+                <include name="res/" />
+            </fileset>
+        </copy>
+        <!-- qq end -->
     </target>
 
     <!-- Import the actual build file.
