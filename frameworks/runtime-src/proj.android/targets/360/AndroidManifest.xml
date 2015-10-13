@@ -103,15 +103,15 @@
         <!-- 360 start -->
         <meta-data
                 android:name="QHOPENSDK_APPID"
-                android:value="201696301" >
+                android:value="202702226" >
         </meta-data>
         <meta-data
                 android:name="QHOPENSDK_APPKEY"
-                android:value="08158bf9f09b919790a63f10c381be52" >
+                android:value="f819ef3f4489f310beece90d28060c20" >
         </meta-data>
         <meta-data
                 android:name="QHOPENSDK_PRIVATEKEY"
-                android:value="dd09f2d209a268973d55a29d7f7961a4" >
+                android:value="7113892a082f45640b045b5bbbbb3f7f" >
         </meta-data>
         <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
         <activity

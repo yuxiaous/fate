@@ -211,7 +211,6 @@ ShopSystem.getShopPlatformId = function() {
         case GameChannel.LenovoYouXiZhongXin:
             return [sim_platform_id];
         case GameChannel.Qh360:
-            return [7];
             return [sim_platform_id, 7];
         case GameChannel.TencentYingYongBao:
         case GameChannel.TencentHuaweiYouXiZhongXing:

@@ -91,6 +91,9 @@ var StartLayerScene = ui.GuiSceneBase.extend({
             case GameChannel.BaiduDuoku:
                 sdk_manager.sendSdkCommand("DKSingle", "exit", "");
                 break;
+            case GameChannel.Qh360:
+                sdk_manager.sendSdkCommand("Qh360", "exit", "");
+                break;
             default:
                 MessageBoxOkCancel.show("确定退出游戏？").setOkCallback(function() {
                     sdk_manager.sendSdkCommand("", "exit", "");
