@@ -1,18 +1,13 @@
 package com.hdngame.fate.qh360;
 
 
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Toast;
 import android.os.Bundle;
 import com.hdngame.fate.GameUtils;
 import com.hdngame.fate.SdkManagerJni;
-//import com.hdngame.fate.qh360.payment.Constants;
 import com.hdngame.fate.qh360.utils.*;
-//import com.hdngame.fate.qh360.payment.QihooPayInfo;
 import com.hdngame.fate.qh360.utils.SdkHttpTask;
 import com.qihoo.gamecenter.sdk.matrix.Matrix;
 import com.qihoo.gamecenter.sdk.activity.ContainerActivity;
@@ -22,6 +17,7 @@ import com.qihoo.gamecenter.sdk.common.IDispatcherCallback;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.Override;
 import java.lang.String;
 
 /**
@@ -36,14 +32,18 @@ public class Qh360SdkJni {
 
 
     private static String _order = null;
-    private static String _identifier = null;
+    private static String _productid = null;
+    private static String _productname = null;
+    private static String _amount = null;
 
-    public static void pay(String order, String identifier) {
+    public static void pay(String order, String productid, String productname, String amount) {
         System.out.println("Qh360SdkJni.pay");
-        System.out.println(order + ":" + identifier);
+        System.out.println(order + ":" + productname + ":" + amount);
 
         _order = order;
-        _identifier = identifier;
+        _productid = productid;
+        _productname = productname;
+        _amount = amount;
 
         doSdkLogin();
     }
@@ -104,8 +104,8 @@ public class Qh360SdkJni {
 
 
     private static SdkHttpTask _sdkHttpTask = null;
-    private static String _userId = null;
-    private static String _userName = null;
+    private static String _userid = null;
+    private static String username = null;
     private static void getUserInfo(String token) {
         System.out.println("Qh360SdkJni.getUserInfo token:" + token);
 
@@ -127,8 +127,8 @@ public class Qh360SdkJni {
 
                 try {
                     JSONObject joResp = new JSONObject(response);
-                    _userId = joResp.optString("id");
-                    _userName = joResp.optString("name");
+                    _userid = joResp.optString("id");
+                    username = joResp.optString("name");
 
                     doSdkPay();
                 }
@@ -150,14 +150,14 @@ public class Qh360SdkJni {
 
         Bundle bundle = new Bundle();
         bundle.putBoolean(ProtocolKeys.IS_SCREEN_ORIENTATION_LANDSCAPE, true);
-        bundle.putString(ProtocolKeys.QIHOO_USER_ID, _userId);
-        bundle.putString(ProtocolKeys.AMOUNT, "100");
-        bundle.putString(ProtocolKeys.PRODUCT_NAME, "商品名称");
-        bundle.putString(ProtocolKeys.PRODUCT_ID, "商品id");
+        bundle.putString(ProtocolKeys.QIHOO_USER_ID, _userid);
+        bundle.putString(ProtocolKeys.AMOUNT, _amount);
+        bundle.putString(ProtocolKeys.PRODUCT_NAME, _productname);
+        bundle.putString(ProtocolKeys.PRODUCT_ID, _productid);
         bundle.putString(ProtocolKeys.NOTIFY_URI, "https://openapi.360.cn/status.html");
         bundle.putString(ProtocolKeys.APP_NAME, "命运长夜(单机版)");
-        bundle.putString(ProtocolKeys.APP_USER_NAME, _userName);
-        bundle.putString(ProtocolKeys.APP_USER_ID, _userId);
+        bundle.putString(ProtocolKeys.APP_USER_NAME, username);
+        bundle.putString(ProtocolKeys.APP_USER_ID, _userid);
         bundle.putString(ProtocolKeys.APP_ORDER_ID, _order);
         bundle.putInt(ProtocolKeys.FUNCTION_CODE, ProtocolConfigs.FUNC_CODE_PAY);
 

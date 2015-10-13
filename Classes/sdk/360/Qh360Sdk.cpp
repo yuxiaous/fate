@@ -3,6 +3,7 @@
 #include "platform/android/jni/JniHelper.h"
 #include "platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
 #include <jni.h>
+#include "GameUtils.h"
 
 using namespace cocos2d;
 
@@ -38,11 +39,16 @@ extern "C" {
 //             return;
 //         }
 
+        std::vector<std::string> ret;
+        GameUtils::split(identifier, ",", ret);
+
          JniMethodInfo minfo;
-         if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;Ljava/lang/String;)V")) {
+         if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "pay", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")) {
              jstring jorder = minfo.env->NewStringUTF(order.c_str());
-             jstring jidentifier = minfo.env->NewStringUTF(identifier.c_str());
-             minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jidentifier);
+             jstring jproductid = minfo.env->NewStringUTF(ret[0].c_str());
+             jstring jproductname = minfo.env->NewStringUTF(ret[1].c_str());
+             jstring jamount = minfo.env->NewStringUTF(ret[2].c_str());
+             minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, jorder, jproductid, jproductname, jamount);
          }
     }
 
@@ -96,4 +102,14 @@ void Qh360Sdk::activityOnDestroy()
 void Qh360Sdk::charge(const std::string &order, const std::string &identifier)
 {
     Qh360Sdk_charge(order, identifier);
+}
+
+void Qh360Sdk::sdkCommand(const std::string &clazz, const std::string &method, const std::string &param)
+{
+    if(clazz != "Qh360"){
+        return;
+    }
+    if(method == "exit") {
+        Qh360Sdk_quit();
+    }
 }
