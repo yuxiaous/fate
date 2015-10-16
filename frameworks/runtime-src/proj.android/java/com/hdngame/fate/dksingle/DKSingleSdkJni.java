@@ -60,14 +60,20 @@ public class DKSingleSdkJni {
     public static void pause() {
         System.out.println("DKSingleSdkJni.pause");
 
-        DKPlatform.getInstance().bdgamePause(SdkManagerJni.activity,
-                new IDKSDKCallBack() {
-                    @Override
-                    public void onResponse(String paramString) {
-                        System.out.println("DKSingleSdkJni.pause.IDKSDKCallBack.onResponse");
-                        System.out.println(paramString);
-                    }
-                });
+        SdkManagerJni.activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                DKPlatform.getInstance().bdgamePause(SdkManagerJni.activity,
+                        new IDKSDKCallBack() {
+                            @Override
+                            public void onResponse(String paramString) {
+                                System.out.println("DKSingleSdkJni.pause.IDKSDKCallBack.onResponse");
+                                System.out.println(paramString);
+                            }
+                        });
+            }
+        });
+
     }
 
     public static void exit() {
