@@ -429,7 +429,7 @@ For More information:
             if build_mode == "release":
                 varsion_name = self._xml_attr(app_android_root, 'AndroidManifest.xml', 'manifest', 'android:versionName')
                 version_code = self._xml_attr(app_android_root, 'AndroidManifest.xml', 'manifest', 'android:versionCode')
-                signed_name = "%s_v%s_%s_%s.apk" % (project_name, varsion_name, version_code, time.strftime("%Y%m%d_%H%M%S"))
+                signed_name = "%s_v%s(%s)_%s.apk" % (project_name, varsion_name, version_code, time.strftime("%Y%m%d_%H%M%S"))
                 apk_path = os.path.join(output_dir, signed_name)
                 if os.path.exists(apk_path):
                     os.remove(apk_path)
