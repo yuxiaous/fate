@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.hdngame.fate.qh360"
-      android:versionCode="4"
+      android:versionCode="5"
       android:versionName="1.1"
       android:installLocation="auto">
 
@@ -176,13 +176,11 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
-
         <activity
                 android:name="com.qihoo.psdk.app.QStatActivity"
                 android:launchMode="singleInstance"
                 android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
-
         <service
                 android:name="com.qihoo.psdk.remote.QRemoteService"
                 android:exported="true"
@@ -200,6 +198,36 @@
             </intent-filter>
         </service>
         <!-- 推送SDK end -->
+        <!-- qiku组件 start -->
+        <activity
+                android:name="com.coolcloud.uac.android.plug.view.LoginActivity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+                android:name="com.coolcloud.uac.android.api.view.AssistActivity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+                android:name="com.coolcloud.uac.android.api.view.AuthenticateActivity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+                android:name="com.coolcloud.uac.android.api.view.FindpwdActivity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+                android:name="com.coolcloud.uac.android.api.view.LoginActivity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+                android:name="com.coolcloud.uac.android.api.view.OAuth2Activity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+                android:name="com.coolcloud.uac.android.api.view.RegisterActivity"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!-- qiku组件 end -->
         <!-- 360 end -->
     </application>
 
