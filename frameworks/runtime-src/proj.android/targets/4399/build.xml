@@ -115,6 +115,7 @@
                 <include name="com/hdngame/fate/unicom/UniPaySdkJni.java" />
                 <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
                 <include name="com/hdngame/fate/m4399/M4399RechargeSdkJni.java" />
+                <include name="com/hdngame/fate/SplashActivity.java" />
             </fileset>
         </copy>
         <!-- src end -->
