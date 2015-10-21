@@ -35,17 +35,21 @@ public class Qh360SdkJni {
     private static String _productid = null;
     private static String _productname = null;
     private static String _amount = null;
+    private static boolean _paying = false;
 
     public static void pay(String order, String productid, String productname, String amount) {
         System.out.println("Qh360SdkJni.pay");
         System.out.println(order + ":" + productname + ":" + amount);
 
-        _order = order;
-        _productid = productid;
-        _productname = productname;
-        _amount = amount;
+        if(_paying == false) {
+            _paying = true;
+            _order = order;
+            _productid = productid;
+            _productname = productname;
+            _amount = amount;
 
-        doSdkLogin();
+            doSdkLogin();
+        }
     }
 
     private static void doSdkLogin() {
@@ -171,6 +175,8 @@ public class Qh360SdkJni {
         @Override
         public void onFinished(String resp) {
             System.out.println("Qh360SdkJni.mPayCallback, data is " + resp);
+            _paying = false;
+
             if(TextUtils.isEmpty(resp)) {
                 return;
             }

@@ -16,7 +16,13 @@ extern "C" {
         cocos2d::log("TencentMidasSdk_init");
 
         std::string offerid = "1450004328";
-        std::string appkey = "OrLiuwhyCCFyPskaNF5Q8BzFboPmryNU";
+        std::string appkey;
+        if(GameUtils::isDebugMode()) {
+            appkey = "OrLiuwhyCCFyPskaNF5Q8BzFboPmryNU";
+        }
+        else {
+            appkey = "IJirRliOnIa29GVk2cgQCeMSF8zZx9iz";
+        }
 
         JniMethodInfo minfo;
         if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "(Ljava/lang/String;Ljava/lang/String;)V")) {
