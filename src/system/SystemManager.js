@@ -32,6 +32,7 @@ var SystemManager = {
         addSubSystem(GiftSystem);
         addSubSystem(GuideSystem);
         addSubSystem(StrengthenSystem);
+        addSubSystem(MissionSystem);
     },
 
     end: function() {

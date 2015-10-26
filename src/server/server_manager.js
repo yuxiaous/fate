@@ -33,6 +33,7 @@ var server_manager = {
         addSubServer(gift_server);
         addSubServer(guide_server);
         addSubServer(strengthen_server);
+        addSubServer(mission_server);
 
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.flush, 60);
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.sync);
