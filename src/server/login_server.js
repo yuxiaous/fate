@@ -12,9 +12,6 @@ var login_server = {
 
     },
 
-    flush: function() {
-    },
-
     sync: function() {
 
     }
@@ -48,7 +45,6 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
 
 
     // start player server
-    server_manager.flush();
     server_manager.end();
 
     database.init("saber");
@@ -104,12 +100,16 @@ server.registerCallback(net_protocol_handlers.CMD_CS_AUTH, function(obj) {
     server.send(net_protocol_handlers.CMD_SC_UPDATE_GUIDE_INFO,{
         guide_id : guide_server.guideData.curGuideId,
         guide_info : guide_server.guideData.guide_info
-    })
+    });
 
     //更新当天是否更新了VIP功能
     server.send(net_protocol_handlers.CMD_SC_VIP_IS_GET_INFO,{
         get_done :login_reward_server.getCurDailyVipIsGetDone()
-    })
+    });
+
+    server.send(net_protocol_handlers.CMD_SC_MISSION_INFO, {
+        missions: mission_server.getMissionList()
+    });
 
     //更新商店购买物品的次数
     shop_server.sendHistoryBuyInfo();

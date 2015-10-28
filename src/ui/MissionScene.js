@@ -52,13 +52,13 @@ var MissionScene = ui.GuiWindowBase.extend({
     },
 
     refreshTab: function() {
-        var enable = (this._class == MissionSystem.Class.Daily);
-        this._ui.tab_daily.setEnabled(!enable);
-        this._ui.tab_daily.setBright(!enable);
+        var enable = (this._class != MissionSystem.Class.Daily);
+        this._ui.tab_daily.setEnabled(enable);
+        this._ui.tab_daily.setBright(enable);
 
-        enable = (this._class == MissionSystem.Class.Achievement);
-        this._ui.tab_achievement.setEnabled(!enable);
-        this._ui.tab_achievement.setBright(!enable);
+        enable = (this._class != MissionSystem.Class.Achievement);
+        this._ui.tab_achievement.setEnabled(enable);
+        this._ui.tab_achievement.setBright(enable);
     },
 
     clearList: function() {
@@ -69,7 +69,12 @@ var MissionScene = ui.GuiWindowBase.extend({
     createList: function() {
         this.clearList();
 
-        _.each(configdb.renwu, function(config) {
+        _.each(MissionSystem.instance.mission_list, function(info) {
+            var config = configdb.renwu[info.mission_id];
+            if(config == undefined) {
+                return;
+            }
+
             if(config.class != this._class) {
                 return;
             }
@@ -94,13 +99,20 @@ MissionScene.Cell = ui.GuiWidgetBase.extend({
 
         this._ui = {
             lbl_name: this.seekWidgetByName("lbl_name"),
-            lbl_desc: this.seekWidgetByName("lbl_desc")
+            lbl_desc: this.seekWidgetByName("lbl_desc"),
+            status_1: this.seekWidgetByName("img_status_1"),
+            status_2: this.seekWidgetByName("img_status_2"),
+            status_3: this.seekWidgetByName("img_status_3"),
+            lbl_progress_1: this.seekWidgetByName("lbl_progress_1"),
+            lbl_progress_2: this.seekWidgetByName("lbl_progress_2"),
+            lbl_progress_3: this.seekWidgetByName("lbl_progress_3")
         };
 
         this.refreshView();
     },
 
     onExit: function() {
+        this._ui = null;
         this._super();
     },
 
@@ -110,11 +122,47 @@ MissionScene.Cell = ui.GuiWidgetBase.extend({
             return;
         }
 
+        var info = MissionSystem.instance.mission_list[this._mission_id];
+
+        // status
+        var count = info ? info.count : 0;
+        var reward = info ? info.reward : 0;
+        if(reward == 1) {
+            this._ui.status_1.setVisible(false);
+            this._ui.status_2.setVisible(false);
+            this._ui.status_3.setVisible(true);
+        }
+        else if(count >= config.need_num) {
+            this._ui.status_1.setVisible(false);
+            this._ui.status_2.setVisible(true);
+            this._ui.status_3.setVisible(false);
+        }
+        else {
+            this._ui.status_1.setVisible(true);
+            this._ui.status_2.setVisible(false);
+            this._ui.status_3.setVisible(false);
+        }
+
         // name
         this._ui.lbl_name.setString(config.name);
 
         // desc
         this._ui.lbl_desc.setString(config.desc);
+
+        // reward
+
+        // progress
+        this._ui.lbl_progress_1.setString(this._ui.lbl_progress_1._str_original.format(count, config.need_num));
+        this._ui.lbl_progress_2.setString(this._ui.lbl_progress_2._str_original.format(count, config.need_num));
+        this._ui.lbl_progress_3.setString(this._ui.lbl_progress_3._str_original.format(count, config.need_num));
+    },
+
+    _on_btn_goto: function() {
+
+    },
+
+    _on_btn_get_reward: function() {
+        MissionSystem.instance.getMissionReward(this._mission_id);
     }
 });
 

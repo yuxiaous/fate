@@ -11,7 +11,7 @@ net_error_code[101] = {
 net_error_code.ERR_LESS_DIAMOND = 102;
 net_error_code[102] = {
 	code: 102,
-	desc: "钻石不足,是否前往购买钻石"
+	desc: "钻石不足"
 };
 
 net_error_code.ERR_LESS_ITEM = 103;
@@ -72,5 +72,11 @@ net_error_code.ERR_EQUiP_SLOT_LEVEL_LIMIT = 1301;
 net_error_code[1301] = {
 	code: 1301,
 	desc: "锻造等级不能超过当前人物等级"
+};
+
+net_error_code.ERR_MISSION_HAVE_REWARD = 1401;
+net_error_code[1401] = {
+	code: 1401,
+	desc: "已经领取过了任务奖励"
 };
 

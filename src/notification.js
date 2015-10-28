@@ -137,6 +137,9 @@ notification.event = {
     SKIN_INFO: 701,
     SKIN_CHANGE_RESULT: 702,
 
+    MISSION: 800,
+    MISSION_INFO: 801,
+
     ROLE_ATTACK: 10001,
     ROLE_HIT: 10002,
     ROLE_DIE: 10003,

@@ -35,13 +35,11 @@ var server_manager = {
         addSubServer(strengthen_server);
         addSubServer(mission_server);
 
-        cc.director.getScheduler().scheduleCallbackForTarget(this, this.flush, 60);
         cc.director.getScheduler().scheduleCallbackForTarget(this, this.sync);
     },
 
     end: function() {
         LOG("server manager end");
-        cc.director.getScheduler().unscheduleCallbackForTarget(this, this.flush);
         cc.director.getScheduler().unscheduleCallbackForTarget(this, this.sync);
 
         _.each(this.servers, function(server) {
@@ -50,14 +48,6 @@ var server_manager = {
             }
         });
         this.servers.length = 0;
-    },
-
-    flush: function() {
-        _.each(this.servers, function(server) {
-            if(server.flush) {
-                server.flush();
-            }
-        });
     },
 
     sync: function() {

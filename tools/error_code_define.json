@@ -16,5 +16,7 @@
 
     [1201, "ERR_SKILL_LEVEL_LIMIT", "技能等级不能超过当前人物等级"],
 
-    [1301, "ERR_EQUiP_SLOT_LEVEL_LIMIT", "锻造等级不能超过当前人物等级"]
+    [1301, "ERR_EQUiP_SLOT_LEVEL_LIMIT", "锻造等级不能超过当前人物等级"],
+
+    [1401, "ERR_MISSION_HAVE_REWARD", "已经领取过了任务奖励"]
 ]

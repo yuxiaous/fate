@@ -10,9 +10,6 @@ var gm_server = {
     end: function() {
     },
 
-    flush: function() {
-    },
-
     // ar [id] [qty] 加资源(1金币 2钻石 3行动力 4经验值)
     // ai [id] [qty] 添加物品
     // ae [id] [qty] 添加装备

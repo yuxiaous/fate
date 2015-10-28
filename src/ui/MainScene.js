@@ -271,6 +271,11 @@ var MainScene = ui.GuiSceneBase.extend({
         //win.pop();
     },
 
+    _on_btn_mission: function() {
+        var win = new MissionScene();
+        win.pop();
+    },
+
     _on_btn_redemption: function() {
         sdk_manager.sendSdkCommand("Ktplay", "showRedemptionView");
     }

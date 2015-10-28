@@ -141,6 +141,14 @@ _BindFunc(900, function(obj) {
 	net_protocol_handlers.ON_CMD_CS_PLAYER_INFO(obj);
 });
 
+// @protocol 领取任务奖励结果
+// @param {uint32} result, 结果
+net_protocol_handlers.CMD_SC_MISSION_GET_REWARD_RESULT = 1705;
+_BindFunc(1705, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_MISSION_GET_REWARD_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_MISSION_GET_REWARD_RESULT(obj);
+});
+
 // @protocol 开始初始化
 net_protocol_handlers.CMD_SC_INIT_BEGIN = 505;
 _BindFunc(505, function(obj) {
@@ -234,6 +242,24 @@ _BindFunc(1105, function(obj) {
 	cc.assert(obj.history_buy_info != undefined, "CMD_SC_SHOP_HISTORY_BUY_INFO.history_buy_info is undefined.");
 	net_protocol_handlers.ON_CMD_SC_SHOP_HISTORY_BUY_INFO(obj);
 });
+
+// @protocol 任务完成情况
+// @param {uint32} mission_type, 任务类型
+// @param {uint32} complete_num, 完成数量
+net_protocol_handlers.CMD_CS_MISSION_COMPLETE = 1702;
+net_protocol_handlers.SEND_CMD_CS_MISSION_COMPLETE = function(obj) {
+	cc.assert(obj.mission_type != undefined, "CMD_CS_MISSION_COMPLETE.mission_type is undefined.");
+	cc.assert(obj.complete_num != undefined, "CMD_CS_MISSION_COMPLETE.complete_num is undefined.");
+	_SendFunc(1702, obj);
+};
+
+// @protocol 领取任务奖励
+// @param {uint32} mission_id, 任务id
+net_protocol_handlers.CMD_CS_MISSION_GET_REWARD = 1704;
+net_protocol_handlers.SEND_CMD_CS_MISSION_GET_REWARD = function(obj) {
+	cc.assert(obj.mission_id != undefined, "CMD_CS_MISSION_GET_REWARD.mission_id is undefined.");
+	_SendFunc(1704, obj);
+};
 
 // @protocol 初始化进度
 // @param {uint32} percent, 初始化百分比
@@ -522,6 +548,22 @@ net_protocol_handlers.SEND_CMD_CS_SKIN_CHANGE = function(obj) {
 	cc.assert(obj.skin_id != undefined, "CMD_CS_SKIN_CHANGE.skin_id is undefined.");
 	_SendFunc(1602, obj);
 };
+
+// @protocol 任务完成情况结果
+// @param {uint32} result, 结果
+net_protocol_handlers.CMD_SC_MISSION_COMPLETE_RESULT = 1703;
+_BindFunc(1703, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_MISSION_COMPLETE_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_MISSION_COMPLETE_RESULT(obj);
+});
+
+// @protocol 任务信息
+// @param {list} missions, 物品信息列表
+net_protocol_handlers.CMD_SC_MISSION_INFO = 1701;
+_BindFunc(1701, function(obj) {
+	cc.assert(obj.missions != undefined, "CMD_SC_MISSION_INFO.missions is undefined.");
+	net_protocol_handlers.ON_CMD_SC_MISSION_INFO(obj);
+});
 
 // @protocol 使用物品
 // @param {uint32} uid, 物品uid
