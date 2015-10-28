@@ -20,7 +20,7 @@ var gm_server = {
             case "ar": this.parseAddResource(list); break;
             case "ai": this.parseAddItem(list); break;
             case "ae": this.parseAddEquip(list); break;
-            case "om": this.parseOpenMap(list); break;
+            case "map": this.parseOpenMap(list); break;
             case "exp": this.parseAddExp(list); break;
         }
     },

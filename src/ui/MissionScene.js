@@ -62,6 +62,9 @@ var MissionScene = ui.GuiWindowBase.extend({
     },
 
     clearList: function() {
+        _.each(this._ui.cell_missions, function(cell) {
+            cell.setGotoCallback(null);
+        }, this);
         this._ui.cell_missions.length = 0;
         this._ui.list_missions.removeAllItems();
     },
@@ -74,15 +77,51 @@ var MissionScene = ui.GuiWindowBase.extend({
             if(config == undefined) {
                 return;
             }
-
             if(config.class != this._class) {
                 return;
             }
 
             var cell = new MissionScene.Cell(config.key);
+            cell.setGotoCallback(this.onGoto, this);
             this._ui.cell_missions.push(cell);
             this._ui.list_missions.pushBackCustomItem(cell);
         }, this);
+    },
+
+    onGoto: function(cell) {
+        var config = configdb.renwu[cell.mission_id];
+        if(config == undefined) {
+            return;
+        }
+
+        switch (config.type) {
+            case MissionSystem.Type.KillMonster:
+            case MissionSystem.Type.Fuben:
+            case MissionSystem.Type.Combo:
+            case MissionSystem.Type.MapUnlock:
+            case MissionSystem.Type.UseBisha:
+            case MissionSystem.Type.UseHpBottle:
+            case MissionSystem.Type.Resurrection:
+                MainScene.prototype._on_btn_map();
+                break;
+            case MissionSystem.Type.Shilian:
+                MainScene.prototype._on_btn_map_endless();
+                break;
+            case MissionSystem.Type.Strengthen:
+            case MissionSystem.Type.BattleScore:
+                MainScene.prototype._on_btn_bag();
+                break;
+            case MissionSystem.Type.SkillUpgrage:
+                MainScene.prototype._on_btn_skill();
+                break;
+            case MissionSystem.Type.EquipSlotUpgrade:
+                MainScene.prototype._on_btn_equip();
+                break;
+            case MissionSystem.Type.Vip:
+                GiftPanel.prototype._on_btn_1();
+                break;
+        }
+        this.close();
     }
 });
 
@@ -91,7 +130,7 @@ MissionScene.Cell = ui.GuiWidgetBase.extend({
 
     ctor: function(mission_id) {
         this._super();
-        this._mission_id = mission_id;
+        this.mission_id = mission_id;
     },
 
     onEnter: function() {
@@ -105,7 +144,8 @@ MissionScene.Cell = ui.GuiWidgetBase.extend({
             status_3: this.seekWidgetByName("img_status_3"),
             lbl_progress_1: this.seekWidgetByName("lbl_progress_1"),
             lbl_progress_2: this.seekWidgetByName("lbl_progress_2"),
-            lbl_progress_3: this.seekWidgetByName("lbl_progress_3")
+            lbl_progress_3: this.seekWidgetByName("lbl_progress_3"),
+            btn_goto: this.seekWidgetByName("btn_goto")
         };
 
         this.refreshView();
@@ -117,12 +157,12 @@ MissionScene.Cell = ui.GuiWidgetBase.extend({
     },
 
     refreshView: function() {
-        var config = configdb.renwu[this._mission_id];
+        var config = configdb.renwu[this.mission_id];
         if(config == undefined) {
             return;
         }
 
-        var info = MissionSystem.instance.mission_list[this._mission_id];
+        var info = MissionSystem.instance.mission_list[this.mission_id];
 
         // status
         var count = info ? info.count : 0;
@@ -141,6 +181,10 @@ MissionScene.Cell = ui.GuiWidgetBase.extend({
             this._ui.status_1.setVisible(true);
             this._ui.status_2.setVisible(false);
             this._ui.status_3.setVisible(false);
+
+            if(config.type == MissionSystem.Type.CompleteAllMissions) {
+                this._ui.btn_goto.setVisible(false);
+            }
         }
 
         // name
@@ -158,11 +202,24 @@ MissionScene.Cell = ui.GuiWidgetBase.extend({
     },
 
     _on_btn_goto: function() {
-
+        this.onGoto();
     },
 
     _on_btn_get_reward: function() {
-        MissionSystem.instance.getMissionReward(this._mission_id);
+        MissionSystem.instance.getMissionReward(this.mission_id);
+    },
+
+    onGoto: function() {
+        if (this._gotoCallback) {
+            this._gotoCallback(this);
+        }
+    },
+
+    setGotoCallback: function (selector, target) {
+        if(target === undefined)
+            this._gotoCallback = selector;
+        else
+            this._gotoCallback = selector.bind(target);
     }
 });
 

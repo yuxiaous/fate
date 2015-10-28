@@ -148,7 +148,7 @@ var MainScene = ui.GuiSceneBase.extend({
             "趁手的兵器，让你有更强大的攻击力",
             "请不要忘记装备上获得的更好得装备",
             "体力值为零时可通过购买回满体力值"
-        ]
+        ];
 
         var panelSize = this._ui.rotate_panel.getContentSize();
         var panelPos = this._ui.rotate_panel.getPosition();
