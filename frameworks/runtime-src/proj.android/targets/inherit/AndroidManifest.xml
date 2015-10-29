@@ -41,6 +41,11 @@
                 android:value="GP"
                 />
         <!-- KTPlay SDK配置结束 -->
+
+        <!-- umeng online config start -->
+        <meta-data android:name="UMENG_APPKEY" android:value="5630df2467e58e7fda00055e" />
+        <meta-data android:name="UMENG_CHANNEL" android:value="develop" />
+        <!-- umeng online config end -->
     </application>
 
     <supports-screens android:anyDensity="true"
@@ -67,4 +72,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <!-- KTPlay SDK 权限配置结束 -->
+
+    <!-- umeng online config -->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
 </manifest>

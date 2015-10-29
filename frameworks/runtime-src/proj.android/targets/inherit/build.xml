@@ -72,8 +72,12 @@
         <path id="third.lib" >
             <path path="${toString:project.all.jars.path}" />
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
+
+            <!-- ktplay -->
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
-            <!--<pathelement location="../../../Classes/sdk/Baitong/android/bdappunion_2.0_log_enabled.jar" />-->
+
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -103,13 +107,6 @@
         </copy>
         <!-- KTplay end -->
 
-        <!-- Baitong start -->
-        <!--<copy todir="./">-->
-            <!--<fileset dir="../../../Classes/sdk/Baitong/android">-->
-                <!--<include name="libs/armeabi/" />-->
-            <!--</fileset>-->
-        <!--</copy>-->
-        <!-- Baitong end -->
     </target>
 
     <!-- Import the actual build file.

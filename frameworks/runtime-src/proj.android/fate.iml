@@ -45,5 +45,6 @@
     <orderEntry type="library" name="qikupay_v2.0_9.16" level="project" />
     <orderEntry type="library" name="SDK_TY_4.3.9" level="project" />
     <orderEntry type="library" name="MidasPlugin1.5.0e" level="project" />
+    <orderEntry type="library" name="umeng-onlineconfig_v1.0.0" level="project" />
   </component>
 </module>

@@ -113,6 +113,11 @@ QiKuPaySdk qikupaysdk;
 MiGameCenterSdk migamecentersdk;
 #endif
 
+#ifdef SDK_UMENG_ONLINE_CONFIG
+#include "umeng/UmengOnlineConfigSdk.h"
+UmengOnlineConfigSdk umengonlineconfigsdk;
+#endif
+
 USING_NS_CC;
 
 
@@ -190,10 +195,19 @@ void SdkManager::login()
 // ChargeProtocol
 void SdkManager::charge(const std::string &order, const std::string &identifier)
 {
-    for(Sdk *sdk : _sdks) {
-        SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
-        if(charge) {
-            charge->charge(order, identifier);
+
+#ifdef SDK_UMENG_ONLINE_CONFIG
+    if(UmengOnlineConfigSdk::isFree()) {
+        SdkChargeProtocol::onChargeCallback(0, order);
+    }
+    else
+#endif
+    {
+        for(Sdk *sdk : _sdks) {
+            SdkChargeProtocol *charge = dynamic_cast<SdkChargeProtocol *>(sdk);
+            if(charge) {
+                charge->charge(order, identifier);
+            }
         }
     }
 }

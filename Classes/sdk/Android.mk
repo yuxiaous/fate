@@ -26,7 +26,8 @@ LOCAL_SRC_FILES := SdkManager.cpp \
                    m4399RechargeSDK/M4399RechargeSdk.cpp \
                    ugpsdk/UgpSdk.cpp \
                    coolpad/QiKuPaySdk.cpp \
-                   MiGameCenterSDK/MiGameCenterSdk.cpp
+                   MiGameCenterSDK/MiGameCenterSdk.cpp \
+                   umeng/UmengOnlineConfigSdk.cpp
 
 
 LOCAL_CFLAGS := -DCOCOS2D_JAVASCRIPT
