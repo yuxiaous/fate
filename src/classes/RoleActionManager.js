@@ -188,6 +188,7 @@ var RoleActionManager = cc.Class.extend({
                             BattleSystem.instance.useSuperSkill();
                             tmpSkillType = RoleAction.Type.SKILL4;
                             this.playAction(RoleAction.Type.SKILL4);
+                            MissionSystem.instance.countSuperSkill();
                         }
                     }
                     break;

@@ -113,6 +113,8 @@ server.registerCallback(net_protocol_handlers.CMD_CS_SKILL_UP, function(obj) {
         return;
     }
 
+    mission_server.count(mission_server.Type.SkillUpgrage);
+
     // send result
     server.send(net_protocol_handlers.CMD_SC_SKILL_UP_RESULT, {
         result: 0

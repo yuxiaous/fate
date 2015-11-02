@@ -63,6 +63,11 @@ server.registerCallback(net_protocol_handlers.CMD_CS_ITEM_USE, function(obj) {
             break;
     }
 
+    //mission
+    if(info.id == 100007) {
+        mission_server.count(mission_server.Type.UseHpBottle, obj.num);
+    }
+
     server.send(net_protocol_handlers.CMD_SC_ITEM_USE_RESULT, {
         result: 0,
         item_type : config.result

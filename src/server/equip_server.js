@@ -154,6 +154,8 @@ server.registerCallback(net_protocol_handlers.CMD_CS_EQUIP_SLOT_UPGRADE, functio
         return;
     }
 
+    mission_server.count(mission_server.Type.EquipSlotUpgrade);
+
     // send result
     server.send(net_protocol_handlers.CMD_SC_EQUIP_SLOT_UPGRADE_RESULT, {
         result: 0

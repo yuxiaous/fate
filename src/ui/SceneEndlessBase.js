@@ -90,6 +90,7 @@ var SceneEndlessBase = SceneBase.extend({
            if(!isFirst_) {
                this._sectionIndex += 1;
                BattleSystem.instance.updateEndlessBattleRound(this._sectionIndex);
+               MissionSystem.instance.countEndless(this._sectionIndex);
            }
 
 

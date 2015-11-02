@@ -48,6 +48,7 @@ var gift_server = {
                 break;
             case gift_server.GiftType.Vip:
                 gift_server.gift_info[3].buy_num += 1;
+                mission_server.count(mission_server.Type.Vip);
                 break;
         }
 

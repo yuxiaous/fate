@@ -41,6 +41,21 @@ var bag_server = {
     addItem: function(id, num) {
         if(num == undefined) num = 1;
 
+        switch (id) {
+            case 100002: //gold
+                player_server.changeGold(num);
+                return true;
+            case 100003: //diamond
+                player_server.changeDiamond(num);
+                return true;
+            case 100004: //exp
+                player_server.changeExp(num);
+                return true;
+            case 100008:
+                player_server.changeAction(num);
+                return true;
+        }
+
         var config = BagSystem.getConfig(id);
         if(config == undefined) {
             return false;

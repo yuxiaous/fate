@@ -37,6 +37,11 @@ var map_server = {
                 };
                 this.map_info.push(info);
                 this.update.push(info);
+
+                var config = configdb.map[id];
+                if(config) {
+                    mission_server.count(mission_server.Type.MapUnlock, config.chapter);
+                }
             }
         }, this);
     }

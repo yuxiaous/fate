@@ -54,5 +54,7 @@ var ComboPanel = ui.GuiViewBase.extend({
             cc.scaleTo(0.1, this._lbl_combo_scale * 2),
             cc.scaleTo(0.1, this._lbl_combo_scale)
         ));
+
+        MissionSystem.instance.countCombo(this._combo);
     }
 });

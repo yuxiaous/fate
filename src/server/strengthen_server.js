@@ -90,6 +90,8 @@ server.registerCallback(net_protocol_handlers.CMD_CS_EQUIP_STRENGTHEN_IN_BAG, fu
     //bag_server.addItem(config.qh_next, 1);
     bag_server.changeItem(uid, config.qh_next, 1);
 
+    mission_server.count(mission_server.Type.Strengthen);
+
     // result
     server.send(net_protocol_handlers.CMD_SC_EQUIP_STRENGTHEN_RESULT, {
         result: 0,
@@ -167,6 +169,8 @@ server.registerCallback(net_protocol_handlers.CMD_CS_EQUIP_STRENGTHEN_ON_EQUIP, 
 
     // change equip
     equip_server.changeEquip(config.qh_next);
+
+    mission_server.count(mission_server.Type.Strengthen);
 
     // result
     server.send(net_protocol_handlers.CMD_SC_EQUIP_STRENGTHEN_RESULT, {

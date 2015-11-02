@@ -145,6 +145,7 @@ MissionScene.Cell = ui.GuiWidgetBase.extend({
         this._ui = {
             lbl_name: this.seekWidgetByName("lbl_name"),
             lbl_desc: this.seekWidgetByName("lbl_desc"),
+            lbl_reward: this.seekWidgetByName("lbl_reward"),
             status_1: this.seekWidgetByName("img_status_1"),
             status_2: this.seekWidgetByName("img_status_2"),
             status_3: this.seekWidgetByName("img_status_3"),
@@ -200,6 +201,25 @@ MissionScene.Cell = ui.GuiWidgetBase.extend({
         this._ui.lbl_desc.setString(config.desc);
 
         // reward
+        this._ui.lbl_reward.setString(this._ui.lbl_reward._str_original.format(_.reduce([
+            ['rwd_type_1', 'rwd_num_1'],
+            ['rwd_type_2', 'rwd_num_2'],
+            ['rwd_type_3', 'rwd_num_3'],
+            ['rwd_type_4', 'rwd_num_4']
+        ], function(str, data, i){
+            var type = config[data[0]];
+            var num = config[data[1]];
+            if(type && num) {
+                var item_config = configdb.item[type];
+                if(item_config) {
+                    if(i > 0) {
+                        str += ",";
+                    }
+                    str += item_config.name + "x" + num;
+                }
+            }
+            return str;
+        }, "")));
 
         // progress
         this._ui.lbl_progress_1.setString(this._ui.lbl_progress_1._str_original.format(count, config.need_num));

@@ -182,6 +182,8 @@ var shop_server = {
         else if(config.buy_type == shop_server.GoodsType.FuHuo){
             LOG("buy fuhuo");
 
+            mission_server.count(mission_server.Type.Resurrection);
+
             server.send(net_protocol_handlers.CMD_SC_BATTLE_REVIVE,{
                 result : 0
             });

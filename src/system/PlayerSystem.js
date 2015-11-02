@@ -100,6 +100,8 @@ var PlayerSystem = SystemBase.extend({
         });
 
         ret.score = Math.floor(ret.score);
+        MissionSystem.instance.countBattleScore(ret.score);
+
         return ret;
     },
 

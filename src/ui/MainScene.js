@@ -93,7 +93,8 @@ var MainScene = ui.GuiSceneBase.extend({
             notification.createBinding(notification.event.OPEN_LOGIN_REWARD, function (event,obj) {
                 var loginPanel = new LoginRewardLayer(obj.login_index);
                 loginPanel.pop();
-            },this)
+            },this),
+            notification.createBinding(notification.event.PLAYER_INFO, this.refreshPlayerInfo, this)
         ];
 
 

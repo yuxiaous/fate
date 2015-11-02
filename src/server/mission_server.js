@@ -113,13 +113,32 @@ var mission_server = {
             return false;
         }
 
-        var info = _.findWhere(this.mission_info.count, {type: type});
-        if(info == undefined) {
-            info = {type: type, total: 0, daily: 0};
-            this.mission_info.count.push(info);
+        var count = _.findWhere(this.mission_info.count, {type: type});
+        if(count == undefined) {
+            count = {type: type, total: 0, daily: 0};
+            this.mission_info.count.push(count);
         }
-        info.total += num;
-        info.daily += num;
+
+        // check type
+        switch (type) {
+            case mission_server.Type.Combo:
+            case mission_server.Type.Shilian:
+            case mission_server.Type.MapUnlock:
+            case mission_server.Type.BattleScore:
+                if(num > count.total){
+                    count.total = num;
+                    count.daily = num;
+                }
+                break;
+
+            default:
+                count.total += num;
+                count.daily += num;
+                break;
+        }
+
+        // check all
+        this.checkAllDailyMissionComplete();
 
         this.flush();
 
@@ -127,6 +146,34 @@ var mission_server = {
             missions: this.getMissionList()
         });
         return true;
+    },
+
+    checkAllDailyMissionComplete: function() {
+
+        var all = _.every(this.mission_info.daily, function(info) {
+            var config = configdb.renwu[info.mission_id];
+            if(config == undefined) {
+                return false;
+            }
+
+            if(config.type == mission_server.Type.CompleteAllMissions) {
+                return true;
+            }
+
+            var count = _.findWhere(this.mission_info.count, {type: config.type});
+            if(count == undefined) {
+                return false;
+            }
+
+            return count.daily >= config.need_num;
+        }, this);
+
+        if(all) {
+            var count = _.findWhere(this.mission_info.count, {type: mission_server.Type.CompleteAllMissions});
+            if(count) {
+                count.daily = 1;
+            }
+        }
     }
 };
 
@@ -227,6 +274,18 @@ server.registerCallback(net_protocol_handlers.CMD_CS_MISSION_GET_REWARD, functio
         return;
     }
 
+    // reward
+    _.each([
+        ['rwd_type_1', 'rwd_num_1'],
+        ['rwd_type_2', 'rwd_num_2'],
+        ['rwd_type_3', 'rwd_num_3'],
+        ['rwd_type_4', 'rwd_num_4']
+    ], function(data) {
+        var type = config[data[0]];
+        var num = config[data[1]];
+        bag_server.addItem(type, num);
+    });
+
     info.reward = 1;
     mission.reward = 1;
 
@@ -234,7 +293,7 @@ server.registerCallback(net_protocol_handlers.CMD_CS_MISSION_GET_REWARD, functio
 
 
     var mission_list = mission_server.getMissionList();
-    if(config.class = mission_server.Class.Achievement) {
+    if(config.class == mission_server.Class.Achievement) {
         mission_list.push(mission);
     }
     server.send(net_protocol_handlers.CMD_SC_MISSION_INFO, {

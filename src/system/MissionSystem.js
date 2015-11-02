@@ -33,6 +33,8 @@ var MissionSystem = SystemBase.extend({
     },
 
     completeMission: function(type, num) {
+        if(num == undefined) num = 1;
+
         net_protocol_handlers.SEND_CMD_CS_MISSION_COMPLETE({
             mission_type: type,
             complete_num: num
@@ -52,7 +54,23 @@ var MissionSystem = SystemBase.extend({
     },
 
     countKillMonster: function() {
-        this.completeMission(MissionSystem.Type.KillMonster, 1);
+        this.completeMission(MissionSystem.Type.KillMonster);
+    },
+
+    countCombo: function(num) {
+        this.completeMission(MissionSystem.Type.Combo, num)
+    },
+
+    countEndless: function(num) {
+        this.completeMission(MissionSystem.Type.Shilian, num)
+    },
+
+    countBattleScore: function(num) {
+        this.completeMission(MissionSystem.Type.BattleScore, num)
+    },
+
+    countSuperSkill: function() {
+        this.completeMission(MissionSystem.Type.UseBisha)
     }
 });
 
