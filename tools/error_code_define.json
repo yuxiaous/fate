@@ -18,5 +18,6 @@
 
     [1301, "ERR_EQUiP_SLOT_LEVEL_LIMIT", "锻造等级不能超过当前人物等级"],
 
-    [1401, "ERR_MISSION_HAVE_REWARD", "已经领取过了任务奖励"]
+    [1401, "ERR_MISSION_HAVE_REWARD", "已经领取过了任务奖励"],
+    [1402, "ERR_MISSION_NOT_MEET_CRITERIA", "未达到领取条件"]
 ]

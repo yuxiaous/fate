@@ -18,10 +18,6 @@ var mission_server = {
             ]
         });
 
-        this.mission_list = [
-            //{mission_id: 0, count: 0, reward: 0}
-        ];
-
         this.initDailyMission();
         this.flush();
     },
@@ -31,7 +27,7 @@ var mission_server = {
     },
 
     flush: function() {
-        //database.commit("mission_info", this.mission_info);
+        database.commit("mission_info", this.mission_info);
     },
 
     sync: function() {
@@ -68,6 +64,7 @@ var mission_server = {
     },
 
     getMissionList: function() {
+        //{mission_id: 0, count: 0, reward: 0}
         var list = [];
 
         _.each(this.mission_info.daily, function(daily) {
@@ -103,6 +100,19 @@ var mission_server = {
     },
 
     count: function(type, num) {
+        if(num == undefined) num = 1;
+
+        if(_.contains(mission_server.Type, type) == false) {
+            LOG("mission_server.count 1");
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+            return false;
+        }
+        if(num < 0) {
+            server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
+            LOG("mission_server.count 2");
+            return false;
+        }
+
         var info = _.findWhere(this.mission_info.count, {type: type});
         if(info == undefined) {
             info = {type: type, total: 0, daily: 0};
@@ -112,6 +122,11 @@ var mission_server = {
         info.daily += num;
 
         this.flush();
+
+        server.send(net_protocol_handlers.CMD_SC_MISSION_INFO, {
+            missions: this.getMissionList()
+        });
+        return true;
     }
 };
 
@@ -140,6 +155,10 @@ mission_server.Type = {
 server.registerCallback(net_protocol_handlers.CMD_CS_MISSION_COMPLETE, function(obj) {
     LOG("CMD_CS_MISSION_COMPLETE");
 
+    if(mission_server.count(obj.mission_type, obj.complete_num) == false) {
+        return;
+    }
+
     // send result
     server.send(net_protocol_handlers.CMD_SC_MISSION_COMPLETE_RESULT, {
         result: 0
@@ -148,25 +167,79 @@ server.registerCallback(net_protocol_handlers.CMD_CS_MISSION_COMPLETE, function(
 
 server.registerCallback(net_protocol_handlers.CMD_CS_MISSION_GET_REWARD, function(obj) {
     LOG("CMD_CS_MISSION_GET_REWARD");
+    //LOG(obj)
 
-    var info = _.findWhere(mission_server.mission_info, {mission_id: obj.mission_id});
-    if(info == undefined) {
+    var mission_id = obj.mission_id;
+    var mission = {mission_id: mission_id, count: 0, reward: 0};
+
+    var config = configdb.renwu[mission_id];
+    if(config == undefined) {
         LOG("CMD_CS_MISSION_GET_REWARD 1");
-        server.sendError(error.ERR_CONFIG_NOT_EXIST);
+        server.sendError(net_error_code.ERR_CONFIG_NOT_EXIST);
         return;
     }
 
-    if(info.reward == 1) {
+    // check count
+    var count = _.findWhere(mission_server.mission_info.count, {type: config.type});
+    if(count == undefined) {
         LOG("CMD_CS_MISSION_GET_REWARD 2");
-        server.sendError(error.ERR_MISSION_HAVE_REWARD);
+        server.sendError(net_error_code.ERR_MISSION_NOT_MEET_CRITERIA);
+        return;
+    }
+    if(config.class == mission_server.Class.Daily) {
+        if(count.daily < config.need_num) {
+            LOG("CMD_CS_MISSION_GET_REWARD 3");
+            server.sendError(net_error_code.ERR_MISSION_NOT_MEET_CRITERIA);
+            return;
+
+        }
+        mission.count = count.daily;
+    }
+    else if(config.class = mission_server.Class.Achievement) {
+        if(count.total < config.need_num) {
+            LOG("CMD_CS_MISSION_GET_REWARD 4");
+            server.sendError(net_error_code.ERR_MISSION_NOT_MEET_CRITERIA);
+            return;
+
+        }
+        mission.count = count.total;
+    }
+
+    // check reward
+    var info;
+    if(config.class == mission_server.Class.Daily) {
+        info = _.findWhere(mission_server.mission_info.daily, {mission_id: obj.mission_id});
+        if(info == undefined) {
+            info = {mission_id: mission_id, reward: 0};
+            mission_server.mission_info.daily.push(info);
+        }
+    }
+    else if(config.class = mission_server.Class.Achievement) {
+        info = _.findWhere(mission_server.mission_info.achievement, {mission_id: obj.mission_id});
+        if(info == undefined) {
+            info = {mission_id: mission_id, reward: 0};
+            mission_server.mission_info.achievement.push(info);
+        }
+    }
+    if(info.reward == 1) {
+        LOG("CMD_CS_MISSION_GET_REWARD 5");
+        server.sendError(net_error_code.ERR_MISSION_HAVE_REWARD);
         return;
     }
 
     info.reward = 1;
+    mission.reward = 1;
 
-    server.send(net_protocol_handlers.CMD_SC_MISSION_INFO, [
-        info
-    ]);
+    mission_server.flush();
+
+
+    var mission_list = mission_server.getMissionList();
+    if(config.class = mission_server.Class.Achievement) {
+        mission_list.push(mission);
+    }
+    server.send(net_protocol_handlers.CMD_SC_MISSION_INFO, {
+        missions: mission_list
+    });
 
     // send result
     server.send(net_protocol_handlers.CMD_SC_MISSION_GET_REWARD_RESULT, {

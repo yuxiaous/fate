@@ -118,6 +118,9 @@ server.registerCallback(net_protocol_handlers.CMD_CS_BATTLE_FINISH, function(obj
         }
     },this);
 
+    // achievement
+    mission_server.count(mission_server.Type.Fuben);
+
     server.send(net_protocol_handlers.CMD_SC_BATTLE_FINISH_RESULT, {
         result : 1,
         map_id: battle_server.cur_battle_map,

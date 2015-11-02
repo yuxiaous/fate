@@ -283,9 +283,11 @@ var SceneBase = lh.LHScene.extend({
 
             case RoleBase.RoleType.Monster:
                 role.disappear();
+                MissionSystem.instance.countKillMonster();
                 break;
 
             case RoleBase.RoleType.Boss:
+                MissionSystem.instance.countKillMonster();
                 break;
         }
     },

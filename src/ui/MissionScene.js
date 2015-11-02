@@ -21,7 +21,7 @@ var MissionScene = ui.GuiWindowBase.extend({
             cell_missions: []
         };
         this._bindings = [
-
+            notification.createBinding(notification.event.MISSION_INFO, this.createList, this)
         ];
 
         this.refreshTab();
@@ -72,12 +72,18 @@ var MissionScene = ui.GuiWindowBase.extend({
     createList: function() {
         this.clearList();
 
-        _.each(MissionSystem.instance.mission_list, function(info) {
+        var list = _.toArray(MissionSystem.instance.mission_list);
+        list = _.sortBy(list, 'mission_id');
+
+        _.each(list, function(info) {
             var config = configdb.renwu[info.mission_id];
             if(config == undefined) {
                 return;
             }
             if(config.class != this._class) {
+                return;
+            }
+            if(config.class == MissionSystem.Class.Achievement && info.reward == 1) {
                 return;
             }
 

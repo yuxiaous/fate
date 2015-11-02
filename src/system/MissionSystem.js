@@ -25,9 +25,6 @@ var MissionSystem = SystemBase.extend({
     },
 
     onMissionInfo: function(obj) {
-        LOG("onMissionInfo")
-        LOG(obj)
-
         _.each(obj.missions, function(info) {
             this.mission_list[info.mission_id] = info;
         }, this);
@@ -35,9 +32,9 @@ var MissionSystem = SystemBase.extend({
         notification.emit(notification.event.MISSION_INFO);
     },
 
-    completeMission: function(id, num) {
+    completeMission: function(type, num) {
         net_protocol_handlers.SEND_CMD_CS_MISSION_COMPLETE({
-            mission_id: id,
+            mission_type: type,
             complete_num: num
         });
     },
@@ -54,8 +51,8 @@ var MissionSystem = SystemBase.extend({
 
     },
 
-    next: function(mission_id) {
-
+    countKillMonster: function() {
+        this.completeMission(MissionSystem.Type.KillMonster, 1);
     }
 });
 

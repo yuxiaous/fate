@@ -80,3 +80,9 @@ net_error_code[1401] = {
 	desc: "已经领取过了任务奖励"
 };
 
+net_error_code.ERR_MISSION_NOT_MEET_CRITERIA = 1402;
+net_error_code[1402] = {
+	code: 1402,
+	desc: "未达到领取条件"
+};
+
