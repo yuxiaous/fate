@@ -100,6 +100,7 @@
                 <include name="com/hdngame/fate/mm/IAPListener.java" />
                 <include name="com/hdngame/fate/mm/MmApplication.java" />
                 <include name="com/hdngame/fate/mm/MMSdkJni.java" />
+                <include name="com/hdngame/fate/SplashActivity.java" />
             </fileset>
         </copy>
         <!-- src end -->
