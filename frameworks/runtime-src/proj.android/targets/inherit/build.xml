@@ -71,6 +71,7 @@
     <target name="-pre-compile" >
         <path id="third.lib" >
             <path path="${toString:project.all.jars.path}" />
+            <!-- talking data -->
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
 
             <!-- ktplay -->

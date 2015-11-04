@@ -10,7 +10,7 @@
 
     <application android:label="@string/app_name"
                  android:icon="@drawable/icon"
-                 android:name="org.cocos2dx.javascript.AppApplication">
+                 android:name="com.hdngame.fate.mm.MmApplication">
 
         <!-- Tell NativeActivity the name of our .so -->
         <meta-data android:name="android.app.lib_name" android:value="cocos2djs" />
@@ -120,12 +120,13 @@
                 android:theme="@android:style/Theme.Translucent"
                 android:windowSoftInputMode="adjustPan|adjustUnspecified" >
         </activity>
-
-        <meta-data
-                android:name="KTPLAY_CHANNELID"
-                android:value="GP"
-                />
+        <meta-data android:name="KTPLAY_CHANNELID" android:value="GP" />
         <!-- KTPlay SDK配置结束 -->
+
+        <!-- umeng online config start -->
+        <meta-data android:name="UMENG_APPKEY" android:value="5630df2467e58e7fda00055e" />
+        <meta-data android:name="UMENG_CHANNEL" android:value="cmcc_mm" />
+        <!-- umeng online config end -->
 
     </application>
 

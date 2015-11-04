@@ -72,9 +72,17 @@
         <path id="third.lib" >
             <path path="${toString:project.all.jars.path}" >
             </path>
+            <!-- talking data -->
             <pathelement location="../../../Classes/sdk/TalkingDataGameAnalytics/android/Game_Analytics_SDK_Android_3.1.68.jar" />
+
+            <!-- ktplay -->
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
+
+            <!-- mm -->
             <pathelement location="../../../Classes/sdk/mmbilling/android/libs/mmbilling.3.1.8.jar" />
+
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
@@ -90,6 +98,7 @@
                 <include name="com/hdngame/fate/SdkManagerJni.java" />
                 <include name="com/hdngame/fate/mm/IAPHandler.java" />
                 <include name="com/hdngame/fate/mm/IAPListener.java" />
+                <include name="com/hdngame/fate/mm/MmApplication.java" />
                 <include name="com/hdngame/fate/mm/MMSdkJni.java" />
             </fileset>
         </copy>
