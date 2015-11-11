@@ -165,7 +165,7 @@ var OperationLayer = cc.Layer.extend({
                 var curHero = scene._hero;
 
                 var cdTime = tmpData.ActionData.cdTime;
-                if(BattleSystem.instance.curIsTryBattle() && tmpData.SkillType == RoleAction.Type.SKILL4){
+                if(/*BattleSystem.instance.curIsTryBattle() && */tmpData.SkillType == RoleAction.Type.SKILL4){
                     cdTime = configdb.property[109].value;
                 }
 
