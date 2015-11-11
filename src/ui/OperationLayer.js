@@ -244,11 +244,19 @@ var OperationLayer = cc.Layer.extend({
         }
 
         function btnReleaseCount(btn_,counts_) {
+            if(btn_ == undefined) {
+                return;
+            }
             if(!btn_.needUseCount){
                 return;
             }
             btn_.releaseCount = counts_;
-            btn_.releaseCountLabel.setString(btn_.releaseCount);
+            //if(btn_.releaseCountLabel) {
+            //    btn_.releaseCountLabel.setString(btn_.releaseCount);
+            //}
+            if(btn_.fontBg) {
+                btn_.fontBg.setVisible(counts_ <= 0);
+            }
         }
     },
 
@@ -524,17 +532,17 @@ var OperationLayer = cc.Layer.extend({
         var fontBg = cc.Sprite.create("images/code_ui/ui_329.png");
         button.addChild(fontBg);
 
-        var releaseCount = ccui.TextBMFont.create("0","res/fonts/fnt_10.fnt");
-        var buttonSize = sp1.getContentSize();
-        releaseCount.setPosition(cc.p(11,-buttonSize.height * 0.25));
-        button.addChild(releaseCount);
+        //var releaseCount = ccui.TextBMFont.create("0","res/fonts/fnt_10.fnt");
+        //var buttonSize = sp1.getContentSize();
+        //releaseCount.setPosition(cc.p(11,-buttonSize.height * 0.25));
+        //button.addChild(releaseCount);
         button.releaseCount = 0;
-        button.releaseCountLabel = releaseCount;
+        //button.releaseCountLabel = releaseCount;
         button.fontBg = fontBg;
 
         needUseCount_ = false || needUseCount_;
         button.needUseCount = needUseCount_;
-        button.releaseCountLabel.setVisible(button.needUseCount);
+        //button.releaseCountLabel.setVisible(button.needUseCount);
         button.fontBg.setVisible(button.needUseCount);
 
         var lockBg = ccui.ImageView.create("images/icon/skill/skill_lock.png");

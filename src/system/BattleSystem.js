@@ -376,7 +376,7 @@ var BattleSystem = SystemBase.extend({
             player_id : 101
         })
 
-        PlayerSystem.instance.superSkillCount -= 1;
+        //PlayerSystem.instance.superSkillCount -= 1;
         notification.emit(notification.event.PLAYER_INFO);
     },
 

@@ -14,7 +14,7 @@ var player_server = {
             diamond: 0,
             gold: 0,
             action: 60 ,//行动力,
-            superSkillCount : 3,     //大技能可以释放的次数
+            superSkillCount : 0,     //大技能可以释放的次数
             actionStamp : 0
         });
 

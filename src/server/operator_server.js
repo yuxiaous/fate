@@ -25,9 +25,11 @@ server.registerCallback(net_protocol_handlers.CMD_CS_USE_SUPER_SKILL, function (
     }
 
     if(player_server.player_info.superSkillCount > 0){
-        player_server.player_info.superSkillCount -= 1;
+        // change in v1.2, 大招改为一次性买断
+        //player_server.player_info.superSkillCount -= 1;
     }
     else{
         player_server.player_info.superSkillCount = 0;
     }
-})
+});
+
