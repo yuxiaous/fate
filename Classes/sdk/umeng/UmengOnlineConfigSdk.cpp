@@ -19,7 +19,8 @@ void UmengOnlineConfigSdk::activityOnCreate()
                                     "com/umeng/onlineconfig/OnlineConfigAgent",
                                     "getInstance",
                                     "()Lcom/umeng/onlineconfig/OnlineConfigAgent;")) {
-        _jinstance = (void*)minfo.env->CallStaticObjectMethod(minfo.classID, minfo.methodID);
+        jobject jinstance = minfo.env->CallStaticObjectMethod(minfo.classID, minfo.methodID);
+        _jinstance = (void*)cocos2d::JniHelper::getEnv()->NewGlobalRef(jinstance);
     }
     if (_jinstance && JniHelper::getMethodInfo(minfo,
                                     "com/umeng/onlineconfig/OnlineConfigAgent",
