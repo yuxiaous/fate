@@ -99,6 +99,11 @@
         <meta-data android:name="EGAME_CHANNEL" android:value="80011087"  />
         <meta-data android:name="EGAME_UNINS" android:value="false" />
         <!-- egame end -->
+
+        <!-- umeng online config start -->
+        <meta-data android:name="UMENG_APPKEY" android:value="5630df2467e58e7fda00055e" />
+        <meta-data android:name="UMENG_CHANNEL" android:value="youku" />
+        <!-- umeng online config end -->
     </application>
 
     <supports-screens android:anyDensity="true"

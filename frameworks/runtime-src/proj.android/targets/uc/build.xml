@@ -82,6 +82,8 @@
             <pathelement location="targets/uc/offline1441965582048_00018261_20150914/Multimode_UniPay_base.jar" />
             <pathelement location="targets/uc/offline1441965582048_00018261_20150914/Multimode_UniPay_payinfo.jar" />
 
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

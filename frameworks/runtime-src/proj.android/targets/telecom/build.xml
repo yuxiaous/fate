@@ -90,6 +90,9 @@
             <pathelement location="../../../Classes/sdk/egame/alipay/libs/alipaysdk.jar" />
             <pathelement location="../../../Classes/sdk/egame/alipay/libs/MobileSecSdk.jar" />
             <pathelement location="../../../Classes/sdk/egame/alipay/libs/utdid4all-1.0.4.jar" />
+
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

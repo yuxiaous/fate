@@ -127,6 +127,11 @@
                   android:theme="@android:style/Theme.Translucent.NoTitleBar"
                   android:windowSoftInputMode="stateAlwaysHidden"/>
         <!-- qq end -->
+
+        <!-- umeng online config start -->
+        <meta-data android:name="UMENG_APPKEY" android:value="5630df2467e58e7fda00055e" />
+        <meta-data android:name="UMENG_CHANNEL" android:value="tencent_hwyxzx" />
+        <!-- umeng online config end -->
     </application>
 
     <supports-screens android:anyDensity="true"

@@ -96,6 +96,9 @@
             <!--<pathelement location="../../../Classes/sdk/TencentMidas/android/libs/MSDK_Android_2.8.0a.jar" />-->
             <pathelement location="../../../Classes/sdk/TencentMidas/android/libs/wlogin_sdk.jar" />
             <!--<pathelement location="../../../Classes/sdk/TencentMidas/android/libs/Xg_sdk_2.37.jar" />-->
+
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

@@ -89,6 +89,9 @@
 
             <!-- coolpad qikupay -->
             <pathelement location="../../../Classes/sdk/coolpad//qikupay/libs/qikupay_v2.0_9.16.jar" />
+
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

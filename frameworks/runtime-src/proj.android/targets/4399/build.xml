@@ -94,6 +94,9 @@
             <pathelement location="../../../Classes/sdk/m4399RechargeSDK/android/libs/alipaysdk.jar" />
             <pathelement location="../../../Classes/sdk/m4399RechargeSDK/android/libs/alipaysecsdk.jar" />
             <pathelement location="../../../Classes/sdk/m4399RechargeSDK/android/libs/alipayutdid.jar" />
+
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

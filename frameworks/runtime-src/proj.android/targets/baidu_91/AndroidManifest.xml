@@ -209,6 +209,11 @@
             </intent-filter>
         </receiver>
         <!-- 品宣 end -->
+
+        <!-- umeng online config start -->
+        <meta-data android:name="UMENG_APPKEY" android:value="5630df2467e58e7fda00055e" />
+        <meta-data android:name="UMENG_CHANNEL" android:value="baidu_91" />
+        <!-- umeng online config end -->
     </application>
 
     <supports-screens android:anyDensity="true"

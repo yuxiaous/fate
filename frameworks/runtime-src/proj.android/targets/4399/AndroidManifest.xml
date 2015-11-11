@@ -124,6 +124,11 @@
         <activity android:name="com.alipay.sdk.app.H5PayActivity"
                   android:screenOrientation="landscape"/>
         <!-- 4399 end -->
+
+        <!-- umeng online config start -->
+        <meta-data android:name="UMENG_APPKEY" android:value="5630df2467e58e7fda00055e" />
+        <meta-data android:name="UMENG_CHANNEL" android:value="4399" />
+        <!-- umeng online config end -->
     </application>
 
     <supports-screens android:anyDensity="true"

@@ -95,6 +95,9 @@
             <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/pushservice-4.5.1.8.jar" />
             <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/android-support-v4.jar" />
             <pathelement location="../../../Classes/sdk/DKSingleSDK/android/libs/universal-image-loader-1.9.2.jar" />
+
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

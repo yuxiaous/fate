@@ -80,6 +80,9 @@
             <pathelement location="../../../Classes/sdk/unipay/android/libs/MobileSecSdk.jar" />
             <pathelement location="../../../Classes/sdk/unipay/android/libs/Multimode_Unipay_base.jar" />
             <pathelement location="../../../Classes/sdk/unipay/android/libs/utdid4all-1.0.4.jar" />
+
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >

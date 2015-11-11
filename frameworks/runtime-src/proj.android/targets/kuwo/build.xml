@@ -89,6 +89,9 @@
 
             <!-- kuwo -->
             <pathelement location="../../../Classes/sdk/KuwoLoginSdk/android/kuwo_mobile_login_sdk.jar" />
+
+            <!-- umeng online config -->
+            <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
         </path>
         <path id="project.all.jars.path" >
             <path refid="third.lib" >
