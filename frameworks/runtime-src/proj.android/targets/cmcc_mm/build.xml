@@ -79,7 +79,7 @@
             <pathelement location="../../../Classes/sdk/ktplay/Platform/Android/KTPlaySDK/KTPlay/libs/ktplay.jar" />
 
             <!-- mm -->
-            <pathelement location="../../../Classes/sdk/mmbilling/android/libs/mmbilling.3.1.8.jar" />
+            <pathelement location="../../../Classes/sdk/mmbilling/android/libs/mmbilling.3.1.8.2.jar" />
 
             <!-- umeng online config -->
             <pathelement location="../../../Classes/sdk/umeng/OnlineConfig/libs/umeng-onlineconfig_v1.0.0.jar" />
