@@ -40,6 +40,8 @@ var ComboPanel = ui.GuiViewBase.extend({
         this._comboCount += dt;
 
         if(this.isVisible() && this._comboCount > this._comboTime) {
+            MissionSystem.instance.countCombo(this._combo);
+
             this.setVisible(false);
             this._combo = 0;
         }
@@ -54,7 +56,5 @@ var ComboPanel = ui.GuiViewBase.extend({
             cc.scaleTo(0.1, this._lbl_combo_scale * 2),
             cc.scaleTo(0.1, this._lbl_combo_scale)
         ));
-
-        MissionSystem.instance.countCombo(this._combo);
     }
 });
