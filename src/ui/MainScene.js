@@ -35,8 +35,9 @@ var MainScene = ui.GuiSceneBase.extend({
             btn_exchange : this.seekWidgetByName("btn_redemption")
         };
 
-        this._ui.btn_exchange.setVisible(false);
-
+        if(util.getChannelId() == GameChannel.AppStore) {
+            this._ui.btn_exchange.setVisible(false);
+        }
 
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_bag"),103);
         GuideSystem.AddGuidePanel(this.seekWidgetByName("btn_skill"),106);
