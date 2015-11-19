@@ -38,16 +38,13 @@ var BagSystem = SystemBase.extend({
         notification.emit(notification.event.ITEM_INFO);
     },
 
-    getItemNums : function (itemId_) {
-        var magicBottleNum = 0;
-        _.reduce(BagSystem.instance.items, function(sum, item) {
-
-            if(item.id == itemId_) {
-                magicBottleNum += item.num || 0;
+    getItemNums : function (itemid) {
+        return _.reduce(BagSystem.instance.items, function(sum, item) {
+            if(item.id == itemid) {
+                sum += item.num;
             }
-        }, 0, this)
-
-        return magicBottleNum;
+            return sum;
+        }, 0, this);
     },
 
     sell: function(uid, num) {
