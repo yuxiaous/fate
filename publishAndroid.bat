@@ -1,6 +1,6 @@
 @echo off
 
-if "%1"=="" (
+if "%1"=="@all" (
 	for /f %%t in ('dir /ad/b frameworks\runtime-src\proj.android\targets') do (
 		echo publish target %%t
 		packAndroid.bat -t %%t -m release

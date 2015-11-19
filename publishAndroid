@@ -2,7 +2,7 @@
 
 #echo $#
 
-if [ $# == 0 ] ;then
+if [ "$1" == "@all" ] ;then
     targets=`ls frameworks/runtime-src/proj.android/targets`
 else
     targets=$@
