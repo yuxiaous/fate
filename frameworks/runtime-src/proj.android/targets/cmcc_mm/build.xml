@@ -121,7 +121,6 @@
         <copy todir="./">
             <fileset dir="../../../Classes/sdk/mmbilling/android">
                 <include name="libs/armeabi/" />
-                <include name="assets/" />
             </fileset>
         </copy>
         <!-- MM end-->
