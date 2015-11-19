@@ -77,8 +77,10 @@
 
             <!-- egame -->
             <pathelement location="../../../Classes/sdk/egame/android/libs/cn.egame.terminal.paysdk.jar" />
-            <pathelement location="../../../Classes/sdk/egame/android/libs/egame.ck.jar" />
             <pathelement location="../../../Classes/sdk/egame/android/libs/egame.log_20150625_out_release.jar" />
+
+            <!-- mix -->
+            <pathelement location="../../../Classes/sdk/egame/mix/libs/LtayxSmsPay.jar" />
 
             <!-- mm -->
             <pathelement location="../../../Classes/sdk/egame/mix/libs/mmsmsbilling1.5.0.jar" />
@@ -107,7 +109,6 @@
                 <include name="com/hdngame/fate/GameUtils.java" />
                 <include name="com/hdngame/fate/SdkManagerJni.java" />
                 <include name="com/hdngame/fate/telecom/EgameSdkJni.java" />
-                <include name="com/hdngame/fate/SplashActivity.java" />
             </fileset>
         </copy>
         <!-- src end -->

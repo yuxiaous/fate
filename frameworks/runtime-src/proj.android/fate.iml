@@ -27,7 +27,6 @@
     <orderEntry type="library" name="MobileSecSdk" level="project" />
     <orderEntry type="library" name="cn.egame.terminal.paysdk" level="project" />
     <orderEntry type="library" name="egame.log_20150625_out_release" level="project" />
-    <orderEntry type="library" name="egame.ck" level="project" />
     <orderEntry type="library" name="360SDK" level="project" />
     <orderEntry type="library" name="android-support-v4" level="project" />
     <orderEntry type="library" name="wlogin_sdk" level="project" />
@@ -46,5 +45,6 @@
     <orderEntry type="library" name="MidasPlugin1.5.0e" level="project" />
     <orderEntry type="library" name="umeng-onlineconfig_v1.0.0" level="project" />
     <orderEntry type="library" name="mmbilling.3.1.8.2" level="project" />
+    <orderEntry type="library" name="LtayxSmsPay" level="project" />
   </component>
 </module>

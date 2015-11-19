@@ -1,23 +1,50 @@
 <!-- 根据游戏实际情况修改screenOrientation属性 -->
-<activity android:name="cn.egame.terminal.paysdk.EgamePayActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:screenOrientation="portrait" android:configChanges="orientation|keyboard|keyboardHidden"> </activity>
+<activity 
+android:name="cn.egame.terminal.paysdk.EgamePayActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" 
+android:screenOrientation="portrait" 
+android:configChanges="orientation|keyboardHidden|screenSize"> 
+</activity>
 
-<activity
-            android:name="cn.play.dserv.EmpActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:exported="true" />
 
-        <service
-            android:name="cn.play.dserv.DService"
-            android:enabled="true"
-            android:exported="false"
-            android:label="dservice"
-            android:process=":dservice_v1" >
-        </service>
+<receiver
+            android:name="cn.egame.terminal.sdk.EgameCoreReceiver">
+            <intent-filter android:priority="1001" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
 
-        <receiver
-            android:name="cn.play.dserv.DsReceiver"
-            android:process=":dservice_v1" >
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <intent-filter>
-                <action android:name="cn.play.dservice" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="cn.egame.terminal.sdk.RECEIVER_CMD" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name="cn.egame.terminal.sdk.EgameCoreService"
+            android:process=":egameCore" >
+            <intent-filter>
+                <action android:name="cn.egame.terminal.sdk.SERVICE_CMD" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+<!-- 根据游戏实际情况修改screenOrientation属性 -->
+        <activity
+            android:name="cn.egame.terminal.sdk.EgameCoreActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:screenOrientation="behind"
+            android:taskAffinity=":egameCore"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
