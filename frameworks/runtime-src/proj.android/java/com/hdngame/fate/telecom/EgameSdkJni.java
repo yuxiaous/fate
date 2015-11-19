@@ -1,15 +1,12 @@
 package com.hdngame.fate.telecom;
 
 import android.app.Activity;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
 import android.util.Log;
 import android.widget.Toast;
 import android.os.Handler;
 import cn.egame.terminal.paysdk.EgameExitListener;
 import cn.egame.terminal.paysdk.EgamePay;
 import cn.egame.terminal.paysdk.EgamePayListener;
-import cn.play.dserv.CheckTool;
 import com.hdngame.fate.SdkManagerJni;
 
 import java.lang.Override;
@@ -26,21 +23,7 @@ public class EgameSdkJni {
     public static void init() {
         System.out.println("EgameSdkJni.init");
 
-//        int GameId = 5051359;
-//        int ChannelId = 10000000;
-//        try {
-//            Activity a = SdkManagerJni.activity;
-//            ApplicationInfo info = a.getPackageManager().getApplicationInfo(
-//                    a.getPackageName(),
-//                    PackageManager.GET_META_DATA);
-//            ChannelId = info.metaData.getInt("EGAME_CHANNEL");
-//        }
-//        catch(PackageManager.NameNotFoundException ex) {
-//            ChannelId = 10000000;
-//        }
-
         EgamePay.init(SdkManagerJni.activity);
-        CheckTool.init(SdkManagerJni.activity);
     }
 
     private static String  _alias = "";
