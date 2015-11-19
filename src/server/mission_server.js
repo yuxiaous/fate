@@ -283,7 +283,9 @@ server.registerCallback(net_protocol_handlers.CMD_CS_MISSION_GET_REWARD, functio
     ], function(data) {
         var type = config[data[0]];
         var num = config[data[1]];
-        bag_server.addItem(type, num);
+        if(type && num) {
+            bag_server.addItem(type, num);
+        }
     });
 
     info.reward = 1;
