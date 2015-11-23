@@ -389,9 +389,13 @@ var BuySkillDetail = ui.GuiWindowBase.extend({
         var channel_id = util.getChannelId();
         switch (channel_id) {
             case GameChannel.Telecom:
-                this._ui.lbl_price_rmb.setVisible(false);
+                //this._ui.lbl_price_rmb.setVisible(false);
+                //this._ui.lbl_price_diamond.setVisible(false);
+                //this._ui.lbl_price = null;
+                this._ui.lbl_price_rmb.setVisible(true);
                 this._ui.lbl_price_diamond.setVisible(false);
-                this._ui.lbl_price = null;
+                this._ui.lbl_price = this._ui.lbl_price_rmb;
+                this._ui.lbl_price.setTextColor({r: 122, g: 16, b: 14, a:255});
                 break;
             case GameChannel.AppStore:
                 this._ui.lbl_price_rmb.setVisible(false);

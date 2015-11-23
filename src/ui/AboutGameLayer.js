@@ -14,7 +14,7 @@ var AnnouncementLayer = ui.GuiWindowBase.extend({
         this._ui.lbl_content.setString("" +
             "中文名称：命运长夜（单机版）\n" +
             "应用类型：动作冒险\n" +
-            "版本号：1.0\n" +
+            "版本号：1.2\n" +
             "版权所有：上海红豆泥网络科技有限公司\n" +
             "开发商：上海红豆泥网络科技有限公司\n" +
             "公司名称：上海红豆泥网络科技有限公司\n" +
