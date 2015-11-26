@@ -12,23 +12,6 @@ import android.telephony.TelephonyManager;
  */
 public class GameUtils {
 
-    public static int getSignatureCode(Context context) {
-        String packageName = context.getPackageName();
-//        System.out.println("checkSignature packageName: " + packageName);
-
-        PackageInfo pi = null;
-        try {
-            pi = context.getPackageManager().getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
-        }
-        catch (PackageManager.NameNotFoundException e) {
-            return 0;
-        }
-
-        Signature sign = pi.signatures[0];
-//        System.out.println("getSignatureCode: " + sign.hashCode());
-        return sign.hashCode();
-    }
-
     public static int getSimOperator(Context context) {
         TelephonyManager tm = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
         String operator = tm.getSimOperator();

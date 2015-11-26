@@ -144,13 +144,68 @@ int GameUtils::getSignatureCode()
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     JniMethodInfo minfo;
-    if (JniHelper::getStaticMethodInfo(minfo,
-                                       "com/hdngame/fate/GameUtils",
-                                       "getSignatureCode",
-                                       "(Landroid/content/Context;)I")) {
-        int jSignatureCode = minfo.env->CallStaticIntMethod(minfo.classID, minfo.methodID, SdkManager::appActivity);
-        return jSignatureCode;
+    JNIEnv *env = JniHelper::getEnv();
+
+    jstring jPackageName = nullptr;
+    if (JniHelper::getMethodInfo(minfo,
+                               "android/content/Context",
+                               "getPackageName",
+                               "()Ljava/lang/String;")) {
+        jPackageName = (jstring)env->CallObjectMethod((jobject)SdkManager::appActivity, minfo.methodID);
     }
+    if(jPackageName == nullptr) {
+        return 0;
+    }
+
+    jobject jPackageManager = nullptr;
+    if (JniHelper::getMethodInfo(minfo,
+                               "android/content/Context",
+                               "getPackageManager",
+                               "()Landroid/content/pm/PackageManager;")) {
+        jPackageManager = (jobject)env->CallObjectMethod((jobject)SdkManager::appActivity, minfo.methodID);
+    }
+    if(jPackageManager == nullptr) {
+        return 0;
+    }
+
+    jobject jPackageInfo = nullptr;
+    if (JniHelper::getMethodInfo(minfo,
+                               "android/content/pm/PackageManager",
+                               "getPackageInfo",
+                               "(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;")) {
+        jPackageInfo = (jobject)env->CallObjectMethod(jPackageManager, minfo.methodID, jPackageName, 64);
+    }
+    if(jPackageInfo == nullptr) {
+        return 0;
+    }
+
+    jfieldID fidSignatures = env->GetFieldID(
+                                        env->GetObjectClass(jPackageInfo),
+                                        "signatures",
+                                        "[Landroid/content/pm/Signature;");
+    if(fidSignatures == nullptr) {
+        return 0;
+    }
+
+    jobjectArray jarrSignatures = (jobjectArray)env->GetObjectField(jPackageInfo, fidSignatures);
+    if(jarrSignatures == nullptr) {
+        return 0;
+    }
+
+    jobject jsign = env->GetObjectArrayElement(jarrSignatures, 0);
+    if(jsign == nullptr) {
+        return 0;
+    }
+
+    jint code = 0;
+    if (JniHelper::getMethodInfo(minfo,
+                               "android/content/pm/Signature",
+                               "hashCode",
+                               "()I")) {
+        code = env->CallIntMethod(jsign, minfo.methodID);
+    }
+
+    return code;
 #endif
 
     return 0;
