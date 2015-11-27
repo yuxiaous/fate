@@ -8,24 +8,6 @@ using namespace cocos2d;
 
 #define  CLASS_NAME "com/hdngame/fate/mm/MMSdkJni"
 
-
-//计费点代码	 商品名称
-//30000913953201	1瓶回复药水	 	应用编码：	300009139532
-//30000913953202	6瓶回复药水	 	app key：	BFE9123C8839FBF71862A521D6D38DB2
-//30000913953203 	购买大招
-//30000913953204	尼禄套装
-//30000913953205	2万金币
-//30000913953206	6.6万金币
-//30000913953207	14.4万金币
-//30000913953208	28万金币
-//30000913953209	体力
-//30000913953210	传奇套装礼包
-//30000913953211	传说武器礼包
-//30000913953212	至尊礼包
-//30000913953213	VIP礼包
-//30000913953214 	复活
-//30000913953215	一键满级
-
 static std::string g_order;
 static int g_result = 0;
 static bool g_confirm = false;
@@ -68,8 +50,8 @@ void MMSdk::activityOnCreate()
 {
     cocos2d::log("MMSdk::activityOnCreate");
 
-    const char *appid = "300009139532";
-    const char *appkey = "BFE9123C8839FBF71862A521D6D38DB2";
+    const char *appid = "300009184111";
+    const char *appkey = "2847FDDE0888C26364D0D0A8FEBFC34C";
 
     JniMethodInfo minfo;
     if (JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "init", "(Ljava/lang/String;Ljava/lang/String;)V")) {

@@ -1,7 +1,7 @@
 package com.hdngame.fate.mm;
 
 import android.content.Context;
-import com.secneo.wrapper.Helper;
+import com.secneo.mmb.Helper;
 import org.cocos2dx.javascript.AppApplication;
 
 import java.lang.Override;
