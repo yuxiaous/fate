@@ -274,6 +274,10 @@ var MainScene = ui.GuiSceneBase.extend({
     },
 
     _on_btn_mission: function() {
+        if(!GuideSystem.instance.getCurFunctionIsOpenWithMapId(GuideSystem.Type.shangdian)){
+            MessageBoxOk.show("通过第一章第二关开放");
+            return;
+        }
         var win = new MissionScene();
         win.pop();
     },
