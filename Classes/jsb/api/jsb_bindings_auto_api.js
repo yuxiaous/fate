@@ -1125,6 +1125,26 @@ func
 jsb.GameUtils = {
 
 /**
+ * @method isDebugMode
+ * @return {bool}
+ */
+isDebugMode : function (
+)
+{
+    return false;
+},
+
+/**
+ * @method getUdid
+ * @return {String}
+ */
+getUdid : function (
+)
+{
+    return ;
+},
+
+/**
  * @method getSignatureCode
  * @return {int}
  */
@@ -1145,6 +1165,16 @@ getChannelId : function (
 },
 
 /**
+ * @method isReleaseMode
+ * @return {bool}
+ */
+isReleaseMode : function (
+)
+{
+    return false;
+},
+
+/**
  * @method getSimOperator
  * @return {int}
  */
@@ -1154,14 +1184,69 @@ getSimOperator : function (
     return 0;
 },
 
+};
+
 /**
- * @method getUdid
- * @return {String}
+ * @class Joystick
  */
-getUdid : function (
+jsb.Joystick = {
+
+/**
+ * @method setTouchArea
+ * @param {rect_object} arg0
+ */
+setTouchArea : function (
+rect 
 )
 {
-    return ;
+},
+
+/**
+ * @method setBackgroundSprite
+ * @param {cc.Sprite} arg0
+ * @param {cc.Sprite} arg1
+ */
+setBackgroundSprite : function (
+sprite, 
+sprite 
+)
+{
+},
+
+/**
+ * @method setThumbSprite
+ * @param {cc.Sprite} arg0
+ * @param {cc.Sprite} arg1
+ */
+setThumbSprite : function (
+sprite, 
+sprite 
+)
+{
+},
+
+/**
+ * @method getVelocity
+ * @return {vec2_object}
+ */
+getVelocity : function (
+)
+{
+    return cc.Vec2;
+},
+
+/**
+ * @method create
+ * @param {size_object} arg0
+ * @param {size_object} arg1
+ * @return {Joystick}
+ */
+create : function (
+size, 
+size 
+)
+{
+    return Joystick;
 },
 
 };

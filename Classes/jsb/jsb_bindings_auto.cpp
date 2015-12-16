@@ -2988,6 +2988,34 @@ void js_register_jsb_bindings_auto_SdkManager(JSContext *cx, JS::HandleObject gl
 JSClass  *jsb_GameUtils_class;
 JSObject *jsb_GameUtils_prototype;
 
+bool js_jsb_bindings_auto_GameUtils_isDebugMode(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        bool ret = GameUtils::isDebugMode();
+        jsval jsret = JSVAL_NULL;
+        jsret = BOOLEAN_TO_JSVAL(ret);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_isDebugMode : wrong number of arguments");
+    return false;
+}
+
+bool js_jsb_bindings_auto_GameUtils_getUdid(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        std::string ret = GameUtils::getUdid();
+        jsval jsret = JSVAL_NULL;
+        jsret = std_string_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_getUdid : wrong number of arguments");
+    return false;
+}
+
 bool js_jsb_bindings_auto_GameUtils_getSignatureCode(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -3016,6 +3044,20 @@ bool js_jsb_bindings_auto_GameUtils_getChannelId(JSContext *cx, uint32_t argc, j
     return false;
 }
 
+bool js_jsb_bindings_auto_GameUtils_isReleaseMode(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        bool ret = GameUtils::isReleaseMode();
+        jsval jsret = JSVAL_NULL;
+        jsret = BOOLEAN_TO_JSVAL(ret);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_isReleaseMode : wrong number of arguments");
+    return false;
+}
+
 bool js_jsb_bindings_auto_GameUtils_getSimOperator(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -3027,20 +3069,6 @@ bool js_jsb_bindings_auto_GameUtils_getSimOperator(JSContext *cx, uint32_t argc,
         return true;
     }
     JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_getSimOperator : wrong number of arguments");
-    return false;
-}
-
-bool js_jsb_bindings_auto_GameUtils_getUdid(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    if (argc == 0) {
-        std::string ret = GameUtils::getUdid();
-        jsval jsret = JSVAL_NULL;
-        jsret = std_string_to_jsval(cx, ret);
-        args.rval().set(jsret);
-        return true;
-    }
-    JS_ReportError(cx, "js_jsb_bindings_auto_GameUtils_getUdid : wrong number of arguments");
     return false;
 }
 
@@ -3073,10 +3101,12 @@ void js_register_jsb_bindings_auto_GameUtils(JSContext *cx, JS::HandleObject glo
     };
 
     static JSFunctionSpec st_funcs[] = {
+        JS_FN("isDebugMode", js_jsb_bindings_auto_GameUtils_isDebugMode, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getUdid", js_jsb_bindings_auto_GameUtils_getUdid, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getSignatureCode", js_jsb_bindings_auto_GameUtils_getSignatureCode, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getChannelId", js_jsb_bindings_auto_GameUtils_getChannelId, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("isReleaseMode", js_jsb_bindings_auto_GameUtils_isReleaseMode, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getSimOperator", js_jsb_bindings_auto_GameUtils_getSimOperator, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("getUdid", js_jsb_bindings_auto_GameUtils_getUdid, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 
@@ -3108,6 +3138,242 @@ void js_register_jsb_bindings_auto_GameUtils(JSContext *cx, JS::HandleObject glo
     }
 }
 
+JSClass  *jsb_Joystick_class;
+JSObject *jsb_Joystick_prototype;
+
+bool js_jsb_bindings_auto_Joystick_setTouchArea(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_setTouchArea : Invalid Native Object");
+    if (argc == 1) {
+        cocos2d::Rect arg0;
+        ok &= jsval_to_ccrect(cx, args.get(0), &arg0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setTouchArea : Error processing arguments");
+        cobj->setTouchArea(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_setTouchArea : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
+bool js_jsb_bindings_auto_Joystick_setBackgroundSprite(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_setBackgroundSprite : Invalid Native Object");
+    if (argc == 1) {
+        cocos2d::Sprite* arg0;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setBackgroundSprite : Error processing arguments");
+        cobj->setBackgroundSprite(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+    if (argc == 2) {
+        cocos2d::Sprite* arg0;
+        cocos2d::Sprite* arg1;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        do {
+            if (!args.get(1).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(1).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg1 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg1, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setBackgroundSprite : Error processing arguments");
+        cobj->setBackgroundSprite(arg0, arg1);
+        args.rval().setUndefined();
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_setBackgroundSprite : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
+bool js_jsb_bindings_auto_Joystick_setThumbSprite(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_setThumbSprite : Invalid Native Object");
+    if (argc == 1) {
+        cocos2d::Sprite* arg0;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setThumbSprite : Error processing arguments");
+        cobj->setThumbSprite(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+    if (argc == 2) {
+        cocos2d::Sprite* arg0;
+        cocos2d::Sprite* arg1;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        do {
+            if (!args.get(1).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(1).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg1 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg1, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setThumbSprite : Error processing arguments");
+        cobj->setThumbSprite(arg0, arg1);
+        args.rval().setUndefined();
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_setThumbSprite : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
+bool js_jsb_bindings_auto_Joystick_getVelocity(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_getVelocity : Invalid Native Object");
+    if (argc == 0) {
+        cocos2d::Vec2 ret = cobj->getVelocity();
+        jsval jsret = JSVAL_NULL;
+        jsret = vector2_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_getVelocity : wrong number of arguments: %d, was expecting %d", argc, 0);
+    return false;
+}
+bool js_jsb_bindings_auto_Joystick_create(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    if (argc == 2) {
+        cocos2d::Size arg0;
+        cocos2d::Size arg1;
+        ok &= jsval_to_ccsize(cx, args.get(0), &arg0);
+        ok &= jsval_to_ccsize(cx, args.get(1), &arg1);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_create : Error processing arguments");
+        Joystick* ret = Joystick::create(arg0, arg1);
+        jsval jsret = JSVAL_NULL;
+        do {
+        if (ret) {
+            js_proxy_t *jsProxy = js_get_or_create_proxy<Joystick>(cx, (Joystick*)ret);
+            jsret = OBJECT_TO_JSVAL(jsProxy->obj);
+        } else {
+            jsret = JSVAL_NULL;
+        }
+    } while (0);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_create : wrong number of arguments");
+    return false;
+}
+
+
+extern JSObject *jsb_cocos2d_Node_prototype;
+
+void js_Joystick_finalize(JSFreeOp *fop, JSObject *obj) {
+    CCLOGINFO("jsbindings: finalizing JS object %p (Joystick)", obj);
+}
+
+void js_register_jsb_bindings_auto_Joystick(JSContext *cx, JS::HandleObject global) {
+    jsb_Joystick_class = (JSClass *)calloc(1, sizeof(JSClass));
+    jsb_Joystick_class->name = "Joystick";
+    jsb_Joystick_class->addProperty = JS_PropertyStub;
+    jsb_Joystick_class->delProperty = JS_DeletePropertyStub;
+    jsb_Joystick_class->getProperty = JS_PropertyStub;
+    jsb_Joystick_class->setProperty = JS_StrictPropertyStub;
+    jsb_Joystick_class->enumerate = JS_EnumerateStub;
+    jsb_Joystick_class->resolve = JS_ResolveStub;
+    jsb_Joystick_class->convert = JS_ConvertStub;
+    jsb_Joystick_class->finalize = js_Joystick_finalize;
+    jsb_Joystick_class->flags = JSCLASS_HAS_RESERVED_SLOTS(2);
+
+    static JSPropertySpec properties[] = {
+        JS_PSG("__nativeObj", js_is_native_obj, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_PS_END
+    };
+
+    static JSFunctionSpec funcs[] = {
+        JS_FN("setTouchArea", js_jsb_bindings_auto_Joystick_setTouchArea, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setBackgroundSprite", js_jsb_bindings_auto_Joystick_setBackgroundSprite, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setThumbSprite", js_jsb_bindings_auto_Joystick_setThumbSprite, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getVelocity", js_jsb_bindings_auto_Joystick_getVelocity, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FS_END
+    };
+
+    static JSFunctionSpec st_funcs[] = {
+        JS_FN("create", js_jsb_bindings_auto_Joystick_create, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FS_END
+    };
+
+    jsb_Joystick_prototype = JS_InitClass(
+        cx, global,
+        JS::RootedObject(cx, jsb_cocos2d_Node_prototype),
+        jsb_Joystick_class,
+        dummy_constructor<Joystick>, 0, // no constructor
+        properties,
+        funcs,
+        NULL, // no static properties
+        st_funcs);
+    // make the class enumerable in the registered namespace
+//  bool found;
+//FIXME: Removed in Firefox v27 
+//  JS_SetPropertyAttributes(cx, global, "Joystick", JSPROP_ENUMERATE | JSPROP_READONLY, &found);
+
+    // add the proto and JSClass to the type->js info hash table
+    TypeTest<Joystick> t;
+    js_type_class_t *p;
+    std::string typeName = t.s_name();
+    if (_js_global_type_map.find(typeName) == _js_global_type_map.end())
+    {
+        p = (js_type_class_t *)malloc(sizeof(js_type_class_t));
+        p->jsclass = jsb_Joystick_class;
+        p->proto = jsb_Joystick_prototype;
+        p->parentProto = jsb_cocos2d_Node_prototype;
+        _js_global_type_map.insert(std::make_pair(typeName, p));
+    }
+}
+
 void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj) {
     // Get the ns
     JS::RootedObject ns(cx);
@@ -3121,6 +3387,7 @@ void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj) {
     js_register_jsb_bindings_auto_SneakyButtonSkinnedBase(cx, ns);
     js_register_jsb_bindings_auto_SneakyJoystick(cx, ns);
     js_register_jsb_bindings_auto_SdkManager(cx, ns);
+    js_register_jsb_bindings_auto_Joystick(cx, ns);
     js_register_jsb_bindings_auto_SneakyJoystickSkinnedBase(cx, ns);
 }
 

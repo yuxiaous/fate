@@ -497,6 +497,10 @@
 		DE5AD2E01B6A76B4003F6331 /* AppStoreSdk.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2DB1B6A76B4003F6331 /* AppStoreSdk.mm */; };
 		DE5AD2E11B6A76B4003F6331 /* StoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AD2DF1B6A76B4003F6331 /* StoreObserver.m */; };
 		DE5AD2E31B6A7729003F6331 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AD2E21B6A7729003F6331 /* StoreKit.framework */; };
+		DE7C168E1C210A88006FA763 /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C168C1C210A88006FA763 /* Joystick.cpp */; };
+		DE7C16901C210A8E006FA763 /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C168C1C210A88006FA763 /* Joystick.cpp */; };
+		DE7C16911C210A8E006FA763 /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C168C1C210A88006FA763 /* Joystick.cpp */; };
+		DE7C16921C210A8F006FA763 /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C168C1C210A88006FA763 /* Joystick.cpp */; };
 		DEA0AB7F1B29924900079B42 /* libLevelHelper2-API+Box2d-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF41B258A0F005B744E /* libLevelHelper2-API+Box2d-OSX.a */; };
 		DEA0AB941B2B0ADB00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
 		DEA0AB961B2B0ADB00079B42 /* script in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB911B2B0ADB00079B42 /* script */; };
@@ -1056,6 +1060,8 @@
 		DE5AD2DE1B6A76B4003F6331 /* StoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreObserver.h; sourceTree = "<group>"; };
 		DE5AD2DF1B6A76B4003F6331 /* StoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreObserver.m; sourceTree = "<group>"; };
 		DE5AD2E21B6A7729003F6331 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		DE7C168C1C210A88006FA763 /* Joystick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joystick.cpp; sourceTree = "<group>"; };
+		DE7C168D1C210A88006FA763 /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
 		DEA0AB851B29948800079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../config; sourceTree = "<group>"; };
 		DEA0AB901B2B0ADB00079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../publish/config; sourceTree = "<group>"; };
 		DEA0AB911B2B0ADB00079B42 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../../../publish/script; sourceTree = "<group>"; };
@@ -1743,6 +1749,7 @@
 		DE36EDF81B25947C005B744E /* game */ = {
 			isa = PBXGroup;
 			children = (
+				DE7C168B1C210A88006FA763 /* Joystick */,
 				DE36EDF91B25955C005B744E /* dragonbones */,
 				DEE196621B443BC200359A46 /* GameUtils.cpp */,
 				DEE196631B443BC200359A46 /* GameUtils.h */,
@@ -2186,6 +2193,16 @@
 				DE5AD2DF1B6A76B4003F6331 /* StoreObserver.m */,
 			);
 			path = ios;
+			sourceTree = "<group>";
+		};
+		DE7C168B1C210A88006FA763 /* Joystick */ = {
+			isa = PBXGroup;
+			children = (
+				DE7C168C1C210A88006FA763 /* Joystick.cpp */,
+				DE7C168D1C210A88006FA763 /* Joystick.h */,
+			);
+			name = Joystick;
+			path = ../../../Classes/Joystick;
 			sourceTree = "<group>";
 		};
 		DEA0AB8F1B2B0A9300079B42 /* publish */ = {
@@ -2662,6 +2679,7 @@
 				DE36EF0F1B25955E005B744E /* Slot.cpp in Sources */,
 				3E12D1D81957FB18002FF0FD /* generated_message_util.cc in Sources */,
 				C00FD4BB1938628E00C6382D /* Runtime.cpp in Sources */,
+				DE7C16901C210A8E006FA763 /* Joystick.cpp in Sources */,
 				3E12D1DA1957FB18002FF0FD /* coded_stream.cc in Sources */,
 				DE25C4101B31D0CA00A9AEC0 /* SdkManager.cpp in Sources */,
 				C03C8B4B18A770DD00723415 /* main.m in Sources */,
@@ -2760,6 +2778,7 @@
 				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,
 				DE36EFC41B25955E005B744E /* LHVideoPlayer.m in Sources */,
 				DE54BA8F1B4D243F00202FEA /* KTPlayApplicationUtils.mm in Sources */,
+				DE7C168E1C210A88006FA763 /* Joystick.cpp in Sources */,
 				C026DCC918928A2400B3EDE8 /* Runtime_ios-mac.mm in Sources */,
 				DE54BA951B4D243F00202FEA /* README.md in Sources */,
 				AB9079D419E931D80033128B /* ConsoleCommand.cpp in Sources */,
@@ -2777,6 +2796,7 @@
 				DE25C3651B317BA800A9AEC0 /* RootViewController.mm in Sources */,
 				DE25C3661B317BA800A9AEC0 /* WorldClock.cpp in Sources */,
 				DE25C3671B317BA800A9AEC0 /* Bone.cpp in Sources */,
+				DE7C16911C210A8E006FA763 /* Joystick.cpp in Sources */,
 				DE25C3681B317BA800A9AEC0 /* SneakyButtonSkinnedBase.cpp in Sources */,
 				DE25C3691B317BA800A9AEC0 /* BaseDataParser.cpp in Sources */,
 				DE25C36A1B317BA800A9AEC0 /* Landscape_png.cpp in Sources */,
@@ -2865,6 +2885,7 @@
 				DE5AD2101B678CF4003F6331 /* Runtime.cpp in Sources */,
 				DE5AD2131B678CF4003F6331 /* SneakyButton.cpp in Sources */,
 				DE5AD2141B678CF4003F6331 /* FileServer.cpp in Sources */,
+				DE7C16921C210A8F006FA763 /* Joystick.cpp in Sources */,
 				DE5AD2151B678CF4003F6331 /* message_lite.cc in Sources */,
 				DE5AD2161B678CF4003F6331 /* ConfigParser.cpp in Sources */,
 				DE5AD2171B678CF4003F6331 /* TDCCItem.mm in Sources */,
@@ -2999,8 +3020,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = ../../../runtime/mac;
 				DEAD_CODE_STRIPPING = YES;
@@ -3030,8 +3051,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;

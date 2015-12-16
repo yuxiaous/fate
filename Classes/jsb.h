@@ -6,5 +6,6 @@
 #include "JsonStorage.h"
 #include "sdk/SdkManager.h"
 #include "GameUtils.h"
+#include "Joystick/Joystick.h"
 #endif //__JSB_H__
 
