@@ -304,7 +304,7 @@ var OperationLayer = cc.Layer.extend({
             btn_.addChild(label);
 
             //rotate progress
-            var covPro = btn_.btnSkinned.getDisabledSprite().coverProgress;
+            var covPro =  btn_.btnSkinned.coverProgress;
             var everyValue = 100 / tmpTime;
             function refreshLabelAnthor(){
                 var curPercent = covPro.getPercentage();
@@ -335,7 +335,7 @@ var OperationLayer = cc.Layer.extend({
         }
 
         function btnDisableWithLevel(btn_){
-            var covPro = btn_.btnSkinned.getDisabledSprite().coverProgress;
+            var covPro = btn_.btnSkinned.coverProgress;
             btn_.setIsEnable(false);
             covPro.setPercentage(100);
             covPro.setVisible(true);
@@ -365,7 +365,7 @@ var OperationLayer = cc.Layer.extend({
         }
 
         function btnDisableWithLevel(btn_){
-            var covPro = btn_.btnSkinned.getDisabledSprite().coverProgress;
+            var covPro = btn_.btnSkinned.coverProgress;
             btn_.setIsEnable(false);
             covPro.setPercentage(100);
 
@@ -511,12 +511,12 @@ var OperationLayer = cc.Layer.extend({
         //joystickBase.setJoystick(joystick);
 
         var joystick = jsb.Joystick.create(sp1.getContentSize(), sp3.getContentSize());
-        this.addChild(joystick);
         joystick.setBackgroundSprite(sp1, sp2);
         joystick.setThumbSprite(sp3, sp4);
         joystick.setTouchArea(area);
         joystick.setPosition(pos);
-        
+        this.addChild(joystick);
+
         return joystick;
     },
 
@@ -528,7 +528,10 @@ var OperationLayer = cc.Layer.extend({
         buttonBase.setPosition(pos);
         buttonBase.setDefaultSprite(sp1);
         if(sp2) buttonBase.setPressSprite(sp2);
-        if(sp3) buttonBase.setDisabledSprite(sp3);
+        if(sp3) {
+            buttonBase.setDisabledSprite(sp3);
+            buttonBase.coverProgress = sp3.coverProgress;
+        }
         this.addChild(buttonBase);
 
         var button = jsb.SneakyButton.create(sp1.getContentSize());
@@ -536,6 +539,19 @@ var OperationLayer = cc.Layer.extend({
         buttonBase.setButton(button);
         button.btnSkinned = buttonBase;
         button.isCounting = false;
+
+        //var button = jsb.Joybutton.create(sp1.getContentSize());
+        //button.setDefaultSprite(sp1);
+        //if(sp2) button.setPressSprite(sp2);
+        //if(sp3) {
+        //    button.setDisabledSprite(sp3);
+        //    button.coverProgress = sp3.coverProgress;
+        //}
+        //button.setPosition(pos);
+        //this.addChild(button);
+        //button.btnSkinned = button;
+        //button.isCounting = false;
+
 
         var fontBg = cc.Sprite.create("images/code_ui/ui_329.png");
         button.addChild(fontBg);

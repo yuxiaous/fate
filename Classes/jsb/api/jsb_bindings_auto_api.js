@@ -1270,3 +1270,82 @@ size
 },
 
 };
+
+/**
+ * @class Joybutton
+ */
+jsb.Joybutton = {
+
+/**
+ * @method setPressSprite
+ * @param {cc.Sprite} arg0
+ */
+setPressSprite : function (
+sprite 
+)
+{
+},
+
+/**
+ * @method setIsEnable
+ * @param {bool} arg0
+ */
+setIsEnable : function (
+bool 
+)
+{
+},
+
+/**
+ * @method getIsEnable
+ * @return {bool}
+ */
+getIsEnable : function (
+)
+{
+    return false;
+},
+
+/**
+ * @method setDefaultSprite
+ * @param {cc.Sprite} arg0
+ */
+setDefaultSprite : function (
+sprite 
+)
+{
+},
+
+/**
+ * @method getValue
+ * @return {bool}
+ */
+getValue : function (
+)
+{
+    return false;
+},
+
+/**
+ * @method setDisabledSprite
+ * @param {cc.Sprite} arg0
+ */
+setDisabledSprite : function (
+sprite 
+)
+{
+},
+
+/**
+ * @method create
+ * @param {size_object} arg0
+ * @return {Joybutton}
+ */
+create : function (
+size 
+)
+{
+    return Joybutton;
+},
+
+};

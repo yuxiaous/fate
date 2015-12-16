@@ -36,10 +36,7 @@ Joystick *Joystick::create(Size joystickSize, Size thumbSize)
 
 bool Joystick::initWithSize(Size joystickSize, Size thumbSize)
 {
-    _joystickSize = joystickSize;
-    _thumbSize = thumbSize;
-    
-    _joystick = SneakyJoystick::create(_joystickSize, _thumbSize);
+    _joystick = SneakyJoystick::create(joystickSize, thumbSize);
     _joystick->setIsConstantVelocity(true);
     
     _joystickBase = SneakyJoystickSkinnedBase::create();

@@ -28,17 +28,16 @@ class Joystick : public Node
 public:
     static Joystick *create(Size joystickSize, Size thumbSize);
     
+    // setter
     CC_PROPERTY(bool, _enable, IsEnable);
     void setBackgroundSprite(Sprite *aSprite, Sprite *bSprite = nullptr);
     void setThumbSprite(Sprite *aSprite, Sprite *bSprite = nullptr);
     void setTouchArea(const Rect &area);
     
+    // getter
     CC_SYNTHESIZE_READONLY(Vec2, _velocity, Velocity);
     
 private:
-    Size _joystickSize;
-    Size _thumbSize;
-    
     SneakyJoystick *_joystick;
     SneakyJoystickSkinnedBase *_joystickBase;
 };

@@ -7,5 +7,6 @@
 #include "sdk/SdkManager.h"
 #include "GameUtils.h"
 #include "Joystick/Joystick.h"
+#include "Joystick/Joybutton.h"
 #endif //__JSB_H__
 

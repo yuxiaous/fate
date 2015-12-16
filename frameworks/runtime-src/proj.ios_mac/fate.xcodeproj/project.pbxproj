@@ -501,6 +501,10 @@
 		DE7C16901C210A8E006FA763 /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C168C1C210A88006FA763 /* Joystick.cpp */; };
 		DE7C16911C210A8E006FA763 /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C168C1C210A88006FA763 /* Joystick.cpp */; };
 		DE7C16921C210A8F006FA763 /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C168C1C210A88006FA763 /* Joystick.cpp */; };
+		DE7C16951C211056006FA763 /* Joybutton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C16931C211056006FA763 /* Joybutton.cpp */; };
+		DE7C16961C211056006FA763 /* Joybutton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C16931C211056006FA763 /* Joybutton.cpp */; };
+		DE7C16971C211056006FA763 /* Joybutton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C16931C211056006FA763 /* Joybutton.cpp */; };
+		DE7C16981C211056006FA763 /* Joybutton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7C16931C211056006FA763 /* Joybutton.cpp */; };
 		DEA0AB7F1B29924900079B42 /* libLevelHelper2-API+Box2d-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE36EDF41B258A0F005B744E /* libLevelHelper2-API+Box2d-OSX.a */; };
 		DEA0AB941B2B0ADB00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
 		DEA0AB961B2B0ADB00079B42 /* script in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB911B2B0ADB00079B42 /* script */; };
@@ -1062,6 +1066,8 @@
 		DE5AD2E21B6A7729003F6331 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		DE7C168C1C210A88006FA763 /* Joystick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joystick.cpp; sourceTree = "<group>"; };
 		DE7C168D1C210A88006FA763 /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
+		DE7C16931C211056006FA763 /* Joybutton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joybutton.cpp; sourceTree = "<group>"; };
+		DE7C16941C211056006FA763 /* Joybutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joybutton.h; sourceTree = "<group>"; };
 		DEA0AB851B29948800079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../config; sourceTree = "<group>"; };
 		DEA0AB901B2B0ADB00079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../publish/config; sourceTree = "<group>"; };
 		DEA0AB911B2B0ADB00079B42 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../../../publish/script; sourceTree = "<group>"; };
@@ -2200,6 +2206,8 @@
 			children = (
 				DE7C168C1C210A88006FA763 /* Joystick.cpp */,
 				DE7C168D1C210A88006FA763 /* Joystick.h */,
+				DE7C16931C211056006FA763 /* Joybutton.cpp */,
+				DE7C16941C211056006FA763 /* Joybutton.h */,
 			);
 			name = Joystick;
 			path = ../../../Classes/Joystick;
@@ -2665,6 +2673,7 @@
 				DE36EFCF1B25955E005B744E /* SneakyButton.cpp in Sources */,
 				3E12D1AA1957FB0E002FF0FD /* Protos.pb.cc in Sources */,
 				C033B525191B36AE00D06937 /* VisibleRect.cpp in Sources */,
+				DE7C16961C211056006FA763 /* Joybutton.cpp in Sources */,
 				DE29E12C1B3CF98F000656CA /* DeveloperSdk.cpp in Sources */,
 				DE36EFD31B25955E005B744E /* SneakyJoystick.cpp in Sources */,
 				DE36EF051B25955E005B744E /* TimelineState.cpp in Sources */,
@@ -2705,6 +2714,7 @@
 				DE36EF0A1B25955E005B744E /* Bone.cpp in Sources */,
 				DE36EFD01B25955E005B744E /* SneakyButtonSkinnedBase.cpp in Sources */,
 				DE29E1581B3D75F7000656CA /* TalkingDataGameAnalyticsSdk.cpp in Sources */,
+				DE7C16951C211056006FA763 /* Joybutton.cpp in Sources */,
 				DE36EF141B25955E005B744E /* BaseDataParser.cpp in Sources */,
 				C00FD4B21938628E00C6382D /* Landscape_png.cpp in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
@@ -2847,6 +2857,7 @@
 				DE25C3DE1B318F3D00A9AEC0 /* SdkManager.cpp in Sources */,
 				DE25C3911B317BA800A9AEC0 /* Object.cpp in Sources */,
 				DE25C3DD1B318F3D00A9AEC0 /* Sdk.cpp in Sources */,
+				DE7C16971C211056006FA763 /* Joybutton.cpp in Sources */,
 				DE25C3921B317BA800A9AEC0 /* common.cc in Sources */,
 				DE25C3931B317BA800A9AEC0 /* VisibleRect.cpp in Sources */,
 				DE25C3941B317BA800A9AEC0 /* LHVideoPlayerImplCpp.mm in Sources */,
@@ -2915,6 +2926,7 @@
 				DE5AD22F1B678CF4003F6331 /* AnimationState.cpp in Sources */,
 				DE5AD2301B678CF4003F6331 /* Slot.cpp in Sources */,
 				DE5AD2331B678CF4003F6331 /* TDCCTalkingDataGA.mm in Sources */,
+				DE7C16981C211056006FA763 /* Joybutton.cpp in Sources */,
 				DE5AD2341B678CF4003F6331 /* ConstValues.cpp in Sources */,
 				DE5AD2351B678CF4003F6331 /* jsb_levelhelper_auto.cpp in Sources */,
 				DE5AD2361B678CF4003F6331 /* extension_set.cc in Sources */,

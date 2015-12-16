@@ -3414,6 +3414,239 @@ void js_register_jsb_bindings_auto_Joystick(JSContext *cx, JS::HandleObject glob
     }
 }
 
+JSClass  *jsb_Joybutton_class;
+JSObject *jsb_Joybutton_prototype;
+
+bool js_jsb_bindings_auto_Joybutton_setPressSprite(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joybutton* cobj = (Joybutton *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joybutton_setPressSprite : Invalid Native Object");
+    if (argc == 1) {
+        cocos2d::Sprite* arg0;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joybutton_setPressSprite : Error processing arguments");
+        cobj->setPressSprite(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joybutton_setPressSprite : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
+bool js_jsb_bindings_auto_Joybutton_setIsEnable(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joybutton* cobj = (Joybutton *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joybutton_setIsEnable : Invalid Native Object");
+    if (argc == 1) {
+        bool arg0;
+        arg0 = JS::ToBoolean(args.get(0));
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joybutton_setIsEnable : Error processing arguments");
+        cobj->setIsEnable(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joybutton_setIsEnable : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
+bool js_jsb_bindings_auto_Joybutton_getIsEnable(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joybutton* cobj = (Joybutton *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joybutton_getIsEnable : Invalid Native Object");
+    if (argc == 0) {
+        bool ret = cobj->getIsEnable();
+        jsval jsret = JSVAL_NULL;
+        jsret = BOOLEAN_TO_JSVAL(ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joybutton_getIsEnable : wrong number of arguments: %d, was expecting %d", argc, 0);
+    return false;
+}
+bool js_jsb_bindings_auto_Joybutton_setDefaultSprite(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joybutton* cobj = (Joybutton *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joybutton_setDefaultSprite : Invalid Native Object");
+    if (argc == 1) {
+        cocos2d::Sprite* arg0;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joybutton_setDefaultSprite : Error processing arguments");
+        cobj->setDefaultSprite(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joybutton_setDefaultSprite : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
+bool js_jsb_bindings_auto_Joybutton_getValue(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joybutton* cobj = (Joybutton *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joybutton_getValue : Invalid Native Object");
+    if (argc == 0) {
+        bool ret = cobj->getValue();
+        jsval jsret = JSVAL_NULL;
+        jsret = BOOLEAN_TO_JSVAL(ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joybutton_getValue : wrong number of arguments: %d, was expecting %d", argc, 0);
+    return false;
+}
+bool js_jsb_bindings_auto_Joybutton_setDisabledSprite(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joybutton* cobj = (Joybutton *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joybutton_setDisabledSprite : Invalid Native Object");
+    if (argc == 1) {
+        cocos2d::Sprite* arg0;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joybutton_setDisabledSprite : Error processing arguments");
+        cobj->setDisabledSprite(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joybutton_setDisabledSprite : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
+bool js_jsb_bindings_auto_Joybutton_create(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    if (argc == 1) {
+        cocos2d::Size arg0;
+        ok &= jsval_to_ccsize(cx, args.get(0), &arg0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joybutton_create : Error processing arguments");
+        Joybutton* ret = Joybutton::create(arg0);
+        jsval jsret = JSVAL_NULL;
+        do {
+        if (ret) {
+            js_proxy_t *jsProxy = js_get_or_create_proxy<Joybutton>(cx, (Joybutton*)ret);
+            jsret = OBJECT_TO_JSVAL(jsProxy->obj);
+        } else {
+            jsret = JSVAL_NULL;
+        }
+    } while (0);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joybutton_create : wrong number of arguments");
+    return false;
+}
+
+
+extern JSObject *jsb_cocos2d_Node_prototype;
+
+void js_Joybutton_finalize(JSFreeOp *fop, JSObject *obj) {
+    CCLOGINFO("jsbindings: finalizing JS object %p (Joybutton)", obj);
+}
+
+void js_register_jsb_bindings_auto_Joybutton(JSContext *cx, JS::HandleObject global) {
+    jsb_Joybutton_class = (JSClass *)calloc(1, sizeof(JSClass));
+    jsb_Joybutton_class->name = "Joybutton";
+    jsb_Joybutton_class->addProperty = JS_PropertyStub;
+    jsb_Joybutton_class->delProperty = JS_DeletePropertyStub;
+    jsb_Joybutton_class->getProperty = JS_PropertyStub;
+    jsb_Joybutton_class->setProperty = JS_StrictPropertyStub;
+    jsb_Joybutton_class->enumerate = JS_EnumerateStub;
+    jsb_Joybutton_class->resolve = JS_ResolveStub;
+    jsb_Joybutton_class->convert = JS_ConvertStub;
+    jsb_Joybutton_class->finalize = js_Joybutton_finalize;
+    jsb_Joybutton_class->flags = JSCLASS_HAS_RESERVED_SLOTS(2);
+
+    static JSPropertySpec properties[] = {
+        JS_PSG("__nativeObj", js_is_native_obj, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_PS_END
+    };
+
+    static JSFunctionSpec funcs[] = {
+        JS_FN("setPressSprite", js_jsb_bindings_auto_Joybutton_setPressSprite, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setIsEnable", js_jsb_bindings_auto_Joybutton_setIsEnable, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getIsEnable", js_jsb_bindings_auto_Joybutton_getIsEnable, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setDefaultSprite", js_jsb_bindings_auto_Joybutton_setDefaultSprite, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getValue", js_jsb_bindings_auto_Joybutton_getValue, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setDisabledSprite", js_jsb_bindings_auto_Joybutton_setDisabledSprite, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FS_END
+    };
+
+    static JSFunctionSpec st_funcs[] = {
+        JS_FN("create", js_jsb_bindings_auto_Joybutton_create, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FS_END
+    };
+
+    jsb_Joybutton_prototype = JS_InitClass(
+        cx, global,
+        JS::RootedObject(cx, jsb_cocos2d_Node_prototype),
+        jsb_Joybutton_class,
+        dummy_constructor<Joybutton>, 0, // no constructor
+        properties,
+        funcs,
+        NULL, // no static properties
+        st_funcs);
+    // make the class enumerable in the registered namespace
+//  bool found;
+//FIXME: Removed in Firefox v27 
+//  JS_SetPropertyAttributes(cx, global, "Joybutton", JSPROP_ENUMERATE | JSPROP_READONLY, &found);
+
+    // add the proto and JSClass to the type->js info hash table
+    TypeTest<Joybutton> t;
+    js_type_class_t *p;
+    std::string typeName = t.s_name();
+    if (_js_global_type_map.find(typeName) == _js_global_type_map.end())
+    {
+        p = (js_type_class_t *)malloc(sizeof(js_type_class_t));
+        p->jsclass = jsb_Joybutton_class;
+        p->proto = jsb_Joybutton_prototype;
+        p->parentProto = jsb_cocos2d_Node_prototype;
+        _js_global_type_map.insert(std::make_pair(typeName, p));
+    }
+}
+
 void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj) {
     // Get the ns
     JS::RootedObject ns(cx);
@@ -3426,6 +3659,7 @@ void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj) {
     js_register_jsb_bindings_auto_GameUtils(cx, ns);
     js_register_jsb_bindings_auto_SneakyButtonSkinnedBase(cx, ns);
     js_register_jsb_bindings_auto_SneakyJoystick(cx, ns);
+    js_register_jsb_bindings_auto_Joybutton(cx, ns);
     js_register_jsb_bindings_auto_SdkManager(cx, ns);
     js_register_jsb_bindings_auto_Joystick(cx, ns);
     js_register_jsb_bindings_auto_SneakyJoystickSkinnedBase(cx, ns);
