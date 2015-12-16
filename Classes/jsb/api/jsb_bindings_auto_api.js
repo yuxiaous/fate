@@ -1192,6 +1192,48 @@ getSimOperator : function (
 jsb.Joystick = {
 
 /**
+ * @method getVelocity
+ * @return {vec2_object}
+ */
+getVelocity : function (
+)
+{
+    return cc.Vec2;
+},
+
+/**
+ * @method setIsEnable
+ * @param {bool} arg0
+ */
+setIsEnable : function (
+bool 
+)
+{
+},
+
+/**
+ * @method getIsEnable
+ * @return {bool}
+ */
+getIsEnable : function (
+)
+{
+    return false;
+},
+
+/**
+ * @method setThumbSprite
+ * @param {cc.Sprite} arg0
+ * @param {cc.Sprite} arg1
+ */
+setThumbSprite : function (
+sprite, 
+sprite 
+)
+{
+},
+
+/**
  * @method setTouchArea
  * @param {rect_object} arg0
  */
@@ -1211,28 +1253,6 @@ sprite,
 sprite 
 )
 {
-},
-
-/**
- * @method setThumbSprite
- * @param {cc.Sprite} arg0
- * @param {cc.Sprite} arg1
- */
-setThumbSprite : function (
-sprite, 
-sprite 
-)
-{
-},
-
-/**
- * @method getVelocity
- * @return {vec2_object}
- */
-getVelocity : function (
-)
-{
-    return cc.Vec2;
 },
 
 /**

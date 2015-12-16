@@ -187,10 +187,12 @@ bool js_jsb_bindings_auto_Joystick_constructor(JSContext *cx, uint32_t argc, jsv
 void js_jsb_bindings_auto_Joystick_finalize(JSContext *cx, JSObject *obj);
 void js_register_jsb_bindings_auto_Joystick(JSContext *cx, JS::HandleObject global);
 void register_all_jsb_bindings_auto(JSContext* cx, JS::HandleObject obj);
+bool js_jsb_bindings_auto_Joystick_getVelocity(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_jsb_bindings_auto_Joystick_setIsEnable(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_jsb_bindings_auto_Joystick_getIsEnable(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_jsb_bindings_auto_Joystick_setThumbSprite(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_Joystick_setTouchArea(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_Joystick_setBackgroundSprite(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_bindings_auto_Joystick_setThumbSprite(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_bindings_auto_Joystick_getVelocity(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_bindings_auto_Joystick_create(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
 

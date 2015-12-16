@@ -12,9 +12,15 @@
 
 Joystick::Joystick()
 : _joystick(nullptr)
+, _joystickBase(nullptr)
 {
+    this->scheduleUpdate();
 }
 
+Joystick::~Joystick()
+{
+    this->unscheduleUpdate();
+}
 
 Joystick *Joystick::create(Size joystickSize, Size thumbSize)
 {
@@ -32,12 +38,6 @@ bool Joystick::initWithSize(Size joystickSize, Size thumbSize)
 {
     _joystickSize = joystickSize;
     _thumbSize = thumbSize;
-    return true;
-}
-
-void Joystick::onEnter()
-{
-    Super::onEnter();
     
     _joystick = SneakyJoystick::create(_joystickSize, _thumbSize);
     _joystick->setIsConstantVelocity(true);
@@ -47,6 +47,15 @@ void Joystick::onEnter()
     _joystickBase->setJoystick(_joystick);
     
     this->addChild(_joystickBase);
+    
+    return true;
+}
+
+void Joystick::update(float delta)
+{
+    if(_joystick) {
+        _velocity = _joystick->getVelocity();
+    }
 }
 
 void Joystick::setBackgroundSprite(Sprite *aSprite, Sprite *bSprite)
@@ -68,4 +77,18 @@ void Joystick::setTouchArea(const Rect &area)
     if(_joystick) {
         _joystick->setTouchArea(area);
     }
+}
+
+void Joystick::setIsEnable(bool var)
+{
+    _enable = var;
+    
+    if(_joystick) {
+        _joystick->setIsEnable(var);
+    }
+}
+
+bool Joystick::getIsEnable()
+{
+    return _enable;
 }

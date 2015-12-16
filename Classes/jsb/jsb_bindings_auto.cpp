@@ -3141,6 +3141,113 @@ void js_register_jsb_bindings_auto_GameUtils(JSContext *cx, JS::HandleObject glo
 JSClass  *jsb_Joystick_class;
 JSObject *jsb_Joystick_prototype;
 
+bool js_jsb_bindings_auto_Joystick_getVelocity(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_getVelocity : Invalid Native Object");
+    if (argc == 0) {
+        cocos2d::Vec2 ret = cobj->getVelocity();
+        jsval jsret = JSVAL_NULL;
+        jsret = vector2_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_getVelocity : wrong number of arguments: %d, was expecting %d", argc, 0);
+    return false;
+}
+bool js_jsb_bindings_auto_Joystick_setIsEnable(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_setIsEnable : Invalid Native Object");
+    if (argc == 1) {
+        bool arg0;
+        arg0 = JS::ToBoolean(args.get(0));
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setIsEnable : Error processing arguments");
+        cobj->setIsEnable(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_setIsEnable : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
+bool js_jsb_bindings_auto_Joystick_getIsEnable(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_getIsEnable : Invalid Native Object");
+    if (argc == 0) {
+        bool ret = cobj->getIsEnable();
+        jsval jsret = JSVAL_NULL;
+        jsret = BOOLEAN_TO_JSVAL(ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_getIsEnable : wrong number of arguments: %d, was expecting %d", argc, 0);
+    return false;
+}
+bool js_jsb_bindings_auto_Joystick_setThumbSprite(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_setThumbSprite : Invalid Native Object");
+    if (argc == 1) {
+        cocos2d::Sprite* arg0;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setThumbSprite : Error processing arguments");
+        cobj->setThumbSprite(arg0);
+        args.rval().setUndefined();
+        return true;
+    }
+    if (argc == 2) {
+        cocos2d::Sprite* arg0;
+        cocos2d::Sprite* arg1;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        do {
+            if (!args.get(1).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(1).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg1 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg1, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setThumbSprite : Error processing arguments");
+        cobj->setThumbSprite(arg0, arg1);
+        args.rval().setUndefined();
+        return true;
+    }
+
+    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_setThumbSprite : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
 bool js_jsb_bindings_auto_Joystick_setTouchArea(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -3212,75 +3319,6 @@ bool js_jsb_bindings_auto_Joystick_setBackgroundSprite(JSContext *cx, uint32_t a
     JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_setBackgroundSprite : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
 }
-bool js_jsb_bindings_auto_Joystick_setThumbSprite(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_setThumbSprite : Invalid Native Object");
-    if (argc == 1) {
-        cocos2d::Sprite* arg0;
-        do {
-            if (!args.get(0).isObject()) { ok = false; break; }
-            js_proxy_t *jsProxy;
-            JSObject *tmpObj = args.get(0).toObjectOrNull();
-            jsProxy = jsb_get_js_proxy(tmpObj);
-            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
-            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
-        } while (0);
-        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setThumbSprite : Error processing arguments");
-        cobj->setThumbSprite(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-    if (argc == 2) {
-        cocos2d::Sprite* arg0;
-        cocos2d::Sprite* arg1;
-        do {
-            if (!args.get(0).isObject()) { ok = false; break; }
-            js_proxy_t *jsProxy;
-            JSObject *tmpObj = args.get(0).toObjectOrNull();
-            jsProxy = jsb_get_js_proxy(tmpObj);
-            arg0 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
-            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
-        } while (0);
-        do {
-            if (!args.get(1).isObject()) { ok = false; break; }
-            js_proxy_t *jsProxy;
-            JSObject *tmpObj = args.get(1).toObjectOrNull();
-            jsProxy = jsb_get_js_proxy(tmpObj);
-            arg1 = (cocos2d::Sprite*)(jsProxy ? jsProxy->ptr : NULL);
-            JSB_PRECONDITION2( arg1, cx, false, "Invalid Native Object");
-        } while (0);
-        JSB_PRECONDITION2(ok, cx, false, "js_jsb_bindings_auto_Joystick_setThumbSprite : Error processing arguments");
-        cobj->setThumbSprite(arg0, arg1);
-        args.rval().setUndefined();
-        return true;
-    }
-
-    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_setThumbSprite : wrong number of arguments: %d, was expecting %d", argc, 1);
-    return false;
-}
-bool js_jsb_bindings_auto_Joystick_getVelocity(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    Joystick* cobj = (Joystick *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_jsb_bindings_auto_Joystick_getVelocity : Invalid Native Object");
-    if (argc == 0) {
-        cocos2d::Vec2 ret = cobj->getVelocity();
-        jsval jsret = JSVAL_NULL;
-        jsret = vector2_to_jsval(cx, ret);
-        args.rval().set(jsret);
-        return true;
-    }
-
-    JS_ReportError(cx, "js_jsb_bindings_auto_Joystick_getVelocity : wrong number of arguments: %d, was expecting %d", argc, 0);
-    return false;
-}
 bool js_jsb_bindings_auto_Joystick_create(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -3334,10 +3372,12 @@ void js_register_jsb_bindings_auto_Joystick(JSContext *cx, JS::HandleObject glob
     };
 
     static JSFunctionSpec funcs[] = {
+        JS_FN("getVelocity", js_jsb_bindings_auto_Joystick_getVelocity, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setIsEnable", js_jsb_bindings_auto_Joystick_setIsEnable, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getIsEnable", js_jsb_bindings_auto_Joystick_getIsEnable, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setThumbSprite", js_jsb_bindings_auto_Joystick_setThumbSprite, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setTouchArea", js_jsb_bindings_auto_Joystick_setTouchArea, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setBackgroundSprite", js_jsb_bindings_auto_Joystick_setBackgroundSprite, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setThumbSprite", js_jsb_bindings_auto_Joystick_setThumbSprite, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("getVelocity", js_jsb_bindings_auto_Joystick_getVelocity, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 

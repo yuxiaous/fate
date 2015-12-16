@@ -21,12 +21,14 @@ class Joystick : public Node
     typedef Node Super;
     
     Joystick();
-    virtual void onEnter() override;
+    virtual ~Joystick();
     bool initWithSize(Size joystickSize, Size thumbSize);
+    virtual void update(float delta) override;
     
 public:
     static Joystick *create(Size joystickSize, Size thumbSize);
     
+    CC_PROPERTY(bool, _enable, IsEnable);
     void setBackgroundSprite(Sprite *aSprite, Sprite *bSprite = nullptr);
     void setThumbSprite(Sprite *aSprite, Sprite *bSprite = nullptr);
     void setTouchArea(const Rect &area);

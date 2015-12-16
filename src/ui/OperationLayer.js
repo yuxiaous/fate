@@ -499,16 +499,24 @@ var OperationLayer = cc.Layer.extend({
         if(sp1 == null || sp3 == null)
             return null;
 
-        var joystickBase = jsb.SneakyJoystickSkinnedBase.create();
-        joystickBase.setPosition(pos);
-        joystickBase.setBackgroundSprite(sp1, sp2);
-        joystickBase.setThumbSprite(sp3, sp4);
-        this.addChild(joystickBase);
+        //var joystickBase = jsb.SneakyJoystickSkinnedBase.create();
+        //joystickBase.setPosition(pos);
+        //joystickBase.setBackgroundSprite(sp1, sp2);
+        //joystickBase.setThumbSprite(sp3, sp4);
+        //this.addChild(joystickBase);
+        //
+        //var joystick = jsb.SneakyJoystick.create(sp1.getContentSize(), sp3.getContentSize());
+        //joystick.setTouchArea(area);
+        //joystick.setIsConstantVelocity(true);
+        //joystickBase.setJoystick(joystick);
 
-        var joystick = jsb.SneakyJoystick.create(sp1.getContentSize(), sp3.getContentSize());
+        var joystick = jsb.Joystick.create(sp1.getContentSize(), sp3.getContentSize());
+        this.addChild(joystick);
+        joystick.setBackgroundSprite(sp1, sp2);
+        joystick.setThumbSprite(sp3, sp4);
         joystick.setTouchArea(area);
-        joystick.setIsConstantVelocity(true);
-        joystickBase.setJoystick(joystick);
+        joystick.setPosition(pos);
+        
         return joystick;
     },
 
