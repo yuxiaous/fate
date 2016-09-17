@@ -18,6 +18,8 @@ LOCAL_SRC_FILES := jsb_bindings_auto.cpp \
                    ../SneakyInput/SneakyButtonSkinnedBase.cpp \
                    ../SneakyInput/SneakyJoystick.cpp \
                    ../SneakyInput/SneakyJoystickSkinnedBase.cpp \
+                   ../Joystick/Joybutton.cpp \
+                   ../Joystick/Joystick.cpp \
                    ../GameUtils.cpp
 
 
