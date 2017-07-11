@@ -639,7 +639,28 @@
     [
       ["uint32","result","0成功"]
     ]
-  }
+  },
 
+  "CMD_CS_GET_REWARD" :
+  {
+    "code" : 1626,
+    "type" : "CS",
+    "desc" : "领取每日登录奖励",
+    "schemes":
+    [
+      ["uint32","player_id","角色id"]
+    ]
+  },
+
+  "CMD_SC_GET_REWARD_RESULT" :
+  {
+    "code": 1627,
+    "type": "SC",
+    "desc": "领取每日登陆奖励结果",
+    "schemes":
+    [
+      ["uint32","result","0 成功"]
+    ]
+  }
 }
 

@@ -88,9 +88,9 @@ var MainScene = ui.GuiSceneBase.extend({
         //var loginPanel = new LoginRewardLayer(3);
         //loginPanel.pop();
 
-        if(GuideSystem.instance._curGuideType == 0){
+        //if(GuideSystem.instance._curGuideType == 0){
             RewardSystem.instance.getLoginRewardDaily();
-        }
+        //}
 
         if(BattleSystem.instance.needRestart) {
             BattleSystem.instance.needRestart = false;

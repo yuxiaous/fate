@@ -50,37 +50,18 @@ var DroppedItem = ui.GuiWidgetBase.extend({
 
     onExit: function() {
         this._img_icon = null;
-        this._enteringAction = null;
         this._itemFlyAction = null;
+        this._dabaojianPanel = null;
         this._super();
     },
 
     entranceBuyEquipSuit : function (target_,curScene_) {
-        if(this._enteringAction == null){
-            this._enteringAction=  this.runAction(cc.Sequence.create(
-                cc.DelayTime.create(0.9),
-                cc.CallFunc.create(function () {
-                    if(curScene_._isEntering){
-                        //var dabaojianPanel = new DaBaoJianLayer(function () {
-                        //    curScene_._isEntering = false;
-                        //    this._enteringAction = null;
-                        //},this);
-                        var dabaojianPanel = new GiftBuyDetail(GiftSystem.GiftType.WuQi,101002, this,function () {
-                            curScene_._isEntering = false;
-                            this._enteringAction = null;
-                        });
-
-                        cc.director.getRunningScene().addChild(dabaojianPanel);
-                        cc.director.pause();
-                    }
-                    else{
-                        this.stopAllActions();
-                        curScene_._isEntering = false;
-                        this._enteringAction = null;
-                    }
-                },this)
-            ));
-        }
+         this._dabaojianPanel = new GiftBuyDetail(GiftSystem.GiftType.WuQi,101002, this,function () {
+            curScene_._isEntering = false;
+            curScene_._enterDropUi = 0;
+         });
+        this._dabaojianPanel.pop();
+        cc.director.pause();
     },
 
     flyToTarget: function(target) {

@@ -3,16 +3,21 @@ var RewardSystem = SystemBase.extend({
     ctor: function () {
         this._super();
 
-        this._isReward = false;
+        //this._isReward = false;
         this._rewardData = null;
     },
 
     onInit: function () {
         this._super();
         net_protocol_handlers.ON_CMD_SC_LOGIN_REWARD_INFO = function (obj) {
-            this._isReward = true;
+            //this._isReward = true;
             this._rewardData = obj;
             notification.emit(notification.event.OPEN_LOGIN_REWARD,obj);
+        }.bind(this);
+
+        net_protocol_handlers.ON_CMD_SC_GET_REWARD_RESULT = function (obj) {
+
+            notification.emit(notification.event.GET_LOGIN_RESULT);
         }.bind(this);
 
     },
@@ -23,12 +28,20 @@ var RewardSystem = SystemBase.extend({
     },
     
     getLoginRewardDaily : function () {
-        if(!this._isReward){
+        //if(!this._isReward){
             net_protocol_handlers.SEND_CMD_CS_LOGIN_REWARD_INFO({
                 player_id : 101
             })
-        }
+       // }
+    },
+
+    getCurDayReward : function () {
+        net_protocol_handlers.SEND_CMD_CS_GET_REWARD({
+            player_id : 101
+        })
     }
+
+
 });
 
 RewardSystem.instance = new RewardSystem();

@@ -76,13 +76,11 @@ var GuideSystem = SystemBase.extend({
                 }
                 break;
             case  GuideSystem.Type.shangdian :
-                if(curMapId == 201){
+                if(curMapId == 103){
                     isOpen = true;
                 }
                 break;
         }
-
-        isOpen = true;
         return isOpen;
     },
 
@@ -110,7 +108,7 @@ var GuideSystem = SystemBase.extend({
                 }
                 break;
             case  GuideSystem.Type.shangdian :
-                if(curMapId >= 201){
+                if(curMapId >= 103){
                     isOpen = true;
                 }
                 break;
@@ -120,7 +118,6 @@ var GuideSystem = SystemBase.extend({
                 }
                 break;
         }
-        isOpen = true;
         return isOpen;
     },
 

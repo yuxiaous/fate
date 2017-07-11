@@ -297,6 +297,14 @@ _BindFunc(1305, function(obj) {
 	net_protocol_handlers.ON_CMD_CS_EQUIP_ITEM_RESULT(obj);
 });
 
+// @protocol 领取每日登陆奖励结果
+// @param {uint32} result, 0 成功
+net_protocol_handlers.CMD_SC_GET_REWARD_RESULT = 1627;
+_BindFunc(1627, function(obj) {
+	cc.assert(obj.result != undefined, "CMD_SC_GET_REWARD_RESULT.result is undefined.");
+	net_protocol_handlers.ON_CMD_SC_GET_REWARD_RESULT(obj);
+});
+
 // @protocol 购买礼包结果
 // @param {uint32} result, 0成功
 // @param {list} gift_type_data, 礼包各种类型对应的购买数量
@@ -461,5 +469,13 @@ net_protocol_handlers.CMD_CS_SHOP_ORDER = 1103;
 net_protocol_handlers.SEND_CMD_CS_SHOP_ORDER = function(obj) {
 	cc.assert(obj.good_id != undefined, "CMD_CS_SHOP_ORDER.good_id is undefined.");
 	_SendFunc(1103, obj);
+};
+
+// @protocol 领取每日登录奖励
+// @param {uint32} player_id, 角色id
+net_protocol_handlers.CMD_CS_GET_REWARD = 1626;
+net_protocol_handlers.SEND_CMD_CS_GET_REWARD = function(obj) {
+	cc.assert(obj.player_id != undefined, "CMD_CS_GET_REWARD.player_id is undefined.");
+	_SendFunc(1626, obj);
 };
 

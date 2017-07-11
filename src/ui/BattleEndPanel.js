@@ -124,6 +124,8 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
 
     ctor: function() {
         this._super();
+
+        this._allDetailITEM = null;
     },
 
     onEnter: function() {
@@ -186,7 +188,12 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         this._super();
     },
 
+    deleteAllDetailItem : function () {
+        //_.each(this._allDetailITEM);
+    },
+
     refreshRewardItem : function () {
+
         var reward = BattleSystem.instance.battle_reward;
 
         this._ui.goldLabel.setString(String(reward.gold || 0));
@@ -195,14 +202,33 @@ var BattleWinPanel = ui.GuiWindowBase.extend({
         _.each(this._rewardItems, function (item_,i) {
             if(item_){
                 item_.setVisible(false);
+
+
             }
         },this);
-
         if(reward.items && reward.items.length) {
+            LOG("REWARD ITEMS = " + reward.items.length);
             _.each(reward.items, function (item, i) {
                 if(item.item_id) {
+                    LOG("ITEM ID = " + item.item_id) ;
                     this._rewardItems[i].setItemId(item.item_id);
                     this._rewardItems[i].setVisible(true);
+
+                    var rewardItemNode = this._rewardItems[i]._ui.btn_bg;
+
+                    rewardItemNode.setTouchEnabled(true);
+                    rewardItemNode.addTouchEventListener(function (touch, event) {
+                        if(event == ccui.Widget.TOUCH_ENDED){
+                            LOG("TOUCH END");
+                            if(this._allDetailITEM != null){
+                                this._allDetailITEM.removeFromParent();
+                            }
+                            this._allDetailITEM = new EquipDetailPanel(item.item_id);
+                            this._allDetailITEM.setPosition(cc.p(0,rewardItemNode.getContentSize().height));
+                            rewardItemNode.addChild(this._allDetailITEM);
+                            //detailPanel.pop();
+                        }
+                    })
                 }
             },this);
         }
@@ -368,11 +394,11 @@ var EndlessBattelLosePanel = ui.GuiWindowBase.extend({
 
 
         var levelNum = BattleSystem.instance.endlessRound;
-        var lblMaxStr = "最高坚持到第" + levelNum + "关";
-        this._ui._lbl_maxRound.setString(lblMaxStr);
+        //var lblMaxStr = "最高坚持到第" + levelNum + "关";
+        this._ui._lbl_maxRound.setString(levelNum);
 
-        var lblStr = "恭喜您在无尽模式坚持到第" + this._curRound + "关";
-        this._ui._lbl_endless.setString(lblStr);
+        //var lblStr = "恭喜您在无尽模式坚持到第" + this._curRound + "关";
+        this._ui._lbl_endless.setString(this._curRound);
 
         var conf = configdb.endlessround[this._curRound];
         this._ui.goldLabel.setString(conf.gain_gold || 0);
@@ -493,6 +519,100 @@ var BattleWinGiftPanel = ui.GuiWindowBase.extend({
         //    }
         //}, this);
         //lose.pop();
+    }
+});
+
+var EquipDetailPanel = ui.GuiWindowBase.extend({
+    _guiFile: "ui/equip_detail_panel.json",
+
+    ctor: function(equipId_) {
+        this._super();
+
+        this._curItemID = equipId_;
+    },
+
+    onEnter: function() {
+        this._super();
+
+        this._ui = {
+            lbl_item_name : this.seekWidgetByName("lbl_item_name"),
+            lbl_item_desc: this.seekWidgetByName("lbl_item_desc"),
+            sp_change_up: this.seekWidgetByName("sp_change_up"),
+            sp_change_down: this.seekWidgetByName("sp_change_down"),
+            lbl_item_score: this.seekWidgetByName("lbl_item_score")
+        }
+
+        var config = BagSystem.getConfig(this._curItemID);
+        if(config) {
+            // name
+            this._ui.lbl_item_name.setString(config.name || "");
+
+            // desc
+            this._ui.lbl_item_desc.setString(config.desc || "");
+            // score value
+            if(config.type == undefined) {
+                var score = Formula.calculateBattleScore(config.hp, config.mp,
+                    config.atk, config.def,
+                    config.crit, config.sunder);
+
+                // score
+                this._ui.lbl_item_score.setString(this._ui.lbl_item_score._str_original.format(score));
+
+                // change value
+                var equip_info = EquipSystem.instance.slots[config.slot];
+                if(equip_info != undefined) {
+                    var equip_config = configdb.equip[equip_info.id];
+                    if(equip_config != undefined) {
+                        score -= Formula.calculateBattleScore(equip_config.hp, equip_config.mp,
+                            equip_config.atk, equip_config.def,
+                            equip_config.crit, equip_config.sunder);
+                    }
+                }
+                if(score > 0) {
+                    this._ui.sp_change_up.setVisible(true);
+                    this._ui.sp_change_down.setVisible(false);
+                }
+                else if(score < 0) {
+                    score = -score;
+                    this._ui.sp_change_up.setVisible(false);
+                    this._ui.sp_change_down.setVisible(true);
+                }
+                else {
+                    score = "";
+                    this._ui.sp_change_up.setVisible(false);
+                    this._ui.sp_change_down.setVisible(false);
+                }
+            }
+            else {
+                this._ui.lbl_score_change.setVisible(false);
+                this._ui.lbl_item_score.setString("");
+            }
+
+        }
+    },
+
+    onExit : function(){
+
+        this._ui = null;
+        this._super();
+
+    },
+
+    refreshSelectedItemInfo: function() {
+
+        var config = BagSystem.getConfig(this._curItemID);
+
+        if(config) {
+            // name
+            this._ui.lbl_item_name.setString(config.name || "");
+
+            // price
+            this._ui.lbl_item_price.setString(this._ui.lbl_item_price._str_original.format(config.price || ""));
+
+            // desc
+            this._ui.lbl_item_desc.setString(config.desc || "");
+
+        }
     }
 });
 

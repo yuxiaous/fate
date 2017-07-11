@@ -49,7 +49,7 @@ var ShopScene = ui.GuiSceneBase.extend({
 
 
 
-        //LOG("CUR GUIDE TYPE = " + GuideSystem.instance._curGuideType);
+        LOG("CUR GUIDE TYPE = " + GuideSystem.instance._curGuideType);
         if(GuideSystem.instance._curGuideType != 0){
             this.shopType = ShopSystem.ShopType.Equip;
             this.refreshShopTabStatus();
@@ -265,7 +265,8 @@ ShopScene.Good.Icon = ui.GuiController.extend({
         this._ui = {
             sp_icon: this.seekWidgetByName("sp_icon"),
             lbl_num: this.seekWidgetByName("lbl_num"),
-            img_sel: this.seekWidgetByName("img_sel")
+            img_sel: this.seekWidgetByName("img_sel"),
+            btn_bg : this.seekWidgetByName("btn_bg")
         };
 
         this._ui.img_sel.setVisible(false);
