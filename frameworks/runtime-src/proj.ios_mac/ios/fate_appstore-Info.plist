@@ -19,41 +19,9 @@
 		<string>appstore-152</string>
 	</array>
 	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>appstore-57</string>
-				<string>appstore-72</string>
-				<string>appstore-76</string>
-				<string>appstore-114</string>
-				<string>appstore-120</string>
-				<string>appstore-144</string>
-				<string>appstore-152</string>
-			</array>
-			<key>UIPrerenderedIcon</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 	<key>CFBundleIcons~ipad</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>appstore-57</string>
-				<string>appstore-72</string>
-				<string>appstore-76</string>
-				<string>appstore-114</string>
-				<string>appstore-120</string>
-				<string>appstore-144</string>
-				<string>appstore-152</string>
-			</array>
-			<key>UIPrerenderedIcon</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.hdngame.fate.appstore</string>
 	<key>CFBundleInfoDictionaryVersion</key>

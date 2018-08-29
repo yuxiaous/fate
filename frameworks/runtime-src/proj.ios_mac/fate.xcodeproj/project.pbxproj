@@ -512,6 +512,7 @@
 		DEA0AB9B1B2B0B1700079B42 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
 		DEA0AB9C1B2B0B1800079B42 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
 		DEA0AB9D1B2B0B1C00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
+		DED243872136B5030062EB68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED243862136B5030062EB68 /* Images.xcassets */; };
 		DEE196641B443BC200359A46 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
 		DEE196651B443BC200359A46 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
 		DEE196661B443BC200359A46 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
@@ -1072,6 +1073,7 @@
 		DEA0AB901B2B0ADB00079B42 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = ../../../publish/config; sourceTree = "<group>"; };
 		DEA0AB911B2B0ADB00079B42 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../../../publish/script; sourceTree = "<group>"; };
 		DEA0AB921B2B0ADB00079B42 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../publish/src; sourceTree = "<group>"; };
+		DED243862136B5030062EB68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ios/Images.xcassets; sourceTree = "<group>"; };
 		DEE196621B443BC200359A46 /* GameUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameUtils.cpp; path = ../../../Classes/GameUtils.cpp; sourceTree = "<group>"; };
 		DEE196631B443BC200359A46 /* GameUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameUtils.h; path = ../../../Classes/GameUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1235,6 +1237,7 @@
 		15628F5B15F0F5C2000CF24B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DED243862136B5030062EB68 /* Images.xcassets */,
 				C05D1C161923467600B808A4 /* config.json */,
 				1A1A081B18C9DF05005C6854 /* project.json */,
 				1A6BF21418C9DB5900FB0E1C /* main.js */,
@@ -1388,6 +1391,7 @@
 				A922753E1517C094001B78AA /* Products */,
 				15628F5B15F0F5C2000CF24B /* Resources */,
 				DEA0AB8F1B2B0A9300079B42 /* publish */,
+				DED243842136B4930062EB68 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2223,6 +2227,14 @@
 			name = publish;
 			sourceTree = "<group>";
 		};
+		DED243842136B4930062EB68 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				BA4E718619EB6E7900932425 /* MediaPlayer.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2329,6 +2341,7 @@
 					};
 					DE5AD1FA1B678CF4003F6331 = {
 						DevelopmentTeam = MUAKLX4S2T;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -2525,6 +2538,7 @@
 				DE5AD2D51B6A5602003F6331 /* appstore-114.png in Resources */,
 				DE5AD29C1B678CF4003F6331 /* config in Resources */,
 				DE5AD29E1B678CF4003F6331 /* Default-568h@2x.png in Resources */,
+				DED243872136B5030062EB68 /* Images.xcassets in Resources */,
 				DE5AD29F1B678CF4003F6331 /* Default@2x.png in Resources */,
 				DE5692841BA02B7800FBE423 /* Default-Landscape.png in Resources */,
 				DE5AD2D71B6A5602003F6331 /* appstore-144.png in Resources */,
@@ -3313,8 +3327,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xiao yu (HSQ55LGA2U)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3353,7 +3371,8 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = fate_appstore;
-				PROVISIONING_PROFILE = "d6685ace-f7c6-4157-a253-e5ed4c1a78e0";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
@@ -3365,8 +3384,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: xiao yu (MUAKLX4S2T)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3405,7 +3428,8 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = fate_appstore;
-				PROVISIONING_PROFILE = "663e8ae4-2c50-4597-87e6-85b7478cc8c4";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
