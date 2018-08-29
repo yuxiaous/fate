@@ -513,6 +513,8 @@
 		DEA0AB9C1B2B0B1800079B42 /* src in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB921B2B0ADB00079B42 /* src */; };
 		DEA0AB9D1B2B0B1C00079B42 /* config in Resources */ = {isa = PBXBuildFile; fileRef = DEA0AB901B2B0ADB00079B42 /* config */; };
 		DED243872136B5030062EB68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED243862136B5030062EB68 /* Images.xcassets */; };
+		DED2438A2136C0C20062EB68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED243882136C0C10062EB68 /* LaunchScreen.storyboard */; };
+		DED2438B2136C0C20062EB68 /* LaunchScreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DED243892136C0C10062EB68 /* LaunchScreenBackground.png */; };
 		DEE196641B443BC200359A46 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
 		DEE196651B443BC200359A46 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
 		DEE196661B443BC200359A46 /* GameUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE196621B443BC200359A46 /* GameUtils.cpp */; };
@@ -1074,6 +1076,8 @@
 		DEA0AB911B2B0ADB00079B42 /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = ../../../publish/script; sourceTree = "<group>"; };
 		DEA0AB921B2B0ADB00079B42 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../publish/src; sourceTree = "<group>"; };
 		DED243862136B5030062EB68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ios/Images.xcassets; sourceTree = "<group>"; };
+		DED243882136C0C10062EB68 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ios/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DED243892136C0C10062EB68 /* LaunchScreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaunchScreenBackground.png; path = ios/LaunchScreenBackground.png; sourceTree = "<group>"; };
 		DEE196621B443BC200359A46 /* GameUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameUtils.cpp; path = ../../../Classes/GameUtils.cpp; sourceTree = "<group>"; };
 		DEE196631B443BC200359A46 /* GameUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameUtils.h; path = ../../../Classes/GameUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1238,6 +1242,8 @@
 			isa = PBXGroup;
 			children = (
 				DED243862136B5030062EB68 /* Images.xcassets */,
+				DED243882136C0C10062EB68 /* LaunchScreen.storyboard */,
+				DED243892136C0C10062EB68 /* LaunchScreenBackground.png */,
 				C05D1C161923467600B808A4 /* config.json */,
 				1A1A081B18C9DF05005C6854 /* project.json */,
 				1A6BF21418C9DB5900FB0E1C /* main.js */,
@@ -2536,9 +2542,11 @@
 				DE5AD2D21B6A5602003F6331 /* appstore-57.png in Resources */,
 				DE5AD2D81B6A5602003F6331 /* appstore-152.png in Resources */,
 				DE5AD2D51B6A5602003F6331 /* appstore-114.png in Resources */,
+				DED2438A2136C0C20062EB68 /* LaunchScreen.storyboard in Resources */,
 				DE5AD29C1B678CF4003F6331 /* config in Resources */,
 				DE5AD29E1B678CF4003F6331 /* Default-568h@2x.png in Resources */,
 				DED243872136B5030062EB68 /* Images.xcassets in Resources */,
+				DED2438B2136C0C20062EB68 /* LaunchScreenBackground.png in Resources */,
 				DE5AD29F1B678CF4003F6331 /* Default@2x.png in Resources */,
 				DE5692841BA02B7800FBE423 /* Default-Landscape.png in Resources */,
 				DE5AD2D71B6A5602003F6331 /* appstore-144.png in Resources */,
