@@ -1,0 +1,157 @@
+{
+  "images": [
+    {
+      "idiom": "iphone",
+      "size": "20x20",
+      "filename": "appstore-40.png",
+      "scale": "2x"
+    },
+    {
+      "idiom": "iphone",
+      "size": "20x20",
+      "filename": "appstore-60.png",
+      "scale": "3x"
+    },
+    {
+      "idiom": "iphone",
+      "size": "29x29",
+      "filename": "appstore-29.png",
+      "scale": "1x"
+    },
+    {
+      "idiom": "iphone",
+      "size": "29x29",
+      "filename": "appstore-58.png",
+      "scale": "2x"
+    },
+    {
+      "idiom": "iphone",
+      "size": "29x29",
+      "filename": "appstore-87.png",
+      "scale": "3x"
+    },
+    {
+      "idiom": "iphone",
+      "size": "40x40",
+      "filename": "appstore-80.png",
+      "scale": "2x"
+    },
+    {
+      "idiom": "iphone",
+      "size": "40x40",
+      "filename": "appstore-120.png",
+      "scale": "3x"
+    },
+    {
+      "size": "57x57",
+      "idiom": "iphone",
+      "filename": "appstore-57.png",
+      "scale": "1x"
+    },
+    {
+      "size": "57x57",
+      "idiom": "iphone",
+      "filename": "appstore-114.png",
+      "scale": "2x"
+    },
+    {
+      "size": "60x60",
+      "idiom": "iphone",
+      "filename": "appstore-120.png",
+      "scale": "2x"
+    },
+    {
+      "idiom": "iphone",
+      "size": "60x60",
+      "filename": "appstore-180.png",
+      "scale": "3x"
+    },
+    {
+      "idiom": "ipad",
+      "size": "20x20",
+      "filename": "appstore-20.png",
+      "scale": "1x"
+    },
+    {
+      "idiom": "ipad",
+      "size": "20x20",
+      "filename": "appstore-40.png",
+      "scale": "2x"
+    },
+    {
+      "idiom": "ipad",
+      "size": "29x29",
+      "filename": "appstore-29.png",
+      "scale": "1x"
+    },
+    {
+      "idiom": "ipad",
+      "size": "29x29",
+      "filename": "appstore-58.png",
+      "scale": "2x"
+    },
+    {
+      "idiom": "ipad",
+      "size": "40x40",
+      "filename": "appstore-40.png",
+      "scale": "1x"
+    },
+    {
+      "idiom": "ipad",
+      "size": "40x40",
+      "filename": "appstore-80.png",
+      "scale": "2x"
+    },
+    {
+      "idiom": "ipad",
+      "size": "50x50",
+      "filename": "appstore-50.png",
+      "scale": "1x"
+    },
+    {
+      "idiom": "ipad",
+      "size": "50x50",
+      "filename": "appstore-100.png",
+      "scale": "2x"
+    },
+    {
+      "size": "72x72",
+      "idiom": "ipad",
+      "filename": "appstore-72.png",
+      "scale": "1x"
+    },
+    {
+      "size": "72x72",
+      "idiom": "ipad",
+      "filename": "appstore-144.png",
+      "scale": "2x"
+    },
+    {
+      "size": "76x76",
+      "idiom": "ipad",
+      "filename": "appstore-76.png",
+      "scale": "1x"
+    },
+    {
+      "size": "76x76",
+      "idiom": "ipad",
+      "filename": "appstore-152.png",
+      "scale": "2x"
+    },
+    {
+      "idiom": "ipad",
+      "size": "83.5x83.5",
+      "filename": "appstore-167.png",
+      "scale": "2x"
+    },
+    {
+      "idiom": "ios-marketing",
+      "size": "1024x1024",
+      "scale": "1x"
+    }
+  ],
+  "info": {
+    "version": 1,
+    "author": "xcode"
+  }
+}
