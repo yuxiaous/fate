@@ -680,7 +680,7 @@ void AssetsManager::destroyStoragePath()
     string command = "rm -r ";
     // Path may include space.
     command += "\"" + _storagePath + "\"";
-    system(command.c_str());    
+//    system(command.c_str());    
 #endif
 }
 
