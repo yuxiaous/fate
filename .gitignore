@@ -17,7 +17,9 @@ Simulator
 jsb.sqlite
 
 # iOS
+DerivedData
 *.xcuserdatad
+xcshareddata
 xcshareddata
 
 # Win32
