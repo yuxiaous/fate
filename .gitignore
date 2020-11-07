@@ -6,8 +6,8 @@ simple_test_bindings
 userconf.ini
 
 # game
-/res
-/config
+#/res
+#/config
 /build
 /publish
 tools/protocol
