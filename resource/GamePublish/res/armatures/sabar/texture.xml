@@ -1,0 +1,266 @@
+<TextureAtlas name="sabar" imagePath="texture.png">
+ <SubTexture name="shou04" x="2729" y="608" width="41" height="65"/>
+ <SubTexture name="jiao01" x="3944" y="517" width="45" height="70"/>
+ <SubTexture name="shou09" x="1533" y="753" width="56" height="31"/>
+ <SubTexture name="jiao02" x="3078" y="474" width="66" height="82"/>
+ <SubTexture name="qunzi04" x="1915" y="927" width="195" height="167"/>
+ <SubTexture name="jiao04" x="3944" y="588" width="42" height="69"/>
+ <SubTexture name="qunzi02" x="3681" y="198" width="61" height="142"/>
+ <SubTexture name="qunzi03" x="3078" y="341" width="43" height="132"/>
+ <SubTexture name="shou05" x="2123" y="489" width="38" height="55"/>
+ <SubTexture name="jiao03" x="3960" y="363" width="32" height="71"/>
+ <SubTexture name="qunzi01" x="1232" y="272" width="55" height="130"/>
+ <SubTexture name="xiashen01" x="934" y="656" width="223" height="200"/>
+ <SubTexture name="shou06" x="1597" y="251" width="22" height="23"/>
+ <SubTexture name="xiashen15" x="1926" y="743" width="186" height="183"/>
+ <SubTexture name="yao01" x="2123" y="644" width="37" height="25"/>
+ <SubTexture name="yao02" x="2123" y="616" width="36" height="27"/>
+ <SubTexture name="xiashen05" x="551" y="830" width="240" height="163"/>
+ <SubTexture name="xiashen06" x="257" y="888" width="235" height="162"/>
+ <SubTexture name="kuijia01" x="3681" y="341" width="39" height="119"/>
+ <SubTexture name="xiashen04" x="943" y="466" width="252" height="189"/>
+ <SubTexture name="jiao05" x="3059" y="694" width="73" height="23"/>
+ <SubTexture name="xiashen17" x="3412" y="1225" width="168" height="129"/>
+ <SubTexture name="jian01" x="656" y="323" width="286" height="164"/>
+ <SubTexture name="kuijia02" x="3960" y="240" width="33" height="122"/>
+ <SubTexture name="hudiejie01" x="4074" y="166" width="20" height="26"/>
+ <SubTexture name="shenti11" x="1232" y="403" width="64" height="85"/>
+ <SubTexture name="xiashen14" x="2474" y="662" width="217" height="206"/>
+ <SubTexture name="xiashen13" x="337" y="327" width="246" height="198"/>
+ <SubTexture name="pao01" x="3425" y="893" width="243" height="152"/>
+ <SubTexture name="pao02" x="641" y="647" width="246" height="182"/>
+ <SubTexture name="pao03" x="2692" y="846" width="228" height="174"/>
+ <SubTexture name="pao04" x="2447" y="1041" width="182" height="163"/>
+ <SubTexture name="pao05" x="493" y="994" width="199" height="157"/>
+ <SubTexture name="pao06" x="2921" y="863" width="170" height="196"/>
+ <SubTexture name="pao07" x="3417" y="1046" width="167" height="178"/>
+ <SubTexture name="pao08" x="2655" y="1021" width="189" height="167"/>
+ <SubTexture name="shenti05" x="3680" y="536" width="61" height="63"/>
+ <SubTexture name="shenti06" x="1225" y="489" width="63" height="76"/>
+ <SubTexture name="xiashen16" x="3116" y="731" width="181" height="208"/>
+ <SubTexture name="0.png 副本 2" x="941" y="1285" width="174" height="90"/>
+ <SubTexture name="1.png 副本 3" x="3585" y="1206" width="202" height="100"/>
+ <SubTexture name="2.png 副本 3" x="2845" y="1176" width="213" height="95"/>
+ <SubTexture name="3.png 副本 3" x="2164" y="445" width="90" height="87"/>
+ <SubTexture name="xiashen20" x="2258" y="547" width="215" height="216"/>
+ <SubTexture name="toufa03" x="4074" y="124" width="13" height="41"/>
+ <SubTexture name="shenti01" x="1558" y="512" width="58" height="76"/>
+ <SubTexture name="xiashen21" x="3145" y="493" width="192" height="236"/>
+ <SubTexture name="xiashen22" x="1617" y="519" width="198" height="236"/>
+ <SubTexture name="xiashen23" x="2261" y="308" width="212" height="238"/>
+ <SubTexture name="xiashen24" x="3743" y="498" width="200" height="235"/>
+ <SubTexture name="xiashen25" x="1939" y="253" width="224" height="235"/>
+ <SubTexture name="shou08" x="584" y="327" width="48" height="126"/>
+ <SubTexture name="tou01" x="2729" y="546" width="56" height="61"/>
+ <SubTexture name="shenti08" x="1939" y="489" width="183" height="253"/>
+ <SubTexture name="shenti09" x="3749" y="0" width="245" height="239"/>
+ <SubTexture name="shou01" x="2735" y="477" width="50" height="68"/>
+ <SubTexture name="补间 1" x="2233" y="950" width="212" height="144"/>
+ <SubTexture name="shou02" x="3960" y="435" width="29" height="55"/>
+ <SubTexture name="xiashen07" x="311" y="526" width="252" height="182"/>
+ <SubTexture name="xiashen08" x="1297" y="416" width="260" height="182"/>
+ <SubTexture name="xiashen18" x="1297" y="599" width="235" height="194"/>
+ <SubTexture name="xiashen09" x="2474" y="479" width="254" height="182"/>
+ <SubTexture name="shenti02" x="3680" y="461" width="62" height="74"/>
+ <SubTexture name="yanjing01" x="2474" y="366" width="26" height="9"/>
+ <SubTexture name="shou03" x="2474" y="340" width="26" height="25"/>
+ <SubTexture name="shou10" x="2474" y="308" width="25" height="31"/>
+ <SubTexture name="shou07" x="2735" y="247" width="50" height="128"/>
+ <SubTexture name="youfa01" x="2123" y="581" width="38" height="34"/>
+ <SubTexture name="tou03" x="3078" y="628" width="64" height="65"/>
+ <SubTexture name="tou02" x="3078" y="557" width="66" height="70"/>
+ <SubTexture name="toufa04" x="4074" y="65" width="21" height="58"/>
+ <SubTexture name="xiashen19" x="3445" y="448" width="204" height="233"/>
+ <SubTexture name="shenti12" x="3445" y="198" width="235" height="249"/>
+ <SubTexture name="toufa05" x="3944" y="658" width="42" height="36"/>
+ <SubTexture name="toufa02" x="4074" y="0" width="19" height="64"/>
+ <SubTexture name="补间 4" x="1196" y="466" width="28" height="27"/>
+ <SubTexture name="shenti04" x="3339" y="486" width="102" height="84"/>
+ <SubTexture name="xiashen02" x="306" y="709" width="244" height="178"/>
+ <SubTexture name="xiashen03" x="3743" y="734" width="237" height="177"/>
+ <SubTexture name="shenti10" x="584" y="454" width="70" height="79"/>
+ <SubTexture name="xiashen10" x="1298" y="251" width="298" height="164"/>
+ <SubTexture name="xiashen11" x="967" y="272" width="264" height="193"/>
+ <SubTexture name="xiashen12" x="0" y="729" width="267" height="158"/>
+ <SubTexture name="shenti03" x="1558" y="589" width="58" height="64"/>
+ <SubTexture name="shenti07" x="1147" y="1033" width="113" height="106"/>
+ <SubTexture name="__dbTextures/sabar/yanjing01_91" x="3650" y="553" width="29" height="25"/>
+ <SubTexture name="__dbTextures/sabar/yanjing01_92" x="3650" y="501" width="29" height="25"/>
+ <SubTexture name="__dbTextures/sabar/yanjing01_93" x="3650" y="579" width="29" height="25"/>
+ <SubTexture name="__dbTextures/sabar/yanjing01_94" x="2936" y="602" width="29" height="25"/>
+ <SubTexture name="__dbTextures/sabar/yanjing01_95" x="3650" y="527" width="29" height="25"/>
+ <SubTexture name="__dbTextures/sabar/yanjing01_96" x="3650" y="605" width="29" height="25"/>
+ <SubTexture name="__dbTextures/sabar/yanjing01_97" x="3960" y="491" width="29" height="25"/>
+ <SubTexture name="__dbTextures/sabar/yanjing01_98" x="3650" y="475" width="29" height="25"/>
+ <SubTexture name="补间 3" x="3650" y="448" width="29" height="26"/>
+ <SubTexture name="47.png" x="1524" y="1224" width="172" height="124"/>
+ <SubTexture name="canying01" x="0" y="592" width="304" height="135"/>
+ <SubTexture name="__dbTextures/sabar/toufa02_148" x="2123" y="545" width="38" height="35"/>
+ <SubTexture name="46.png" x="3060" y="1225" width="172" height="124"/>
+ <SubTexture name="canying02" x="1568" y="945" width="242" height="133"/>
+ <SubTexture name="145.png" x="2431" y="1205" width="164" height="142"/>
+ <SubTexture name="147.png" x="256" y="1051" width="174" height="166"/>
+ <SubTexture name="149.png" x="0" y="1236" width="152" height="122"/>
+ <SubTexture name="151.png" x="0" y="1360" width="148" height="92"/>
+ <SubTexture name="154.png" x="1237" y="1402" width="148" height="75"/>
+ <SubTexture name="156.png" x="3913" y="1377" width="153" height="88"/>
+ <SubTexture name="158.png" x="2964" y="1390" width="145" height="91"/>
+ <SubTexture name="160.png" x="3214" y="1379" width="146" height="94"/>
+ <SubTexture name="162.png" x="2553" y="1386" width="145" height="91"/>
+ <SubTexture name="164.png" x="1677" y="1407" width="140" height="76"/>
+ <SubTexture name="166.png" x="3362" y="1438" width="139" height="75"/>
+ <SubTexture name="168.png" x="1813" y="810" width="110" height="76"/>
+ <SubTexture name="44.png" x="2630" y="1189" width="182" height="124"/>
+ <SubTexture name="kongbai" x="4074" y="193" width="21" height="21"/>
+ <SubTexture name="1.png 副本 4" x="1533" y="713" width="57" height="38"/>
+ <SubTexture name="2.png 副本 4" x="551" y="726" width="56" height="36"/>
+ <SubTexture name="3.png 副本 4" x="3059" y="718" width="55" height="39"/>
+ <SubTexture name="1.png" x="3585" y="1163" width="304" height="41"/>
+ <SubTexture name="3.png" x="3585" y="1106" width="314" height="55"/>
+ <SubTexture name="4.png" x="154" y="1345" width="253" height="46"/>
+ <SubTexture name="8.png" x="1268" y="896" width="298" height="85"/>
+ <SubTexture name="10.png" x="0" y="330" width="328" height="127"/>
+ <SubTexture name="11.png" x="847" y="1037" width="267" height="81"/>
+ <SubTexture name="shou11" x="2692" y="674" width="62" height="42"/>
+ <SubTexture name="2.png" x="2991" y="1351" width="221" height="37"/>
+ <SubTexture name="5.png" x="655" y="488" width="280" height="157"/>
+ <SubTexture name="6.png" x="3669" y="912" width="299" height="79"/>
+ <SubTexture name="7.png" x="2597" y="1315" width="203" height="69"/>
+ <SubTexture name="12.png" x="2233" y="1096" width="196" height="130"/>
+ <SubTexture name="13.png" x="3092" y="940" width="193" height="164"/>
+ <SubTexture name="14.png" x="2461" y="869" width="192" height="170"/>
+ <SubTexture name="15.png" x="847" y="1120" width="154" height="159"/>
+ <SubTexture name="9.png" x="0" y="888" width="255" height="143"/>
+ <SubTexture name="29.png" x="1196" y="566" width="99" height="55"/>
+ <SubTexture name="30.png" x="1196" y="623" width="99" height="55"/>
+ <SubTexture name="31.png" x="3642" y="706" width="99" height="55"/>
+ <SubTexture name="32.png" x="3642" y="763" width="99" height="55"/>
+ <SubTexture name="49.png" x="1268" y="794" width="315" height="100"/>
+ <SubTexture name="50.png" x="3669" y="993" width="246" height="111"/>
+ <SubTexture name="51.png" x="2845" y="1060" width="222" height="114"/>
+ <SubTexture name="52.png" x="3069" y="1106" width="202" height="117"/>
+ <SubTexture name="57.png" x="0" y="0" width="335" height="328"/>
+ <SubTexture name="58.png" x="2266" y="0" width="234" height="306"/>
+ <SubTexture name="59.png" x="3743" y="240" width="215" height="256"/>
+ <SubTexture name="60.png" x="432" y="1152" width="172" height="140"/>
+ <SubTexture name="61.png" x="337" y="0" width="317" height="325"/>
+ <SubTexture name="62.png" x="656" y="0" width="309" height="321"/>
+ <SubTexture name="63.png" x="2502" y="0" width="285" height="245"/>
+ <SubTexture name="64.png" x="1003" y="1120" width="133" height="163"/>
+ <SubTexture name="65.png" x="1719" y="1119" width="154" height="163"/>
+ <SubTexture name="66.png" x="1298" y="0" width="321" height="249"/>
+ <SubTexture name="67.png" x="1621" y="0" width="330" height="232"/>
+ <SubTexture name="68.png" x="1953" y="0" width="311" height="251"/>
+ <SubTexture name="69.png" x="2502" y="247" width="231" height="230"/>
+ <SubTexture name="88.png" x="2224" y="1228" width="161" height="132"/>
+ <SubTexture name="89.png" x="1914" y="1095" width="160" height="162"/>
+ <SubTexture name="90.png" x="3783" y="1345" width="128" height="95"/>
+ <SubTexture name="91.png" x="150" y="1393" width="136" height="94"/>
+ <SubTexture name="92.png" x="409" y="1391" width="141" height="92"/>
+ <SubTexture name="93.png" x="3581" y="1308" width="200" height="75"/>
+ <SubTexture name="94.png" x="0" y="459" width="309" height="131"/>
+ <SubTexture name="95.png" x="1266" y="983" width="263" height="112"/>
+ <SubTexture name="96.png" x="3917" y="1074" width="160" height="163"/>
+ <SubTexture name="97.png" x="1391" y="1097" width="131" height="173"/>
+ <SubTexture name="98.png" x="2387" y="1349" width="164" height="83"/>
+ <SubTexture name="45.png" x="256" y="1219" width="172" height="124"/>
+ <SubTexture name="112.png 副本" x="792" y="830" width="130" height="196"/>
+ <SubTexture name="113.png" x="3147" y="198" width="190" height="293"/>
+ <SubTexture name="114.png" x="1621" y="234" width="198" height="283"/>
+ <SubTexture name="115.png" x="3440" y="682" width="200" height="209"/>
+ <SubTexture name="116.png" x="3298" y="737" width="125" height="209"/>
+ <SubTexture name="117.png" x="2111" y="945" width="120" height="202"/>
+ <SubTexture name="133.png" x="1391" y="1272" width="131" height="107"/>
+ <SubTexture name="134.png" x="1853" y="1346" width="155" height="109"/>
+ <SubTexture name="135.png" x="430" y="1294" width="169" height="95"/>
+ <SubTexture name="136.png" x="3573" y="1385" width="165" height="74"/>
+ <SubTexture name="137.png" x="2073" y="1304" width="138" height="111"/>
+ <SubTexture name="138.png" x="2162" y="607" width="86" height="60"/>
+ <SubTexture name="146.png" x="3338" y="571" width="100" height="82"/>
+ <SubTexture name="148.png" x="3338" y="655" width="100" height="80"/>
+ <SubTexture name="150.png" x="1138" y="1216" width="100" height="74"/>
+ <SubTexture name="152.png" x="154" y="1262" width="100" height="74"/>
+ <SubTexture name="155.png" x="1138" y="1140" width="100" height="74"/>
+ <SubTexture name="157.png" x="1117" y="1292" width="100" height="74"/>
+ <SubTexture name="159.png" x="1812" y="965" width="100" height="75"/>
+ <SubTexture name="161.png" x="1812" y="1042" width="100" height="75"/>
+ <SubTexture name="163.png" x="1813" y="888" width="100" height="75"/>
+ <SubTexture name="165.png" x="154" y="1033" width="100" height="75"/>
+ <SubTexture name="167.png" x="154" y="1110" width="100" height="74"/>
+ <SubTexture name="169.png" x="154" y="1186" width="100" height="74"/>
+ <SubTexture name="122.png" x="1523" y="1444" width="148" height="61"/>
+ <SubTexture name="123.png" x="2375" y="1434" width="141" height="73"/>
+ <SubTexture name="124.png" x="0" y="1454" width="138" height="68"/>
+ <SubTexture name="125.png" x="552" y="1439" width="146" height="67"/>
+ <SubTexture name="129.png" x="1158" y="680" width="108" height="245"/>
+ <SubTexture name="130.png" x="3981" y="749" width="110" height="224"/>
+ <SubTexture name="131.png" x="2936" y="629" width="121" height="232"/>
+ <SubTexture name="132.png" x="2123" y="705" width="109" height="238"/>
+ <SubTexture name="0.png 副本" x="2802" y="1377" width="160" height="81"/>
+ <SubTexture name="1.png 副本 2" x="3411" y="1355" width="160" height="81"/>
+ <SubTexture name="2.png 副本 2" x="2213" y="1362" width="160" height="81"/>
+ <SubTexture name="3.png 副本 2" x="941" y="1377" width="160" height="81"/>
+ <SubTexture name="0.png" x="1531" y="1080" width="186" height="142"/>
+ <SubTexture name="1.png 副本" x="924" y="857" width="221" height="178"/>
+ <SubTexture name="2.png 副本" x="2234" y="764" width="225" height="184"/>
+ <SubTexture name="3.png 副本" x="1590" y="756" width="221" height="187"/>
+ <SubTexture name="33.png" x="3914" y="1239" width="156" height="136"/>
+ <SubTexture name="34.png" x="1819" y="1457" width="127" height="52"/>
+ <SubTexture name="35.png" x="3642" y="820" width="99" height="37"/>
+ <SubTexture name="37.png" x="564" y="534" width="83" height="77"/>
+ <SubTexture name="38.png" x="1533" y="654" width="72" height="57"/>
+ <SubTexture name="39.png" x="2692" y="749" width="60" height="26"/>
+ <SubTexture name="53.png" x="2164" y="350" width="93" height="93"/>
+ <SubTexture name="54.png" x="785" y="1281" width="154" height="122"/>
+ <SubTexture name="55.png" x="1698" y="1284" width="153" height="121"/>
+ <SubTexture name="56.png" x="2164" y="253" width="95" height="95"/>
+ <SubTexture name="70.png" x="1875" y="1259" width="196" height="85"/>
+ <SubTexture name="71.png" x="3234" y="1284" width="175" height="93"/>
+ <SubTexture name="72.png" x="606" y="1231" width="177" height="115"/>
+ <SubTexture name="73.png" x="2814" y="1273" width="175" height="102"/>
+ <SubTexture name="74.png" x="1240" y="1291" width="148" height="109"/>
+ <SubTexture name="75.png" x="3789" y="1295" width="116" height="48"/>
+ <SubTexture name="126.png" x="3970" y="975" width="122" height="97"/>
+ <SubTexture name="127.png" x="3993" y="372" width="99" height="88"/>
+ <SubTexture name="128.png" x="3680" y="600" width="59" height="59"/>
+ <SubTexture name="109.png" x="967" y="0" width="329" height="270"/>
+ <SubTexture name="110.png" x="2786" y="341" width="178" height="259"/>
+ <SubTexture name="111.png" x="2786" y="602" width="148" height="242"/>
+ <SubTexture name="20.png" x="601" y="1348" width="165" height="89"/>
+ <SubTexture name="21.png" x="1524" y="1350" width="151" height="92"/>
+ <SubTexture name="22.png" x="3789" y="1206" width="123" height="87"/>
+ <SubTexture name="23.png" x="2162" y="534" width="94" height="71"/>
+ <SubTexture name="36.png" x="1390" y="1381" width="131" height="59"/>
+ <SubTexture name="76.png" x="2156" y="1445" width="136" height="73"/>
+ <SubTexture name="77.png" x="3740" y="1442" width="140" height="73"/>
+ <SubTexture name="78.png" x="1387" y="1442" width="134" height="51"/>
+ <SubTexture name="补间 14" x="2968" y="0" width="178" height="340"/>
+ <SubTexture name="补间 15" x="2789" y="0" width="178" height="340"/>
+ <SubTexture name="103.png" x="1558" y="416" width="45" height="94"/>
+ <SubTexture name="104.png" x="2735" y="376" width="46" height="99"/>
+ <SubTexture name="108.png" x="564" y="613" width="75" height="64"/>
+ <SubTexture name="40.png" x="888" y="647" width="44" height="38"/>
+ <SubTexture name="41.png" x="564" y="679" width="58" height="45"/>
+ <SubTexture name="42.png" x="3650" y="661" width="70" height="43"/>
+ <SubTexture name="43.png" x="2692" y="717" width="64" height="30"/>
+ <SubTexture name="79.png" x="1103" y="1377" width="132" height="81"/>
+ <SubTexture name="80.png" x="768" y="1405" width="142" height="79"/>
+ <SubTexture name="81.png" x="2010" y="1417" width="144" height="70"/>
+ <SubTexture name="补间 12" x="3448" y="0" width="300" height="197"/>
+ <SubTexture name="补间 13" x="3147" y="0" width="300" height="197"/>
+ <SubTexture name="补间 18" x="0" y="1033" width="153" height="201"/>
+ <SubTexture name="补间 19" x="693" y="1028" width="153" height="201"/>
+ <SubTexture name="补间 20" x="3287" y="948" width="129" height="193"/>
+ <SubTexture name="补间 21" x="1261" y="1097" width="129" height="193"/>
+ <SubTexture name="105.png" x="3994" y="279" width="98" height="91"/>
+ <SubTexture name="106.png" x="2076" y="1149" width="146" height="153"/>
+ <SubTexture name="107.png" x="3273" y="1142" width="137" height="140"/>
+ <SubTexture name="jiao06" x="2161" y="669" width="77" height="35"/>
+ <SubTexture name="canying03" x="1147" y="927" width="118" height="105"/>
+ <SubTexture name="139.png" x="3339" y="198" width="104" height="286"/>
+ <SubTexture name="140.png" x="2966" y="341" width="110" height="286"/>
+ <SubTexture name="141.png" x="1816" y="522" width="108" height="286"/>
+ <SubTexture name="142.png" x="1821" y="234" width="116" height="286"/>
+ <SubTexture name="143.png" x="3990" y="462" width="103" height="285"/>
+ <SubTexture name="144.png" x="3995" y="0" width="77" height="277"/>
+</TextureAtlas>

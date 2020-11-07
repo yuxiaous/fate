@@ -1,0 +1,362 @@
+{
+  "ID": "a50949a4-6db4-48c3-a7a5-50e30102a879",
+  "Version": "2.2.9.0",
+  "Name": "equip_detail",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 665,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_331.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 27,
+            "Scale9OriginY": 27,
+            "Scale9Width": 28,
+            "Scale9Height": 28,
+            "AnchorPoint": {
+              "ScaleX": 0.5
+            },
+            "Position": {
+              "X": 157.0399,
+              "Y": -7.0329
+            },
+            "Scale": {
+              "ScaleX": 1.1771,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5235,
+              "Y": -0.0703
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 7.0399,
+            "RightMargin": -7.0399,
+            "TopMargin": -2.9671,
+            "BottomMargin": -7.0329,
+            "Tag": 666,
+            "ActionTag": 379646467,
+            "Size": {
+              "X": 300.0,
+              "Y": 110.0
+            },
+            "Name": "panel",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "物品名称",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 2.2267,
+              "Y": 82.185
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0074,
+              "Y": 0.8218
+            },
+            "PreSize": {
+              "X": 0.6944,
+              "Y": 1.0
+            },
+            "LeftMargin": 2.2267,
+            "RightMargin": 147.7733,
+            "TopMargin": 3.815,
+            "BottomMargin": 68.185,
+            "Tag": 667,
+            "ActionTag": 796624119,
+            "Size": {
+              "X": 150.0,
+              "Y": 28.0
+            },
+            "Name": "lbl_item_name",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "战力:{0}",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 5.2266,
+              "Y": 56.1861
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0174,
+              "Y": 0.5619
+            },
+            "PreSize": {
+              "X": 0.3333,
+              "Y": 0.2105
+            },
+            "LeftMargin": 5.2266,
+            "RightMargin": 144.7734,
+            "TopMargin": 31.8139,
+            "BottomMargin": 44.1861,
+            "Tag": 668,
+            "ActionTag": -971761786,
+            "Size": {
+              "X": 150.0,
+              "Y": 24.0
+            },
+            "Name": "lbl_item_score",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "Text Label",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 2.2267,
+              "Y": 41.1859
+            },
+            "Scale": {
+              "ScaleX": 1.0495,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0074,
+              "Y": 0.4119
+            },
+            "PreSize": {
+              "X": 0.6667,
+              "Y": 0.386
+            },
+            "LeftMargin": 2.2267,
+            "RightMargin": -2.2267,
+            "TopMargin": 58.8141,
+            "BottomMargin": -2.8141,
+            "Tag": 669,
+            "ActionTag": -1493315666,
+            "Size": {
+              "X": 300.0,
+              "Y": 44.0
+            },
+            "Name": "lbl_item_desc",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 172.2254,
+              "Y": 55.1862
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5741,
+              "Y": 0.5519
+            },
+            "PreSize": {
+              "X": 0.16,
+              "Y": 0.2105
+            },
+            "LeftMargin": 172.2254,
+            "RightMargin": 55.7746,
+            "TopMargin": 32.8138,
+            "BottomMargin": 43.1862,
+            "Tag": 670,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_332.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": -12.0,
+                  "Y": 12.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": -0.1667,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -18.5,
+                "RightMargin": 77.5,
+                "TopMargin": 2.0,
+                "BottomMargin": 2.0,
+                "Tag": 671,
+                "ActionTag": 475192532,
+                "Size": {
+                  "X": 13.0,
+                  "Y": 20.0
+                },
+                "Name": "sp_change_up",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_333.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": -12.0,
+                  "Y": 12.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": -0.1667,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -18.5,
+                "RightMargin": 77.5,
+                "TopMargin": 2.0,
+                "BottomMargin": 2.0,
+                "Tag": 672,
+                "ActionTag": -1435786486,
+                "Size": {
+                  "X": 13.0,
+                  "Y": 20.0
+                },
+                "Name": "sp_change_down",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -1032042945,
+            "Size": {
+              "X": 72.0,
+              "Y": 24.0
+            },
+            "Name": "lbl_score_change",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 300.0,
+          "Y": 100.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

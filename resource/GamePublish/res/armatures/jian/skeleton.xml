@@ -1,0 +1,38 @@
+<dragonBones name="jian" frameRate="24" version="2.3">
+ <armature name="jian">
+  <bone name="图层 1">
+   <transform x="-0.95" y="-0.65" skX="-90" skY="-90" scX="1" scY="1"/>
+  </bone>
+  <bone name="attack">
+   <transform x="-0.95" y="-0.7" skX="-90" skY="-90" scX="1" scY="1"/>
+  </bone>
+  <skin name="default">
+   <slot name="图层 1" parent="图层 1" z="0">
+    <display name="24.png" type="image">
+     <transform x="-8.5" y="-115" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+   </slot>
+   <slot name="attack" parent="attack" z="1">
+    <display name="27.png" type="image">
+     <transform x="-40" y="-115" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+   </slot>
+  </skin>
+  <animation name="daiji" fadeInTime="0" duration="2" scale="1" loop="0" autoTween="0" tweenEasing="2">
+   <timeline name="图层 1" scale="1" offset="0">
+    <frame z="0" duration="1">
+     <transform x="-0.95" y="-0.65" skX="-90" skY="-90" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" duration="1">
+     <transform x="-0.95" y="-0.7" skX="-90.01" skY="-90.01" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+   </timeline>
+   <timeline name="attack" scale="1" offset="0">
+    <frame duration="1" displayIndex="-1"/>
+    <frame z="1" event="emitAttack" duration="1">
+     <transform x="-0.95" y="-0.7" skX="-90" skY="-90" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+   </timeline>
+  </animation>
+ </armature>
+</dragonBones>

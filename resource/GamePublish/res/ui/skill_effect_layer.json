@@ -1,0 +1,374 @@
+{
+  "ID": "ddaf190b-d352-473b-a6ba-92783d7fa055",
+  "Version": "2.2.9.0",
+  "Name": "skill_effect_layer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_258.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 2,
+            "Scale9OriginY": 300,
+            "Scale9Width": 4,
+            "Scale9Height": 40,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 320.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.1444,
+              "Y": 1.0938
+            },
+            "LeftMargin": -82.0,
+            "RightMargin": -82.0,
+            "TopMargin": -30.0,
+            "BottomMargin": -30.0,
+            "Tag": 2,
+            "ActionTag": 740231688,
+            "Size": {
+              "X": 1300.0,
+              "Y": 700.0
+            },
+            "Name": "effect_bg",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_256.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 2,
+            "Scale9OriginY": 200,
+            "Scale9Width": 560,
+            "Scale9Height": 207,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 564.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4965,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.4965,
+              "Y": 0.9484
+            },
+            "LeftMargin": 564.0,
+            "RightMargin": 8.0,
+            "TopMargin": 33.0,
+            "Tag": 4,
+            "ActionTag": -852924089,
+            "Size": {
+              "X": 564.0,
+              "Y": 607.0
+            },
+            "Name": "role_head",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_262.png",
+              "Plist": ""
+            },
+            "Scale9Width": 73,
+            "Scale9Height": 79,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1025.0807,
+              "Y": 556.8879
+            },
+            "Scale": {
+              "ScaleX": 1.2,
+              "ScaleY": 1.2
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9024,
+              "Y": 0.8701
+            },
+            "PreSize": {
+              "X": 0.1285,
+              "Y": 0.2469
+            },
+            "LeftMargin": 952.0807,
+            "RightMargin": 37.9193,
+            "TopMargin": 4.1121,
+            "BottomMargin": 477.8879,
+            "Tag": 10,
+            "ActionTag": 841889045,
+            "Size": {
+              "X": 146.0,
+              "Y": 158.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_263.png",
+              "Plist": ""
+            },
+            "Scale9Width": 74,
+            "Scale9Height": 80,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1025.0,
+              "Y": 419.101
+            },
+            "Scale": {
+              "ScaleX": 1.2,
+              "ScaleY": 1.2
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9023,
+              "Y": 0.6548
+            },
+            "PreSize": {
+              "X": 0.1303,
+              "Y": 0.25
+            },
+            "LeftMargin": 951.0,
+            "RightMargin": 37.0,
+            "TopMargin": 140.899,
+            "BottomMargin": 339.101,
+            "Tag": 11,
+            "ActionTag": 408109460,
+            "Size": {
+              "X": 148.0,
+              "Y": 160.0
+            },
+            "Name": "Image_2",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_264.png",
+              "Plist": ""
+            },
+            "Scale9Width": 70,
+            "Scale9Height": 80,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 876.4845,
+              "Y": 474.445
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7716,
+              "Y": 0.7413
+            },
+            "PreSize": {
+              "X": 0.1232,
+              "Y": 0.25
+            },
+            "LeftMargin": 806.4845,
+            "RightMargin": 189.5155,
+            "TopMargin": 85.555,
+            "BottomMargin": 394.445,
+            "Tag": 12,
+            "ActionTag": -1298912833,
+            "Size": {
+              "X": 140.0,
+              "Y": 160.0
+            },
+            "Name": "Image_3",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_265.png",
+              "Plist": ""
+            },
+            "Scale9Width": 72,
+            "Scale9Height": 80,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 876.0,
+              "Y": 341.2769
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7711,
+              "Y": 0.5332
+            },
+            "PreSize": {
+              "X": 0.1268,
+              "Y": 0.25
+            },
+            "LeftMargin": 804.0,
+            "RightMargin": 188.0,
+            "TopMargin": 218.7231,
+            "BottomMargin": 261.2769,
+            "Tag": 13,
+            "ActionTag": 528366986,
+            "Size": {
+              "X": 144.0,
+              "Y": 160.0
+            },
+            "Name": "Image_4",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_266.png",
+              "Plist": ""
+            },
+            "Scale9Width": 71,
+            "Scale9Height": 79,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 876.0,
+              "Y": 217.2698
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7711,
+              "Y": 0.3395
+            },
+            "PreSize": {
+              "X": 0.125,
+              "Y": 0.2469
+            },
+            "LeftMargin": 805.0,
+            "RightMargin": 189.0,
+            "TopMargin": 343.7302,
+            "BottomMargin": 138.2698,
+            "Tag": 14,
+            "ActionTag": 251885294,
+            "Size": {
+              "X": 142.0,
+              "Y": 158.0
+            },
+            "Name": "Image_5",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_267.png",
+              "Plist": ""
+            },
+            "Scale9Width": 72,
+            "Scale9Height": 79,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 876.0,
+              "Y": 72.1152
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7711,
+              "Y": 0.1127
+            },
+            "PreSize": {
+              "X": 0.1268,
+              "Y": 0.2469
+            },
+            "LeftMargin": 804.0,
+            "RightMargin": 188.0,
+            "TopMargin": 488.8848,
+            "BottomMargin": -6.8848,
+            "Tag": 15,
+            "ActionTag": -938119121,
+            "Size": {
+              "X": 144.0,
+              "Y": 158.0
+            },
+            "Name": "Image_6",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

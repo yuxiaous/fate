@@ -1,0 +1,9 @@
+<TextureAtlas name="leiji" imagePath="texture.png">
+ <SubTexture name="28.png" x="0" y="0" width="102" height="257"/>
+ <SubTexture name="29.png" x="185" y="0" width="76" height="256"/>
+ <SubTexture name="30.png" x="334" y="0" width="29" height="200"/>
+ <SubTexture name="31.png" x="104" y="0" width="79" height="255"/>
+ <SubTexture name="32.png" x="263" y="0" width="69" height="255"/>
+ <SubTexture name="33.png" x="365" y="0" width="13" height="193"/>
+ <SubTexture name="kongbai" x="380" y="0" width="21" height="21"/>
+</TextureAtlas>

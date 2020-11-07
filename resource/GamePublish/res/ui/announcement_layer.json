@@ -1,0 +1,240 @@
+{
+  "ID": "c89588eb-15d8-46be-8d07-764e639bd457",
+  "Version": "2.2.9.0",
+  "Name": "announcement_layer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 21,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_304.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 40,
+            "Scale9OriginY": 80,
+            "Scale9Width": 69,
+            "Scale9Height": 9,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 562.0,
+              "Y": 306.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4947,
+              "Y": 0.4789
+            },
+            "PreSize": {
+              "X": 0.7438,
+              "Y": 0.7188
+            },
+            "LeftMargin": 139.5,
+            "RightMargin": 151.5,
+            "TopMargin": 103.5,
+            "BottomMargin": 76.5,
+            "Tag": 22,
+            "ActionTag": -1695632972,
+            "Size": {
+              "X": 845.0,
+              "Y": 460.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_305.png",
+              "Plist": ""
+            },
+            "Scale9Width": 288,
+            "Scale9Height": 84,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 560.5255,
+              "Y": 491.503
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4934,
+              "Y": 0.768
+            },
+            "PreSize": {
+              "X": 0.2535,
+              "Y": 0.1312
+            },
+            "LeftMargin": 416.5255,
+            "RightMargin": 431.4745,
+            "TopMargin": 106.497,
+            "BottomMargin": 449.503,
+            "Tag": 23,
+            "ActionTag": 1697892801,
+            "Size": {
+              "X": 288.0,
+              "Y": 84.0
+            },
+            "Name": "Image_2",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_65.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_64.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 44,
+            "Scale9Height": 52,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 982.0876,
+              "Y": 527.6796
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8645,
+              "Y": 0.8245
+            },
+            "PreSize": {
+              "X": 0.0651,
+              "Y": 0.1156
+            },
+            "LeftMargin": 945.0876,
+            "RightMargin": 116.9124,
+            "TopMargin": 75.3204,
+            "BottomMargin": 490.6796,
+            "Tag": 24,
+            "ActionTag": -1160731858,
+            "Size": {
+              "X": 74.0,
+              "Y": 74.0
+            },
+            "Name": "btn_close",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 18,
+            "LabelText": "中文名称：命运长夜（单机版）\n应用类型：动作冒险\n版本号：1.0\n\n版权所有：上海红豆泥网络科技有限公司\n开发商：上海红豆泥网络科技有限公司\n公司全称：上海红豆泥网络科技有限公司\n发行商：天津莱玩网络科技有限公司\n\n 客服电话：010-51145017\n 玩家qq群： 293400487\n",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 565.0851,
+              "Y": 288.6398
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4974,
+              "Y": 0.451
+            },
+            "PreSize": {
+              "X": 0.6866,
+              "Y": 0.5469
+            },
+            "LeftMargin": 175.0851,
+            "RightMargin": 180.9149,
+            "TopMargin": 176.3602,
+            "BottomMargin": 113.6398,
+            "Tag": 25,
+            "ActionTag": 1437793002,
+            "Size": {
+              "X": 780.0,
+              "Y": 350.0
+            },
+            "Name": "lbl_content",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

@@ -1,0 +1,361 @@
+{
+  "ID": "c9b19dc6-713c-4f98-b681-4a59fe7b513a",
+  "Version": "2.2.9.0",
+  "Name": "recharge_item",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 63,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_414.png",
+              "Plist": ""
+            },
+            "Scale9Width": 134,
+            "Scale9Height": 176,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 67.0,
+              "Y": 88.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 64,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_423.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 134,
+                "Scale9Height": 176,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 68.6122,
+                  "Y": 88.203
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.512,
+                  "Y": 0.5012
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 1.0
+                },
+                "LeftMargin": 1.6122,
+                "RightMargin": -1.6122,
+                "TopMargin": -0.203,
+                "BottomMargin": 0.203,
+                "Tag": 65,
+                "ActionTag": -676641328,
+                "Size": {
+                  "X": 134.0,
+                  "Y": 176.0
+                },
+                "Name": "item_icon",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_415.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 135,
+                "Scale9Height": 53,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 59.7981,
+                  "Y": 60.6979
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4463,
+                  "Y": 0.3449
+                },
+                "PreSize": {
+                  "X": 1.0075,
+                  "Y": 0.3011
+                },
+                "LeftMargin": -7.7019,
+                "RightMargin": 6.7019,
+                "TopMargin": 88.8021,
+                "BottomMargin": 34.1979,
+                "Tag": 66,
+                "Children": [
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 16,
+                    "LabelText": "{0}万金币",
+                    "HorizontalAlignmentType": "HT_Right",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 81.0948,
+                      "Y": 20.7761
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "R": 36,
+                      "B": 0
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.6007,
+                      "Y": 0.392
+                    },
+                    "PreSize": {
+                      "X": 0.7463,
+                      "Y": 0.1023
+                    },
+                    "LeftMargin": 31.0948,
+                    "RightMargin": 3.9052,
+                    "TopMargin": 23.2239,
+                    "BottomMargin": 11.7761,
+                    "Tag": 67,
+                    "ActionTag": -630270250,
+                    "Size": {
+                      "X": 100.0,
+                      "Y": 18.0
+                    },
+                    "Name": "lbl_persented",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": -819072495,
+                "Size": {
+                  "X": 135.0,
+                  "Y": 53.0
+                },
+                "Name": "bg_persented",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "{0}元",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 66.312,
+                  "Y": 27.3084
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 0,
+                  "G": 0,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4949,
+                  "Y": 0.1552
+                },
+                "PreSize": {
+                  "X": 0.7463,
+                  "Y": 0.1307
+                },
+                "LeftMargin": 16.312,
+                "RightMargin": 17.688,
+                "TopMargin": 137.1916,
+                "BottomMargin": 15.8084,
+                "Tag": 68,
+                "ActionTag": 299629295,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 23.0
+                },
+                "Name": "lbl_pay",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "{0}万金币",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 66.4673,
+                  "Y": 153.7557
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 105,
+                  "G": 46,
+                  "B": 16
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.496,
+                  "Y": 0.8736
+                },
+                "PreSize": {
+                  "X": 0.8955,
+                  "Y": 0.1307
+                },
+                "LeftMargin": 6.4673,
+                "RightMargin": 7.5327,
+                "TopMargin": 10.7443,
+                "BottomMargin": 142.2557,
+                "Tag": 69,
+                "ActionTag": 1855169444,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 23.0
+                },
+                "Name": "lbl_get",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/icon/icon_03.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 36,
+                "Scale9Height": 36,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 28.2273,
+                  "Y": 27.6773
+                },
+                "Scale": {
+                  "ScaleX": 0.6,
+                  "ScaleY": 0.6
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2107,
+                  "Y": 0.1573
+                },
+                "PreSize": {
+                  "X": 0.2687,
+                  "Y": 0.2045
+                },
+                "LeftMargin": 10.2273,
+                "RightMargin": 87.7727,
+                "TopMargin": 130.3227,
+                "BottomMargin": 9.6773,
+                "Tag": 30,
+                "ActionTag": -1142871003,
+                "Size": {
+                  "X": 36.0,
+                  "Y": 36.0
+                },
+                "Name": "diamond_icon",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
+            "ActionTag": 1471920277,
+            "Size": {
+              "X": 134.0,
+              "Y": 176.0
+            },
+            "Name": "bg_panel",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 134.0,
+          "Y": 176.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

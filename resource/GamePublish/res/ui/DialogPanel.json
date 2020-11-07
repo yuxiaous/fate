@@ -1,0 +1,599 @@
+{
+  "ID": "ba384949-100c-4a3c-9765-8529a5e7b96b",
+  "Version": "2.2.9.0",
+  "Name": "DialogPanel",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 14,
+        "Children": [
+          {
+            "BackColorAlpha": 102,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 18,
+            "Children": [
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 1136.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 1.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 1136.0,
+                "TopMargin": 640.0,
+                "Tag": 21,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/chat/4.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 5,
+                    "Scale9Width": 10,
+                    "Scale9Height": 229,
+                    "AnchorPoint": {
+                      "ScaleX": 1.0
+                    },
+                    "Position": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -1136.0,
+                    "TopMargin": -229.0,
+                    "Tag": 33,
+                    "ActionTag": 1139013777,
+                    "Size": {
+                      "X": 1136.0,
+                      "Y": 229.0
+                    },
+                    "Name": "img_background",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FlipX": true,
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/chat/shilang.png",
+                      "Plist": ""
+                    },
+                    "Scale9Width": 200,
+                    "Scale9Height": 380,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5
+                    },
+                    "Position": {
+                      "X": -100.0,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -200.0,
+                    "TopMargin": -380.0,
+                    "Tag": 32,
+                    "ActionTag": 30412795,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 380.0
+                    },
+                    "Name": "img_head_right",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/chat/3.png",
+                      "Plist": ""
+                    },
+                    "Scale9Width": 727,
+                    "Scale9Height": 9,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -551.5485,
+                      "Y": 159.34
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -915.0485,
+                    "RightMargin": 188.0485,
+                    "TopMargin": -163.84,
+                    "BottomMargin": 154.84,
+                    "Tag": 34,
+                    "ActionTag": 635511130,
+                    "Size": {
+                      "X": 727.0,
+                      "Y": 9.0
+                    },
+                    "Name": "img_back1",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 30,
+                    "LabelText": "叶温柔",
+                    "HorizontalAlignmentType": "HT_Right",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineSize": 0,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 0,
+                    "ShadowOffsetY": 0,
+                    "AnchorPoint": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -290.0,
+                      "Y": 180.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -490.0,
+                    "RightMargin": 290.0,
+                    "TopMargin": -200.0,
+                    "BottomMargin": 160.0,
+                    "Tag": 35,
+                    "ActionTag": -1333157866,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 40.0
+                    },
+                    "Name": "lbl_rightname",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "你既然听不懂的话，那就乖乖挨打吧！哼！",
+                    "OutlineSize": 0,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 0,
+                    "ShadowOffsetY": 0,
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": -890.0,
+                      "Y": 150.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -890.0,
+                    "RightMargin": 240.0,
+                    "TopMargin": -150.0,
+                    "BottomMargin": 30.0,
+                    "Tag": 36,
+                    "ActionTag": 2132696574,
+                    "Size": {
+                      "X": 650.0,
+                      "Y": 120.0
+                    },
+                    "Name": "lbl_righttalk",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": -2010993115,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "node_right",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "RightMargin": 1136.0,
+                "TopMargin": 640.0,
+                "Tag": 20,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/chat/4.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 5,
+                    "Scale9Width": 10,
+                    "Scale9Height": 229,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "RightMargin": -1136.0,
+                    "TopMargin": -229.0,
+                    "Tag": 23,
+                    "ActionTag": 784165553,
+                    "Size": {
+                      "X": 1136.0,
+                      "Y": 229.0
+                    },
+                    "Name": "img_background",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/chat/saber.png",
+                      "Plist": ""
+                    },
+                    "Scale9Width": 200,
+                    "Scale9Height": 380,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5
+                    },
+                    "Position": {
+                      "X": 100.0,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "RightMargin": -200.0,
+                    "TopMargin": -380.0,
+                    "Tag": 18,
+                    "ActionTag": 1652667862,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 380.0
+                    },
+                    "Name": "img_head_left",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/chat/3.png",
+                      "Plist": ""
+                    },
+                    "Scale9Width": 727,
+                    "Scale9Height": 9,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 573.4266,
+                      "Y": 159.3441
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 209.9266,
+                    "RightMargin": -936.9266,
+                    "TopMargin": -163.8441,
+                    "BottomMargin": 154.8441,
+                    "Tag": 24,
+                    "ActionTag": -2101085683,
+                    "Size": {
+                      "X": 727.0,
+                      "Y": 9.0
+                    },
+                    "Name": "img_back1",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 30,
+                    "LabelText": "方炎",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineSize": 0,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 0,
+                    "ShadowOffsetY": 0,
+                    "AnchorPoint": {
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 260.0,
+                      "Y": 180.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 260.0,
+                    "RightMargin": -460.0,
+                    "TopMargin": -200.0,
+                    "BottomMargin": 160.0,
+                    "Tag": 25,
+                    "ActionTag": 1744225640,
+                    "Size": {
+                      "X": 200.0,
+                      "Y": 40.0
+                    },
+                    "Name": "lbl_leftname",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 24,
+                    "LabelText": "我实在听不懂你到底要说什么啊！。。。。",
+                    "OutlineSize": 0,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 0,
+                    "ShadowOffsetY": 0,
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 250.0,
+                      "Y": 150.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 250.0,
+                    "RightMargin": -900.0,
+                    "TopMargin": -150.0,
+                    "BottomMargin": 30.0,
+                    "Tag": 26,
+                    "ActionTag": -843313224,
+                    "Size": {
+                      "X": 650.0,
+                      "Y": 120.0
+                    },
+                    "Name": "lbl_leftttalk",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": -894428544,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "node_left",
+                "ctype": "SingleNodeObjectData"
+              }
+            ],
+            "ActionTag": -1456572397,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "Name": "dialog_panel",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

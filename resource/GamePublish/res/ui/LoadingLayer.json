@@ -1,0 +1,212 @@
+{
+  "ID": "e0fb5d3b-227a-4255-b3a6-3bd50280c8e2",
+  "Version": "2.2.9.0",
+  "Name": "LoadingLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 32,
+        "Children": [
+          {
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 26,
+              "G": 26,
+              "B": 26
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 24,
+            "ActionTag": 1866088170,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "Name": "bg_panel",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "游戏加载中...",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 461.308,
+              "Y": 148.7689
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 142,
+              "B": 183
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4061,
+              "Y": 0.2325
+            },
+            "PreSize": {
+              "X": 0.3521,
+              "Y": 0.2344
+            },
+            "LeftMargin": 461.308,
+            "RightMargin": 464.692,
+            "TopMargin": 470.2311,
+            "BottomMargin": 127.7689,
+            "Tag": 33,
+            "ActionTag": 633893171,
+            "Size": {
+              "X": 210.0,
+              "Y": 42.0
+            },
+            "Name": "lbl_load",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/battle/20.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 43,
+            "Scale9OriginY": 2,
+            "Scale9Width": 47,
+            "Scale9Height": 4,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 230.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.3594
+            },
+            "PreSize": {
+              "X": 0.5282,
+              "Y": 0.0203
+            },
+            "LeftMargin": 268.0,
+            "RightMargin": 268.0,
+            "TopMargin": 403.5,
+            "BottomMargin": 223.5,
+            "Tag": 32,
+            "ActionTag": -1828938219,
+            "Size": {
+              "X": 600.0,
+              "Y": 13.0
+            },
+            "Name": "loadingBarBg",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "ProgressInfo": 31,
+            "ImageFileData": {
+              "Type": "Normal",
+              "Path": "images/battle/19.png",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 230.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.3594
+            },
+            "PreSize": {
+              "X": 0.5282,
+              "Y": 0.0203
+            },
+            "LeftMargin": 268.0,
+            "RightMargin": 268.0,
+            "TopMargin": 403.5,
+            "BottomMargin": 223.5,
+            "Tag": 33,
+            "ActionTag": -765182218,
+            "Size": {
+              "X": 600.0,
+              "Y": 13.0
+            },
+            "Name": "loadingBarPro",
+            "ctype": "LoadingBarObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

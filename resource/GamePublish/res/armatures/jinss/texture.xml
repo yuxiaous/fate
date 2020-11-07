@@ -1,0 +1,55 @@
+<TextureAtlas name="jinss" imagePath="texture.png">
+ <SubTexture name="补间 13" x="771" y="428" width="141" height="185"/>
+ <SubTexture name="补间 24" x="0" y="298" width="183" height="163"/>
+ <SubTexture name="pifeng12.png" x="701" y="749" width="206" height="109"/>
+ <SubTexture name="pifeng13.png" x="790" y="157" width="226" height="131"/>
+ <SubTexture name="pifeng14.png" x="790" y="0" width="205" height="155"/>
+ <SubTexture name="pifeng15.png" x="185" y="298" width="183" height="163"/>
+ <SubTexture name="补间 12" x="731" y="442" width="36" height="126"/>
+ <SubTexture name="补间 23" x="0" y="596" width="86" height="86"/>
+ <SubTexture name="补间 11" x="117" y="561" width="34" height="121"/>
+ <SubTexture name="补间 22" x="423" y="594" width="76" height="97"/>
+ <SubTexture name="jiao15.png" x="542" y="663" width="83" height="62"/>
+ <SubTexture name="补间 10" x="967" y="462" width="51" height="131"/>
+ <SubTexture name="补间 21" x="552" y="298" width="97" height="123"/>
+ <SubTexture name="补间 9" x="914" y="428" width="51" height="138"/>
+ <SubTexture name="补间 20" x="771" y="615" width="70" height="98"/>
+ <SubTexture name="补间 6" x="966" y="595" width="35" height="84"/>
+ <SubTexture name="pifeng2.png" x="370" y="459" width="177" height="133"/>
+ <SubTexture name="pifeng3.png" x="178" y="463" width="187" height="96"/>
+ <SubTexture name="pifeng4.png" x="153" y="561" width="192" height="127"/>
+ <SubTexture name="pifeng5.png" x="771" y="290" width="216" height="136"/>
+ <SubTexture name="pifeng6.png" x="370" y="298" width="180" height="159"/>
+ <SubTexture name="shou7.png" x="853" y="732" width="70" height="15"/>
+ <SubTexture name="补间 19" x="731" y="570" width="38" height="94"/>
+ <SubTexture name="补间 7" x="714" y="666" width="38" height="77"/>
+ <SubTexture name="jiao7.png" x="627" y="655" width="85" height="68"/>
+ <SubTexture name="shou8.png" x="754" y="715" width="97" height="32"/>
+ <SubTexture name="shou9.png" x="843" y="615" width="64" height="89"/>
+ <SubTexture name="shou10.png" x="989" y="290" width="30" height="85"/>
+ <SubTexture name="补间 18" x="627" y="725" width="72" height="44"/>
+ <SubTexture name="shou20.png" x="423" y="693" width="71" height="61"/>
+ <SubTexture name="补间 4" x="347" y="594" width="74" height="112"/>
+ <SubTexture name="jiao5.png" x="501" y="594" width="39" height="101"/>
+ <SubTexture name="补间 17" x="628" y="442" width="101" height="211"/>
+ <SubTexture name="shenti5.png" x="652" y="0" width="136" height="226"/>
+ <SubTexture name="补间 8" x="552" y="423" width="74" height="120"/>
+ <SubTexture name="jiao8.png" x="549" y="545" width="76" height="116"/>
+ <SubTexture name="补间 5" x="909" y="670" width="32" height="60"/>
+ <SubTexture name="jiao6.png" x="914" y="568" width="50" height="100"/>
+ <SubTexture name="jianbang1.png" x="496" y="727" width="67" height="31"/>
+ <SubTexture name="补间 3" x="943" y="681" width="63" height="70"/>
+ <SubTexture name="shenti3.png" x="652" y="228" width="117" height="212"/>
+ <SubTexture name="tou3.png" x="82" y="684" width="63" height="70"/>
+ <SubTexture name="补间 2" x="117" y="463" width="59" height="96"/>
+ <SubTexture name="补间 16" x="245" y="690" width="96" height="54"/>
+ <SubTexture name="shou15.png" x="147" y="690" width="96" height="54"/>
+ <SubTexture name="补间 1" x="989" y="377" width="28" height="83"/>
+ <SubTexture name="shou6.png" x="0" y="463" width="115" height="131"/>
+ <SubTexture name="补间 15" x="343" y="708" width="65" height="52"/>
+ <SubTexture name="shou19.png" x="0" y="684" width="80" height="53"/>
+ <SubTexture name="补间 14" x="0" y="756" width="292" height="53"/>
+ <SubTexture name="补间 25" x="0" y="0" width="650" height="296"/>
+ <SubTexture name="jianbang2.png" x="496" y="697" width="31" height="23"/>
+ <SubTexture name="jianbang3.png" x="997" y="0" width="11" height="13"/>
+</TextureAtlas>

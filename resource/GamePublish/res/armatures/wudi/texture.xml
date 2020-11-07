@@ -1,0 +1,13 @@
+<TextureAtlas name="wudi" imagePath="texture.png">
+ <SubTexture name="17.png" x="183" y="0" width="49" height="38"/>
+ <SubTexture name="18.png" x="183" y="40" width="32" height="41"/>
+ <SubTexture name="19.png" x="0" y="0" width="45" height="50"/>
+ <SubTexture name="20.png" x="217" y="40" width="31" height="38"/>
+ <SubTexture name="21.png" x="47" y="0" width="45" height="50"/>
+ <SubTexture name="22.png" x="0" y="52" width="31" height="38"/>
+ <SubTexture name="23.png" x="94" y="0" width="45" height="50"/>
+ <SubTexture name="24.png" x="141" y="0" width="40" height="50"/>
+ <SubTexture name="25.png" x="97" y="52" width="30" height="37"/>
+ <SubTexture name="26.png" x="33" y="52" width="30" height="37"/>
+ <SubTexture name="27.png" x="65" y="52" width="30" height="37"/>
+</TextureAtlas>

@@ -1,0 +1,406 @@
+{
+  "ID": "4487dbd1-6812-47c5-9dc3-ee77a16da5d2",
+  "Version": "2.2.9.0",
+  "Name": "login_reward_panel",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 503,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_309.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 20,
+            "Scale9OriginY": 125,
+            "Scale9Width": 766,
+            "Scale9Height": 309,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 319.0385
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4985
+            },
+            "PreSize": {
+              "X": 0.7095,
+              "Y": 0.8734
+            },
+            "LeftMargin": 165.0,
+            "RightMargin": 165.0,
+            "TopMargin": 41.4615,
+            "BottomMargin": 39.5385,
+            "Tag": 504,
+            "Children": [
+              {
+                "LabelText": "4",
+                "LabelBMFontFile_CNB": {
+                  "Type": "Normal",
+                  "Path": "fonts/fnt1.fnt",
+                  "Plist": ""
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 530.3575,
+                  "Y": 212.256
+                },
+                "Scale": {
+                  "ScaleX": 0.8,
+                  "ScaleY": 0.8
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.658,
+                  "Y": 0.3797
+                },
+                "PreSize": {
+                  "X": 0.0423,
+                  "Y": 0.05
+                },
+                "LeftMargin": 506.3575,
+                "RightMargin": 251.6425,
+                "TopMargin": 330.744,
+                "BottomMargin": 196.256,
+                "Tag": 507,
+                "ActionTag": -715511864,
+                "Size": {
+                  "X": 48.0,
+                  "Y": 32.0
+                },
+                "Name": "lbl_login_index",
+                "ctype": "TextBMFontObjectData"
+              },
+              {
+                "FontSize": 36,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_74.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_73.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 211,
+                "Scale9Height": 101,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 405.2636,
+                  "Y": 85.2083
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5028,
+                  "Y": 0.1524
+                },
+                "PreSize": {
+                  "X": 0.299,
+                  "Y": 0.22
+                },
+                "LeftMargin": 284.7636,
+                "RightMargin": 280.2364,
+                "TopMargin": 412.2917,
+                "BottomMargin": 23.7083,
+                "Tag": 506,
+                "ActionTag": 2026898251,
+                "Size": {
+                  "X": 241.0,
+                  "Y": 123.0
+                },
+                "Name": "btn_get",
+                "ctype": "ButtonObjectData"
+              }
+            ],
+            "ActionTag": 1358905353,
+            "Size": {
+              "X": 806.0,
+              "Y": 559.0
+            },
+            "Name": "loginBG",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_308.png",
+              "Plist": ""
+            },
+            "Scale9Width": 119,
+            "Scale9Height": 119,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 290.6748,
+              "Y": 358.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2559,
+              "Y": 0.5594
+            },
+            "PreSize": {
+              "X": 0.1048,
+              "Y": 0.1859
+            },
+            "LeftMargin": 231.1748,
+            "RightMargin": 785.8252,
+            "TopMargin": 222.5,
+            "BottomMargin": 298.5,
+            "Tag": 508,
+            "ActionTag": -1262103515,
+            "Size": {
+              "X": 119.0,
+              "Y": 119.0
+            },
+            "Name": "get_cover_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_308.png",
+              "Plist": ""
+            },
+            "Scale9Width": 119,
+            "Scale9Height": 119,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 426.5992,
+              "Y": 358.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3755,
+              "Y": 0.5594
+            },
+            "PreSize": {
+              "X": 0.1048,
+              "Y": 0.1859
+            },
+            "LeftMargin": 367.0992,
+            "RightMargin": 649.9009,
+            "TopMargin": 222.5,
+            "BottomMargin": 298.5,
+            "Tag": 509,
+            "ActionTag": 2089820754,
+            "Size": {
+              "X": 119.0,
+              "Y": 119.0
+            },
+            "Name": "get_cover_2",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_308.png",
+              "Plist": ""
+            },
+            "Scale9Width": 119,
+            "Scale9Height": 119,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 560.6877,
+              "Y": 358.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4936,
+              "Y": 0.5594
+            },
+            "PreSize": {
+              "X": 0.1048,
+              "Y": 0.1859
+            },
+            "LeftMargin": 501.1877,
+            "RightMargin": 515.8123,
+            "TopMargin": 222.5,
+            "BottomMargin": 298.5,
+            "Tag": 510,
+            "ActionTag": -1640174335,
+            "Size": {
+              "X": 119.0,
+              "Y": 119.0
+            },
+            "Name": "get_cover_3",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_308.png",
+              "Plist": ""
+            },
+            "Scale9Width": 119,
+            "Scale9Height": 119,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 695.2932,
+              "Y": 358.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6121,
+              "Y": 0.5594
+            },
+            "PreSize": {
+              "X": 0.1048,
+              "Y": 0.1859
+            },
+            "LeftMargin": 635.7932,
+            "RightMargin": 381.2068,
+            "TopMargin": 222.5,
+            "BottomMargin": 298.5,
+            "Tag": 511,
+            "ActionTag": 33108180,
+            "Size": {
+              "X": 119.0,
+              "Y": 119.0
+            },
+            "Name": "get_cover_4",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_308.png",
+              "Plist": ""
+            },
+            "Scale9Width": 119,
+            "Scale9Height": 119,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 831.4258,
+              "Y": 356.7238
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7319,
+              "Y": 0.5574
+            },
+            "PreSize": {
+              "X": 0.1048,
+              "Y": 0.1859
+            },
+            "LeftMargin": 771.9258,
+            "RightMargin": 245.0742,
+            "TopMargin": 223.7762,
+            "BottomMargin": 297.2238,
+            "Tag": 512,
+            "ActionTag": -1570828545,
+            "Size": {
+              "X": 119.0,
+              "Y": 119.0
+            },
+            "Name": "get_cover_5",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

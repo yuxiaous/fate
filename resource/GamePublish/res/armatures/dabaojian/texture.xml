@@ -1,0 +1,11 @@
+<TextureAtlas name="dabaojian" imagePath="texture.png">
+ <SubTexture name="8.png" x="285" y="142" width="74" height="34"/>
+ <SubTexture name="补间 1" x="0" y="0" width="124" height="378"/>
+ <SubTexture name="0.png" x="126" y="0" width="78" height="154"/>
+ <SubTexture name="1.png" x="206" y="142" width="77" height="91"/>
+ <SubTexture name="2.png" x="126" y="156" width="78" height="128"/>
+ <SubTexture name="3.png" x="364" y="140" width="77" height="138"/>
+ <SubTexture name="4.png" x="364" y="0" width="77" height="138"/>
+ <SubTexture name="5.png" x="285" y="0" width="77" height="140"/>
+ <SubTexture name="6.png" x="206" y="0" width="77" height="140"/>
+</TextureAtlas>

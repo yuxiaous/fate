@@ -1,0 +1,11 @@
+<TextureAtlas name="ciwei" imagePath="texture.png">
+ <SubTexture name="补间 2" x="349" y="342" width="98" height="97"/>
+ <SubTexture name="2.png" x="149" y="240" width="98" height="103"/>
+ <SubTexture name="3.png" x="249" y="342" width="98" height="103"/>
+ <SubTexture name="5.png" x="276" y="200" width="163" height="140"/>
+ <SubTexture name="补间 1" x="0" y="240" width="147" height="148"/>
+ <SubTexture name="6.png" x="149" y="345" width="75" height="91"/>
+ <SubTexture name="7.png" x="276" y="0" width="223" height="198"/>
+ <SubTexture name="8.png" x="0" y="0" width="274" height="238"/>
+ <SubTexture name="kongbai" x="441" y="200" width="21" height="21"/>
+</TextureAtlas>

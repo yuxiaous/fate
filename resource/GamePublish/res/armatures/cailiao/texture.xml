@@ -1,0 +1,18 @@
+<TextureAtlas name="cailiao" imagePath="texture.png">
+ <SubTexture name="a1.png" x="80" y="88" width="38" height="42"/>
+ <SubTexture name="a2.png" x="200" y="0" width="38" height="42"/>
+ <SubTexture name="a3.png" x="120" y="0" width="38" height="42"/>
+ <SubTexture name="a4.png" x="0" y="88" width="38" height="42"/>
+ <SubTexture name="b1.png" x="120" y="88" width="38" height="42"/>
+ <SubTexture name="b2.png" x="80" y="44" width="38" height="42"/>
+ <SubTexture name="b3.png" x="200" y="44" width="38" height="42"/>
+ <SubTexture name="b4.png" x="40" y="44" width="38" height="42"/>
+ <SubTexture name="c1.png" x="40" y="88" width="38" height="42"/>
+ <SubTexture name="c2.png" x="160" y="0" width="38" height="42"/>
+ <SubTexture name="c3.png" x="160" y="44" width="38" height="42"/>
+ <SubTexture name="c4.png" x="0" y="0" width="38" height="42"/>
+ <SubTexture name="d1.png" x="40" y="0" width="38" height="42"/>
+ <SubTexture name="d2.png" x="0" y="44" width="38" height="42"/>
+ <SubTexture name="d3.png" x="80" y="0" width="38" height="42"/>
+ <SubTexture name="d4.png" x="120" y="44" width="38" height="42"/>
+</TextureAtlas>

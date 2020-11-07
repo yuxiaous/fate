@@ -1,0 +1,65 @@
+<TextureAtlas name="guai04" imagePath="texture.png">
+ <SubTexture name="10.png" x="100" y="143" width="72" height="101"/>
+ <SubTexture name="12.png" x="912" y="222" width="80" height="91"/>
+ <SubTexture name="14.png" x="100" y="246" width="62" height="62"/>
+ <SubTexture name="16.png" x="468" y="243" width="52" height="109"/>
+ <SubTexture name="18.png" x="522" y="243" width="50" height="101"/>
+ <SubTexture name="20.png" x="290" y="128" width="48" height="78"/>
+ <SubTexture name="补间 13" x="838" y="120" width="72" height="101"/>
+ <SubTexture name="补间 14" x="935" y="119" width="72" height="101"/>
+ <SubTexture name="补间 27" x="725" y="221" width="80" height="92"/>
+ <SubTexture name="补间 31" x="174" y="229" width="64" height="107"/>
+ <SubTexture name="补间 32" x="835" y="223" width="64" height="107"/>
+ <SubTexture name="补间 35" x="574" y="249" width="57" height="64"/>
+ <SubTexture name="补间 36" x="633" y="249" width="57" height="64"/>
+ <SubTexture name="5.png" x="444" y="239" width="22" height="48"/>
+ <SubTexture name="补间 11" x="994" y="222" width="22" height="48"/>
+ <SubTexture name="补间 12" x="697" y="142" width="30" height="51"/>
+ <SubTexture name="补间 25" x="808" y="332" width="52" height="36"/>
+ <SubTexture name="4.png" x="697" y="195" width="26" height="51"/>
+ <SubTexture name="补间 9" x="807" y="221" width="26" height="51"/>
+ <SubTexture name="补间 10" x="290" y="208" width="35" height="55"/>
+ <SubTexture name="补间 23" x="325" y="317" width="56" height="38"/>
+ <SubTexture name="3.png" x="57" y="250" width="32" height="27"/>
+ <SubTexture name="补间 7" x="284" y="265" width="32" height="27"/>
+ <SubTexture name="补间 8" x="240" y="272" width="32" height="27"/>
+ <SubTexture name="补间 21" x="240" y="229" width="42" height="41"/>
+ <SubTexture name="2.png" x="1009" y="137" width="12" height="16"/>
+ <SubTexture name="补间 5" x="455" y="138" width="12" height="16"/>
+ <SubTexture name="补间 6" x="1009" y="119" width="13" height="16"/>
+ <SubTexture name="补间 19" x="912" y="120" width="20" height="20"/>
+ <SubTexture name="9.png" x="175" y="128" width="113" height="99"/>
+ <SubTexture name="11.png" x="729" y="0" width="107" height="116"/>
+ <SubTexture name="13.png" x="327" y="239" width="115" height="76"/>
+ <SubTexture name="15.png" x="935" y="0" width="75" height="117"/>
+ <SubTexture name="17.png" x="838" y="0" width="95" height="118"/>
+ <SubTexture name="19.png" x="729" y="118" width="107" height="101"/>
+ <SubTexture name="补间 3" x="340" y="138" width="113" height="99"/>
+ <SubTexture name="补间 4" x="469" y="142" width="113" height="99"/>
+ <SubTexture name="补间 17" x="341" y="0" width="132" height="136"/>
+ <SubTexture name="补间 29" x="602" y="0" width="125" height="140"/>
+ <SubTexture name="补间 30" x="475" y="0" width="125" height="140"/>
+ <SubTexture name="补间 33" x="0" y="143" width="98" height="105"/>
+ <SubTexture name="补间 34" x="597" y="142" width="98" height="105"/>
+ <SubTexture name="1.png" x="522" y="346" width="43" height="33"/>
+ <SubTexture name="21.png" x="175" y="0" width="164" height="126"/>
+ <SubTexture name="22.png" x="0" y="0" width="173" height="141"/>
+ <SubTexture name="补间 1" x="224" y="338" width="43" height="33"/>
+ <SubTexture name="补间 2" x="383" y="317" width="49" height="42"/>
+ <SubTexture name="补间 15" x="119" y="310" width="53" height="54"/>
+ <SubTexture name="kongbai" x="584" y="142" width="11" height="11"/>
+ <SubTexture name="29.png" x="749" y="315" width="57" height="43"/>
+ <SubTexture name="30.png" x="901" y="315" width="57" height="43"/>
+ <SubTexture name="31.png" x="960" y="315" width="57" height="43"/>
+ <SubTexture name="32.png" x="690" y="315" width="57" height="43"/>
+ <SubTexture name="23.png" x="174" y="338" width="48" height="31"/>
+ <SubTexture name="24.png" x="0" y="250" width="55" height="64"/>
+ <SubTexture name="25.png" x="274" y="294" width="49" height="58"/>
+ <SubTexture name="26.png" x="697" y="248" width="26" height="41"/>
+ <SubTexture name="27.png" x="994" y="272" width="26" height="27"/>
+ <SubTexture name="28.png" x="807" y="274" width="25" height="23"/>
+ <SubTexture name="33.png" x="0" y="316" width="55" height="40"/>
+ <SubTexture name="34.png" x="57" y="310" width="60" height="57"/>
+ <SubTexture name="35.png" x="574" y="315" width="56" height="51"/>
+ <SubTexture name="36.png" x="632" y="315" width="56" height="47"/>
+</TextureAtlas>

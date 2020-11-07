@@ -1,0 +1,4 @@
+<TextureAtlas name="jian" imagePath="texture.png">
+ <SubTexture name="24.png" x="82" y="0" width="17" height="230"/>
+ <SubTexture name="27.png" x="0" y="0" width="80" height="230"/>
+</TextureAtlas>

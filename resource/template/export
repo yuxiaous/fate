@@ -1,0 +1,5 @@
+#!/bin/bash
+
+path=$(cd `dirname $0`; pwd)
+cd $path/../tools
+python ./export-js.py

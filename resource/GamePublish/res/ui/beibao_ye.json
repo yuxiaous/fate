@@ -1,0 +1,185 @@
+{
+  "ID": "b48a9718-83f9-46ed-a26f-f1d96d2f2abb",
+  "Version": "2.2.9.0",
+  "Name": "beibao_ye",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 236,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/beibao_gezi.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 7.0,
+              "Y": 2.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0175,
+              "Y": 0.0215
+            },
+            "PreSize": {
+              "X": 0.215,
+              "Y": 0.9247
+            },
+            "LeftMargin": 7.0,
+            "RightMargin": 307.0,
+            "TopMargin": 5.0,
+            "BottomMargin": 2.0,
+            "Tag": 250,
+            "ActionTag": -1431180259,
+            "Size": {
+              "X": 86.0,
+              "Y": 86.0
+            },
+            "Name": "ProjectNode_0_0",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/beibao_gezi.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 107.0,
+              "Y": 2.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.2675,
+              "Y": 0.0215
+            },
+            "PreSize": {
+              "X": 0.215,
+              "Y": 0.9247
+            },
+            "LeftMargin": 107.0,
+            "RightMargin": 207.0,
+            "TopMargin": 5.0,
+            "BottomMargin": 2.0,
+            "Tag": 254,
+            "ActionTag": -926614962,
+            "Size": {
+              "X": 86.0,
+              "Y": 86.0
+            },
+            "Name": "ProjectNode_0_1",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/beibao_gezi.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 207.0,
+              "Y": 2.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.5175,
+              "Y": 0.0215
+            },
+            "PreSize": {
+              "X": 0.215,
+              "Y": 0.9247
+            },
+            "LeftMargin": 207.0,
+            "RightMargin": 107.0,
+            "TopMargin": 5.0,
+            "BottomMargin": 2.0,
+            "Tag": 258,
+            "ActionTag": -1129894870,
+            "Size": {
+              "X": 86.0,
+              "Y": 86.0
+            },
+            "Name": "ProjectNode_0_2",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/beibao_gezi.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 307.0,
+              "Y": 2.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.7675,
+              "Y": 0.0215
+            },
+            "PreSize": {
+              "X": 0.215,
+              "Y": 0.9247
+            },
+            "LeftMargin": 307.0,
+            "RightMargin": 7.0,
+            "TopMargin": 5.0,
+            "BottomMargin": 2.0,
+            "Tag": 262,
+            "ActionTag": -17465651,
+            "Size": {
+              "X": 86.0,
+              "Y": 86.0
+            },
+            "Name": "ProjectNode_0_3",
+            "ctype": "ProjectNodeObjectData"
+          }
+        ],
+        "Size": {
+          "X": 400.0,
+          "Y": 93.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

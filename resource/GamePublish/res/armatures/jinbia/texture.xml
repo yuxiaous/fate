@@ -1,0 +1,5 @@
+<TextureAtlas name="jinbia" imagePath="texture.png">
+ <SubTexture name="9.png" x="0" y="0" width="59" height="62"/>
+ <SubTexture name="10.png" x="61" y="0" width="48" height="63"/>
+ <SubTexture name="11.png" x="0" y="64" width="26" height="62"/>
+</TextureAtlas>

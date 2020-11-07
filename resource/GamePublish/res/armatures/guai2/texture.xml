@@ -1,0 +1,5 @@
+<TextureAtlas name="guai2" imagePath="texture.png">
+ <SubTexture name="补间 2" x="0" y="169" width="91" height="89"/>
+ <SubTexture name="补间 1" x="0" y="0" width="162" height="167"/>
+ <SubTexture name="kongbai" x="164" y="0" width="21" height="21"/>
+</TextureAtlas>

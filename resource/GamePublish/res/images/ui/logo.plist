@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>images/ui/logo.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{356,146}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{356,146}</string>
+			</dict>
+			<key>images/ui/logo_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{117,227},{69,61}}</string>
+				<key>offset</key>
+				<string>{-133,-32}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{356,146}</string>
+			</dict>
+			<key>images/ui/logo_3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{356,107},{127,106}}</string>
+				<key>offset</key>
+				<string>{-95,-20}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{356,146}</string>
+			</dict>
+			<key>images/ui/logo_4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{356,0},{140,107}}</string>
+				<key>offset</key>
+				<string>{-44,-19}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{356,146}</string>
+			</dict>
+			<key>images/ui/logo_5.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{117,146},{107,81}}</string>
+				<key>offset</key>
+				<string>{21,-31}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{356,146}</string>
+			</dict>
+			<key>images/ui/logo_6.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,146},{117,106}}</string>
+				<key>offset</key>
+				<string>{74,-10}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{356,146}</string>
+			</dict>
+			<key>images/ui/logo_7.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{496,0},{125,118}}</string>
+				<key>offset</key>
+				<string>{115,-4}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{356,146}</string>
+			</dict>
+			<key>images/ui/logo_8.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{224,146},{92,93}}</string>
+				<key>offset</key>
+				<string>{117,27}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{356,146}</string>
+			</dict>
+			<key>images/ui/logo_9.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{317,146},{24,17}}</string>
+				<key>offset</key>
+				<string>{162,27}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{356,146}</string>
+			</dict>
+			<key>images/ui/logo_10.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{483,107},{1,1}}</string>
+				<key>offset</key>
+				<string>{1,-1}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{4,4}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>logo.png</string>
+			<key>realTextureFileName</key>
+			<string>logo.png</string>
+			<key>size</key>
+			<string>{621,288}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>621</integer>
+			<key>height</key>
+			<integer>288</integer>
+		</dict>
+	</dict>
+</plist>

@@ -1,0 +1,6 @@
+<TextureAtlas name="guai1" imagePath="texture.png">
+ <SubTexture name="14.png" x="0" y="0" width="106" height="84"/>
+ <SubTexture name="15.png" x="108" y="0" width="106" height="66"/>
+ <SubTexture name="16.png" x="108" y="68" width="106" height="64"/>
+ <SubTexture name="kongbai" x="216" y="0" width="21" height="21"/>
+</TextureAtlas>

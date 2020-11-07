@@ -1,0 +1,394 @@
+{
+  "ID": "60d4e136-632d-4514-a9ea-8b59d54d86a9",
+  "Version": "2.2.9.0",
+  "Name": "TopRight",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 170,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/31.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -264.0,
+              "Y": -56.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -435.5,
+            "RightMargin": 92.5,
+            "TopMargin": 43.0,
+            "BottomMargin": -69.0,
+            "Tag": 13,
+            "ActionTag": 2132496783,
+            "Size": {
+              "X": 343.0,
+              "Y": 26.0
+            },
+            "Name": "blood_bg_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "ProgressInfo": 100,
+            "ProgressType": "Right_To_Left",
+            "ImageFileData": {
+              "Type": "Normal",
+              "Path": "images/ui/30.png",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -259.0,
+              "Y": -56.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "Rotation": 180.0,
+            "RotationSkewX": 180.0,
+            "Alpha": 128,
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -434.0,
+            "RightMargin": 84.0,
+            "TopMargin": 40.0,
+            "BottomMargin": -72.0,
+            "Tag": 24,
+            "ActionTag": -310548973,
+            "Size": {
+              "X": 350.0,
+              "Y": 32.0
+            },
+            "Name": "loading_hp_droping",
+            "ctype": "LoadingBarObjectData"
+          },
+          {
+            "ProgressInfo": 52,
+            "ProgressType": "Right_To_Left",
+            "ImageFileData": {
+              "Type": "Normal",
+              "Path": "images/ui/30.png",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -259.0,
+              "Y": -56.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "Rotation": 180.0,
+            "RotationSkewX": 180.0,
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -434.0,
+            "RightMargin": 84.0,
+            "TopMargin": 40.0,
+            "BottomMargin": -72.0,
+            "Tag": 226,
+            "ActionTag": 295666533,
+            "Size": {
+              "X": 350.0,
+              "Y": 32.0
+            },
+            "Name": "loading_hp",
+            "ctype": "LoadingBarObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/28.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -264.5,
+              "Y": -53.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -444.5,
+            "RightMargin": 84.5,
+            "TopMargin": 33.0,
+            "BottomMargin": -73.0,
+            "Tag": 11,
+            "ActionTag": 1425447422,
+            "Size": {
+              "X": 360.0,
+              "Y": 40.0
+            },
+            "Name": "blood_bg_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/29.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -50.0,
+              "Y": -70.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -97.0,
+            "RightMargin": 3.0,
+            "TopMargin": 23.0,
+            "BottomMargin": -117.0,
+            "Tag": 12,
+            "ActionTag": 1479282912,
+            "Size": {
+              "X": 94.0,
+              "Y": 94.0
+            },
+            "Name": "head_clip",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/27.png",
+              "Plist": ""
+            },
+            "Scale9Width": 108,
+            "Scale9Height": 105,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -50.0,
+              "Y": -70.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -104.0,
+            "RightMargin": -4.0,
+            "TopMargin": 17.5,
+            "BottomMargin": -122.5,
+            "Tag": 249,
+            "ActionTag": 1066117272,
+            "Size": {
+              "X": 108.0,
+              "Y": 105.0
+            },
+            "Name": "img_head",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/Sprite.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -50.0,
+              "Y": -60.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -73.0,
+            "RightMargin": 27.0,
+            "TopMargin": 37.0,
+            "BottomMargin": -83.0,
+            "Tag": 46,
+            "ActionTag": 1833015413,
+            "Size": {
+              "X": 46.0,
+              "Y": 46.0
+            },
+            "Name": "bossIconName",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 30,
+            "LabelText": "boss",
+            "HorizontalAlignmentType": "HT_Right",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -256.8536,
+              "Y": -96.7567
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -406.8536,
+            "RightMargin": 106.8536,
+            "TopMargin": 79.2567,
+            "BottomMargin": -114.2567,
+            "Tag": 43,
+            "ActionTag": 1579357212,
+            "Size": {
+              "X": 300.0,
+              "Y": 35.0
+            },
+            "Name": "bossName",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "root",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Node"
+}

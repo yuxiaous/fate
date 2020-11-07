@@ -1,0 +1,18 @@
+<TextureAtlas name="fuhuo" imagePath="texture.png">
+ <SubTexture name="1.png" x="267" y="127" width="39" height="9"/>
+ <SubTexture name="2.png" x="324" y="246" width="47" height="19"/>
+ <SubTexture name="3.png" x="263" y="246" width="59" height="58"/>
+ <SubTexture name="4.png" x="95" y="221" width="76" height="76"/>
+ <SubTexture name="5.png" x="189" y="127" width="76" height="80"/>
+ <SubTexture name="6.png" x="189" y="209" width="72" height="84"/>
+ <SubTexture name="7.png" x="404" y="221" width="66" height="84"/>
+ <SubTexture name="8.png" x="0" y="0" width="106" height="124"/>
+ <SubTexture name="9.png" x="308" y="0" width="101" height="119"/>
+ <SubTexture name="10.png" x="108" y="0" width="99" height="124"/>
+ <SubTexture name="11.png" x="209" y="0" width="97" height="125"/>
+ <SubTexture name="12.png" x="411" y="0" width="96" height="124"/>
+ <SubTexture name="13.png" x="308" y="121" width="94" height="123"/>
+ <SubTexture name="14.png" x="0" y="126" width="93" height="121"/>
+ <SubTexture name="15.png" x="95" y="126" width="92" height="93"/>
+ <SubTexture name="16.png" x="404" y="126" width="90" height="93"/>
+</TextureAtlas>

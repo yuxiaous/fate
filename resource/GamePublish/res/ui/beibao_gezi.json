@@ -1,0 +1,326 @@
+{
+  "ID": "d443018b-55cd-4429-a025-31f1f5ab8314",
+  "Version": "2.2.9.0",
+  "Name": "beibao_gezi",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 121,
+        "Children": [
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_14.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_14.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_14.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 86,
+            "Scale9Height": 86,
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 43.0,
+              "Y": 43.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 673,
+            "ActionTag": 856005999,
+            "Size": {
+              "X": 86.0,
+              "Y": 86.0
+            },
+            "Name": "btn_bg",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/Sprite.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 42.2674,
+              "Y": 43.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4915,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 19.2674,
+            "RightMargin": 20.7326,
+            "TopMargin": 20.0,
+            "BottomMargin": 20.0,
+            "Tag": 182,
+            "ActionTag": 543503997,
+            "Size": {
+              "X": 46.0,
+              "Y": 46.0
+            },
+            "Name": "sp_icon",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_375.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 43.0,
+              "Y": 43.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Tag": 69,
+            "Children": [
+              {
+                "IsCustomSize": true,
+                "FontSize": 18,
+                "LabelText": "123",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 54.0,
+                  "Y": 66.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6279,
+                  "Y": 0.7674
+                },
+                "PreSize": {
+                  "X": 0.5814,
+                  "Y": 0.2907
+                },
+                "LeftMargin": 29.0,
+                "RightMargin": 7.0,
+                "TopMargin": 7.5,
+                "BottomMargin": 53.5,
+                "Tag": 70,
+                "ActionTag": -1605464990,
+                "Size": {
+                  "X": 50.0,
+                  "Y": 25.0
+                },
+                "Name": "lbl_star",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 1545408699,
+            "Size": {
+              "X": 86.0,
+              "Y": 86.0
+            },
+            "Name": "sp_star",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_169.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 20,
+            "Scale9OriginY": 20,
+            "Scale9Width": 2,
+            "Scale9Height": 2,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 43.0,
+              "Y": 45.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5233
+            },
+            "PreSize": {
+              "X": 1.0814,
+              "Y": 1.0814
+            },
+            "LeftMargin": -3.5,
+            "RightMargin": -3.5,
+            "TopMargin": -5.5,
+            "BottomMargin": -1.5,
+            "Tag": 123,
+            "ActionTag": 573388966,
+            "Size": {
+              "X": 93.0,
+              "Y": 93.0
+            },
+            "Name": "img_sel",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "LabelText": "99999",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "fonts/fnt_10.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 1.0,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 78.5,
+              "Y": 16.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9128,
+              "Y": 0.186
+            },
+            "PreSize": {
+              "X": 0.1744,
+              "Y": 0.3256
+            },
+            "LeftMargin": 3.5,
+            "RightMargin": 7.5,
+            "TopMargin": 56.0,
+            "BottomMargin": 2.0,
+            "Tag": 117,
+            "ActionTag": 1558441935,
+            "Size": {
+              "X": 75.0,
+              "Y": 28.0
+            },
+            "Name": "lbl_num",
+            "ctype": "TextBMFontObjectData"
+          }
+        ],
+        "Size": {
+          "X": 86.0,
+          "Y": 86.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

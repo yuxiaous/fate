@@ -1,0 +1,349 @@
+{
+  "ID": "836ac13e-d0ee-4d3a-a06f-75ec04d37523",
+  "Version": "2.2.9.0",
+  "Name": "login_slice_ui",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 47,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_271.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 6,
+            "Scale9OriginY": 60,
+            "Scale9Width": 2,
+            "Scale9Height": 13,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": -4.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": -0.0308
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0231
+            },
+            "TopMargin": 1.0,
+            "BottomMargin": -4.0,
+            "Tag": 100,
+            "ActionTag": 1646731680,
+            "Size": {
+              "X": 100.0,
+              "Y": 133.0
+            },
+            "Name": "icon_bg",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_272.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 4,
+            "Scale9OriginY": 43,
+            "Scale9Width": 6,
+            "Scale9Height": 47,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 49.7585,
+              "Y": 61.8597
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4976,
+              "Y": 0.4758
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0231
+            },
+            "LeftMargin": -0.2415,
+            "RightMargin": 0.2415,
+            "TopMargin": 1.6403,
+            "BottomMargin": -4.6403,
+            "Tag": 138,
+            "ActionTag": 495370907,
+            "Size": {
+              "X": 100.0,
+              "Y": 133.0
+            },
+            "Name": "reward_selected",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_14.png",
+              "Plist": ""
+            },
+            "Scale9Width": 86,
+            "Scale9Height": 86,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 50.7247,
+              "Y": 81.4263
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5072,
+              "Y": 0.6264
+            },
+            "PreSize": {
+              "X": 0.86,
+              "Y": 0.6615
+            },
+            "LeftMargin": 7.7247,
+            "RightMargin": 6.2753,
+            "TopMargin": 5.5737,
+            "BottomMargin": 38.4263,
+            "Tag": 135,
+            "ActionTag": 1571155488,
+            "Size": {
+              "X": 86.0,
+              "Y": 86.0
+            },
+            "Name": "reward_icon_bg",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "第{0}天",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 50.2753,
+              "Y": 17.1705
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 250,
+              "G": 248,
+              "B": 104
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5028,
+              "Y": 0.1321
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 20.2753,
+            "RightMargin": 19.7247,
+            "TopMargin": 101.3295,
+            "BottomMargin": 5.6705,
+            "Tag": 136,
+            "ActionTag": 922563158,
+            "Size": {
+              "X": 64.0,
+              "Y": 23.0
+            },
+            "Name": "lbl_reward_day",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_274.png",
+              "Plist": ""
+            },
+            "Scale9Width": 80,
+            "Scale9Height": 80,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 52.1741,
+              "Y": 82.8756
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5217,
+              "Y": 0.6375
+            },
+            "PreSize": {
+              "X": 0.8,
+              "Y": 0.6154
+            },
+            "LeftMargin": 12.1741,
+            "RightMargin": 7.8259,
+            "TopMargin": 7.1244,
+            "BottomMargin": 42.8756,
+            "Tag": 137,
+            "ActionTag": -243453390,
+            "Size": {
+              "X": 80.0,
+              "Y": 80.0
+            },
+            "Name": "reward_icon",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_273.png",
+              "Plist": ""
+            },
+            "Scale9Width": 100,
+            "Scale9Height": 128,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 49.7584,
+              "Y": 63.7922
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4976,
+              "Y": 0.4907
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0231
+            },
+            "LeftMargin": -0.2416,
+            "RightMargin": 0.2416,
+            "TopMargin": -0.2922,
+            "BottomMargin": -2.7078,
+            "Tag": 139,
+            "ActionTag": -1632371809,
+            "Size": {
+              "X": 100.0,
+              "Y": 133.0
+            },
+            "Name": "reward_cover",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "X 10000",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 51.2078,
+              "Y": 137.7105
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 250,
+              "G": 248,
+              "B": 104
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5121,
+              "Y": 1.0593
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 14.2078,
+            "RightMargin": 11.7922,
+            "TopMargin": -19.2105,
+            "BottomMargin": 126.2105,
+            "Tag": 140,
+            "ActionTag": 1265296056,
+            "Size": {
+              "X": 74.0,
+              "Y": 23.0
+            },
+            "Name": "lbl_reward_num",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 100.0,
+          "Y": 130.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

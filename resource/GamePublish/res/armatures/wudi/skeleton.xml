@@ -1,0 +1,93 @@
+<dragonBones name="wudi" frameRate="24" version="2.3">
+ <armature name="wudi">
+  <bone name="图层 27">
+   <transform x="2.17" y="-98.12" skX="0" skY="0" scX="3.06" scY="3.06"/>
+  </bone>
+  <skin name="default">
+   <slot name="图层 27" parent="图层 27" z="0">
+    <display name="17.png" type="image">
+     <transform x="-24.5" y="-19" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="18.png" type="image">
+     <transform x="-15.75" y="-20.25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="19.png" type="image">
+     <transform x="-22.5" y="-25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="20.png" type="image">
+     <transform x="-15.5" y="-19" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="21.png" type="image">
+     <transform x="-22.5" y="-25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="22.png" type="image">
+     <transform x="-15.5" y="-19" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="23.png" type="image">
+     <transform x="-22.5" y="-25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="24.png" type="image">
+     <transform x="-20" y="-25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="25.png" type="image">
+     <transform x="-15" y="-18.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="26.png" type="image">
+     <transform x="-15" y="-18.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="27.png" type="image">
+     <transform x="-15" y="-18.25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+   </slot>
+  </skin>
+  <animation name="wudi" fadeInTime="0" duration="54" scale="1" loop="1" autoTween="0" tweenEasing="NaN">
+   <timeline name="图层 27" scale="1" offset="0">
+    <frame z="0" duration="3">
+     <transform x="2.17" y="-98.12" skX="0" skY="0" scX="3.06" scY="3.06" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="1" duration="3">
+     <transform x="-8" y="-94.47" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="2" duration="4">
+     <transform x="-5.97" y="-87.77" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="3" duration="4">
+     <transform x="-5.82" y="-87.8" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="4" duration="4">
+     <transform x="-5.97" y="-87.8" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="5" duration="4">
+     <transform x="-5.8" y="-87.77" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="6" duration="4">
+     <transform x="-5.97" y="-87.77" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="3" duration="4">
+     <transform x="-5.82" y="-87.8" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="4" duration="4">
+     <transform x="-5.97" y="-87.8" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="5" duration="4">
+     <transform x="-5.8" y="-87.77" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="6" duration="4">
+     <transform x="-5.97" y="-87.77" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="7" duration="3">
+     <transform x="-5.8" y="-87.77" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="8" duration="3">
+     <transform x="-6" y="-87.8" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="9" duration="3">
+     <transform x="-5.97" y="-87.8" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="10" duration="3">
+     <transform x="-7" y="-88.32" skX="0" skY="0" scX="3" scY="3" pX="0" pY="0"/>
+    </frame>
+   </timeline>
+  </animation>
+ </armature>
+</dragonBones>

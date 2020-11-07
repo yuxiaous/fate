@@ -1,0 +1,70 @@
+<dragonBones name="guai2" frameRate="24" version="2.3">
+ <armature name="guai2">
+  <bone name="图层 1">
+   <transform x="1.85" y="-6.15" skX="0" skY="0" scX="1" scY="1"/>
+  </bone>
+  <bone name="图层 2">
+   <transform x="1.5" y="-13.65" skX="0" skY="0" scX="1" scY="1"/>
+  </bone>
+  <bone name="attack">
+   <transform x="-22.05" y="-15.2" skX="0" skY="0" scX="6.84" scY="5.95"/>
+  </bone>
+  <skin name="default">
+   <slot name="图层 1" parent="图层 1" z="0">
+    <display name="补间 2" type="image">
+     <transform x="0" y="0" skX="0" skY="0" scX="1" scY="1" pX="45.5" pY="44.5"/>
+    </display>
+   </slot>
+   <slot name="图层 2" parent="图层 2" z="1">
+    <display name="补间 1" type="image">
+     <transform x="0" y="0" skX="0" skY="0" scX="1" scY="1" pX="81" pY="83.5"/>
+    </display>
+   </slot>
+   <slot name="attack" parent="attack" z="2">
+    <display name="kongbai" type="image">
+     <transform x="0" y="0" skX="0" skY="0" scX="1" scY="1" pX="7.45" pY="9.2"/>
+    </display>
+   </slot>
+  </skin>
+  <animation name="daiji" fadeInTime="0" duration="25" scale="1" loop="0" autoTween="0" tweenEasing="NaN">
+   <timeline name="图层 1" scale="1" offset="0">
+    <frame z="0" tweenEasing="0" duration="12">
+     <transform x="1.85" y="-6.15" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" tweenEasing="0" duration="12">
+     <transform x="1.85" y="-11.65" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" tweenEasing="0" duration="1">
+     <transform x="1.85" y="-6.15" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+   </timeline>
+   <timeline name="图层 2" scale="1" offset="0">
+    <frame z="1" tweenEasing="0" duration="4">
+     <transform x="1.5" y="-13.65" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+    <frame z="1" tweenEasing="0" duration="5">
+     <transform x="1.5" y="-13.65" skX="75" skY="75" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+    <frame z="1" tweenEasing="0" duration="5">
+     <transform x="1.5" y="-13.65" skX="159.46" skY="159.46" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+    <frame z="1" tweenEasing="0" duration="7">
+     <transform x="1.5" y="-13.65" skX="-110.54" skY="-110.54" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+    <frame z="1" tweenEasing="0" duration="3">
+     <transform x="1.5" y="-13.65" skX="-32.58" skY="-32.58" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+    <frame z="1" tweenEasing="0" duration="1">
+     <transform x="1.5" y="-13.65" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </frame>
+   </timeline>
+   <timeline name="attack" scale="1" offset="0">
+    <frame z="2" event="emitAttack" duration="1">
+     <transform x="-22.05" y="-15.2" skX="0" skY="0" scX="6.84" scY="5.95" pX="0" pY="0"/>
+     <colorTransform aO="0" rO="0" gO="0" bO="0" aM="0" rM="100" gM="100" bM="100"/>
+    </frame>
+    <frame duration="24" displayIndex="-1"/>
+   </timeline>
+  </animation>
+ </armature>
+</dragonBones>

@@ -1,0 +1,26 @@
+<TextureAtlas name="guai03" imagePath="texture.png">
+ <SubTexture name="补间 79" x="114" y="114" width="26" height="49"/>
+ <SubTexture name="补间 77" x="203" y="86" width="47" height="55"/>
+ <SubTexture name="补间 75" x="0" y="0" width="146" height="57"/>
+ <SubTexture name="补间 73" x="180" y="189" width="42" height="30"/>
+ <SubTexture name="补间 71" x="105" y="219" width="45" height="21"/>
+ <SubTexture name="补间 69" x="114" y="59" width="31" height="53"/>
+ <SubTexture name="补间 67" x="142" y="138" width="46" height="44"/>
+ <SubTexture name="补间 65" x="0" y="191" width="31" height="31"/>
+ <SubTexture name="补间 63" x="0" y="136" width="41" height="53"/>
+ <SubTexture name="补间 61" x="114" y="165" width="21" height="43"/>
+ <SubTexture name="补间 59" x="235" y="0" width="15" height="30"/>
+ <SubTexture name="补间 57" x="58" y="125" width="54" height="44"/>
+ <SubTexture name="补间 55" x="137" y="184" width="41" height="33"/>
+ <SubTexture name="补间 53" x="235" y="32" width="19" height="20"/>
+ <SubTexture name="补间 51" x="43" y="171" width="50" height="25"/>
+ <SubTexture name="补间 49" x="147" y="86" width="54" height="50"/>
+ <SubTexture name="17.png" x="78" y="198" width="25" height="20"/>
+ <SubTexture name="18.png" x="33" y="198" width="43" height="24"/>
+ <SubTexture name="19.png" x="190" y="143" width="43" height="44"/>
+ <SubTexture name="20.png" x="224" y="189" width="23" height="25"/>
+ <SubTexture name="21.png" x="148" y="0" width="85" height="84"/>
+ <SubTexture name="22.png" x="0" y="59" width="56" height="75"/>
+ <SubTexture name="23.png" x="58" y="59" width="54" height="64"/>
+ <SubTexture name="kongbai" x="235" y="54" width="11" height="11"/>
+</TextureAtlas>

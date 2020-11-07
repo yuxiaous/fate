@@ -1,0 +1,15 @@
+<TextureAtlas name="huoqiu" imagePath="texture.png">
+ <SubTexture name="1.png" x="201" y="143" width="48" height="37"/>
+ <SubTexture name="2.png" x="0" y="147" width="60" height="79"/>
+ <SubTexture name="3.png" x="341" y="74" width="74" height="99"/>
+ <SubTexture name="4.png" x="420" y="0" width="84" height="109"/>
+ <SubTexture name="5.png" x="262" y="74" width="77" height="102"/>
+ <SubTexture name="6.png" x="417" y="111" width="73" height="95"/>
+ <SubTexture name="7.png" x="126" y="143" width="73" height="75"/>
+ <SubTexture name="8.png" x="0" y="0" width="147" height="72"/>
+ <SubTexture name="9.png" x="149" y="0" width="138" height="72"/>
+ <SubTexture name="10.png" x="289" y="0" width="129" height="72"/>
+ <SubTexture name="11.png" x="0" y="74" width="124" height="71"/>
+ <SubTexture name="12.png" x="145" y="74" width="115" height="67"/>
+ <SubTexture name="kongbai" x="126" y="74" width="17" height="17"/>
+</TextureAtlas>

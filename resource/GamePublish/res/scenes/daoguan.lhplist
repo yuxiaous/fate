@@ -1,0 +1,2449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aspect</key>
+	<integer>2</integer>
+	<key>backgroundColor</key>
+	<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+	<key>children</key>
+	<array>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>name</key>
+			<string>BACK USER INTERFACE</string>
+			<key>nodeType</key>
+			<string>LHBackUINode</string>
+			<key>parentUUID</key>
+			<string>949F3B4A-ACCA-4217-957A-889DA77437F9</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{128.000000, 128.000000}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>9BEDEC9E-3EB2-40FC-820E-74122663C5CB</string>
+			<key>zOrder</key>
+			<integer>-1</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.770235, -1.009878}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_back3</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>A16593E7-FCB2-441F-8413-63F9E9AE5BBB</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{402.000000, 166.000000}</string>
+									<key>spriteName</key>
+									<string>dg_back</string>
+									<key>spriteUUID</key>
+									<string>CB78F62D-CDA3-46DB-BD71-5502C57D903B</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>4B55C65E-038E-4A2C-BBFC-2FAA509FBA31</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.063369, -1.009878}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_back2</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>A16593E7-FCB2-441F-8413-63F9E9AE5BBB</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{402.000000, 166.000000}</string>
+									<key>spriteName</key>
+									<string>dg_back</string>
+									<key>spriteUUID</key>
+									<string>CB78F62D-CDA3-46DB-BD71-5502C57D903B</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>24CC3CF7-5B18-4591-AC16-6F74E74F9B79</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.356503, -1.009878}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_back1</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>A16593E7-FCB2-441F-8413-63F9E9AE5BBB</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{402.000000, 166.000000}</string>
+									<key>spriteName</key>
+									<string>dg_back</string>
+									<key>spriteUUID</key>
+									<string>CB78F62D-CDA3-46DB-BD71-5502C57D903B</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>C5EC919C-62E2-45E1-A271-DD05C003173F</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.649636, -1.009878}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_back</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>A16593E7-FCB2-441F-8413-63F9E9AE5BBB</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{402.000000, 166.000000}</string>
+									<key>spriteName</key>
+									<string>dg_back</string>
+									<key>spriteUUID</key>
+									<string>CB78F62D-CDA3-46DB-BD71-5502C57D903B</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>E00C3B07-BFB3-407C-B8D5-804825E8922D</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>generalPosition</key>
+							<string>{0.056338, 0.100000}</string>
+							<key>name</key>
+							<string>Untitled</string>
+							<key>nodeType</key>
+							<string>LHParallaxLayer</string>
+							<key>parentUUID</key>
+							<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>A16593E7-FCB2-441F-8413-63F9E9AE5BBB</string>
+							<key>xRatio</key>
+							<real>0.60000002384185791</real>
+							<key>yRatio</key>
+							<real>0.60000002384185791</real>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>generalPosition</key>
+							<string>{0.056338, 0.100000}</string>
+							<key>name</key>
+							<string>Untitled1</string>
+							<key>nodeType</key>
+							<string>LHParallaxLayer</string>
+							<key>parentUUID</key>
+							<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>DFDEEF0C-0C3C-4974-81B9-F6E5497E097E</string>
+							<key>xRatio</key>
+							<real>1</real>
+							<key>yRatio</key>
+							<real>1</real>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>generalPosition</key>
+							<string>{0.056338, 0.100000}</string>
+							<key>name</key>
+							<string>Untitled2</string>
+							<key>nodeType</key>
+							<string>LHParallaxLayer</string>
+							<key>parentUUID</key>
+							<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>CD375D97-4469-4718-9A70-BDE2A07AA93F</string>
+							<key>xRatio</key>
+							<real>1</real>
+							<key>yRatio</key>
+							<real>1</real>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>generalPosition</key>
+							<string>{0.056338, 0.100000}</string>
+							<key>name</key>
+							<string>Untitled3</string>
+							<key>nodeType</key>
+							<string>LHParallaxLayer</string>
+							<key>parentUUID</key>
+							<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>9E0AAA15-8339-42CA-AA32-7B064D354F34</string>
+							<key>xRatio</key>
+							<real>1</real>
+							<key>yRatio</key>
+							<real>1</real>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>generalPosition</key>
+							<string>{0.056338, 0.100000}</string>
+							<key>name</key>
+							<string>Untitled4</string>
+							<key>nodeType</key>
+							<string>LHParallaxLayer</string>
+							<key>parentUUID</key>
+							<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>F65D2291-8513-440B-80A9-505D4B0CAF22</string>
+							<key>xRatio</key>
+							<real>1</real>
+							<key>yRatio</key>
+							<real>1</real>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{3.516490, -0.716254}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_dimian11</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{397.000000, 29.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_dimian2</string>
+									<key>spriteUUID</key>
+									<string>1DDCBCDE-3F02-4AC1-B820-25728C25D458</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>1480D863-4C2F-4A1A-988F-35FCE024F16F</string>
+									<key>zOrder</key>
+									<integer>-5</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.817546, -0.716254}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_dimian10</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{397.000000, 29.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_dimian2</string>
+									<key>spriteUUID</key>
+									<string>1DDCBCDE-3F02-4AC1-B820-25728C25D458</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>EB2F7136-FDD2-41A6-8CDF-F3DF14C1C56E</string>
+									<key>zOrder</key>
+									<integer>-5</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.118603, -0.716254}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_dimian9</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{397.000000, 29.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_dimian2</string>
+									<key>spriteUUID</key>
+									<string>1DDCBCDE-3F02-4AC1-B820-25728C25D458</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>68BA2D49-A5E6-4720-B1A5-3460B59FEACE</string>
+									<key>zOrder</key>
+									<integer>-5</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.419659, -0.716254}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_dimian8</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{397.000000, 29.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_dimian2</string>
+									<key>spriteUUID</key>
+									<string>1DDCBCDE-3F02-4AC1-B820-25728C25D458</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>D94C31CE-56D3-410F-8C21-11F5B23D4342</string>
+									<key>zOrder</key>
+									<integer>-5</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.720715, -0.716254}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_dimian7</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{397.000000, 29.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_dimian2</string>
+									<key>spriteUUID</key>
+									<string>1DDCBCDE-3F02-4AC1-B820-25728C25D458</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>3A440F2D-0A9A-4698-93BC-236D3411AD5E</string>
+									<key>zOrder</key>
+									<integer>-5</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{3.094153, -0.935344}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_pingfeng2</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{211.000000, 202.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_pingfeng</string>
+									<key>spriteUUID</key>
+									<string>CDD9CEEE-70C1-4895-A202-A9D2943CB498</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>9335B3B7-69FD-4273-95BC-B7681FA56DA8</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.041815, -0.950834}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_pingfeng4</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{211.000000, 202.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_pingfeng</string>
+									<key>spriteUUID</key>
+									<string>CDD9CEEE-70C1-4895-A202-A9D2943CB498</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>238727D4-DB4A-49C7-AA54-E335F7AA1982</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.391218, -0.952191}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_pingfeng3</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{211.000000, 202.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_pingfeng</string>
+									<key>spriteUUID</key>
+									<string>CDD9CEEE-70C1-4895-A202-A9D2943CB498</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>BAD6FDE0-4384-45E2-8655-55FAAB72AEE0</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.376170, -0.953303}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_pingfeng1</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{211.000000, 202.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_pingfeng</string>
+									<key>spriteUUID</key>
+									<string>CDD9CEEE-70C1-4895-A202-A9D2943CB498</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>A8614978-2B19-49B5-BDEE-C0D96F431474</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.709052, -0.950545}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_zc_pingfeng</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{211.000000, 202.000000}</string>
+									<key>spriteName</key>
+									<string>dg_zc_pingfeng</string>
+									<key>spriteUUID</key>
+									<string>CDD9CEEE-70C1-4895-A202-A9D2943CB498</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>947C7C4E-57AF-49AA-B3A7-7EC27FFD67FA</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>generalPosition</key>
+							<string>{0.056338, 0.100000}</string>
+							<key>name</key>
+							<string>Untitled9</string>
+							<key>nodeType</key>
+							<string>LHParallaxLayer</string>
+							<key>parentUUID</key>
+							<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>BAD30574-EB2F-4239-9151-126AD7845D8A</string>
+							<key>xRatio</key>
+							<real>0.40000000596046448</real>
+							<key>yRatio</key>
+							<real>0.40000000596046448</real>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{3.027855, -0.713078}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_taizi8</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{252.000000, 56.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_taizi1</string>
+									<key>spriteUUID</key>
+									<string>FDF30525-82DA-4BCA-A01A-900B94144E32</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>A469E0BD-1DF6-4643-9B56-FE5D7AA773DA</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.592116, -0.720079}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_taizi7</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{247.000000, 57.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_taizi2</string>
+									<key>spriteUUID</key>
+									<string>7AEBE44C-773D-4041-858D-70C83C2B8608</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>DCF1FEC4-9F4A-4E98-A9FE-CC743E4D0D19</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{3.441137, -0.720079}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_taizi6</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{247.000000, 57.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_taizi2</string>
+									<key>spriteUUID</key>
+									<string>7AEBE44C-773D-4041-858D-70C83C2B8608</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>9F9ECE84-C2D9-4730-A0E9-9BE1F8726C78</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.178834, -0.713078}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_taizi5</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{252.000000, 56.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_taizi1</string>
+									<key>spriteUUID</key>
+									<string>FDF30525-82DA-4BCA-A01A-900B94144E32</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>82648ACE-191D-4379-90E0-F95E3ADAE58B</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.743094, -0.720079}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_taizi4</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{247.000000, 57.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_taizi2</string>
+									<key>spriteUUID</key>
+									<string>7AEBE44C-773D-4041-858D-70C83C2B8608</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>8AB603EB-586B-4344-95F8-E3E13321630F</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.329812, -0.713078}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_taizi3</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{252.000000, 56.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_taizi1</string>
+									<key>spriteUUID</key>
+									<string>FDF30525-82DA-4BCA-A01A-900B94144E32</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>1691019E-CFB4-4FB2-B968-C784CBDE15D9</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.894073, -0.720079}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_taizi2</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{247.000000, 57.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_taizi2</string>
+									<key>spriteUUID</key>
+									<string>7AEBE44C-773D-4041-858D-70C83C2B8608</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>F59A180C-BC28-4A8A-A73B-A57CD64B4FED</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.480791, -0.713078}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_taizi1</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{252.000000, 56.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_taizi1</string>
+									<key>spriteUUID</key>
+									<string>FDF30525-82DA-4BCA-A01A-900B94144E32</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>281329D3-3B21-45C6-89F5-EAF31FAF7B24</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.176486, -0.698912}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_daobing3</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{38.000000, 73.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_daobing</string>
+									<key>spriteUUID</key>
+									<string>886C481F-EF3D-4F79-B49E-7007D80A54D3</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>A1CDC8F5-8B83-46DC-9998-33A02D8636B8</string>
+									<key>zOrder</key>
+									<integer>3</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.718739, -0.698912}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_daobing2</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{38.000000, 73.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_daobing</string>
+									<key>spriteUUID</key>
+									<string>886C481F-EF3D-4F79-B49E-7007D80A54D3</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>6CF0A128-81DD-4BAA-B9D1-4D7862CF5AB9</string>
+									<key>zOrder</key>
+									<integer>3</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.338912, -0.712946}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_daobing1</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{38.000000, 73.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_daobing</string>
+									<key>spriteUUID</key>
+									<string>886C481F-EF3D-4F79-B49E-7007D80A54D3</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>8DD9F3BB-17D9-44CE-BE33-755FB29EA8BB</string>
+									<key>zOrder</key>
+									<integer>3</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.753070, -0.698912}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_daobing</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{38.000000, 73.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_daobing</string>
+									<key>spriteUUID</key>
+									<string>886C481F-EF3D-4F79-B49E-7007D80A54D3</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>AB54EE57-424D-4802-9B83-1F6B03FDCD82</string>
+									<key>zOrder</key>
+									<integer>3</integer>
+								</dict>
+							</array>
+							<key>generalPosition</key>
+							<string>{0.056338, 0.100000}</string>
+							<key>name</key>
+							<string>Untitled8</string>
+							<key>nodeType</key>
+							<string>LHParallaxLayer</string>
+							<key>parentUUID</key>
+							<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>30A6C49D-155C-4FF0-A7D1-04EA9B62D48D</string>
+							<key>xRatio</key>
+							<real>0.20000000298023224</real>
+							<key>yRatio</key>
+							<real>0.20000000298023224</real>
+							<key>zOrder</key>
+							<integer>5</integer>
+						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{3.355539, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian11</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>47AE8042-744C-4E98-9903-7514826DF698</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{3.035116, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian8</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>DDA5E448-9449-467C-B940-2BF330A3D46F</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.073848, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian7</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>2414F6B5-CEDC-4AB3-A30A-6BD589B8585E</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.714693, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian6</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>AD26682F-3A36-4710-A9FE-16FB264EEFBC</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.394270, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian5</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>CB8807D3-B6DC-4C72-A590-14A0C935C294</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.753425, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian4</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>7E2C1A6E-347E-41CC-8653-40CD70385958</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.433002, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian3</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>C09277C6-3121-4D2B-B0A8-CEEAB70639A6</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.112579, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian2</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>F0CF9261-215D-4E5B-8090-CCF8A0231F01</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.792157, -0.423204}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian1</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>BF83948D-B52D-4569-9118-B2F45922F2FD</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.471734, -0.423204}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>489DE32A-BAB2-49D7-9590-BFFBC87325FA</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{3.675961, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian9</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>DD88DD41-B408-411D-A7D3-4245927DAB52</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{3.996384, -0.423203}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_dimian10</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{183.000000, 154.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_dimian</string>
+									<key>spriteUUID</key>
+									<string>E4AC3E12-7126-483A-884E-F9AE8BE5703A</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>75DF8040-5CF4-4684-92B0-F453A300DED3</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>generalPosition</key>
+							<string>{0.056338, 0.100000}</string>
+							<key>name</key>
+							<string>Untitled10</string>
+							<key>nodeType</key>
+							<string>LHParallaxLayer</string>
+							<key>parentUUID</key>
+							<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>389FF8E5-DF8C-421B-BBA4-5CC0DFE5670A</string>
+							<key>xRatio</key>
+							<real>0.0</real>
+							<key>yRatio</key>
+							<real>0.0</real>
+							<key>zOrder</key>
+							<integer>10</integer>
+						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.570620, -0.596643}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_zhuzidi1</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4DB2EB38-2A1D-48C2-93DC-5E0586BBB7CF</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{137.000000, 41.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_zhuzidi</string>
+									<key>spriteUUID</key>
+									<string>BC60A2D3-8EDE-4AC1-AE24-28AD564BCACB</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>BE21D7B9-B913-4756-AB58-BA90A83CDCFE</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{0.624752, -0.988023}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_zhuzi1</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4DB2EB38-2A1D-48C2-93DC-5E0586BBB7CF</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{67.000000, 211.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_zhuzi</string>
+									<key>spriteUUID</key>
+									<string>9F1292F7-0679-48A5-B336-7E019B51A842</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>55FE17F9-F152-4EB8-9BB6-A5BBE9E549E7</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.296852, -0.596643}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_zhuzidi2</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4DB2EB38-2A1D-48C2-93DC-5E0586BBB7CF</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{137.000000, 41.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_zhuzidi</string>
+									<key>spriteUUID</key>
+									<string>BC60A2D3-8EDE-4AC1-AE24-28AD564BCACB</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>29BF0EEB-4A72-437C-A8A5-37C60E5239B7</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{1.350984, -0.986461}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_zhuzi2</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4DB2EB38-2A1D-48C2-93DC-5E0586BBB7CF</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{67.000000, 211.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_zhuzi</string>
+									<key>spriteUUID</key>
+									<string>9F1292F7-0679-48A5-B336-7E019B51A842</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>43852300-F7AC-4986-8D64-6B0C37F05A2E</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.023085, -0.596644}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_zhuzidi3</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4DB2EB38-2A1D-48C2-93DC-5E0586BBB7CF</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{137.000000, 41.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_zhuzidi</string>
+									<key>spriteUUID</key>
+									<string>BC60A2D3-8EDE-4AC1-AE24-28AD564BCACB</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>780E894D-8F09-4192-85AB-3B1DC84A3085</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.077217, -0.986461}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_zhuzi3</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4DB2EB38-2A1D-48C2-93DC-5E0586BBB7CF</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{67.000000, 211.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_zhuzi</string>
+									<key>spriteUUID</key>
+									<string>9F1292F7-0679-48A5-B336-7E019B51A842</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>DEB4E80B-955C-4BBC-A04E-8614A0723281</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.749317, -0.596644}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_zhuzidi4</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4DB2EB38-2A1D-48C2-93DC-5E0586BBB7CF</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{137.000000, 41.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_zhuzidi</string>
+									<key>spriteUUID</key>
+									<string>BC60A2D3-8EDE-4AC1-AE24-28AD564BCACB</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>31E671A4-AF8F-4305-BC26-C18CC06F6434</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>alpha</key>
+									<real>255</real>
+									<key>anchor</key>
+									<string>{0.500000, 0.500000}</string>
+									<key>colorOverlay</key>
+									<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+									<key>generalPosition</key>
+									<string>{2.803449, -0.986462}</string>
+									<key>imageFileName</key>
+									<string>daoguan.png</string>
+									<key>name</key>
+									<string>dg_qj_zhuzi4</string>
+									<key>nodeType</key>
+									<string>LHSprite</string>
+									<key>parentUUID</key>
+									<string>4DB2EB38-2A1D-48C2-93DC-5E0586BBB7CF</string>
+									<key>relativeImagePath</key>
+									<string>scenes/</string>
+									<key>rotation</key>
+									<real>0.0</real>
+									<key>scale</key>
+									<string>{2.000000, 2.000000}</string>
+									<key>size</key>
+									<string>{67.000000, 211.000000}</string>
+									<key>spriteName</key>
+									<string>dg_qj_zhuzi</string>
+									<key>spriteUUID</key>
+									<string>9F1292F7-0679-48A5-B336-7E019B51A842</string>
+									<key>tags</key>
+									<array>
+										<string>DEFAULT</string>
+									</array>
+									<key>uuid</key>
+									<string>7FE6CC46-9B15-4919-9E09-D0AB706AB839</string>
+									<key>zOrder</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>generalPosition</key>
+							<string>{0.056338, 0.100000}</string>
+							<key>name</key>
+							<string>Untitled7</string>
+							<key>nodeType</key>
+							<string>LHParallaxLayer</string>
+							<key>parentUUID</key>
+							<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>4DB2EB38-2A1D-48C2-93DC-5E0586BBB7CF</string>
+							<key>xRatio</key>
+							<real>0.0</real>
+							<key>yRatio</key>
+							<real>0.0</real>
+							<key>zOrder</key>
+							<integer>12</integer>
+						</dict>
+					</array>
+					<key>followedNodeUUID</key>
+					<string>36832465-0AA6-4381-BA77-404788FAB945</string>
+					<key>generalPosition</key>
+					<string>{-0.375514, 1.123434}</string>
+					<key>name</key>
+					<string>UntitledParallax</string>
+					<key>nodeType</key>
+					<string>LHParallax</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>A1A2885E-6FA8-4F65-8D1E-6DE9DB56806A</string>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>activeCamera</key>
+					<true/>
+					<key>generalPosition</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>importantArea</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>lockX</key>
+					<false/>
+					<key>lockY</key>
+					<false/>
+					<key>name</key>
+					<string>UntitledCamera</string>
+					<key>nodeType</key>
+					<string>LHCamera</string>
+					<key>offset</key>
+					<string>{0.000000, 0.000000}</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>restrictToGameWorld</key>
+					<true/>
+					<key>smoothMovement</key>
+					<true/>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>36832465-0AA6-4381-BA77-404788FAB945</string>
+					<key>zoomOnPinchOrScroll</key>
+					<false/>
+					<key>zoomValue</key>
+					<real>1</real>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{1.759223, 0.828151}</string>
+					<key>name</key>
+					<string>street</string>
+					<key>nodeType</key>
+					<string>LHNode</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{4002.614502, 214.637085}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>C16F4E8C-8137-4C5B-ACFF-0FC3F1348F2B</string>
+					<key>zOrder</key>
+					<integer>100</integer>
+				</dict>
+				<dict>
+					<key>alpha</key>
+					<real>255</real>
+					<key>anchor</key>
+					<string>{0.500000, 0.500000}</string>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 0.500000}</string>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>generalPosition</key>
+							<string>{0.374222, -1.149581}</string>
+							<key>imageFileName</key>
+							<string>daoguan.png</string>
+							<key>name</key>
+							<string>dg_qj_daojia</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>5B9469B2-236E-4FE1-B113-5CBEE9C368C8</string>
+							<key>relativeImagePath</key>
+							<string>scenes/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{2.000000, 2.000000}</string>
+							<key>size</key>
+							<string>{146.000000, 64.000000}</string>
+							<key>spriteName</key>
+							<string>dg_qj_daojia</string>
+							<key>spriteUUID</key>
+							<string>835FA701-6C63-4C5F-948F-99A6F4AB9898</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>AE2B1894-B77D-48F2-A299-1C9EA79DABA2</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 0.500000}</string>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>generalPosition</key>
+							<string>{1.147990, -1.149581}</string>
+							<key>imageFileName</key>
+							<string>daoguan.png</string>
+							<key>name</key>
+							<string>dg_qj_daojia1</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>5B9469B2-236E-4FE1-B113-5CBEE9C368C8</string>
+							<key>relativeImagePath</key>
+							<string>scenes/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{2.000000, 2.000000}</string>
+							<key>size</key>
+							<string>{146.000000, 64.000000}</string>
+							<key>spriteName</key>
+							<string>dg_qj_daojia</string>
+							<key>spriteUUID</key>
+							<string>835FA701-6C63-4C5F-948F-99A6F4AB9898</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>B89B0BF7-F319-495A-8593-A8D48BEBC3B6</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 0.500000}</string>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>generalPosition</key>
+							<string>{1.921757, -1.149581}</string>
+							<key>imageFileName</key>
+							<string>daoguan.png</string>
+							<key>name</key>
+							<string>dg_qj_daojia2</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>5B9469B2-236E-4FE1-B113-5CBEE9C368C8</string>
+							<key>relativeImagePath</key>
+							<string>scenes/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{2.000000, 2.000000}</string>
+							<key>size</key>
+							<string>{146.000000, 64.000000}</string>
+							<key>spriteName</key>
+							<string>dg_qj_daojia</string>
+							<key>spriteUUID</key>
+							<string>835FA701-6C63-4C5F-948F-99A6F4AB9898</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>5E0461EC-296C-41E0-956F-8CC09372C226</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 0.500000}</string>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>generalPosition</key>
+							<string>{2.695525, -1.149581}</string>
+							<key>imageFileName</key>
+							<string>daoguan.png</string>
+							<key>name</key>
+							<string>dg_qj_daojia3</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>5B9469B2-236E-4FE1-B113-5CBEE9C368C8</string>
+							<key>relativeImagePath</key>
+							<string>scenes/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{2.000000, 2.000000}</string>
+							<key>size</key>
+							<string>{146.000000, 64.000000}</string>
+							<key>spriteName</key>
+							<string>dg_qj_daojia</string>
+							<key>spriteUUID</key>
+							<string>835FA701-6C63-4C5F-948F-99A6F4AB9898</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>4F62CE45-5E5B-4EF4-9D25-837AC11103F6</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{0.500000, 0.500000}</string>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>generalPosition</key>
+							<string>{3.469293, -1.149581}</string>
+							<key>imageFileName</key>
+							<string>daoguan.png</string>
+							<key>name</key>
+							<string>dg_qj_daojia4</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>5B9469B2-236E-4FE1-B113-5CBEE9C368C8</string>
+							<key>relativeImagePath</key>
+							<string>scenes/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{2.000000, 2.000000}</string>
+							<key>size</key>
+							<string>{146.000000, 64.000000}</string>
+							<key>spriteName</key>
+							<string>dg_qj_daojia</string>
+							<key>spriteUUID</key>
+							<string>835FA701-6C63-4C5F-948F-99A6F4AB9898</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>D3B4E54E-FB4A-4869-9CDB-C8C980732853</string>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>alpha</key>
+							<real>255</real>
+							<key>anchor</key>
+							<string>{-0.217014, 0.497335}</string>
+							<key>colorOverlay</key>
+							<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+							<key>generalPosition</key>
+							<string>{-1.509326, -1.617121}</string>
+							<key>imageFileName</key>
+							<string>daoguan.png</string>
+							<key>name</key>
+							<string>dg_zhezao</string>
+							<key>nodeType</key>
+							<string>LHSprite</string>
+							<key>parentUUID</key>
+							<string>5B9469B2-236E-4FE1-B113-5CBEE9C368C8</string>
+							<key>relativeImagePath</key>
+							<string>scenes/</string>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scale</key>
+							<string>{287.500000, 2.000000}</string>
+							<key>size</key>
+							<string>{11.000000, 343.000000}</string>
+							<key>spriteName</key>
+							<string>dg_zhezao</string>
+							<key>spriteUUID</key>
+							<string>0E5990EB-889D-464C-AFDB-4702D3A1BC7F</string>
+							<key>tags</key>
+							<array>
+								<string>DEFAULT</string>
+							</array>
+							<key>uuid</key>
+							<string>491D174A-E6AE-4614-91B7-A416E9425D3C</string>
+							<key>zOrder</key>
+							<integer>100</integer>
+						</dict>
+					</array>
+					<key>colorOverlay</key>
+					<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+					<key>generalPosition</key>
+					<string>{-0.234504, 2.100744}</string>
+					<key>name</key>
+					<string>qian</string>
+					<key>nodeType</key>
+					<string>LHNode</string>
+					<key>parentUUID</key>
+					<string>_GAME_WORLD_NODE_UUID_</string>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scale</key>
+					<string>{1.000000, 1.000000}</string>
+					<key>size</key>
+					<string>{843.678320, 843.678320}</string>
+					<key>tags</key>
+					<array>
+						<string>DEFAULT</string>
+					</array>
+					<key>uuid</key>
+					<string>5B9469B2-236E-4FE1-B113-5CBEE9C368C8</string>
+					<key>zOrder</key>
+					<integer>210</integer>
+				</dict>
+			</array>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>name</key>
+			<string>GAME WORLD</string>
+			<key>nodeType</key>
+			<string>LHGameWorldNode</string>
+			<key>parentUUID</key>
+			<string>949F3B4A-ACCA-4217-957A-889DA77437F9</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{128.000000, 128.000000}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>7FB2113C-A958-4D14-AE91-BFC981873B6B</string>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>alpha</key>
+			<real>255</real>
+			<key>anchor</key>
+			<string>{0.500000, 0.500000}</string>
+			<key>colorOverlay</key>
+			<string>{{1.000000, 1.000000}, {1.000000, 1.000000}}</string>
+			<key>generalPosition</key>
+			<string>{0.000000, 0.000000}</string>
+			<key>name</key>
+			<string>FRONT USER INTERFACE</string>
+			<key>nodeType</key>
+			<string>LHUINode</string>
+			<key>parentUUID</key>
+			<string>949F3B4A-ACCA-4217-957A-889DA77437F9</string>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scale</key>
+			<string>{1.000000, 1.000000}</string>
+			<key>size</key>
+			<string>{128.000000, 128.000000}</string>
+			<key>tags</key>
+			<array>
+				<string>DEFAULT</string>
+			</array>
+			<key>uuid</key>
+			<string>B484C79D-F242-44E3-BBA0-7F24009F4603</string>
+			<key>zOrder</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>designResolution</key>
+	<string>{1136.000000, 640.000000}</string>
+	<key>devices</key>
+	<array>
+		<dict>
+			<key>ratio</key>
+			<real>1</real>
+			<key>size</key>
+			<string>{1136.000000, 640.000000}</string>
+			<key>suffix</key>
+			<string>568</string>
+		</dict>
+	</array>
+	<key>gameWorld</key>
+	<dict>
+		<key>1136x640</key>
+		<string>{{0.000000, 0.000000}, {3.521127, 1.000000}}</string>
+	</dict>
+	<key>globalGravityDirection</key>
+	<string>{0.000000, -1.000000}</string>
+	<key>globalGravityForce</key>
+	<real>8</real>
+	<key>nodeType</key>
+	<string>LHScene</string>
+	<key>sceneFormat</key>
+	<real>1</real>
+	<key>tags</key>
+	<array>
+		<string>DEFAULT</string>
+	</array>
+	<key>useGlobalGravity</key>
+	<true/>
+	<key>uuid</key>
+	<string>949F3B4A-ACCA-4217-957A-889DA77437F9</string>
+</dict>
+</plist>

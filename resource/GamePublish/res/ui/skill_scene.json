@@ -1,0 +1,1442 @@
+{
+  "ID": "94ea6012-0d82-48e3-bf7a-205f4ba91cd9",
+  "Version": "2.2.9.0",
+  "Name": "skill_scene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 89,
+        "Children": [
+          {
+            "BackColorAlpha": 127,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 1195,
+            "ActionTag": 822231241,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "Name": "Panel_1",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_160.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 119,
+            "Scale9OriginY": 90,
+            "Scale9Width": 2,
+            "Scale9Height": 3,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 320.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.9331,
+              "Y": 0.9594
+            },
+            "LeftMargin": 38.0,
+            "RightMargin": 38.0,
+            "TopMargin": 13.0,
+            "BottomMargin": 13.0,
+            "Tag": 1196,
+            "ActionTag": -421646768,
+            "Size": {
+              "X": 1060.0,
+              "Y": 614.0
+            },
+            "Name": "img_bg",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_115.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 45,
+            "Scale9Width": 8,
+            "Scale9Height": 73,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 600.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.9375
+            },
+            "PreSize": {
+              "X": 0.2245,
+              "Y": 0.1031
+            },
+            "LeftMargin": 440.5,
+            "RightMargin": 440.5,
+            "TopMargin": 7.0,
+            "BottomMargin": 567.0,
+            "Tag": 1274,
+            "Children": [
+              {
+                "FontSize": 30,
+                "LabelText": "技能强化",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 1,
+                "ShadowOffsetY": -1,
+                "ShadowEnabled": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 127.5,
+                  "Y": 33.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 160,
+                  "G": 0,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 67.5,
+                "RightMargin": 67.5,
+                "TopMargin": 18.0,
+                "BottomMargin": 18.0,
+                "Tag": 1275,
+                "ActionTag": -462378538,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 30.0
+                },
+                "Name": "lbl_title",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -1088495017,
+            "Size": {
+              "X": 255.0,
+              "Y": 66.0
+            },
+            "Name": "img_title",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "DirectionType": "Vertical",
+            "HorizontalType": "Align_HorizontalCenter",
+            "VerticalType": 0,
+            "IsBounceEnabled": true,
+            "ScrollDirectionType": 0,
+            "ClipAble": true,
+            "BackColorAlpha": 102,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_165.png",
+              "Plist": ""
+            },
+            "SingleColor": {
+              "R": 150,
+              "G": 150
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 150
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 2,
+            "Scale9OriginY": 2,
+            "Scale9Width": 2,
+            "Scale9Height": 2,
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 84.7899,
+              "Y": 49.5966
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0746,
+              "Y": 0.0775
+            },
+            "PreSize": {
+              "X": 0.8755,
+              "Y": 0.8481
+            },
+            "LeftMargin": 84.7899,
+            "RightMargin": 601.2101,
+            "TopMargin": 110.4034,
+            "BottomMargin": 49.5966,
+            "Tag": 1264,
+            "ActionTag": 1386155969,
+            "Size": {
+              "X": 450.0,
+              "Y": 480.0
+            },
+            "Name": "list_skills",
+            "ctype": "ListViewObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_65.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_65.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_64.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 74,
+            "Scale9Height": 74,
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1090.0,
+              "Y": 590.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9595,
+              "Y": 0.9219
+            },
+            "PreSize": {
+              "X": 0.0651,
+              "Y": 0.1156
+            },
+            "LeftMargin": 1053.0,
+            "RightMargin": 9.0,
+            "TopMargin": 13.0,
+            "BottomMargin": 553.0,
+            "Tag": 1276,
+            "ActionTag": 105620910,
+            "Size": {
+              "X": 74.0,
+              "Y": 74.0
+            },
+            "Name": "btn_close",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 30,
+            "ButtonText": "强化",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_66.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_63.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_62.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 128,
+            "Scale9Height": 68,
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 822.4085,
+              "Y": 71.0481
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.724,
+              "Y": 0.111
+            },
+            "PreSize": {
+              "X": 0.249,
+              "Y": 0.1201
+            },
+            "LeftMargin": 758.4085,
+            "RightMargin": 249.5915,
+            "TopMargin": 534.9519,
+            "BottomMargin": 37.0481,
+            "Tag": 1272,
+            "ActionTag": -1124740801,
+            "Size": {
+              "X": 128.0,
+              "Y": 68.0
+            },
+            "Name": "btn_qianghua",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_165.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 1,
+            "Scale9OriginY": 1,
+            "Scale9Width": 4,
+            "Scale9Height": 4,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 586.2261,
+              "Y": 133.0473
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.516,
+              "Y": 0.2079
+            },
+            "PreSize": {
+              "X": 0.8755,
+              "Y": 0.636
+            },
+            "LeftMargin": 586.2261,
+            "RightMargin": 99.7739,
+            "TopMargin": 146.9527,
+            "BottomMargin": 133.0473,
+            "Tag": 1265,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_166.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 2,
+                "Scale9OriginY": 2,
+                "Scale9Width": 2,
+                "Scale9Height": 2,
+                "AnchorPoint": {
+                  "ScaleY": 1.0
+                },
+                "Position": {
+                  "X": 0.0,
+                  "Y": 350.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.9722
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 0.4028
+                },
+                "TopMargin": 10.0,
+                "BottomMargin": 205.0,
+                "Tag": 1286,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/ui/ui_165.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 2,
+                    "Scale9OriginY": 2,
+                    "Scale9Width": 2,
+                    "Scale9Height": 2,
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 0.0,
+                      "Y": 140.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.9655
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 0.2069
+                    },
+                    "TopMargin": 5.0,
+                    "BottomMargin": 110.0,
+                    "Tag": 1287,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "images/ui/ui_167.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 2,
+                        "Scale9Width": 2,
+                        "Scale9Height": 28,
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 0.0,
+                          "Y": 1.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0333
+                        },
+                        "PreSize": {
+                          "X": 0.48,
+                          "Y": 0.2456
+                        },
+                        "RightMargin": 234.0,
+                        "TopMargin": 1.0,
+                        "BottomMargin": 1.0,
+                        "Tag": 1288,
+                        "ActionTag": 1040759518,
+                        "Size": {
+                          "X": 216.0,
+                          "Y": 28.0
+                        },
+                        "Name": "Image_41_40_50",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "物品名称",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineSize": 0,
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 0,
+                        "ShadowOffsetY": 0,
+                        "AnchorPoint": {
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 45.0,
+                          "Y": 14.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 0,
+                          "G": 0,
+                          "B": 0
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.1,
+                          "Y": 0.4667
+                        },
+                        "PreSize": {
+                          "X": 0.3333,
+                          "Y": 0.0778
+                        },
+                        "LeftMargin": 45.0,
+                        "RightMargin": 255.0,
+                        "TopMargin": 2.0,
+                        "Tag": 1268,
+                        "ActionTag": 505883158,
+                        "Size": {
+                          "X": 150.0,
+                          "Y": 28.0
+                        },
+                        "Name": "lbl_skill_name_1",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 1767178300,
+                    "Size": {
+                      "X": 450.0,
+                      "Y": 30.0
+                    },
+                    "Name": "Image_42_38_51",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 20,
+                    "LabelText": "技能等级:{0}",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 200.0,
+                      "Y": 100.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4444,
+                      "Y": 0.6897
+                    },
+                    "PreSize": {
+                      "X": 0.5111,
+                      "Y": 0.0667
+                    },
+                    "LeftMargin": 200.0,
+                    "RightMargin": 20.0,
+                    "TopMargin": 45.0,
+                    "BottomMargin": 76.0,
+                    "Tag": 1270,
+                    "ActionTag": -2124971150,
+                    "Size": {
+                      "X": 230.0,
+                      "Y": 24.0
+                    },
+                    "Name": "lbl_skill_level_1",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 20,
+                    "LabelText": "需求等级:{0}",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 200.0,
+                      "Y": 75.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4444,
+                      "Y": 0.5172
+                    },
+                    "PreSize": {
+                      "X": 0.5111,
+                      "Y": 0.0667
+                    },
+                    "LeftMargin": 200.0,
+                    "RightMargin": 20.0,
+                    "TopMargin": 70.0,
+                    "BottomMargin": 51.0,
+                    "Tag": 126,
+                    "ActionTag": 599767140,
+                    "Size": {
+                      "X": 230.0,
+                      "Y": 24.0
+                    },
+                    "Name": "lbl_skill_req_1",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 20,
+                    "LabelText": "技能描述",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 200.0,
+                      "Y": 50.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4444,
+                      "Y": 0.3448
+                    },
+                    "PreSize": {
+                      "X": 0.5111,
+                      "Y": 0.3241
+                    },
+                    "LeftMargin": 200.0,
+                    "RightMargin": 20.0,
+                    "TopMargin": 95.0,
+                    "BottomMargin": 3.0,
+                    "Tag": 1271,
+                    "ActionTag": -297128143,
+                    "Size": {
+                      "X": 230.0,
+                      "Y": 47.0
+                    },
+                    "Name": "lbl_skill_desc_1",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/icon/skill/skill1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 100.0,
+                      "Y": 55.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2222,
+                      "Y": 0.3793
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 53.5,
+                    "RightMargin": 303.5,
+                    "TopMargin": 43.0,
+                    "BottomMargin": 8.0,
+                    "Tag": 128,
+                    "ActionTag": -404284199,
+                    "Size": {
+                      "X": 93.0,
+                      "Y": 94.0
+                    },
+                    "Name": "sp_skill_icon_1",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 730897414,
+                "Size": {
+                  "X": 450.0,
+                  "Y": 145.0
+                },
+                "Name": "Image_45",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_166.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 2,
+                "Scale9OriginY": 2,
+                "Scale9Width": 2,
+                "Scale9Height": 2,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 11.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0306
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 0.4028
+                },
+                "TopMargin": 204.0,
+                "BottomMargin": 11.0,
+                "Tag": 1285,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/ui/ui_165.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 2,
+                    "Scale9OriginY": 2,
+                    "Scale9Width": 2,
+                    "Scale9Height": 2,
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 0.0,
+                      "Y": 140.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.9655
+                    },
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 0.2069
+                    },
+                    "TopMargin": 5.0,
+                    "BottomMargin": 110.0,
+                    "Tag": 1266,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "images/ui/ui_167.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 2,
+                        "Scale9Width": 2,
+                        "Scale9Height": 28,
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 0.0,
+                          "Y": 1.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0333
+                        },
+                        "PreSize": {
+                          "X": 0.48,
+                          "Y": 0.2456
+                        },
+                        "RightMargin": 234.0,
+                        "TopMargin": 1.0,
+                        "BottomMargin": 1.0,
+                        "Tag": 1267,
+                        "ActionTag": 2113087777,
+                        "Size": {
+                          "X": 216.0,
+                          "Y": 28.0
+                        },
+                        "Name": "Image_41_40",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "强化花费:{0} 金币",
+                        "HorizontalAlignmentType": "HT_Center",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineSize": 0,
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 0,
+                        "ShadowOffsetY": 0,
+                        "AnchorPoint": {
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 244.261,
+                          "Y": 15.0571
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "G": 248,
+                          "B": 132
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.5428,
+                          "Y": 0.5019
+                        },
+                        "PreSize": {
+                          "X": 0.4444,
+                          "Y": 0.9333
+                        },
+                        "LeftMargin": 244.261,
+                        "RightMargin": 5.739,
+                        "TopMargin": 0.9429,
+                        "BottomMargin": 1.0571,
+                        "Tag": 1269,
+                        "ActionTag": 883372412,
+                        "Size": {
+                          "X": 200.0,
+                          "Y": 28.0
+                        },
+                        "Name": "lbl_skill_price",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "IsCustomSize": true,
+                        "FontSize": 20,
+                        "LabelText": "物品名称",
+                        "VerticalAlignmentType": "VT_Center",
+                        "OutlineSize": 0,
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 0,
+                        "ShadowOffsetY": 0,
+                        "AnchorPoint": {
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 45.0,
+                          "Y": 14.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "R": 0,
+                          "G": 0,
+                          "B": 0
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.1,
+                          "Y": 0.4667
+                        },
+                        "PreSize": {
+                          "X": 0.6944,
+                          "Y": 1.0
+                        },
+                        "LeftMargin": 45.0,
+                        "RightMargin": 255.0,
+                        "TopMargin": 2.0,
+                        "Tag": 1290,
+                        "ActionTag": 1645427094,
+                        "Size": {
+                          "X": 150.0,
+                          "Y": 28.0
+                        },
+                        "Name": "lbl_skill_name_2",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -1335604697,
+                    "Size": {
+                      "X": 450.0,
+                      "Y": 30.0
+                    },
+                    "Name": "Image_42_38",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 20,
+                    "LabelText": "技能等级:{0}",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 200.0,
+                      "Y": 100.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4444,
+                      "Y": 0.6897
+                    },
+                    "PreSize": {
+                      "X": 0.5111,
+                      "Y": 0.0667
+                    },
+                    "LeftMargin": 200.0,
+                    "RightMargin": 20.0,
+                    "TopMargin": 45.0,
+                    "BottomMargin": 76.0,
+                    "Tag": 1291,
+                    "ActionTag": -356987550,
+                    "Size": {
+                      "X": 230.0,
+                      "Y": 24.0
+                    },
+                    "Name": "lbl_skill_level_2",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 20,
+                    "LabelText": "需求等级:{0}",
+                    "VerticalAlignmentType": "VT_Center",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 200.0,
+                      "Y": 75.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4444,
+                      "Y": 0.5172
+                    },
+                    "PreSize": {
+                      "X": 0.5111,
+                      "Y": 0.0667
+                    },
+                    "LeftMargin": 200.0,
+                    "RightMargin": 20.0,
+                    "TopMargin": 70.0,
+                    "BottomMargin": 51.0,
+                    "Tag": 127,
+                    "ActionTag": -144634553,
+                    "Size": {
+                      "X": 230.0,
+                      "Y": 24.0
+                    },
+                    "Name": "lbl_skill_req_2",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 20,
+                    "LabelText": "技能描述",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "AnchorPoint": {
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 200.0,
+                      "Y": 50.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.4444,
+                      "Y": 0.3448
+                    },
+                    "PreSize": {
+                      "X": 0.5111,
+                      "Y": 0.3241
+                    },
+                    "LeftMargin": 200.0,
+                    "RightMargin": 20.0,
+                    "TopMargin": 95.0,
+                    "BottomMargin": 3.0,
+                    "Tag": 127,
+                    "ActionTag": -864669939,
+                    "Size": {
+                      "X": 230.0,
+                      "Y": 47.0
+                    },
+                    "Name": "lbl_skill_desc_2",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "images/icon/skill/skill1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 100.0,
+                      "Y": 55.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2222,
+                      "Y": 0.3793
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 53.5,
+                    "RightMargin": 303.5,
+                    "TopMargin": 43.0,
+                    "BottomMargin": 8.0,
+                    "Tag": 129,
+                    "ActionTag": 20454526,
+                    "Size": {
+                      "X": 93.0,
+                      "Y": 94.0
+                    },
+                    "Name": "sp_skill_icon_2",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -1086309563,
+                "Size": {
+                  "X": 450.0,
+                  "Y": 145.0
+                },
+                "Name": "Image_46",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_175.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 225.0,
+                  "Y": 180.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 205.0,
+                "RightMargin": 205.0,
+                "TopMargin": 168.0,
+                "BottomMargin": 168.0,
+                "Tag": 1289,
+                "ActionTag": -15709469,
+                "Size": {
+                  "X": 40.0,
+                  "Y": 24.0
+                },
+                "Name": "Sprite_42",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -1116601739,
+            "Size": {
+              "X": 450.0,
+              "Y": 360.0
+            },
+            "Name": "Image_40",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/panel_resource.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 872.2263,
+              "Y": 540.0444
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.7678,
+              "Y": 0.8438
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 872.2263,
+            "RightMargin": 263.7737,
+            "TopMargin": 99.9556,
+            "BottomMargin": 540.0444,
+            "Tag": 1257,
+            "ActionTag": -1998156138,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "ProjectNode_2",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/panel_resource.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 692.223,
+              "Y": 540.0444
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.6094,
+              "Y": 0.8438
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 692.223,
+            "RightMargin": 443.777,
+            "TopMargin": 99.9556,
+            "BottomMargin": 540.0444,
+            "Tag": 1250,
+            "ActionTag": -830860341,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "ProjectNode_1",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_161.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 822.71,
+              "Y": 121.05
+            },
+            "Scale": {
+              "ScaleX": 2.67,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7242,
+              "Y": 0.1891
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 738.21,
+            "RightMargin": 228.79,
+            "TopMargin": 511.45,
+            "BottomMargin": 113.55,
+            "Tag": 1281,
+            "ActionTag": -355176571,
+            "Size": {
+              "X": 169.0,
+              "Y": 15.0
+            },
+            "Name": "Sprite_21_26_0",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

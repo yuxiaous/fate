@@ -1,0 +1,444 @@
+<Solution>
+  <PropertyGroup Name="CocosProject" Version="2.2.9.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="fonts">
+          <Fnt Name="fnt1.fnt" />
+          <Fnt Name="fnt2.fnt" />
+          <Fnt Name="fnt4.fnt" />
+          <Fnt Name="fnt5.fnt" />
+          <Fnt Name="fnt6.fnt" />
+          <Fnt Name="fnt7.fnt" />
+          <Fnt Name="fnt_8.fnt" />
+          <Fnt Name="fnt_10.fnt" />
+        </Folder>
+        <Folder Name="images">
+          <Folder Name="battle">
+            <Image Name="go.png" />
+            <Image Name="combo.png" />
+            <Image Name="19.png" />
+            <Image Name="20.png" />
+            <Image Name="zanting1.png" />
+            <Image Name="zanting2.png" />
+          </Folder>
+          <Folder Name="zuoshangjiao">
+            <Image Name="level.png" />
+            <Image Name="touxiang.png" />
+            <Image Name="touxiangdi.png" />
+            <Image Name="mptiao.png" />
+            <Image Name="hptiao.png" />
+            <Image Name="zui_50.png" />
+            <Image Name="zui_51.png" />
+            <Image Name="zui_52.png" />
+            <Image Name="zui_53.png" />
+            <Image Name="zui_54.png" />
+            <Image Name="zui_55.png" />
+            <Image Name="zui_56.png" />
+            <Image Name="zui_57.png" />
+          </Folder>
+          <Folder Name="ui">
+            <Image Name="beijing02.png" />
+            <Image Name="ui_14.png" />
+            <Image Name="ui_37.png" />
+            <Image Name="beijing01.png" />
+            <Image Name="ui_109.png" />
+            <Image Name="ui_111.png" />
+            <Image Name="ui_112.png" />
+            <Image Name="xueping.png" />
+            <Image Name="ui_79.png" />
+            <Image Name="27.png" />
+            <Image Name="28.png" />
+            <Image Name="29.png" />
+            <Image Name="30.png" />
+            <Image Name="31.png" />
+            <Image Name="ui_43.png" />
+            <Image Name="ui_114.png" />
+            <Image Name="ui_115.png" />
+            <Image Name="ui_116.png" />
+            <Image Name="ui_117.png" />
+            <Image Name="ui_118.png" />
+            <Image Name="ui_119.png" />
+            <Image Name="ui_120.png" />
+            <Image Name="ui_121.png" />
+            <Image Name="ui_122.png" />
+            <Image Name="ui_123.png" />
+            <Image Name="ui_124.png" />
+            <Image Name="ui_125.png" />
+            <Image Name="ui_126.png" />
+            <Image Name="ui_127.png" />
+            <Image Name="ui_113.png" />
+            <Image Name="ui_136.png" />
+            <Image Name="ui_139.png" />
+            <Image Name="ui_135.png" />
+            <Image Name="ui_130.png" />
+            <Image Name="ui_152.png" />
+            <Image Name="ui_134.png" />
+            <Image Name="ui_131.png" />
+            <Image Name="ui_138.png" />
+            <Image Name="logo.png" />
+            <Image Name="ui_171.png" />
+            <Image Name="ui_172.png" />
+            <Image Name="beijing03.png" />
+            <Image Name="ui_169.png" />
+            <Image Name="ui_160.png" />
+            <Image Name="ui_162.png" />
+            <Image Name="ui_163.png" />
+            <Image Name="ui_164.png" />
+            <Image Name="ui_161.png" />
+            <Image Name="ui_165.png" />
+            <Image Name="ui_166.png" />
+            <Image Name="ui_167.png" />
+            <Image Name="ui_157.png" />
+            <Image Name="ui_158.png" />
+            <Image Name="ui_176.png" />
+            <Image Name="ui_168.png" />
+            <Image Name="ui_175.png" />
+            <Image Name="ui_128.png" />
+            <Image Name="ui_129.png" />
+            <Image Name="ui_154.png" />
+            <Image Name="ui_155.png" />
+            <Image Name="ui_153.png" />
+            <Image Name="ui_227.png" />
+            <Image Name="zui_lanping.png" />
+            <Image Name="ui_241.png" />
+            <Image Name="ui_242.png" />
+            <Image Name="ui_243.png" />
+            <PlistInfo Name="logo.csi" Type="Plist" />
+            <Image Name="logo_2.png" />
+            <Image Name="logo_3.png" />
+            <Image Name="logo_4.png" />
+            <Image Name="logo_5.png" />
+            <Image Name="logo_6.png" />
+            <Image Name="logo_7.png" />
+            <Image Name="logo_8.png" />
+            <Image Name="logo_9.png" />
+            <Image Name="logo_10.png" />
+            <Image Name="ui_173.png" />
+            <Image Name="ui_174.png" />
+            <Image Name="ui_256.png" />
+            <Image Name="ui_257.png" />
+            <Image Name="ui_258.png" />
+            <Image Name="ui_259.png" />
+            <Image Name="ui_260.png" />
+            <Image Name="ui_261.png" />
+            <Image Name="ui_262.png" />
+            <Image Name="ui_263.png" />
+            <Image Name="ui_264.png" />
+            <Image Name="ui_265.png" />
+            <Image Name="ui_266.png" />
+            <Image Name="ui_267.png" />
+            <Image Name="ui_228.png" />
+            <Image Name="ui_229.png" />
+            <Image Name="ui_240.png" />
+            <Image Name="ui_269.png" />
+            <Image Name="ui_270.png" />
+            <Image Name="ui_271.png" />
+            <Image Name="ui_272.png" />
+            <Image Name="ui_273.png" />
+            <Image Name="ui_274.png" />
+            <Image Name="ui_275.png" />
+            <Image Name="ui_244.png" />
+            <Image Name="ui_276.png" />
+            <Image Name="ui_277.png" />
+            <Image Name="ui_254.png" />
+            <Image Name="ui_278.png" />
+            <Image Name="ui_279.png" />
+            <Image Name="ui_280.png" />
+            <Image Name="ui_281.png" />
+            <Image Name="ui_282.png" />
+            <Image Name="ui_283.png" />
+            <Image Name="ui_284.png" />
+            <Image Name="ui_285.png" />
+            <Image Name="ui_301.png" />
+            <Image Name="ui_302.png" />
+            <Image Name="ui_303.png" />
+            <Image Name="ui_291.png" />
+            <Image Name="ui_292.png" />
+            <Image Name="ui_304.png" />
+            <Image Name="ui_305.png" />
+            <Image Name="ui_308.png" />
+            <Image Name="ui_309.png" />
+            <Image Name="ui_310.png" />
+            <Image Name="ui_311.png" />
+            <Image Name="ui_312.png" />
+            <Image Name="ui_313.png" />
+            <Image Name="ui_314.png" />
+            <Image Name="ui_315.png" />
+            <Image Name="ui_316.png" />
+            <Image Name="ui_317.png" />
+            <Image Name="icon_02.png" />
+            <Image Name="ui_15.png" />
+            <Image Name="ui_156.png" />
+            <Image Name="ui_330.png" />
+            <Image Name="ui_331.png" />
+            <Image Name="ui_332.png" />
+            <Image Name="ui_333.png" />
+            <Image Name="ui_334.png" />
+            <Image Name="ui_335.png" />
+            <Image Name="ui_336.png" />
+            <Image Name="ui_337.png" />
+            <Image Name="ui_338.png" />
+            <Image Name="ui_339.png" />
+            <Image Name="ui_340.png" />
+            <Image Name="ui_345.png" />
+            <Image Name="ui_346.png" />
+            <Image Name="ui_347.png" />
+            <Image Name="ui_348.png" />
+            <Image Name="ui_349.png" />
+            <Image Name="ui_350.png" />
+            <Image Name="ui_351.png" />
+            <Image Name="ui_352.png" />
+            <Image Name="ui_353.png" />
+            <Image Name="ui_354.png" />
+            <Image Name="ui_355.png" />
+            <Image Name="ui_356.png" />
+            <Image Name="ui_366.png" />
+            <Image Name="ui_370.png" />
+            <Image Name="ui_71.png" />
+            <Image Name="ui_365.png" />
+            <Image Name="ui_367.png" />
+            <Image Name="ui_368.png" />
+            <Image Name="ui_369.png" />
+            <Image Name="ui_374.png" />
+            <Image Name="ui_371.png" />
+            <Image Name="ui_372.png" />
+            <Image Name="ui_373.png" />
+            <Image Name="ui_376.png" />
+            <Image Name="ui_378.png" />
+            <Image Name="ui_379.png" />
+            <Image Name="ui_375.png" />
+            <Image Name="ui_397.png" />
+            <Image Name="ui_410.png" />
+            <Image Name="ui_411.png" />
+            <Image Name="ui_412.png" />
+            <Image Name="ui_413.png" />
+            <Image Name="ui_414.png" />
+            <Image Name="ui_415.png" />
+            <Image Name="ui_416.png" />
+            <Image Name="ui_417.png" />
+            <Image Name="ui_418.png" />
+            <Image Name="ui_419.png" />
+            <Image Name="ui_420.png" />
+            <Image Name="ui_421.png" />
+            <Image Name="ui_422.png" />
+            <Image Name="ui_423.png" />
+            <Image Name="ui_440.png" />
+            <Image Name="ui_441.png" />
+            <Image Name="ui_429.png" />
+            <Image Name="ui_425.png" />
+            <Image Name="ui_426.png" />
+            <Image Name="ui_427.png" />
+            <Image Name="ui_428.png" />
+            <Image Name="ui_430.png" />
+            <Image Name="ui_432.png" />
+            <Image Name="ui_433.png" />
+            <Image Name="ui_444.png" />
+          </Folder>
+          <Folder Name="icon">
+            <Folder Name="skill">
+              <Image Name="skill1.png" />
+              <Image Name="skill2.png" />
+              <Image Name="skill4.png" />
+              <Image Name="skill3.png" />
+              <Image Name="skill5.png" />
+              <Image Name="skill_lock.png" />
+            </Folder>
+            <Image Name="icon_01.png" />
+            <Image Name="icon_02.png" />
+            <Image Name="icon_03.png" />
+            <Folder Name="map">
+              <Image Name="map_0.png" />
+              <Image Name="map_01.png" />
+              <Image Name="map_02.png" />
+              <Image Name="map_03.png" />
+              <Image Name="map_04.png" />
+              <Image Name="map_05.png" />
+            </Folder>
+            <Folder Name="item">
+              <Image Name="101.png" />
+              <Image Name="102.png" />
+              <Image Name="103.png" />
+              <Image Name="104.png" />
+              <Image Name="105.png" />
+              <Image Name="106.png" />
+              <Image Name="107.png" />
+              <Image Name="108.png" />
+              <Image Name="109.png" />
+              <Image Name="110.png" />
+              <Image Name="111.png" />
+              <Image Name="201.png" />
+              <Image Name="202.png" />
+              <Image Name="203.png" />
+              <Image Name="204.png" />
+              <Image Name="301.png" />
+              <Image Name="302.png" />
+              <Image Name="303.png" />
+              <Image Name="304.png" />
+              <Image Name="401.png" />
+              <Image Name="402.png" />
+              <Image Name="403.png" />
+              <Image Name="404.png" />
+              <Image Name="501.png" />
+              <Image Name="502.png" />
+              <Image Name="503.png" />
+              <Image Name="504.png" />
+              <Image Name="505.png" />
+              <Image Name="601.png" />
+              <Image Name="602.png" />
+              <Image Name="603.png" />
+              <Image Name="604.png" />
+              <Image Name="701.png" />
+              <Image Name="702.png" />
+              <Image Name="703.png" />
+              <Image Name="704.png" />
+              <Image Name="ui_253.png" />
+              <Image Name="ui_254.png" />
+              <Image Name="ui_255.png" />
+              <Image Name="ui_256.png" />
+            </Folder>
+          </Folder>
+          <Folder Name="button">
+            <Image Name="button_18.png" />
+            <Image Name="button_19.png" />
+            <Image Name="button_20.png" />
+            <Image Name="button_21.png" />
+            <Image Name="button_22.png" />
+            <Image Name="button_23.png" />
+            <Image Name="button_24.png" />
+            <Image Name="button_25.png" />
+            <Image Name="button_52.png" />
+            <Image Name="button_53.png" />
+            <Image Name="button_54.png" />
+            <Image Name="button_55.png" />
+            <Image Name="button_56.png" />
+            <Image Name="button_57.png" />
+            <Image Name="button_58.png" />
+            <Image Name="button_59.png" />
+            <Image Name="button_62.png" />
+            <Image Name="button_63.png" />
+            <Image Name="button_66.png" />
+            <Image Name="button_64.png" />
+            <Image Name="button_65.png" />
+            <Image Name="button_60.png" />
+            <Image Name="button_61.png" />
+            <Image Name="button_67.png" />
+            <Image Name="button_70.png" />
+            <Image Name="button_71.png" />
+            <Image Name="button_72.png" />
+            <Image Name="button_73.png" />
+            <Image Name="button_74.png" />
+            <Image Name="button_75.png" />
+            <Image Name="button_76.png" />
+            <Image Name="button_26.png" />
+            <Image Name="button_27.png" />
+            <Image Name="button_77.png" />
+            <Image Name="button_78.png" />
+            <Image Name="button_79.png" />
+            <Image Name="button_80.png" />
+            <Image Name="button_83.png" />
+            <Image Name="button_84.png" />
+            <Image Name="button_85.png" />
+            <Image Name="button_86.png" />
+            <Image Name="button_87.png" />
+            <Image Name="button_88.png" />
+            <Image Name="button_89.png" />
+            <Image Name="button_90.png" />
+            <Image Name="button_91.png" />
+            <Image Name="button_92.png" />
+            <Image Name="button_93.png" />
+            <Image Name="button_94.png" />
+            <Image Name="button_95.png" />
+            <Image Name="button_96.png" />
+            <Image Name="button_97.png" />
+            <Image Name="button_98.png" />
+            <Image Name="button_100.png" />
+            <Image Name="button_99.png" />
+          </Folder>
+          <Folder Name="chat">
+            <Image Name="archer.png" />
+            <Image Name="caster.png" />
+            <Image Name="gebulin.png" />
+            <Image Name="gongjian.png" />
+            <Image Name="kulou.png" />
+            <Image Name="mofashi.png" />
+            <Image Name="renzhe.png" />
+            <Image Name="saber.png" />
+            <Image Name="shilang.png" />
+            <Image Name="shixianggui.png" />
+            <Image Name="3.png" />
+            <Image Name="4.png" />
+          </Folder>
+        </Folder>
+        <Folder Name="sounds" />
+        <Folder Name="ui">
+          <Project Name="BattleEndPanel.csd" Type="Layer" />
+          <Project Name="begin.csd" Type="Scene" />
+          <Project Name="BloodBar.csd" Type="Node" />
+          <Project Name="ComboHits.csd" Type="Node" />
+          <Project Name="DialogPanel.csd" Type="Layer" />
+          <Project Name="DroppedItem.csd" Type="Node" />
+          <Project Name="GoGoGoPanel.csd" Type="Node" />
+          <Project Name="LoadingLayer.csd" Type="Layer" />
+          <Project Name="RoleHealthBar.csd" Type="Node" />
+          <Project Name="TopLeft.csd" Type="Node" />
+          <Project Name="TopRight.csd" Type="Node" />
+          <Project Name="map_stage.csd" Type="Layer" />
+          <Project Name="map_scene.csd" Type="Scene" />
+          <Project Name="equip_scene.csd" Type="Scene" />
+          <Project Name="equip_cell.csd" Type="Layer" />
+          <Project Name="beibao.csd" Type="Scene" />
+          <Project Name="beibao_gezi.csd" Type="Layer" />
+          <Project Name="skill_scene.csd" Type="Scene" />
+          <Project Name="message_box_ok.csd" Type="Layer" />
+          <Project Name="message_box_ok_cancel.csd" Type="Layer" />
+          <Project Name="shop_scene.csd" Type="Scene" />
+          <Project Name="shop_item.csd" Type="Layer" />
+          <Project Name="gm_scene.csd" Type="Scene" />
+          <Project Name="beibao_ye.csd" Type="Layer" />
+          <Project Name="panel_resource.csd" Type="Node" />
+          <Project Name="pauseBattleLayer.csd" Type="Layer" />
+          <Project Name="main_scene.csd" Type="Scene" />
+          <Project Name="skill_cell.csd" Type="Layer" />
+          <Project Name="map_cell.csd" Type="Layer" />
+          <Project Name="BattleUiLayer.csd" Type="Layer" />
+          <Project Name="role_property.csd" Type="Layer" />
+          <Project Name="skill_effect_layer.csd" Type="Layer" />
+          <Project Name="DaBaoJianLayer.csd" Type="Layer" />
+          <Project Name="LoginRewardLayer.csd" Type="Layer" />
+          <Project Name="login_slice_ui.csd" Type="Layer" />
+          <Project Name="battle_fail_layer.csd" Type="Layer" />
+          <Project Name="battle_victory_panel.csd" Type="Layer" />
+          <Project Name="battle_revive_layer.csd" Type="Layer" />
+          <Project Name="gift_panel.csd" Type="Node" />
+          <Project Name="gift_detail_panel.csd" Type="Layer" />
+          <Project Name="endless_select_layer.csd" Type="Layer" />
+          <Project Name="buy_skill_layer.csd" Type="Layer" />
+          <Project Name="announcement_layer.csd" Type="Layer" />
+          <Project Name="battle_win_buy.csd" Type="Layer" />
+          <Project Name="login_reward_panel.csd" Type="Layer" />
+          <Project Name="buy_action.csd" Type="Layer" />
+          <Project Name="yin_dao.csd" Type="Layer" />
+          <Project Name="caozuo_jiaoxue.csd" Type="Layer" />
+          <Project Name="endless_battle_fail_layer.csd" Type="Layer" />
+          <Project Name="equip_detail_panel.csd" Type="Node" />
+          <Project Name="vip_lingqu_layer.csd" Type="Layer" />
+          <Project Name="gift_legend_weapon.csd" Type="Layer" />
+          <Project Name="gift_zhizun.csd" Type="Layer" />
+          <Project Name="gift_legend_suit.csd" Type="Layer" />
+          <Project Name="gift_vip.csd" Type="Layer" />
+          <Project Name="select_hero_layer.csd" Type="Layer" />
+          <Project Name="select_hero_cell.csd" Type="Layer" />
+          <Project Name="select_hero_confirm.csd" Type="Layer" />
+          <Project Name="strengthen_layer.csd" Type="Layer" />
+          <Project Name="skill_guide.csd" Type="Layer" />
+          <Project Name="equip_detail.csd" Type="Layer" />
+          <Project Name="recharge_item.csd" Type="Layer" />
+          <Project Name="rechargeLayer.csd" Type="Layer" />
+          <Project Name="mission.csd" Type="Layer" />
+          <Project Name="mission_cell.csd" Type="Layer" />
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

@@ -1,0 +1,735 @@
+{
+  "ID": "5a8ed2d7-b345-43b0-a519-ba549e8548d7",
+  "Version": "2.2.9.0",
+  "Name": "recharge_panel",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 42,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_411.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 20,
+            "Scale9OriginY": 20,
+            "Scale9Width": 2,
+            "Scale9Height": 2,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 566.0508,
+              "Y": 312.2145
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4983,
+              "Y": 0.4878
+            },
+            "PreSize": {
+              "X": 0.7359,
+              "Y": 0.7969
+            },
+            "LeftMargin": 148.0508,
+            "RightMargin": 151.9492,
+            "TopMargin": 72.7855,
+            "BottomMargin": 57.2145,
+            "Tag": 70,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_410.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 312,
+                "Scale9Height": 91,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 406.6873,
+                  "Y": 488.8192
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4865,
+                  "Y": 0.9585
+                },
+                "PreSize": {
+                  "X": 0.3732,
+                  "Y": 0.1784
+                },
+                "LeftMargin": 250.6873,
+                "RightMargin": 273.3126,
+                "TopMargin": -24.3192,
+                "BottomMargin": 443.3192,
+                "Tag": 71,
+                "ActionTag": -792789051,
+                "Size": {
+                  "X": 312.0,
+                  "Y": 91.0
+                },
+                "Name": "title_icon",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_412.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 11,
+                "Scale9OriginY": 11,
+                "Scale9Width": 12,
+                "Scale9Height": 12,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 417.9919,
+                  "Y": 228.1977
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.4474
+                },
+                "PreSize": {
+                  "X": 0.6558,
+                  "Y": 0.6094
+                },
+                "LeftMargin": 45.4919,
+                "RightMargin": 45.5081,
+                "TopMargin": 86.8023,
+                "BottomMargin": 33.1977,
+                "Tag": 72,
+                "ActionTag": -444062096,
+                "Size": {
+                  "X": 745.0,
+                  "Y": 390.0
+                },
+                "Name": "Image_9",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_413.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 179,
+                "Scale9Height": 33,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 694.9214,
+                  "Y": 458.0066
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8312,
+                  "Y": 0.8981
+                },
+                "PreSize": {
+                  "X": 0.2141,
+                  "Y": 0.0647
+                },
+                "LeftMargin": 605.4214,
+                "RightMargin": 51.5786,
+                "TopMargin": 35.4934,
+                "BottomMargin": 441.5066,
+                "Tag": 73,
+                "ActionTag": 597669393,
+                "Size": {
+                  "X": 179.0,
+                  "Y": 33.0
+                },
+                "Name": "Image_10",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_27.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_27.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "images/button/button_26.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 63,
+                "Scale9Height": 73,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 820.2362,
+                  "Y": 495.4208
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.9811,
+                  "Y": 0.9714
+                },
+                "PreSize": {
+                  "X": 0.1112,
+                  "Y": 0.1863
+                },
+                "LeftMargin": 773.7362,
+                "RightMargin": -30.7362,
+                "TopMargin": -32.9208,
+                "BottomMargin": 447.9208,
+                "Tag": 74,
+                "ActionTag": -909061182,
+                "Size": {
+                  "X": 93.0,
+                  "Y": 95.0
+                },
+                "Name": "btn_close",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/icon/icon_02.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 36,
+                "Scale9Height": 36,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 597.6735,
+                  "Y": 458.0056
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.7149,
+                  "Y": 0.8981
+                },
+                "PreSize": {
+                  "X": 0.0431,
+                  "Y": 0.0706
+                },
+                "LeftMargin": 579.6735,
+                "RightMargin": 220.3265,
+                "TopMargin": 33.9944,
+                "BottomMargin": 440.0056,
+                "Tag": 75,
+                "ActionTag": 1866750821,
+                "Size": {
+                  "X": 36.0,
+                  "Y": 36.0
+                },
+                "Name": "Image_11",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 24,
+                "LabelText": "9999999",
+                "HorizontalAlignmentType": "HT_Right",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 699.4305,
+                  "Y": 456.3619
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8366,
+                  "Y": 0.8948
+                },
+                "PreSize": {
+                  "X": 0.1675,
+                  "Y": 0.0588
+                },
+                "LeftMargin": 629.4305,
+                "RightMargin": 66.5695,
+                "TopMargin": 38.6381,
+                "BottomMargin": 441.3619,
+                "Tag": 140,
+                "ActionTag": 823519497,
+                "Size": {
+                  "X": 140.0,
+                  "Y": 30.0
+                },
+                "Name": "lbl_gold",
+                "ctype": "TextObjectData"
+              },
+              {
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 67.3026,
+                  "Y": 39.7556
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0805,
+                  "Y": 0.078
+                },
+                "PreSize": {
+                  "X": 0.625,
+                  "Y": 0.5781
+                },
+                "LeftMargin": 67.3026,
+                "RightMargin": 58.6974,
+                "TopMargin": 100.2444,
+                "BottomMargin": 39.7556,
+                "Tag": 141,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "ui/recharge_item.json",
+                      "Plist": ""
+                    },
+                    "InnerActionSpeed": 1.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 553.9993,
+                      "Y": 3.3691
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.7803,
+                      "Y": 0.0091
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 553.9993,
+                    "RightMargin": 22.0007,
+                    "TopMargin": 190.6309,
+                    "BottomMargin": 3.3691,
+                    "Tag": 132,
+                    "ActionTag": -1334212148,
+                    "Size": {
+                      "X": 134.0,
+                      "Y": 176.0
+                    },
+                    "Name": "ProjectNode_8",
+                    "ctype": "ProjectNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "ui/recharge_item.json",
+                      "Plist": ""
+                    },
+                    "InnerActionSpeed": 1.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 382.9996,
+                      "Y": -0.1023
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.5394,
+                      "Y": -0.0003
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 382.9996,
+                    "RightMargin": 193.0004,
+                    "TopMargin": 194.1023,
+                    "BottomMargin": -0.1023,
+                    "Tag": 124,
+                    "ActionTag": 423022556,
+                    "Size": {
+                      "X": 134.0,
+                      "Y": 176.0
+                    },
+                    "Name": "ProjectNode_7",
+                    "ctype": "ProjectNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "ui/recharge_item.json",
+                      "Plist": ""
+                    },
+                    "InnerActionSpeed": 1.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 200.9997,
+                      "Y": 3.6766
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.2831,
+                      "Y": 0.0099
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 200.9997,
+                    "RightMargin": 375.0003,
+                    "TopMargin": 190.3234,
+                    "BottomMargin": 3.6766,
+                    "Tag": 116,
+                    "ActionTag": -1049166926,
+                    "Size": {
+                      "X": 134.0,
+                      "Y": 176.0
+                    },
+                    "Name": "ProjectNode_6",
+                    "ctype": "ProjectNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "ui/recharge_item.json",
+                      "Plist": ""
+                    },
+                    "InnerActionSpeed": 1.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 21.9991,
+                      "Y": -0.1079
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.031,
+                      "Y": -0.0003
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 21.9991,
+                    "RightMargin": 554.0009,
+                    "TopMargin": 194.1079,
+                    "BottomMargin": -0.1079,
+                    "Tag": 108,
+                    "ActionTag": -417535568,
+                    "Size": {
+                      "X": 134.0,
+                      "Y": 176.0
+                    },
+                    "Name": "ProjectNode_5",
+                    "ctype": "ProjectNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "ui/recharge_item.json",
+                      "Plist": ""
+                    },
+                    "InnerActionSpeed": 1.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 554.7177,
+                      "Y": 189.9999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.7813,
+                      "Y": 0.5135
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 554.7177,
+                    "RightMargin": 21.2823,
+                    "TopMargin": 4.0001,
+                    "BottomMargin": 189.9999,
+                    "Tag": 100,
+                    "ActionTag": -513651801,
+                    "Size": {
+                      "X": 134.0,
+                      "Y": 176.0
+                    },
+                    "Name": "ProjectNode_4",
+                    "ctype": "ProjectNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "ui/recharge_item.json",
+                      "Plist": ""
+                    },
+                    "InnerActionSpeed": 1.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 382.9996,
+                      "Y": 189.9999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.5394,
+                      "Y": 0.5135
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 382.9996,
+                    "RightMargin": 193.0004,
+                    "TopMargin": 4.0001,
+                    "BottomMargin": 189.9999,
+                    "Tag": 92,
+                    "ActionTag": -956926242,
+                    "Size": {
+                      "X": 134.0,
+                      "Y": 176.0
+                    },
+                    "Name": "ProjectNode_3",
+                    "ctype": "ProjectNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "ui/recharge_item.json",
+                      "Plist": ""
+                    },
+                    "InnerActionSpeed": 1.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 200.9997,
+                      "Y": 189.9999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.2831,
+                      "Y": 0.5135
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 200.9997,
+                    "RightMargin": 375.0003,
+                    "TopMargin": 4.0001,
+                    "BottomMargin": 189.9999,
+                    "Tag": 84,
+                    "ActionTag": -1391209997,
+                    "Size": {
+                      "X": 134.0,
+                      "Y": 176.0
+                    },
+                    "Name": "ProjectNode_2",
+                    "ctype": "ProjectNodeObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "ui/recharge_item.json",
+                      "Plist": ""
+                    },
+                    "InnerActionSpeed": 1.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 21.9991,
+                      "Y": 189.9999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": true,
+                    "PrePosition": {
+                      "X": 0.031,
+                      "Y": 0.5135
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 21.9991,
+                    "RightMargin": 554.0009,
+                    "TopMargin": 4.0001,
+                    "BottomMargin": 189.9999,
+                    "Tag": 76,
+                    "ActionTag": 1010313810,
+                    "Size": {
+                      "X": 134.0,
+                      "Y": 176.0
+                    },
+                    "Name": "ProjectNode_1",
+                    "ctype": "ProjectNodeObjectData"
+                  }
+                ],
+                "ActionTag": -1538110133,
+                "Size": {
+                  "X": 710.0,
+                  "Y": 370.0
+                },
+                "Name": "item_container",
+                "ctype": "PanelObjectData"
+              }
+            ],
+            "ActionTag": 488026387,
+            "Size": {
+              "X": 836.0,
+              "Y": 510.0
+            },
+            "Name": "bg_panel",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

@@ -1,0 +1,431 @@
+{
+  "ID": "8aaf57c7-0a11-4973-bfba-39ed73e0f4e5",
+  "Version": "2.2.9.0",
+  "Name": "select_hero_confirm",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 189,
+        "Children": [
+          {
+            "BackColorAlpha": 127,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 181,
+            "ActionTag": -322595841,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "Name": "Panel_2",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "BackColorAlpha": 204,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 240.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.375
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 0.2813
+            },
+            "TopMargin": 220.0,
+            "BottomMargin": 240.0,
+            "Tag": 190,
+            "ActionTag": 541549197,
+            "Size": {
+              "X": 1136.0,
+              "Y": 180.0
+            },
+            "Name": "Panel_1",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 30,
+            "LabelText": "是否花费{num}{curr}购买{what}？",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5625
+            },
+            "PreSize": {
+              "X": 0.8803,
+              "Y": 0.0625
+            },
+            "LeftMargin": 68.0,
+            "RightMargin": 68.0,
+            "TopMargin": 260.0,
+            "BottomMargin": 340.0,
+            "Tag": 191,
+            "ActionTag": 993589818,
+            "Size": {
+              "X": 1000.0,
+              "Y": 40.0
+            },
+            "Name": "lbl_content",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 30,
+            "LabelText": "该英雄在{lv}级自动解锁，或者花费{num}{curr}立刻购买{what}？",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5625
+            },
+            "PreSize": {
+              "X": 0.8803,
+              "Y": 0.0625
+            },
+            "LeftMargin": 68.0,
+            "RightMargin": 68.0,
+            "TopMargin": 260.0,
+            "BottomMargin": 340.0,
+            "Tag": 180,
+            "ActionTag": -1185277491,
+            "Size": {
+              "X": 1000.0,
+              "Y": 40.0
+            },
+            "Name": "lbl_content_2",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 30,
+            "ButtonText": "取消",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_94.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_94.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_93.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 122,
+            "Scale9Height": 32,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 398.0,
+              "Y": 290.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3504,
+              "Y": 0.4531
+            },
+            "PreSize": {
+              "X": 0.1338,
+              "Y": 0.0844
+            },
+            "LeftMargin": 322.0,
+            "RightMargin": 662.0,
+            "TopMargin": 323.0,
+            "BottomMargin": 263.0,
+            "Tag": 192,
+            "ActionTag": 110792214,
+            "Size": {
+              "X": 152.0,
+              "Y": 54.0
+            },
+            "Name": "btn_cancel",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 30,
+            "ButtonText": "试玩",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_92.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_92.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_91.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 122,
+            "Scale9Height": 32,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 568.0,
+              "Y": 290.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4531
+            },
+            "PreSize": {
+              "X": 0.1338,
+              "Y": 0.0844
+            },
+            "LeftMargin": 492.0,
+            "RightMargin": 492.0,
+            "TopMargin": 323.0,
+            "BottomMargin": 263.0,
+            "Tag": 193,
+            "ActionTag": 81046927,
+            "Size": {
+              "X": 152.0,
+              "Y": 54.0
+            },
+            "Name": "btn_play",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 30,
+            "ButtonText": "购买",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_92.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_92.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "images/button/button_91.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 122,
+            "Scale9Height": 32,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 738.0,
+              "Y": 290.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6496,
+              "Y": 0.4531
+            },
+            "PreSize": {
+              "X": 0.1338,
+              "Y": 0.0844
+            },
+            "LeftMargin": 662.0,
+            "RightMargin": 322.0,
+            "TopMargin": 323.0,
+            "BottomMargin": 263.0,
+            "Tag": 194,
+            "ActionTag": 1377663753,
+            "Size": {
+              "X": 152.0,
+              "Y": 54.0
+            },
+            "Name": "btn_buy",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

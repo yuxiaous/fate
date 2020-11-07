@@ -1,0 +1,121 @@
+{
+  "ID": "b16cc501-56a5-4fc1-bd6a-caf63f5b9517",
+  "Version": "2.2.9.0",
+  "Name": "skill_guide",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 5,
+        "Children": [
+          {
+            "BackColorAlpha": 130,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 3.0468,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0027,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": 3.0468,
+            "RightMargin": -3.0468,
+            "Tag": 6,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "images/ui/ui_351.png",
+                  "Plist": ""
+                },
+                "Scale9Width": 326,
+                "Scale9Height": 80,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 773.9196,
+                  "Y": 240.7064
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.6813,
+                  "Y": 0.3761
+                },
+                "PreSize": {
+                  "X": 0.287,
+                  "Y": 0.125
+                },
+                "LeftMargin": 610.9196,
+                "RightMargin": 199.0804,
+                "TopMargin": 359.2936,
+                "BottomMargin": 200.7064,
+                "Tag": 8,
+                "ActionTag": -1292132334,
+                "Size": {
+                  "X": 326.0,
+                  "Y": 80.0
+                },
+                "Name": "skill_des",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
+            "ActionTag": 1696580310,
+            "Size": {
+              "X": 1136.0,
+              "Y": 640.0
+            },
+            "Name": "bg_panel",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1136.0,
+          "Y": 640.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

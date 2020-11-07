@@ -1,0 +1,111 @@
+<dragonBones name="fuhuo" frameRate="24" version="2.3">
+ <armature name="fuhuo">
+  <bone name="图层 27">
+   <transform x="0.15" y="-1.07" skX="0" skY="0" scX="2" scY="2"/>
+  </bone>
+  <skin name="default">
+   <slot name="图层 27" parent="图层 27" z="0">
+    <display name="1.png" type="image">
+     <transform x="-19.5" y="-4.25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="2.png" type="image">
+     <transform x="-23.25" y="-9.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="3.png" type="image">
+     <transform x="-29.25" y="-28.75" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="4.png" type="image">
+     <transform x="-38" y="-37.75" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="5.png" type="image">
+     <transform x="-38" y="-40" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="6.png" type="image">
+     <transform x="-36" y="-41.75" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="7.png" type="image">
+     <transform x="-33" y="-42" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="8.png" type="image">
+     <transform x="-52.75" y="-62" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="9.png" type="image">
+     <transform x="-50.25" y="-59.25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="10.png" type="image">
+     <transform x="-49.25" y="-62" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="11.png" type="image">
+     <transform x="-48.25" y="-62.25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="12.png" type="image">
+     <transform x="-47.75" y="-61.75" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="13.png" type="image">
+     <transform x="-46.75" y="-61.25" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="14.png" type="image">
+     <transform x="-46.25" y="-60.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="15.png" type="image">
+     <transform x="-45.75" y="-46.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="16.png" type="image">
+     <transform x="-44.75" y="-46.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+   </slot>
+  </skin>
+  <animation name="fuhuo" fadeInTime="0" duration="32" scale="1" loop="1" autoTween="0" tweenEasing="NaN">
+   <timeline name="图层 27" scale="1" offset="0">
+    <frame z="0" duration="2">
+     <transform x="0.15" y="-1.07" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="1" duration="2">
+     <transform x="2.75" y="-13.32" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="2" duration="2">
+     <transform x="0.23" y="-54.57" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="3" duration="2">
+     <transform x="5.18" y="-73.07" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="4" duration="2">
+     <transform x="4.18" y="-77.8" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="5" duration="2">
+     <transform x="2.5" y="-81.57" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="6" duration="2">
+     <transform x="2.5" y="-82.5" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="7" duration="2">
+     <transform x="-0.07" y="-122.32" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="8" duration="2">
+     <transform x="0.75" y="-130.72" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="9" duration="2">
+     <transform x="0.45" y="-126.8" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="10" duration="2">
+     <transform x="0.93" y="-125.65" skX="0" skY="0" scX="2.04" scY="2.04" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="11" duration="2">
+     <transform x="1.45" y="-124.8" skX="0" skY="0" scX="2.05" scY="2.05" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="12" duration="2">
+     <transform x="1.95" y="-126.02" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="13" duration="2">
+     <transform x="2.42" y="-122.3" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="14" duration="2">
+     <transform x="2.25" y="-148.45" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="15" duration="2">
+     <transform x="0.43" y="-140.97" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+   </timeline>
+  </animation>
+ </armature>
+</dragonBones>

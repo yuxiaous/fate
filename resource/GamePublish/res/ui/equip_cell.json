@@ -1,0 +1,354 @@
+{
+  "ID": "3b993eb8-959e-4174-90f5-59e7c1c58258",
+  "Version": "2.2.9.0",
+  "Name": "equip_cell",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 254,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_162.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 16,
+            "Scale9OriginY": 16,
+            "Scale9Width": 2,
+            "Scale9Height": 2,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 157.0,
+              "Y": 60.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.9554,
+              "Y": 0.9167
+            },
+            "LeftMargin": 7.0,
+            "RightMargin": 7.0,
+            "TopMargin": 5.0,
+            "BottomMargin": 5.0,
+            "Tag": 105,
+            "ActionTag": 228526639,
+            "Size": {
+              "X": 300.0,
+              "Y": 110.0
+            },
+            "Name": "Image_3",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_168.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 24,
+            "Scale9Width": 2,
+            "Scale9Height": 40,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 205.0,
+              "Y": 43.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6529,
+              "Y": 0.3583
+            },
+            "PreSize": {
+              "X": 0.4667,
+              "Y": 0.3636
+            },
+            "LeftMargin": 135.0,
+            "RightMargin": 39.0,
+            "TopMargin": 57.0,
+            "BottomMargin": 23.0,
+            "Tag": 106,
+            "ActionTag": 667222318,
+            "Size": {
+              "X": 140.0,
+              "Y": 40.0
+            },
+            "Name": "Image_7",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 107,
+            "ActionTag": -402452749,
+            "Size": {
+              "X": 314.0,
+              "Y": 120.0
+            },
+            "Name": "btn_touch",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ui/beibao_gezi.json",
+              "Plist": ""
+            },
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 28.0,
+              "Y": 15.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0892,
+              "Y": 0.125
+            },
+            "PreSize": {
+              "X": 0.2739,
+              "Y": 0.7167
+            },
+            "LeftMargin": 28.0,
+            "RightMargin": 200.0,
+            "TopMargin": 19.0,
+            "BottomMargin": 15.0,
+            "Tag": 154,
+            "ActionTag": -1458327910,
+            "Size": {
+              "X": 86.0,
+              "Y": 86.0
+            },
+            "Name": "ProjectNode_icon",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 24,
+            "LabelText": "技能名称",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 205.0,
+              "Y": 80.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6529,
+              "Y": 0.6667
+            },
+            "PreSize": {
+              "X": 0.5096,
+              "Y": 0.25
+            },
+            "LeftMargin": 125.0,
+            "RightMargin": 29.0,
+            "TopMargin": 25.0,
+            "BottomMargin": 65.0,
+            "Tag": 109,
+            "ActionTag": 2105821143,
+            "Size": {
+              "X": 160.0,
+              "Y": 30.0
+            },
+            "Name": "lbl_name",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "等级:{0}",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 205.0,
+              "Y": 43.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6529,
+              "Y": 0.3583
+            },
+            "PreSize": {
+              "X": 0.3822,
+              "Y": 0.2167
+            },
+            "LeftMargin": 145.0,
+            "RightMargin": 49.0,
+            "TopMargin": 64.0,
+            "BottomMargin": 30.0,
+            "Tag": 110,
+            "ActionTag": 2059303197,
+            "Size": {
+              "X": 120.0,
+              "Y": 26.0
+            },
+            "Name": "lbl_level",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "images/ui/ui_169.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 20,
+            "Scale9OriginY": 20,
+            "Scale9Width": 2,
+            "Scale9Height": 2,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 157.0,
+              "Y": 60.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.9682,
+              "Y": 0.9583
+            },
+            "LeftMargin": 5.0,
+            "RightMargin": 5.0,
+            "TopMargin": 2.5,
+            "BottomMargin": 2.5,
+            "Tag": 111,
+            "ActionTag": -1787126646,
+            "Size": {
+              "X": 304.0,
+              "Y": 115.0
+            },
+            "Name": "img_sel",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 314.0,
+          "Y": 120.0
+        },
+        "Name": "root",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

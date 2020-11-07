@@ -1,0 +1,72 @@
+<dragonBones name="leiji" frameRate="24" version="2.3">
+ <armature name="leiji">
+  <bone name="图层 1">
+   <transform x="26" y="-229.05" skX="0" skY="0" scX="2" scY="2"/>
+  </bone>
+  <bone name="attack">
+   <transform x="3.75" y="2" skX="0" skY="0" scX="9.38" scY="7.71"/>
+  </bone>
+  <skin name="default">
+   <slot name="图层 1" parent="图层 1" z="0">
+    <display name="28.png" type="image">
+     <transform x="-51" y="-128.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="29.png" type="image">
+     <transform x="-38" y="-128" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="30.png" type="image">
+     <transform x="-14.5" y="-100" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="31.png" type="image">
+     <transform x="-39.5" y="-127.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="32.png" type="image">
+     <transform x="-34.5" y="-127.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="33.png" type="image">
+     <transform x="-6.5" y="-96.5" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+   </slot>
+   <slot name="attack" parent="attack" z="1">
+    <display name="kongbai" type="image">
+     <transform x="-2.65" y="-3.85" skX="0" skY="0" scX="1" scY="1" pX="7.45" pY="9.2"/>
+    </display>
+   </slot>
+  </skin>
+  <animation name="leiji" fadeInTime="0" duration="13" scale="1" loop="1" autoTween="0" tweenEasing="NaN">
+   <timeline name="图层 1" scale="1" offset="0">
+    <frame z="0" duration="2">
+     <transform x="26" y="-229.05" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="1" duration="2">
+     <transform x="8.3" y="-229.7" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="2" duration="2">
+     <transform x="26.8" y="-215.75" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="3" duration="2">
+     <transform x="0.85" y="-233.4" skX="0" skY="0" scX="2.03" scY="2.03" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="4" duration="2">
+     <transform x="-4.5" y="-230.95" skX="0" skY="0" scX="2.03" scY="2.03" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="5" duration="2">
+     <transform x="-1.15" y="-225.25" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame duration="1" displayIndex="-1"/>
+   </timeline>
+   <timeline name="attack" scale="1" offset="0">
+    <frame z="1" event="emitAttack" duration="1">
+     <transform x="3.75" y="2" skX="0" skY="0" scX="9.38" scY="7.71" pX="0" pY="0"/>
+     <colorTransform aO="0" rO="0" gO="0" bO="0" aM="0" rM="100" gM="100" bM="100"/>
+    </frame>
+    <frame duration="5" displayIndex="-1"/>
+    <frame z="1" event="emitAttack" duration="1">
+     <transform x="-0.55" y="1.7" skX="0" skY="0" scX="9.3" scY="7.8" pX="0" pY="0"/>
+     <colorTransform aO="0" rO="0" gO="0" bO="0" aM="0" rM="100" gM="100" bM="100"/>
+    </frame>
+    <frame duration="6" displayIndex="-1"/>
+   </timeline>
+  </animation>
+ </armature>
+</dragonBones>

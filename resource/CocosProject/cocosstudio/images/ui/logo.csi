@@ -1,0 +1,18 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Type="Plist" Name="logo" ID="027d9e24-dd4e-4fc2-8a6a-f1df26e18a66" Version="2.2.9.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="True" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="images/ui/logo.png" />
+      <FilePathData Path="images/ui/logo_2.png" />
+      <FilePathData Path="images/ui/logo_3.png" />
+      <FilePathData Path="images/ui/logo_4.png" />
+      <FilePathData Path="images/ui/logo_5.png" />
+      <FilePathData Path="images/ui/logo_6.png" />
+      <FilePathData Path="images/ui/logo_7.png" />
+      <FilePathData Path="images/ui/logo_8.png" />
+      <FilePathData Path="images/ui/logo_9.png" />
+      <FilePathData Path="images/ui/logo_10.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

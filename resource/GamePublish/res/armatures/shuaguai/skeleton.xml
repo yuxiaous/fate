@@ -1,0 +1,51 @@
+<dragonBones name="未命名-1" frameRate="24" version="2.3">
+ <armature name="shuaguai">
+  <bone name="图层 1">
+   <transform x="2.67" y="-6.66" skX="0" skY="0" scX="2" scY="2"/>
+  </bone>
+  <skin name="default">
+   <slot name="图层 1" parent="图层 1" z="0">
+    <display name="1.png" type="image">
+     <transform x="-27.9" y="-12.3" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="2.png" type="image">
+     <transform x="-33.3" y="-46.8" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="3.png" type="image">
+     <transform x="-43.8" y="-63.9" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="4.png" type="image">
+     <transform x="-35.7" y="-72.6" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="5.png" type="image">
+     <transform x="-31.8" y="-57.9" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+    <display name="6.png" type="image">
+     <transform x="-22.5" y="-51.6" skX="0" skY="0" scX="1" scY="1" pX="0" pY="0"/>
+    </display>
+   </slot>
+  </skin>
+  <animation name="daiji" fadeInTime="0" duration="18" scale="1" loop="1" autoTween="0" tweenEasing="NaN">
+   <timeline name="图层 1" scale="1" offset="0">
+    <frame z="0" duration="3">
+     <transform x="2.67" y="-6.66" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="1" duration="3">
+     <transform x="0.9" y="-75.6" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="2" duration="3">
+     <transform x="0.81" y="-106.5" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="3" duration="3">
+     <transform x="-2.49" y="-135.6" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="4" duration="3">
+     <transform x="-2.19" y="-118.29" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+    <frame z="0" displayIndex="5" duration="3">
+     <transform x="-5.7" y="-148.59" skX="0" skY="0" scX="2" scY="2" pX="0" pY="0"/>
+    </frame>
+   </timeline>
+  </animation>
+ </armature>
+</dragonBones>
